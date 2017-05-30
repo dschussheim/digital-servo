@@ -1,0 +1,76 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/pa.fromNetlist.tcl
+# create_project -name test_scripts -dir "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_5" -part xc7k160tfbg676-1
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "led_on.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ucf' to fileset 'constrs_1'
+# add_files [list {led_on.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc7k160tfbg676-1
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design led_on.ngc ...
+WARNING:NetListWriters:298 - No output is written to led_on.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file led_on.edif ...
+ngc2edif: Total memory usage is 80348 kilobytes
+
+Parsing EDIF File [./planAhead_run_5/test_scripts.data/cache/led_on_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_5/test_scripts.data/cache/led_on_ngc_zx.edif]
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/kintex7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/fbg676/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/drc.xml
+Parsing UCF File [C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ucf]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'out' [C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ucf:3]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'out' [C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ucf:6]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'out' [C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ucf:10]
+Finished Parsing UCF File [C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: ff050d9f
+link_design: Time (s): elapsed = 00:00:18 . Memory (MB): peak = 824.262 ; gain = 392.148
+set_property iostandard LVCMOS18 [get_ports [list {out[3]} {out[2]} {out[1]} {out[0]}]]
+set_property drive 24 [get_ports [list {out[3]} {out[2]} {out[1]} {out[0]}]]
+set_property offchip_term NONE [get_ports [list {out[3]} {out[2]} {out[1]} {out[0]}]]
+startgroup
+set_property package_pin M17 [get_ports {out[3]}]
+endgroup
+startgroup
+set_property package_pin L18 [get_ports {out[2]}]
+endgroup
+startgroup
+set_property package_pin L17 [get_ports {out[1]}]
+endgroup
+startgroup
+set_property package_pin K18 [get_ports {out[0]}]
+endgroup
+save_constraints
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Mon May 29 15:22:21 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

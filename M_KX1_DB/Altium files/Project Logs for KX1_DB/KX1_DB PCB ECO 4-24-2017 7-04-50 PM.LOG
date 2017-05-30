@@ -1,0 +1,39 @@
+Removed Pin From Net: NetName=IO10_N Pin=J700-114
+Removed Pin From Net: NetName=IO10_N Pin=J700-116
+Removed Pin From Net: NetName=IO10_N Pin=J700-118
+Removed Pin From Net: NetName=IO10_N Pin=J700-122
+Removed Pin From Net: NetName=IO10_N Pin=J700-124
+Removed Pin From Net: NetName=IO10_N Pin=J700-126
+Removed Pin From Net: NetName=IO10_N Pin=J700-128
+Removed Pin From Net: NetName=IO10_N Pin=J700-130
+Removed Pin From Net: NetName=IO10_N Pin=J700-132
+Removed Pin From Net: NetName=IO10_N Pin=J700-136
+Removed Pin From Net: NetName=IO10_N Pin=J700-140
+Added Pin To Net: NetName=OVDD18 Pin=J700-38
+Added Pin To Net: NetName=OVDD18 Pin=J700-41
+Change Net Name : Old Net Name=PWR_EN New Net Name=DVDD33
+Added Pin To Net: NetName=BOOT_MODE Pin=J700-126
+Added Net: Name=BOOT_MODE
+Added Pin To Net: NetName=FLASH_CLK Pin=J700-118
+Added Net: Name=FLASH_CLK
+Added Pin To Net: NetName=FLASH_CS# Pin=J700-116
+Added Net: Name=FLASH_CS#
+Added Pin To Net: NetName=FLASH_DI Pin=J700-114
+Added Net: Name=FLASH_DI
+Added Pin To Net: NetName=FLASH_DO Pin=J700-122
+Added Net: Name=FLASH_DO
+Added Pin To Net: NetName=FPGA_DONE Pin=J700-130
+Added Net: Name=FPGA_DONE
+Added Pin To Net: NetName=IO11_P Pin=J700-55
+Added Net: Name=IO11_P
+Added Pin To Net: NetName=POR#_LOAD# Pin=J700-132
+Added Net: Name=POR#_LOAD#
+Added Pin To Net: NetName=SRST#_RDY# Pin=J700-124
+Added Net: Name=SRST#_RDY#
+Added Pin To Net: NetName=USB_CPEN Pin=J700-128
+Added Net: Name=USB_CPEN
+Added Pin To Net: NetName=USB_SSTX_N Pin=J700-140
+Added Net: Name=USB_SSTX_N
+Added Pin To Net: NetName=USB_SSTX_P Pin=J700-136
+Added Net: Name=USB_SSTX_P
+Added Differential Pair: Name=USB_SSTX

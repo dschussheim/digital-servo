@@ -1,0 +1,157 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: AD9783.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "AD9783.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "AD9783"
+Output Format                      : NGC
+Target Device                      : xc7k160t-1-fbg676
+
+---- Source Options
+Top Module Name                    : AD9783
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\SPI.v" into library work
+Parsing verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\/timescale.v" included at line 11.
+Parsing module <SPI>.
+Analyzing Verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" into library work
+Parsing module <AD9783>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 62: Port CLKFBOUT is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 82: Port LOCK is not connected to this instance
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 206: Module <OSERDESE2> does not have a port named <SHIFTIN3>.
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 207: Module <OSERDESE2> does not have a port named <SHIFTIN4>.
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 210: Module <OSERDESE2> does not have a port named <SHIFTOUT3>.
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 211: Module <OSERDESE2> does not have a port named <SHIFTOUT4>.
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 212: Module <OSERDESE2> does not have a port named <TRAIN>.
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 215: Module <OSERDESE2> does not have a port named <CLK0>.
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 216: Module <OSERDESE2> does not have a port named <CLK1>.
+WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 220: Module <OSERDESE2> does not have a port named <IOCE>.
+WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 157: Port OFB is not connected to this instance
+
+Elaborating module <AD9783>.
+
+Elaborating module <PLLE2_BASE(BANDWIDTH="OPTIMIZED",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=1,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKIN1_PERIOD=10.0,REF_JITTER1=0.01)>.
+
+Elaborating module <BUFPLL(DIVIDE=8,ENABLE_SYNC="TRUE")>.
+ERROR:HDLCompiler:597 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 160: Module OSERDESE2 does not have a parameter named TRAIN_PATTERN
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+ERROR:HDLCompiler:597 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 163: Module OSERDESE2 does not have a parameter named OUTPUT_MODE
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+
+Elaborating module <OSERDESE2(DATA_RATE_OQ="SDR",DATA_RATE_TQ="SDR",DATA_WIDTH=8,SERDES_MODE="MASTER")>.
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 206: Cannot find port SHIFTIN3 on this module
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 207: Cannot find port SHIFTIN4 on this module
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 210: Cannot find port SHIFTOUT3 on this module
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 211: Cannot find port SHIFTOUT4 on this module
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 212: Cannot find port TRAIN on this module
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 215: Cannot find port CLK0 on this module
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 216: Cannot find port CLK1 on this module
+ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 220: Cannot find port IOCE on this module
+Module AD9783 remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 17: Empty module <AD9783> remains a black box.
+--> 
+
+Total memory usage is 290532 kilobytes
+
+Number of errors   :   10 (   0 filtered)
+Number of warnings :   12 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

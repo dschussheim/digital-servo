@@ -1,0 +1,36 @@
+Added Pin To Net: NetName=ADC1_CS Pin=U1-19
+Added Net: Name=ADC1_CS
+Added Pin To Net: NetName=ADC1_SCI Pin=U1-21
+Added Net: Name=ADC1_SCI
+Added Pin To Net: NetName=ADC1_SCK Pin=U1-20
+Added Net: Name=ADC1_SCK
+Added Pin To Net: NetName=ADC1_SCO Pin=U1-46
+Added Net: Name=ADC1_SCO
+Added Pin To Net: NetName=NETLABEL5 Pin=U1-41
+Added Net: Name=NETLABEL5
+Added Pin To Net: NetName=NETLABEL6 Pin=U1-42
+Added Net: Name=NETLABEL6
+Added Pin To Net: NetName=NETLABEL7 Pin=U1-43
+Added Net: Name=NETLABEL7
+Added Pin To Net: NetName=NETLABEL8 Pin=U1-44
+Added Net: Name=NETLABEL8
+Added Pin To Net: NetName=NETLABEL9 Pin=C5-2
+Added Net: Name=NETLABEL9
+Added Pin To Net: NetName=NETLABEL10 Pin=C7-2
+Added Net: Name=NETLABEL10
+Added Pin To Net: NetName=NETLABEL15 Pin=U1-27
+Added Net: Name=NETLABEL15
+Added Pin To Net: NetName=NETLABEL16 Pin=U1-28
+Added Net: Name=NETLABEL16
+Added Pin To Net: NetName=NETLABEL17 Pin=U1-29
+Added Net: Name=NETLABEL17
+Added Pin To Net: NetName=NETLABEL18 Pin=U1-30
+Added Net: Name=NETLABEL18
+Added Pin To Net: NetName=NETLABEL19 Pin=U1-31
+Added Net: Name=NETLABEL19
+Added Pin To Net: NetName=NETLABEL20 Pin=U1-32
+Added Net: Name=NETLABEL20
+Added Pin To Net: NetName=NETLABEL21 Pin=U1-35
+Added Net: Name=NETLABEL21
+Added Pin To Net: NetName=NETLABEL22 Pin=U1-36
+Added Net: Name=NETLABEL22

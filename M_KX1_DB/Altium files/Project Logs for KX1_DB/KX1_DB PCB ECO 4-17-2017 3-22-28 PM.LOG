@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=ADC1_CS Pin=J700-90
+Removed Pin From Net: NetName=ADC1_SDI Pin=J700-94
+Added Pin To Net: NetName=ADC1_SDI Pin=J700-90
+Added Pin To Net: NetName=ADC1_CS Pin=J700-94

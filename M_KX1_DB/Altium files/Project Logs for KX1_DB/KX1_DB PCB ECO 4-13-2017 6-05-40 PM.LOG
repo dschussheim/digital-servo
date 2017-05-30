@@ -1,0 +1,49 @@
+Removed Pin From Net: NetName=A1_N Pin=C1-2
+Removed Pin From Net: NetName=A1_P Pin=C2-1
+Removed Pin From Net: NetName=A2_N Pin=C30-2
+Removed Pin From Net: NetName=A2_P Pin=C31-1
+Removed Pin From Net: NetName=ADC1_OUT1B_P Pin=J700-95
+Removed Pin From Net: NetName=ADC1_OUT1B_N Pin=J700-97
+Removed Pin From Net: NetName=A1_N Pin=R4-2
+Removed Pin From Net: NetName=A1_P Pin=R8-2
+Removed Pin From Net: NetName=A2_N Pin=R98-2
+Removed Pin From Net: NetName=A2_P Pin=R102-2
+Removed Pin From Net: NetName=A1_P Pin=U1-3
+Removed Pin From Net: NetName=A1_N Pin=U1-4
+Removed Pin From Net: NetName=A2_P Pin=U7-11
+Removed Pin From Net: NetName=A2_N Pin=U7-12
+Added Pin To Net: NetName=ADC1_OUT2B_P Pin=J700-101
+Added Pin To Net: NetName=ADC1_OUT2B_N Pin=J700-103
+Added Pin To Net: NetName=ADC1_OUT1B_P Pin=J700-105
+Added Pin To Net: NetName=ADC1_OUT1B_N Pin=J700-107
+Change Net Name : Old Net Name=A1_N New Net Name=A21_N
+Change Net Name : Old Net Name=A1_P New Net Name=A21_P
+Change Net Name : Old Net Name=A2_N New Net Name=A12_N
+Change Net Name : Old Net Name=A2_P New Net Name=A12_P
+Added Pin To Net: NetName=A11_N Pin=C1-2
+Added Pin To Net: NetName=A11_N Pin=R4-2
+Added Pin To Net: NetName=A11_N Pin=U1-4
+Added Net: Name=A11_N
+Added Pin To Net: NetName=A11_P Pin=C2-1
+Added Pin To Net: NetName=A11_P Pin=R8-2
+Added Pin To Net: NetName=A11_P Pin=U1-3
+Added Net: Name=A11_P
+Added Pin To Net: NetName=A22_N Pin=C30-2
+Added Pin To Net: NetName=A22_N Pin=R98-2
+Added Pin To Net: NetName=A22_N Pin=U7-12
+Added Net: Name=A22_N
+Added Pin To Net: NetName=A22_P Pin=C31-1
+Added Pin To Net: NetName=A22_P Pin=R102-2
+Added Pin To Net: NetName=A22_P Pin=U7-11
+Added Net: Name=A22_P
+Added Differential Pair: Name=A11
+Added Differential Pair: Name=A12
+Added Differential Pair: Name=A21
+Added Differential Pair: Name=A22
+Added Differential Pair: Name=ADC1_ENC
+Added Differential Pair: Name=ADC2_ENC
+Added Differential Pair: Name=ADC2_FR
+Added Differential Pair: Name=ADC2_OUT1A
+Added Differential Pair: Name=ADC2_OUT1B
+Added Differential Pair: Name=ADC2_OUT2A
+Added Differential Pair: Name=ADC2_OUT2B

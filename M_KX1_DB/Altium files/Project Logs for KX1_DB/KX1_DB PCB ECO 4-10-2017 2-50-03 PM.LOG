@@ -1,0 +1,7 @@
+Added Component: Designator=JP12(sma_pcb_200)
+Added Pin To Net: NetName=NetJP12_0 Pin=JP12-0
+Added Pin To Net: NetName=NetJP12_0 Pin=JP12-0
+Added Pin To Net: NetName=NetJP12_0 Pin=JP12-0
+Added Pin To Net: NetName=NetJP12_0 Pin=JP12-0
+Added Pin To Net: NetName=NetC140_1 Pin=JP12-1
+Added Member To Class: ClassName=KX1_DB_DAC_2 Member=Component JP12 SMA

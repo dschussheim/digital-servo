@@ -1,0 +1,50 @@
+    ____  ____
+   /   /\/   /
+  /___/  \  /    VENDOR      : Xilinx Inc.
+  \   \   \/     VERSION     : 14.7 (P.20131013)
+   \   \         APPLICATION : compxlib
+   /   /         CONTENTS    : Compilation Log
+  /___/   /\     FILENAME    : compxlib.log
+  \   \  /  \    
+   \___\/\___\
+
+Processing command line ...
+Library Source Paths => 'C:/Xilinx/14.7/ISE_DS/ISE'
+Current Working Directory => 'C:\Users\dschussheim\Desktop\M_KX1_DB\Firmware\test_scripts'
+Compilation Mode = FAST
+Execute Mode = ON
+Scheduling library installation & compilation for architectures: all
+
+Scheduling library installation & compilation for libraries: all
+
+Signature:-
+------------------------------------------------------------------------------
+compxlib -s mti_se -64bit -p C:\Xilinx\14.7\ISE_DS -l all -arch all -lib all -w -exclude_superseded 
+------------------------------------------------------------------------------
+ERROR:Compxlib - COMPXLIB[sim]: Unable to automatically find executables for simulator 'mti_se' from the following paths:
+    C:\Xilinx\14.7\ISE_DS
+   C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64
+   C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64
+   C:/Modeltech_pe_edu_10.4a/win32pe_edu
+   C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64
+   C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64
+   C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav
+   C:\Xilinx\14.7\ISE_DS\PlanAhead\bin
+   C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64
+   C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64
+   C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin
+   C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin
+   C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin
+   C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin
+   C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin
+   C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin
+   C:\Xilinx\14.7\ISE_DS\common\bin\nt64
+   C:\Xilinx\14.7\ISE_DS\common\lib\nt64
+   C:\Program Files (x86)\Intel\iCLS Client\
+   C:\Program Files\Intel\iCLS Client\
+   C:\Windows\system32
+   C:\Windows
+   C:\Windows\System32\Wbem
+   C:\Windows\System32\WindowsPowerShell\v1.0\
+   C:\Users\dschussheim\AppData\Local\Microsoft\WindowsApps.
+Simulator 'mti_se' is ignored.

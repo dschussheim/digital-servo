@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<DeviceUsageSummary rev="11">
+<DesignStatistics TimeStamp="Mon May 29 15:31:18 2017"><group name="NetStatistics">
+<item name="NumNets_Active" rev="11">
+<attrib name="value" value="4"/></item>
+<item name="NumNets_Gnd" rev="11">
+<attrib name="value" value="1"/></item>
+<item name="NumNets_Vcc" rev="11">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Gnd_BOUNCEIN" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Gnd_HVCCGNDOUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Gnd_IOBIN2OUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Gnd_IOBOUTPUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Gnd_PADINPUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Gnd_PINFEED" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_HVCCGNDOUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_IOBIN2OUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_IOBOUTPUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_PADINPUT" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_PINFEED" rev="11">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="SiteStatistics">
+<item name="IOB-IOB33M" rev="11">
+<attrib name="value" value="2"/></item>
+<item name="IOB-IOB33S" rev="11">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="10">
+<attrib name="value" value="4"/></item>
+<item name="AGG_IO" rev="10">
+<attrib name="value" value="4"/></item>
+<item name="AGG_LOCED_IO" rev="10">
+<attrib name="value" value="4"/></item>
+<item name="NUM_BONDED_IOB" rev="10">
+<attrib name="value" value="4"/></item>
+<item name="NUM_LOCED_IOB" rev="10">
+<attrib name="value" value="4"/></item>
+</group>
+</DesignStatistics>
+<DeviceUsage TimeStamp="Mon May 29 15:31:18 2017"><group name="SiteSummary">
+<item name="IOB" rev="11">
+<attrib name="total" value="1000000"/><attrib name="used" value="4"/></item>
+<item name="IOB_OUTBUF" rev="11">
+<attrib name="total" value="1000000"/><attrib name="used" value="4"/></item>
+<item name="PAD" rev="11">
+<attrib name="total" value="1000000"/><attrib name="used" value="4"/></item>
+</group>
+</DeviceUsage>
+<ReportPinData TimeStamp="Mon May 29 15:31:18 2017"><group name="IOB_OUTBUF">
+<item name="IN" rev="11">
+<attrib name="value" value="4"/></item>
+<item name="OUT" rev="11">
+<attrib name="value" value="4"/></item>
+</group>
+<group name="PAD">
+<item name="PAD" rev="11">
+<attrib name="value" value="4"/></item>
+</group>
+<group name="IOB">
+<item name="O" rev="11">
+<attrib name="value" value="4"/></item>
+<item name="PAD" rev="11">
+<attrib name="value" value="4"/></item>
+</group>
+</ReportPinData>
+<CmdHistory>
+</CmdHistory>
+</DeviceUsageSummary>

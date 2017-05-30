@@ -1,0 +1,20 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+//
+// clock module to figure out how to simulate stuff
+//
+//////////////////////////////////////////////////////////////////////////////////
+module clock(
+    input 	wire 	on_in,
+    output 	wire 	out
+    );
+
+initial begin
+	out <= 0;
+end
+
+always @(on_in) begin
+#1	out <= ~out;
+end
+
+endmodule

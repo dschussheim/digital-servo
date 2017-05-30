@@ -1,0 +1,193 @@
+Added Pin To Net: NetName=AGND Pin=J800b-156
+Added Pin To Net: NetName=J800_3 Pin=J800-3
+Added Pin To Net: NetName=J800_3 Pin=J800b-4
+Added Net: Name=J800_3
+Added Pin To Net: NetName=J800_5 Pin=J800-5
+Added Pin To Net: NetName=J800_5 Pin=J800b-6
+Added Net: Name=J800_5
+Added Pin To Net: NetName=J800_7 Pin=J800-7
+Added Pin To Net: NetName=J800_7 Pin=J800b-8
+Added Net: Name=J800_7
+Added Pin To Net: NetName=J800_9 Pin=J800-9
+Added Pin To Net: NetName=J800_9 Pin=J800b-10
+Added Net: Name=J800_9
+Added Pin To Net: NetName=J800_13 Pin=J800-13
+Added Pin To Net: NetName=J800_13 Pin=J800b-14
+Added Net: Name=J800_13
+Added Pin To Net: NetName=J800_17 Pin=J800-17
+Added Pin To Net: NetName=J800_17 Pin=J800b-18
+Added Net: Name=J800_17
+Added Pin To Net: NetName=J800_21 Pin=J800-21
+Added Pin To Net: NetName=J800_21 Pin=J800b-22
+Added Net: Name=J800_21
+Added Pin To Net: NetName=J800_25 Pin=J800-25
+Added Pin To Net: NetName=J800_25 Pin=J800b-26
+Added Net: Name=J800_25
+Added Pin To Net: NetName=J800_29 Pin=J800-29
+Added Pin To Net: NetName=J800_29 Pin=J800b-30
+Added Net: Name=J800_29
+Added Pin To Net: NetName=J800_33 Pin=J800-33
+Added Pin To Net: NetName=J800_33 Pin=J800b-34
+Added Net: Name=J800_33
+Added Pin To Net: NetName=J800_37 Pin=J800-37
+Added Pin To Net: NetName=J800_37 Pin=J800b-38
+Added Net: Name=J800_37
+Added Pin To Net: NetName=J800_41 Pin=J800-41
+Added Pin To Net: NetName=J800_41 Pin=J800b-42
+Added Net: Name=J800_41
+Added Pin To Net: NetName=J800_45 Pin=J800-45
+Added Pin To Net: NetName=J800_45 Pin=J800b-46
+Added Net: Name=J800_45
+Added Pin To Net: NetName=J800_47 Pin=J800-47
+Added Pin To Net: NetName=J800_47 Pin=J800b-48
+Added Net: Name=J800_47
+Added Pin To Net: NetName=J800_51 Pin=J800-51
+Added Pin To Net: NetName=J800_51 Pin=J800b-52
+Added Net: Name=J800_51
+Added Pin To Net: NetName=J800_53 Pin=J800-53
+Added Pin To Net: NetName=J800_53 Pin=J800b-54
+Added Net: Name=J800_53
+Added Pin To Net: NetName=J800_57 Pin=J800-57
+Added Pin To Net: NetName=J800_57 Pin=J800b-58
+Added Net: Name=J800_57
+Added Pin To Net: NetName=J800_59 Pin=J800-59
+Added Pin To Net: NetName=J800_59 Pin=J800b-60
+Added Net: Name=J800_59
+Added Pin To Net: NetName=J800_63 Pin=J800-63
+Added Pin To Net: NetName=J800_63 Pin=J800b-64
+Added Net: Name=J800_63
+Added Pin To Net: NetName=J800_65 Pin=J800-65
+Added Pin To Net: NetName=J800_65 Pin=J800b-66
+Added Net: Name=J800_65
+Added Pin To Net: NetName=J800_69 Pin=J800-69
+Added Pin To Net: NetName=J800_69 Pin=J800b-70
+Added Net: Name=J800_69
+Added Pin To Net: NetName=J800_71 Pin=J800-71
+Added Pin To Net: NetName=J800_71 Pin=J800b-72
+Added Net: Name=J800_71
+Added Pin To Net: NetName=J800_75 Pin=J800-75
+Added Pin To Net: NetName=J800_75 Pin=J800b-76
+Added Net: Name=J800_75
+Added Pin To Net: NetName=J800_77 Pin=J800-77
+Added Pin To Net: NetName=J800_77 Pin=J800b-78
+Added Net: Name=J800_77
+Added Pin To Net: NetName=J800_79 Pin=J800-79
+Added Pin To Net: NetName=J800_79 Pin=J800b-80
+Added Net: Name=J800_79
+Added Pin To Net: NetName=J800_81 Pin=J800-81
+Added Pin To Net: NetName=J800_81 Pin=J800b-82
+Added Net: Name=J800_81
+Added Pin To Net: NetName=J800_83 Pin=J800-83
+Added Pin To Net: NetName=J800_83 Pin=J800b-84
+Added Net: Name=J800_83
+Added Pin To Net: NetName=J800_85 Pin=J800-85
+Added Pin To Net: NetName=J800_85 Pin=J800b-86
+Added Net: Name=J800_85
+Added Pin To Net: NetName=J800_87 Pin=J800-87
+Added Pin To Net: NetName=J800_87 Pin=J800b-88
+Added Net: Name=J800_87
+Added Pin To Net: NetName=J800_89 Pin=J800-89
+Added Pin To Net: NetName=J800_89 Pin=J800b-90
+Added Net: Name=J800_89
+Added Pin To Net: NetName=J800_91 Pin=J800-91
+Added Pin To Net: NetName=J800_91 Pin=J800b-92
+Added Net: Name=J800_91
+Added Pin To Net: NetName=J800_95 Pin=J800-95
+Added Pin To Net: NetName=J800_95 Pin=J800b-96
+Added Net: Name=J800_95
+Added Pin To Net: NetName=J800_97 Pin=J800-97
+Added Pin To Net: NetName=J800_97 Pin=J800b-98
+Added Net: Name=J800_97
+Added Pin To Net: NetName=J800_99 Pin=J800-99
+Added Pin To Net: NetName=J800_99 Pin=J800b-100
+Added Net: Name=J800_99
+Added Pin To Net: NetName=J800_101 Pin=J800-101
+Added Pin To Net: NetName=J800_101 Pin=J800b-102
+Added Net: Name=J800_101
+Added Pin To Net: NetName=J800_103 Pin=J800-103
+Added Pin To Net: NetName=J800_103 Pin=J800b-104
+Added Net: Name=J800_103
+Added Pin To Net: NetName=J800_105 Pin=J800-105
+Added Pin To Net: NetName=J800_105 Pin=J800b-106
+Added Net: Name=J800_105
+Added Pin To Net: NetName=J800_107 Pin=J800-107
+Added Pin To Net: NetName=J800_107 Pin=J800b-108
+Added Net: Name=J800_107
+Added Pin To Net: NetName=J800_109 Pin=J800-109
+Added Pin To Net: NetName=J800_109 Pin=J800b-110
+Added Net: Name=J800_109
+Added Pin To Net: NetName=J800_111 Pin=J800-111
+Added Pin To Net: NetName=J800_111 Pin=J800b-112
+Added Net: Name=J800_111
+Added Pin To Net: NetName=J800_115 Pin=J800-115
+Added Pin To Net: NetName=J800_115 Pin=J800b-116
+Added Net: Name=J800_115
+Added Pin To Net: NetName=J800_117 Pin=J800-117
+Added Pin To Net: NetName=J800_117 Pin=J800b-118
+Added Net: Name=J800_117
+Added Pin To Net: NetName=J800_119 Pin=J800-119
+Added Pin To Net: NetName=J800_119 Pin=J800b-120
+Added Net: Name=J800_119
+Added Pin To Net: NetName=J800_121 Pin=J800-121
+Added Pin To Net: NetName=J800_121 Pin=J800b-122
+Added Net: Name=J800_121
+Added Pin To Net: NetName=J800_123 Pin=J800-123
+Added Pin To Net: NetName=J800_123 Pin=J800b-124
+Added Net: Name=J800_123
+Added Pin To Net: NetName=J800_125 Pin=J800-125
+Added Pin To Net: NetName=J800_125 Pin=J800b-126
+Added Net: Name=J800_125
+Added Pin To Net: NetName=J800_127 Pin=J800-127
+Added Pin To Net: NetName=J800_127 Pin=J800b-128
+Added Net: Name=J800_127
+Added Pin To Net: NetName=J800_129 Pin=J800-129
+Added Pin To Net: NetName=J800_129 Pin=J800b-130
+Added Net: Name=J800_129
+Added Pin To Net: NetName=J800_131 Pin=J800-131
+Added Pin To Net: NetName=J800_131 Pin=J800b-132
+Added Net: Name=J800_131
+Added Pin To Net: NetName=J800_135 Pin=J800-135
+Added Pin To Net: NetName=J800_135 Pin=J800b-136
+Added Net: Name=J800_135
+Added Pin To Net: NetName=J800_137 Pin=J800-137
+Added Pin To Net: NetName=J800_137 Pin=J800b-138
+Added Net: Name=J800_137
+Added Pin To Net: NetName=J800_139 Pin=J800-139
+Added Pin To Net: NetName=J800_139 Pin=J800b-140
+Added Net: Name=J800_139
+Added Pin To Net: NetName=J800_141 Pin=J800-141
+Added Pin To Net: NetName=J800_141 Pin=J800b-142
+Added Net: Name=J800_141
+Added Pin To Net: NetName=J800_143 Pin=J800-143
+Added Pin To Net: NetName=J800_143 Pin=J800b-144
+Added Net: Name=J800_143
+Added Pin To Net: NetName=J800_145 Pin=J800-145
+Added Pin To Net: NetName=J800_145 Pin=J800b-146
+Added Net: Name=J800_145
+Added Pin To Net: NetName=J800_147 Pin=J800-147
+Added Pin To Net: NetName=J800_147 Pin=J800b-148
+Added Net: Name=J800_147
+Added Pin To Net: NetName=J800_151 Pin=J800-151
+Added Pin To Net: NetName=J800_151 Pin=J800b-152
+Added Net: Name=J800_151
+Added Pin To Net: NetName=J800_153 Pin=J800-153
+Added Pin To Net: NetName=J800_153 Pin=J800b-154
+Added Net: Name=J800_153
+Added Pin To Net: NetName=J800_157 Pin=J800-157
+Added Pin To Net: NetName=J800_157 Pin=J800b-158
+Added Net: Name=J800_157
+Added Pin To Net: NetName=J800_159 Pin=J800-159
+Added Pin To Net: NetName=J800_159 Pin=J800b-160
+Added Net: Name=J800_159
+Added Pin To Net: NetName=J800_161 Pin=J800-161
+Added Pin To Net: NetName=J800_161 Pin=J800b-162
+Added Net: Name=J800_161
+Added Pin To Net: NetName=J800_163 Pin=J800-163
+Added Pin To Net: NetName=J800_163 Pin=J800b-164
+Added Net: Name=J800_163
+Added Pin To Net: NetName=J800_165 Pin=J800-165
+Added Pin To Net: NetName=J800_165 Pin=J800b-166
+Added Net: Name=J800_165
+Added Pin To Net: NetName=J800_167 Pin=J800-167
+Added Pin To Net: NetName=J800_167 Pin=J800b-168
+Added Net: Name=J800_167

@@ -1,0 +1,33 @@
+xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc led_on.ucf -p xc7k160t-fbg676-1 led_on.ngc led_on.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o led_on_map.ncd led_on.ngd led_on.pcf 
+par -w -intstyle ise -ol high -mt off led_on_map.ncd led_on.ncd led_on.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml led_on.twx led_on.ncd -o led_on.twr led_on.pcf -ucf led_on.ucf 
+bitgen -intstyle ise -f led_on.ut led_on.ncd 
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o led_on_map.ncd led_on.ngd led_on.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc led_on.ucf -p xc7k160t-fbg676-1 led_on.ngc led_on.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o led_on_map.ncd led_on.ngd led_on.pcf 
+par -w -intstyle ise -ol high -mt off led_on_map.ncd led_on.ncd led_on.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml led_on.twx led_on.ncd -o led_on.twr led_on.pcf -ucf led_on.ucf 
+bitgen -intstyle ise -f led_on.ut led_on.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc led_on.ucf -p xc7k160t-fbg676-1 led_on.ngc led_on.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o led_on_map.ncd led_on.ngd led_on.pcf 
+par -w -intstyle ise -ol high -mt off led_on_map.ncd led_on.ncd led_on.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml led_on.twx led_on.ncd -o led_on.twr led_on.pcf -ucf led_on.ucf 
+bitgen -intstyle ise -f led_on.ut led_on.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc led_on.ucf -p xc7k160t-fbg676-1 led_on.ngc led_on.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc led_on.ucf -p xc7k160t-fbg676-1 led_on.ngc led_on.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o led_on_map.ncd led_on.ngd led_on.pcf 
+par -w -intstyle ise -ol high -mt off led_on_map.ncd led_on.ncd led_on.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml led_on.twx led_on.ncd -o led_on.twr led_on.pcf -ucf led_on.ucf 
+bitgen -intstyle ise -f led_on.ut led_on.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc led_on.ucf -p xc7k160t-fbg676-1 led_on.ngc led_on.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o led_on_map.ncd led_on.ngd led_on.pcf 
+par -w -intstyle ise -ol high -mt off led_on_map.ncd led_on.ncd led_on.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml led_on.twx led_on.ncd -o led_on.twr led_on.pcf -ucf led_on.ucf 
+bitgen -intstyle ise -f led_on.ut led_on.ncd 

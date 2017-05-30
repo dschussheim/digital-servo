@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=DAC1_DCO_P Pin=J701-141
+Removed Pin From Net: NetName=DAC1_DCO_N Pin=J701-143
+Removed Pin From Net: NetName=DAC1_DCO_P Pin=J701b-142
+Removed Pin From Net: NetName=DAC1_DCO_N Pin=J701b-144
+Added Pin To Net: NetName=DAC1_DCO_P Pin=J701-139
+Added Pin To Net: NetName=DAC1_DCO_N Pin=J701-141
+Added Pin To Net: NetName=DVDD25 Pin=J701-143
+Added Pin To Net: NetName=DVDD25 Pin=J701b-68
+Added Pin To Net: NetName=DVDD25 Pin=J701b-87
+Added Pin To Net: NetName=DVDD25 Pin=J701b-96
+Added Pin To Net: NetName=DVDD25 Pin=J701b-139
+Added Pin To Net: NetName=DAC1_DCO_P Pin=J701b-140
+Added Pin To Net: NetName=DAC1_DCO_N Pin=J701b-142
+Added Pin To Net: NetName=DVDD25 Pin=J701b-144
