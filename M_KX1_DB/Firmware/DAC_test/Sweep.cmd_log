@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj DAC_test -o C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/Sweep.tfi -lib work C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test//Sweep.v -module Sweep -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

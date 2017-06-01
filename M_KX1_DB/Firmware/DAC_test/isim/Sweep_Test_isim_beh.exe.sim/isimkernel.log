@@ -1,0 +1,29 @@
+Command line:
+   Sweep_Test_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  56105
+
+Thu Jun 01 19:18:32 2017
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 841.626 Meg
+
+ Total Signals          : 19
+ Total Nets             : 95
+ Total Signal Drivers   : 11
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 15
+ Total Traceable Variables  : 30
+ Total Scalar Nets and Variables : 360
+Total Line Count : 40
+
+ Total Simulation Time: 0.09375 sec
+
+ Current Memory Usage: 841.626 Meg
+
+Thu Jun 01 19:18:57 2017
+

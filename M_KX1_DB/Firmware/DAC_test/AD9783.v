@@ -431,7 +431,7 @@ ODDR #(
 // 7 Series
 // Xilinx HDL Libraries Guide, version 14.7
 OBUFDS #(
-.IOSTANDARD("LVDS_18"), // Specify the output I/O standard
+.IOSTANDARD("LVDS"), // Specify the output I/O standard
 .SLEW("SLOW") // Specify the output slew rate
 ) OBUFDS_inst (
 	.O(data_out_p[pin_count]), // Diff_p output (connect directly to top-level port)

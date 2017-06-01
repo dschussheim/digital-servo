@@ -8,9 +8,12 @@
 //
 // Generates a triangle wave sweep.
 //
+//	1 June 2017 - Changed [SIGNAL_OUT_SIZE+1:0] -> [SIGNAL_OUT_SIZE-1:0] in signal_out declaration 
+//	for consistency with what SIGNA_OUT_SIZE represents.
+//
 ///////////////////////////////////////////////////////////////////////////////
 
-`include "timescale.v"
+//`include "timescale.v"
 
 module Sweep(
    input  wire												clk_in,
@@ -18,7 +21,7 @@ module Sweep(
 	input  wire signed	[15:0]						minval_in,
 	input	 wire signed	[15:0]						maxval_in,
 	input	 wire				[31:0]						stepsize_in,
-	output reg  signed	[SIGNAL_OUT_SIZE+1:0]	signal_out
+	output reg  signed	[SIGNAL_OUT_SIZE-1:0]	signal_out
 );
 
 // Parameters

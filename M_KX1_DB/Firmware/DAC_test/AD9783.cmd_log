@@ -1,15 +1,14 @@
-xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7k160t-fbg676-1 AD9783.ngc AD9783.ngd  
 xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
 xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7k160t-fbg676-1 AD9783.ngc AD9783.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AD9783_map.ncd AD9783.ngd AD9783.pcf 
+par -w -intstyle ise -ol high -mt off AD9783_map.ncd AD9783.ncd AD9783.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml AD9783.twx AD9783.ncd -o AD9783.twr AD9783.pcf 
 xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
-netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim AD9783.ngc AD9783_synthesis.v 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7k160t-fbg676-1 AD9783.ngc AD9783.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AD9783_map.ncd AD9783.ngd AD9783.pcf 
+par -w -intstyle ise -ol high -mt off AD9783_map.ncd AD9783.ncd AD9783.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml AD9783.twx AD9783.ncd -o AD9783.twr AD9783.pcf 
+vhdtdtfi -lang verilog -prj DAC_test -o C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.tfi -lib work C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test//AD9783.v -module AD9783 -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

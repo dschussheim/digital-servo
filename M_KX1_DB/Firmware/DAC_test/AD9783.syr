@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: AD9783.prj
 
@@ -111,17 +111,12 @@ Parsing module <AD9783>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v" Line 99: Port CLKFBOUT is not connected to this instance
 
 Elaborating module <AD9783>.
 
-Elaborating module <MMCME2_BASE(BANDWIDTH="OPTIMIZED",CLKFBOUT_MULT_F=8.0,CLKFBOUT_PHASE=0.0,CLKIN1_PERIOD=10.0,CLKOUT1_DIVIDE=1,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT0_PHASE=0.0,REF_JITTER1=0.01)>.
+Elaborating module <ODDR(DDR_CLK_EDGE="OPPOSITE_EDGE",INIT=1'b0,SRTYPE="SYNC")>.
 
-Elaborating module <BUFR(BUFR_DIVIDE="BYPASS")>.
-
-Elaborating module <OSERDESE2(DATA_RATE_OQ="SDR",DATA_RATE_TQ="SDR",DATA_WIDTH=8,SERDES_MODE="MASTER")>.
-
-Elaborating module <OBUFDS(IOSTANDARD="LVDS_18",SLEW="SLOW")>.
+Elaborating module <OBUFDS(IOSTANDARD="LVDS",SLEW="SLOW")>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -130,6 +125,7 @@ Elaborating module <OBUFDS(IOSTANDARD="LVDS_18",SLEW="SLOW")>.
 Synthesizing Unit <AD9783>.
     Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v".
         SMP_DLY = 8'b00000000
+WARNING:Xst:647 - Input <rst_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 34-bit register for signal <data_in>.
     WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 1 in block <AD9783>.
     WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 0 in block <AD9783>.
@@ -167,7 +163,6 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1710 - FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_17> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:1901 - Instance MMCME2_BASE_inst in unit AD9783 of type MMCME2_BASE has been replaced by MMCME2_ADV
 
 Optimizing unit <AD9783> ...
 
@@ -208,17 +203,14 @@ Primitive and Black Box Usage:
 # BELS                             : 2
 #      GND                         : 1
 #      VCC                         : 1
-# FlipFlops/Latches                : 32
+# FlipFlops/Latches                : 50
 #      FD                          : 32
+#      ODDR                        : 18
 # Clock Buffers                    : 1
-#      BUFG                        : 1
-# IO Buffers                       : 52
-#      IBUF                        : 34
+#      BUFGP                       : 1
+# IO Buffers                       : 50
+#      IBUF                        : 32
 #      OBUFDS                      : 18
-# Others                           : 20
-#      BUFR                        : 1
-#      MMCME2_ADV                  : 1
-#      OSERDESE2                   : 18
 
 Device utilization summary:
 ---------------------------
@@ -227,18 +219,18 @@ Selected Device : 7k160tfbg676-1
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:              50  out of  202800     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
+ Number of LUT Flip Flop pairs used:     50
+   Number with an unused Flip Flop:       0  out of     50     0%  
+   Number with an unused LUT:            50  out of     50   100%  
+   Number of fully used LUT-FF pairs:     0  out of     50     0%  
    Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          70
- Number of bonded IOBs:                  70  out of    400    17%  
-    IOB Flip Flops/Latches:              32
+ Number of bonded IOBs:                  69  out of    400    17%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -264,32 +256,46 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk_in                             | IBUF+BUFG              | 32    |
-clk8xInt                           | NONE(BUFR_inst)        | 1     |
+clk_in                             | BUFGP                  | 50    |
 -----------------------------------+------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------+------------------------+-------+
-Control Signal                     | Buffer(FF name)        | Load  |
------------------------------------+------------------------+-------+
-N0(XST_VCC:P)                      | NONE(BUFR_inst)        | 1     |
-N1(XST_GND:G)                      | NONE(BUFR_inst)        | 1     |
------------------------------------+------------------------+-------+
+No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: No path found
+   Minimum period: 1.115ns (Maximum Frequency: 896.861MHz)
    Minimum input arrival time before clock: 0.410ns
-   Maximum output required time after clock: 0.701ns
-   Maximum combinational path delay: 0.511ns
+   Maximum output required time after clock: 1.006ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_in'
+  Clock period: 1.115ns (frequency: 896.861MHz)
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Delay:               1.115ns (Levels of Logic = 0)
+  Source:            data_in_0 (FF)
+  Destination:       pins[0].ODDR_inst (FF)
+  Source Clock:      clk_in rising
+  Destination Clock: clk_in rising
+
+  Data Path: data_in_0 to pins[0].ODDR_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.282   0.399  data_in_0 (data_in_0)
+     ODDR:D1                   0.434          pins[0].ODDR_inst
+    ----------------------------------------
+    Total                      1.115ns (0.716ns logic, 0.399ns route)
+                                       (64.2% logic, 35.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
@@ -312,57 +318,47 @@ Offset:              0.410ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
-  Total number of paths / destination ports: 128 / 128
+  Total number of paths / destination ports: 36 / 36
 -------------------------------------------------------------------------
-Offset:              0.701ns (Levels of Logic = 0)
-  Source:            data_in_18 (FF)
-  Destination:       pins[0].OSERDESE2_inst:D2 (PAD)
+Offset:              1.006ns (Levels of Logic = 1)
+  Source:            pins[15].ODDR_inst (FF)
+  Destination:       D_out_p<15> (PAD)
   Source Clock:      clk_in rising
 
-  Data Path: data_in_18 to pins[0].OSERDESE2_inst:D2
+  Data Path: pins[15].ODDR_inst to D_out_p<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               4   0.282   0.419  data_in_18 (data_in_18)
-    OSERDESE2:D2               0.000          pins[0].OSERDESE2_inst
+     ODDR:C->Q             1   0.607   0.399  pins[15].ODDR_inst (data_out_to_pins<15>)
+     OBUFDS:I->O               0.000          pins[15].OBUFDS_inst (D_out_p<15>)
     ----------------------------------------
-    Total                      0.701ns (0.282ns logic, 0.419ns route)
-                                       (40.2% logic, 59.8% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 56 / 56
--------------------------------------------------------------------------
-Delay:               0.511ns (Levels of Logic = 1)
-  Source:            rst_in (PAD)
-  Destination:       pins[0].OSERDESE2_inst:RST (PAD)
-
-  Data Path: rst_in to pins[0].OSERDESE2_inst:RST
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            18   0.000   0.511  rst_in_IBUF (rst_in_IBUF)
-    OSERDESE2:RST              0.000          pins[0].OSERDESE2_inst
-    ----------------------------------------
-    Total                      0.511ns (0.000ns logic, 0.511ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      1.006ns (0.607ns logic, 0.399ns route)
+                                       (60.3% logic, 39.7% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_in         |    1.115|         |         |         |
+---------------+---------+---------+---------+---------+
+
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.50 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.54 secs
  
 --> 
 
-Total memory usage is 409108 kilobytes
+Total memory usage is 409092 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    7 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
 

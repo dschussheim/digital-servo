@@ -1,0 +1,505 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.34 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.34 secs
+ 
+--> Reading design: DAC_Sweep_Test.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "DAC_Sweep_Test.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "DAC_Sweep_Test"
+Output Format                      : NGC
+Target Device                      : xc7k160t-1-fbg676
+
+---- Source Options
+Top Module Name                    : DAC_Sweep_Test
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v" into library work
+Parsing module <Sweep>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v" into library work
+Parsing module <AD9783>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" into library work
+Parsing module <DAC_Sweep_Test>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <DAC_Sweep_Test>.
+WARNING:HDLCompiler:872 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 49: Using initial value of DAC0_in since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 71: Using initial value of minval_in since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 72: Using initial value of maxval_in since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 73: Using initial value of stepsize_in since it is never assigned
+
+Elaborating module <BUFR(BUFR_DIVIDE="BYPASS")>.
+
+Elaborating module <AD9783>.
+
+Elaborating module <ODDR(DDR_CLK_EDGE="OPPOSITE_EDGE",INIT=1'b0,SRTYPE="SYNC")>.
+
+Elaborating module <OBUFDS(IOSTANDARD="LVDS",SLEW="SLOW")>.
+
+Elaborating module <Sweep>.
+WARNING:HDLCompiler:413 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v" Line 59: Result of 18-bit expression is truncated to fit in 16-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <DAC_Sweep_Test>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v".
+        SIGNAL_OUT_SIZE = 16
+    Summary:
+	no macro.
+Unit <DAC_Sweep_Test> synthesized.
+
+Synthesizing Unit <AD9783>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v".
+        SMP_DLY = 8'b00000000
+WARNING:Xst:647 - Input <rst_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 34-bit register for signal <data_in>.
+    WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 1 in block <AD9783>.
+    WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 0 in block <AD9783>.
+    Summary:
+	inferred  34 D-type flip-flop(s).
+Unit <AD9783> synthesized.
+
+Synthesizing Unit <Sweep>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v".
+        SIGNAL_OUT_SIZE = 16
+    Found 16-bit register for signal <current_val_f<31:16>>.
+    Found 1-bit register for signal <state_f>.
+    Found 16-bit register for signal <signal_out>.
+    Found 34-bit register for signal <next_val_f>.
+    Found 34-bit subtractor for signal <next_val_f[33]_GND_6_o_sub_4_OUT> created at line 44.
+    Found 34-bit adder for signal <next_val_f[33]_GND_6_o_add_2_OUT> created at line 42.
+    Found 34-bit comparator greater for signal <next_val_f[33]_maxval_in[15]_LessThan_6_o> created at line 46
+    Found 34-bit comparator greater for signal <minval_in[15]_next_val_f[33]_LessThan_7_o> created at line 49
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <Sweep> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 34-bit addsub                                         : 1
+# Registers                                            : 5
+ 1-bit register                                        : 1
+ 16-bit register                                       : 2
+ 34-bit register                                       : 2
+# Comparators                                          : 2
+ 34-bit comparator greater                             : 2
+# Multiplexers                                         : 1
+ 34-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <data_in_0> in Unit <AD9783_inst> is equivalent to the following 15 FFs/Latches, which will be removed : <data_in_1> <data_in_2> <data_in_3> <data_in_4> <data_in_5> <data_in_6> <data_in_7> <data_in_8> <data_in_9> <data_in_10> <data_in_11> <data_in_12> <data_in_13> <data_in_14> <data_in_17> 
+INFO:Xst:2261 - The FF/Latch <data_in_15> in Unit <AD9783_inst> is equivalent to the following FF/Latch, which will be removed : <data_in_16> 
+WARNING:Xst:1710 - FF/Latch <data_in_0> (without init value) has a constant value of 0 in block <AD9783_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_15> (without init value) has a constant value of 1 in block <AD9783_inst>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <Sweep>.
+The following registers are absorbed into accumulator <next_val_f>: 1 register on signal <next_val_f>.
+Unit <Sweep> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Accumulators                                         : 1
+ 34-bit updown accumulator                             : 1
+# Registers                                            : 67
+ Flip-Flops                                            : 67
+# Comparators                                          : 2
+ 34-bit comparator greater                             : 2
+# Multiplexers                                         : 1
+ 34-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <data_in_17> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_15> (without init value) has a constant value of 1 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_14> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_13> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_12> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_11> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_10> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_9> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_8> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_7> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_6> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_5> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_4> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_3> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_2> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_1> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_0> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <DAC_Sweep_Test> ...
+
+Optimizing unit <AD9783> ...
+
+Optimizing unit <Sweep> ...
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_8> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_7> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_6> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_5> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_4> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_3> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_2> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_1> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_0> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/current_val_f_31> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Sweep_inst/signal_out_15> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AD9783_inst/data_in_33> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Sweep_inst/next_val_f_33> in Unit <DAC_Sweep_Test> is equivalent to the following 2 FFs/Latches, which will be removed : <Sweep_inst/next_val_f_32> <Sweep_inst/next_val_f_31> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block DAC_Sweep_Test, actual ratio is 0.
+FlipFlop Sweep_inst/state_f has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <DAC_Sweep_Test> :
+	Found 2-bit shift register for signal <AD9783_inst/data_in_32>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_31>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_30>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_29>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_28>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_27>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_26>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_25>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_24>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_23>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_22>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_21>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_20>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_19>.
+	Found 2-bit shift register for signal <AD9783_inst/data_in_18>.
+Unit <DAC_Sweep_Test> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Shift Registers                                      : 15
+ 2-bit shift register                                  : 15
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : DAC_Sweep_Test.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 126
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 9
+#      LUT2                        : 28
+#      LUT3                        : 15
+#      LUT4                        : 1
+#      LUT5                        : 6
+#      MUXCY                       : 40
+#      VCC                         : 1
+#      XORCY                       : 23
+# FlipFlops/Latches                : 73
+#      FDE                         : 15
+#      FDR                         : 40
+#      ODDR                        : 18
+# Shift Registers                  : 15
+#      SRLC16E                     : 15
+# IO Buffers                       : 20
+#      IBUF                        : 2
+#      OBUFDS                      : 18
+# Others                           : 1
+#      BUFR                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7k160tfbg676-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              73  out of  202800     0%  
+ Number of Slice LUTs:                   76  out of  101400     0%  
+    Number used as Logic:                61  out of  101400     0%  
+    Number used as Memory:               15  out of  35000     0%  
+       Number used as SRL:               15
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     96
+   Number with an unused Flip Flop:      23  out of     96    23%  
+   Number with an unused LUT:            20  out of     96    20%  
+   Number of fully used LUT-FF pairs:    53  out of     96    55%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          38
+ Number of bonded IOBs:                  38  out of    400     9%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | IBUF+BUFR              | 89    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------+------------------------+-------+
+Control Signal                                                               | Buffer(FF name)        | Load  |
+-----------------------------------------------------------------------------+------------------------+-------+
+DAC1_in<15>(XST_GND:G)                                                       | NONE(BUFR_inst)        | 1     |
+Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<0>(XST_VCC:P)| NONE(BUFR_inst)        | 1     |
+-----------------------------------------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 1.992ns (Maximum Frequency: 502.008MHz)
+   Minimum input arrival time before clock: 1.344ns
+   Maximum output required time after clock: 1.006ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 1.992ns (frequency: 502.008MHz)
+  Total number of paths / destination ports: 1783 / 85
+-------------------------------------------------------------------------
+Delay:               1.992ns (Levels of Logic = 7)
+  Source:            Sweep_inst/next_val_f_10 (FF)
+  Destination:       Sweep_inst/current_val_f_29 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Sweep_inst/next_val_f_10 to Sweep_inst/current_val_f_29
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.282   0.731  Sweep_inst/next_val_f_10 (Sweep_inst/next_val_f_10)
+     LUT5:I0->O            1   0.053   0.000  Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_lut<2> (Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_lut<2>)
+     MUXCY:S->O            1   0.291   0.000  Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<2> (Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<3> (Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<4> (Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<5> (Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<5>)
+     MUXCY:CI->O          16   0.015   0.511  Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<6> (Sweep_inst/Mcompar_next_val_f[33]_maxval_in[15]_LessThan_6_o_cy<6>)
+     LUT3:I2->O            1   0.053   0.000  Sweep_inst/next_val_f[33]_minval_in[15]_mux_7_OUT<29>1 (Sweep_inst/next_val_f[33]_minval_in[15]_mux_7_OUT<29>1)
+     FDR:D                     0.011          Sweep_inst/current_val_f_29
+    ----------------------------------------
+    Total                      1.992ns (0.750ns logic, 1.242ns route)
+                                       (37.7% logic, 62.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 40 / 40
+-------------------------------------------------------------------------
+Offset:              1.344ns (Levels of Logic = 2)
+  Source:            on_in (PAD)
+  Destination:       Sweep_inst/next_val_f_33 (FF)
+  Destination Clock: clk rising
+
+  Data Path: on_in to Sweep_inst/next_val_f_33
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.000   0.399  on_in_IBUF (on_in_IBUF)
+     INV:I->O             40   0.067   0.553  Sweep_inst/on_in_inv1_INV_0 (Sweep_inst/on_in_inv)
+     FDR:R                     0.325          Sweep_inst/current_val_f_16
+    ----------------------------------------
+    Total                      1.344ns (0.392ns logic, 0.952ns route)
+                                       (29.2% logic, 70.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 36 / 36
+-------------------------------------------------------------------------
+Offset:              1.006ns (Levels of Logic = 1)
+  Source:            AD9783_inst/pins[15].ODDR_inst (FF)
+  Destination:       D_out_p<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: AD9783_inst/pins[15].ODDR_inst to D_out_p<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     ODDR:C->Q             1   0.607   0.399  AD9783_inst/pins[15].ODDR_inst (AD9783_inst/data_out_to_pins<15>)
+     OBUFDS:I->O               0.000          AD9783_inst/pins[15].OBUFDS_inst (D_out_p<15>)
+    ----------------------------------------
+    Total                      1.006ns (0.607ns logic, 0.399ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.992|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.01 secs
+ 
+--> 
+
+Total memory usage is 409096 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   40 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

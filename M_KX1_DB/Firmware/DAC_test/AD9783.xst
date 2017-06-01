@@ -1,6 +1,9 @@
-set -tmpdir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn AD9783.prj
+-ofn AD9783
+-ofmt NGC
 -p xc7k160t-1-fbg676
 -top AD9783
 -opt_mode Speed
@@ -47,4 +50,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn AD9783.prj

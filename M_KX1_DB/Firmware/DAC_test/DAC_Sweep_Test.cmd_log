@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim DAC_Sweep_Test.ngc DAC_Sweep_Test_synthesis.v 

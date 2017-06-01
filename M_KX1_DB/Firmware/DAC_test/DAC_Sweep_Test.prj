@@ -1,0 +1,3 @@
+verilog work "Sweep.v"
+verilog work "AD9783.v"
+verilog work "DAC_Sweep_Test.v"
