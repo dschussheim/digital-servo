@@ -4,3 +4,12 @@ xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/
 xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
 xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
 xst -intstyle ise -ifn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim AD9783.ngc AD9783_synthesis.v 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.syr" 

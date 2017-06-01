@@ -105,53 +105,264 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\SPI.v" into library work
-Parsing verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\/timescale.v" included at line 11.
-Parsing module <SPI>.
-Analyzing Verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" into library work
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v" into library work
 Parsing module <AD9783>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 62: Port CLKFBOUT is not connected to this instance
-WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 82: Port LOCK is not connected to this instance
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 206: Module <OSERDESE2> does not have a port named <SHIFTIN3>.
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 207: Module <OSERDESE2> does not have a port named <SHIFTIN4>.
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 210: Module <OSERDESE2> does not have a port named <SHIFTOUT3>.
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 211: Module <OSERDESE2> does not have a port named <SHIFTOUT4>.
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 212: Module <OSERDESE2> does not have a port named <TRAIN>.
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 215: Module <OSERDESE2> does not have a port named <CLK0>.
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 216: Module <OSERDESE2> does not have a port named <CLK1>.
-WARNING:HDLCompiler:25 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 220: Module <OSERDESE2> does not have a port named <IOCE>.
-WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 157: Port OFB is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v" Line 99: Port CLKFBOUT is not connected to this instance
 
 Elaborating module <AD9783>.
 
-Elaborating module <PLLE2_BASE(BANDWIDTH="OPTIMIZED",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=1,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKIN1_PERIOD=10.0,REF_JITTER1=0.01)>.
+Elaborating module <MMCME2_BASE(BANDWIDTH="OPTIMIZED",CLKFBOUT_MULT_F=8.0,CLKFBOUT_PHASE=0.0,CLKIN1_PERIOD=10.0,CLKOUT1_DIVIDE=1,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT0_PHASE=0.0,REF_JITTER1=0.01)>.
 
-Elaborating module <BUFPLL(DIVIDE=8,ENABLE_SYNC="TRUE")>.
-ERROR:HDLCompiler:597 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 160: Module OSERDESE2 does not have a parameter named TRAIN_PATTERN
-INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
-ERROR:HDLCompiler:597 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 163: Module OSERDESE2 does not have a parameter named OUTPUT_MODE
-INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+Elaborating module <BUFR(BUFR_DIVIDE="BYPASS")>.
 
 Elaborating module <OSERDESE2(DATA_RATE_OQ="SDR",DATA_RATE_TQ="SDR",DATA_WIDTH=8,SERDES_MODE="MASTER")>.
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 206: Cannot find port SHIFTIN3 on this module
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 207: Cannot find port SHIFTIN4 on this module
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 210: Cannot find port SHIFTOUT3 on this module
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 211: Cannot find port SHIFTOUT4 on this module
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 212: Cannot find port TRAIN on this module
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 215: Cannot find port CLK0 on this module
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 216: Cannot find port CLK1 on this module
-ERROR:HDLCompiler:267 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 220: Cannot find port IOCE on this module
-Module AD9783 remains a blackbox, due to errors in its contents
-WARNING:HDLCompiler:1499 - "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" Line 17: Empty module <AD9783> remains a black box.
+
+Elaborating module <OBUFDS(IOSTANDARD="LVDS_18",SLEW="SLOW")>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <AD9783>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v".
+        SMP_DLY = 8'b00000000
+    Found 34-bit register for signal <data_in>.
+    WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 1 in block <AD9783>.
+    WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 0 in block <AD9783>.
+    Summary:
+	inferred  34 D-type flip-flop(s).
+Unit <AD9783> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 1
+ 34-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_17> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_in_17> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance MMCME2_BASE_inst in unit AD9783 of type MMCME2_BASE has been replaced by MMCME2_ADV
+
+Optimizing unit <AD9783> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block AD9783, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 32
+ Flip-Flops                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : AD9783.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2
+#      GND                         : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 32
+#      FD                          : 32
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 52
+#      IBUF                        : 34
+#      OBUFDS                      : 18
+# Others                           : 20
+#      BUFR                        : 1
+#      MMCME2_ADV                  : 1
+#      OSERDESE2                   : 18
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7k160tfbg676-1 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                          70
+ Number of bonded IOBs:                  70  out of    400    17%  
+    IOB Flip Flops/Latches:              32
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_in                             | IBUF+BUFG              | 32    |
+clk8xInt                           | NONE(BUFR_inst)        | 1     |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+N0(XST_VCC:P)                      | NONE(BUFR_inst)        | 1     |
+N1(XST_GND:G)                      | NONE(BUFR_inst)        | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 0.410ns
+   Maximum output required time after clock: 0.701ns
+   Maximum combinational path delay: 0.511ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              0.410ns (Levels of Logic = 1)
+  Source:            DAC0_in<0> (PAD)
+  Destination:       data_in_0 (FF)
+  Destination Clock: clk_in rising
+
+  Data Path: DAC0_in<0> to data_in_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.000   0.399  DAC0_in_0_IBUF (DAC0_in_0_IBUF)
+     FD:D                      0.011          data_in_0
+    ----------------------------------------
+    Total                      0.410ns (0.011ns logic, 0.399ns route)
+                                       (2.7% logic, 97.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
+  Total number of paths / destination ports: 128 / 128
+-------------------------------------------------------------------------
+Offset:              0.701ns (Levels of Logic = 0)
+  Source:            data_in_18 (FF)
+  Destination:       pins[0].OSERDESE2_inst:D2 (PAD)
+  Source Clock:      clk_in rising
+
+  Data Path: data_in_18 to pins[0].OSERDESE2_inst:D2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.282   0.419  data_in_18 (data_in_18)
+    OSERDESE2:D2               0.000          pins[0].OSERDESE2_inst
+    ----------------------------------------
+    Total                      0.701ns (0.282ns logic, 0.419ns route)
+                                       (40.2% logic, 59.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 56 / 56
+-------------------------------------------------------------------------
+Delay:               0.511ns (Levels of Logic = 1)
+  Source:            rst_in (PAD)
+  Destination:       pins[0].OSERDESE2_inst:RST (PAD)
+
+  Data Path: rst_in to pins[0].OSERDESE2_inst:RST
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.000   0.511  rst_in_IBUF (rst_in_IBUF)
+    OSERDESE2:RST              0.000          pins[0].OSERDESE2_inst
+    ----------------------------------------
+    Total                      0.511ns (0.000ns logic, 0.511ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.50 secs
+ 
 --> 
 
-Total memory usage is 290532 kilobytes
+Total memory usage is 409108 kilobytes
 
-Number of errors   :   10 (   0 filtered)
-Number of warnings :   12 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

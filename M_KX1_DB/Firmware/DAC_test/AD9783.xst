@@ -1,5 +1,5 @@
-set -tmpdir "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/xst"
+set -tmpdir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst"
 run -compileonly yes
 -p xc7k160t-1-fbg676
 -top AD9783

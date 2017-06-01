@@ -1,16 +1,16 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
---> Parameter xsthdpdir set to C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/DAC_test/DAC_test/xst
+--> Parameter xsthdpdir set to C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: AD9783.prj
 
@@ -39,15 +39,12 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\SPI.v" into library work
-Parsing verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\/timescale.v" included at line 11.
-Parsing module <SPI>.
-Analyzing Verilog file "C:\Users\dschussheim\Desktop\digital-servo-master\firmware\AD9783.v" into library work
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v" into library work
 Parsing module <AD9783>.
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.19 secs
+Total CPU time to Xst completion: 6.17 secs
  
 --> 
 

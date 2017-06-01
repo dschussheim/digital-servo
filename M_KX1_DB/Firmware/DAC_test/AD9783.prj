@@ -1,2 +1,1 @@
-verilog work "../../../../digital-servo-master/firmware/SPI.v"
-verilog work "../../../../digital-servo-master/firmware/AD9783.v"
+verilog work "AD9783.v"

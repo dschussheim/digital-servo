@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783.v" Line 59: Port <arg fmt="%s" index="1">CLKFBOUT</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783.v" Line 80: Port <arg fmt="%s" index="1">LOCK</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SPI.v" Line 133: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">spi_sdi_in</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SPI.v" Line 134: Element index <arg fmt="%d" index="1">1</arg> into <arg fmt="%s" index="2">spi_sdi_in</arg> is out of bounds
+</msg>
+
+<msg type="warning" file="Simulator" num="0" delta="unknown" >Unable to copy libPortabilityNOSH.dll to the simulation executable directory: <arg fmt="%s" index="1">boost::filesystem::copy_file: The system cannot find the path specified, &quot;isim\AD9783_test_isim_beh.exe.sim\libPortability.dll&quot;</arg>.
+</msg>
+
+</messages>
+
