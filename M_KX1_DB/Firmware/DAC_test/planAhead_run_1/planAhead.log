@@ -53,3 +53,16 @@ No Unisim elements were transformed.
 Phase 0 | Netlist Checksum: 1a8ea0c7
 open_rtl_design: Time (s): elapsed = 00:00:18 . Memory (MB): peak = 802.547 ; gain = 390.383
 update_compile_order -fileset sim_1
+set_property package_pin "" [get_ports [list  {D_out_p[0]}]]
+set_property offchip_term NONE [get_ports [list {D_out_p[5]}]]
+set_property offchip_term FD_100 [get_ports [list {D_out_p[5]}]]
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+ (See C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test\planAhead_pid5568.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Jun 02 10:05:29 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

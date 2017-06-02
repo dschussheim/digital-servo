@@ -9,3 +9,6 @@
 start_gui
 source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/pa.fromHdl.tcl
 update_compile_order -fileset sim_1
+set_property package_pin "" [get_ports [list  {D_out_p[0]}]]
+set_property offchip_term NONE [get_ports [list {D_out_p[5]}]]
+set_property offchip_term FD_100 [get_ports [list {D_out_p[5]}]]

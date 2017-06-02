@@ -425,6 +425,8 @@ ODDR #(
 //		.I(data_out_to_pins_delay[pin_count])
 //	);
 
+
+/*
 //Output buffer for 7 series
 
 // OBUFDS: Differential Output Buffer
@@ -439,6 +441,25 @@ OBUFDS #(
 	.I(data_out_to_pins[pin_count]) // Buffer input
 );
 // End of OBUFDS_inst instantiation
+*/
+
+// IOBUFDS_DIFF_OUT: Differential Bi-directional Buffer with Differential Output
+// 7 Series
+// Xilinx HDL Libraries Guide, version 14.7
+IOBUFDS_DIFF_OUT #(
+	.DIFF_TERM("TRUE"), // Differential Termination ("TRUE"/"FALSE")
+	.IBUF_LOW_PWR("TRUE"), // Low Power - "TRUE", High Performance = "FALSE"
+	.IOSTANDARD("LVDS") // Specify the I/O standard
+) IOBUFDS_DIFF_OUT_inst (
+	.O(), // Buffer p-side output
+	.OB(), // Buffer n-side output
+	.IO(data_out_p[pin_count]), // Diff_p inout (connect directly to top-level port)
+	.IOB(data_out_n[pin_count]), // Diff_n inout (connect directly to top-level port)
+	.I(data_out_to_pins[pin_count]), // Buffer input
+	.TM(1'b0), // 3-state enable input, high=input, low=output
+	.TS(1'b0) // 3-state enable input, high=output, low=input
+);
+// End of IOBUFDS_DIFF_OUT_inst instantiation
 
 end
 endgenerate
