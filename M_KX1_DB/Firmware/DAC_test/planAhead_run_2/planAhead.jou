@@ -1,0 +1,90 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Jun 02 10:44:20 2017
+# Process ID: 7380
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin F9 [get_ports {D_out_p[12]}]
+endgroup
+startgroup
+set_property package_pin C12 [get_ports {D_out_p[10]}]
+endgroup
+startgroup
+set_property package_pin G12 [get_ports {D_out_p[8]}]
+endgroup
+startgroup
+set_property package_pin G12 [get_ports {D_out_p[8]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {D_out_p[8]}]]
+startgroup
+set_property package_pin C12 [get_ports {D_out_p[10]}]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports {D_out_p[12]}]
+endgroup
+set_property package_pin "" [get_ports [list  on_in]]
+startgroup
+set_property package_pin C14 [get_ports DCI_out_p]
+endgroup
+startgroup
+set_property package_pin B12 [get_ports {D_out_p[6]}]
+endgroup
+startgroup
+set_property package_pin B15 [get_ports {D_out_p[4]}]
+endgroup
+startgroup
+set_property package_pin C12 [get_ports {D_out_p[10]}]
+endgroup
+startgroup
+set_property package_pin A13 [get_ports {D_out_p[2]}]
+endgroup
+startgroup
+set_property package_pin B17 [get_ports {D_out_p[0]}]
+endgroup
+startgroup
+set_property package_pin A18 [get_ports {D_out_p[1]}]
+endgroup
+set_property package_pin "" [get_ports [list  {D_out_p[3]}]]
+startgroup
+set_property package_pin C16 [get_ports {D_out_p[3]}]
+endgroup
+startgroup
+set_property package_pin B10 [get_ports {D_out_p[5]}]
+endgroup
+startgroup
+set_property package_pin B14 [get_ports {D_out_p[7]}]
+endgroup
+startgroup
+set_property package_pin D14 [get_ports {D_out_p[9]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {D_out_p[11]}]
+endgroup
+startgroup
+set_property package_pin F14 [get_ports {D_out_p[13]}]
+endgroup
+startgroup
+set_property package_pin AF24 [get_ports {D_out_p[14]}]
+endgroup
+set_property package_pin "" [get_ports [list  {D_out_p[15]}]]
+startgroup
+set_property package_pin AD23 [get_ports {D_out_p[15]}]
+endgroup
+startgroup
+set_property package_pin C19 [get_ports CLK_out_p]
+endgroup
+set_property offchip_term NONE [get_ports [list CLK_out_p]]
+set_property offchip_term NONE [get_ports [list DCI_out_p]]
+set_property offchip_term NONE [get_ports [list {D_out_p[15]} {D_out_p[14]} {D_out_p[13]} {D_out_p[12]} {D_out_p[11]} {D_out_p[10]} {D_out_p[9]} {D_out_p[8]} {D_out_p[7]} {D_out_p[6]} {D_out_p[5]} {D_out_p[4]} {D_out_p[3]} {D_out_p[2]} {D_out_p[1]} {D_out_p[0]}]]
+save_constraints
+set_property package_pin "" [get_ports [list  on_in]]
+startgroup
+set_property package_pin AA3 [get_ports clk]
+endgroup
+save_constraints

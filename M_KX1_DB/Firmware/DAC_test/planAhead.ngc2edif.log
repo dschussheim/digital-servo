@@ -1,0 +1,18 @@
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design DAC_Sweep_Test.ngc ...
+WARNING:NetListWriters:298 - No output is written to DAC_Sweep_Test.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus Sweep_inst/Result<33 : 9> on block
+   DAC_Sweep_Test is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus Sweep_inst/next_val_f<33 : 9> on block
+   DAC_Sweep_Test is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file DAC_Sweep_Test.edif ...
+ngc2edif: Total memory usage is 84444 kilobytes
+

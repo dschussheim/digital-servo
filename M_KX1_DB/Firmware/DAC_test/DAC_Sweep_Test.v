@@ -31,20 +31,29 @@ module DAC_Sweep_Test(
 	output	wire				DCI_out_n
     );
 
-// BUFR: Regional Clock Buffer for I/O and Logic Resources within a Clock Region
+wire	clk_int, clk_in;
+
+// IBUFG: Single-ended global clock input buffer
 // 7 Series
 // Xilinx HDL Libraries Guide, version 14.7
-BUFR #(
-	.BUFR_DIVIDE("BYPASS") // Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8"
-)
-BUFR_inst (
-	.O(clk_in), // 1-bit output: Clock output port
-	.CE(1'b1), // 1-bit input: Active high, clock enable (Divided modes only)
-	.CLR(1'b0), // 1-bit input: Active high, asynchronous clear (Divided modes only)
-	.I(clk) // 1-bit input: Clock buffer input driven by an IBUF, MMCM or local interconnect
+IBUFG #(
+	.IBUF_LOW_PWR("TRUE"), // Low power="TRUE", Highest performance="FALSE"
+	.IOSTANDARD("DEFAULT") // Specify the input I/O standard
+) IBUFG_inst (
+	.O(clk_int), // Clock buffer output
+	.I(clk) // Clock buffer input (connect directly to top-level port)
 );
-// End of BUFR_inst instantiation
+// End of IBUFG_inst instantiation
 
+
+// BUFG: Global Clock Simple Buffer
+// 7 Series
+// Xilinx HDL Libraries Guide, version 14.7
+BUFG BUFG_inst (
+	.O(clk_in), // 1-bit output: Clock output
+	.I(clk_int) // 1-bit input: Clock input
+);
+// End of BUFG_inst instantiation
 
 reg	[15:0]	DAC0_in = 16'b1000_0000_0000_0000;
 //reg	[15:0]	DAC1_in = 16'b0000_1111_0000_0010;

@@ -1,0 +1,29 @@
+Command line:
+   DAC_Sweep_Test_TB_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  57568
+
+Fri Jun 02 15:17:06 2017
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 845.799 Meg
+
+ Total Signals          : 395
+ Total Nets             : 476
+ Total Signal Drivers   : 398
+ Total Blocks           : 42
+ Total Primitive Blocks : 39
+ Total Processes        : 566
+ Total Traceable Variables  : 201
+ Total Scalar Nets and Variables : 6559
+Total Line Count : 1065
+
+ Total Simulation Time: 0.65625 sec
+
+ Current Memory Usage: 845.799 Meg
+
+Fri Jun 02 15:17:32 2017
+

@@ -1,0 +1,406 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Map Application Log File for Design 'DAC_Sweep_Test'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off
+-power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
+Target Device  : xc7k160t
+Target Package : fbg676
+Target Speed   : -1
+Mapper Version : kintex7 -- $Revision: 1.55 $
+Mapped Date    : Fri Jun 02 15:21:39 2017
+
+WARNING:LIT:701 - PAD symbol "clk" has an undefined IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "D_out_n<15>" is not constrained (LOC) to a
+   specific location.
+Mapping design into LUTs...
+Running directed packing...
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<4>" (Pad Signal = D_out_p<4>)
+   	BUFINV symbol "AD9783_inst/pins[4].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<4>)
+   Component type involved: IOB18M
+   Site Location involved: B15
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<5>" (Pad Signal = D_out_p<5>)
+   	BUFINV symbol "AD9783_inst/pins[5].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<5>)
+   Component type involved: IOB18M
+   Site Location involved: B10
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<6>" (Pad Signal = D_out_p<6>)
+   	BUFINV symbol "AD9783_inst/pins[6].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<6>)
+   Component type involved: IOB18M
+   Site Location involved: B12
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "DCI_out_p" (Pad Signal = DCI_out_p)
+   	BUFINV symbol "AD9783_inst/pins[16].OBUFDS_inst/OBUFDS" (Output Signal =
+   DCI_out_p)
+   Component type involved: IOB18M
+   Site Location involved: C14
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<7>" (Pad Signal = D_out_p<7>)
+   	BUFINV symbol "AD9783_inst/pins[7].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<7>)
+   Component type involved: IOB18M
+   Site Location involved: B14
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<8>" (Pad Signal = D_out_p<8>)
+   	BUFINV symbol "AD9783_inst/pins[8].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<8>)
+   Component type involved: IOB18M
+   Site Location involved: G12
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<9>" (Pad Signal = D_out_p<9>)
+   	BUFINV symbol "AD9783_inst/pins[9].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<9>)
+   Component type involved: IOB18M
+   Site Location involved: D14
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "CLK_out_p" (Pad Signal = CLK_out_p)
+   	BUFINV symbol "AD9783_inst/pins[17].OBUFDS_inst/OBUFDS" (Output Signal =
+   CLK_out_p)
+   Component type involved: IOB18M
+   Site Location involved: C19
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<10>" (Pad Signal = D_out_p<10>)
+   	BUFINV symbol "AD9783_inst/pins[10].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<10>)
+   Component type involved: IOB18M
+   Site Location involved: C12
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<11>" (Pad Signal = D_out_p<11>)
+   	BUFINV symbol "AD9783_inst/pins[11].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<11>)
+   Component type involved: IOB18M
+   Site Location involved: E11
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<12>" (Pad Signal = D_out_p<12>)
+   	BUFINV symbol "AD9783_inst/pins[12].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<12>)
+   Component type involved: IOB18M
+   Site Location involved: F9
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<13>" (Pad Signal = D_out_p<13>)
+   	BUFINV symbol "AD9783_inst/pins[13].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<13>)
+   Component type involved: IOB18M
+   Site Location involved: F14
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<14>" (Pad Signal = D_out_p<14>)
+   	BUFINV symbol "AD9783_inst/pins[14].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<14>)
+   Component type involved: IOB18M
+   Site Location involved: AF24
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<15>" (Pad Signal = D_out_p<15>)
+   	BUFINV symbol "AD9783_inst/pins[15].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<15>)
+   Component type involved: IOB18M
+   Site Location involved: AD23
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<0>" (Pad Signal = D_out_p<0>)
+   	BUFINV symbol "AD9783_inst/pins[0].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<0>)
+   Component type involved: IOB18M
+   Site Location involved: B17
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<1>" (Pad Signal = D_out_p<1>)
+   	BUFINV symbol "AD9783_inst/pins[1].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<1>)
+   Component type involved: IOB18M
+   Site Location involved: A18
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<2>" (Pad Signal = D_out_p<2>)
+   	BUFINV symbol "AD9783_inst/pins[2].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<2>)
+   Component type involved: IOB18M
+   Site Location involved: A13
+   Site Type involved: IOB33M
+
+ERROR:Pack:1107 - Pack was unable to combine the symbols listed below into a
+   single IOB18M component because the site type selected is not compatible. 
+
+   Further explanation:
+   The component type is determined by the types of logic and the properties and
+   configuration of the logic it contains. In this case an IO component of type
+   IOB18M was chosen because the IO contains symbols and/or properties
+   consistent with differential master usage and a IOSTANDARD=LVDS property.
+   Please double check that the types of logic elements and all of their
+   relevant properties and configuration options are compatible with the
+   physical site type of the constraint.
+
+   Summary:
+   Symbols involved:
+   	PAD symbol "D_out_p<3>" (Pad Signal = D_out_p<3>)
+   	BUFINV symbol "AD9783_inst/pins[3].OBUFDS_inst/OBUFDS" (Output Signal =
+   D_out_p<3>)
+   Component type involved: IOB18M
+   Site Location involved: C16
+   Site Type involved: IOB33M
+
+
+Mapping completed.
+See MAP report file "DAC_Sweep_Test_map.mrp" for details.
+Problem encountered during the packing phase.
+
+Design Summary
+--------------
+Number of errors   :  18
+Number of warnings :   2

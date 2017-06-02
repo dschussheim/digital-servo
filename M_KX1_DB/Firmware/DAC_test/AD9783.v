@@ -426,7 +426,7 @@ ODDR #(
 //	);
 
 
-/*
+
 //Output buffer for 7 series
 
 // OBUFDS: Differential Output Buffer
@@ -441,8 +441,12 @@ OBUFDS #(
 	.I(data_out_to_pins[pin_count]) // Buffer input
 );
 // End of OBUFDS_inst instantiation
-*/
 
+
+
+//This was a different output buffer because I thought we needed termination on differential outputs.
+//The data sheet claims termination is not necessary on output.
+/*
 // IOBUFDS_DIFF_OUT: Differential Bi-directional Buffer with Differential Output
 // 7 Series
 // Xilinx HDL Libraries Guide, version 14.7
@@ -460,7 +464,7 @@ IOBUFDS_DIFF_OUT #(
 	.TS(1'b0) // 3-state enable input, high=output, low=input
 );
 // End of IOBUFDS_DIFF_OUT_inst instantiation
-
+*/
 end
 endgenerate
 
