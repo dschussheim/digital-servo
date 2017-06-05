@@ -22,7 +22,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module DAC_Sweep_Test(
 	input		wire				clk,
-	input		wire				on_in,
+//	input		wire				on_in,
 	output	wire	[15:0]	D_out_p,
 	output	wire	[15:0]	D_out_n,
 	output	wire				CLK_out_p,
@@ -38,7 +38,7 @@ wire	clk_int, clk_in;
 // Xilinx HDL Libraries Guide, version 14.7
 IBUFG #(
 	.IBUF_LOW_PWR("TRUE"), // Low power="TRUE", Highest performance="FALSE"
-	.IOSTANDARD("DEFAULT") // Specify the input I/O standard
+	.IOSTANDARD("HSTL_II") // Specify the input I/O standard
 ) IBUFG_inst (
 	.O(clk_int), // Clock buffer output
 	.I(clk) // Clock buffer input (connect directly to top-level port)
@@ -55,9 +55,12 @@ BUFG BUFG_inst (
 );
 // End of BUFG_inst instantiation
 
-reg	[15:0]	DAC0_in = 16'b1000_0000_0000_0000;
+
+wire	[15:0]	DAC0_in;
 //reg	[15:0]	DAC1_in = 16'b0000_1111_0000_0010;
 wire	[15:0]	DAC1_in;
+
+assign 			DAC0_in = 16'b0000_0000_0000_0000;
 
 // Instantiate DAC driver module
 AD9783 AD9783_inst (
@@ -77,14 +80,18 @@ AD9783 AD9783_inst (
 
 parameter	SIGNAL_OUT_SIZE = 16;
 
-reg	signed	[15:0]	minval_in = 16'sb0000_0000_0000_0000;
-reg	signed	[15:0]	maxval_in = 16'sb0111_1111_1111_1111;
-reg				[31:0]	stepsize_in = 32'b0000_0000_0000_0000_0000_0010_0000_0000; //Change value every 128 clock cycles ~781kHz ramp
+wire	signed	[15:0]	minval_in;
+wire	signed	[15:0]	maxval_in;
+wire				[31:0]	stepsize_in;
+
+assign	minval_in = 16'sb0000_0000_0000_0000;
+assign	maxval_in = 16'sb0111_1111_1111_1111;
+assign	stepsize_in = 32'b0000_0000_0000_0000_0000_0010_0000_0000; //Change value every 128 clock cycles ~781kHz ramp
 
 //Sweep instantiation
 Sweep Sweep_inst (
     .clk_in(clk_in), 
-    .on_in(on_in), 
+    .on_in(1'b1), 
     .minval_in(minval_in), 
     .maxval_in(maxval_in), 
     .stepsize_in(stepsize_in), 

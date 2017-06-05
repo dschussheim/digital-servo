@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sat Jun 03 14:09:04 2017
+# Process ID: 6768
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/pa.fromHdl.tcl
+# create_project -name SuperLaserLand -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_2" -part xc6slx150fgg484-2
+ERROR: [Common 17-53] User Exception: Project already exists on disk, please use '-force' option to overwrite: 
+     C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_2/SuperLaserLand.ppr
+     C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_2/SuperLaserLand.data
+
+    while executing
+"create_project -name SuperLaserLand -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_2" -part xc6slx150fgg484-2"
+    (file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/pa.fromHdl.tcl" line 4)
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Sat Jun 03 14:09:22 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

@@ -1,27 +1,12 @@
 xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim DAC_Sweep_Test.ngc DAC_Sweep_Test_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
+par -w -intstyle ise -ol high -mt off DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ncd DAC_Sweep_Test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml DAC_Sweep_Test.twx DAC_Sweep_Test.ncd -o DAC_Sweep_Test.twr DAC_Sweep_Test.pcf -ucf DAC_Sweep_Test.ucf 
+bitgen -intstyle ise -f DAC_Sweep_Test.ut DAC_Sweep_Test.ncd 
 xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
 map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
-map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
-map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
-map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
-map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
-map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
-map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
-xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc DAC_Sweep_Test.ucf -p xc7k160t-fbg676-1 DAC_Sweep_Test.ngc DAC_Sweep_Test.ngd  
-map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ngd DAC_Sweep_Test.pcf 
+par -w -intstyle ise -ol high -mt off DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ncd DAC_Sweep_Test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml DAC_Sweep_Test.twx DAC_Sweep_Test.ncd -o DAC_Sweep_Test.twr DAC_Sweep_Test.pcf -ucf DAC_Sweep_Test.ucf 
+bitgen -intstyle ise -f DAC_Sweep_Test.ut DAC_Sweep_Test.ncd 

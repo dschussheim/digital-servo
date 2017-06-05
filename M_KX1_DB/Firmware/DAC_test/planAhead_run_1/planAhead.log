@@ -1,8 +1,8 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Thu Jun 01 19:54:27 2017
-# Process ID: 5568
+# Start of session at: Mon Jun 05 16:32:27 2017
+# Process ID: 6228
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1/planAhead.log
 # Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
@@ -13,7 +13,7 @@ Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/r
 Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/pa.fromHdl.tcl
-# create_project -name DAC_test -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1" -part xc7k160tfbg676-1
+# create_project -name DAC_test -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_2" -part xc7k160tfbg676-1
 # set_param project.pinAheadLayout yes
 # set srcset [get_property srcset [current_run -impl]]
 # set_property target_constrs_file "DAC_Sweep_Test.ucf" [current_fileset -constrset]
@@ -35,7 +35,7 @@ Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/syn
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/Sweep.v" into library work
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v" into library work
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.v" into library work
-INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockRegion.xml
 Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockBuffers.xml
@@ -48,21 +48,21 @@ Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data
 Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
 Finished Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  IBUFG => IBUF: 1 instances
 
-Phase 0 | Netlist Checksum: 1a8ea0c7
-open_rtl_design: Time (s): elapsed = 00:00:18 . Memory (MB): peak = 802.547 ; gain = 390.383
+Phase 0 | Netlist Checksum: 10bfbc63
+open_rtl_design: Time (s): elapsed = 00:00:20 . Memory (MB): peak = 801.426 ; gain = 407.527
 update_compile_order -fileset sim_1
-set_property package_pin "" [get_ports [list  {D_out_p[0]}]]
-set_property offchip_term NONE [get_ports [list {D_out_p[5]}]]
-set_property offchip_term FD_100 [get_ports [list {D_out_p[5]}]]
+set_property iostandard HSTL_II [get_ports [list clk]]
+save_constraints
 exit
 ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
-HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
-HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
-HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
 HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
- (See C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test\planAhead_pid5568.debug)
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test\planAhead_pid6228.debug)
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Fri Jun 02 10:05:29 2017...
+INFO: [Common 17-206] Exiting PlanAhead at Mon Jun 05 16:38:27 2017...
 INFO: [Common 17-83] Releasing license: PlanAhead

@@ -1,0 +1,202 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: SuperLaserLand.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SuperLaserLand.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SuperLaserLand"
+Output Format                      : NGC
+Target Device                      : xc6slx150-2-fgg484
+
+---- Source Options
+Top Module Name                    : SuperLaserLand
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : Yes
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : True
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\mig\iodrp_mcb_controller.v" into library work
+Parsing module <iodrp_mcb_controller>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\mig\iodrp_controller.v" into library work
+Parsing module <iodrp_controller>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\mig\mcb_soft_calibration.v" into library work
+Parsing module <mcb_soft_calibration>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\mig\mcb_soft_calibration_top.v" into library work
+Parsing module <mcb_soft_calibration_top>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\mig\mcb_raw_wrapper.v" into library work
+Parsing module <mcb_raw_wrapper>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\SPI.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <SPI>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\MinMaxMean.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <MinMaxMean>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\mig\memc3_wrapper.v" into library work
+Parsing module <memc3_wrapper>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\mig\memc3_infrastructure.v" into library work
+Parsing module <memc3_infrastructure>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\LPfilter.v" into library work
+Parsing verilog file "timescale.v" included at line 20.
+Parsing module <LPfilter>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\ddr2_controller.v" into library work
+Parsing module <ddr2_controller>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\TransferFunction.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <TransferFunction>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\Sweep.v" into library work
+Parsing verilog file "timescale.v" included at line 13.
+Parsing module <Sweep>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\Relock.v" into library work
+Parsing verilog file "timescale.v" included at line 13.
+Parsing module <Relock>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\PhaseDetector.v" into library work
+Parsing verilog file "timescale.v" included at line 12.
+Parsing module <PhaseDetector>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\M25P32_CONFIG.v" into library work
+Parsing verilog file "timescale.v" included at line 17.
+Parsing module <M25P32_CONFIG>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\LTC2195.v" into library work
+Parsing module <LTC2195>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\Logger.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <Logger>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\LockIn.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <LockIn>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\Limit.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <Limit>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\IIRfilter2ndOrderSlowAntiWindup.v" into library work
+Parsing verilog file "timescale.v" included at line 18.
+Parsing module <IIRfilter2ndOrderSlowAntiWindup>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\IIRfilter2ndOrderSlow.v" into library work
+Parsing verilog file "timescale.v" included at line 18.
+Parsing module <IIRfilter2ndOrderSlow>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\IIRfilter1stOrderAntiWindup.v" into library work
+Parsing verilog file "timescale.v" included at line 17.
+Parsing module <IIRfilter1stOrderAntiWindup>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\IIRfilter1stOrder.v" into library work
+Parsing verilog file "timescale.v" included at line 17.
+Parsing module <IIRfilter1stOrder>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\DigitalDelay.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <DigitalDelay>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\DDR2Logger.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <DDR2Logger>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\AD9783.v" into library work
+Parsing module <AD9783>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\AD8251x2.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <AD8251x2>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\AD5791.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <AD5791>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\firmware\SuperLaserLand.v" into library work
+Parsing verilog file "timescale.v" included at line 10.
+Parsing module <SuperLaserLand>.
+Parsing verilog file "SuperLaserLand_CONFIG_SIMPLEPI.v" included at line 493.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <SuperLaserLand>.
+
+Elaborating module <BUFG>.
+
+Elaborating module <SRL16(INIT=16'b1111111111111111)>.
+
+Elaborating module <M25P32_CONFIG(CONFIG_SIZE=12288)>.

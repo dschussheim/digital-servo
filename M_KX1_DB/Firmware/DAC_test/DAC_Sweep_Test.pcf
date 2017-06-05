@@ -1,0 +1,26 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Jun 05 17:53:50 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "D_out_p<4>" LOCATE = SITE "B15" LEVEL 1;
+COMP "D_out_p<5>" LOCATE = SITE "B10" LEVEL 1;
+COMP "D_out_p<6>" LOCATE = SITE "B12" LEVEL 1;
+COMP "DCI_out_p" LOCATE = SITE "C14" LEVEL 1;
+COMP "D_out_p<7>" LOCATE = SITE "B14" LEVEL 1;
+COMP "D_out_p<8>" LOCATE = SITE "G12" LEVEL 1;
+COMP "D_out_p<9>" LOCATE = SITE "D14" LEVEL 1;
+COMP "clk" LOCATE = SITE "AA3" LEVEL 1;
+COMP "CLK_out_p" LOCATE = SITE "C19" LEVEL 1;
+COMP "D_out_p<10>" LOCATE = SITE "C12" LEVEL 1;
+COMP "D_out_p<11>" LOCATE = SITE "E11" LEVEL 1;
+COMP "D_out_p<12>" LOCATE = SITE "H16" LEVEL 1;
+COMP "D_out_p<13>" LOCATE = SITE "F14" LEVEL 1;
+COMP "D_out_p<14>" LOCATE = SITE "AF24" LEVEL 1;
+COMP "D_out_p<15>" LOCATE = SITE "AD23" LEVEL 1;
+COMP "D_out_p<0>" LOCATE = SITE "B17" LEVEL 1;
+COMP "D_out_p<1>" LOCATE = SITE "A18" LEVEL 1;
+COMP "D_out_p<2>" LOCATE = SITE "A13" LEVEL 1;
+COMP "D_out_p<3>" LOCATE = SITE "C16" LEVEL 1;
+SCHEMATIC END;
+

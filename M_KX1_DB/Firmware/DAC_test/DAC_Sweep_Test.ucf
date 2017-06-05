@@ -1,24 +1,30 @@
 
 
-NET "D_out_p[12]" LOC = F9;
+NET "D_out_p[12]" LOC = H16;
 NET "DCI_out_p" LOC = C14;
 NET "D_out_p[6]" LOC = B12;
 NET "D_out_p[4]" LOC = B15;
 NET "D_out_p[10]" LOC = C12;
 NET "D_out_p[2]" LOC = A13;
-NET "D_out_p[0]" LOC = B17;
-NET "D_out_p[1]" LOC = A18;
-NET "D_out_p[3]" LOC = C16;
+
 NET "D_out_p[5]" LOC = B10;
 NET "D_out_p[7]" LOC = B14;
 NET "D_out_p[9]" LOC = D14;
 NET "D_out_p[11]" LOC = E11;
 NET "D_out_p[13]" LOC = F14;
-NET "D_out_p[14]" LOC = AF24;
-NET "D_out_p[15]" LOC = AD23;
-NET "CLK_out_p" LOC = C19;
-NET "clk" LOC = AA3;
 
-# PlanAhead Generated physical constraints 
+
 
 NET "D_out_p[8]" LOC = G12;
+
+
+NET "CLK_out_p" LOC = C19;
+NET "clk" LOC = AA3;
+NET "D_out_p[0]" LOC = B17;
+NET "D_out_p[1]" LOC = A18;
+NET "D_out_p[3]" LOC = C16;
+NET "D_out_p[14]" LOC = AF24;
+NET "D_out_p[15]" LOC = AD23;
+
+
+NET "clk" IOSTANDARD = HSTL_II;

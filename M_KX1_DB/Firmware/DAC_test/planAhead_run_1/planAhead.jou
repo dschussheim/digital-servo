@@ -1,14 +1,13 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Thu Jun 01 19:54:27 2017
-# Process ID: 5568
+# Start of session at: Mon Jun 05 16:32:27 2017
+# Process ID: 6228
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1/planAhead.log
 # Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui
 source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/pa.fromHdl.tcl
 update_compile_order -fileset sim_1
-set_property package_pin "" [get_ports [list  {D_out_p[0]}]]
-set_property offchip_term NONE [get_ports [list {D_out_p[5]}]]
-set_property offchip_term FD_100 [get_ports [list {D_out_p[5]}]]
+set_property iostandard HSTL_II [get_ports [list clk]]
+save_constraints

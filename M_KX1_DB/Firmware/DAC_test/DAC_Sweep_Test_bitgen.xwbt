@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.ncd
+OUTFILE=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.bit
+FAMILY=Kintex7
+PART=xc7k160t-1fbg676
+WORKINGDIR=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test
+LICENSE=WebPack
+USER_INFO=211350505_0_0_015

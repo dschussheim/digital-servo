@@ -5,18 +5,6 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="872" delta="old" >"C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 58: Using initial value of <arg fmt="%s" index="1">DAC0_in</arg> since it is never assigned
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="872" delta="old" >"C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 80: Using initial value of <arg fmt="%s" index="1">minval_in</arg> since it is never assigned
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="872" delta="old" >"C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 81: Using initial value of <arg fmt="%s" index="1">maxval_in</arg> since it is never assigned
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="872" delta="old" >"C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 82: Using initial value of <arg fmt="%s" index="1">stepsize_in</arg> since it is never assigned
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v" Line 59: Result of <arg fmt="%d" index="1">18</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
@@ -29,16 +17,13 @@
 <msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">data_in</arg>&lt;<arg fmt="%d" index="2">35</arg>:<arg fmt="%d" index="3">35</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">AD9783</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">data_in_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">AD9783_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">15 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_in_1&gt; &lt;data_in_2&gt; &lt;data_in_3&gt; &lt;data_in_4&gt; &lt;data_in_5&gt; &lt;data_in_6&gt; &lt;data_in_7&gt; &lt;data_in_8&gt; &lt;data_in_9&gt; &lt;data_in_10&gt; &lt;data_in_11&gt; &lt;data_in_12&gt; &lt;data_in_13&gt; &lt;data_in_14&gt; &lt;data_in_17&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">data_in_15</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">AD9783_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_in_16&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">data_in_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">AD9783_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">16 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_in_1&gt; &lt;data_in_2&gt; &lt;data_in_3&gt; &lt;data_in_4&gt; &lt;data_in_5&gt; &lt;data_in_6&gt; &lt;data_in_7&gt; &lt;data_in_8&gt; &lt;data_in_9&gt; &lt;data_in_10&gt; &lt;data_in_11&gt; &lt;data_in_12&gt; &lt;data_in_13&gt; &lt;data_in_14&gt; &lt;data_in_15&gt; &lt;data_in_17&gt; </arg>
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">data_in_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AD9783_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">data_in_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">AD9783_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">data_in_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">AD9783_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">data_in_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AD9783</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -47,7 +32,7 @@
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_in_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">AD9783</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_in_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">AD9783</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_in_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AD9783</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_in_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">AD9783</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

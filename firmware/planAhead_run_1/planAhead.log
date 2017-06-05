@@ -1,0 +1,231 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sat Jun 03 14:08:57 2017
+# Process ID: 5696
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/pa.fromHdl.tcl
+# create_project -name SuperLaserLand -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/planAhead_run_2" -part xc6slx150fgg484-2
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "xem6010_07jun12.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/xem6010_07jun12.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {mig/iodrp_mcb_controller.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mig/iodrp_controller.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mig/mcb_soft_calibration.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mig/mcb_soft_calibration_top.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mig/mcb_raw_wrapper.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {SPI.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {MinMaxMean.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mig/memc3_wrapper.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mig/memc3_infrastructure.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {LPfilter.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ddr2_controller.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {TransferFunction.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Sweep.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Relock.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {PhaseDetector.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {M25P32_CONFIG.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {LTC2195.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Logger.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {LockIn.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Limit.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {IIRfilter2ndOrderSlowAntiWindup.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {IIRfilter2ndOrderSlow.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {IIRfilter1stOrderAntiWindup.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {IIRfilter1stOrder.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {DigitalDelay.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {DDR2Logger.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {AD9783.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {AD8251x2.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {AD5791.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {SuperLaserLand.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top SuperLaserLand $srcset
+# add_files [list {xem6010_07jun12.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx150fgg484-2
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/mig/iodrp_mcb_controller.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/mig/iodrp_controller.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/mig/mcb_soft_calibration.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/mig/mcb_soft_calibration_top.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/mig/mcb_raw_wrapper.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SPI.v" into library work
+Parsing verilog file "timescale.v" included at line 11. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SPI.v:11]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/MinMaxMean.v" into library work
+Parsing verilog file "timescale.v" included at line 11. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/MinMaxMean.v:11]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/mig/memc3_wrapper.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/mig/memc3_infrastructure.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LPfilter.v" into library work
+Parsing verilog file "timescale.v" included at line 20. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LPfilter.v:20]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/ddr2_controller.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/TransferFunction.v" into library work
+Parsing verilog file "timescale.v" included at line 14. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/TransferFunction.v:14]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Sweep.v" into library work
+Parsing verilog file "timescale.v" included at line 13. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Sweep.v:13]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Relock.v" into library work
+Parsing verilog file "timescale.v" included at line 13. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Relock.v:13]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/PhaseDetector.v" into library work
+Parsing verilog file "timescale.v" included at line 12. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/PhaseDetector.v:12]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/M25P32_CONFIG.v" into library work
+Parsing verilog file "timescale.v" included at line 17. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/M25P32_CONFIG.v:17]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Logger.v" into library work
+Parsing verilog file "timescale.v" included at line 11. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Logger.v:11]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LockIn.v" into library work
+Parsing verilog file "timescale.v" included at line 11. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LockIn.v:11]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Limit.v" into library work
+Parsing verilog file "timescale.v" included at line 14. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/Limit.v:14]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter2ndOrderSlowAntiWindup.v" into library work
+Parsing verilog file "timescale.v" included at line 18. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter2ndOrderSlowAntiWindup.v:18]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter2ndOrderSlow.v" into library work
+Parsing verilog file "timescale.v" included at line 18. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter2ndOrderSlow.v:18]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter1stOrderAntiWindup.v" into library work
+Parsing verilog file "timescale.v" included at line 17. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter1stOrderAntiWindup.v:17]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter1stOrder.v" into library work
+Parsing verilog file "timescale.v" included at line 17. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter1stOrder.v:17]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/DigitalDelay.v" into library work
+Parsing verilog file "timescale.v" included at line 14. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/DigitalDelay.v:14]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/DDR2Logger.v" into library work
+Parsing verilog file "timescale.v" included at line 14. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/DDR2Logger.v:14]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD8251x2.v" into library work
+Parsing verilog file "timescale.v" included at line 11. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD8251x2.v:11]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD5791.v" into library work
+Parsing verilog file "timescale.v" included at line 11. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD5791.v:11]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v" into library work
+Parsing verilog file "timescale.v" included at line 10. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:10]
+Parsing verilog file "SuperLaserLand_CONFIG_SIMPLEPI.v" included at line 493. [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:493]
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'div_32_16' instantiated as 'div_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/MinMaxMean.v:59]
+Resolution: File names need to match cell names: an EDIF definition will be found in div_32_16.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'fifo_w256_128_r64_512' instantiated as 'RAMinputbuffer_fifo' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/DDR2Logger.v:373]
+Resolution: File names need to match cell names: an EDIF definition will be found in fifo_w256_128_r64_512.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'multiplier35x35' instantiated as 'multiplier35x35_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/IIRfilter2ndOrderSlow.v:45]
+Resolution: File names need to match cell names: an EDIF definition will be found in multiplier35x35.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'dds_PG_pw24' instantiated as 'PG_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LockIn.v:29]
+Resolution: File names need to match cell names: an EDIF definition will be found in dds_PG_pw24.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'dds_LUT_pw24_ow24' instantiated as 'LUT_inst1' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LockIn.v:39]
+Resolution: File names need to match cell names: an EDIF definition will be found in dds_LUT_pw24_ow24.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'dds_LUT_pw24_ow16' instantiated as 'LUT_inst2' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LockIn.v:45]
+Resolution: File names need to match cell names: an EDIF definition will be found in dds_LUT_pw24_ow16.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'dds_pw32_ow16' instantiated as 'int_dds_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/PhaseDetector.v:170]
+Resolution: File names need to match cell names: an EDIF definition will be found in dds_pw32_ow16.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'arctan' instantiated as 'arctan_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/PhaseDetector.v:220]
+Resolution: File names need to match cell names: an EDIF definition will be found in arctan.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'dds_pw32_ow24' instantiated as 'transfer_dds_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/TransferFunction.v:66]
+Resolution: File names need to match cell names: an EDIF definition will be found in dds_pw32_ow24.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'okWireOR(N=8)' instantiated as 'wireOR' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:510]
+Resolution: File names need to match cell names: an EDIF definition will be found in okWireOR(N=8).edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'okHost' instantiated as 'okHI' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:512]
+Resolution: File names need to match cell names: an EDIF definition will be found in okHost.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'okWireIn' instantiated as 'ep00' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:522]
+Resolution: File names need to match cell names: an EDIF definition will be found in okWireIn.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'okWireOut' instantiated as 'ep20' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:526]
+Resolution: File names need to match cell names: an EDIF definition will be found in okWireOut.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'okTriggerIn' instantiated as 'ep40' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:533]
+Resolution: File names need to match cell names: an EDIF definition will be found in okTriggerIn.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'fifo_w16_4096_r16_4096' instantiated as 'epA0FIFO' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:538]
+Resolution: File names need to match cell names: an EDIF definition will be found in fifo_w16_4096_r16_4096.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'okPipeOut' instantiated as 'epA0' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:549]
+Resolution: File names need to match cell names: an EDIF definition will be found in okPipeOut.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'fifo_w64_512_r16_2048' instantiated as 'okPipeOut_fifo' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SuperLaserLand.v:554]
+Resolution: File names need to match cell names: an EDIF definition will be found in fifo_w64_512_r16_2048.edf; an HDL definition may be placed in any Verilog/VHDL file.
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx150/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx150/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx150/fgg484/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/xem6010_07jun12.ucf]
+WARNING: [Constraints 18-506] Could not find cell 'AD9783_inst/pll_base_inst/PLL_ADV', attaching constraint on cell 'AD9783_inst/pll_base_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/xem6010_07jun12.ucf:83]
+WARNING: [Constraints 18-506] Could not find cell 'LTC2195_inst/pll_base_inst/PLL_ADV', attaching constraint on cell 'LTC2195_inst/pll_base_inst' [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/xem6010_07jun12.ucf:84]
+Finished Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/xem6010_07jun12.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 20 instances were transformed.
+  IOBUF => IOBUF (OBUFT, IBUF): 18 instances
+  IOBUFDS => IOBUFDS (IBUFDS, OBUFTDS): 2 instances
+
+Phase 0 | Netlist Checksum: 5e90cd7a
+open_rtl_design: Time (s): elapsed = 00:14:13 . Memory (MB): peak = 2643.363 ; gain = 2216.160
+update_compile_order -fileset sim_1
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+ (See C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware\planAhead_pid5696.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Sat Jun 03 14:28:34 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

@@ -1,5 +1,0 @@
-verilog isim_temp "Sweep.v"
-verilog isim_temp "AD9783.v"
-verilog isim_temp "DAC_Sweep_Test.v"
-verilog isim_temp "DAC_Sweep_Test_TB.v"
-verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
