@@ -22,14 +22,35 @@
 //////////////////////////////////////////////////////////////////////////////////
 module DAC_Sweep_Test(
 	input		wire				clk,
+//	output	wire				DCO1_in_p,
+//	output	wire				DCO1_in_n,
+//	output	wire				DCO0_in_p,
+//	output	wire				DCO0_in_n,
 //	input		wire				on_in,
-	output	wire	[15:0]	D_out_p,
-	output	wire	[15:0]	D_out_n,
+	output	wire	[15:0]	D1_out_p,
+	output	wire	[15:0]	D1_out_n,
+	output	wire	[15:0]	D0_out_p,
+	output	wire	[15:0]	D0_out_n,
 	output	wire				CLK_out_p,
 	output	wire				CLK_out_n,
-	output	wire				DCI_out_p,
-	output	wire				DCI_out_n
+	output	wire				DCI1_out_p,
+	output	wire				DCI1_out_n,
+	output	wire				DCI0_out_p,
+	output	wire				DCI0_out_n,
+	output 	wire				csb1,
+	output	wire				csb0,
+	output 	wire				rst1_out,
+	output 	wire				rst0_out,
+	output	wire				sdio,
+	output	wire				sdo
     );
+
+
+//assign	DCO1_in_p = 1'bz;
+//assign	DCO1_in_n = 1'bz;
+//assign	DCO0_in_p = 1'bz;
+//assign	DCO0_in_n = 1'bz;
+
 
 wire	clk_int, clk_in;
 
@@ -56,28 +77,52 @@ BUFG BUFG_inst (
 // End of BUFG_inst instantiation
 
 
-wire	[15:0]	DAC0_in;
-//reg	[15:0]	DAC1_in = 16'b0000_1111_0000_0010;
-wire	[15:0]	DAC1_in;
+wire	[15:0]	DAC10_in, DAC11_in, DAC00_in, DAC01_in;
 
-assign 			DAC0_in = 16'b0000_0000_0000_0000;
+assign			rst1_out = 1'b1;//high configutation in "pin mode" rather than SPI
+assign			rst0_out = 1'b1;
+assign			sdio = 1'b0;//0 input is 2's complement, 1 input is unsigned binary
+assign			sdo = 1'b0;//0 DACs on, 1 DAC powered down
+assign			csb1 = 1'b0;//0 normal mode, 1 mix mode
+assign			csb0 = 1'b0;
+
+
+assign 			DAC10_in = 16'b0000_0000_0000_0000;
+assign			DAC11_in = 16'b1000_0000_0000_0000;
+assign 			DAC00_in = 16'b0000_0000_0000_0000;
+assign			DAC01_in = 16'b1111_1111_1111_1111;
 
 // Instantiate DAC driver module
-AD9783 AD9783_inst (
+AD9783 AD9783_inst1 (
     .clk_in(clk_in), 
-    .rst_in(1'b0), 
-    .DAC0_in(DAC0_in), 
-    .DAC1_in(DAC1_in), 
+//    .rst_in(rst), 
+    .DAC0_in(DAC10_in), 
+    .DAC1_in(DAC11_in), 
     .CLK_out_p(CLK_out_p), 
     .CLK_out_n(CLK_out_n), 
-    .DCI_out_p(DCI_out_p), 
-    .DCI_out_n(DCI_out_n), 
-    .D_out_p(D_out_p), 
-    .D_out_n(D_out_n)
+    .DCI_out_p(DCI1_out_p), 
+    .DCI_out_n(DCI1_out_n), 
+    .D_out_p(D1_out_p), 
+    .D_out_n(D1_out_n)
+    );
+	 
+	 
+// Instantiate DAC driver module
+AD9783 AD9783_inst0 (
+    .clk_in(clk_in), 
+//    .rst_in(rst), 
+    .DAC0_in(DAC00_in), 
+    .DAC1_in(DAC01_in), 
+    .CLK_out_p(), 
+    .CLK_out_n(), 
+    .DCI_out_p(DCI0_out_p), 
+    .DCI_out_n(DCI0_out_n), 
+    .D_out_p(D0_out_p), 
+    .D_out_n(D0_out_n)
     );
 
 // Generate Sweep
-
+/*
 parameter	SIGNAL_OUT_SIZE = 16;
 
 wire	signed	[15:0]	minval_in;
@@ -97,5 +142,5 @@ Sweep Sweep_inst (
     .stepsize_in(stepsize_in), 
     .signal_out(DAC1_in)
     );
-
+*/
 endmodule

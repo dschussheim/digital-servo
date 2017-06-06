@@ -35,17 +35,25 @@ module DAC_Sweep_Test_TB;
 	wire 			CLK_out_n;
 	wire 			DCI_out_p;
 	wire 			DCI_out_n;
+	wire			csb;
+	wire			rst_out;
+	wire			sdo;
+	wire			sdio;
 
 	// Instantiate the Unit Under Test (UUT)
 	DAC_Sweep_Test uut (
 		.clk(clk), 
-		.on_in(on_in), 
+//		.on_in(on_in), 
 		.D_out_p(D_out_p), 
 		.D_out_n(D_out_n), 
 		.CLK_out_p(CLK_out_p), 
 		.CLK_out_n(CLK_out_n), 
 		.DCI_out_p(DCI_out_p), 
-		.DCI_out_n(DCI_out_n)
+		.DCI_out_n(DCI_out_n),
+		.csb(csb),
+		.rst_out(rst_out),
+		.sdio(sdio),
+		.sdo(sdo)
 	);
 
 	initial begin

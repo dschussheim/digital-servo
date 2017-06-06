@@ -8,13 +8,13 @@
 -g M1Pin:PullUp
 -g M2Pin:PullUp
 -g ProgPin:PullUp
--g InitPin:Pullup
+-g InitPin:Pullnone
 -g TckPin:PullUp
 -g TdiPin:PullUp
 -g TdoPin:PullUp
 -g TmsPin:PullUp
 -g Disable_JTAG:No
--g UnusedPin:PullDown
+-g UnusedPin:PullNone
 -g UserID:0xFFFFFFFF
 -g ExtMasterCclk_en:Disable
 -g ConfigFallback:Disable

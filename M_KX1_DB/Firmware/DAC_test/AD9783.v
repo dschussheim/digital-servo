@@ -16,7 +16,7 @@
 
 module AD9783(
 	input	 wire							clk_in,
-	input	 wire						   rst_in,
+//	input	 wire						   rst_in,
 
 //	input  wire 			  			cmd_trig_in,
 //	input  wire 			  [15:0] cmd_addr_in,

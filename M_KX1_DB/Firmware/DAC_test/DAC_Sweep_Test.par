@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-N77OJE5::  Mon Jun 05 17:53:53 2017
+DESKTOP-N77OJE5::  Tue Jun 06 15:16:41 2017
 
 par -w -intstyle ise -ol high -mt off DAC_Sweep_Test_map.ncd DAC_Sweep_Test.ncd
 DAC_Sweep_Test.pcf 
@@ -27,49 +27,19 @@ Device speed data version:  "PRODUCTION 1.10 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                    55 out of 202,800    1%
-    Number used as Flip Flops:                  55
-    Number used as Latches:                      0
-    Number used as Latch-thrus:                  0
-    Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         71 out of 101,400    1%
-    Number used as logic:                       56 out of 101,400    1%
-      Number using O6 output only:              40
-      Number using O5 output only:               9
-      Number using O5 and O6:                    7
-      Number used as ROM:                        0
-    Number used as Memory:                      15 out of  35,000    1%
-      Number used as Dual Port RAM:              0
-      Number used as Single Port RAM:            0
-      Number used as Shift Register:            15
-        Number using O6 output only:            15
-        Number using O5 output only:             0
-        Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:      0
+  Number of Slice Registers:                     0 out of 202,800    0%
+  Number of Slice LUTs:                          0 out of 101,400    0%
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    22 out of  25,350    1%
-  Number of LUT Flip Flop pairs used:           71
-    Number with an unused Flip Flop:            16 out of      71   22%
-    Number with an unused LUT:                   0 out of      71    0%
-    Number of fully used LUT-FF pairs:          55 out of      71   77%
-    Number of slice register sites lost
-      to control set restrictions:               0 out of 202,800    0%
-
-  A LUT Flip Flop pair for this architecture represents one LUT paired with
-  one Flip Flop within a slice.  A control set is a unique combination of
-  clock, reset, set, and enable signals for a registered element.
-  The Slice Logic Distribution report is not meaningful if the design is
-  over-mapped for a non-slice resource or if Placement fails.
-  OVERMAPPING of BRAM resources should be ignored if the design is
-  over-mapped for a non-BRAM resource or if placement fails.
+  Number of occupied Slices:                     0 out of  25,350    0%
+  Number of LUT Flip Flop pairs used:            0
 
 IO Utilization:
-  Number of bonded IOBs:                        37 out of     400    9%
-    Number of LOCed IOBs:                       19 out of      37   51%
-    IOB Flip Flops:                             18
-    IOB Master Pads:                            18
-    IOB Slave Pads:                             18
+  Number of bonded IOBs:                        77 out of     400   19%
+    Number of LOCed IOBs:                       42 out of      77   54%
+    IOB Flip Flops:                             35
+    IOB Master Pads:                            35
+    IOB Slave Pads:                             35
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                  0 out of     325    0%
@@ -80,8 +50,8 @@ Specific Feature Utilization:
   Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     400    0%
   Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     400    0%
   Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0 out of     150    0%
-  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       18 out of     400    4%
-    Number used as OLOGICE2s:                   18
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       35 out of     400    8%
+    Number used as OLOGICE2s:                   35
     Number used as OLOGICE3s:                    0
     Number used as OSERDESE2s:                   0
   Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      32    0%
@@ -113,33 +83,33 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 15 secs 
-Finished initial Timing Analysis.  REAL time: 15 secs 
+Starting initial Timing Analysis.  REAL time: 13 secs 
+Finished initial Timing Analysis.  REAL time: 13 secs 
 
 Starting Router
 
 
-Phase  1  : 378 unrouted;      REAL time: 17 secs 
+Phase  1  : 147 unrouted;      REAL time: 15 secs 
 
-Phase  2  : 188 unrouted;      REAL time: 17 secs 
+Phase  2  : 0 unrouted;      REAL time: 16 secs 
 
-Phase  3  : 11 unrouted;      REAL time: 17 secs 
+Phase  3  : 0 unrouted;      REAL time: 16 secs 
 
-Phase  4  : 11 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
 
 Updating file: DAC_Sweep_Test.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
-Total REAL time to Router completion: 23 secs 
-Total CPU time to Router completion: 23 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
+Total REAL time to Router completion: 22 secs 
+Total CPU time to Router completion: 22 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -155,31 +125,23 @@ Timing Score: 0 (Setup: 0, Hold: 0)
 Asterisk (*) preceding a constraint indicates it was not met.
    This may be due to a setup or hold violation.
 
-----------------------------------------------------------------------------------------------------------
-  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
-                                            |             |    Slack   | Achievable | Errors |    Score   
-----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     6.387ns|     N/A|           0
-  _in                                       | HOLD        |     0.001ns|            |       0|           0
-----------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+  Constraint                                | Requested  | Actual     | Logic  | Absolute   |Number of
+                                            |            |            | Levels | Slack      |errors   
+------------------------------------------------------------------------------------------------------
 
 
 All constraints were met.
-INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
-   constraint is not analyzed due to the following: No paths covered by this 
-   constraint; Other constraints intersect with this constraint; or This 
-   constraint was disabled by a Path Tracing Control. Please run the Timespec 
-   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
 
 
 Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 24 secs 
-Total CPU time to PAR completion: 24 secs 
+Total REAL time to PAR completion: 23 secs 
+Total CPU time to PAR completion: 23 secs 
 
-Peak Memory Usage:  831 MB
+Peak Memory Usage:  834 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

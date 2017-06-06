@@ -41,93 +41,153 @@ CLK_out_n   |         6.584(R)|      SLOW  |         2.796(R)|      FAST  |clk_i
             |         6.584(F)|      SLOW  |         2.796(F)|      FAST  |clk_in            |   0.000|
 CLK_out_p   |         6.584(R)|      SLOW  |         2.796(R)|      FAST  |clk_in            |   0.000|
             |         6.584(F)|      SLOW  |         2.796(F)|      FAST  |clk_in            |   0.000|
-DCI_out_n   |         6.758(R)|      SLOW  |         2.868(R)|      FAST  |clk_in            |   0.000|
-            |         6.758(F)|      SLOW  |         2.868(F)|      FAST  |clk_in            |   0.000|
-DCI_out_p   |         6.758(R)|      SLOW  |         2.868(R)|      FAST  |clk_in            |   0.000|
-            |         6.758(F)|      SLOW  |         2.868(F)|      FAST  |clk_in            |   0.000|
-D_out_n<0>  |         6.588(R)|      SLOW  |         2.801(R)|      FAST  |clk_in            |   0.000|
-            |         6.588(F)|      SLOW  |         2.801(F)|      FAST  |clk_in            |   0.000|
-D_out_n<1>  |         6.607(R)|      SLOW  |         2.819(R)|      FAST  |clk_in            |   0.000|
-            |         6.607(F)|      SLOW  |         2.819(F)|      FAST  |clk_in            |   0.000|
-D_out_n<2>  |         6.808(R)|      SLOW  |         2.916(R)|      FAST  |clk_in            |   0.000|
-            |         6.808(F)|      SLOW  |         2.916(F)|      FAST  |clk_in            |   0.000|
-D_out_n<3>  |         6.571(R)|      SLOW  |         2.783(R)|      FAST  |clk_in            |   0.000|
-            |         6.571(F)|      SLOW  |         2.783(F)|      FAST  |clk_in            |   0.000|
-D_out_n<4>  |         6.771(R)|      SLOW  |         2.881(R)|      FAST  |clk_in            |   0.000|
-            |         6.771(F)|      SLOW  |         2.881(F)|      FAST  |clk_in            |   0.000|
-D_out_n<5>  |         6.781(R)|      SLOW  |         2.891(R)|      FAST  |clk_in            |   0.000|
-            |         6.781(F)|      SLOW  |         2.891(F)|      FAST  |clk_in            |   0.000|
-D_out_n<6>  |         6.780(R)|      SLOW  |         2.890(R)|      FAST  |clk_in            |   0.000|
-            |         6.780(F)|      SLOW  |         2.890(F)|      FAST  |clk_in            |   0.000|
-D_out_n<7>  |         6.772(R)|      SLOW  |         2.882(R)|      FAST  |clk_in            |   0.000|
-            |         6.772(F)|      SLOW  |         2.882(F)|      FAST  |clk_in            |   0.000|
-D_out_n<8>  |         6.736(R)|      SLOW  |         2.847(R)|      FAST  |clk_in            |   0.000|
-            |         6.736(F)|      SLOW  |         2.847(F)|      FAST  |clk_in            |   0.000|
-D_out_n<9>  |         6.752(R)|      SLOW  |         2.863(R)|      FAST  |clk_in            |   0.000|
-            |         6.752(F)|      SLOW  |         2.863(F)|      FAST  |clk_in            |   0.000|
-D_out_n<10> |         6.770(R)|      SLOW  |         2.883(R)|      FAST  |clk_in            |   0.000|
-            |         6.770(F)|      SLOW  |         2.883(F)|      FAST  |clk_in            |   0.000|
-D_out_n<11> |         6.744(R)|      SLOW  |         2.857(R)|      FAST  |clk_in            |   0.000|
-            |         6.744(F)|      SLOW  |         2.857(F)|      FAST  |clk_in            |   0.000|
-D_out_n<12> |         6.561(R)|      SLOW  |         2.774(R)|      FAST  |clk_in            |   0.000|
+D0_out_n<0> |         6.516(R)|      SLOW  |         2.730(R)|      FAST  |clk_in            |   0.000|
+            |         6.516(F)|      SLOW  |         2.730(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<1> |         6.549(R)|      SLOW  |         2.762(R)|      FAST  |clk_in            |   0.000|
+            |         6.549(F)|      SLOW  |         2.762(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<2> |         6.521(R)|      SLOW  |         2.735(R)|      FAST  |clk_in            |   0.000|
+            |         6.521(F)|      SLOW  |         2.735(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<3> |         6.527(R)|      SLOW  |         2.741(R)|      FAST  |clk_in            |   0.000|
+            |         6.527(F)|      SLOW  |         2.741(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<4> |         6.534(R)|      SLOW  |         2.750(R)|      FAST  |clk_in            |   0.000|
+            |         6.534(F)|      SLOW  |         2.750(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<5> |         6.571(R)|      SLOW  |         2.788(R)|      FAST  |clk_in            |   0.000|
+            |         6.571(F)|      SLOW  |         2.788(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<6> |         6.547(R)|      SLOW  |         2.762(R)|      FAST  |clk_in            |   0.000|
+            |         6.547(F)|      SLOW  |         2.762(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<7> |         6.569(R)|      SLOW  |         2.785(R)|      FAST  |clk_in            |   0.000|
+            |         6.569(F)|      SLOW  |         2.785(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<8> |         6.567(R)|      SLOW  |         2.781(R)|      FAST  |clk_in            |   0.000|
+            |         6.567(F)|      SLOW  |         2.781(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<9> |         6.594(R)|      SLOW  |         2.808(R)|      FAST  |clk_in            |   0.000|
+            |         6.594(F)|      SLOW  |         2.808(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<10>|         6.543(R)|      SLOW  |         2.759(R)|      FAST  |clk_in            |   0.000|
+            |         6.543(F)|      SLOW  |         2.759(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<11>|         6.585(R)|      SLOW  |         2.800(R)|      FAST  |clk_in            |   0.000|
+            |         6.585(F)|      SLOW  |         2.800(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<12>|         6.561(R)|      SLOW  |         2.774(R)|      FAST  |clk_in            |   0.000|
             |         6.561(F)|      SLOW  |         2.774(F)|      FAST  |clk_in            |   0.000|
-D_out_n<13> |         6.747(R)|      SLOW  |         2.860(R)|      FAST  |clk_in            |   0.000|
-            |         6.747(F)|      SLOW  |         2.860(F)|      FAST  |clk_in            |   0.000|
-D_out_n<14> |         6.985(R)|      SLOW  |         2.919(R)|      FAST  |clk_in            |   0.000|
-            |         6.985(F)|      SLOW  |         2.919(F)|      FAST  |clk_in            |   0.000|
-D_out_n<15> |         6.959(R)|      SLOW  |         2.894(R)|      FAST  |clk_in            |   0.000|
-            |         6.959(F)|      SLOW  |         2.894(F)|      FAST  |clk_in            |   0.000|
-D_out_p<0>  |         6.588(R)|      SLOW  |         2.801(R)|      FAST  |clk_in            |   0.000|
-            |         6.588(F)|      SLOW  |         2.801(F)|      FAST  |clk_in            |   0.000|
-D_out_p<1>  |         6.607(R)|      SLOW  |         2.819(R)|      FAST  |clk_in            |   0.000|
-            |         6.607(F)|      SLOW  |         2.819(F)|      FAST  |clk_in            |   0.000|
-D_out_p<2>  |         6.808(R)|      SLOW  |         2.916(R)|      FAST  |clk_in            |   0.000|
-            |         6.808(F)|      SLOW  |         2.916(F)|      FAST  |clk_in            |   0.000|
-D_out_p<3>  |         6.571(R)|      SLOW  |         2.783(R)|      FAST  |clk_in            |   0.000|
-            |         6.571(F)|      SLOW  |         2.783(F)|      FAST  |clk_in            |   0.000|
-D_out_p<4>  |         6.771(R)|      SLOW  |         2.881(R)|      FAST  |clk_in            |   0.000|
-            |         6.771(F)|      SLOW  |         2.881(F)|      FAST  |clk_in            |   0.000|
-D_out_p<5>  |         6.781(R)|      SLOW  |         2.891(R)|      FAST  |clk_in            |   0.000|
-            |         6.781(F)|      SLOW  |         2.891(F)|      FAST  |clk_in            |   0.000|
-D_out_p<6>  |         6.780(R)|      SLOW  |         2.890(R)|      FAST  |clk_in            |   0.000|
-            |         6.780(F)|      SLOW  |         2.890(F)|      FAST  |clk_in            |   0.000|
-D_out_p<7>  |         6.772(R)|      SLOW  |         2.882(R)|      FAST  |clk_in            |   0.000|
-            |         6.772(F)|      SLOW  |         2.882(F)|      FAST  |clk_in            |   0.000|
-D_out_p<8>  |         6.736(R)|      SLOW  |         2.847(R)|      FAST  |clk_in            |   0.000|
-            |         6.736(F)|      SLOW  |         2.847(F)|      FAST  |clk_in            |   0.000|
-D_out_p<9>  |         6.752(R)|      SLOW  |         2.863(R)|      FAST  |clk_in            |   0.000|
-            |         6.752(F)|      SLOW  |         2.863(F)|      FAST  |clk_in            |   0.000|
-D_out_p<10> |         6.770(R)|      SLOW  |         2.883(R)|      FAST  |clk_in            |   0.000|
-            |         6.770(F)|      SLOW  |         2.883(F)|      FAST  |clk_in            |   0.000|
-D_out_p<11> |         6.744(R)|      SLOW  |         2.857(R)|      FAST  |clk_in            |   0.000|
-            |         6.744(F)|      SLOW  |         2.857(F)|      FAST  |clk_in            |   0.000|
-D_out_p<12> |         6.561(R)|      SLOW  |         2.774(R)|      FAST  |clk_in            |   0.000|
+D0_out_n<13>|         6.550(R)|      SLOW  |         2.767(R)|      FAST  |clk_in            |   0.000|
+            |         6.550(F)|      SLOW  |         2.767(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<14>|         6.586(R)|      SLOW  |         2.799(R)|      FAST  |clk_in            |   0.000|
+            |         6.586(F)|      SLOW  |         2.799(F)|      FAST  |clk_in            |   0.000|
+D0_out_n<15>|         6.925(R)|      SLOW  |         2.859(R)|      FAST  |clk_in            |   0.000|
+            |         6.925(F)|      SLOW  |         2.859(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<0> |         6.516(R)|      SLOW  |         2.730(R)|      FAST  |clk_in            |   0.000|
+            |         6.516(F)|      SLOW  |         2.730(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<1> |         6.549(R)|      SLOW  |         2.762(R)|      FAST  |clk_in            |   0.000|
+            |         6.549(F)|      SLOW  |         2.762(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<2> |         6.521(R)|      SLOW  |         2.735(R)|      FAST  |clk_in            |   0.000|
+            |         6.521(F)|      SLOW  |         2.735(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<3> |         6.527(R)|      SLOW  |         2.741(R)|      FAST  |clk_in            |   0.000|
+            |         6.527(F)|      SLOW  |         2.741(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<4> |         6.534(R)|      SLOW  |         2.750(R)|      FAST  |clk_in            |   0.000|
+            |         6.534(F)|      SLOW  |         2.750(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<5> |         6.571(R)|      SLOW  |         2.788(R)|      FAST  |clk_in            |   0.000|
+            |         6.571(F)|      SLOW  |         2.788(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<6> |         6.547(R)|      SLOW  |         2.762(R)|      FAST  |clk_in            |   0.000|
+            |         6.547(F)|      SLOW  |         2.762(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<7> |         6.569(R)|      SLOW  |         2.785(R)|      FAST  |clk_in            |   0.000|
+            |         6.569(F)|      SLOW  |         2.785(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<8> |         6.567(R)|      SLOW  |         2.781(R)|      FAST  |clk_in            |   0.000|
+            |         6.567(F)|      SLOW  |         2.781(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<9> |         6.594(R)|      SLOW  |         2.808(R)|      FAST  |clk_in            |   0.000|
+            |         6.594(F)|      SLOW  |         2.808(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<10>|         6.543(R)|      SLOW  |         2.759(R)|      FAST  |clk_in            |   0.000|
+            |         6.543(F)|      SLOW  |         2.759(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<11>|         6.585(R)|      SLOW  |         2.800(R)|      FAST  |clk_in            |   0.000|
+            |         6.585(F)|      SLOW  |         2.800(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<12>|         6.561(R)|      SLOW  |         2.774(R)|      FAST  |clk_in            |   0.000|
             |         6.561(F)|      SLOW  |         2.774(F)|      FAST  |clk_in            |   0.000|
-D_out_p<13> |         6.747(R)|      SLOW  |         2.860(R)|      FAST  |clk_in            |   0.000|
+D0_out_p<13>|         6.550(R)|      SLOW  |         2.767(R)|      FAST  |clk_in            |   0.000|
+            |         6.550(F)|      SLOW  |         2.767(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<14>|         6.586(R)|      SLOW  |         2.799(R)|      FAST  |clk_in            |   0.000|
+            |         6.586(F)|      SLOW  |         2.799(F)|      FAST  |clk_in            |   0.000|
+D0_out_p<15>|         6.925(R)|      SLOW  |         2.859(R)|      FAST  |clk_in            |   0.000|
+            |         6.925(F)|      SLOW  |         2.859(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<0> |         6.588(R)|      SLOW  |         2.801(R)|      FAST  |clk_in            |   0.000|
+            |         6.588(F)|      SLOW  |         2.801(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<1> |         6.607(R)|      SLOW  |         2.819(R)|      FAST  |clk_in            |   0.000|
+            |         6.607(F)|      SLOW  |         2.819(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<2> |         6.808(R)|      SLOW  |         2.916(R)|      FAST  |clk_in            |   0.000|
+            |         6.808(F)|      SLOW  |         2.916(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<3> |         6.571(R)|      SLOW  |         2.783(R)|      FAST  |clk_in            |   0.000|
+            |         6.571(F)|      SLOW  |         2.783(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<4> |         6.771(R)|      SLOW  |         2.881(R)|      FAST  |clk_in            |   0.000|
+            |         6.771(F)|      SLOW  |         2.881(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<5> |         6.781(R)|      SLOW  |         2.891(R)|      FAST  |clk_in            |   0.000|
+            |         6.781(F)|      SLOW  |         2.891(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<6> |         6.780(R)|      SLOW  |         2.890(R)|      FAST  |clk_in            |   0.000|
+            |         6.780(F)|      SLOW  |         2.890(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<7> |         6.772(R)|      SLOW  |         2.882(R)|      FAST  |clk_in            |   0.000|
+            |         6.772(F)|      SLOW  |         2.882(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<8> |         6.736(R)|      SLOW  |         2.847(R)|      FAST  |clk_in            |   0.000|
+            |         6.736(F)|      SLOW  |         2.847(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<9> |         6.752(R)|      SLOW  |         2.863(R)|      FAST  |clk_in            |   0.000|
+            |         6.752(F)|      SLOW  |         2.863(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<10>|         6.770(R)|      SLOW  |         2.883(R)|      FAST  |clk_in            |   0.000|
+            |         6.770(F)|      SLOW  |         2.883(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<11>|         6.744(R)|      SLOW  |         2.857(R)|      FAST  |clk_in            |   0.000|
+            |         6.744(F)|      SLOW  |         2.857(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<12>|         6.764(R)|      SLOW  |         2.873(R)|      FAST  |clk_in            |   0.000|
+            |         6.764(F)|      SLOW  |         2.873(F)|      FAST  |clk_in            |   0.000|
+D1_out_n<13>|         6.747(R)|      SLOW  |         2.860(R)|      FAST  |clk_in            |   0.000|
             |         6.747(F)|      SLOW  |         2.860(F)|      FAST  |clk_in            |   0.000|
-D_out_p<14> |         6.985(R)|      SLOW  |         2.919(R)|      FAST  |clk_in            |   0.000|
+D1_out_n<14>|         6.985(R)|      SLOW  |         2.919(R)|      FAST  |clk_in            |   0.000|
             |         6.985(F)|      SLOW  |         2.919(F)|      FAST  |clk_in            |   0.000|
-D_out_p<15> |         6.959(R)|      SLOW  |         2.894(R)|      FAST  |clk_in            |   0.000|
+D1_out_n<15>|         6.959(R)|      SLOW  |         2.894(R)|      FAST  |clk_in            |   0.000|
             |         6.959(F)|      SLOW  |         2.894(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<0> |         6.588(R)|      SLOW  |         2.801(R)|      FAST  |clk_in            |   0.000|
+            |         6.588(F)|      SLOW  |         2.801(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<1> |         6.607(R)|      SLOW  |         2.819(R)|      FAST  |clk_in            |   0.000|
+            |         6.607(F)|      SLOW  |         2.819(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<2> |         6.808(R)|      SLOW  |         2.916(R)|      FAST  |clk_in            |   0.000|
+            |         6.808(F)|      SLOW  |         2.916(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<3> |         6.571(R)|      SLOW  |         2.783(R)|      FAST  |clk_in            |   0.000|
+            |         6.571(F)|      SLOW  |         2.783(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<4> |         6.771(R)|      SLOW  |         2.881(R)|      FAST  |clk_in            |   0.000|
+            |         6.771(F)|      SLOW  |         2.881(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<5> |         6.781(R)|      SLOW  |         2.891(R)|      FAST  |clk_in            |   0.000|
+            |         6.781(F)|      SLOW  |         2.891(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<6> |         6.780(R)|      SLOW  |         2.890(R)|      FAST  |clk_in            |   0.000|
+            |         6.780(F)|      SLOW  |         2.890(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<7> |         6.772(R)|      SLOW  |         2.882(R)|      FAST  |clk_in            |   0.000|
+            |         6.772(F)|      SLOW  |         2.882(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<8> |         6.736(R)|      SLOW  |         2.847(R)|      FAST  |clk_in            |   0.000|
+            |         6.736(F)|      SLOW  |         2.847(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<9> |         6.752(R)|      SLOW  |         2.863(R)|      FAST  |clk_in            |   0.000|
+            |         6.752(F)|      SLOW  |         2.863(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<10>|         6.770(R)|      SLOW  |         2.883(R)|      FAST  |clk_in            |   0.000|
+            |         6.770(F)|      SLOW  |         2.883(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<11>|         6.744(R)|      SLOW  |         2.857(R)|      FAST  |clk_in            |   0.000|
+            |         6.744(F)|      SLOW  |         2.857(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<12>|         6.764(R)|      SLOW  |         2.873(R)|      FAST  |clk_in            |   0.000|
+            |         6.764(F)|      SLOW  |         2.873(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<13>|         6.747(R)|      SLOW  |         2.860(R)|      FAST  |clk_in            |   0.000|
+            |         6.747(F)|      SLOW  |         2.860(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<14>|         6.985(R)|      SLOW  |         2.919(R)|      FAST  |clk_in            |   0.000|
+            |         6.985(F)|      SLOW  |         2.919(F)|      FAST  |clk_in            |   0.000|
+D1_out_p<15>|         6.959(R)|      SLOW  |         2.894(R)|      FAST  |clk_in            |   0.000|
+            |         6.959(F)|      SLOW  |         2.894(F)|      FAST  |clk_in            |   0.000|
+DCI0_out_n  |         6.546(R)|      SLOW  |         2.759(R)|      FAST  |clk_in            |   0.000|
+            |         6.546(F)|      SLOW  |         2.759(F)|      FAST  |clk_in            |   0.000|
+DCI0_out_p  |         6.546(R)|      SLOW  |         2.759(R)|      FAST  |clk_in            |   0.000|
+            |         6.546(F)|      SLOW  |         2.759(F)|      FAST  |clk_in            |   0.000|
+DCI1_out_n  |         6.758(R)|      SLOW  |         2.868(R)|      FAST  |clk_in            |   0.000|
+            |         6.758(F)|      SLOW  |         2.868(F)|      FAST  |clk_in            |   0.000|
+DCI1_out_p  |         6.758(R)|      SLOW  |         2.868(R)|      FAST  |clk_in            |   0.000|
+            |         6.758(F)|      SLOW  |         2.868(F)|      FAST  |clk_in            |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    2.690|         |    2.928|         |
----------------+---------+---------+---------+---------+
 
-
-Analysis completed Mon Jun 05 17:54:35 2017 
+Analysis completed Tue Jun 06 15:17:21 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 769 MB
+Peak Memory Usage: 768 MB
 
 
 

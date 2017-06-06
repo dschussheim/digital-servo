@@ -1,30 +1,68 @@
+NET "D0_out_p[1]" LOC = J18;
+NET "D0_out_p[3]" LOC = K20;
+NET "D0_out_p[5]" LOC = E18;
+NET "D0_out_p[7]" LOC = D19;
+NET "D0_out_p[9]" LOC = G15;
+NET "D0_out_p[11]" LOC = E15;
+NET "D0_out_p[13]" LOC = F17;
+NET "D0_out_p[15]" LOC = V21;
+NET "D1_out_p[1]" LOC = A18;
+NET "D1_out_p[3]" LOC = C16;
+NET "D1_out_p[5]" LOC = B10;
+NET "D1_out_p[7]" LOC = B14;
+NET "D1_out_p[9]" LOC = D14;
+NET "D1_out_p[11]" LOC = E11;
+NET "D1_out_p[13]" LOC = F14;
+NET "D1_out_p[15]" LOC = AD23;
+NET "D1_out_p[14]" LOC = AF24;
 
 
-NET "D_out_p[12]" LOC = H16;
-NET "DCI_out_p" LOC = C14;
-NET "D_out_p[6]" LOC = B12;
-NET "D_out_p[4]" LOC = B15;
-NET "D_out_p[10]" LOC = C12;
-NET "D_out_p[2]" LOC = A13;
-
-NET "D_out_p[5]" LOC = B10;
-NET "D_out_p[7]" LOC = B14;
-NET "D_out_p[9]" LOC = D14;
-NET "D_out_p[11]" LOC = E11;
-NET "D_out_p[13]" LOC = F14;
-
-
-
-NET "D_out_p[8]" LOC = G12;
+NET "csb1" LOC = K25;
+NET "csb0" LOC = M25;
+NET "rst0_out" LOC = L25;
+NET "rst1_out" LOC = K26;
+NET "DCI1_out_p" LOC = C14;
+NET "D1_out_p[0]" LOC = B17;
+NET "D1_out_p[2]" LOC = A13;
+NET "D1_out_p[4]" LOC = B15;
+NET "D1_out_p[6]" LOC = B12;
+NET "D1_out_p[8]" LOC = G12;
+NET "D1_out_p[10]" LOC = C12;
+NET "D1_out_p[12]" LOC = F9;
 
 
+NET "csb0" IOSTANDARD = LVCMOS25;
+NET "csb1" IOSTANDARD = LVCMOS25;
+NET "rst0_out" IOSTANDARD = LVCMOS25;
+NET "rst1_out" IOSTANDARD = LVCMOS25;
+NET "sdio" IOSTANDARD = LVCMOS25;
+NET "sdo" IOSTANDARD = LVCMOS25;
+
+
+NET "DCI0_out_p" LOC = H19;
 NET "CLK_out_p" LOC = C19;
+NET "sdio" LOC = P23;
+NET "sdo" LOC = N23;
+NET "D0_out_p[0]" LOC = K16;
+NET "D0_out_p[2]" LOC = L19;
+NET "D0_out_p[4]" LOC = H17;
+NET "D0_out_p[6]" LOC = G19;
+NET "D0_out_p[8]" LOC = J15;
+NET "D0_out_p[10]" LOC = G17;
+NET "D0_out_p[12]" LOC = H16;
+NET "D0_out_p[14]" LOC = D15;
 NET "clk" LOC = AA3;
-NET "D_out_p[0]" LOC = B17;
-NET "D_out_p[1]" LOC = A18;
-NET "D_out_p[3]" LOC = C16;
-NET "D_out_p[14]" LOC = AF24;
-NET "D_out_p[15]" LOC = AD23;
 
-
-NET "clk" IOSTANDARD = HSTL_II;
+## PlanAhead Generated IO constraints 
+#
+#NET "DCO0_in_n" IOSTANDARD = LVCMOS25;
+#NET "DCO0_in_p" IOSTANDARD = LVCMOS25;
+#NET "DCO1_in_n" IOSTANDARD = LVCMOS25;
+#NET "DCO1_in_p" IOSTANDARD = LVCMOS25;
+#
+## PlanAhead Generated physical constraints 
+#
+#NET "DCO0_in_p" LOC = F19;
+#NET "DCO0_in_n" LOC = E20;
+#NET "DCO1_in_p" LOC = E13;
+#NET "DCO1_in_n" LOC = E12;

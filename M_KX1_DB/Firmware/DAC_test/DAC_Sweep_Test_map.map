@@ -10,10 +10,10 @@ Target Device  : xc7k160t
 Target Package : fbg676
 Target Speed   : -1
 Mapper Version : kintex7 -- $Revision: 1.55 $
-Mapped Date    : Mon Jun 05 17:53:20 2017
+Mapped Date    : Tue Jun 06 15:16:12 2017
 
-WARNING:LIT:701 - PAD symbol "D_out_p<15>" has an undefined IOSTANDARD.
-WARNING:LIT:702 - PAD symbol "D_out_n<15>" is not constrained (LOC) to a
+WARNING:LIT:701 - PAD symbol "clk" has an undefined IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "D1_out_n<15>" is not constrained (LOC) to a
    specific location.
 Mapping design into LUTs...
 Running directed packing...
@@ -22,52 +22,49 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 22 secs 
-Total CPU  time at the beginning of Placer: 22 secs 
+Total REAL time at the beginning of Placer: 21 secs 
+Total CPU  time at the beginning of Placer: 21 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:331e8575) REAL time: 25 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:c7877c22) REAL time: 24 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:331e8575) REAL time: 25 secs 
+Phase 2.7  Design Feasibility Check (Checksum:c7877c22) REAL time: 24 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:331e8575) REAL time: 25 secs 
+Phase 3.31  Local Placement Optimization (Checksum:c7877c22) REAL time: 24 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:c8970855) REAL time: 28 secs 
+(Checksum:193f7e22) REAL time: 25 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:c8970855) REAL time: 28 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:193f7e22) REAL time: 25 secs 
 
 Phase 6.3  Local Placement Optimization
-Phase 6.3  Local Placement Optimization (Checksum:c8970855) REAL time: 28 secs 
+Phase 6.3  Local Placement Optimization (Checksum:193f7e22) REAL time: 25 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:c8970855) REAL time: 28 secs 
+Phase 7.5  Local Placement Optimization (Checksum:193f7e22) REAL time: 25 secs 
 
 Phase 8.8  Global Placement
-..
-................
-................
-Phase 8.8  Global Placement (Checksum:d205a904) REAL time: 29 secs 
+Phase 8.8  Global Placement (Checksum:193f7e22) REAL time: 26 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:d205a904) REAL time: 29 secs 
+Phase 9.5  Local Placement Optimization (Checksum:193f7e22) REAL time: 26 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:7143a124) REAL time: 29 secs 
+Phase 10.18  Placement Optimization (Checksum:193f7e22) REAL time: 26 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:7143a124) REAL time: 29 secs 
+Phase 11.5  Local Placement Optimization (Checksum:193f7e22) REAL time: 26 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:7143a124) REAL time: 29 secs 
+Phase 12.34  Placement Validation (Checksum:193f7e22) REAL time: 26 secs 
 
-Total REAL time to Placer completion: 29 secs 
-Total CPU  time to Placer completion: 29 secs 
+Total REAL time to Placer completion: 26 secs 
+Total CPU  time to Placer completion: 26 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -78,50 +75,19 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    2
 Slice Logic Utilization:
-  Number of Slice Registers:                    55 out of 202,800    1%
-    Number used as Flip Flops:                  55
-    Number used as Latches:                      0
-    Number used as Latch-thrus:                  0
-    Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         71 out of 101,400    1%
-    Number used as logic:                       56 out of 101,400    1%
-      Number using O6 output only:              40
-      Number using O5 output only:               9
-      Number using O5 and O6:                    7
-      Number used as ROM:                        0
-    Number used as Memory:                      15 out of  35,000    1%
-      Number used as Dual Port RAM:              0
-      Number used as Single Port RAM:            0
-      Number used as Shift Register:            15
-        Number using O6 output only:            15
-        Number using O5 output only:             0
-        Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:      0
+  Number of Slice Registers:                     0 out of 202,800    0%
+  Number of Slice LUTs:                          0 out of 101,400    0%
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    22 out of  25,350    1%
-  Number of LUT Flip Flop pairs used:           71
-    Number with an unused Flip Flop:            16 out of      71   22%
-    Number with an unused LUT:                   0 out of      71    0%
-    Number of fully used LUT-FF pairs:          55 out of      71   77%
-    Number of unique control sets:               2
-    Number of slice register sites lost
-      to control set restrictions:               2 out of 202,800    1%
-
-  A LUT Flip Flop pair for this architecture represents one LUT paired with
-  one Flip Flop within a slice.  A control set is a unique combination of
-  clock, reset, set, and enable signals for a registered element.
-  The Slice Logic Distribution report is not meaningful if the design is
-  over-mapped for a non-slice resource or if Placement fails.
-  OVERMAPPING of BRAM resources should be ignored if the design is
-  over-mapped for a non-BRAM resource or if placement fails.
+  Number of occupied Slices:                     0 out of  25,350    0%
+  Number of LUT Flip Flop pairs used:            0
 
 IO Utilization:
-  Number of bonded IOBs:                        37 out of     400    9%
-    Number of LOCed IOBs:                       19 out of      37   51%
-    IOB Flip Flops:                             18
-    IOB Master Pads:                            18
-    IOB Slave Pads:                             18
+  Number of bonded IOBs:                        77 out of     400   19%
+    Number of LOCed IOBs:                       42 out of      77   54%
+    IOB Flip Flops:                             35
+    IOB Master Pads:                            35
+    IOB Slave Pads:                             35
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                  0 out of     325    0%
@@ -132,8 +98,8 @@ Specific Feature Utilization:
   Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     400    0%
   Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     400    0%
   Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0 out of     150    0%
-  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       18 out of     400    4%
-    Number used as OLOGICE2s:                   18
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       35 out of     400    8%
+    Number used as OLOGICE2s:                   35
     Number used as OLOGICE3s:                    0
     Number used as OSERDESE2s:                   0
   Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      32    0%
@@ -161,11 +127,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.24
+Average Fanout of Non-Clock Nets:                1.00
 
-Peak Memory Usage:  1028 MB
-Total REAL time to MAP completion:  31 secs 
-Total CPU time to MAP completion:   31 secs 
+Peak Memory Usage:  1002 MB
+Total REAL time to MAP completion:  27 secs 
+Total CPU time to MAP completion:   27 secs 
 
 Mapping completed.
 See MAP report file "DAC_Sweep_Test_map.mrp" for details.

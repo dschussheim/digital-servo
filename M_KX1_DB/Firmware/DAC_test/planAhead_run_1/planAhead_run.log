@@ -10,14 +10,11 @@ Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/r
 Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/pa.fromHdl.tcl
-# create_project -name DAC_test -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_2" -part xc7k160tfbg676-1
+# create_project -name DAC_test -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1" -part xc7k160tfbg676-1
 # set_param project.pinAheadLayout yes
 # set srcset [get_property srcset [current_run -impl]]
 # set_property target_constrs_file "DAC_Sweep_Test.ucf" [current_fileset -constrset]
 Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf' to fileset 'constrs_1'
-# set hdlfile [add_files [list {Sweep.v}]]
-# set_property file_type Verilog $hdlfile
-# set_property library work $hdlfile
 # set hdlfile [add_files [list {AD9783.v}]]
 # set_property file_type Verilog $hdlfile
 # set_property library work $hdlfile
@@ -29,10 +26,9 @@ Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmwa
 # open_rtl_design -part xc7k160tfbg676-1
 Using Verific elaboration
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
-Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/Sweep.v" into library work
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v" into library work
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.v" into library work
-INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockRegion.xml
 Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockBuffers.xml
@@ -42,18 +38,22 @@ Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/k
 Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/IOStandards.xml
 Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/ConfigModes.xml
 Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/drc.xml
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst0/pins[17].OBUFDS_inst' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:438]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst0/pins[17].OBUFDS_inst' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:438]
 Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
 Finished Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUFG => IBUF: 1 instances
 
-Phase 0 | Netlist Checksum: 10bfbc63
-open_rtl_design: Time (s): elapsed = 00:00:20 . Memory (MB): peak = 801.426 ; gain = 407.527
+Phase 0 | Netlist Checksum: 2824b201
+open_rtl_design: Time (s): elapsed = 00:00:17 . Memory (MB): peak = 813.098 ; gain = 388.363
 update_compile_order -fileset sim_1
-set_property iostandard HSTL_II [get_ports [list clk]]
+startgroup
+set_property package_pin V21 [get_ports {D0_out_p[15]}]
+endgroup
 save_constraints
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Mon Jun 05 16:38:27 2017...
+INFO: [Common 17-206] Exiting PlanAhead at Tue Jun 06 15:07:32 2017...
 INFO: [Common 17-83] Releasing license: PlanAhead
