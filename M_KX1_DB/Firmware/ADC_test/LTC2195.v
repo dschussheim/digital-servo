@@ -204,7 +204,7 @@ end
 
 // Phase shifter
 wire clkPS, clkPS180;
-
+/*
 DCM_SP #(
 	.CLKDV_DIVIDE(2.000),
 	.CLKFX_DIVIDE(1),
@@ -231,10 +231,60 @@ dcm_sp_inst0(
 	.RST(rst_in),
 	.DSSEN(1'b0)				// uused pin - tie low
 );
+*/
+
+//There are no DCMs in 7 series devices. Their functionality is encompasses by PLLs and MMCMs.
+//I instantiate an MMCM below.
+
+// MMCME2_ADV: Advanced Mixed Mode Clock Manager
+// 7 Series
+// Xilinx HDL Libraries Guide, version 14.7
+MMCME2_ADV #(
+	.BANDWIDTH("OPTIMIZED"), // Jitter programming (OPTIMIZED, HIGH, LOW)
+	.CLKFBOUT_MULT_F(1.0), // Multiply value for all CLKOUT (2.000-64.000).
+	.CLKFBOUT_PHASE(0.0), // Phase offset in degrees of CLKFB (-360.000-360.000).
+	// CLKIN_PERIOD: Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
+	.CLKIN1_PERIOD(10.0),
+	.CLKOUT0_DIVIDE_F(1.0), // Divide amount for CLKOUT0 (1.000-128.000).
+	// CLKOUT0_DUTY_CYCLE - CLKOUT6_DUTY_CYCLE: Duty cycle for CLKOUT outputs (0.01-0.99).
+	.CLKOUT0_DUTY_CYCLE(0.5),
+	// CLKOUT0_PHASE - CLKOUT6_PHASE: Phase offset for CLKOUT outputs (-360.000-360.000).
+	.CLKOUT0_PHASE(0.0),
+	.COMPENSATION("BUF_IN"), // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
+	.DIVCLK_DIVIDE(1), // Master division value (1-106)
+	// REF_JITTER: Reference input jitter in UI (0.000-0.999).
+	.REF_JITTER1(0.01),
+	.STARTUP_WAIT("FALSE"), // Delays DONE until MMCM is locked (FALSE, TRUE)
+	// USE_FINE_PS: Fine phase shift enable (TRUE/FALSE)
+	.CLKFBOUT_USE_FINE_PS("FALSE"),
+	.CLKOUT0_USE_FINE_PS("TRUE"),
+)
+MMCME2_ADV_inst (
+	// Clock Outputs: 1-bit (each) output: User configurable clock outputs
+	.CLKOUT0(clkPS), // 1-bit output: CLKOUT0
+	// Dynamic Phase Shift Ports: 1-bit (each) output: Ports used for dynamic phase shifting of the outputs
+	.PSDONE(PS_done), // 1-bit output: Phase shift done
+	// Feedback Clocks: 1-bit (each) output: Clock feedback ports
+	.CLKFBOUT(clkPS), // 1-bit output: Feedback clock
+	.LOCKED(PS_locked), // 1-bit output: LOCK
+	// Clock Inputs: 1-bit (each) input: Clock inputs
+	.CLKIN1(clk_in), // 1-bit input: Primary clock
+	// Control Ports: 1-bit (each) input: MMCM control ports
+	.CLKINSEL(1'b1), // 1-bit input: Clock select, High=CLKIN1 Low=CLKIN2
+	.PWRDWN(1'b0), // 1-bit input: Power-down
+	.RST(rst_in), // 1-bit input: Reset
+	// Dynamic Phase Shift Ports: 1-bit (each) input: Ports used for dynamic phase shifting of the outputs
+	.PSCLK(PS_clk), // 1-bit input: Phase shift clock
+	.PSEN(PS_en), // 1-bit input: Phase shift enable
+	.PSINCDEC(PS_inc), // 1-bit input: Phase shift increment/decrement
+	// Feedback Clocks: 1-bit (each) input: Clock feedback ports
+	.CLKFBIN(clkPS) // 1-bit input: Feedback clock
+);
+// End of MMCME2_ADV_inst instantiation
 
 // DDR register
 wire ENC_out;
-
+/*
 ODDR2 #(
 	.DDR_ALIGNMENT("C0"),
 	.INIT(1'b0),
@@ -250,6 +300,29 @@ oddr2_inst(
 	.R(rst_in),
 	.S()
 );
+*/
+
+//7 series DDR primitive to replace above ODDR2 for SPartan 6.
+
+// ODDR: Output Double Data Rate Output Register with Set, Reset
+// and Clock Enable.
+// 7 Series
+// Xilinx HDL Libraries Guide, version 14.7
+ODDR #(
+	.DDR_CLK_EDGE("OPPOSITE_EDGE"), // "OPPOSITE_EDGE" or "SAME_EDGE"
+	.INIT(1'b0), // Initial value of Q: 1'b0 or 1'b1
+	.SRTYPE("ASYNC") // Set/Reset type: "SYNC" or "ASYNC"
+) ODDR_inst (
+	.Q(ENC_out), // 1-bit DDR output
+	.C(clkPS), // 1-bit clock input
+	.CE(1'b1), // 1-bit clock enable input
+	.D1(1'b0), // 1-bit data input (positive edge)
+	.D2(1'b1), // 1-bit data input (negative edge)
+	.R(rst_in), // 1-bit reset
+	.S() // 1-bit set
+);
+// End of ODDR_inst instantiation
+
 
 // Output buffer
 OBUFDS #(

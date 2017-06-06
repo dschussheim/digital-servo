@@ -26,17 +26,23 @@ module DAC_Sweep_Test_TB;
 
 	// Inputs
 	reg clk;
-	reg on_in;
+//	reg on_in;
 
 	// Outputs
-	wire [15:0] D_out_p;
-	wire [15:0] D_out_n;
+	wire [15:0] D1_out_p;
+	wire [15:0] D1_out_n;
+	wire [15:0] D0_out_p;
+	wire [15:0] D0_out_n;
 	wire 			CLK_out_p;
 	wire 			CLK_out_n;
-	wire 			DCI_out_p;
-	wire 			DCI_out_n;
-	wire			csb;
-	wire			rst_out;
+	wire 			DCI1_out_p;
+	wire 			DCI1_out_n;
+	wire 			DCI0_out_p;
+	wire 			DCI0_out_n;
+	wire			csb1;
+	wire			csb0;
+	wire			rst1_out;
+	wire			rst0_out;
 	wire			sdo;
 	wire			sdio;
 
@@ -59,10 +65,10 @@ module DAC_Sweep_Test_TB;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		on_in = 0;
+//		on_in = 0;
         
 		// Add stimulus here
-		#20	on_in = 1;
+//		#20	on_in = 1;
 	end
    always
 		#5	clk = ~clk;

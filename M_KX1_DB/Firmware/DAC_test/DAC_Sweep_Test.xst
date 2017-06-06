@@ -1,9 +1,6 @@
-set -tmpdir "xst/projnav.tmp"
-set -xsthdpdir "xst"
-run
--ifn DAC_Sweep_Test.prj
--ofn DAC_Sweep_Test
--ofmt NGC
+set -tmpdir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/xst"
+run -compileonly yes
 -p xc7k160t-1-fbg676
 -top DAC_Sweep_Test
 -opt_mode Speed
@@ -50,3 +47,4 @@ run
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
+-ifn DAC_Sweep_Test.prj

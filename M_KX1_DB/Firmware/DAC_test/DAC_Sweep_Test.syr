@@ -120,6 +120,8 @@ Elaborating module <IBUFG(IBUF_LOW_PWR="TRUE",IOSTANDARD="HSTL_II")>.
 
 Elaborating module <BUFG>.
 
+Elaborating module <BUFR(BUFR_DIVIDE="8",SIM_DEVICE="7SERIES")>.
+
 Elaborating module <AD9783>.
 
 Elaborating module <ODDR(DDR_CLK_EDGE="OPPOSITE_EDGE",INIT=1'b0,SRTYPE="SYNC")>.
@@ -132,8 +134,8 @@ Elaborating module <OBUFDS(IOSTANDARD="LVDS_25",SLEW="SLOW")>.
 
 Synthesizing Unit <DAC_Sweep_Test>.
     Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v".
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 111: Output port <CLK_out_p> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 111: Output port <CLK_out_n> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 126: Output port <CLK_out_p> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 126: Output port <CLK_out_n> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <DAC_Sweep_Test> synthesized.
@@ -294,6 +296,8 @@ Primitive and Black Box Usage:
 #      IBUFG                       : 1
 #      OBUF                        : 6
 #      OBUFDS                      : 36
+# Others                           : 1
+#      BUFR                        : 1
 
 Device utilization summary:
 ---------------------------
@@ -339,12 +343,17 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | IBUFG+BUFG             | 36    |
+clk                                | IBUFG+BUFG+BUFR        | 37    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst0_out_OBUF(XST_VCC:P)           | NONE(BUFR_inst)        | 1     |
+sdo_OBUF(XST_GND:G)                | NONE(BUFR_inst)        | 1     |
+-----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
@@ -387,11 +396,11 @@ Cross Clock Domains Report:
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.97 secs
+Total CPU time to Xst completion: 8.39 secs
  
 --> 
 
-Total memory usage is 409068 kilobytes
+Total memory usage is 409056 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   74 (   0 filtered)
