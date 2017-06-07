@@ -1,8 +1,8 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Tue Jun 06 15:05:54 2017
-# Process ID: 6420
+# Start of session at: Wed Jun 07 13:22:22 2017
+# Process ID: 4312
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1/planAhead.log
 # Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
@@ -18,6 +18,9 @@ source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC
 # set srcset [get_property srcset [current_run -impl]]
 # set_property target_constrs_file "DAC_Sweep_Test.ucf" [current_fileset -constrset]
 Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {clk_div.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
 # set hdlfile [add_files [list {AD9783.v}]]
 # set_property file_type Verilog $hdlfile
 # set_property library work $hdlfile
@@ -29,9 +32,10 @@ Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmwa
 # open_rtl_design -part xc7k160tfbg676-1
 Using Verific elaboration
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/clk_div.v" into library work
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v" into library work
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.v" into library work
-INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 85 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockRegion.xml
 Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockBuffers.xml
@@ -41,28 +45,136 @@ Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/k
 Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/IOStandards.xml
 Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/ConfigModes.xml
 Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/drc.xml
-WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst0/pins[17].OBUFDS_inst' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:438]
-WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst0/pins[17].OBUFDS_inst' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:438]
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[0].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[0].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[0].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[0].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[1].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[1].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[1].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[1].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[2].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[2].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[2].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[2].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[3].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[3].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[3].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[3].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[4].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[4].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[4].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[4].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[5].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[5].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst0/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[5].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst0/pins[5].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst0/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[0].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[0].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[0].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[0].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[0].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[1].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[1].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[1].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[1].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[1].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[2].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[2].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[2].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[2].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[2].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[3].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[3].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[3].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[3].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[3].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[4].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[4].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[4].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[4].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[4].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[5].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[5].ODDR_inst failed to join an OLOGICE2 group as required. Instance AD9783_inst1/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[5].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+CRITICAL WARNING: [Shape Builder 18-151] Instance AD9783_inst1/pins[5].ODDR_inst failed to join an OLOGICE3 group as required. Instance AD9783_inst1/pins[5].ODDR_inst cannot be placed in site OLOGIC_X1Y0 because the output signal of the instance requires general routing to fabric. But the instance can only be routed to delay or I/O site.
+.
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst1/pins[0].OBUFDS_aux' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst1/pins[0].OBUFDS_aux' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst1/pins[1].OBUFDS_aux' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst1/pins[1].OBUFDS_aux' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst1/pins[2].OBUFDS_aux' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst1/pins[2].OBUFDS_aux' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst1/pins[3].OBUFDS_aux' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst1/pins[3].OBUFDS_aux' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst1/pins[4].OBUFDS_aux' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst1/pins[4].OBUFDS_aux' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst1/pins[5].OBUFDS_aux' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst1/pins[5].OBUFDS_aux' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:393]
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'AD9783_inst0/pins[17].OBUFDS_inst' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:381]
+WARNING: [Constraints 18-505] Could not create 'SLEW' constraint because cell 'AD9783_inst0/pins[17].OBUFDS_inst' is not directly connected to top level port. 'SLEW' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v:381]
 Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
 Finished Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUFG => IBUF: 1 instances
 
-Phase 0 | Netlist Checksum: 2824b201
-open_rtl_design: Time (s): elapsed = 00:00:17 . Memory (MB): peak = 813.098 ; gain = 388.363
+Phase 0 | Netlist Checksum: 6149231f
+open_rtl_design: Time (s): elapsed = 00:00:17 . Memory (MB): peak = 806.660 ; gain = 382.359
 update_compile_order -fileset sim_1
 startgroup
-set_property package_pin V21 [get_ports {D0_out_p[15]}]
+set_property package_pin C17 [get_ports {D0_out_p[15]}]
 endgroup
 save_constraints
 exit
 ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
-HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
 HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
 HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
 HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
- (See C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test\planAhead_pid6420.debug)
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+ (See C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test\planAhead_pid4312.debug)
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Tue Jun 06 15:07:32 2017...
+INFO: [Common 17-206] Exiting PlanAhead at Wed Jun 07 13:24:06 2017...
 INFO: [Common 17-83] Releasing license: PlanAhead

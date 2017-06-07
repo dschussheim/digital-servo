@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon May 29 15:30:11 2017
+Wed Jun 07 16:01:23 2017
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -66,7 +66,7 @@ Pinout by Pin Number:
 |AA18      |           |IOB18S   |IO_L11N_T1_SRCC_32          |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |AA19      |           |IOB18M   |IO_L16P_T2_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |AA20      |           |IOB18S   |IO_L16N_T2_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
-|AA21      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |any******|          |           |                |
+|AA21      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |1.80     |          |           |                |
 |AA22      |           |IOB33S   |IO_L13N_T2_MRCC_12          |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AA23      |           |IOB33M   |IO_L11P_T1_SRCC_12          |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AA24      |           |IOB33S   |IO_L12N_T1_MRCC_12          |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
@@ -122,7 +122,7 @@ Pinout by Pin Number:
 |AC22      |           |IOB33S   |IO_L17N_T2_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AC23      |           |IOB33M   |IO_L14P_T2_SRCC_12          |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AC24      |           |IOB33S   |IO_L14N_T2_SRCC_12          |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|AC25      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |any******|          |           |                |
+|AC25      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |1.80     |          |           |                |
 |AC26      |           |IOB33S   |IO_L9N_T1_DQS_12            |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AD1       |           |IOB18M   |IO_L20P_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
 |AD2       |           |         |VCCO_34                     |         |           |34            |          |         |           |         |any******|          |           |                |
@@ -145,7 +145,7 @@ Pinout by Pin Number:
 |AD19      |           |IOB18S   |IO_L17N_T2_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |AD20      |           |IOB18M   |IO_L15P_T2_DQS_32           |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |AD21      |           |IOB33M   |IO_L19P_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|AD22      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |any******|          |           |                |
+|AD22      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |1.80     |          |           |                |
 |AD23      |           |IOB33M   |IO_L16P_T2_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AD24      |           |IOB33S   |IO_L16N_T2_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AD25      |           |IOB33M   |IO_L23P_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
@@ -201,7 +201,7 @@ Pinout by Pin Number:
 |AF23      |           |IOB33S   |IO_L22N_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AF24      |           |IOB33M   |IO_L20P_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AF25      |           |IOB33S   |IO_L20N_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|AF26      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |any******|          |           |                |
+|AF26      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |1.80     |          |           |                |
 |B1        |           |OPAD     |MGTXTXN2_116                |UNUSED   |           |              |          |         |           |         |         |          |           |                |
 |B2        |           |OPAD     |MGTXTXP2_116                |UNUSED   |           |              |          |         |           |         |         |          |           |                |
 |B3        |           |         |MGTAVTT                     |         |           |              |          |         |           |         |         |          |           |                |
@@ -478,7 +478,7 @@ Pinout by Pin Number:
 |M14       |           |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
 |M15       |           |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
 |M16       |           |IOB33    |IO_25_15                    |UNUSED   |           |15            |          |         |           |         |         |          |           |                |
-|M17       |out<3>     |IOB      |IO_L23P_T3_FOE_B_15         |OUTPUT   |LVCMOS18*  |15            |24        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|M17       |           |IOB33M   |IO_L23P_T3_FOE_B_15         |UNUSED   |           |15            |          |         |           |         |         |          |           |                |
 |M18       |           |         |VCCO_15                     |         |           |15            |          |         |           |         |1.80     |          |           |                |
 |M19       |           |IOB33S   |IO_L22N_T3_13               |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |M20       |           |IOB33S   |IO_L7N_T1_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
@@ -614,7 +614,7 @@ Pinout by Pin Number:
 |U20       |           |IOB33S   |IO_L18N_T2_13               |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |U21       |           |IOB33    |IO_0_12                     |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |U22       |           |IOB33M   |IO_L1P_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|U23       |           |         |VCCO_12                     |         |           |12            |          |         |           |         |any******|          |           |                |
+|U23       |           |         |VCCO_12                     |         |           |12            |          |         |           |         |1.80     |          |           |                |
 |U24       |           |IOB33M   |IO_L2P_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |U25       |           |IOB33S   |IO_L2N_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |U26       |           |IOB33M   |IO_L4P_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
@@ -637,10 +637,10 @@ Pinout by Pin Number:
 |V17       |           |IOB18S   |IO_L20N_T3_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |V18       |           |IOB18M   |IO_L23P_T3_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |V19       |           |IOB18S   |IO_L23N_T3_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
-|V20       |           |         |VCCO_12                     |         |           |12            |          |         |           |         |any******|          |           |                |
+|V20       |           |         |VCCO_12                     |         |           |12            |          |         |           |         |1.80     |          |           |                |
 |V21       |           |IOB33M   |IO_L6P_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |V22       |           |IOB33S   |IO_L1N_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|V23       |           |IOB33M   |IO_L3P_T0_DQS_12            |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
+|V23       |out<3>     |IOB      |IO_L3P_T0_DQS_12            |OUTPUT   |LVCMOS18*  |12            |24        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |V24       |           |IOB33S   |IO_L3N_T0_DQS_12            |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |V25       |           |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
 |V26       |           |IOB33S   |IO_L4N_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
@@ -693,7 +693,7 @@ Pinout by Pin Number:
 |Y21       |           |IOB33S   |IO_L15N_T2_DQS_12           |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |Y22       |           |IOB33M   |IO_L13P_T2_MRCC_12          |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |Y23       |           |IOB33M   |IO_L12P_T1_MRCC_12          |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|Y24       |           |         |VCCO_12                     |         |           |12            |          |         |           |         |any******|          |           |                |
+|Y24       |           |         |VCCO_12                     |         |           |12            |          |         |           |         |1.80     |          |           |                |
 |Y25       |           |IOB33M   |IO_L10P_T1_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |Y26       |           |IOB33S   |IO_L10N_T1_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

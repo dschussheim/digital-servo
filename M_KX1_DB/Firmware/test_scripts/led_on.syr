@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: led_on.prj
 
@@ -105,7 +105,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\dschussheim\Desktop\M_KX1_DB\Firmware\test_scripts\led_on.v" into library work
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\test_scripts\led_on.v" into library work
 Parsing module <led_on>.
 
 =========================================================================
@@ -119,7 +119,7 @@ Elaborating module <led_on>.
 =========================================================================
 
 Synthesizing Unit <led_on>.
-    Related source file is "C:\Users\dschussheim\Desktop\M_KX1_DB\Firmware\test_scripts\led_on.v".
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\test_scripts\led_on.v".
     Summary:
 	no macro.
 Unit <led_on> synthesized.
@@ -250,12 +250,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.87 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.45 secs
  
 --> 
 
-Total memory usage is 410172 kilobytes
+Total memory usage is 409056 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

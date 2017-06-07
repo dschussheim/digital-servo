@@ -23,16 +23,7 @@
 <msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
 </msg>
 
-<msg type="error" file="Place" num="1377" delta="new" >Regional clock net &quot;<arg fmt="%s" index="1">clk_in</arg>&quot; is not routable with loads locked in different clock regions such that it will be impossible for the source to be routed to all loads. See below for a list of sample locked components in each clock region. For more information on the clock region rules, please refer to the architecture user&apos;s guide. To debug your design with partially routed design, please allow mapper/placer to finish the execution (by setting environment variable XIL_PAR_DEBUG_IOCLKPLACER to 1).
-</msg>
-
-<msg type="error" file="Place" num="1377" delta="new" >Regional clock net &quot;<arg fmt="%s" index="1">clk_in</arg>&quot; is not routable with loads locked in different clock regions such that it will be impossible for the source to be routed to all loads. See below for a list of sample locked components in each clock region. For more information on the clock region rules, please refer to the architecture user&apos;s guide. To debug your design with partially routed design, please allow mapper/placer to finish the execution (by setting environment variable XIL_PAR_DEBUG_IOCLKPLACER to 1).
-</msg>
-
-<msg type="error" file="Place" num="1425" delta="new" >Clock Net &quot;<arg fmt="%s" index="1">clk_in</arg>&quot; has <arg fmt="%d" index="2">70</arg> load components of type IOB/ILOGIC/OLOGIC/IDELAY/ODELAY, but within the chip scope in which the clock buffer can drive there are only <arg fmt="%d" index="3">50</arg> available sites. Please examine your design and consider to use suitable clocking schemes.
-</msg>
-
-<msg type="error" file="Pack" num="1654" delta="new" >The timing-driven placement phase encountered an error.
+<msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
 </msg>
 
 </messages>

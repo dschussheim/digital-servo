@@ -1,10 +1,10 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Mon May 15 11:11:43 2017
-# Process ID: 5360
-# Log file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.log
-# Journal file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.jou
+# Start of session at: Wed Jun 07 15:58:54 2017
+# Process ID: 2876
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 INFO: [Common 17-78] Attempting to get a license: PlanAhead
 INFO: [Common 17-290] Got license for PlanAhead
@@ -12,21 +12,21 @@ INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_
 Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
-source C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/pa.fromHdl.tcl
-# create_project -name test_scripts -dir "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_1" -part xc7k160tfbg676-1
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/pa.fromHdl.tcl
+# create_project -name test_scripts -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_2" -part xc7k160tfbg676-1
 # set_param project.pinAheadLayout yes
 # set srcset [get_property srcset [current_run -impl]]
-# set_property target_constrs_file "counter4.ucf" [current_fileset -constrset]
-Adding file 'C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/counter4.ucf' to fileset 'constrs_1'
-# set hdlfile [add_files [list {counter4.v}]]
+# set_property target_constrs_file "led_on.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/led_on.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {led_on.v}]]
 # set_property file_type Verilog $hdlfile
 # set_property library work $hdlfile
-# set_property top counter4 $srcset
-# add_files [list {counter4.ucf}] -fileset [get_property constrset [current_run]]
+# set_property top led_on $srcset
+# add_files [list {led_on.ucf}] -fileset [get_property constrset [current_run]]
 # open_rtl_design -part xc7k160tfbg676-1
 Using Verific elaboration
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
-Analyzing Verilog file "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/counter4.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/led_on.v" into library work
 Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockRegion.xml
 Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockBuffers.xml
 Loading clock placement rules from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/kintex7/ClockPlacerRules.xml
@@ -35,43 +35,25 @@ Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/k
 Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/IOStandards.xml
 Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/ConfigModes.xml
 Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/drc.xml
-Parsing UCF File [C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/counter4.ucf]
-Finished Parsing UCF File [C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/counter4.ucf]
+Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/led_on.ucf]
+Finished Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/led_on.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Phase 0 | Netlist Checksum: 667e516f
-open_rtl_design: Time (s): elapsed = 00:00:17 . Memory (MB): peak = 813.230 ; gain = 393.789
+Phase 0 | Netlist Checksum: e16bb388
+open_rtl_design: Time (s): elapsed = 00:00:22 . Memory (MB): peak = 825.551 ; gain = 400.055
 update_compile_order -fileset sim_1
-set_property iostandard LVCMOS18 [get_ports [list {out[3]}]]
-set_property iostandard LVCMOS18 [get_ports [list {out[2]}]]
-set_property iostandard LVCMOS18 [get_ports [list {out[1]}]]
-set_property iostandard LVCMOS18 [get_ports [list {out[0]}]]
-set_property package_pin "" [get_ports [list  {out[3]}]]
 startgroup
-set_property package_pin W20 [get_ports {out[3]}]
-endgroup
-startgroup
-set_property package_pin Y21 [get_ports {out[2]}]
-endgroup
-startgroup
-set_property package_pin AD21 [get_ports {out[1]}]
-endgroup
-startgroup
-set_property package_pin AE21 [get_ports {out[0]}]
-endgroup
-save_constraints
-startgroup
-set_property package_pin W20 [get_ports {out[3]}]
+set_property package_pin V23 [get_ports {out[3]}]
 endgroup
 save_constraints
 exit
 ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
-HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
 HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
 HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
 HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
- (See C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts\planAhead_pid5360.debug)
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts\planAhead_pid2876.debug)
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Mon May 15 11:22:57 2017...
+INFO: [Common 17-206] Exiting PlanAhead at Wed Jun 07 15:59:51 2017...
 INFO: [Common 17-83] Releasing license: PlanAhead

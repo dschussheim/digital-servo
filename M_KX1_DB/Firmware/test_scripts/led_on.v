@@ -14,7 +14,7 @@ wire	on_in = 1'b1;
 //LEDs active low. On pins M17, L18, L17, K18 (on Mercury KX1 module)
 always	@(on_in)	begin
 	if (on_in) 
-		out = 4'b1100;
+		out = 4'b1000;
 	else 
 		out = 4'b1111;
 end

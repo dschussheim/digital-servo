@@ -1,5 +1,4 @@
 
-# PlanAhead Generated IO constraints 
 
 NET "out[3]" IOSTANDARD = LVCMOS18;
 NET "out[2]" IOSTANDARD = LVCMOS18;
@@ -10,9 +9,8 @@ NET "out[2]" DRIVE = 24;
 NET "out[1]" DRIVE = 24;
 NET "out[0]" DRIVE = 24;
 
-# PlanAhead Generated physical constraints 
 
-NET "out[3]" LOC = M17;
+NET "out[3]" LOC = V23;
 NET "out[2]" LOC = L18;
 NET "out[1]" LOC = L17;
 NET "out[0]" LOC = K18;

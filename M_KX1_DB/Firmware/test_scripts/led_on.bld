@@ -6,7 +6,8 @@ Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 led_on.ngc led_on.ngd
 
 Reading NGO file
-"C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/led_on.ngc" ...
+"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scri
+pts/led_on.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -28,10 +29,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 254748 kilobytes
+Total memory usage is 254776 kilobytes
 
 Writing NGD file "led_on.ngd" ...
-Total REAL time to NGDBUILD completion:  6 sec
-Total CPU time to NGDBUILD completion:   6 sec
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   5 sec
 
 Writing NGDBUILD log file "led_on.bld"...

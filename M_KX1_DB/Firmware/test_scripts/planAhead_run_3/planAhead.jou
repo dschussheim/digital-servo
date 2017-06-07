@@ -1,17 +1,11 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Mon May 29 10:44:54 2017
-# Process ID: 7816
-# Log file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_3/planAhead.log
-# Journal file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_3/planAhead.jou
+# Start of session at: Wed Jun 07 15:59:29 2017
+# Process ID: 6636
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_3/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_3/planAhead.jou
 #-----------------------------------------------------------
 start_gui
-source C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/pa.fromHdl.tcl
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/pa.fromHdl.tcl
 update_compile_order -fileset sim_1
-set_property drive 24 [get_ports [list out]]
-startgroup
-set_property package_pin M17 [get_ports out]
-endgroup
-set_property offchip_term NONE [get_ports [list out]]
-save_constraints

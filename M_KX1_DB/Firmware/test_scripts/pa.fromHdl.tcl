@@ -1,7 +1,7 @@
 
 # PlanAhead Launch Script for Pre-Synthesis Floorplanning, created by Project Navigator
 
-create_project -name test_scripts -dir "C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_4" -part xc7k160tfbg676-1
+create_project -name test_scripts -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_3" -part xc7k160tfbg676-1
 set_param project.pinAheadLayout yes
 set srcset [get_property srcset [current_run -impl]]
 set_property target_constrs_file "led_on.ucf" [current_fileset -constrset]

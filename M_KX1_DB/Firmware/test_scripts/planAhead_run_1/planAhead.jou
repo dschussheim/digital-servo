@@ -1,33 +1,15 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Mon May 15 11:11:43 2017
-# Process ID: 5360
-# Log file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.log
-# Journal file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.jou
+# Start of session at: Wed Jun 07 15:58:54 2017
+# Process ID: 2876
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui
-source C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/pa.fromHdl.tcl
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/pa.fromHdl.tcl
 update_compile_order -fileset sim_1
-set_property iostandard LVCMOS18 [get_ports [list {out[3]}]]
-set_property iostandard LVCMOS18 [get_ports [list {out[2]}]]
-set_property iostandard LVCMOS18 [get_ports [list {out[1]}]]
-set_property iostandard LVCMOS18 [get_ports [list {out[0]}]]
-set_property package_pin "" [get_ports [list  {out[3]}]]
 startgroup
-set_property package_pin W20 [get_ports {out[3]}]
-endgroup
-startgroup
-set_property package_pin Y21 [get_ports {out[2]}]
-endgroup
-startgroup
-set_property package_pin AD21 [get_ports {out[1]}]
-endgroup
-startgroup
-set_property package_pin AE21 [get_ports {out[0]}]
-endgroup
-save_constraints
-startgroup
-set_property package_pin W20 [get_ports {out[3]}]
+set_property package_pin V23 [get_ports {out[3]}]
 endgroup
 save_constraints

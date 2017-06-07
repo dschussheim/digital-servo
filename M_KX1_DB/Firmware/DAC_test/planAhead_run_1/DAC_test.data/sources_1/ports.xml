@@ -73,6 +73,22 @@
 			<Port Id="1" Dir="OUT"/>
 			<Port Id="0" Dir="OUT"/>
 		</Bus>
+		<Bus Id="aux_p">
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="aux_n">
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
 		<Port Id="clk" Dir="IN"/>
 		<Port Id="CLK_out_p" Dir="OUT"/>
 		<Port Id="CLK_out_n" Dir="OUT"/>
@@ -118,6 +134,12 @@
 		<DiffPair Pos="D0_out_p[2]" Neg="D0_out_n[2]"/>
 		<DiffPair Pos="D0_out_p[1]" Neg="D0_out_n[1]"/>
 		<DiffPair Pos="D0_out_p[0]" Neg="D0_out_n[0]"/>
+		<DiffPair Pos="aux_p[5]" Neg="aux_n[5]"/>
+		<DiffPair Pos="aux_p[4]" Neg="aux_n[4]"/>
+		<DiffPair Pos="aux_p[3]" Neg="aux_n[3]"/>
+		<DiffPair Pos="aux_p[2]" Neg="aux_n[2]"/>
+		<DiffPair Pos="aux_p[1]" Neg="aux_n[1]"/>
+		<DiffPair Pos="aux_p[0]" Neg="aux_n[0]"/>
 		<DiffPair Pos="CLK_out_p" Neg="CLK_out_n"/>
 		<DiffPair Pos="DCI1_out_p" Neg="DCI1_out_n"/>
 		<DiffPair Pos="DCI0_out_p" Neg="DCI0_out_n"/>

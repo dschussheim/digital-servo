@@ -50,16 +50,22 @@ module DAC_Sweep_Test_TB;
 	DAC_Sweep_Test uut (
 		.clk(clk), 
 //		.on_in(on_in), 
-		.D_out_p(D_out_p), 
-		.D_out_n(D_out_n), 
+		.D1_out_p(D1_out_p), 
+		.D1_out_n(D1_out_n), 
+		.D0_out_p(D0_out_p), 
+		.D0_out_n(D0_out_n), 
 		.CLK_out_p(CLK_out_p), 
 		.CLK_out_n(CLK_out_n), 
-		.DCI_out_p(DCI_out_p), 
-		.DCI_out_n(DCI_out_n),
-		.csb(csb),
-		.rst_out(rst_out),
+		.DCI1_out_p(DCI1_out_p), 
+		.DCI1_out_n(DCI1_out_n),
+		.DCI0_out_p(DCI0_out_p), 
+		.DCI0_out_n(DCI0_out_n),
+		.csb1(csb1),
+		.csb0(csb0),
+		.rst1_out(rst1_out),
+		.rst0_out(rst0_out),
 		.sdio(sdio),
-		.sdo(sdo)
+		.sdo(sdo),
 	);
 
 	initial begin

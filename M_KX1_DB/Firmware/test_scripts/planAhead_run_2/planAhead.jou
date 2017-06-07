@@ -1,23 +1,10 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Mon May 29 10:28:18 2017
-# Process ID: 2016
-# Log file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_2/planAhead.log
-# Journal file: C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/planAhead_run_2/planAhead.jou
+# Start of session at: Wed Jun 07 15:59:01 2017
+# Process ID: 5452
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/planAhead_run_2/planAhead.jou
 #-----------------------------------------------------------
 start_gui
-source C:/Users/dschussheim/Desktop/M_KX1_DB/Firmware/test_scripts/pa.fromNetlist.tcl
-startgroup
-set_property package_pin M17 [get_ports out]
-endgroup
-startgroup
-set_property package_pin M17 [get_ports out]
-endgroup
-set_property iostandard LVCMOS18 [get_ports [list out]]
-set_property drive 24 [get_ports [list out]]
-set_property offchip_term NONE [get_ports [list out]]
-set_property offchip_term FP_VTT_50 [get_ports [list out]]
-set_property offchip_term NONE [get_ports [list out]]
-save_constraints
-close_design
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/test_scripts/pa.fromHdl.tcl

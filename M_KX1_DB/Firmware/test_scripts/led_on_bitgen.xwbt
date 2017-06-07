@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\dschussheim\Desktop\M_KX1_DB\Firmware\test_scripts\led_on.ncd
-OUTFILE=C:\Users\dschussheim\Desktop\M_KX1_DB\Firmware\test_scripts\led_on.bit
+INFILE=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\test_scripts\led_on.ncd
+OUTFILE=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\test_scripts\led_on.bit
 FAMILY=Kintex7
 PART=xc7k160t-1fbg676
-WORKINGDIR=C:\Users\dschussheim\Desktop\M_KX1_DB\Firmware\test_scripts
+WORKINGDIR=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\test_scripts
 LICENSE=WebPack
 USER_INFO=211350505_0_0_015

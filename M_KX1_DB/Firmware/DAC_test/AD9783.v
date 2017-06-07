@@ -285,55 +285,8 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 //		.RST(rst_in)
 //	);
 	
-/*	
-//7 series uses OSERDESE2 does not need slave to do 8 bit serialization.
-
-// OSERDESE2: Output SERial/DESerializer with bitslip
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
-OSERDESE2 #(
-	.DATA_RATE_OQ("SDR"), // DDR, SDR
-	.DATA_RATE_TQ("SDR"), // DDR, BUF, SDR
-	.DATA_WIDTH(2), // Parallel data width (2-8,10,14)
-	.SERDES_MODE("MASTER") // MASTER, SLAVE
-)
-OSERDESE2_inst (
-	.OFB(), // 1-bit output: Feedback path for data
-	.OQ(data_out_to_pins[pin_count]), // 1-bit output: Data path output
-	// SHIFTOUT1 / SHIFTOUT2: 1-bit (each) output: Data output expansion (1-bit each)
-	.SHIFTOUT1(),
-	.SHIFTOUT2(),
-	.TBYTEOUT(), // 1-bit output: Byte group tristate
-	.TFB(), // 1-bit output: 3-state control
-	.TQ(), // 1-bit output: 3-state control
-	.CLK(clk8x), // 1-bit input: High speed clock
-	.CLKDIV(clk_in), // 1-bit input: Divided clock
-	// D1 - D8: 1-bit (each) input: Parallel data inputs (1-bit each)
-	.D1(data_in[pin_count]),
-	.D2(data_in[N_LVDS + pin_count]),
-//	.D3(data_in[pin_count]),
-//	.D4(data_in[N_LVDS + pin_count]),
-//	.D5(data_in[pin_count]),
-//	.D6(data_in[N_LVDS + pin_count]),
-//	.D7(data_in[pin_count]),
-//	.D8(data_in[N_LVDS + pin_count]),
-	.OCE(1'b1), // 1-bit input: Output data clock enable
-	.RST(rst_in), // 1-bit input: Reset
-	// SHIFTIN1 / SHIFTIN2: 1-bit (each) input: Data input expansion (1-bit each)
-	.SHIFTIN1(),
-	.SHIFTIN2(),
-	// T1 - T4: 1-bit (each) input: Parallel 3-state inputs
-	.T1(1'b0),
-	.T2(1'b0),
-	.T3(1'b0),
-	.T4(1'b0),
-	.TBYTEIN(1'b0), // 1-bit input: Byte group tristate
-	.TCE(1'b1) // 1-bit input: 3-state clock enable
-);
-// End of OSERDESE2_inst instantiation	*/
-	
-	
 //Old delay
+
 //	// Delay
 //	IODELAY2 #(
 //		.DATA_RATE("DDR"),
@@ -371,18 +324,18 @@ ODDR #(
 	.DDR_CLK_EDGE("OPPOSITE_EDGE"), // "OPPOSITE_EDGE" or "SAME_EDGE"
 	.INIT(1'b0), // Initial value of Q: 1'b0 or 1'b1
 	.SRTYPE("SYNC") // Set/Reset type: "SYNC" or "ASYNC"
-) ODDR_inst (
-	.Q(data_out_to_pins[pin_count]), // 1-bit DDR output
-	.C(clk_in), // 1-bit clock input
-	.CE(1'b1), // 1-bit clock enable input
-	.D1(data_in[pin_count]), // 1-bit data input (positive edge)
-	.D2(data_in[N_LVDS + pin_count]), // 1-bit data input (negative edge)
-	.R(1'b0), // 1-bit reset
-	.S(1'b0) // 1-bit set
-);
+		) ODDR_inst (
+			.Q(data_out_to_pins[pin_count]), // 1-bit DDR output
+			.C(clk_in), // 1-bit clock input
+			.CE(1'b1), // 1-bit clock enable input
+			.D1(data_in[pin_count]), // 1-bit data input (positive edge)
+			.D2(data_in[N_LVDS + pin_count]), // 1-bit data input (negative edge)
+			.R(1'b0), // 1-bit reset
+			.S(1'b0) // 1-bit set
+			);
 // End of ODDR_inst instantiation
 	
-////New delay with iodelaye2. Not using to start. 
+////New delay with iodelaye2. Not using right now. 
 //// ODELAYE2: Output Fixed or Variable Delay Element
 //// 7 Series
 //// Xilinx HDL Libraries Guide, version 14.7
@@ -414,60 +367,23 @@ ODDR #(
 //);
 //// End of ODELAYE2_inst instantiation
 
-
-//	// Output buffer
-//	OBUFDS #(
-//		.IOSTANDARD("LVDS_25")
-//	)
-//	obufds_inst(
-//		.O(data_out_p[pin_count]),
-//		.OB(data_out_n[pin_count]),
-//		.I(data_out_to_pins_delay[pin_count])
-//	);
-
-
-
 //Output buffer for 7 series
 
 // OBUFDS: Differential Output Buffer
 // 7 Series
 // Xilinx HDL Libraries Guide, version 14.7
 OBUFDS #(
-.IOSTANDARD("LVDS_25"), // Specify the output I/O standard
-.SLEW("SLOW") // Specify the output slew rate
-) OBUFDS_inst (
-	.O(data_out_p[pin_count]), // Diff_p output (connect directly to top-level port)
-	.OB(data_out_n[pin_count]), // Diff_n output (connect directly to top-level port)
-	.I(data_out_to_pins[pin_count]) // Buffer input
-);
+	.IOSTANDARD("LVDS_25"), // Specify the output I/O standard
+	.SLEW("SLOW") // Specify the output slew rate
+	) OBUFDS_inst (
+		.O(data_out_p[pin_count]), // Diff_p output (connect directly to top-level port)
+		.OB(data_out_n[pin_count]), // Diff_n output (connect directly to top-level port)
+		.I(data_out_to_pins[pin_count]) // Buffer input
+	);
 // End of OBUFDS_inst instantiation
 
-
-
-//This was a different output buffer because I thought we needed termination on differential outputs.
-//The data sheet claims termination is not necessary on output.
-/*
-// IOBUFDS_DIFF_OUT: Differential Bi-directional Buffer with Differential Output
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
-IOBUFDS_DIFF_OUT #(
-	.DIFF_TERM("TRUE"), // Differential Termination ("TRUE"/"FALSE")
-	.IBUF_LOW_PWR("TRUE"), // Low Power - "TRUE", High Performance = "FALSE"
-	.IOSTANDARD("LVDS") // Specify the I/O standard
-) IOBUFDS_DIFF_OUT_inst (
-	.O(), // Buffer p-side output
-	.OB(), // Buffer n-side output
-	.IO(data_out_p[pin_count]), // Diff_p inout (connect directly to top-level port)
-	.IOB(data_out_n[pin_count]), // Diff_n inout (connect directly to top-level port)
-	.I(data_out_to_pins[pin_count]), // Buffer input
-	.TM(1'b0), // 3-state enable input, high=input, low=output
-	.TS(1'b0) // 3-state enable input, high=output, low=input
-);
-// End of IOBUFDS_DIFF_OUT_inst instantiation
-*/
 end
 endgenerate
-
 
 ///////////////////////////////////////////////////////////////////////////////
 // SPI state machine
