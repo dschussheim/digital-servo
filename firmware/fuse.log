@@ -1,34 +1,43 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783_test_isim_beh.exe -prj C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783_test_beh.prj work.AD9783_test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195_tb_isim_beh.exe -prj C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195_tb_beh.prj work.LTC2195_tb work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SPI.v" into library work
-Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783.v" into library work
-Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783_test.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195_tb.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783.v" Line 59: Port CLKFBOUT is not connected to this instance
-WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783.v" Line 80: Port LOCK is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195.v" Line 208: Port CLK270 is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195.v" Line 317: Port CLKFBOUT is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195.v" Line 338: Port LOCK is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195.v" Line 417: Port CFB0 is not connected to this instance
 Completed static elaboration
-Compiling module PLL_ADV(BANDWIDTH="OPTIMIZED",CL...
-Compiling module PLL_BASE(CLKFBOUT_MULT=8,CLKIN_P...
-Compiling module BUFPLL(DIVIDE=8)
-Compiling module OSERDES2(DATA_RATE_OQ="SDR",DATA...
-Compiling module OSERDES2(DATA_RATE_OQ="SDR",DATA...
-Compiling module IODELAY2(COUNTER_WRAPAROUND="STA...
+Compiling module dcm_sp_clock_divide_by_2
+Compiling module dcm_sp_maximum_period_check(cloc...
+Compiling module dcm_sp_maximum_period_check(cloc...
+Compiling module dcm_sp_clock_lost
+Compiling module DCM_SP(CLKOUT_PHASE_SHIFT="VARIA...
+Compiling module ODDR2(DDR_ALIGNMENT="C0",SRTYPE=...
 Compiling module OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module IBUFDS(IOSTANDARD="LVDS_33")
+Compiling module PLL_ADV(BANDWIDTH="OPTIMIZED",CL...
+Compiling module PLL_BASE(CLKFBOUT_MULT=4,CLKIN_P...
+Compiling module BUFPLL(DIVIDE=4)
+Compiling module IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module IODELAY2(COUNTER_WRAPAROUND="STA...
+Compiling module ISERDES2(DATA_WIDTH=4,INTERFACE_...
 Compiling module IODELAY2(COUNTER_WRAPAROUND="STA...
 WARNING:HDLCompiler:1007 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SPI.v" Line 133: Element index 2 into spi_sdi_in is out of bounds
 WARNING:HDLCompiler:1007 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/SPI.v" Line 134: Element index 1 into spi_sdi_in is out of bounds
 Compiling module SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
-Compiling module AD9783
-Compiling module AD9783_test
+Compiling module LTC2195
+Compiling module LTC2195_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 3 sub-compilation(s) to finish...
-WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\AD9783_test_isim_beh.exe.sim\libPortability.dll".
-Compiled 12 Verilog Units
-Built simulation executable C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/AD9783_test_isim_beh.exe
-Fuse Memory Usage: 44300 KB
-Fuse CPU Usage: 796 ms
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\LTC2195_tb_isim_beh.exe.sim\libPortability.dll".
+Compiled 19 Verilog Units
+Built simulation executable C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195_tb_isim_beh.exe
+Fuse Memory Usage: 44924 KB
+Fuse CPU Usage: 921 ms

@@ -1,0 +1,10 @@
+Command line:
+   LTC2195_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  52908
+
+Thu Jun 08 17:59:47 2017
+
+
+ Elaboration Time: 0.0625 sec

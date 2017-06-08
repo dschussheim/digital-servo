@@ -2,14 +2,14 @@ Command line:
    SPI_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  49809
+     -socket  52292
 
-Wed May 31 10:12:20 2017
+Thu Jun 08 15:30:22 2017
 
 
  Elaboration Time: 0.03125 sec
 
- Current Memory Usage: 841.63 Meg
+ Current Memory Usage: 841.556 Meg
 
  Total Signals          : 18
  Total Nets             : 37
@@ -23,7 +23,7 @@ Total Line Count : 76
 
  Total Simulation Time: 0.0625 sec
 
- Current Memory Usage: 841.63 Meg
+ Current Memory Usage: 841.556 Meg
 
-Wed May 31 10:12:26 2017
+Thu Jun 08 15:30:31 2017
 

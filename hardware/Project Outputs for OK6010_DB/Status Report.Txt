@@ -1,0 +1,27 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [OK6010_DB.PrjPcb]
+   Generated File[OK6010_DB.GTL]
+   Generated File[OK6010_DB.GP1]
+   Generated File[OK6010_DB.GP2]
+   Generated File[OK6010_DB.GBL]
+   Generated File[OK6010_DB.GPB]
+   Generated File[OK6010_DB.GPT]
+   Generated File[OK6010_DB.GTO]
+   Generated File[OK6010_DB.GTP]
+   Generated File[OK6010_DB.GTS]
+   Generated File[OK6010_DB.GBS]
+   Generated File[OK6010_DB.GBP]
+   Generated File[OK6010_DB.GBO]
+   Generated File[OK6010_DB.GM1]
+   Generated File[OK6010_DB.GD1]
+   Generated File[OK6010_DB.GG1]
+   Generated File[OK6010_DB.RUL]
+   Generated File[OK6010_DB.EXTREP]
+   Generated File[OK6010_DB.REP]
+
+
+Files Generated   : 18
+Documents Printed : 0
+
+Finished Output Generation At 11:10:45 AM On 6/8/2017

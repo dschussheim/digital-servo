@@ -1,0 +1,4 @@
+verilog work "SPI.v"
+verilog work "LTC2195.v"
+verilog work "LTC2195_tb.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

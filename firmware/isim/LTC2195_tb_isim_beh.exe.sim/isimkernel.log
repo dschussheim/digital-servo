@@ -1,0 +1,31 @@
+Command line:
+   LTC2195_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  52877
+
+Thu Jun 08 17:49:37 2017
+
+
+ Elaboration Time: 0.0625 sec
+
+ Current Memory Usage: 846.414 Meg
+
+ Total Signals          : 1158
+ Total Nets             : 1243
+ Total Signal Drivers   : 1059
+ Total Blocks           : 67
+ Total Primitive Blocks : 42
+ Total Processes        : 1757
+ Total Traceable Variables  : 2294
+ Total Scalar Nets and Variables : 29701
+Total Line Count : 9702
+Total Line Count : 9702
+Total Line Count : 9702
+
+ Total Simulation Time: 3.01563 sec
+
+ Current Memory Usage: 689.127 Meg
+
+Thu Jun 08 17:59:28 2017
+
