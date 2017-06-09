@@ -9,17 +9,18 @@ Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX
 Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 449: Port CLKFBOUT is not connected to this instance
-WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 470: Port LOCK is not connected to this instance
-WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 549: Port CFB0 is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 245: Port CLKFBOUTB is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 513: Port CFB0 is not connected to this instance
+WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 70: Size mismatch in connection of port <D0_in_p>. Formal port size is 2-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 71: Size mismatch in connection of port <D0_in_n>. Formal port size is 2-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 72: Size mismatch in connection of port <D1_in_p>. Formal port size is 2-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 73: Size mismatch in connection of port <D1_in_n>. Formal port size is 2-bit while actual signal size is 4-bit.
 Completed static elaboration
 Compiling module MMCME2_ADV(CLKFBOUT_USE_FINE_PS=...
 Compiling module ODDR(SRTYPE="ASYNC")
 Compiling module OBUFDS(IOSTANDARD="LVDS_25")
 Compiling module IBUFDS(IOSTANDARD="LVDS_25")
-Compiling module PLL_ADV(BANDWIDTH="OPTIMIZED",CL...
-Compiling module PLL_BASE(CLKFBOUT_MULT=4,CLKIN_P...
-Compiling module BUFPLL(DIVIDE=4)
+Compiling module BUFG
 Compiling module IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
 Compiling module IODELAY2(COUNTER_WRAPAROUND="STA...
 Compiling module ISERDES2(DATA_WIDTH=4,INTERFACE_...
@@ -33,7 +34,7 @@ Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 3 sub-compilation(s) to finish...
 WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\LTC2195_tb_isim_beh.exe.sim\libPortability.dll".
-Compiled 15 Verilog Units
+Compiled 13 Verilog Units
 Built simulation executable C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb_isim_beh.exe
-Fuse Memory Usage: 47848 KB
-Fuse CPU Usage: 890 ms
+Fuse Memory Usage: 45508 KB
+Fuse CPU Usage: 780 ms

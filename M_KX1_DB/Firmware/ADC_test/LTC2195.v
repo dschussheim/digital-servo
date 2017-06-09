@@ -33,10 +33,10 @@ module LTC2195(
 	input  wire							DCO_in_n,
 	input  wire		 					FR_in_p,
 	input  wire							FR_in_n,
-	input  wire		 			[3:0]	D0_in_p,
-	input  wire		 			[3:0]	D0_in_n,
-	input  wire		 			[3:0]	D1_in_p,
-	input  wire		 			[3:0]	D1_in_n,
+	input  wire		 			[1:0]	D0_in_p,
+	input  wire		 			[1:0]	D0_in_n,
+	input  wire		 			[1:0]	D1_in_p,
+	input  wire		 			[1:0]	D1_in_n,
 	
 	output reg	signed	  [15:0] ADC0_out,
 	output reg	signed	  [15:0] ADC1_out,
@@ -141,7 +141,7 @@ endfunction
 always @(posedge clk_in or posedge rst_in) begin
 	if (rst_in) begin
 		PS_state_f <= PS_DECIDE;
-		PS_value_f <= 9'h100;
+		PS_value_f <= 9'h100; // 256
 		PS_target_f <= 9'h17C; // = decimal 380 = 256 + 124
 		PS_clk <= 1'b0;
 		PS_en <= 1'b0;
@@ -235,102 +235,55 @@ dcm_sp_inst0(
 	.DSSEN(1'b0)				// uused pin - tie low
 );
 */
+wire	clkPS, clk8xInt;		//clock for phase shifting of ENC, and clock for deserialization (LVDS inputs block below)
 
 //There are no DCMs in 7 series devices. Their functionality is encompassed by PLLs and MMCMs.
 //I instantiate an MMCM below.
-
 // MMCME2_ADV: Advanced Mixed Mode Clock Manager
 // 7 Series
 // Xilinx HDL Libraries Guide, version 14.7
 MMCME2_ADV #(
-	.BANDWIDTH("OPTIMIZED"), // Jitter programming (OPTIMIZED, HIGH, LOW)
-	.CLKFBOUT_MULT_F(10.0), // Multiply value for all CLKOUT (2.000-64.000).
-	.CLKFBOUT_PHASE(0.0), // Phase offset in degrees of CLKFB (-360.000-360.000).
+	.BANDWIDTH("OPTIMIZED"), 	// Jitter programming (OPTIMIZED, HIGH, LOW)
+	.CLKFBOUT_MULT_F(8.0), 		// Multiply value for all CLKOUT (2.000-64.000).
+	.CLKFBOUT_PHASE(0.0), 		// Phase offset in degrees of CLKFB (-360.000-360.000).
 	// CLKIN_PERIOD: Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
 	.CLKIN1_PERIOD(10.0),
 	.CLKIN2_PERIOD(10.0),
 	// CLKOUT0_DIVIDE - CLKOUT6_DIVIDE: Divide amount for CLKOUT (1-128)
 	.CLKOUT1_DIVIDE(1),
-	.CLKOUT2_DIVIDE(1),
-	.CLKOUT3_DIVIDE(1),
-	.CLKOUT4_DIVIDE(1),
-	.CLKOUT5_DIVIDE(1),
-	.CLKOUT6_DIVIDE(1),
-	.CLKOUT0_DIVIDE_F(10.0), // Divide amount for CLKOUT0 (1.000-128.000).
+	.CLKOUT0_DIVIDE_F(8.0), 	// Divide amount for CLKOUT0 (1.000-128.000).
 	// CLKOUT0_DUTY_CYCLE - CLKOUT6_DUTY_CYCLE: Duty cycle for CLKOUT outputs (0.01-0.99).
 	.CLKOUT0_DUTY_CYCLE(0.5),
 	.CLKOUT1_DUTY_CYCLE(0.5),
-	.CLKOUT2_DUTY_CYCLE(0.5),
-	.CLKOUT3_DUTY_CYCLE(0.5),
-	.CLKOUT4_DUTY_CYCLE(0.5),
-	.CLKOUT5_DUTY_CYCLE(0.5),
-	.CLKOUT6_DUTY_CYCLE(0.5),
 	// CLKOUT0_PHASE - CLKOUT6_PHASE: Phase offset for CLKOUT outputs (-360.000-360.000).
 	.CLKOUT0_PHASE(0.0),
 	.CLKOUT1_PHASE(0.0),
-	.CLKOUT2_PHASE(0.0),
-	.CLKOUT3_PHASE(0.0),
-	.CLKOUT4_PHASE(0.0),
-	.CLKOUT5_PHASE(0.0),
-	.CLKOUT6_PHASE(0.0),
-	.CLKOUT4_CASCADE("FALSE"), // Cascade CLKOUT4 counter with CLKOUT6 (FALSE, TRUE)
 	.COMPENSATION("BUF_IN"), // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
 	.DIVCLK_DIVIDE(1), // Master division value (1-106)
 	// REF_JITTER: Reference input jitter in UI (0.000-0.999).
 	.REF_JITTER1(0.01),
-	.REF_JITTER2(0.0),
 	.STARTUP_WAIT("FALSE"), 		// Delays DONE until MMCM is locked (FALSE, TRUE)
-	// Spread Spectrum: Spread Spectrum Attributes
-	.SS_EN("FALSE"), 					// Enables spread spectrum (FALSE, TRUE)
-	.SS_MODE("CENTER_HIGH"), 		// CENTER_HIGH, CENTER_LOW, DOWN_HIGH, DOWN_LOW
-	.SS_MOD_PERIOD(10000), 			// Spread spectrum modulation period (ns) (VALUES)
 	// USE_FINE_PS: Fine phase shift enable (TRUE/FALSE)
 	.CLKFBOUT_USE_FINE_PS("TRUE"),
 	.CLKOUT0_USE_FINE_PS("TRUE"),
-	.CLKOUT1_USE_FINE_PS("FALSE"),
-	.CLKOUT2_USE_FINE_PS("FALSE"),
-	.CLKOUT3_USE_FINE_PS("FALSE"),
-	.CLKOUT4_USE_FINE_PS("FALSE"),
-	.CLKOUT5_USE_FINE_PS("FALSE"),
-	.CLKOUT6_USE_FINE_PS("FALSE")
+	.CLKOUT1_USE_FINE_PS("FALSE")
 )
 MMCME2_ADV_inst (
 	// Clock Outputs: 1-bit (each) output: User configurable clock outputs
-	.CLKOUT0(clkPS), 					// 1-bit output: CLKOUT0
-	.CLKOUT0B(), 						// 1-bit output: Inverted CLKOUT0
-	.CLKOUT1(), 						// 1-bit output: CLKOUT1
-	.CLKOUT1B(), 						// 1-bit output: Inverted CLKOUT1
-	.CLKOUT2(), 						// 1-bit output: CLKOUT2
-	.CLKOUT2B(), 						// 1-bit output: Inverted CLKOUT2
-	.CLKOUT3(), 						// 1-bit output: CLKOUT3
-	.CLKOUT3B(), 						// 1-bit output: Inverted CLKOUT3
-	.CLKOUT4(), 						// 1-bit output: CLKOUT4
-	.CLKOUT5(), 						// 1-bit output: CLKOUT5
-	.CLKOUT6(), 						// 1-bit output: CLKOUT6
-	// DRP Ports: 16-bit (each) output: Dynamic reconfiguration ports
-	.DO(), 								// 16-bit output: DRP data
-	.DRDY(), 							// 1-bit output: DRP ready
+	.CLKOUT0(clkPS), 					// Phase shifted clock for ENC
+	.CLKOUT1(clk8xInt), 				// Serialization clock for LVDS inputs
 	// Dynamic Phase Shift Ports: 1-bit (each) output: Ports used for dynamic phase shifting of the outputs
 	.PSDONE(PS_done), 				// 1-bit output: Phase shift done
 	// Feedback Clocks: 1-bit (each) output: Clock feedback ports
 	.CLKFBOUT(clkPSf), 				// 1-bit output: Feedback clock
-	.CLKFBOUTB(), 						// 1-bit output: Inverted CLKFBOUT
-	// Status Ports: 1-bit (each) output: MMCM status ports
-	.CLKFBSTOPPED(), 					// 1-bit output: Feedback clock stopped
-	.CLKINSTOPPED(), 					// 1-bit output: Input clock stopped
 	.LOCKED(PS_locked), 				// 1-bit output: LOCK
 	// Clock Inputs: 1-bit (each) input: Clock inputs
 	.CLKIN1(clk_in), 					// 1-bit input: Primary clock
-	.CLKIN2(), 							// 1-bit input: Secondary clock
 	// Control Ports: 1-bit (each) input: MMCM control ports
 	.CLKINSEL(1'b1), 					// 1-bit input: Clock select, High=CLKIN1 Low=CLKIN2
 	.PWRDWN(1'b0), 					// 1-bit input: Power-down
 	.RST(rst_in), 						// 1-bit input: Reset
 	// DRP Ports: 7-bit (each) input: Dynamic reconfiguration ports
-	.DADDR(), 							// 7-bit input: DRP address
-	.DCLK(), 							// 1-bit input: DRP clock
-	.DEN(), 								// 1-bit input: DRP enable
-	.DI(), 								// 16-bit input: DRP data
 	.DWE(1'b0), 						// 1-bit input: DRP write enable
 	// Dynamic Phase Shift Ports: 1-bit (each) input: Ports used for dynamic phase shifting of the outputs
 	.PSCLK(PS_clk), 					// 1-bit input: Phase shift clock
@@ -411,16 +364,17 @@ ibufds_clk_inst(
 ///////////////////////////////////////////////////////////////////////////////
 // LVDS inputs
 
-localparam N_LVDS = 9;
-localparam N_SERIAL = 4;
+localparam N_LVDS = 5;		//Number of LVDS channels
+localparam N_SERIAL = 4;	//Not sure what this parameter is for...
 
 wire   [N_LVDS-1:0] data_in_p, data_in_n;
 assign data_in_p = {FR_in_p, D1_in_p, D0_in_p};
 assign data_in_n = {FR_in_n, D1_in_n, D0_in_n};
 
-wire [N_SERIAL*N_LVDS-1:0] data_out;
+wire [35:0] data_out;
 
 always @(posedge clk_in) begin
+	//Why this weird order??
 	ADC0_out <= {
 		data_out[ 3], data_out[ 7], data_out[ 2], data_out[ 6],
 		data_out[ 1], data_out[ 5], data_out[ 0], data_out[ 4],
@@ -437,13 +391,13 @@ always @(posedge clk_in) begin
 //	ADC0_out <= data_out[15:0];
 //	ADC1_out <= data_out[31:16];
 	
-	FR_out <= data_out[35:32];
+	FR_out <= data_out[35:32];	//why 4 channels?
 end
 
-// Generate the serial data clock - SDR at 4x the frequency of the ENC signal for a 4 wire interface
-
-wire clk4xInt; // pre-buffer
-wire clk4x; 	// post-buffer
+// Generate the serial data clock - SDR at 4x the frequency of the ENC signal for a 2 wire interface
+//	8 times encode rate. Clock generated above, buffered here.
+wire clk8x; 	// post-buffer
+/*
 wire desstrobe;
 
 PLL_BASE #(
@@ -478,6 +432,16 @@ bufpll_inst(
 	.SERDESSTROBE(desstrobe),
 	.LOCKED(pllLocked)
 );
+*/
+
+// BUFG: Global Clock Simple Buffer
+// 7 Series
+// Xilinx HDL Libraries Guide, version 14.7
+BUFG BUFG_inst (
+	.O(clk8x), 		// 1-bit output: Clock output
+	.I(clk8xInt) 	// 1-bit input: Clock input
+);
+// End of BUFG_inst instantiation
 
 // We have multiple bits - step over every bit, instantiating the required elements
 

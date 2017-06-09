@@ -5,13 +5,22 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 449: Port <arg fmt="%s" index="1">CLKFBOUT</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 245: Port <arg fmt="%s" index="1">CLKFBOUTB</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 470: Port <arg fmt="%s" index="1">LOCK</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 513: Port <arg fmt="%s" index="1">CFB0</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" Line 549: Port <arg fmt="%s" index="1">CFB0</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 70: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">D0_in_p</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">4</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 71: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">D0_in_n</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">4</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 72: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">D1_in_p</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">4</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195_tb.v" Line 73: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">D1_in_n</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">4</arg>-bit.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="1007" delta="unknown" >"C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/SPI.v" Line 133: Element index <arg fmt="%d" index="1">2</arg> into <arg fmt="%s" index="2">spi_sdi_in</arg> is out of bounds
