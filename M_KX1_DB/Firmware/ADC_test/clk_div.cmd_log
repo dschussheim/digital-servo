@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj ADC_test -o C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/clk_div.tfi -lib work C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test//clk_div.v -module clk_div -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

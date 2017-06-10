@@ -1,0 +1,1204 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: ADC_test.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ADC_test.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ADC_test"
+Output Format                      : NGC
+Target Device                      : xc7k160t-1-fbg676
+
+---- Source Options
+Top Module Name                    : ADC_test
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\SPI.v" into library work
+Parsing verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\/timescale.v" included at line 11.
+Parsing module <SPI>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\clk_div.v" into library work
+Parsing module <clk_div>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v" into library work
+Parsing module <LTC2195>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" into library work
+Parsing module <ADC_test>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <ADC_test>.
+
+Elaborating module <IBUFG(IBUF_LOW_PWR="TRUE",IOSTANDARD="HSTL_II")>.
+
+Elaborating module <clk_div(div_f=27'b01010)>.
+
+Elaborating module <clk_div(div_f=27'b0100110001001011010000000)>.
+WARNING:HDLCompiler:413 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 114: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v" Line 245: Port CLKFBOUTB is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v" Line 605: Port O is not connected to this instance
+
+Elaborating module <LTC2195>.
+
+Elaborating module <MMCME2_ADV(BANDWIDTH="OPTIMIZED",CLKFBOUT_MULT_F=8.0,CLKFBOUT_PHASE=0.0,CLKIN1_PERIOD=10.0,CLKIN2_PERIOD=10.0,CLKOUT1_DIVIDE=1,CLKOUT2_DIVIDE=4,CLKOUT0_DIVIDE_F=8.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DUTY_CYCLE=0.5,CLKOUT0_PHASE=0.0,CLKOUT1_PHASE=0.0,CLKOUT2_PHASE=0.0,COMPENSATION="ZHOLD",DIVCLK_DIVIDE=1,REF_JITTER1=0.01,STARTUP_WAIT="FALSE",CLKFBOUT_USE_FINE_PS="FALSE",CLKOUT0_USE_FINE_PS="TRUE",CLKOUT1_USE_FINE_PS="FALSE",CLKOUT2_USE_FINE_PS="FALSE")>.
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v" Line 279: Assignment to clk2xInt ignored, since the identifier is never used
+
+Elaborating module <ODDR(DDR_CLK_EDGE="OPPOSITE_EDGE",INIT=1'b0,SRTYPE="ASYNC")>.
+
+Elaborating module <OBUFDS(IOSTANDARD="LVDS_25")>.
+
+Elaborating module <IBUFDS(IOSTANDARD="LVDS_25")>.
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v" Line 366: Assignment to DCO_in ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v" Line 395: Result of 8-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <BUFG>.
+
+Elaborating module <IBUFDS(DIFF_TERM="TRUE",IBUF_LOW_PWR="FALSE",IOSTANDARD="LVDS_25")>.
+
+Elaborating module <ISERDESE2(DATA_RATE="SDR",DATA_WIDTH=8,DYN_CLKDIV_INV_EN="FALSE",DYN_CLK_INV_EN="FALSE",INIT_Q1=1'b0,INIT_Q2=1'b0,INIT_Q3=1'b0,INIT_Q4=1'b0,INTERFACE_TYPE="NETWORKING",IOBDELAY="NONE",NUM_CE=1,OFB_USED="FALSE",SERDES_MODE="MASTER",SRVAL_Q1=1'b0,SRVAL_Q2=1'b0,SRVAL_Q3=1'b0,SRVAL_Q4=1'b0)>.
+
+Elaborating module <SPI(TRANSFER_SIZE=16,SPI_CLK_DIV=8'b0101)>.
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 153: Assignment to ADC11_out ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 154: Size mismatch in connection of port <FR_out>. Formal port size is 4-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 154: Assignment to FR1_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 215: Assignment to ADC21_out ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 216: Size mismatch in connection of port <FR_out>. Formal port size is 4-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 216: Assignment to FR2_out ignored, since the identifier is never used
+WARNING:HDLCompiler:552 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 132: Input port cmd_trig_in is not connected on this instance
+WARNING:HDLCompiler:552 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" Line 194: Input port cmd_trig_in is not connected on this instance
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ADC_test>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v".
+WARNING:Xst:2898 - Port 'cmd_addr_in', unconnected in block instance 'ADC1', is tied to GND.
+WARNING:Xst:2898 - Port 'cmd_data_in', unconnected in block instance 'ADC1', is tied to GND.
+WARNING:Xst:2898 - Port 'cmd_trig_in', unconnected in block instance 'ADC1', is tied to GND.
+WARNING:Xst:2898 - Port 'cmd_addr_in', unconnected in block instance 'ADC2', is tied to GND.
+WARNING:Xst:2898 - Port 'cmd_data_in', unconnected in block instance 'ADC2', is tied to GND.
+WARNING:Xst:2898 - Port 'cmd_trig_in', unconnected in block instance 'ADC2', is tied to GND.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 132: Output port <ADC1_out> of the instance <ADC1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 132: Output port <FR_out> of the instance <ADC1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 194: Output port <ADC1_out> of the instance <ADC2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 194: Output port <FR_out> of the instance <ADC2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 194: Output port <spi_sck_out> of the instance <ADC2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 194: Output port <spi_sdo_out> of the instance <ADC2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 194: Output port <ENC_out_p> of the instance <ADC2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\ADC_test.v" line 194: Output port <ENC_out_n> of the instance <ADC2> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <ADC1_out>.
+    Found 1-bit register for signal <ADC2_out>.
+    WARNING:Xst:2404 -  FFs/Latches <rst_in<0:0>> (without init value) have a constant value of 0 in block <ADC_test>.
+    WARNING:Xst:2404 -  FFs/Latches <rst_led<0:0>> (without init value) have a constant value of 1 in block <ADC_test>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <ADC_test> synthesized.
+
+Synthesizing Unit <clk_div_1>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\clk_div.v".
+        div_f = 27'b000000000000000000000001010
+        halfway = 27'b000000000000000000000000101
+    Found 27-bit register for signal <counter>.
+    Found 1-bit register for signal <div_clk>.
+    Found 27-bit adder for signal <counter[26]_GND_3_o_add_3_OUT> created at line 55.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <clk_div_1> synthesized.
+
+Synthesizing Unit <clk_div_2>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\clk_div.v".
+        div_f = 27'b000100110001001011010000000
+        halfway = 27'b000010011000100101101000000
+    Found 27-bit register for signal <counter>.
+    Found 1-bit register for signal <div_clk>.
+    Found 27-bit adder for signal <counter[26]_GND_4_o_add_3_OUT> created at line 55.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <clk_div_2> synthesized.
+
+Synthesizing Unit <LTC2195>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v".
+        SMP_DLY = 8'b00000000
+    Set property "INIT = R" for signal <PS_state_f>.
+    Set property "INIT = R" for signal <state_f>.
+WARNING:Xst:647 - Input <cmd_addr_in<7:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <cmd_data_in<15:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\LTC2195.v" line 671: Output port <data_out> of the instance <LTC2195_SPI_inst> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <counter_f>.
+    Found 9-bit register for signal <PS_value_f>.
+    Found 9-bit register for signal <PS_target_f>.
+    Found 4-bit register for signal <state_f>.
+    Found 4-bit register for signal <PS_state_f>.
+    Found 1-bit register for signal <PS_clk>.
+    Found 1-bit register for signal <PS_en>.
+    Found 1-bit register for signal <PS_inc>.
+    Found 1-bit register for signal <spi_trigger>.
+    Found 16-bit register for signal <ADC0_out>.
+    Found 16-bit register for signal <ADC1_out>.
+    Found 4-bit register for signal <FR_out>.
+    Found 16-bit register for signal <spi_data>.
+    Found finite state machine <FSM_1> for signal <PS_state_f>.
+    -----------------------------------------------------------------------
+    | States             | 13                                             |
+    | Transitions        | 24                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk_in (rising_edge)                           |
+    | Reset              | rst_in (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0010                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_0> for signal <state_f>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 21                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk_in (rising_edge)                           |
+    | Reset              | rst_in (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 9-bit subtractor for signal <PS_value_f[8]_GND_5_o_sub_17_OUT> created at line 199.
+    Found 8-bit subtractor for signal <counter_f[7]_GND_5_o_sub_41_OUT> created at line 802.
+    Found 9-bit adder for signal <PS_value_f[8]_GND_5_o_add_15_OUT> created at line 181.
+    Found 9-bit comparator greater for signal <PS_value_f[8]_PS_target_f[8]_LessThan_4_o> created at line 101
+    Found 9-bit comparator greater for signal <PS_value_f[8]_PWR_5_o_LessThan_5_o> created at line 101
+    Found 9-bit comparator greater for signal <PS_target_f[8]_PS_value_f[8]_LessThan_6_o> created at line 104
+    Found 9-bit comparator greater for signal <PWR_5_o_PS_value_f[8]_LessThan_7_o> created at line 104
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  82 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   9 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
+Unit <LTC2195> synthesized.
+
+Synthesizing Unit <SPI>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test\SPI.v".
+        TRANSFER_SIZE = 16
+        SPI_CLK_DIV = 8'b00000101
+        SPI_POLARITY = 1'b1
+        N_SDI = 1
+    Set property "INIT = R" for signal <state_f>.
+    Found 12-bit register for signal <counter_f>.
+    Found 8-bit register for signal <clk_counter>.
+    Found 3-bit register for signal <state_f>.
+    Found 1-bit register for signal <spi_clk>.
+    Found 1-bit register for signal <ready_out>.
+    Found 1-bit register for signal <spi_scs_out>.
+    Found 1-bit register for signal <spi_sck_out>.
+    Found 1-bit register for signal <spi_sdo_out>.
+    Found 1-bit register for signal <data_out<15>>.
+    Found 1-bit register for signal <data_out<14>>.
+    Found 1-bit register for signal <data_out<13>>.
+    Found 1-bit register for signal <data_out<12>>.
+    Found 1-bit register for signal <data_out<11>>.
+    Found 1-bit register for signal <data_out<10>>.
+    Found 1-bit register for signal <data_out<9>>.
+    Found 1-bit register for signal <data_out<8>>.
+    Found 1-bit register for signal <data_out<7>>.
+    Found 1-bit register for signal <data_out<6>>.
+    Found 1-bit register for signal <data_out<5>>.
+    Found 1-bit register for signal <data_out<4>>.
+    Found 1-bit register for signal <data_out<3>>.
+    Found 1-bit register for signal <data_out<2>>.
+    Found 1-bit register for signal <data_out<1>>.
+    Found 1-bit register for signal <data_out<0>>.
+    Found 12-bit subtractor for signal <counter_f[11]_GND_13_o_sub_8_OUT> created at line 136.
+    Found 8-bit adder for signal <clk_counter[7]_GND_13_o_add_1_OUT> created at line 49.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  44 D-type flip-flop(s).
+	inferred  23 Multiplexer(s).
+Unit <SPI> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 10
+ 12-bit subtractor                                     : 2
+ 27-bit adder                                          : 2
+ 8-bit adder                                           : 2
+ 8-bit subtractor                                      : 2
+ 9-bit addsub                                          : 2
+# Registers                                            : 76
+ 1-bit register                                        : 54
+ 12-bit register                                       : 2
+ 16-bit register                                       : 6
+ 27-bit register                                       : 2
+ 3-bit register                                        : 2
+ 4-bit register                                        : 2
+ 8-bit register                                        : 4
+ 9-bit register                                        : 4
+# Comparators                                          : 8
+ 9-bit comparator greater                              : 8
+# Multiplexers                                         : 66
+ 1-bit 2-to-1 multiplexer                              : 54
+ 12-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 6
+ 27-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <PS_target_f_8> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_7> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_6> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_5> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_4> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_3> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_2> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_1> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_0> (without init value) has a constant value of 0 in block <ADC2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_8> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_7> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_6> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_5> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_4> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_3> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_2> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_1> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PS_target_f_0> (without init value) has a constant value of 0 in block <ADC1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ADC0_out_0> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_1> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_2> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_3> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_4> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_5> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_6> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_7> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_8> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_9> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_10> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_11> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_12> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_13> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_14> of sequential type is unconnected in block <ADC1>.
+WARNING:Xst:2677 - Node <ADC0_out_0> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_1> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_2> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_3> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_4> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_5> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_6> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_7> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_8> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_9> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_10> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_11> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_12> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_13> of sequential type is unconnected in block <ADC2>.
+WARNING:Xst:2677 - Node <ADC0_out_14> of sequential type is unconnected in block <ADC2>.
+
+Synthesizing (advanced) Unit <LTC2195>.
+The following registers are absorbed into counter <PS_value_f>: 1 register on signal <PS_value_f>.
+The following registers are absorbed into counter <counter_f>: 1 register on signal <counter_f>.
+Unit <LTC2195> synthesized (advanced).
+
+Synthesizing (advanced) Unit <SPI>.
+The following registers are absorbed into counter <clk_counter>: 1 register on signal <clk_counter>.
+The following registers are absorbed into counter <counter_f>: 1 register on signal <counter_f>.
+Unit <SPI> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clk_div_1>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <clk_div_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clk_div_2>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <clk_div_2> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 10
+ 12-bit down counter                                   : 2
+ 27-bit up counter                                     : 2
+ 8-bit down counter                                    : 2
+ 8-bit up counter                                      : 2
+ 9-bit updown counter                                  : 2
+# Registers                                            : 182
+ Flip-Flops                                            : 182
+# Comparators                                          : 8
+ 9-bit comparator greater                              : 8
+# Multiplexers                                         : 60
+ 1-bit 2-to-1 multiplexer                              : 54
+ 16-bit 2-to-1 multiplexer                             : 6
+# FSMs                                                 : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ADC1/FSM_0> on signal <state_f[1:4]> with user encoding.
+Optimizing FSM <ADC2/FSM_0> on signal <state_f[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 0001
+ 0000  | 0000
+ 1011  | 1011
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1100  | 1100
+ 1101  | 1101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ADC1/FSM_1> on signal <PS_state_f[1:4]> with user encoding.
+Optimizing FSM <ADC2/FSM_1> on signal <PS_state_f[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0010  | 0010
+ 0000  | 0000
+ 0001  | 0001
+ 1000  | 1000
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+-------------------
+WARNING:Xst:1710 - FF/Latch <spi_data_15> (without init value) has a constant value of 0 in block <LTC2195>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:3001 - This design contains one or more registers or latches with an active
+   asynchronous set and asynchronous reset. While this circuit can be built,
+   it creates a sub-optimal implementation in terms of area, power and
+   performance. For a more optimal implementation Xilinx highly recommends
+   one of the following:
+
+          1) Remove either the set or reset from all registers and latches if
+             not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Kintex7 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    data_out_0 in unit <SPI>
+    data_out_1 in unit <SPI>
+    data_out_2 in unit <SPI>
+    data_out_4 in unit <SPI>
+    data_out_5 in unit <SPI>
+    data_out_3 in unit <SPI>
+    data_out_7 in unit <SPI>
+    data_out_8 in unit <SPI>
+    data_out_6 in unit <SPI>
+    data_out_10 in unit <SPI>
+    data_out_11 in unit <SPI>
+    data_out_9 in unit <SPI>
+    data_out_12 in unit <SPI>
+    data_out_13 in unit <SPI>
+    data_out_15 in unit <SPI>
+    data_out_14 in unit <SPI>
+    state_f_0 in unit <SPI>
+
+
+Optimizing unit <ADC_test> ...
+
+Optimizing unit <LTC2195> ...
+
+Optimizing unit <SPI> ...
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_0> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_1> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_2> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_3> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_5> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_6> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_7> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_target_f_8> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_0> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_1> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_2> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_3> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_6> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_10> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_11> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_12> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_13> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/spi_data_14> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_0> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_1> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_2> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_3> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_5> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_6> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_7> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_target_f_8> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ADC2/FR_out_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/FR_out_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/FR_out_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/FR_out_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_14> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_13> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_12> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_11> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_10> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_9> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_8> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_7> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_6> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_5> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_4> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC0_out_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_15> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_14> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_13> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_12> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_11> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_10> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_9> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_8> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_7> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_6> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_5> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_4> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/ADC1_out_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_14> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_13> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_12> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_11> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_10> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_9> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_8> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_7> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_6> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_5> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_4> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/spi_data_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/FR_out_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/FR_out_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/FR_out_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/FR_out_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_14> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_13> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_12> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_11> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_10> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_9> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_8> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_7> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_6> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_5> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_4> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC0_out_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_15> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_14> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_13> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_12> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_11> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_10> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_9> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_8> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_7> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_6> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_5> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_4> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/ADC1_out_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/spi_sdo_out> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/spi_sck_out> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_0> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_1> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_2> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_4> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_5> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_7> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_8> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_6> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_10> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_11> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_9> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_12> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_13> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_15> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC2/LTC2195_SPI_inst/data_out_14> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_2> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_1> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_3> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_clk> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_inc> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_en> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_0> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_state_f_FSM_FFd2> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_state_f_FSM_FFd1> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_state_f_FSM_FFd4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_8> (without init value) has a constant value of 1 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_7> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_5> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_6> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_2> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_1> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_value_f_3> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_clk> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_inc> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/PS_en> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_7> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_6> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_5> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_3> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/LTC2195_SPI_inst/clk_counter_7> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/LTC2195_SPI_inst/clk_counter_6> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/LTC2195_SPI_inst/clk_counter_5> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/LTC2195_SPI_inst/clk_counter_4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/LTC2195_SPI_inst/clk_counter_3> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_4> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_5> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_6> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_7> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_8> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_9> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_10> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_11> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_12> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_13> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_14> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_15> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_16> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_17> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_18> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_19> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_20> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_21> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_22> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_23> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_24> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_25> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ADC_clk/counter_26> has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_0> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_state_f_FSM_FFd2> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_state_f_FSM_FFd1> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_state_f_FSM_FFd4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_8> (without init value) has a constant value of 1 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_7> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_5> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_4> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ADC2/PS_value_f_6> (without init value) has a constant value of 0 in block <ADC_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ADC2/PS_state_f_FSM_FFd3> of sequential type is unconnected in block <ADC_test>.
+WARNING:Xst:2677 - Node <ADC1/PS_state_f_FSM_FFd3> of sequential type is unconnected in block <ADC_test>.
+INFO:Xst:2261 - The FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_0> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC2/LTC2195_SPI_inst/clk_counter_0> 
+INFO:Xst:2261 - The FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_1> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC2/LTC2195_SPI_inst/clk_counter_1> 
+INFO:Xst:2261 - The FF/Latch <ADC1/LTC2195_SPI_inst/clk_counter_2> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC2/LTC2195_SPI_inst/clk_counter_2> 
+INFO:Xst:2261 - The FF/Latch <ADC1/spi_data_8> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/spi_data_5> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_0> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_0> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_1> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_1> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_2> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_2> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_3> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_3> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_4> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_4> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_5> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_5> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_6> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_6> 
+INFO:Xst:2261 - The FF/Latch <ADC2/counter_f_7> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC1/counter_f_7> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <ADC1/LTC2195_SPI_inst/spi_clk> in Unit <ADC_test> is equivalent to the following FF/Latch, which will be removed : <ADC2/LTC2195_SPI_inst/spi_clk> 
+Found area constraint ratio of 100 (+ 5) on block ADC_test, actual ratio is 0.
+
+Final Macro Processing ...
+
+Processing Unit <ADC_test> :
+	Found 2-bit shift register for signal <ADC1_out_OBUF>.
+	Found 2-bit shift register for signal <ADC2_out_OBUF>.
+Unit <ADC_test> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 114
+ Flip-Flops                                            : 114
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : ADC_test.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 303
+#      GND                         : 1
+#      INV                         : 11
+#      LUT1                        : 32
+#      LUT2                        : 33
+#      LUT3                        : 36
+#      LUT4                        : 9
+#      LUT5                        : 33
+#      LUT6                        : 21
+#      MUXCY                       : 60
+#      VCC                         : 1
+#      XORCY                       : 66
+# FlipFlops/Latches                : 121
+#      FD                          : 51
+#      FDC                         : 22
+#      FDE                         : 37
+#      FDP                         : 6
+#      LDC                         : 3
+#      ODDR                        : 2
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 4
+#      BUFG                        : 4
+# IO Buffers                       : 24
+#      IBUF                        : 1
+#      IBUFDS                      : 12
+#      IBUFG                       : 1
+#      OBUF                        : 8
+#      OBUFDS                      : 2
+# Others                           : 12
+#      ISERDESE2                   : 10
+#      MMCME2_ADV                  : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7k160tfbg676-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             121  out of  202800     0%  
+ Number of Slice LUTs:                  177  out of  101400     0%  
+    Number used as Logic:               175  out of  101400     0%  
+    Number used as Memory:                2  out of  35000     0%  
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    186
+   Number with an unused Flip Flop:      65  out of    186    34%  
+   Number with an unused LUT:             9  out of    186     4%  
+   Number of fully used LUT-FF pairs:   112  out of    186    60%  
+   Number of unique control sets:        19
+
+IO Utilization: 
+ Number of IOs:                          36
+ Number of bonded IOBs:                  36  out of    400     9%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                4  out of     32    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------------------------------------------------------+----------------------------------------------+-------+
+Clock Signal                                                                                                 | Clock buffer(FF name)                        | Load  |
+-------------------------------------------------------------------------------------------------------------+----------------------------------------------+-------+
+ADC2/clkPS                                                                                                   | NONE(ADC2/ODDR_inst)                         | 1     |
+ADC1/clkPS                                                                                                   | NONE(ADC1/ODDR_inst)                         | 1     |
+ADC_clk/div_clk                                                                                              | BUFG                                         | 57    |
+ADC1/LTC2195_SPI_inst/spi_clk                                                                                | BUFG                                         | 56    |
+clk                                                                                                          | IBUFG                                        | 5     |
+ADC1/LTC2195_SPI_inst/trigger_in_data_in[5]_AND_26_o(ADC1/LTC2195_SPI_inst/trigger_in_data_in[5]_AND_26_o1:O)| NONE(*)(ADC1/LTC2195_SPI_inst/data_out_5_LDC)| 1     |
+ADC1/LTC2195_SPI_inst/trigger_in_data_in[7]_AND_22_o(ADC1/LTC2195_SPI_inst/trigger_in_data_in[7]_AND_22_o1:O)| NONE(*)(ADC1/LTC2195_SPI_inst/data_out_7_LDC)| 1     |
+ADC1/LTC2195_SPI_inst/trigger_in_data_in[9]_AND_18_o(ADC1/LTC2195_SPI_inst/trigger_in_data_in[9]_AND_18_o1:O)| NONE(*)(ADC1/LTC2195_SPI_inst/data_out_9_LDC)| 1     |
+-------------------------------------------------------------------------------------------------------------+----------------------------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.391ns (Maximum Frequency: 418.235MHz)
+   Minimum input arrival time before clock: 0.477ns
+   Maximum output required time after clock: 1.006ns
+   Maximum combinational path delay: 0.399ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ADC_clk/div_clk'
+  Clock period: 2.391ns (frequency: 418.235MHz)
+  Total number of paths / destination ports: 1336 / 66
+-------------------------------------------------------------------------
+Delay:               2.391ns (Levels of Logic = 28)
+  Source:            LED_clk/counter_0 (FF)
+  Destination:       LED_clk/counter_25 (FF)
+  Source Clock:      ADC_clk/div_clk rising
+  Destination Clock: ADC_clk/div_clk rising
+
+  Data Path: LED_clk/counter_0 to LED_clk/counter_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.282   0.405  LED_clk/counter_0 (LED_clk/counter_0)
+     INV:I->O              1   0.067   0.000  LED_clk/Mcount_counter_lut<0>_INV_0 (LED_clk/Mcount_counter_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  LED_clk/Mcount_counter_cy<0> (LED_clk/Mcount_counter_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<1> (LED_clk/Mcount_counter_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<2> (LED_clk/Mcount_counter_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<3> (LED_clk/Mcount_counter_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<4> (LED_clk/Mcount_counter_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<5> (LED_clk/Mcount_counter_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<6> (LED_clk/Mcount_counter_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<7> (LED_clk/Mcount_counter_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<8> (LED_clk/Mcount_counter_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<9> (LED_clk/Mcount_counter_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<10> (LED_clk/Mcount_counter_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<11> (LED_clk/Mcount_counter_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<12> (LED_clk/Mcount_counter_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<13> (LED_clk/Mcount_counter_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<14> (LED_clk/Mcount_counter_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<15> (LED_clk/Mcount_counter_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<16> (LED_clk/Mcount_counter_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<17> (LED_clk/Mcount_counter_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<18> (LED_clk/Mcount_counter_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<19> (LED_clk/Mcount_counter_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<20> (LED_clk/Mcount_counter_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<21> (LED_clk/Mcount_counter_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<22> (LED_clk/Mcount_counter_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<23> (LED_clk/Mcount_counter_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  LED_clk/Mcount_counter_cy<24> (LED_clk/Mcount_counter_cy<24>)
+     XORCY:CI->O           1   0.320   0.602  LED_clk/Mcount_counter_xor<25> (Result<25>)
+     LUT3:I0->O            1   0.053   0.000  LED_clk/Mcount_counter_eqn_251 (LED_clk/Mcount_counter_eqn_25)
+     FD:D                      0.011          LED_clk/counter_25
+    ----------------------------------------
+    Total                      2.391ns (1.384ns logic, 1.007ns route)
+                                       (57.9% logic, 42.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ADC1/LTC2195_SPI_inst/spi_clk'
+  Clock period: 1.797ns (frequency: 556.598MHz)
+  Total number of paths / destination ports: 612 / 80
+-------------------------------------------------------------------------
+Delay:               1.797ns (Levels of Logic = 13)
+  Source:            ADC1/LTC2195_SPI_inst/state_f_2 (FF)
+  Destination:       ADC1/LTC2195_SPI_inst/counter_f_11 (FF)
+  Source Clock:      ADC1/LTC2195_SPI_inst/spi_clk rising
+  Destination Clock: ADC1/LTC2195_SPI_inst/spi_clk rising
+
+  Data Path: ADC1/LTC2195_SPI_inst/state_f_2 to ADC1/LTC2195_SPI_inst/counter_f_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             37   0.282   0.553  ADC1/LTC2195_SPI_inst/state_f_2 (ADC1/LTC2195_SPI_inst/state_f_2)
+     INV:I->O              1   0.067   0.399  ADC1/LTC2195_SPI_inst/state_f<2>_inv1_INV_0 (ADC1/LTC2195_SPI_inst/state_f<2>_inv)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<0> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<1> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<2> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<3> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<4> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<5> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<6> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<7> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<8> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<9> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<9>)
+     MUXCY:CI->O           0   0.015   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<10> (ADC1/LTC2195_SPI_inst/Mcount_counter_f_cy<10>)
+     XORCY:CI->O           1   0.320   0.000  ADC1/LTC2195_SPI_inst/Mcount_counter_f_xor<11> (ADC1/LTC2195_SPI_inst/Mcount_counter_f11)
+     FDE:D                     0.011          ADC1/LTC2195_SPI_inst/counter_f_11
+    ----------------------------------------
+    Total                      1.797ns (0.845ns logic, 0.952ns route)
+                                       (47.0% logic, 53.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 1.899ns (frequency: 526.593MHz)
+  Total number of paths / destination ports: 31 / 5
+-------------------------------------------------------------------------
+Delay:               1.899ns (Levels of Logic = 6)
+  Source:            ADC_clk/counter_0 (FF)
+  Destination:       ADC_clk/counter_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: ADC_clk/counter_0 to ADC_clk/counter_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.282   0.432  ADC_clk/counter_0 (ADC_clk/counter_0)
+     INV:I->O              1   0.067   0.000  ADC_clk/Mcount_counter_lut<0>_INV_0 (ADC_clk/Mcount_counter_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  ADC_clk/Mcount_counter_cy<0> (ADC_clk/Mcount_counter_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  ADC_clk/Mcount_counter_cy<1> (ADC_clk/Mcount_counter_cy<1>)
+     MUXCY:CI->O           0   0.015   0.000  ADC_clk/Mcount_counter_cy<2> (ADC_clk/Mcount_counter_cy<2>)
+     XORCY:CI->O           1   0.320   0.413  ADC_clk/Mcount_counter_xor<3> (Result<3>1)
+     LUT5:I4->O            1   0.053   0.000  ADC_clk/Mcount_counter_eqn_31 (ADC_clk/Mcount_counter_eqn_3)
+     FD:D                      0.011          ADC_clk/counter_3
+    ----------------------------------------
+    Total                      1.899ns (1.054ns logic, 0.845ns route)
+                                       (55.5% logic, 44.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADC1/LTC2195_SPI_inst/spi_clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.477ns (Levels of Logic = 2)
+  Source:            sdi (PAD)
+  Destination:       ADC1/LTC2195_SPI_inst/data_out_0 (FF)
+  Destination Clock: ADC1/LTC2195_SPI_inst/spi_clk rising
+
+  Data Path: sdi to ADC1/LTC2195_SPI_inst/data_out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.000   0.413  sdi_IBUF (sdi_IBUF)
+     LUT5:I4->O            1   0.053   0.000  ADC1/LTC2195_SPI_inst/Mmux_state_f[2]_data_out[15]_wide_mux_11_OUT11 (ADC1/LTC2195_SPI_inst/state_f[2]_data_out[15]_wide_mux_11_OUT<0>)
+     FDC:D                     0.011          ADC1/LTC2195_SPI_inst/data_out_0
+    ----------------------------------------
+    Total                      0.477ns (0.064ns logic, 0.413ns route)
+                                       (13.4% logic, 86.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ADC_clk/div_clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.406ns (Levels of Logic = 0)
+  Source:            ADC1/pins[0].ISERDESE2_inst:Q8 (PAD)
+  Destination:       Mshreg_ADC1_out_OBUF (FF)
+  Destination Clock: ADC_clk/div_clk rising
+
+  Data Path: ADC1/pins[0].ISERDESE2_inst:Q8 to Mshreg_ADC1_out_OBUF
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    ISERDESE2:Q8           1   0.000   0.399  ADC1/pins[0].ISERDESE2_inst (ADC1/data_out<0>)
+     SRLC16E:D                 0.007          Mshreg_ADC1_out_OBUF
+    ----------------------------------------
+    Total                      0.406ns (0.007ns logic, 0.399ns route)
+                                       (1.7% logic, 98.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ADC1/LTC2195_SPI_inst/spi_clk'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              0.687ns (Levels of Logic = 1)
+  Source:            ADC1/LTC2195_SPI_inst/spi_sck_out (FF)
+  Destination:       sck (PAD)
+  Source Clock:      ADC1/LTC2195_SPI_inst/spi_clk rising
+
+  Data Path: ADC1/LTC2195_SPI_inst/spi_sck_out to sck
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.282   0.405  ADC1/LTC2195_SPI_inst/spi_sck_out (ADC1/LTC2195_SPI_inst/spi_sck_out)
+     OBUF:I->O                 0.000          sck_OBUF (sck)
+    ----------------------------------------
+    Total                      0.687ns (0.282ns logic, 0.405ns route)
+                                       (41.0% logic, 59.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ADC1/clkPS'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.006ns (Levels of Logic = 1)
+  Source:            ADC1/ODDR_inst (FF)
+  Destination:       ENC_p (PAD)
+  Source Clock:      ADC1/clkPS rising
+
+  Data Path: ADC1/ODDR_inst to ENC_p
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     ODDR:C->Q             1   0.607   0.399  ADC1/ODDR_inst (ADC1/ENC_out)
+     OBUFDS:I->O               0.000          ADC1/obufds_inst (ENC_p)
+    ----------------------------------------
+    Total                      1.006ns (0.607ns logic, 0.399ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ADC_clk/div_clk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              0.687ns (Levels of Logic = 1)
+  Source:            LED_clk/div_clk (FF)
+  Destination:       clk_led (PAD)
+  Source Clock:      ADC_clk/div_clk rising
+
+  Data Path: LED_clk/div_clk to clk_led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.282   0.405  LED_clk/div_clk (LED_clk/div_clk)
+     OBUF:I->O                 0.000          clk_led_OBUF (clk_led)
+    ----------------------------------------
+    Total                      0.687ns (0.282ns logic, 0.405ns route)
+                                       (41.0% logic, 59.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.681ns (Levels of Logic = 0)
+  Source:            ADC_clk/div_clk (FF)
+  Destination:       ADC2/MMCME2_ADV_inst:CLKIN1 (PAD)
+  Source Clock:      clk rising
+
+  Data Path: ADC_clk/div_clk to ADC2/MMCME2_ADV_inst:CLKIN1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.282   0.399  ADC_clk/div_clk (ADC_clk/div_clk)
+    MMCME2_ADV:CLKIN1          0.000          ADC2/MMCME2_ADV_inst
+    ----------------------------------------
+    Total                      0.681ns (0.282ns logic, 0.399ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 22 / 12
+-------------------------------------------------------------------------
+Delay:               0.399ns (Levels of Logic = 1)
+  Source:            FR2_p (PAD)
+  Destination:       ADC2/pins[4].ISERDESE2_inst:DDLY (PAD)
+
+  Data Path: FR2_p to ADC2/pins[4].ISERDESE2_inst:DDLY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFDS:I->O           1   0.000   0.399  ADC2/pins[4].IBUFDS_inst (ADC2/data_in_from_pins<4>)
+    ISERDESE2:DDLY             0.000          ADC2/pins[4].ISERDESE2_inst
+    ----------------------------------------
+    Total                      0.399ns (0.000ns logic, 0.399ns route)
+                                       (0.0% logic, 100.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ADC1/LTC2195_SPI_inst/spi_clk
+----------------------------------------------------+---------+---------+---------+---------+
+                                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------+---------+---------+---------+---------+
+ADC1/LTC2195_SPI_inst/spi_clk                       |    1.797|         |         |         |
+ADC1/LTC2195_SPI_inst/trigger_in_data_in[5]_AND_26_o|         |    1.845|         |         |
+ADC1/LTC2195_SPI_inst/trigger_in_data_in[7]_AND_22_o|         |    1.839|         |         |
+ADC1/LTC2195_SPI_inst/trigger_in_data_in[9]_AND_18_o|         |    1.839|         |         |
+ADC_clk/div_clk                                     |    1.759|         |         |         |
+----------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ADC1/LTC2195_SPI_inst/trigger_in_data_in[5]_AND_26_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ADC_clk/div_clk|         |         |    1.709|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ADC1/LTC2195_SPI_inst/trigger_in_data_in[7]_AND_22_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ADC_clk/div_clk|         |         |    1.701|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ADC1/LTC2195_SPI_inst/trigger_in_data_in[9]_AND_18_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ADC_clk/div_clk|         |         |    1.701|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ADC_clk/div_clk
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+ADC1/LTC2195_SPI_inst/spi_clk|    1.578|         |         |         |
+ADC_clk/div_clk              |    2.391|         |         |         |
+-----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.899|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.52 secs
+ 
+--> 
+
+Total memory usage is 410276 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  271 (   0 filtered)
+Number of infos    :   23 (   0 filtered)
+

@@ -1,0 +1,4 @@
+verilog work "../ADC_test/SPI.v"
+verilog work "../DAC_test/clk_div.v"
+verilog work "../ADC_test/LTC2195.v"
+verilog work "../ADC_test/ADC_test.v"

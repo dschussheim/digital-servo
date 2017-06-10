@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test_2\ADC_test.ncd
+OUTFILE=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test_2\ADC_test.bit
+FAMILY=Kintex7
+PART=xc7k160t-1fbg676
+WORKINGDIR=C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_test_2
+LICENSE=WebPack
+USER_INFO=211350505_0_0_015

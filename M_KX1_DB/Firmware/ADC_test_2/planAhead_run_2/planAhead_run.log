@@ -1,0 +1,69 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/pa.fromHdl.tcl
+# create_project -name ADC_test_2 -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/planAhead_run_2" -part xc7k160tfbg676-1
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "ADC_test.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {../ADC_test/SPI.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../DAC_test/clk_div.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../ADC_test/LTC2195.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../ADC_test/ADC_test.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top ADC_test $srcset
+# add_files [list {ADC_test.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc7k160tfbg676-1
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/SPI.v" into library work
+Parsing verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/timescale.v" included at line 11. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/SPI.v:11]
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/clk_div.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/ADC_test.v" into library work
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/kintex7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/fbg676/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/drc.xml
+WARNING: [Constraints 18-505] Could not create 'IOSTANDARD' constraint because cell 'ADC2/obufds_inst' is not directly connected to top level port. 'IOSTANDARD' is ignored by planAhead but preserved for implementation tool [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test/LTC2195.v:343]
+Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.ucf]
+Finished Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUFG => IBUF: 1 instances
+
+Phase 0 | Netlist Checksum: 45112fff
+open_rtl_design: Time (s): elapsed = 00:00:16 . Memory (MB): peak = 802.016 ; gain = 375.176
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS25 [get_ports [list ADC1_out]]
+set_property iostandard LVCMOS25 [get_ports [list ADC2_out]]
+set_property iostandard LVCMOS25 [get_ports [list rst_led]]
+set_property iostandard LVCMOS25 [get_ports [list scs1]]
+set_property iostandard LVCMOS25 [get_ports [list scs2]]
+save_constraints
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Jun 09 16:25:57 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

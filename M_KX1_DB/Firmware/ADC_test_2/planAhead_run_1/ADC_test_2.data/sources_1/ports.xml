@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="D10_p">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="D10_n">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="D11_p">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="D11_n">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="D20_p">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="D20_n">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="D21_p">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="D21_n">
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Port Id="clk" Dir="IN"/>
+		<Port Id="sck" Dir="OUT"/>
+		<Port Id="sdo" Dir="OUT"/>
+		<Port Id="sdi" Dir="IN"/>
+		<Port Id="ENC_p" Dir="OUT"/>
+		<Port Id="ENC_n" Dir="OUT"/>
+		<Port Id="DCO1_p" Dir="IN"/>
+		<Port Id="DCO1_n" Dir="IN"/>
+		<Port Id="FR1_p" Dir="IN"/>
+		<Port Id="FR1_n" Dir="IN"/>
+		<Port Id="ADC1_out" Dir="OUT"/>
+		<Port Id="scs1" Dir="OUT"/>
+		<Port Id="DCO2_p" Dir="IN"/>
+		<Port Id="DCO2_n" Dir="IN"/>
+		<Port Id="FR2_p" Dir="IN"/>
+		<Port Id="FR2_n" Dir="IN"/>
+		<Port Id="ADC2_out" Dir="OUT"/>
+		<Port Id="scs2" Dir="OUT"/>
+		<Port Id="clk_led" Dir="OUT"/>
+		<Port Id="rst_led" Dir="OUT"/>
+		<DiffPair Pos="D10_p[1]" Neg="D10_n[1]"/>
+		<DiffPair Pos="D10_p[0]" Neg="D10_n[0]"/>
+		<DiffPair Pos="D11_p[1]" Neg="D11_n[1]"/>
+		<DiffPair Pos="D11_p[0]" Neg="D11_n[0]"/>
+		<DiffPair Pos="D20_p[1]" Neg="D20_n[1]"/>
+		<DiffPair Pos="D20_p[0]" Neg="D20_n[0]"/>
+		<DiffPair Pos="D21_p[1]" Neg="D21_n[1]"/>
+		<DiffPair Pos="D21_p[0]" Neg="D21_n[0]"/>
+		<DiffPair Pos="ENC_p" Neg="ENC_n"/>
+		<DiffPair Pos="DCO1_p" Neg="DCO1_n"/>
+		<DiffPair Pos="FR1_p" Neg="FR1_n"/>
+		<DiffPair Pos="DCO2_p" Neg="DCO2_n"/>
+		<DiffPair Pos="FR2_p" Neg="FR2_n"/>
+	</Ifc>
+</Interface>
+

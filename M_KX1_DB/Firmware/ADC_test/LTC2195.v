@@ -251,27 +251,32 @@ MMCME2_ADV #(
 	.CLKIN2_PERIOD(10.0),
 	// CLKOUT0_DIVIDE - CLKOUT6_DIVIDE: Divide amount for CLKOUT (1-128)
 	.CLKOUT1_DIVIDE(1),
+	.CLKOUT2_DIVIDE(4),
 	.CLKOUT0_DIVIDE_F(8.0), 	// Divide amount for CLKOUT0 (1.000-128.000).
 	// CLKOUT0_DUTY_CYCLE - CLKOUT6_DUTY_CYCLE: Duty cycle for CLKOUT outputs (0.01-0.99).
 	.CLKOUT0_DUTY_CYCLE(0.5),
 	.CLKOUT1_DUTY_CYCLE(0.5),
+	.CLKOUT2_DUTY_CYCLE(0.5),
 	// CLKOUT0_PHASE - CLKOUT6_PHASE: Phase offset for CLKOUT outputs (-360.000-360.000).
 	.CLKOUT0_PHASE(0.0),
 	.CLKOUT1_PHASE(0.0),
-	.COMPENSATION("BUF_IN"), // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
+	.CLKOUT2_PHASE(0.0),
+	.COMPENSATION("ZHOLD"), // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
 	.DIVCLK_DIVIDE(1), // Master division value (1-106)
 	// REF_JITTER: Reference input jitter in UI (0.000-0.999).
 	.REF_JITTER1(0.01),
 	.STARTUP_WAIT("FALSE"), 		// Delays DONE until MMCM is locked (FALSE, TRUE)
 	// USE_FINE_PS: Fine phase shift enable (TRUE/FALSE)
-	.CLKFBOUT_USE_FINE_PS("TRUE"),
+	.CLKFBOUT_USE_FINE_PS("FALSE"),
 	.CLKOUT0_USE_FINE_PS("TRUE"),
-	.CLKOUT1_USE_FINE_PS("FALSE")
+	.CLKOUT1_USE_FINE_PS("FALSE"),
+	.CLKOUT2_USE_FINE_PS("FALSE")
 )
 MMCME2_ADV_inst (
 	// Clock Outputs: 1-bit (each) output: User configurable clock outputs
 	.CLKOUT0(clkPS), 					// Phase shifted clock for ENC
 	.CLKOUT1(clk8xInt), 				// Serialization clock for LVDS inputs
+	.CLKOUT2(clk2xInt),				//200 MHz clock for IDELAY control
 	// Dynamic Phase Shift Ports: 1-bit (each) output: Ports used for dynamic phase shifting of the outputs
 	.PSDONE(PS_done), 				// 1-bit output: Phase shift done
 	// Feedback Clocks: 1-bit (each) output: Clock feedback ports
@@ -365,33 +370,29 @@ ibufds_clk_inst(
 // LVDS inputs
 
 localparam N_LVDS = 5;		//Number of LVDS channels
-localparam N_SERIAL = 4;	//Not sure what this parameter is for...
+localparam N_SERIAL = 8;	//Not sure what this parameter is for...
 
 wire   [N_LVDS-1:0] data_in_p, data_in_n;
 assign data_in_p = {FR_in_p, D1_in_p, D0_in_p};
 assign data_in_n = {FR_in_n, D1_in_n, D0_in_n};
 
-wire [35:0] data_out;
+wire [N_LVDS*N_SERIAL-1:0] data_out;
 
 always @(posedge clk_in) begin
-	//Why this weird order??
+	//Order to get bits in right place
 	ADC0_out <= {
-		data_out[ 3], data_out[ 7], data_out[ 2], data_out[ 6],
-		data_out[ 1], data_out[ 5], data_out[ 0], data_out[ 4],
-		data_out[11], data_out[15], data_out[10], data_out[14],
-		data_out[ 9], data_out[13], data_out[ 8], data_out[12]
+		data_out[ 0], 	data_out[ 8], 	data_out[ 1], 	data_out[ 9], 	data_out[ 2], 	data_out[ 10], 	data_out[ 3], 	data_out[ 11],
+		data_out[4], 	data_out[12], 	data_out[5], 	data_out[13], 	data_out[ 6], 	data_out[14], 		data_out[ 7], 	data_out[15]
 	};
 	ADC1_out <= {
-		data_out[16+ 3], data_out[16+ 7], data_out[16+ 2], data_out[16+ 6],
-		data_out[16+ 1], data_out[16+ 5], data_out[16+ 0], data_out[16+ 4],
-		data_out[16+11], data_out[16+15], data_out[16+10], data_out[16+14],
-		data_out[16+ 9], data_out[16+13], data_out[16+ 8], data_out[16+12]
+		data_out[16 + 0], data_out[16 + 8], 	data_out[16 + 1], data_out[16 + 9], 	data_out[16 + 2], data_out[16 + 10], data_out[16 + 3], data_out[16 + 11],
+		data_out[16 + 4], data_out[16 + 12],	data_out[16 + 5], data_out[16 + 13],	data_out[16 + 6], data_out[16 + 14], data_out[16 + 7], data_out[16 +15]
 	};
 
 //	ADC0_out <= data_out[15:0];
 //	ADC1_out <= data_out[31:16];
 	
-	FR_out <= data_out[35:32];	//why 4 channels?
+	FR_out <= data_out[39:32];	//filling up remaining channels (extra from loop)?
 end
 
 // Generate the serial data clock - SDR at 4x the frequency of the ENC signal for a 2 wire interface
@@ -434,43 +435,58 @@ bufpll_inst(
 );
 */
 
-// BUFG: Global Clock Simple Buffer
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
-BUFG BUFG_inst (
+// Buffer for deserialization clock.
+BUFG BUFG_8x (
 	.O(clk8x), 		// 1-bit output: Clock output
 	.I(clk8xInt) 	// 1-bit input: Clock input
 );
-// End of BUFG_inst instantiation
 
 // We have multiple bits - step over every bit, instantiating the required elements
 
-wire [N_LVDS-1:0] data_in_from_pins; // between the input buffer and the delay
-wire [N_LVDS-1:0] data_in_from_pins_delay; // between the delay and the deserializer
+wire [N_LVDS-1:0] data_in_from_pins; 			// between the input buffer and the delay
+wire [N_LVDS-1:0] data_in_from_pins_delay; 	// between the delay and the deserializer
 
 // I added 50 to all the values here because I couldn't reach the middle of the eye with the encode phase shifter (it had hit the end of its range)
+//Removed the 50 to route design.
 function integer delay_value;
 	input i;
 	begin
 		case (i)
-			0:	delay_value = 50;
-			1:	delay_value = 52;
-			2:	delay_value = 55;
-			3:	delay_value = 58;
-			4:	delay_value = 59;
-			5:	delay_value = 59;
-			6:	delay_value = 59;
-			7:	delay_value = 58;
-			8:	delay_value = 60;
+			0:	delay_value = 0;
+			1:	delay_value = 2;
+			2:	delay_value = 5;
+			3:	delay_value = 8;
+			4:	delay_value = 9;
+			5:	delay_value = 9;
+			6:	delay_value = 9;
+			7:	delay_value = 8;
+			8:	delay_value = 0;
 			default:
-				delay_value = 50;
+				delay_value = 0;
 		endcase
 	end
 endfunction
+/*
+// Buffer for IDELAYCTRL clock.
+BUFG BUFG_2x (
+	.O(clk2x), 		// 1-bit output: Clock output
+	.I(clk2xInt) 	// 1-bit input: Clock input
+);
 
+// IDELAYCTRL: IDELAYE2/ODELAYE2 Tap Delay Value Control
+// Needed for IDELAYE2
+//(* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
+IDELAYCTRL IDELAYCTRL_inst (
+	.RDY(), 				// 1-bit output: Ready output
+	.REFCLK(clk2x), 	// 1-bit input: Reference clock input
+	.RST(rst_in) 		// 1-bit input: Active high reset input
+);
+*/
 genvar pin_count;
 generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begin: pins
 	// Input buffer
+	
+	/*
 	IBUFDS #(
 		.DIFF_TERM("TRUE"),
 		.IOSTANDARD("LVDS_33")
@@ -480,7 +496,24 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.IB(data_in_n[pin_count]),
 		.O(data_in_from_pins[pin_count])
 	);
-
+	*/
+	
+	// IBUFDS: Differential Input Buffer
+	// 7 Series
+	// Xilinx HDL Libraries Guide, version 14.7
+	IBUFDS #(
+		.DIFF_TERM("TRUE"), 			// Differential Termination
+		.IBUF_LOW_PWR("FALSE"), 	// Low power="TRUE", Highest performance="FALSE"
+		.IOSTANDARD("LVDS_25") 		// Specify the input I/O standard
+	) IBUFDS_inst (
+		.O(data_in_from_pins[pin_count]), 	// Buffer output
+		.I(data_in_p[pin_count]), 				// Diff_p buffer input (connect directly to top-level port)
+		.IB(data_in_n[pin_count]) 				// Diff_n buffer input (connect directly to top-level port)
+	);
+	// End of IBUFDS_inst instantiation
+	
+	
+	/*
 	// Delay
 	IODELAY2 #(
 		.DATA_RATE("SDR"),
@@ -508,8 +541,42 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.BUSY(),
 		.RST(1'b0)
 	);
+	*/
+	/*
+	// IDELAYE2: Input Fixed or Variable Delay Element
+	// 7 Series
+	// Xilinx HDL Libraries Guide, version 14.7
+(* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
+	IDELAYE2 #(
+		.CINVCTRL_SEL("FALSE"), 					// Enable dynamic clock inversion (FALSE, TRUE)
+		.DELAY_SRC("IDATAIN"), 						// Delay input (IDATAIN, DATAIN)
+		.HIGH_PERFORMANCE_MODE("TRUE"), 			// Reduced jitter ("TRUE"), Reduced power ("FALSE")
+		.IDELAY_TYPE("FIXED"), 						// FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
+		.IDELAY_VALUE(delay_value(pin_count)),	// Input delay tap setting (0-31)
+		.PIPE_SEL("FALSE"), 							// Select pipelined mode, FALSE, TRUE
+		.REFCLK_FREQUENCY(200.0), 					// IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
+		.SIGNAL_PATTERN("DATA") 					// DATA, CLOCK input signal
+	)
+	IDELAYE2_inst (
+		.IDATAIN(data_in_from_pins[pin_count]), 			// 1-bit input: Data input from the I/O
+		.DATAOUT(data_in_from_pins_delay[pin_count]), 	// 1-bit output: Delayed data output
+		.C(1'b0), 													// 1-bit input: Clock input
+		.CE(1'b0), 												// 1-bit input: Active high enable increment/decrement input
+		.CINVCTRL(), 												// 1-bit input: Dynamic clock inversion input
+		.CNTVALUEIN(), 											// 5-bit input: Counter value input
+		.DATAIN(), 													// 1-bit input: Internal delay data input
+		.INC(),	 													// 1-bit input: Increment / Decrement tap delay input
+		.LD(), 														// 1-bit input: Load IDELAY_VALUE input
+		.LDPIPEEN(1'b0),		 									// 1-bit input: Enable PIPELINE register to load data input
+		.REGRST(1'b0),	 											// 1-bit input: Active-high reset tap-delay input
+		.CNTVALUEOUT()												// 5-bit output: Counter value output
+	);
+	// End of IDELAYE2_inst instantiation
+	*/
 	
 	// Deserializer
+	
+	/*
 	ISERDES2 #(
 		.BITSLIP_ENABLE("FALSE"),
 		.DATA_RATE("SDR"),
@@ -530,6 +597,63 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.IOCE(desstrobe),									// this fails at place and route if I input 1'b0 here.  is this ok?
 		.RST(rst_in)
 	);
+	*/
+	
+	// ISERDESE2: Input SERial/DESerializer with Bitslip
+	// 7 Series
+	// Xilinx HDL Libraries Guide, version 14.7
+	ISERDESE2 #(
+		.DATA_RATE("SDR"), 					// DDR, SDR
+		.DATA_WIDTH(8), 						// Parallel data width (2-8,10,14)
+		.DYN_CLKDIV_INV_EN("FALSE"), 		// Enable DYNCLKDIVINVSEL inversion (FALSE, TRUE)
+		.DYN_CLK_INV_EN("FALSE"), 			// Enable DYNCLKINVSEL inversion (FALSE, TRUE)
+		// INIT_Q1 - INIT_Q4: Initial value on the Q outputs (0/1)
+		.INIT_Q1(1'b0),
+		.INIT_Q2(1'b0),
+		.INIT_Q3(1'b0),
+		.INIT_Q4(1'b0),
+		.INTERFACE_TYPE("NETWORKING"), 	// MEMORY, MEMORY_DDR3, MEMORY_QDR, NETWORKING, OVERSAMPLE
+		.IOBDELAY("NONE"), 					// NONE, BOTH, IBUF, IFD
+		.NUM_CE(1), 							// Number of clock enables (1,2)
+		.OFB_USED("FALSE"), 					// Select OFB path (FALSE, TRUE)
+		.SERDES_MODE("MASTER"), 			// MASTER, SLAVE
+		// SRVAL_Q1 - SRVAL_Q4: Q output values when SR is used (0/1)
+		.SRVAL_Q1(1'b0),
+		.SRVAL_Q2(1'b0),
+		.SRVAL_Q3(1'b0),
+		.SRVAL_Q4(1'b0)
+	)
+	ISERDESE2_inst (
+		// Q1 - Q8: 1-bit (each) output: Registered data outputs
+		.Q1(data_out[N_SERIAL*pin_count+7]),
+		.Q2(data_out[N_SERIAL*pin_count+6]),
+		.Q3(data_out[N_SERIAL*pin_count+5]),
+		.Q4(data_out[N_SERIAL*pin_count+4]),
+		.Q5(data_out[N_SERIAL*pin_count+3]),
+		.Q6(data_out[N_SERIAL*pin_count+2]),
+		.Q7(data_out[N_SERIAL*pin_count+1]),
+		.Q8(data_out[N_SERIAL*pin_count+0]),	
+		.BITSLIP(1'b0), 						// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
+		// CLKDIV when asserted (active High). Subsequently, the data seen on the Q1
+		// to Q8 output ports will shift, as in a barrel-shifter operation, one
+		// position every time Bitslip is invoked (DDR operation is different from
+		// SDR).
+		// CE1, CE2: 1-bit (each) input: Data register clock enable inputs
+		.CE1(1'b1),
+		// Clocks: 1-bit (each) input: ISERDESE2 clock input ports
+		.CLK(clk8x), 							// 1-bit input: High-speed clock
+		.CLKDIV(clk_in), 						// 1-bit input: Divided clock
+		// Dynamic Clock Inversions: 1-bit (each) input: Dynamic clock inversion pins to switch clock polarity
+		.DYNCLKDIVSEL(1'b0), 				// 1-bit input: Dynamic CLKDIV inversion
+		.DYNCLKSEL(1'b0), 					// 1-bit input: Dynamic CLK/CLKB inversion
+		// Input Data: 1-bit (each) input: ISERDESE2 data input ports
+		.D(1'b0), 												// 1-bit input: Data input
+//		.DDLY(data_in_from_pins_delay[pin_count]), 	// 1-bit input: Serial data from IDELAYE2
+		.DDLY(data_in_from_pins[pin_count]), 			// 1-bit input: Serial data from IDELAYE2
+		.RST(rst_in) 											// 1-bit input: Active high asynchronous reset
+	);
+	// End of ISERDESE2_inst instantiation
+	
 end
 endgenerate
 

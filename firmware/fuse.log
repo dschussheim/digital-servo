@@ -35,9 +35,9 @@ Compiling module LTC2195
 Compiling module LTC2195_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 3 sub-compilation(s) to finish...
+Waiting for 2 sub-compilation(s) to finish...
 WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\LTC2195_tb_isim_beh.exe.sim\libPortability.dll".
 Compiled 19 Verilog Units
 Built simulation executable C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195_tb_isim_beh.exe
-Fuse Memory Usage: 44924 KB
-Fuse CPU Usage: 921 ms
+Fuse Memory Usage: 44812 KB
+Fuse CPU Usage: 811 ms

@@ -22,7 +22,3 @@ Finished circuit initialization process.
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
  Warning : Please wait for PSDONE signal before adjusting the Phase Shift.
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us

@@ -91,15 +91,21 @@ module LTC2195_tb;
 		D0_in_p = 4'b0000;
 		D0_in_n = ~D0_in_p;
 		D1_in_p = 4'b0000;
-		D1_in_n = ~D0_in_p;
+		D1_in_n = ~D1_in_p;
 
-
+		
         
 		// Add stimulus here
 		#100	rst_in = 1;
 		#30	rst_in = 0; //DCM SP says reset must be high for at least 3 valid clock cycles
-
-
+		#300	D0_in_p = 4'b0001;
+				D0_in_n = ~D0_in_p;
+		#2.5	D0_in_p = 4'b1011;
+				D0_in_n = ~D0_in_p;
+		#2.5	D0_in_p = 4'b0101;
+				D0_in_n = ~D0_in_p;				
+		#2.5	D0_in_p = 4'b0110;
+				D0_in_n = ~D0_in_p;
 	end
       
 	//Clock

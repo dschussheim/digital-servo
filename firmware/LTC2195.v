@@ -349,8 +349,8 @@ bufpll_inst(
 
 // We have multiple bits - step over every bit, instantiating the required elements
 
-wire [N_LVDS-1:0] data_in_from_pins; // between the input buffer and the delay
-wire [N_LVDS-1:0] data_in_from_pins_delay; // between the delay and the deserializer
+wire [N_LVDS-1:0] data_in_from_pins; 			// between the input buffer and the delay
+wire [N_LVDS-1:0] data_in_from_pins_delay; 	// between the delay and the deserializer
 
 // I added 50 to all the values here because I couldn't reach the middle of the eye with the encode phase shifter (it had hit the end of its range)
 function integer delay_value;

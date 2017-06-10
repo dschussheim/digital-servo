@@ -1,0 +1,47 @@
+
+
+NET "clk_led" LOC = M17;
+
+
+NET "clk_led" IOSTANDARD = LVCMOS25;
+NET "sck" IOSTANDARD = LVCMOS25;
+NET "sdi" IOSTANDARD = LVCMOS25;
+NET "sdo" IOSTANDARD = LVCMOS25;
+
+
+NET "clk" LOC = AA3;
+NET "ENC_p" LOC = AA25;
+NET "sdi" LOC = W20;
+NET "sck" LOC = Y21;
+NET "sdo" LOC = AC26;
+
+
+NET "D10_p[0]" LOC = AD21;
+NET "D10_p[1]" LOC = AE23;
+NET "D11_p[0]" LOC = M24;
+NET "D11_p[1]" LOC = T24;
+NET "DCO1_p" LOC = N26;
+NET "FR1_p" LOC = R25;
+NET "rst_led" LOC = L18;
+
+
+NET "D20_p[0]" LOC = AB22;
+NET "D20_p[1]" LOC = AD26;
+NET "D21_p[0]" LOC = U24;
+NET "D21_p[1]" LOC = AC23;
+NET "DCO2_p" LOC = AD25;
+NET "FR2_p" LOC = W23;
+NET "scs1" LOC = W26;
+NET "scs2" LOC = W25;
+
+
+NET "ADC1_out" LOC = L17;
+NET "ADC2_out" LOC = K18;
+
+# PlanAhead Generated IO constraints 
+
+NET "ADC1_out" IOSTANDARD = LVCMOS25;
+NET "ADC2_out" IOSTANDARD = LVCMOS25;
+NET "rst_led" IOSTANDARD = LVCMOS25;
+NET "scs1" IOSTANDARD = LVCMOS25;
+NET "scs2" IOSTANDARD = LVCMOS25;
