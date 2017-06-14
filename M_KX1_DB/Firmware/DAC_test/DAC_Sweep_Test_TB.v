@@ -29,43 +29,47 @@ module DAC_Sweep_Test_TB;
 //	reg on_in;
 
 	// Outputs
-	wire [15:0] D1_out_p;
-	wire [15:0] D1_out_n;
+//	wire [15:0] D1_out_p;
+//	wire [15:0] D1_out_n;
 	wire [15:0] D0_out_p;
 	wire [15:0] D0_out_n;
 	wire 			CLK_out_p;
 	wire 			CLK_out_n;
-	wire 			DCI1_out_p;
-	wire 			DCI1_out_n;
+//	wire 			DCI1_out_p;
+//	wire 			DCI1_out_n;
 	wire 			DCI0_out_p;
 	wire 			DCI0_out_n;
-	wire			csb1;
+//	wire			csb1;
 	wire			csb0;
-	wire			rst1_out;
-	wire			rst0_out;
-	wire			sdo;
+//	wire			rst1;
+	wire			rst0;
+//	wire			sdo;
+	wire			reset;
 	wire			sdio;
+	wire			sck;
 
 	// Instantiate the Unit Under Test (UUT)
 	DAC_Sweep_Test uut (
 		.clk(clk), 
-//		.on_in(on_in), 
-		.D1_out_p(D1_out_p), 
-		.D1_out_n(D1_out_n), 
+//		.D1_out_p(D1_out_p), 
+//		.D1_out_n(D1_out_n), 
 		.D0_out_p(D0_out_p), 
 		.D0_out_n(D0_out_n), 
 		.CLK_out_p(CLK_out_p), 
 		.CLK_out_n(CLK_out_n), 
-		.DCI1_out_p(DCI1_out_p), 
-		.DCI1_out_n(DCI1_out_n),
+//		.DCI1_out_p(DCI1_out_p), 
+//		.DCI1_out_n(DCI1_out_n),
 		.DCI0_out_p(DCI0_out_p), 
 		.DCI0_out_n(DCI0_out_n),
-		.csb1(csb1),
+//		.csb1(csb1),
 		.csb0(csb0),
-		.rst1_out(rst1_out),
-		.rst0_out(rst0_out),
-		.sdio(sdio),
+//		.rst1(rst1),
+		.rst0(rst0),
+//		.sdio(sdio),
 		.sdo(sdo),
+		.sck(sck),
+		.rst_led(rst_led),
+		.reset(reset)
 	);
 
 	initial begin

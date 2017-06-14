@@ -44,7 +44,9 @@ module LTC2195(
 );
 
 // Parameters
-parameter SMP_DLY	= 8'h0;
+parameter 	SMP_DLY	= 8'h0;
+parameter	CLKDIV = 8'd120; //800MHz/100 = 8Mhz, slowest ADC can go is 5MHz. CLKDIV_min = 8.
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // FSM to control ENC phase shifter
@@ -244,15 +246,15 @@ wire	clkPS, clk8xInt;		//clock for phase shifting of ENC, and clock for deserial
 // Xilinx HDL Libraries Guide, version 14.7
 MMCME2_ADV #(
 	.BANDWIDTH("OPTIMIZED"), 	// Jitter programming (OPTIMIZED, HIGH, LOW)
-	.CLKFBOUT_MULT_F(8.0), 		// Multiply value for all CLKOUT (2.000-64.000).
+	.CLKFBOUT_MULT_F(8.0), 		// 600MHz (minimum for vco
 	.CLKFBOUT_PHASE(0.0), 		// Phase offset in degrees of CLKFB (-360.000-360.000).
 	// CLKIN_PERIOD: Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
 	.CLKIN1_PERIOD(10.0),
 	.CLKIN2_PERIOD(10.0),
 	// CLKOUT0_DIVIDE - CLKOUT6_DIVIDE: Divide amount for CLKOUT (1-128)
-	.CLKOUT1_DIVIDE(1),
-	.CLKOUT2_DIVIDE(4),
-	.CLKOUT0_DIVIDE_F(8.0), 	// Divide amount for CLKOUT0 (1.000-128.000).
+	.CLKOUT1_DIVIDE(CLKDIV/8),		//8 x f_CLK0
+	.CLKOUT2_DIVIDE(4),				//This clock for IDELAYCTRL must be 200MHz
+	.CLKOUT0_DIVIDE_F(CLKDIV), 	//f_CLK0 = 800MHz/CLKDIV
 	// CLKOUT0_DUTY_CYCLE - CLKOUT6_DUTY_CYCLE: Duty cycle for CLKOUT outputs (0.01-0.99).
 	.CLKOUT0_DUTY_CYCLE(0.5),
 	.CLKOUT1_DUTY_CYCLE(0.5),
@@ -276,7 +278,7 @@ MMCME2_ADV_inst (
 	// Clock Outputs: 1-bit (each) output: User configurable clock outputs
 	.CLKOUT0(clkPS), 					// Phase shifted clock for ENC
 	.CLKOUT1(clk8xInt), 				// Serialization clock for LVDS inputs
-	.CLKOUT2(clk2xInt),				//200 MHz clock for IDELAY control
+	.CLKOUT2(clk2xInt),				//Clock for IDELAY control, 200MHz
 	// Dynamic Phase Shift Ports: 1-bit (each) output: Ports used for dynamic phase shifting of the outputs
 	.PSDONE(PS_done), 				// 1-bit output: Phase shift done
 	// Feedback Clocks: 1-bit (each) output: Clock feedback ports
@@ -395,8 +397,7 @@ always @(posedge clk_in) begin
 	FR_out <= data_out[39:32];	//filling up remaining channels (extra from loop)?
 end
 
-// Generate the serial data clock - SDR at 4x the frequency of the ENC signal for a 2 wire interface
-//	8 times encode rate. Clock generated above, buffered here.
+// Generate the serial data clock - SDR at 8x the frequency of the ENC signal for a 2 wire interface
 wire clk8x; 	// post-buffer
 /*
 wire desstrobe;
@@ -448,6 +449,7 @@ wire [N_LVDS-1:0] data_in_from_pins_delay; 	// between the delay and the deseria
 
 // I added 50 to all the values here because I couldn't reach the middle of the eye with the encode phase shifter (it had hit the end of its range)
 //Removed the 50 to route design.
+//If I want to implement delay I have to figure out IDELAYCTRL issue, and map delay values from IODELAY2 to IDELAYE2.
 function integer delay_value;
 	input i;
 	begin

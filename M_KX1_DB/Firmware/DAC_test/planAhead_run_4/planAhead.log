@@ -1,0 +1,147 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue Jun 13 15:18:19 2017
+# Process ID: 5080
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_4/planAhead.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/pa.fromHdl.tcl
+# create_project -name DAC_test -dir "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/planAhead_run_4" -part xc7k160tfbg676-1
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "DAC_Sweep_Test.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {SPI.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {clk_div.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {AD9783.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {DAC_Sweep_Test.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top DAC_Sweep_Test $srcset
+# add_files [list {DAC_Sweep_Test.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc7k160tfbg676-1
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/SPI.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/clk_div.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.v" into library work
+INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/kintex7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/kintex7/xc7k160t/fbg676/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/kintex7/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/kintex7/drc.xml
+Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_n[0]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:6]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[1]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:7]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_n[1]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:8]
+CRITICAL WARNING: [Designutils 20-31] Unrecognized symbol ;
+NET 	"D0_out_p[2]" 	IOSTANDARD = LVDS25 | LOC = L19;
+NET 	"D0_out_p[3]" 	IOSTANDARD = LVDS25 | LOC = K20;
+NET 	"D0_out_p[4]" 	IOSTANDARD = LVDS25 | LOC = H17;
+NET 	"D0_out_p[5]" 	IOSTANDARD = LVDS25 | LOC = E18;
+NET 	"D0_out_p[6]" 	IOSTANDARD = LVDS25 | LOC = G19;
+NET 	"D0_out_p[7]"	IOSTANDARD = LVDS25 | LOC = D19;
+NET 	"D0_out_p[8]" 	IOSTANDARD = LVDS25 | LOC = J15;
+NET 	"D0_out_p[9]" 	IOSTANDARD = LVDS25 | LOC = G15;
+NET 	"D0_out_p[10]" IOSTANDARD = LVDS25 | LOC = G17;
+NET 	"D0_out_p[11]" IOSTANDARD = LVDS25 | LOC = E15;
+NET 	"D0_out_p[12]" IOSTANDARD = LVDS25 | LOC = H16;
+NET 	"D0_out_p[13]" IOSTANDARD = LVDS25 | LOC = F17;
+NET 	"D0_out_p[14]" IOSTANDARD = LVDS25 | LOC = D15;
+NET	"D0_out_n[14]"	IOSTANDARD = LVDS25 | LOC = D16;
+NET 	"D0_out_p[15]" IOSTANDARD = LVDS25 | LOC = C17;
+NET	"D0_out_n[15]" IOSTANDARD = LVDS25 | LOC = C18;
+#Data clock output to DAC1
+NET 	"DCI0_out_p" 	LOC = H19;
+
+##LVDS outputs to DAC2
+#NET 	"D1_out_p[0]" 	LOC = B17;
+#NET 	"D1_out_p[1]" 	LOC = A18;
+#NET 	"D1_out_p[2]" 	LOC = A13;
+#NET 	"D1_out_p[3]" 	LOC = C16;
+#NET 	"D1_out_p[4]" 	LOC = B15;
+#NET 	"D1_out_p[5]" 	LOC = B10;
+#NET 	"D1_out_p[6]" 	LOC = B12;
+#NET 	"D1_out_p[7]" 	LOC = B14;
+#NET 	"D1_out_p[8]" 	LOC = G12;
+#NET 	"D1_out_p[9]" 	LOC = D14;
+#NET 	"D1_out_p[10]" LOC = C12;
+#NET 	"D1_out_p[11]" LOC = E11;
+#NET 	"D1_out_p[12]" LOC = F9;
+#NET 	"D1_out_p[13]" LOC = F14;
+#NET 	"D1_out_p[15]" LOC = AD23;
+#NET 	"D1_out_p[14]" LOC = AF24;
+#NET 	"D1_out_p[15]" LOC =	AD23;
+##Data clock output to DAC2
+#NET 	"DCI1_out_p" 	LOC = C14;
+
+#Clock output to DACs
+NET 	"CLK_out_p" 	LOC = C19;
+
+#SPI channels
+NET 	"sck" 	IOSTANDARD = LVCMOS25	|	LOC = P26;
+NET 	"sdio" 	IOSTANDARD = LVCMOS25	|	LOC = P23;
+NET	"sdo" 	IOSTANDARD = LVCMOS25	|	LOC = N23;
+NET 	"csb0" 	IOSTANDARD = LVCMOS25	|	LOC = M25;
+#NET 	"csb1" 	IOSTANDARD = LVCMOS25	|	LOC = K25;
+NET 	"rst0" 	IOSTANDARD = LVCMOS25	|	LOC = L25;
+#NET 	"rst1" 	IOSTANDARD = LVCMOS25	|	LOC = K26;
+
+#Reset LED
+NET	"rst_led"	IOSTANDARD = LVCMOS25	|	LOC = M17;
+ [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:8]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[2]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:9]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[3]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:10]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[4]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:11]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[5]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:12]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[6]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:13]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[7]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:14]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[8]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:15]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[9]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:16]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[10]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:17]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[11]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:18]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[12]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:19]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[13]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:20]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[14]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:21]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_n[14]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:22]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_p[15]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:23]
+CRITICAL WARNING: [Designutils 20-7] Could not create 'IOSTANDARD' constraint on 'D0_out_n[15]' because invalid IOSTANDARD value 'LVDS25' specified [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf:24]
+Finished Parsing UCF File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/DAC_Sweep_Test.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IBUFG => IBUF: 1 instances
+  MMCME2_BASE => MMCME2_ADV: 1 instances
+
+Phase 0 | Netlist Checksum: 6efb60d8
+open_rtl_design: Time (s): elapsed = 00:00:16 . Memory (MB): peak = 815.047 ; gain = 392.109
+update_compile_order -fileset sim_1
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test\planAhead_pid5080.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Tue Jun 13 15:18:59 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

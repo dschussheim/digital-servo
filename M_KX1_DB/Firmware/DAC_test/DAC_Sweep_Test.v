@@ -22,112 +22,155 @@
 //////////////////////////////////////////////////////////////////////////////////
 module DAC_Sweep_Test(
 	input		wire				clk,
-//	output	wire				DCO1_in_p,
-//	output	wire				DCO1_in_n,
-//	output	wire				DCO0_in_p,
-//	output	wire				DCO0_in_n,
-//	input		wire				on_in,
+
 	output	wire	[15:0]	D1_out_p,
 	output	wire	[15:0]	D1_out_n,
-	output	wire	[15:0]	D0_out_p,
-	output	wire	[15:0]	D0_out_n,
+//	output	wire	[15:0]	D0_out_p,
+//	output	wire	[15:0]	D0_out_n,
+
 	output	wire				CLK_out_p,
 	output	wire				CLK_out_n,
+
 	output	wire				DCI1_out_p,
 	output	wire				DCI1_out_n,
-	output	wire				DCI0_out_p,
-	output	wire				DCI0_out_n,
+//	output	wire				DCI0_out_p,
+//	output	wire				DCI0_out_n,
+
 	output 	wire				csb1,
-	output	wire				csb0,
-	output 	wire				rst1_out,
-	output 	wire				rst0_out,
-	output	wire				sdio,
-	output	wire				sdo
+//	output	wire				csb0,
+	output 	wire				rst1,
+//	output 	wire				rst0,
+//	output	wire				sdio,
+	output	wire				sdo,
+	output	wire				sck,
+
+	output	reg				rst_led
+	
+//	output	reg				reset
+	
     );
 
-
-//assign	DCO1_in_p = 1'bz;
-//assign	DCO1_in_n = 1'bz;
-//assign	DCO0_in_p = 1'bz;
-//assign	DCO0_in_n = 1'bz;
-
-
-wire	clk_int, clk_in;
+wire clk_int, clk_in, DIVclk;
 
 //Clock input from FPGA module.
 
 // IBUFG: Single-ended global clock input buffer
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
 IBUFG #(
-	.IBUF_LOW_PWR("TRUE"), // Low power="TRUE", Highest performance="FALSE"
-	.IOSTANDARD("HSTL_II") // Specify the input I/O standard
-	) IBUFG_inst (
-	.O(clk_int), // Clock buffer output
-	.I(clk) // Clock buffer input (connect directly to top-level port)
-	);
-// End of IBUFG_inst instantiation
+	.IBUF_LOW_PWR("TRUE"), 	// Low power="TRUE", Highest performance="FALSE"
+	.IOSTANDARD("HSTL_II") 	// Specify the input I/O standard
+) 
+IBUFG_inst (
+	.O(clk_in),	// Clock buffer output
+	.I(clk) 			// Clock buffer input (connect directly to top-level port)
+);
 
-clk_div clk_dif_inst(
-	.clk(clk_int),
+//1Hz clock to run reset logic
+clk_div	#(
+	.div_f(27'b1100100)	//Divide by 100 for 1 MHz clock to strobe an LED.
+	)
+rstLEDclk(
+	.clk(clk_in),
 	.rst_in(1'b0),
-	.div_clk(divclk)
+	.div_clk(DIVclk)
 	);
 
-// BUFG: Global Clock Simple Buffer
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
-BUFG BUFG_inst (
-	.O(clk_in), // 1-bit output: Clock output
-	.I(divclk) // 1-bit input: Clock input
-	);
-// End of BUFG_inst instantiation
+//Reset about every minute.
+localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
+localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
+reg	rst_in;
+reg	[29:0]	counter = 30'b0;
+
+//initial counter = 30'b0;
+
+always @(posedge DIVclk) begin
+	if (counter < rst_on)	begin
+		counter <= counter + 30'b1;
+		rst_in <= 1'b0;
+		rst_led <= ~rst_in;
+	end
+	else if ( (counter >= rst_on) && (counter < max-30'b1) ) begin
+		counter <= counter + 30'b1;
+		rst_in <= 1'b1;
+		rst_led <= ~rst_in;
+	end
+	else	begin
+		counter <= 1'b0;
+		rst_in <= 1'b0;
+		rst_led <= ~rst_in;
+	end
+end
+
+/*
+reg [39:0] rst_pipe = 40'hffffffffff;
+wire reset1 = rst_pipe[39];
+
+always @(posedge clk_in)	begin
+  rst_pipe <= {rst_pipe, 1'b0};
+  reset<=reset1;
+  end
+*/
 
 wire	[15:0]	DAC10_in, DAC11_in, DAC00_in, DAC01_in;
 
-assign			rst1_out = 1'b1;//high configutation in "pin mode" rather than SPI
-assign			rst0_out = 1'b1;
-assign			sdio = 1'b0;//0 input is 2's complement, 1 input is unsigned binary
-assign			sdo = 1'b0;//0 DACs on, 1 DAC powered down
-assign			csb1 = 1'b0;//0 normal mode, 1 mix mode
-assign			csb0 = 1'b0;
-
-
-assign 			DAC10_in = 16'b0000_0000_0000_0000;
-assign			DAC11_in = 16'b1000_0000_0000_0000;
+/*assign 			DAC10_in = 16'b0000_0000_0000_0000;
+assign			DAC11_in = 16'b1000_0000_0000_0000;*/
 assign 			DAC00_in = 16'b0000_0000_0000_0000;
 assign			DAC01_in = 16'b1111_1111_1111_1111;
 
 
 
-// Instantiate DAC driver module
-AD9783 AD9783_inst1 (
+// Instantiate DAC1 driver module
+AD9783	#(
+		.IODG_NAME("OUTPUT_DG_1")
+)
+ AD9783_inst1 (
     .clk_in(clk_in), 
-//    .rst_in(rst), 
-    .DAC0_in(DAC10_in), 
-    .DAC1_in(DAC11_in), 
+    .rst_in(rst_in), 
+    .DAC0_in(DAC00_in), 
+    .DAC1_in(DAC01_in), 
     .CLK_out_p(CLK_out_p), 
     .CLK_out_n(CLK_out_n), 
     .DCI_out_p(DCI1_out_p), 
     .DCI_out_n(DCI1_out_n), 
     .D_out_p(D1_out_p), 
-    .D_out_n(D1_out_n)
+    .D_out_n(D1_out_n),
+	 .rst_out(rst1),
+	 .spi_scs_out(csb1),
+	 .spi_sck_out(sck),
+	 .spi_sdo_out(),
+	 .spi_sdi_in(sdo),
+	 .cmd_trig_in(1'b0),
+	 .cmd_addr_in(16'b0),
+	 .cmd_data_in(16'b0),
+	 .cmd_data_out()
     );
+
 	 
-	 
-// Instantiate DAC driver module
+/* 
+// Instantiate DAC0 driver module
 AD9783 AD9783_inst0 (
     .clk_in(clk_in), 
-//    .rst_in(rst), 
+    .rst_in(rst_in), 
     .DAC0_in(DAC00_in), 
     .DAC1_in(DAC01_in), 
-    .CLK_out_p(), 
-    .CLK_out_n(), 
+    .CLK_out_p(CLK_out_p), 
+    .CLK_out_n(CLK_out_n), 
     .DCI_out_p(DCI0_out_p), 
     .DCI_out_n(DCI0_out_n), 
     .D_out_p(D0_out_p), 
-    .D_out_n(D0_out_n)
+    .D_out_n(D0_out_n),
+	 .rst_out(rst0),
+	 .spi_scs_out(csb0),
+	 .spi_sck_out(sck),
+	 .spi_sdo_out(),
+	 .spi_sdi_in(sdo),
+	 .cmd_trig_in(1'b0),
+	 .cmd_addr_in(16'b0),
+	 .cmd_data_in(16'b0),
+	 .cmd_data_out()
     );
+
+*/
 
 // Generate Sweep
 /*

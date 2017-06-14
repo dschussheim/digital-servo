@@ -15,133 +15,93 @@
 `timescale 1ps/1ps // this was in the SelectIO design
 
 module AD9783(
-	input	 wire							clk_in,
-//	input	 wire						   rst_in,
-
-//	input  wire 			  			cmd_trig_in,
-//	input  wire 			  [15:0] cmd_addr_in,
-//	input	 wire 			  [15:0] cmd_data_in,
-//	output wire  			  [15:0] cmd_data_out,
+	input		wire							clk_in,
+	input		wire						   rst_in,
 	
-//	output reg						 	rst_out,
-//	output wire						 	spi_scs_out,
-//	output wire						 	spi_sck_out,
-//	output wire						 	spi_sdo_out,
-//	input  wire						 	spi_sdi_in,
+	input 	wire 			  				cmd_trig_in,
+	input 	wire 			  	[15:0] 	cmd_addr_in,
+	input		wire 			  	[15:0] 	cmd_data_in,
+	output	wire				[15:0] 	cmd_data_out,
 	
-	input  wire	signed	  [15:0] DAC0_in,
-	input  wire	signed	  [15:0] DAC1_in,
+	output 	reg						 	rst_out,
+	output 	wire						 	spi_scs_out,
+	output 	wire						 	spi_sck_out,
+	output 	wire						 	spi_sdo_out,
+	input  	wire						 	spi_sdi_in,
 	
-	output wire							CLK_out_p,
-	output wire							CLK_out_n,
-	output wire							DCI_out_p,
-	output wire							DCI_out_n,
-	output wire				  [15:0] D_out_p,
-	output wire		  		  [15:0] D_out_n
+	input  	wire	signed	[15:0] 	DAC0_in,
+	input  	wire	signed	[15:0] 	DAC1_in,
+	
+	output 	wire							CLK_out_p,
+	output 	wire							CLK_out_n,
+	output 	wire							DCI_out_p,
+	output 	wire							DCI_out_n,
+	output 	wire				[15:0] 	D_out_p,
+	output 	wire		  		[15:0] 	D_out_n
 );
 
 // Parameters
-parameter SMP_DLY	= 8'h0;
+parameter 	SMP_DLY	= 8'h0;
+parameter 	CLKDIV = 80;		//8 = 100MHz, 80 = 10MHz
+parameter	IODG_NAME = "OUTPUT_DG_0";		//Name for io delay group
 
 ///////////////////////////////////////////////////////////////////////////////
 // Generate the AD9783 clock
 
-// The chip can run DDR at up to 500 MHz
-// Note that DCMs have a max frequency of 360 MHz and PLLs have a max frequency of 900 MHz, but PLLs can only drive OSERDES2s and not ODDR2s
-// I tried using a DCM at either 300 or 200 MHz with ODDR2s, but there were glitches on the output
-// A PLL driving OSERDES2s works at up to 800 MHz
+wire 	clkDi, clkcD;		//data clock
+wire	clkDLYi, clkDLY;	//Delayed data clock
+wire	clkFB;	//feedback clock wire for MMCM	
 
-// 800 MHz PLL
-wire clk8xInt; // pre-buffer
-wire clk8x; 	// post-buffer
-wire pllLocked;
-//wire pllLocked, serstrobe;
-
-//PLL_BASE #(
-//	.BANDWIDTH("OPTIMIZED"),
-//	.CLK_FEEDBACK("CLKOUT0"),
-//	.COMPENSATION("SYSTEM_SYNCHRONOUS"),
-//	.DIVCLK_DIVIDE(1),
-//	.CLKFBOUT_MULT(8),
-//	.CLKFBOUT_PHASE(0.000),
-//	.CLKOUT0_DIVIDE(1),
-//	.CLKOUT0_PHASE(0.000),
-//	.CLKOUT0_DUTY_CYCLE(0.500),
-//	.CLKIN_PERIOD(10.0),
-//	.REF_JITTER(0.010)
-//)
-//pll_base_inst(
-//	.CLKOUT0(clk8xInt),
-//	.LOCKED(pllLocked),
-//	.RST(rst_in),
-//	.CLKFBIN(clk8x),
-//	.CLKIN(clk_in)
-//);
-//
-//BUFPLL #(
-//	.DIVIDE(8),
-//	.ENABLE_SYNC("TRUE")
-//)
-//bufpll_inst(
-//	.PLLIN(clk8xInt),
-//	.IOCLK(clk8x),
-//	.GCLK(clk_in),
-//	.SERDESSTROBE(serstrobe),
-//	.LOCKED(pllLocked)
-//);
-
-//I use MMCME2_BASE instead of PLL, and BUFR as the buffer. 
-//BUFPLL provides strobe signal to go to OSERDES2, not needed in 7 series OSERDESE2.
-//Primitives from 7 series libraries guide.
-
-/*
 
 // MMCME2_BASE: Base Mixed Mode Clock Manager
 // 7 Series
 // Xilinx HDL Libraries Guide, version 14.7
 MMCME2_BASE #(
-	.BANDWIDTH("OPTIMIZED"), // Jitter programming (OPTIMIZED, HIGH, LOW)
-	.CLKFBOUT_MULT_F(8.0), // Multiply value for all CLKOUT (2.000-64.000).
-	.CLKFBOUT_PHASE(0.0), // Phase offset in degrees of CLKFB (-360.000-360.000).
-	.CLKIN1_PERIOD(10.0), // Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
+	.BANDWIDTH("OPTIMIZED"), 	// Jitter programming (OPTIMIZED, HIGH, LOW)
+	.CLKFBOUT_MULT_F(8.0), 		// Multiply value for all CLKOUT (2.000-64.000).
+	.CLKFBOUT_PHASE(0.0), 		// Phase offset in degrees of CLKFB (-360.000-360.000).
+	.CLKIN1_PERIOD(10.0), 		// Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
 	// CLKOUT0_DIVIDE - CLKOUT6_DIVIDE: Divide amount for each CLKOUT (1-128)
-	.CLKOUT1_DIVIDE(1),
-	// CLKOUT0_DUTY_CYCLE - CLKOUT6_DUTY_CYCLE: Duty cycle for each CLKOUT (0.01-0.99).
+	.CLKOUT1_DIVIDE(CLKDIV),		//Delayed clock alinged so all data lines are switched
+	.CLKOUT0_DIVIDE_F(CLKDIV), 	//Data clock
+	// Duty cycle for each CLKOUT (0.01-0.99).
 	.CLKOUT0_DUTY_CYCLE(0.5),
-	// CLKOUT0_PHASE - CLKOUT6_PHASE: Phase offset for each CLKOUT (-360.000-360.000).
+	.CLKOUT1_DUTY_CYCLE(0.5),
+	// Phase(-360.000-360.000).
 	.CLKOUT0_PHASE(0.0),
-	.REF_JITTER1(0.010) // Reference input jitter in UI (0.000-0.999).
-	)
-MMCME2_BASE_inst (
-	// Clock Outputs: 1-bit (each) output: User configurable clock outputs
-	.CLKOUT0(clk8xInt), // 1-bit output: CLKOUT0
-	// Status Ports: 1-bit (each) output: MMCM status ports
-	.LOCKED(pllLocked), // 1-bit output: LOCK
-	// Clock Inputs: 1-bit (each) input: Clock input
-	.CLKIN1(clk_in), // 1-bit input: Clock
-	// Control Ports: 1-bit (each) input: MMCM control ports
-	.RST(rst_in), // 1-bit input: Reset
-	// Feedback Clocks: 1-bit (each) input: Clock feedback ports
-	.CLKFBIN(clk8x) // 1-bit input: Feedback clock
-	);
-// End of MMCME2_BASE_inst instantiation
-
-// BUFR: Regional Clock Buffer for I/O and Logic Resources within a Clock Region
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
-BUFR #(
-	.BUFR_DIVIDE("BYPASS") // Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8"
+	.CLKOUT1_PHASE(-90),
+	.CLKOUT4_CASCADE("FALSE"), 	// Cascade CLKOUT4 counter with CLKOUT6 (FALSE, TRUE)
+	.DIVCLK_DIVIDE(1), 				// Master division value (1-106)
+	.REF_JITTER1(0.01), 				// Reference input jitter in UI (0.000-0.999).
+	.STARTUP_WAIT("FALSE") 			// Delays DONE until MMCM is locked (FALSE, TRUE)
 )
-BUFR_inst (
-	.O(clk8x), // 1-bit output: Clock output port
-	.CE(1'b1), // 1-bit input: Active high, clock enable (Divided modes only)
-	.CLR(1'b0), // 1-bit input: Active high, asynchronous clear (Divided modes only)
-	.I(clk8xInt) // 1-bit input: Clock buffer input driven by an IBUF, MMCM or local interconnect
+MMCME2_BASE_inst (
+	// Clock Outputs
+	.CLKOUT0(clkDi), 			// data clock
+	.CLKOUT1(clkDLYi), 		// delayed data clock
+	// Clock Inputs: 1-bit (each) input: Clock input
+	.CLKIN1(clk_in), 			// 1-bit input: Clock
+	// Feedback Clocks
+	.CLKFBOUT(clkFB), 		// 1-bit output: Feedback clock
+	.CLKFBIN(clkFB), 			// 1-bit input: Feedback clock
+	// Status Ports
+	.LOCKED(), 					// 1-bit output: LOCK
+	// Control Ports: 1-bit (each) input: MMCM control ports
+	.PWRDWN(1'b0), 			// 1-bit input: Power-down
+	.RST(rst_in) 				// 1-bit input: Reset
 );
-// End of BUFR_inst instantiation
 
-*/
+// BUFG: Global Clock Simple Buffer
+BUFG BUFG_clkD (
+	.O(clkD), 	// 1-bit output: Clock output
+	.I(clkDi) 	// 1-bit input: Clock input
+);
 
+// BUFG: Global Clock Simple Buffer
+BUFG BUFG_clkDLY (
+	.O(clkDLY), 	// 1-bit output: Clock output
+	.I(clkDLYi) 	// 1-bit input: Clock input
+);	
 
 ///////////////////////////////////////////////////////////////////////////////
 // LVDS outputs
@@ -150,7 +110,7 @@ BUFR_inst (
 localparam N_LVDS = 18;
 //Combine data for DAC0 and DAC1 into one "vector" to be "multiplexed" in such a way that the DAC can "demux" it.
 reg [2*N_LVDS-1:0] data_in;
-always @(posedge clk_in) data_in = {2'b10, DAC1_in, 2'b01, DAC0_in};
+always @(posedge clkD) data_in = {2'b10, DAC1_in, 2'b01, DAC0_in};
 
 //Define output signals
 wire   [N_LVDS-1:0] data_out_p, data_out_n;
@@ -165,229 +125,74 @@ assign D_out_p = data_out_p[15:0];
 assign D_out_n = data_out_n[15:0];
 
 //Wires for data going to pins, and including delay lines.
-wire   [N_LVDS-1:0] data_out_to_pins, data_out_to_pins_delay;
-
-/*
-
-// Function to calculate delay value needed for each pin. Not sure how they got the delay values, or exactly why they are needed.
-function integer delay_value;
-	input i;
-	begin
-		case (i)
-			0:		delay_value = 3;
-			1:		delay_value = 2;
-			2:		delay_value = 4;
-			3:		delay_value = 3;
-			4:		delay_value = 6;
-			5:		delay_value = 6;
-			6:		delay_value = 6;
-			7:		delay_value = 8;
-			8:		delay_value = 9;
-			9:		delay_value = 2;
-			10:	delay_value = 3;
-			11:	delay_value = 7;
-			12:	delay_value = 1;
-			13:	delay_value = 4;
-			14:	delay_value = 0;
-			15:	delay_value = 0;
-			16:	delay_value = 7;
-			17:	delay_value = 0;
-			default:
-				delay_value = 0;
-		endcase
-	end
-endfunction
-
-*/
+wire   [N_LVDS-1:0] data_out_to_pins;
 
 // We have multiple bits - step over every bit, instantiating the required elements
 genvar pin_count;
-generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begin: pins
-	// Serializer
-//	wire cascade_ms_d;
-//   wire cascade_ms_t;
-//   wire cascade_sm_d;
-//   wire cascade_sm_t;
-
-//Original file had cascaded OSERDES2's to perform 8 bit parallel to serial.
-
-//	OSERDES2 #(
-//		.DATA_RATE_OQ("SDR"),
-//		.DATA_RATE_OT("SDR"),
-//		.TRAIN_PATTERN(0),
-//      .DATA_WIDTH(8),
-//		.SERDES_MODE("MASTER"),
-//		.OUTPUT_MODE("SINGLE_ENDED")
-//	)
-//	oserdes2_master(
-//		.D1(data_in[pin_count]),
-//		.D2(data_in[N_LVDS + pin_count]),
-//		.D3(data_in[pin_count]),
-//		.D4(data_in[N_LVDS + pin_count]),
-//		.T1(1'b0),
-//      .T2(1'b0),
-//      .T3(1'b0),
-//      .T4(1'b0),
-//      .SHIFTIN1(1'b1),
-//      .SHIFTIN2(1'b1),
-//      .SHIFTIN3(cascade_sm_d),
-//      .SHIFTIN4(cascade_sm_t),
-//      .SHIFTOUT1(cascade_ms_d),
-//      .SHIFTOUT2(cascade_ms_t),
-//      .SHIFTOUT3(),
-//      .SHIFTOUT4(),
-//      .TRAIN(1'b0),
-//      .OCE(1'b1),											// clock enable
-//		.TCE(1'b1),
-//      .CLK0(clk8x),										// serial clock input
-//		.CLK1(1'b0),
-//		.CLKDIV(clk_in),									// parallel clock input
-//		.OQ(data_out_to_pins[pin_count]),			// serial data output
-//		.TQ(),
-//      .IOCE(serstrobe),
-//		.RST(rst_in)
-//	);
-//	
-//	OSERDES2 #(
-//		.DATA_RATE_OQ("SDR"),
-//		.DATA_RATE_OT("SDR"),
-//		.TRAIN_PATTERN(0),
-//      .DATA_WIDTH(8),
-//		.SERDES_MODE("SLAVE"),
-//		.OUTPUT_MODE("SINGLE_ENDED")
-//	)
-//	oserdes2_slave(
-//		.D1(data_in[pin_count]),
-//		.D2(data_in[N_LVDS + pin_count]),
-//		.D3(data_in[pin_count]),
-//		.D4(data_in[N_LVDS + pin_count]),
-//		.T1(1'b0),
-//      .T2(1'b0),
-//      .T3(1'b0),
-//      .T4(1'b0),
-//      .SHIFTIN1(cascade_ms_d),
-//      .SHIFTIN2(cascade_ms_t),
-//      .SHIFTIN3(1'b1),
-//      .SHIFTIN4(1'b1),
-//      .SHIFTOUT1(),
-//      .SHIFTOUT2(),
-//      .SHIFTOUT3(cascade_sm_d),
-//      .SHIFTOUT4(cascade_sm_t),
-//      .TRAIN(1'b0),
-//      .OCE(1'b1),											// clock enable
-//		.TCE(1'b1),
-//      .CLK0(clk8x),										// serial clock input
-//		.CLK1(1'b0),
-//		.CLKDIV(clk_in),									// parallel clock input
-//		.OQ(),
-//		.TQ(),
-//      .IOCE(serstrobe),
-//		.RST(rst_in)
-//	);
-	
-//Old delay
-
-//	// Delay
-//	IODELAY2 #(
-//		.DATA_RATE("DDR"),
-//		.ODELAY_VALUE(delay_value(pin_count)),
-//		.COUNTER_WRAPAROUND("STAY_AT_LIMIT"),
-//		.DELAY_SRC("ODATAIN"),
-//		.SERDES_MODE("NONE"),
-//		.SIM_TAPDELAY_VALUE(75)
-//	)
-//	iodelay2_inst(
-//		.ODATAIN(data_out_to_pins[pin_count]),		// datapath
-//		.DOUT(data_out_to_pins_delay[pin_count]),
-//		.T(1'b0),
-//		.IDATAIN(1'b0),									// inactive data connections
-//		.DATAOUT(),
-//		.DATAOUT2(),
-//		.TOUT(),
-//		.IOCLK0(1'b0),										// calibration clocks
-//		.IOCLK1(1'b0),
-//		.CLK(1'b0),											// variable delay programming
-//		.CAL(1'b0),
-//		.INC(1'b0),
-//		.CE(1'b0),
-//		.BUSY(),
-//		.RST(1'b0)
-//	);
-	
-//Template for instantiation of DDR. All the OSERDES stuff above was just to get DDR output to DAC.
+generate for (pin_count = 0; pin_count < N_LVDS-1; pin_count = pin_count + 1) begin: pins
 	
 // ODDR: Output Double Data Rate Output Register with Set, Reset
 // and Clock Enable.
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
 ODDR #(
-	.DDR_CLK_EDGE("OPPOSITE_EDGE"), // "OPPOSITE_EDGE" or "SAME_EDGE"
-	.INIT(1'b0), // Initial value of Q: 1'b0 or 1'b1
-	.SRTYPE("SYNC") // Set/Reset type: "SYNC" or "ASYNC"
-		) ODDR_inst (
-			.Q(data_out_to_pins[pin_count]), // 1-bit DDR output
-			.C(clk_in), // 1-bit clock input
-			.CE(1'b1), // 1-bit clock enable input
-			.D1(data_in[pin_count]), // 1-bit data input (positive edge)
-			.D2(data_in[N_LVDS + pin_count]), // 1-bit data input (negative edge)
-			.R(1'b0), // 1-bit reset
-			.S(1'b0) // 1-bit set
-			);
-// End of ODDR_inst instantiation
-	
-////New delay with iodelaye2. Not using right now. 
-//// ODELAYE2: Output Fixed or Variable Delay Element
-//// 7 Series
-//// Xilinx HDL Libraries Guide, version 14.7
-//(* IODELAY_GROUP = <iodelay_group_name> *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
-//ODELAYE2 #(
-//	.CINVCTRL_SEL("FALSE"), // Enable dynamic clock inversion (FALSE, TRUE)
-//	.DELAY_SRC("ODATAIN"), // Delay input (ODATAIN, CLKIN)
-//	.HIGH_PERFORMANCE_MODE("FALSE"), // Reduced jitter ("TRUE"), Reduced power ("FALSE")
-//	.ODELAY_TYPE("FIXED"), // FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
-//	.ODELAY_VALUE(0), // Output delay tap setting (0-31)
-//	.PIPE_SEL("FALSE"), // Select pipelined mode, FALSE, TRUE
-//	.REFCLK_FREQUENCY(200.0), // IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
-//	.SIGNAL_PATTERN("DATA") // DATA, CLOCK input signal
-//)
-//ODELAYE2_inst (
-//	.CNTVALUEOUT(CNTVALUEOUT), // 5-bit output: Counter value output
-//	.DATAOUT(DATAOUT), // 1-bit output: Delayed data/clock output
-//	.C(C), // 1-bit input: Clock input
-//	.CE(CE), // 1-bit input: Active high enable increment/decrement input
-//	.CINVCTRL(CINVCTRL), // 1-bit input: Dynamic clock inversion input
-//	.CLKIN(CLKIN), // 1-bit input: Clock delay input
-//	.CNTVALUEIN(CNTVALUEIN), // 5-bit input: Counter value input
-//	.INC(INC), // 1-bit input: Increment / Decrement tap delay input
-//	.LD(LD), // 1-bit input: Loads ODELAY_VALUE tap delay in VARIABLE mode, in VAR_LOAD or
-//	// VAR_LOAD_PIPE mode, loads the value of CNTVALUEIN
-//	.LDPIPEEN(LDPIPEEN), // 1-bit input: Enables the pipeline register to load data
-//	.ODATAIN(ODATAIN), // 1-bit input: Output delay data input
-//	.REGRST(REGRST) // 1-bit input: Active-high reset tap-delay input
-//);
-//// End of ODELAYE2_inst instantiation
-
-//Output buffer for 7 series
+	.DDR_CLK_EDGE("SAME_EDGE"), 			// "OPPOSITE_EDGE" or "SAME_EDGE"
+	.INIT(1'b0), 								// Initial value of Q: 1'b0 or 1'b1
+	.SRTYPE("SYNC") 							// Set/Reset type: "SYNC" or "ASYNC"
+		) 
+ODDR_inst (
+	.Q(data_out_to_pins[pin_count]), 		// 1-bit DDR output
+	.C(clkD), 										// 1-bit clock input
+	.CE(1'b1), 										// 1-bit clock enable input
+	.D1(data_in[pin_count]), 					// 1-bit data input (positive edge)
+	.D2(data_in[N_LVDS + pin_count]), 		// 1-bit data input (negative edge)
+	.R(1'b0), 										// 1-bit reset
+	.S(1'b0) 										// 1-bit set
+		);
 
 // OBUFDS: Differential Output Buffer
-// 7 Series
-// Xilinx HDL Libraries Guide, version 14.7
 OBUFDS #(
-	.IOSTANDARD("LVDS_25"), // Specify the output I/O standard
-	.SLEW("SLOW") // Specify the output slew rate
+	.IOSTANDARD("LVDS_25"), 	// Specify the output I/O standard
+	.SLEW("SLOW") 					// Specify the output slew rate
 	) OBUFDS_inst (
-		.O(data_out_p[pin_count]), // Diff_p output (connect directly to top-level port)
-		.OB(data_out_n[pin_count]), // Diff_n output (connect directly to top-level port)
-		.I(data_out_to_pins[pin_count]) // Buffer input
+		.O(data_out_p[pin_count]), 				// Diff_p output (connect directly to top-level port)
+		.OB(data_out_n[pin_count]), 				// Diff_n output (connect directly to top-level port)
+		.I(data_out_to_pins[pin_count]) 	// Buffer input
 	);
 // End of OBUFDS_inst instantiation
 
 end
 endgenerate
 
+// ODDR: Output Double Data Rate Output Register with Set, Reset
+// and Clock Enable.
+ODDR #(
+	.DDR_CLK_EDGE("SAME_EDGE"), 			// "OPPOSITE_EDGE" or "SAME_EDGE"
+	.INIT(1'b0), 								// Initial value of Q: 1'b0 or 1'b1
+	.SRTYPE("SYNC") 							// Set/Reset type: "SYNC" or "ASYNC"
+		) 
+ODDR_CLK (
+	.Q(data_out_to_pins[N_LVDS-1]), 		// 1-bit DDR output
+	.C(clkDLY), 									// 1-bit clock input
+	.CE(1'b1), 										// 1-bit clock enable input
+	.D1(data_in[N_LVDS-1]), 					// 1-bit data input (positive edge)
+	.D2(data_in[N_LVDS + N_LVDS-1]), 		// 1-bit data input (negative edge)
+	.R(1'b0), 										// 1-bit reset
+	.S(1'b0) 										// 1-bit set
+		);
+
+// OBUFDS: Differential Output Buffer
+OBUFDS #(
+	.IOSTANDARD("LVDS_25"), 	// Specify the output I/O standard
+	.SLEW("SLOW") 					// Specify the output slew rate
+	) OBUFDS_CLK (
+		.O(data_out_p[N_LVDS-1]), 				// Diff_p output (connect directly to top-level port)
+		.OB(data_out_n[N_LVDS-1]), 				// Diff_n output (connect directly to top-level port)
+		.I(data_out_to_pins[N_LVDS-1]) 	// Buffer input
+	);
+// End of OBUFDS_inst instantiation
+
 ///////////////////////////////////////////////////////////////////////////////
 // SPI state machine
-/*
+
 reg			spi_trigger;
 reg  [15:0]	spi_data;
 wire			spi_ready;
@@ -505,7 +310,7 @@ always @(posedge clk_in or posedge rst_in) begin
 			// Send a reset signal to the DAC
 			RST1: begin
 				rst_out <= 1'b1;
-				counter_f <= counter_f - 12'b1;
+				counter_f <= counter_f - 8'b1;
 			end
 			RST2: begin
 				rst_out <= 1'b0;
@@ -543,5 +348,5 @@ always @(posedge clk_in or posedge rst_in) begin
 			endcase
 	end
 end
-*/
+
 endmodule

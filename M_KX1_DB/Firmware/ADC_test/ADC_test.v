@@ -77,20 +77,9 @@ IBUFG #(
 	.IBUF_LOW_PWR("TRUE"), 		// Low power="TRUE", Highest performance="FALSE"
 	.IOSTANDARD("HSTL_II") 	// Specify the input I/O standard
 ) IBUFG_inst (
-	.O(clk_int), 	// Clock buffer output
+	.O(clk_in), 	// Clock buffer output
 	.I(clk) 			// Clock buffer input (connect directly to top-level port)
 );
-
-
-//Divided clock to run ADC at 10 MHz instrad of 100
-clk_div	#(
-	.div_f(27'b1010)	//Divide by 10 for 10 MHz clock.
-	)
-ADC_clk (
-    .clk(clk_int), 
-    .rst_in(rst_in), 
-    .div_clk(clk_in)
-    );
 	 
 //LED clock at 1Hz	 
 clk_div	#(

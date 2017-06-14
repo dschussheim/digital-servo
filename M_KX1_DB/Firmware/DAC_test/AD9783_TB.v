@@ -27,19 +27,19 @@ module AD9783_TB;
 	// Inputs
 	reg clk_in;
 	reg rst_in;
-//	reg cmd_trig_in;
-//	reg [15:0] cmd_addr_in;
-//	reg [15:0] cmd_data_in;
-//	reg spi_sdi_in;
+	reg cmd_trig_in;
+	reg [15:0] cmd_addr_in;
+	reg [15:0] cmd_data_in;
+	reg spi_sdi_in;
 	reg [15:0] DAC0_in;
 	reg [15:0] DAC1_in;
 
 	// Outputs
-//	wire [15:0] cmd_data_out;
-//	wire rst_out;
-//	wire spi_scs_out;
-//	wire spi_sck_out;
-//	wire spi_sdo_out;
+	wire [15:0] cmd_data_out;
+	wire rst_out;
+	wire spi_scs_out;
+	wire spi_sck_out;
+	wire spi_sdo_out;
 	wire CLK_out_p;
 	wire CLK_out_n;
 	wire DCI_out_p;
@@ -51,15 +51,15 @@ module AD9783_TB;
 	AD9783 uut (
 		.clk_in(clk_in), 
 		.rst_in(rst_in), 
-//		.cmd_trig_in(cmd_trig_in), 
-//		.cmd_addr_in(cmd_addr_in), 
-//		.cmd_data_in(cmd_data_in), 
-//		.cmd_data_out(cmd_data_out), 
-//		.rst_out(rst_out), 
-//		.spi_scs_out(spi_scs_out), 
-//		.spi_sck_out(spi_sck_out), 
-//		.spi_sdo_out(spi_sdo_out), 
-//		.spi_sdi_in(spi_sdi_in), 
+		.cmd_trig_in(cmd_trig_in), 
+		.cmd_addr_in(cmd_addr_in), 
+		.cmd_data_in(cmd_data_in), 
+		.cmd_data_out(cmd_data_out), 
+		.rst_out(rst_out), 
+		.spi_scs_out(spi_scs_out), 
+		.spi_sck_out(spi_sck_out), 
+		.spi_sdo_out(spi_sdo_out), 
+		.spi_sdi_in(spi_sdi_in), 
 		.DAC0_in(DAC0_in), 
 		.DAC1_in(DAC1_in), 
 		.CLK_out_p(CLK_out_p), 
@@ -74,15 +74,21 @@ module AD9783_TB;
 		// Initialize Inputs
 		clk_in = 0;
 		rst_in = 0;
-//		cmd_trig_in = 0;
-//		cmd_addr_in = 0;
-//		cmd_data_in = 0;
-//		spi_sdi_in = 0;
+		cmd_trig_in = 0;
+		cmd_addr_in = 0;
+		cmd_data_in = 0;
+		spi_sdi_in = 0;
 		DAC0_in = 0;
 		DAC1_in = 0;
-        
+      
+		
+		#500
+		
 		// Add stimulus here
-		#16	DAC0_in = 16'b1111111111111111;
+		#100	DAC0_in = 16'b1111111111111111;
+		#200	DAC0_in = 16'b1111100011111111;
+		#200	DAC0_in = 16'b1111111111101111;
+		#200	DAC0_in = 16'b1111111111100001;
 //		#16 DAC1_in = 16'b0101010101010101;
 	end
 	always

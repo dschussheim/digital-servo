@@ -1,0 +1,376 @@
+#:C159   
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.20131013
+#Current Working Directory:
+#:D   C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test
+#Date/Time:
+#:T   Tue Jun 13 12:56:02 2017
+#------------------------------
+	#Reading DAC_Sweep_Test_map.ncd...
+	#Loading device for application Rf_Device from file '7k160t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+	#   "DAC_Sweep_Test" is an NCD, version 3.2, device xc7k160t, package fbg676, speed -1
+	#Design creation date: 2017.06.13.16.03.45
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+unselect -all
+	#3
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<0>'
+	#4
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<0>'
+	#5
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<1>'
+	#6
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<1>'
+	#7
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<2>'
+	#8
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<2>'
+	#9
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter[7]_GND_12_o_equal_1_o_inv'
+	#10
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter[7]_GND_12_o_equal_1_o_inv'
+	#11
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<0>'
+	#12
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<0>'
+	#13
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<1>'
+	#14
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<1>'
+	#15
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<2>'
+	#16
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<2>'
+	#17
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<3>'
+	#18
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<3>'
+	#19
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<4>'
+	#20
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<4>'
+	#21
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<5>'
+	#22
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<5>'
+	#23
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<6>'
+	#24
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<6>'
+	#25
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<7>'
+	#26
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<7>'
+	#27
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<8>'
+	#28
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<8>'
+	#29
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<9>'
+	#30
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<9>'
+	#31
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<10>'
+	#32
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<10>'
+	#33
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<11>'
+	#34
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<11>'
+	#35
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f[11]_GND_12_o_equal_5_o<11>'
+	#36
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f[11]_GND_12_o_equal_5_o<11>'
+	#37
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f[11]_GND_12_o_equal_5_o<11>1'
+	#38
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f[11]_GND_12_o_equal_5_o<11>1'
+	#39
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_8'
+	#40
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_8'
+	#41
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_8_C_8'
+	#42
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_8_C_8'
+	#43
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_8_P_8'
+	#44
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_8_P_8'
+	#45
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_9'
+	#46
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_9'
+	#47
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10'
+	#48
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10'
+	#49
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10_C_10'
+	#50
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10_C_10'
+	#51
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10_LDC'
+	#52
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10_LDC'
+	#53
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10_P_10'
+	#54
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_10_P_10'
+	#55
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_11'
+	#56
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_11'
+	#57
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_12'
+	#58
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_12'
+	#59
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_13'
+	#60
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_13'
+	#61
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_14'
+	#62
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_14'
+	#63
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/data_out_15'
+	#64
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/data_out_15'
+	#65
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/Mcount_counter_f_cy<3>'
+	#66
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/Mcount_counter_f_cy<3>'
+	#67
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/Mcount_counter_f_cy<7>'
+	#68
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/Mcount_counter_f_cy<7>'
+	#69
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/ready_out'
+	#70
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/ready_out'
+	#71
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/rst_in1'
+	#72
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/rst_in1'
+	#73
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk'
+	#74
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk'
+	#75
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk_BUFG'
+	#76
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk_BUFG'
+	#77
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/spi_sck_out'
+	#78
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/spi_sck_out'
+	#79
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/spi_scs_out'
+	#80
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/spi_scs_out'
+	#81
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/spi_sdo_out'
+	#82
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/spi_sdo_out'
+	#83
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f<0>'
+	#84
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f<0>'
+	#85
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f<1>'
+	#86
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f<1>'
+	#87
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f<2>'
+	#88
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f<2>'
+	#89
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f<2>_inv'
+	#90
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f<2>_inv'
+	#91
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f[2]_data_out[15]_wide_mux_11_OUT<8>'
+	#92
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f[2]_data_out[15]_wide_mux_11_OUT<8>'
+	#93
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f[2]_data_out[15]_wide_mux_11_OUT<10>'
+	#94
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f[2]_data_out[15]_wide_mux_11_OUT<10>'
+	#95
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f[2]_GND_12_o_wide_mux_6_OUT<0>'
+	#96
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f[2]_GND_12_o_wide_mux_6_OUT<0>'
+	#97
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f_0_C_0'
+	#98
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f_0_C_0'
+	#99
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f_0_LDC'
+	#100
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f_0_LDC'
+	#101
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/state_f_0_P_0'
+	#102
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/state_f_0_P_0'
+	#103
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/trigger_in1'
+	#104
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/trigger_in1'
+	#105
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o'
+	#106
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o'
+	#107
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_19_o'
+	#108
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_19_o'
+	#109
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/_n0159_inv'
+	#110
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/_n0159_inv'
+	#111
+select -k net 'AD9783_inst0/clk200'
+	#112
+unselect net 'AD9783_inst0/clk200'
+	#113
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<0>'
+	#114
+post list
+	#115
+unselect -all
+	#116
+select net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk'
+	#net "AD9783_inst0/AD_9783_SPI_inst/spi_clk"
+	#117
+unselect -all
+	#118
+select net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk'
+	#net "AD9783_inst0/AD_9783_SPI_inst/spi_clk"
+	#119
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#120
+unselect -all
+	#121
+select net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk'
+	#net "AD9783_inst0/AD_9783_SPI_inst/spi_clk"
+	#122
+unselect -all
+	#123
+select net 'AD9783_inst0/AD_9783_SPI_inst/spi_clk'
+	#net "AD9783_inst0/AD_9783_SPI_inst/spi_clk"
+	#124
+unselect -all
+	#125
+select net 'clk_in_BUFG'
+	#net "clk_in_BUFG"
+	#126
+unselect -all
+	#127
+select net 'clk_in_BUFG'
+	#net "clk_in_BUFG"
+	#128
+unselect -all
+	#129
+unselect -all
+	#130
+select net 'clk_in_BUFG'
+	#net "clk_in_BUFG"
+	#131
+unselect -all
+	#132
+select net 'clk_in_BUFG'
+	#net "clk_in_BUFG"
+	#133
+unselect -all
+	#134
+select wire 'HLONG(-92238,-9569)'
+	#node = HLONG(-92238,-9569)
+	#135
+unselect -all
+	#136
+select wire 'HLONG(-59218,-9549)'
+	#node = HLONG(-59218,-9549)
+	#137
+unselect -all
+	#138
+unselect -all
+	#139
+select wire 'INPUT(-98606,-5560)'
+	#node = INPUT(-98606,-5560)
+	#140
+unselect -all
+	#141
+select wire 'LUTINPUT(-98542,-7784)'
+	#node = LUTINPUT(-98542,-7784)
+	#142
+unselect -all
+	#143
+select wire 'LUTINPUT(-98014,-7784)'
+	#node = LUTINPUT(-98014,-7784)
+	#144
+unselect -all
+	#145
+select wire 'LUTINPUT(-98014,-7792)'
+	#node = LUTINPUT(-98014,-7792)
+	#146
+unselect -all
+	#147
+unselect -all
+	#148
+select arc 'OUTPUT(-98110,-7744)--->INPUT(-98110,-4992)'
+	#arc "OUTPUT(-98110,-7744)--->INPUT(-98110,-4992)"
+	#149
+unselect -all
+	#150
+select arc 'OUTPUT(-97918,-8248)--->INPUT(-97918,-5560)'
+	#arc "OUTPUT(-97918,-8248)--->INPUT(-97918,-5560)"
+	#151
+unselect arc 'OUTPUT(-97918,-8248)--->INPUT(-97918,-5560)'
+	#152
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<0>'
+	#153
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<0>'
+	#154
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<1>'
+	#155
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<1>'
+	#156
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<2>'
+	#157
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter<2>'
+	#158
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter[7]_GND_12_o_equal_1_o_inv'
+	#159
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/clk_counter[7]_GND_12_o_equal_1_o_inv'
+	#160
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<0>'
+	#161
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<0>'
+	#162
+select -k net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<1>'
+	#163
+route
+	#ERROR:FPGAEditor:553 - Selection contains no net pin.  Manual routing
+	#requires the selection to include at least one pin of the net, or a wire
+	#that is already a part of the partially routed net.
+	#164
+unselect net 'AD9783_inst0/AD_9783_SPI_inst/counter_f<1>'
+	#165
+select -k net 'AD9783_inst0/counter_f<4>'
+	#166
+route
+	#ERROR:FPGAEditor:553 - Selection contains no net pin.  Manual routing
+	#requires the selection to include at least one pin of the net, or a wire
+	#that is already a part of the partially routed net.
+	#167
+unselect net 'AD9783_inst0/counter_f<4>'
+	#168
+select -k net 'AD9783_inst0/counter_f<3>/ProtoComp26.A5LUT.O5'
