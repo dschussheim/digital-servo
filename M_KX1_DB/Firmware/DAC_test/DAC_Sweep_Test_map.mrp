@@ -10,39 +10,45 @@ Target Device  : xc7k160t
 Target Package : fbg676
 Target Speed   : -1
 Mapper Version : kintex7 -- $Revision: 1.55 $
-Mapped Date    : Tue Jun 13 18:42:43 2017
+Mapped Date    : Wed Jun 14 17:06:34 2017
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    1
+Number of warnings:    7
 Slice Logic Utilization:
-  Number of Slice Registers:                    77 out of 202,800    1%
-    Number used as Flip Flops:                  76
-    Number used as Latches:                      1
+  Number of Slice Registers:                   231 out of 202,800    1%
+    Number used as Flip Flops:                 228
+    Number used as Latches:                      3
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        123 out of 101,400    1%
-    Number used as logic:                      121 out of 101,400    1%
-      Number using O6 output only:              49
-      Number using O5 output only:              37
-      Number using O5 and O6:                   35
+  Number of Slice LUTs:                        276 out of 101,400    1%
+    Number used as logic:                      272 out of 101,400    1%
+      Number using O6 output only:             147
+      Number using O5 output only:              66
+      Number using O5 and O6:                   59
       Number used as ROM:                        0
-    Number used as Memory:                       0 out of  35,000    0%
-    Number used exclusively as route-thrus:      2
-      Number with same-slice register load:      0
+    Number used as Memory:                       1 out of  35,000    1%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             1
+        Number using O6 output only:             1
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:      3
+      Number with same-slice register load:      1
       Number with same-slice carry load:         2
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    46 out of  25,350    1%
-  Number of LUT Flip Flop pairs used:          126
-    Number with an unused Flip Flop:            51 out of     126   40%
-    Number with an unused LUT:                   3 out of     126    2%
-    Number of fully used LUT-FF pairs:          72 out of     126   57%
-    Number of unique control sets:              11
+  Number of occupied Slices:                   120 out of  25,350    1%
+  Number of LUT Flip Flop pairs used:          332
+    Number with an unused Flip Flop:           107 out of     332   32%
+    Number with an unused LUT:                  56 out of     332   16%
+    Number of fully used LUT-FF pairs:         169 out of     332   50%
+    Number of unique control sets:              20
     Number of slice register sites lost
-      to control set restrictions:              43 out of 202,800    1%
+      to control set restrictions:              88 out of 202,800    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -53,23 +59,23 @@ Slice Logic Distribution:
   over-mapped for a non-BRAM resource or if placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        42 out of     400   10%
-    Number of LOCed IOBs:                       42 out of      42  100%
-    IOB Flip Flops:                             18
-    IOB Master Pads:                            18
-    IOB Slave Pads:                             18
+  Number of bonded IOBs:                        86 out of     400   21%
+    Number of LOCed IOBs:                       86 out of      86  100%
+    IOB Flip Flops:                             35
+    IOB Master Pads:                            35
+    IOB Slave Pads:                             35
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                  0 out of     325    0%
   Number of RAMB18E1/FIFO18E1s:                  0 out of     650    0%
-  Number of BUFG/BUFGCTRLs:                      4 out of      32   12%
-    Number used as BUFGs:                        4
+  Number of BUFG/BUFGCTRLs:                      6 out of      32   18%
+    Number used as BUFGs:                        6
     Number used as BUFGCTRLs:                    0
   Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     400    0%
   Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     400    0%
   Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0 out of     150    0%
-  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       18 out of     400    4%
-    Number used as OLOGICE2s:                   18
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       35 out of     400    8%
+    Number used as OLOGICE2s:                   35
     Number used as OLOGICE3s:                    0
     Number used as OSERDESE2s:                   0
   Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      32    0%
@@ -88,7 +94,7 @@ Specific Feature Utilization:
   Number of ICAPs:                               0 out of       2    0%
   Number of IDELAYCTRLs:                         0 out of       8    0%
   Number of IN_FIFOs:                            0 out of      32    0%
-  Number of MMCME2_ADVs:                         1 out of       8   12%
+  Number of MMCME2_ADVs:                         2 out of       8   25%
   Number of OUT_FIFOs:                           0 out of      32    0%
   Number of PCIE_2_1s:                           0 out of       1    0%
   Number of PHASER_REFs:                         0 out of       8    0%
@@ -97,11 +103,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.54
+Average Fanout of Non-Clock Nets:                2.76
 
-Peak Memory Usage:  1028 MB
-Total REAL time to MAP completion:  31 secs 
-Total CPU time to MAP completion:   31 secs 
+Peak Memory Usage:  1044 MB
+Total REAL time to MAP completion:  42 secs 
+Total CPU time to MAP completion:   42 secs 
 
 Table of Contents
 -----------------
@@ -124,13 +130,34 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:Pack:2949 - The I/O component DCO0_n uses an DQS_BIAS attribute with I/O
+   standard LVDS_25. The DQS_BIAS attribute will be ignored since the selected
+   I/O standard does not support DQS_BIAS usage.
+WARNING:Pack:2949 - The I/O component DCO0_p uses an DQS_BIAS attribute with I/O
+   standard LVDS_25. The DQS_BIAS attribute will be ignored since the selected
+   I/O standard does not support DQS_BIAS usage.
+WARNING:Pack:2949 - The I/O component DCO1_n uses an DQS_BIAS attribute with I/O
+   standard LVDS_25. The DQS_BIAS attribute will be ignored since the selected
+   I/O standard does not support DQS_BIAS usage.
+WARNING:Pack:2949 - The I/O component DCO1_p uses an DQS_BIAS attribute with I/O
+   standard LVDS_25. The DQS_BIAS attribute will be ignored since the selected
+   I/O standard does not support DQS_BIAS usage.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AD9783_inst0/AD_9783_SPI_inst/trigger_in1 is sourced by a combinatorial pin.
+   This is not good design practice. Use the CE pin to control the loading of
+   data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    AD9783_inst1/AD_9783_SPI_inst/trigger_in1 is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
 
 Section 3 - Informational
 -------------------------
+INFO:LIT:243 - Logical network IOBUF_inst/O has no load.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
    can be dramatically reduced by designating them as fast outputs.
@@ -144,10 +171,37 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
+   4 block(s) removed
    2 block(s) optimized away
+   4 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "AD9783_inst0/OBUFDS_CLK" (OBUFDS) removed.
+ The signal "AD9783_inst0/data_out_to_pins<17>" is loadless and has been removed.
+The signal "IOBUF_inst/O" is sourceless and has been removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "AD9783_inst0/clkDLY" is unused and has been removed.
+ Unused block "AD9783_inst0/BUFG_clkDLY" (CKBUF) removed.
+  The signal "AD9783_inst0/clkDLYi" is unused and has been removed.
+Unused block "AD9783_inst0/ODDR_CLK" (ODDR) removed.
+Unused block "IOBUF_inst/IBUF" (BUF) removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
@@ -166,6 +220,38 @@ Section 6 - IOB Properties
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | CLK_out_n                          | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
 | CLK_out_p                          | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_n<0>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<1>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<2>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<3>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<4>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<5>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<6>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<7>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<8>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<9>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<10>                       | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<11>                       | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<12>                       | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<13>                       | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<14>                       | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_n<15>                       | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D0_out_p<0>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<1>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<2>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<3>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<4>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<5>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<6>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<7>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<8>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<9>                        | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<10>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<11>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<12>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<13>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<14>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| D0_out_p<15>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
 | D1_out_n<0>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
 | D1_out_n<1>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
 | D1_out_n<2>                        | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
@@ -198,14 +284,26 @@ Section 6 - IOB Properties
 | D1_out_p<13>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
 | D1_out_p<14>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
 | D1_out_p<15>                       | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| DCI0_out_n                         | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| DCI0_out_p                         | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
 | DCI1_out_n                         | IOB33S           | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
 | DCI1_out_p                         | IOB33M           | OUTPUT    | LVDS_25              |       |          |      | ODDR         |          |          |
+| DCO0_in                            | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DCO0_n                             | IOB33            | INPUT     | LVDS_25              | TRUE  |          |      |              |          |          |
+| DCO0_p                             | IOB33            | INPUT     | LVDS_25              | TRUE  |          |      |              |          |          |
+| DCO1_in                            | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DCO1_n                             | IOB33            | INPUT     | LVDS_25              | TRUE  |          |      |              |          |          |
+| DCO1_p                             | IOB33            | INPUT     | LVDS_25              | TRUE  |          |      |              |          |          |
 | clk                                | IOB              | INPUT     | HSTL_II              |       |          |      |              |          |          |
+| csb0                               | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | csb1                               | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rst0                               | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | rst1                               | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | rst_led                            | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | sck                                | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| sdo                                | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| sdi                                | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| sdo_in                             | IOB33            | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| sdo_out                            | IOB33            | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs

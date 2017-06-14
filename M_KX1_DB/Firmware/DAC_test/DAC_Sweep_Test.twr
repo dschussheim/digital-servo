@@ -37,79 +37,148 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                   | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)  | Phase  |
 ------------+-----------------+------------+-----------------+------------+-------------------+--------+
-CLK_out_n   |         7.712(R)|      SLOW  |         3.206(R)|      FAST  |AD9783_inst1/clkDLY|   0.000|
-            |         7.712(F)|      SLOW  |         3.206(F)|      FAST  |AD9783_inst1/clkDLY|   0.000|
-CLK_out_p   |         7.712(R)|      SLOW  |         3.206(R)|      FAST  |AD9783_inst1/clkDLY|   0.000|
-            |         7.712(F)|      SLOW  |         3.206(F)|      FAST  |AD9783_inst1/clkDLY|   0.000|
-D1_out_n<0> |         7.716(R)|      SLOW  |         3.211(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.716(F)|      SLOW  |         3.211(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<1> |         7.735(R)|      SLOW  |         3.229(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.735(F)|      SLOW  |         3.229(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<2> |         7.936(R)|      SLOW  |         3.326(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.936(F)|      SLOW  |         3.326(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<3> |         7.699(R)|      SLOW  |         3.193(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.699(F)|      SLOW  |         3.193(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<4> |         7.899(R)|      SLOW  |         3.291(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.899(F)|      SLOW  |         3.291(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<5> |         7.909(R)|      SLOW  |         3.301(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.909(F)|      SLOW  |         3.301(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<6> |         7.908(R)|      SLOW  |         3.300(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.908(F)|      SLOW  |         3.300(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<7> |         7.900(R)|      SLOW  |         3.292(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.900(F)|      SLOW  |         3.292(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<8> |         7.864(R)|      SLOW  |         3.257(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.864(F)|      SLOW  |         3.257(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<9> |         7.880(R)|      SLOW  |         3.273(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.880(F)|      SLOW  |         3.273(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<10>|         7.898(R)|      SLOW  |         3.293(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.898(F)|      SLOW  |         3.293(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<11>|         7.872(R)|      SLOW  |         3.267(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.872(F)|      SLOW  |         3.267(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<12>|         7.892(R)|      SLOW  |         3.283(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.892(F)|      SLOW  |         3.283(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<13>|         7.875(R)|      SLOW  |         3.270(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.875(F)|      SLOW  |         3.270(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<14>|         8.113(R)|      SLOW  |         3.329(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         8.113(F)|      SLOW  |         3.329(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_n<15>|         8.087(R)|      SLOW  |         3.304(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         8.087(F)|      SLOW  |         3.304(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<0> |         7.716(R)|      SLOW  |         3.211(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.716(F)|      SLOW  |         3.211(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<1> |         7.735(R)|      SLOW  |         3.229(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.735(F)|      SLOW  |         3.229(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<2> |         7.936(R)|      SLOW  |         3.326(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.936(F)|      SLOW  |         3.326(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<3> |         7.699(R)|      SLOW  |         3.193(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.699(F)|      SLOW  |         3.193(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<4> |         7.899(R)|      SLOW  |         3.291(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.899(F)|      SLOW  |         3.291(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<5> |         7.909(R)|      SLOW  |         3.301(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.909(F)|      SLOW  |         3.301(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<6> |         7.908(R)|      SLOW  |         3.300(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.908(F)|      SLOW  |         3.300(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<7> |         7.900(R)|      SLOW  |         3.292(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.900(F)|      SLOW  |         3.292(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<8> |         7.864(R)|      SLOW  |         3.257(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.864(F)|      SLOW  |         3.257(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<9> |         7.880(R)|      SLOW  |         3.273(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.880(F)|      SLOW  |         3.273(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<10>|         7.898(R)|      SLOW  |         3.293(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.898(F)|      SLOW  |         3.293(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<11>|         7.872(R)|      SLOW  |         3.267(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.872(F)|      SLOW  |         3.267(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<12>|         7.892(R)|      SLOW  |         3.283(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.892(F)|      SLOW  |         3.283(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<13>|         7.875(R)|      SLOW  |         3.270(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.875(F)|      SLOW  |         3.270(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<14>|         8.113(R)|      SLOW  |         3.329(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         8.113(F)|      SLOW  |         3.329(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-D1_out_p<15>|         8.087(R)|      SLOW  |         3.304(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         8.087(F)|      SLOW  |         3.304(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-DCI1_out_n  |         7.886(R)|      SLOW  |         3.278(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.886(F)|      SLOW  |         3.278(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-DCI1_out_p  |         7.886(R)|      SLOW  |         3.278(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
-            |         7.886(F)|      SLOW  |         3.278(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-rst1        |         9.035(R)|      SLOW  |         3.623(R)|      FAST  |clk_in_BUFG        |   0.000|
+CLK_out_n   |         7.545(R)|      SLOW  |         3.158(R)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+            |         7.545(F)|      SLOW  |         3.158(F)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+CLK_out_p   |         7.545(R)|      SLOW  |         3.158(R)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+            |         7.545(F)|      SLOW  |         3.158(F)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+D0_out_n<0> |         8.086(R)|      SLOW  |         3.387(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.086(F)|      SLOW  |         3.387(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<1> |         8.119(R)|      SLOW  |         3.419(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.119(F)|      SLOW  |         3.419(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<2> |         8.091(R)|      SLOW  |         3.392(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.091(F)|      SLOW  |         3.392(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<3> |         8.097(R)|      SLOW  |         3.398(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.097(F)|      SLOW  |         3.398(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<4> |         8.104(R)|      SLOW  |         3.407(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.104(F)|      SLOW  |         3.407(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<5> |         8.141(R)|      SLOW  |         3.445(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.141(F)|      SLOW  |         3.445(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<6> |         8.117(R)|      SLOW  |         3.419(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.117(F)|      SLOW  |         3.419(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<7> |         8.139(R)|      SLOW  |         3.442(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.139(F)|      SLOW  |         3.442(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<8> |         8.137(R)|      SLOW  |         3.438(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.137(F)|      SLOW  |         3.438(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<9> |         8.164(R)|      SLOW  |         3.465(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.164(F)|      SLOW  |         3.465(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<10>|         8.113(R)|      SLOW  |         3.416(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.113(F)|      SLOW  |         3.416(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<11>|         8.155(R)|      SLOW  |         3.457(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.155(F)|      SLOW  |         3.457(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<12>|         8.131(R)|      SLOW  |         3.431(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.131(F)|      SLOW  |         3.431(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<13>|         8.120(R)|      SLOW  |         3.424(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.120(F)|      SLOW  |         3.424(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<14>|         8.156(R)|      SLOW  |         3.456(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.156(F)|      SLOW  |         3.456(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_n<15>|         8.144(R)|      SLOW  |         3.444(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.144(F)|      SLOW  |         3.444(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<0> |         8.086(R)|      SLOW  |         3.387(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.086(F)|      SLOW  |         3.387(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<1> |         8.119(R)|      SLOW  |         3.419(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.119(F)|      SLOW  |         3.419(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<2> |         8.091(R)|      SLOW  |         3.392(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.091(F)|      SLOW  |         3.392(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<3> |         8.097(R)|      SLOW  |         3.398(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.097(F)|      SLOW  |         3.398(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<4> |         8.104(R)|      SLOW  |         3.407(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.104(F)|      SLOW  |         3.407(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<5> |         8.141(R)|      SLOW  |         3.445(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.141(F)|      SLOW  |         3.445(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<6> |         8.117(R)|      SLOW  |         3.419(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.117(F)|      SLOW  |         3.419(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<7> |         8.139(R)|      SLOW  |         3.442(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.139(F)|      SLOW  |         3.442(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<8> |         8.137(R)|      SLOW  |         3.438(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.137(F)|      SLOW  |         3.438(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<9> |         8.164(R)|      SLOW  |         3.465(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.164(F)|      SLOW  |         3.465(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<10>|         8.113(R)|      SLOW  |         3.416(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.113(F)|      SLOW  |         3.416(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<11>|         8.155(R)|      SLOW  |         3.457(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.155(F)|      SLOW  |         3.457(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<12>|         8.131(R)|      SLOW  |         3.431(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.131(F)|      SLOW  |         3.431(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<13>|         8.120(R)|      SLOW  |         3.424(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.120(F)|      SLOW  |         3.424(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<14>|         8.156(R)|      SLOW  |         3.456(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.156(F)|      SLOW  |         3.456(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D0_out_p<15>|         8.144(R)|      SLOW  |         3.444(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.144(F)|      SLOW  |         3.444(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+D1_out_n<0> |         7.549(R)|      SLOW  |         3.163(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.549(F)|      SLOW  |         3.163(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<1> |         7.568(R)|      SLOW  |         3.181(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.568(F)|      SLOW  |         3.181(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<2> |         7.769(R)|      SLOW  |         3.278(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.769(F)|      SLOW  |         3.278(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<3> |         7.532(R)|      SLOW  |         3.145(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.532(F)|      SLOW  |         3.145(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<4> |         7.732(R)|      SLOW  |         3.243(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.732(F)|      SLOW  |         3.243(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<5> |         7.742(R)|      SLOW  |         3.253(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.742(F)|      SLOW  |         3.253(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<6> |         7.741(R)|      SLOW  |         3.252(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.741(F)|      SLOW  |         3.252(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<7> |         7.733(R)|      SLOW  |         3.244(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.733(F)|      SLOW  |         3.244(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<8> |         7.697(R)|      SLOW  |         3.209(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.697(F)|      SLOW  |         3.209(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<9> |         7.713(R)|      SLOW  |         3.225(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.713(F)|      SLOW  |         3.225(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<10>|         7.731(R)|      SLOW  |         3.245(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.731(F)|      SLOW  |         3.245(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<11>|         7.705(R)|      SLOW  |         3.219(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.705(F)|      SLOW  |         3.219(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<12>|         7.725(R)|      SLOW  |         3.235(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.725(F)|      SLOW  |         3.235(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<13>|         7.708(R)|      SLOW  |         3.222(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.708(F)|      SLOW  |         3.222(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<14>|         7.946(R)|      SLOW  |         3.281(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.946(F)|      SLOW  |         3.281(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<15>|         7.920(R)|      SLOW  |         3.256(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.920(F)|      SLOW  |         3.256(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<0> |         7.549(R)|      SLOW  |         3.163(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.549(F)|      SLOW  |         3.163(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<1> |         7.568(R)|      SLOW  |         3.181(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.568(F)|      SLOW  |         3.181(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<2> |         7.769(R)|      SLOW  |         3.278(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.769(F)|      SLOW  |         3.278(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<3> |         7.532(R)|      SLOW  |         3.145(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.532(F)|      SLOW  |         3.145(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<4> |         7.732(R)|      SLOW  |         3.243(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.732(F)|      SLOW  |         3.243(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<5> |         7.742(R)|      SLOW  |         3.253(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.742(F)|      SLOW  |         3.253(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<6> |         7.741(R)|      SLOW  |         3.252(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.741(F)|      SLOW  |         3.252(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<7> |         7.733(R)|      SLOW  |         3.244(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.733(F)|      SLOW  |         3.244(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<8> |         7.697(R)|      SLOW  |         3.209(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.697(F)|      SLOW  |         3.209(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<9> |         7.713(R)|      SLOW  |         3.225(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.713(F)|      SLOW  |         3.225(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<10>|         7.731(R)|      SLOW  |         3.245(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.731(F)|      SLOW  |         3.245(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<11>|         7.705(R)|      SLOW  |         3.219(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.705(F)|      SLOW  |         3.219(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<12>|         7.725(R)|      SLOW  |         3.235(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.725(F)|      SLOW  |         3.235(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<13>|         7.708(R)|      SLOW  |         3.222(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.708(F)|      SLOW  |         3.222(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<14>|         7.946(R)|      SLOW  |         3.281(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.946(F)|      SLOW  |         3.281(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<15>|         7.920(R)|      SLOW  |         3.256(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.920(F)|      SLOW  |         3.256(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+DCI0_out_n  |         8.116(R)|      SLOW  |         3.416(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.116(F)|      SLOW  |         3.416(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+DCI0_out_p  |         8.116(R)|      SLOW  |         3.416(R)|      FAST  |AD9783_inst0/clkD  |   0.000|
+            |         8.116(F)|      SLOW  |         3.416(F)|      FAST  |AD9783_inst0/clkD  |   0.000|
+DCI1_out_n  |         7.719(R)|      SLOW  |         3.230(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.719(F)|      SLOW  |         3.230(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+DCI1_out_p  |         7.719(R)|      SLOW  |         3.230(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |         7.719(F)|      SLOW  |         3.230(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+rst0        |         9.465(R)|      SLOW  |         3.815(R)|      FAST  |clk_in_BUFG        |   0.000|
+rst1        |         9.423(R)|      SLOW  |         3.791(R)|      FAST  |clk_in_BUFG        |   0.000|
 ------------+-----------------+------------+-----------------+------------+-------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -117,18 +186,29 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.873|         |         |         |
+clk            |    2.977|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+DCO0_n         |DCO0_in        |    5.749|
+DCO0_p         |DCO0_in        |    5.749|
+DCO1_n         |DCO1_in        |    6.861|
+DCO1_p         |DCO1_in        |    6.861|
+sdo_in         |sdo_out        |    7.439|
+---------------+---------------+---------+
 
-Analysis completed Tue Jun 13 18:43:57 2017 
+
+Analysis completed Wed Jun 14 17:08:14 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 800 MB
+Peak Memory Usage: 801 MB
 
 
 

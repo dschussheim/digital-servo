@@ -25,30 +25,88 @@ module DAC_Sweep_Test(
 
 	output	wire	[15:0]	D1_out_p,
 	output	wire	[15:0]	D1_out_n,
-//	output	wire	[15:0]	D0_out_p,
-//	output	wire	[15:0]	D0_out_n,
+	output	wire	[15:0]	D0_out_p,
+	output	wire	[15:0]	D0_out_n,
 
 	output	wire				CLK_out_p,
 	output	wire				CLK_out_n,
 
 	output	wire				DCI1_out_p,
 	output	wire				DCI1_out_n,
-//	output	wire				DCI0_out_p,
-//	output	wire				DCI0_out_n,
+	output	wire				DCI0_out_p,
+	output	wire				DCI0_out_n,
 
 	output 	wire				csb1,
-//	output	wire				csb0,
+	output	wire				csb0,
 	output 	wire				rst1,
-//	output 	wire				rst0,
-//	output	wire				sdio,
-	output	wire				sdo,
+	output 	wire				rst0,
+	output	wire				sdi,
 	output	wire				sck,
-
-	output	reg				rst_led
+	input		wire				sdo_in,
 	
-//	output	reg				reset
+	output	wire				sdo_out,
+	
+	output	reg				rst_led,
+	
+//	output	reg				reset,
+	output	wire				DCO1_in,
+	input		wire				DCO1_p,
+	input		wire				DCO1_n,
+	output	wire				DCO0_in,
+	input		wire				DCO0_p,
+	input		wire				DCO0_n
+	
 	
     );
+
+//Give DCO somewhere to go.
+// IBUFDS: Differential Input Buffer
+IBUFDS #(
+	.DIFF_TERM("TRUE"), 		// Differential Termination
+	.IBUF_LOW_PWR("TRUE"), 	// Low power="TRUE", Highest performance="FALSE"
+	.IOSTANDARD("LVDS_25") 	// Specify the input I/O standard
+) IBUFDS_DCO1 (
+	.O(DCO1_in), // Buffer output
+	.I(DCO1_p), 	// Diff_p buffer input (connect directly to top-level port)
+	.IB(DCO1_n) 	// Diff_n buffer input (connect directly to top-level port)
+);
+
+//Give DCO somewhere to go.
+// IBUFDS: Differential Input Buffer
+IBUFDS #(
+	.DIFF_TERM("TRUE"), 		// Differential Termination
+	.IBUF_LOW_PWR("TRUE"), 	// Low power="TRUE", Highest performance="FALSE"
+	.IOSTANDARD("LVDS_25") 	// Specify the input I/O standard
+) IBUFDS_DCO0 (
+	.O(DCO0_in), // Buffer output
+	.I(DCO0_p), 	// Diff_p buffer input (connect directly to top-level port)
+	.IB(DCO0_n) 	// Diff_n buffer input (connect directly to top-level port)
+);
+
+
+// IBUF: Single-ended Input Buffer
+IBUF #(
+	.IBUF_LOW_PWR("TRUE"), 	// Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
+	.IOSTANDARD("LVCMOS25") // Specify the input I/O standard
+) IBUF_inst (
+.O(sdo), 	// Buffer output
+.I(sdo_in) 	// Buffer input (connect directly to top-level port)
+);
+
+// IOBUF: Single-ended Bi-directional Buffer
+IOBUF #(
+	.DRIVE(12), 				// Specify the output drive strength
+	.IBUF_LOW_PWR("TRUE"), 	// Low Power - "TRUE", High Performance = "FALSE"
+	.IOSTANDARD("LVCMOS25"),// Specify the I/O standard
+	.SLEW("SLOW") 				// Specify the output slew rate
+) IOBUF_inst (
+	.O(), 		// Buffer output
+	.IO(sdo_out), 	// Buffer inout port (connect directly to top-level port)
+	.I(sdo), 		// Buffer input
+	.T(1'b0) 		// 3-state enable input, high=input, low=output
+);
+// End of IOBUF_inst instantiation
+
 
 wire clk_int, clk_in, DIVclk;
 
@@ -110,24 +168,21 @@ always @(posedge clk_in)	begin
   end
 */
 
-wire	[15:0]	DAC10_in, DAC11_in, DAC00_in, DAC01_in;
+wire	signed	[15:0]	DAC10_in, DAC11_in, DAC00_in, DAC01_in;
 
 /*assign 			DAC10_in = 16'b0000_0000_0000_0000;
 assign			DAC11_in = 16'b1000_0000_0000_0000;*/
-assign 			DAC00_in = 16'b0000_0000_0000_0000;
+//assign 			DAC00_in = 16'b0000_0000_0000_0000;
 assign			DAC01_in = 16'b1111_1111_1111_1111;
 
 
 
 // Instantiate DAC1 driver module
-AD9783	#(
-		.IODG_NAME("OUTPUT_DG_1")
-)
- AD9783_inst1 (
+AD9783 AD9783_inst1 (
     .clk_in(clk_in), 
     .rst_in(rst_in), 
     .DAC0_in(DAC00_in), 
-    .DAC1_in(DAC01_in), 
+    .DAC1_in(DAC00_in), 
     .CLK_out_p(CLK_out_p), 
     .CLK_out_n(CLK_out_n), 
     .DCI_out_p(DCI1_out_p), 
@@ -137,7 +192,7 @@ AD9783	#(
 	 .rst_out(rst1),
 	 .spi_scs_out(csb1),
 	 .spi_sck_out(sck),
-	 .spi_sdo_out(),
+	 .spi_sdo_out(sdi),
 	 .spi_sdi_in(sdo),
 	 .cmd_trig_in(1'b0),
 	 .cmd_addr_in(16'b0),
@@ -146,22 +201,22 @@ AD9783	#(
     );
 
 	 
-/* 
+
 // Instantiate DAC0 driver module
 AD9783 AD9783_inst0 (
     .clk_in(clk_in), 
     .rst_in(rst_in), 
     .DAC0_in(DAC00_in), 
-    .DAC1_in(DAC01_in), 
-    .CLK_out_p(CLK_out_p), 
-    .CLK_out_n(CLK_out_n), 
+    .DAC1_in(DAC00_in), 
+    .CLK_out_p(), 
+    .CLK_out_n(), 
     .DCI_out_p(DCI0_out_p), 
     .DCI_out_n(DCI0_out_n), 
     .D_out_p(D0_out_p), 
     .D_out_n(D0_out_n),
 	 .rst_out(rst0),
 	 .spi_scs_out(csb0),
-	 .spi_sck_out(sck),
+	 .spi_sck_out(),
 	 .spi_sdo_out(),
 	 .spi_sdi_in(sdo),
 	 .cmd_trig_in(1'b0),
@@ -170,17 +225,17 @@ AD9783 AD9783_inst0 (
 	 .cmd_data_out()
     );
 
-*/
+
 
 // Generate Sweep
-/*
+
 parameter	SIGNAL_OUT_SIZE = 16;
 
 wire	signed	[15:0]	minval_in;
 wire	signed	[15:0]	maxval_in;
 wire				[31:0]	stepsize_in;
 
-assign	minval_in = 16'sb0000_0000_0000_0000;
+assign	minval_in = 16'sb1000_0000_0000_0000;
 assign	maxval_in = 16'sb0111_1111_1111_1111;
 assign	stepsize_in = 32'b0000_0000_0000_0000_0000_0010_0000_0000; //Change value every 128 clock cycles ~781kHz ramp
 
@@ -193,5 +248,5 @@ Sweep Sweep_inst (
     .stepsize_in(stepsize_in), 
     .signal_out(DAC00_in)
     );
-*/
+
 endmodule

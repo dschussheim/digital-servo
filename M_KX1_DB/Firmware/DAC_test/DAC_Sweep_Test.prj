@@ -1,4 +1,5 @@
 verilog work "SPI.v"
+verilog work "Sweep.v"
 verilog work "clk_div.v"
 verilog work "AD9783.v"
 verilog work "DAC_Sweep_Test.v"

@@ -23,7 +23,7 @@
 -g SPI_32bit_addr:No
 -g SPI_buswidth:1
 -g SPI_Fall_Edge:No
--g OverTempPowerDown:Disable
+-g OverTempPowerDown:Enable
 -g USR_ACCESS:None
 -g JTAG_XADC:Enable
 -g DCIUpdateMode:AsRequired

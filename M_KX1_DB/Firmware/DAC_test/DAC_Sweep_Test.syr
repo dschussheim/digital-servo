@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: DAC_Sweep_Test.prj
@@ -107,6 +107,8 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\SPI.v" into library work
 Parsing module <SPI>.
+Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v" into library work
+Parsing module <Sweep>.
 Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\clk_div.v" into library work
 Parsing module <clk_div>.
 Analyzing Verilog file "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v" into library work
@@ -120,12 +122,19 @@ Parsing module <DAC_Sweep_Test>.
 
 Elaborating module <DAC_Sweep_Test>.
 
+Elaborating module <IBUFDS(DIFF_TERM="TRUE",IBUF_LOW_PWR="TRUE",IOSTANDARD="LVDS_25")>.
+
+Elaborating module <IBUF(IBUF_LOW_PWR="TRUE",IOSTANDARD="LVCMOS25")>.
+
+Elaborating module <IOBUF(DRIVE=12,IBUF_LOW_PWR="TRUE",IOSTANDARD="LVCMOS25",SLEW="SLOW")>.
+
 Elaborating module <IBUFG(IBUF_LOW_PWR="TRUE",IOSTANDARD="HSTL_II")>.
 
 Elaborating module <clk_div(div_f=27'b01100100)>.
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 176: Assignment to DAC01_in ignored, since the identifier is never used
 WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v" Line 59: Port CLKFBOUTB is not connected to this instance
 
-Elaborating module <AD9783(IODG_NAME="OUTPUT_DG_1")>.
+Elaborating module <AD9783>.
 
 Elaborating module <MMCME2_BASE(BANDWIDTH="OPTIMIZED",CLKFBOUT_MULT_F=8.0,CLKFBOUT_PHASE=0.0,CLKIN1_PERIOD=10.0,CLKOUT1_DIVIDE=80,CLKOUT0_DIVIDE_F=80,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT0_PHASE=0.0,CLKOUT1_PHASE=-90,CLKOUT4_CASCADE="FALSE",DIVCLK_DIVIDE=1,REF_JITTER1=0.01,STARTUP_WAIT="FALSE")>.
 
@@ -137,21 +146,28 @@ Elaborating module <OBUFDS(IOSTANDARD="LVDS_25",SLEW="SLOW")>.
 
 Elaborating module <SPI(TRANSFER_SIZE=16,SPI_CLK_DIV=8'b0101)>.
 
+Elaborating module <Sweep>.
+WARNING:HDLCompiler:413 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v" Line 59: Result of 18-bit expression is truncated to fit in 16-bit target.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <DAC_Sweep_Test>.
     Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v".
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 126: Output port <cmd_data_out> of the instance <AD9783_inst1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 126: Output port <spi_sdo_out> of the instance <AD9783_inst1> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <sdo> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+        SIGNAL_OUT_SIZE = 16
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 181: Output port <cmd_data_out> of the instance <AD9783_inst1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 206: Output port <cmd_data_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 206: Output port <spi_sck_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 206: Output port <spi_sdo_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 206: Output port <CLK_out_p> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 206: Output port <CLK_out_n> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <rst_in>.
     Found 1-bit register for signal <rst_led>.
     Found 30-bit register for signal <counter>.
-    Found 30-bit adder for signal <counter[29]_GND_1_o_add_5_OUT> created at line 92.
-    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_2_o> created at line 86
-    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_5_o> created at line 91
+    Found 30-bit adder for signal <counter[29]_GND_1_o_add_5_OUT> created at line 150.
+    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_2_o> created at line 144
+    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_5_o> created at line 149
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -164,7 +180,7 @@ Synthesizing Unit <clk_div>.
         halfway = 27'b000000000000000000000110010
     Found 1-bit register for signal <div_clk>.
     Found 27-bit register for signal <counter>.
-    Found 27-bit adder for signal <counter[26]_GND_3_o_add_3_OUT> created at line 55.
+    Found 27-bit adder for signal <counter[26]_GND_6_o_add_3_OUT> created at line 55.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -174,7 +190,7 @@ Synthesizing Unit <AD9783>.
     Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\AD9783.v".
         SMP_DLY = 8'b00000000
         CLKDIV = 80
-        IODG_NAME = "OUTPUT_DG_1"
+        IODG_NAME = "OUTPUT_DG_0"
     Set property "INIT = R" for signal <state_f>.
 WARNING:Xst:647 - Input <cmd_addr_in<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cmd_data_in<15:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -183,18 +199,13 @@ WARNING:Xst:647 - Input <cmd_data_in<15:8>> is never used. This port will be pre
     Found 1-bit register for signal <spi_trigger>.
     Found 16-bit register for signal <spi_data>.
     Found 1-bit register for signal <rst_out>.
-INFO:Xst:1799 - State 0110 is never reached in FSM <state_f>.
-INFO:Xst:1799 - State 0111 is never reached in FSM <state_f>.
-INFO:Xst:1799 - State 1000 is never reached in FSM <state_f>.
-INFO:Xst:1799 - State 1001 is never reached in FSM <state_f>.
-INFO:Xst:1799 - State 1010 is never reached in FSM <state_f>.
-INFO:Xst:1799 - State 1011 is never reached in FSM <state_f>.
+    Found 34-bit register for signal <data_in>.
     Found finite state machine <FSM_0> for signal <state_f>.
     -----------------------------------------------------------------------
     | States             | 12                                             |
-    | Transitions        | 8                                              |
-    | Inputs             | 2                                              |
-    | Outputs            | 8                                              |
+    | Transitions        | 19                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 6                                              |
     | Clock              | clk_in (rising_edge)                           |
     | Reset              | rst_in (positive)                              |
     | Reset type         | asynchronous                                   |
@@ -202,16 +213,13 @@ INFO:Xst:1799 - State 1011 is never reached in FSM <state_f>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <counter_f[7]_GND_4_o_sub_15_OUT> created at line 313.
+    Found 8-bit subtractor for signal <counter_f[7]_GND_7_o_sub_15_OUT> created at line 313.
     WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 1 in block <AD9783>.
     WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 0 in block <AD9783>.
-    WARNING:Xst:2404 -  FFs/Latches <data_in<35:20>> (without init value) have a constant value of 1 in block <AD9783>.
-    WARNING:Xst:2404 -  FFs/Latches <data_in<20:20>> (without init value) have a constant value of 0 in block <AD9783>.
-    WARNING:Xst:2404 -  FFs/Latches <data_in<20:20>> (without init value) have a constant value of 1 in block <AD9783>.
-    WARNING:Xst:2404 -  FFs/Latches <data_in<20:5>> (without init value) have a constant value of 0 in block <AD9783>.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  26 D-type flip-flop(s).
+	inferred  60 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <AD9783> synthesized.
 
@@ -246,40 +254,62 @@ Synthesizing Unit <SPI>.
     Found 1-bit register for signal <data_out<2>>.
     Found 1-bit register for signal <data_out<1>>.
     Found 1-bit register for signal <data_out<0>>.
-    Found 12-bit subtractor for signal <counter_f[11]_GND_9_o_sub_8_OUT> created at line 136.
-    Found 8-bit adder for signal <clk_counter[7]_GND_9_o_add_1_OUT> created at line 49.
+    Found 12-bit subtractor for signal <counter_f[11]_GND_12_o_sub_8_OUT> created at line 136.
+    Found 8-bit adder for signal <clk_counter[7]_GND_12_o_add_1_OUT> created at line 49.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  44 D-type flip-flop(s).
 	inferred  23 Multiplexer(s).
 Unit <SPI> synthesized.
 
+Synthesizing Unit <Sweep>.
+    Related source file is "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v".
+        SIGNAL_OUT_SIZE = 16
+    Found 16-bit register for signal <current_val_f<31:16>>.
+    Found 1-bit register for signal <state_f>.
+    Found 16-bit register for signal <signal_out>.
+    Found 34-bit register for signal <next_val_f>.
+    Found 34-bit subtractor for signal <next_val_f[33]_GND_14_o_sub_4_OUT> created at line 44.
+    Found 34-bit adder for signal <next_val_f[33]_GND_14_o_add_2_OUT> created at line 42.
+    Found 34-bit comparator greater for signal <next_val_f[33]_maxval_in[15]_LessThan_6_o> created at line 46
+    Found 34-bit comparator greater for signal <minval_in[15]_next_val_f[33]_LessThan_7_o> created at line 49
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <Sweep> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 5
- 12-bit subtractor                                     : 1
+# Adders/Subtractors                                   : 9
+ 12-bit subtractor                                     : 2
  27-bit adder                                          : 1
  30-bit adder                                          : 1
- 8-bit adder                                           : 1
- 8-bit subtractor                                      : 1
-# Registers                                            : 33
- 1-bit register                                        : 26
- 12-bit register                                       : 1
- 16-bit register                                       : 1
+ 34-bit addsub                                         : 1
+ 8-bit adder                                           : 2
+ 8-bit subtractor                                      : 2
+# Registers                                            : 67
+ 1-bit register                                        : 50
+ 12-bit register                                       : 2
+ 16-bit register                                       : 4
  27-bit register                                       : 1
- 3-bit register                                        : 1
+ 3-bit register                                        : 2
  30-bit register                                       : 1
- 8-bit register                                        : 2
-# Comparators                                          : 2
+ 34-bit register                                       : 3
+ 8-bit register                                        : 4
+# Comparators                                          : 4
  30-bit comparator greater                             : 2
-# Multiplexers                                         : 23
- 1-bit 2-to-1 multiplexer                              : 20
- 12-bit 2-to-1 multiplexer                             : 1
- 16-bit 2-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 1
-# FSMs                                                 : 1
+ 34-bit comparator greater                             : 2
+# Multiplexers                                         : 52
+ 1-bit 2-to-1 multiplexer                              : 40
+ 12-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 6
+ 34-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -287,6 +317,10 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1710 - FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <AD9783_inst1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_17> (without init value) has a constant value of 0 in block <AD9783_inst1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <AD9783_inst0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_17> (without init value) has a constant value of 0 in block <AD9783_inst0>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <AD9783>.
 The following registers are absorbed into counter <counter_f>: 1 register on signal <counter_f>.
@@ -301,6 +335,10 @@ The following registers are absorbed into counter <clk_counter>: 1 register on s
 The following registers are absorbed into counter <counter_f>: 1 register on signal <counter_f>.
 Unit <SPI> synthesized (advanced).
 
+Synthesizing (advanced) Unit <Sweep>.
+The following registers are absorbed into accumulator <next_val_f>: 1 register on signal <next_val_f>.
+Unit <Sweep> synthesized (advanced).
+
 Synthesizing (advanced) Unit <clk_div>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
 Unit <clk_div> synthesized (advanced).
@@ -309,67 +347,113 @@ Unit <clk_div> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 5
- 12-bit down counter                                   : 1
+# Counters                                             : 8
+ 12-bit down counter                                   : 2
  27-bit up counter                                     : 1
  30-bit up counter                                     : 1
- 8-bit down counter                                    : 1
- 8-bit up counter                                      : 1
-# Registers                                            : 45
- Flip-Flops                                            : 45
-# Comparators                                          : 2
+ 8-bit down counter                                    : 2
+ 8-bit up counter                                      : 2
+# Accumulators                                         : 1
+ 34-bit updown accumulator                             : 1
+# Registers                                            : 188
+ Flip-Flops                                            : 188
+# Comparators                                          : 4
  30-bit comparator greater                             : 2
-# Multiplexers                                         : 21
- 1-bit 2-to-1 multiplexer                              : 20
- 16-bit 2-to-1 multiplexer                             : 1
-# FSMs                                                 : 1
+ 34-bit comparator greater                             : 2
+# Multiplexers                                         : 48
+ 1-bit 2-to-1 multiplexer                              : 40
+ 16-bit 2-to-1 multiplexer                             : 6
+ 34-bit 2-to-1 multiplexer                             : 2
+# FSMs                                                 : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <spi_data_0> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_1> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_2> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_3> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_4> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_5> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_6> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_7> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_9> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_11> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_12> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_13> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_data_14> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_17> (without init value) has a constant value of 0 in block <AD9783>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_18> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_0> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_19> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_1> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_20> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_2> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_21> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_3> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_28> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_10> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_22> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_4> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_29> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_11> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_23> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_5> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_30> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_12> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_24> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_6> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_31> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_13> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_25> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_7> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_32> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_14> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_26> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_8> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_33> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_15> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_18> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_0> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/data_in_27> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/data_in_9> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_19> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_1> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_20> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_2> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_21> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_3> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_22> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_4> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_23> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_5> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_24> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_6> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_25> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_7> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_26> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_8> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_27> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_9> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_28> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_10> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_29> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_11> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_30> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_12> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_31> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_13> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_32> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_14> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/data_in_33> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/data_in_15> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <AD9783_inst1/FSM_0> on signal <state_f[1:3]> with sequential encoding.
+Optimizing FSM <FSM_0> on signal <state_f[1:4]> with user encoding.
+Optimizing FSM <FSM_0> on signal <state_f[1:4]> with user encoding.
 -------------------
  State | Encoding
 -------------------
- 0001  | 000
- 0000  | 001
- 0010  | 010
- 0011  | 011
- 0100  | 100
- 0101  | 101
- 0110  | unreached
- 0111  | unreached
- 1000  | unreached
- 1001  | unreached
- 1010  | unreached
- 1011  | unreached
+ 0001  | 0001
+ 0000  | 0000
+ 1001  | 1001
+ 0110  | 0110
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0111  | 0111
+ 1000  | 1000
+ 1010  | 1010
+ 1011  | 1011
 -------------------
-WARNING:Xst:1710 - FF/Latch <data_out_5> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_out_7> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_out_6> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_out_2> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_out_4> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_out_3> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_out_1> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_out_0> (without init value) has a constant value of 0 in block <SPI>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:1901 - Instance MMCME2_BASE_inst in unit AD9783 of type MMCME2_BASE has been replaced by MMCME2_ADV
-INFO:Xst:2261 - The FF/Latch <spi_data_8> in Unit <AD9783> is equivalent to the following FF/Latch, which will be removed : <spi_data_10> 
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_0> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_1> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_2> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_3> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_4> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_5> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_6> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_7> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_9> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_11> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_12> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_13> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_14> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_0> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_1> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_2> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_3> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_4> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_5> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_6> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_7> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_9> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_11> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_12> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_13> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/spi_data_14> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance AD9783_inst0/MMCME2_BASE_inst in unit DAC_Sweep_Test of type MMCME2_BASE has been replaced by MMCME2_ADV
+INFO:Xst:1901 - Instance AD9783_inst1/MMCME2_BASE_inst in unit DAC_Sweep_Test of type MMCME2_BASE has been replaced by MMCME2_ADV
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/spi_data_10> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/spi_data_8> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/spi_data_10> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/spi_data_8> 
 WARNING:Xst:3001 - This design contains one or more registers or latches with an active
    asynchronous set and asynchronous reset. While this circuit can be built,
    it creates a sub-optimal implementation in terms of area, power and
@@ -387,66 +471,107 @@ WARNING:Xst:3001 - This design contains one or more registers or latches with an
   Please refer to http://www.xilinx.com search string "Kintex7 asynchronous set/reset" for more details.
 
   List of register instances with asynchronous set and reset:
-    data_out_15 in unit <SPI>
-    data_out_10 in unit <SPI>
+    data_out_0 in unit <SPI>
+    data_out_1 in unit <SPI>
+    data_out_2 in unit <SPI>
+    data_out_4 in unit <SPI>
+    data_out_5 in unit <SPI>
+    data_out_3 in unit <SPI>
+    data_out_7 in unit <SPI>
     data_out_8 in unit <SPI>
+    data_out_6 in unit <SPI>
+    data_out_10 in unit <SPI>
+    data_out_11 in unit <SPI>
+    data_out_9 in unit <SPI>
+    data_out_12 in unit <SPI>
+    data_out_13 in unit <SPI>
+    data_out_15 in unit <SPI>
+    data_out_14 in unit <SPI>
     state_f_0 in unit <SPI>
 
 
 Optimizing unit <DAC_Sweep_Test> ...
 
-Optimizing unit <AD9783> ...
-
 Optimizing unit <SPI> ...
-WARNING:Xst:2677 - Node <AD9783_inst1/spi_data_15> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/spi_data_8> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/spi_sdo_out> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_15> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_9> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_10> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_8> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_11> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_12> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_14> of sequential type is unconnected in block <DAC_Sweep_Test>.
-WARNING:Xst:2677 - Node <AD9783_inst1/AD_9783_SPI_inst/data_out_13> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/spi_data_15> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/spi_data_10> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/spi_sdo_out> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/spi_sck_out> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_0> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_1> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_2> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_4> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_5> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_3> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_7> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_8> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_6> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_10> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_11> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_9> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_12> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_13> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_15> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:2677 - Node <AD9783_inst0/AD_9783_SPI_inst/data_out_14> of sequential type is unconnected in block <DAC_Sweep_Test>.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/AD_9783_SPI_inst/clk_counter_3> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/AD_9783_SPI_inst/clk_counter_4> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/AD_9783_SPI_inst/clk_counter_5> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/AD_9783_SPI_inst/clk_counter_6> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/AD_9783_SPI_inst/clk_counter_7> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_3> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_4> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_5> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_6> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_7> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_26> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_25> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_24> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_23> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_22> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_21> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_20> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_19> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_18> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_17> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_16> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_15> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_14> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_13> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_12> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_11> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_10> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_9> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_8> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <rstLEDclk/counter_7> has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/state_f_FSM_FFd1> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst0/state_f_FSM_FFd1> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_8> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_7> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_6> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_5> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_4> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_3> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_2> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_1> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Sweep_inst/next_val_f_0> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <AD9783_inst1/spi_data_15> (without init value) has a constant value of 0 in block <DAC_Sweep_Test>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_0> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/AD_9783_SPI_inst/clk_counter_0> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/rst_out> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/rst_out> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_1> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/AD_9783_SPI_inst/clk_counter_1> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/AD_9783_SPI_inst/clk_counter_2> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/AD_9783_SPI_inst/clk_counter_2> 
+INFO:Xst:2261 - The FF/Latch <Sweep_inst/next_val_f_32> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <Sweep_inst/next_val_f_33> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_0> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_0> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_1> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_1> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_2> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_2> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_3> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_3> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_4> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_4> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_5> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_5> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_6> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_6> 
+INFO:Xst:2261 - The FF/Latch <AD9783_inst0/counter_f_7> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst1/counter_f_7> 
+INFO:Xst:2261 - The FF/Latch <rstLEDclk/counter_0> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <Sweep_inst/next_val_f_9> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <AD9783_inst1/AD_9783_SPI_inst/spi_clk> in Unit <DAC_Sweep_Test> is equivalent to the following FF/Latch, which will be removed : <AD9783_inst0/AD_9783_SPI_inst/spi_clk> 
 Found area constraint ratio of 100 (+ 5) on block DAC_Sweep_Test, actual ratio is 0.
+FlipFlop rstLEDclk/counter_1 has been replicated 1 time(s)
+FlipFlop rstLEDclk/counter_4 has been replicated 1 time(s)
+FlipFlop rstLEDclk/counter_6 has been replicated 1 time(s)
 
 Final Macro Processing ...
+
+Processing Unit <DAC_Sweep_Test> :
+	Found 2-bit shift register for signal <Sweep_inst/signal_out_15>.
+Unit <DAC_Sweep_Test> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 76
- Flip-Flops                                            : 76
+# Registers                                            : 227
+ Flip-Flops                                            : 227
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
 
 =========================================================================
 
@@ -469,35 +594,40 @@ Top Level Output File Name         : DAC_Sweep_Test.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 266
+# BELS                             : 552
 #      GND                         : 1
-#      INV                         : 11
-#      LUT1                        : 38
-#      LUT2                        : 18
-#      LUT3                        : 35
-#      LUT4                        : 11
-#      LUT5                        : 18
-#      LUT6                        : 7
-#      MUXCY                       : 66
+#      INV                         : 13
+#      LUT1                        : 67
+#      LUT2                        : 58
+#      LUT3                        : 43
+#      LUT4                        : 27
+#      LUT5                        : 74
+#      LUT6                        : 17
+#      MUXCY                       : 136
 #      VCC                         : 1
-#      XORCY                       : 60
-# FlipFlops/Latches                : 95
-#      FD                          : 35
-#      FDC                         : 12
-#      FDCE                        : 12
-#      FDP                         : 1
+#      XORCY                       : 115
+# FlipFlops/Latches                : 267
+#      FD                          : 155
+#      FDC                         : 34
+#      FDCE                        : 24
+#      FDE                         : 1
+#      FDP                         : 6
 #      FDPE                        : 8
-#      FDR                         : 8
-#      LDC                         : 1
-#      ODDR                        : 18
-# Clock Buffers                    : 4
-#      BUFG                        : 4
-# IO Buffers                       : 24
+#      LDC                         : 3
+#      ODDR                        : 36
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Clock Buffers                    : 7
+#      BUFG                        : 7
+# IO Buffers                       : 50
+#      IBUF                        : 1
+#      IBUFDS                      : 2
 #      IBUFG                       : 1
-#      OBUF                        : 5
-#      OBUFDS                      : 18
-# Others                           : 1
-#      MMCME2_ADV                  : 1
+#      IOBUF                       : 1
+#      OBUF                        : 9
+#      OBUFDS                      : 36
+# Others                           : 2
+#      MMCME2_ADV                  : 2
 
 Device utilization summary:
 ---------------------------
@@ -506,23 +636,25 @@ Selected Device : 7k160tfbg676-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              95  out of  202800     0%  
- Number of Slice LUTs:                  138  out of  101400     0%  
-    Number used as Logic:               138  out of  101400     0%  
+ Number of Slice Registers:             267  out of  202800     0%  
+ Number of Slice LUTs:                  300  out of  101400     0%  
+    Number used as Logic:               299  out of  101400     0%  
+    Number used as Memory:                1  out of  35000     0%  
+       Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    158
-   Number with an unused Flip Flop:      63  out of    158    39%  
-   Number with an unused LUT:            20  out of    158    12%  
-   Number of fully used LUT-FF pairs:    75  out of    158    47%  
-   Number of unique control sets:        11
+ Number of LUT Flip Flop pairs used:    387
+   Number with an unused Flip Flop:     120  out of    387    31%  
+   Number with an unused LUT:            87  out of    387    22%  
+   Number of fully used LUT-FF pairs:   180  out of    387    46%  
+   Number of unique control sets:        20
 
 IO Utilization: 
- Number of IOs:                          42
- Number of bonded IOBs:                  42  out of    400    10%  
+ Number of IOs:                          86
+ Number of bonded IOBs:                  86  out of    400    21%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                4  out of     32    12%  
+ Number of BUFG/BUFGCTRLs:                7  out of     32    21%  
 
 ---------------------------
 Partition Resource Summary:
@@ -542,17 +674,21 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
---------------------------------------------------------------------------------------+-----------------------------------------------------+-------+
-Clock Signal                                                                          | Clock buffer(FF name)                               | Load  |
---------------------------------------------------------------------------------------+-----------------------------------------------------+-------+
-clk                                                                                   | IBUFG+BUFG                                          | 25    |
-AD9783_inst1/clkDLYi                                                                  | BUFG                                                | 1     |
-AD9783_inst1/clkDi                                                                    | BUFG                                                | 17    |
-AD9783_inst1/AD_9783_SPI_inst/spi_clk                                                 | NONE(AD9783_inst1/AD_9783_SPI_inst/counter_f_11)    | 19    |
-rstLEDclk/div_clk                                                                     | BUFG                                                | 32    |
-AD9783_inst1/AD_9783_SPI_inst/trigger_in1(AD9783_inst1/AD_9783_SPI_inst/trigger_in1:O)| NONE(*)(AD9783_inst1/AD_9783_SPI_inst/state_f_0_LDC)| 1     |
---------------------------------------------------------------------------------------+-----------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
+-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+-------+
+Clock Signal                                                                                                                 | Clock buffer(FF name)                                | Load  |
+-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+-------+
+AD9783_inst0/clkDi                                                                                                           | BUFG                                                 | 33    |
+AD9783_inst1/clkDi                                                                                                           | BUFG                                                 | 33    |
+clk                                                                                                                          | IBUFG+BUFG                                           | 109   |
+AD9783_inst0/clkDLYi                                                                                                         | BUFG                                                 | 1     |
+AD9783_inst1/clkDLYi                                                                                                         | BUFG                                                 | 1     |
+AD9783_inst1/AD_9783_SPI_inst/spi_clk                                                                                        | BUFG                                                 | 56    |
+rstLEDclk/div_clk                                                                                                            | BUFG                                                 | 32    |
+AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o(AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o1:O)| NONE(*)(AD9783_inst1/AD_9783_SPI_inst/data_out_8_LDC)| 1     |
+AD9783_inst1/AD_9783_SPI_inst/trigger_in1(AD9783_inst1/AD_9783_SPI_inst/trigger_in1:O)                                       | NONE(*)(AD9783_inst1/AD_9783_SPI_inst/state_f_0_LDC) | 1     |
+AD9783_inst0/AD_9783_SPI_inst/trigger_in1(AD9783_inst0/AD_9783_SPI_inst/trigger_in1:O)                                       | NONE(*)(AD9783_inst0/AD_9783_SPI_inst/state_f_0_LDC) | 1     |
+-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -566,9 +702,9 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: 2.421ns (Maximum Frequency: 413.053MHz)
-   Minimum input arrival time before clock: No path found
+   Minimum input arrival time before clock: 0.483ns
    Maximum output required time after clock: 1.006ns
-   Maximum combinational path delay: 0.000ns
+   Maximum combinational path delay: 0.405ns
 
 Timing Details:
 ---------------
@@ -576,33 +712,76 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.218ns (frequency: 450.857MHz)
-  Total number of paths / destination ports: 198 / 41
+  Clock period: 2.397ns (frequency: 417.248MHz)
+  Total number of paths / destination ports: 3243 / 117
 -------------------------------------------------------------------------
-Delay:               2.218ns (Levels of Logic = 2)
-  Source:            rstLEDclk/counter_2 (FF)
+Delay:               2.397ns (Levels of Logic = 3)
+  Source:            rstLEDclk/counter_26 (FF)
   Destination:       rstLEDclk/counter_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: rstLEDclk/counter_2 to rstLEDclk/counter_0
+  Data Path: rstLEDclk/counter_26 to rstLEDclk/counter_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.282   0.641  rstLEDclk/counter_2 (rstLEDclk/counter_2)
-     LUT4:I0->O            2   0.053   0.419  rstLEDclk/counter[26]_GND_3_o_equal_1_o<26>11 (rstLEDclk/counter[26]_GND_3_o_equal_1_o<26>1)
-     LUT4:I3->O            8   0.053   0.445  rstLEDclk/counter[26]_GND_3_o_equal_1_o<26>1 (rstLEDclk/counter[26]_GND_3_o_equal_1_o)
-     FDR:R                     0.325          rstLEDclk/counter_0
+     FD:C->Q               2   0.282   0.745  rstLEDclk/counter_26 (rstLEDclk/counter_26)
+     LUT6:I0->O            1   0.053   0.635  rstLEDclk/counter[26]_GND_6_o_equal_1_o<26>11 (rstLEDclk/counter[26]_GND_6_o_equal_1_o<26>11)
+     LUT4:I0->O           28   0.053   0.565  rstLEDclk/counter[26]_GND_6_o_equal_1_o<26>15 (rstLEDclk/counter[26]_GND_6_o_equal_1_o<26>1)
+     LUT5:I4->O            1   0.053   0.000  rstLEDclk/counter_0_rstpot (rstLEDclk/counter_0_rstpot)
+     FD:D                      0.011          rstLEDclk/counter_0
     ----------------------------------------
-    Total                      2.218ns (0.713ns logic, 1.505ns route)
-                                       (32.1% logic, 67.9% route)
+    Total                      2.397ns (0.452ns logic, 1.945ns route)
+                                       (18.9% logic, 81.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'AD9783_inst0/clkDi'
+  Clock period: 1.121ns (frequency: 892.061MHz)
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Delay:               1.121ns (Levels of Logic = 0)
+  Source:            AD9783_inst0/data_in_33 (FF)
+  Destination:       AD9783_inst0/pins[15].ODDR_inst (FF)
+  Source Clock:      AD9783_inst0/clkDi rising
+  Destination Clock: AD9783_inst0/clkDi rising
+
+  Data Path: AD9783_inst0/data_in_33 to AD9783_inst0/pins[15].ODDR_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.282   0.405  AD9783_inst0/data_in_33 (AD9783_inst0/data_in_33)
+     ODDR:D1                   0.434          AD9783_inst0/pins[15].ODDR_inst
+    ----------------------------------------
+    Total                      1.121ns (0.716ns logic, 0.405ns route)
+                                       (63.9% logic, 36.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'AD9783_inst1/clkDi'
+  Clock period: 1.121ns (frequency: 892.061MHz)
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Delay:               1.121ns (Levels of Logic = 0)
+  Source:            AD9783_inst1/data_in_33 (FF)
+  Destination:       AD9783_inst1/pins[15].ODDR_inst (FF)
+  Source Clock:      AD9783_inst1/clkDi rising
+  Destination Clock: AD9783_inst1/clkDi rising
+
+  Data Path: AD9783_inst1/data_in_33 to AD9783_inst1/pins[15].ODDR_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.282   0.405  AD9783_inst1/data_in_33 (AD9783_inst1/data_in_33)
+     ODDR:D1                   0.434          AD9783_inst1/pins[15].ODDR_inst
+    ----------------------------------------
+    Total                      1.121ns (0.716ns logic, 0.405ns route)
+                                       (63.9% logic, 36.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'AD9783_inst1/AD_9783_SPI_inst/spi_clk'
-  Clock period: 1.785ns (frequency: 560.224MHz)
-  Total number of paths / destination ports: 271 / 31
+  Clock period: 1.891ns (frequency: 528.821MHz)
+  Total number of paths / destination ports: 656 / 80
 -------------------------------------------------------------------------
-Delay:               1.785ns (Levels of Logic = 1)
+Delay:               1.891ns (Levels of Logic = 1)
   Source:            AD9783_inst1/AD_9783_SPI_inst/state_f_1 (FF)
   Destination:       AD9783_inst1/AD_9783_SPI_inst/counter_f_11 (FF)
   Source Clock:      AD9783_inst1/AD_9783_SPI_inst/spi_clk rising
@@ -612,12 +791,12 @@ Delay:               1.785ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              7   0.282   0.779  AD9783_inst1/AD_9783_SPI_inst/state_f_1 (AD9783_inst1/AD_9783_SPI_inst/state_f_1)
+     FDC:C->Q             24   0.282   0.885  AD9783_inst1/AD_9783_SPI_inst/state_f_1 (AD9783_inst1/AD_9783_SPI_inst/state_f_1)
      LUT6:I0->O           12   0.053   0.471  AD9783_inst1/AD_9783_SPI_inst/_n0159_inv1 (AD9783_inst1/AD_9783_SPI_inst/_n0159_inv)
      FDCE:CE                   0.200          AD9783_inst1/AD_9783_SPI_inst/counter_f_0
     ----------------------------------------
-    Total                      1.785ns (0.535ns logic, 1.250ns route)
-                                       (30.0% logic, 70.0% route)
+    Total                      1.891ns (0.535ns logic, 1.356ns route)
+                                       (28.3% logic, 71.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'rstLEDclk/div_clk'
@@ -671,6 +850,26 @@ Delay:               2.421ns (Levels of Logic = 30)
                                        (58.4% logic, 41.6% route)
 
 =========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AD9783_inst1/AD_9783_SPI_inst/spi_clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.483ns (Levels of Logic = 2)
+  Source:            sdo_in (PAD)
+  Destination:       AD9783_inst1/AD_9783_SPI_inst/data_out_0 (FF)
+  Destination Clock: AD9783_inst1/AD_9783_SPI_inst/spi_clk rising
+
+  Data Path: sdo_in to AD9783_inst1/AD_9783_SPI_inst/data_out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.419  IBUF_inst (sdo)
+     LUT5:I4->O            1   0.053   0.000  AD9783_inst1/AD_9783_SPI_inst/Mmux_state_f[2]_data_out[15]_wide_mux_11_OUT11 (AD9783_inst1/AD_9783_SPI_inst/state_f[2]_data_out[15]_wide_mux_11_OUT<0>)
+     FDC:D                     0.011          AD9783_inst1/AD_9783_SPI_inst/data_out_0
+    ----------------------------------------
+    Total                      0.483ns (0.064ns logic, 0.419ns route)
+                                       (13.3% logic, 86.7% route)
+
+=========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'AD9783_inst1/clkDi'
   Total number of paths / destination ports: 34 / 34
 -------------------------------------------------------------------------
@@ -685,6 +884,25 @@ Offset:              1.006ns (Levels of Logic = 1)
     ----------------------------------------  ------------
      ODDR:C->Q             1   0.607   0.399  AD9783_inst1/pins[15].ODDR_inst (AD9783_inst1/data_out_to_pins<15>)
      OBUFDS:I->O               0.000          AD9783_inst1/pins[15].OBUFDS_inst (D1_out_p<15>)
+    ----------------------------------------
+    Total                      1.006ns (0.607ns logic, 0.399ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AD9783_inst0/clkDi'
+  Total number of paths / destination ports: 34 / 34
+-------------------------------------------------------------------------
+Offset:              1.006ns (Levels of Logic = 1)
+  Source:            AD9783_inst0/pins[15].ODDR_inst (FF)
+  Destination:       D0_out_p<15> (PAD)
+  Source Clock:      AD9783_inst0/clkDi rising
+
+  Data Path: AD9783_inst0/pins[15].ODDR_inst to D0_out_p<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     ODDR:C->Q             1   0.607   0.399  AD9783_inst0/pins[15].ODDR_inst (AD9783_inst0/data_out_to_pins<15>)
+     OBUFDS:I->O               0.000          AD9783_inst0/pins[15].OBUFDS_inst (D0_out_p<15>)
     ----------------------------------------
     Total                      1.006ns (0.607ns logic, 0.399ns route)
                                        (60.3% logic, 39.7% route)
@@ -710,7 +928,7 @@ Offset:              1.006ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'AD9783_inst1/AD_9783_SPI_inst/spi_clk'
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
 Offset:              0.687ns (Levels of Logic = 1)
   Source:            AD9783_inst1/AD_9783_SPI_inst/spi_scs_out (FF)
@@ -729,91 +947,129 @@ Offset:              0.687ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              0.687ns (Levels of Logic = 1)
-  Source:            AD9783_inst1/rst_out (FF)
+Offset:              0.695ns (Levels of Logic = 1)
+  Source:            AD9783_inst0/rst_out (FF)
   Destination:       rst1 (PAD)
   Source Clock:      clk rising
 
-  Data Path: AD9783_inst1/rst_out to rst1
+  Data Path: AD9783_inst0/rst_out to rst1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.282   0.405  AD9783_inst1/rst_out (AD9783_inst1/rst_out)
+     FD:C->Q               3   0.282   0.413  AD9783_inst0/rst_out (AD9783_inst0/rst_out)
      OBUF:I->O                 0.000          rst1_OBUF (rst1)
     ----------------------------------------
-    Total                      0.687ns (0.282ns logic, 0.405ns route)
-                                       (41.0% logic, 59.0% route)
+    Total                      0.695ns (0.282ns logic, 0.413ns route)
+                                       (40.6% logic, 59.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'rstLEDclk/div_clk'
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              0.834ns (Levels of Logic = 0)
+Offset:              0.840ns (Levels of Logic = 0)
   Source:            rst_in (FF)
-  Destination:       AD9783_inst1/MMCME2_BASE_inst:RST (PAD)
+  Destination:       AD9783_inst0/MMCME2_BASE_inst:RST (PAD)
   Source Clock:      rstLEDclk/div_clk rising
 
-  Data Path: rst_in to AD9783_inst1/MMCME2_BASE_inst:RST
+  Data Path: rst_in to AD9783_inst0/MMCME2_BASE_inst:RST
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              36   0.282   0.552  rst_in (rst_in)
-    MMCME2_ADV:RST             0.000          AD9783_inst1/MMCME2_BASE_inst
+     FD:C->Q              61   0.282   0.558  rst_in (rst_in)
+    MMCME2_ADV:RST             0.000          AD9783_inst0/MMCME2_BASE_inst
     ----------------------------------------
-    Total                      0.834ns (0.282ns logic, 0.552ns route)
-                                       (33.8% logic, 66.2% route)
+    Total                      0.840ns (0.282ns logic, 0.558ns route)
+                                       (33.6% logic, 66.4% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 9 / 7
 -------------------------------------------------------------------------
-Delay:               0.000ns (Levels of Logic = 0)
-  Source:            AD9783_inst1/MMCME2_BASE_inst:CLKFBOUT (PAD)
-  Destination:       AD9783_inst1/MMCME2_BASE_inst:CLKFBIN (PAD)
+Delay:               0.405ns (Levels of Logic = 2)
+  Source:            sdo_in (PAD)
+  Destination:       sdo_out (PAD)
 
-  Data Path: AD9783_inst1/MMCME2_BASE_inst:CLKFBOUT to AD9783_inst1/MMCME2_BASE_inst:CLKFBIN
+  Data Path: sdo_in to sdo_out
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    MMCME2_ADV:CLKFBOUT    0   0.000   0.000  AD9783_inst1/MMCME2_BASE_inst (AD9783_inst1/clkFB)
-    MMCME2_ADV:CLKFBIN         0.000          AD9783_inst1/MMCME2_BASE_inst
+     IBUF:I->O             2   0.000   0.405  IBUF_inst (sdo)
+     IOBUF:I->O                0.000          IOBUF_inst (sdo_out)
     ----------------------------------------
-    Total                      0.000ns (0.000ns logic, 0.000ns route)
+    Total                      0.405ns (0.000ns logic, 0.405ns route)
+                                       (0.0% logic, 100.0% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock AD9783_inst0/AD_9783_SPI_inst/trigger_in1
+-----------------+---------+---------+---------+---------+
+                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------+---------+---------+---------+---------+
+rstLEDclk/div_clk|         |         |    1.165|         |
+-----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AD9783_inst0/clkDi
+------------------+---------+---------+---------+---------+
+                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------+---------+---------+---------+---------+
+AD9783_inst0/clkDi|    1.121|         |         |         |
+clk               |    0.698|         |         |         |
+------------------+---------+---------+---------+---------+
+
 Clock to Setup on destination clock AD9783_inst1/AD_9783_SPI_inst/spi_clk
------------------------------------------+---------+---------+---------+---------+
-                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------------------+---------+---------+---------+---------+
-AD9783_inst1/AD_9783_SPI_inst/spi_clk    |    1.785|         |         |         |
-AD9783_inst1/AD_9783_SPI_inst/trigger_in1|         |    1.873|         |         |
-clk                                      |    1.764|         |         |         |
-rstLEDclk/div_clk                        |    1.711|         |         |         |
------------------------------------------+---------+---------+---------+---------+
+------------------------------------------------------------+---------+---------+---------+---------+
+                                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------------+---------+---------+---------+---------+
+AD9783_inst0/AD_9783_SPI_inst/trigger_in1                   |         |    1.867|         |         |
+AD9783_inst1/AD_9783_SPI_inst/spi_clk                       |    1.891|         |         |         |
+AD9783_inst1/AD_9783_SPI_inst/trigger_in1                   |         |    1.983|         |         |
+AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o|         |    1.845|         |         |
+clk                                                         |    1.784|         |         |         |
+rstLEDclk/div_clk                                           |    1.834|         |         |         |
+------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock AD9783_inst1/AD_9783_SPI_inst/trigger_in1
 -----------------+---------+---------+---------+---------+
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-rstLEDclk/div_clk|         |         |    1.159|         |
+rstLEDclk/div_clk|         |         |    1.165|         |
 -----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o
+-----------------+---------+---------+---------+---------+
+                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------+---------+---------+---------+---------+
+clk              |         |         |    1.611|         |
+rstLEDclk/div_clk|         |         |    1.834|         |
+-----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AD9783_inst1/clkDi
+------------------+---------+---------+---------+---------+
+                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------+---------+---------+---------+---------+
+AD9783_inst1/clkDi|    1.121|         |         |         |
+clk               |    0.698|         |         |         |
+------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
 -------------------------------------+---------+---------+---------+---------+
                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------------+---------+---------+---------+---------+
-AD9783_inst1/AD_9783_SPI_inst/spi_clk|    1.001|         |         |         |
-clk                                  |    2.218|         |         |         |
-rstLEDclk/div_clk                    |    1.159|         |         |         |
+AD9783_inst1/AD_9783_SPI_inst/spi_clk|    0.851|         |         |         |
+clk                                  |    2.397|         |         |         |
+rstLEDclk/div_clk                    |    1.165|         |         |         |
 -------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock rstLEDclk/div_clk
@@ -827,14 +1083,14 @@ rstLEDclk/div_clk|    2.421|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.64 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.43 secs
  
 --> 
 
-Total memory usage is 409384 kilobytes
+Total memory usage is 410552 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   68 (   0 filtered)
-Number of infos    :   11 (   0 filtered)
+Number of warnings :   82 (   0 filtered)
+Number of infos    :   58 (   0 filtered)
 
