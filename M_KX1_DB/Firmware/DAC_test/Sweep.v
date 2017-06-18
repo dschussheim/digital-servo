@@ -20,7 +20,7 @@ module Sweep(
 	input	 wire						   					on_in,
 	input  wire signed	[15:0]						minval_in,
 	input	 wire signed	[15:0]						maxval_in,
-	input	 wire				[31:0]						stepsize_in,
+	input	 wire				[32:0]						stepsize_in,
 	output reg  signed	[SIGNAL_OUT_SIZE-1:0]	signal_out
 );
 

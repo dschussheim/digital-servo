@@ -6,7 +6,7 @@ C:\Xilinx\14.7\ISE_DS\ISE\.
 speed -1
 Opened constraints file DAC_Sweep_Test.pcf.
 
-Wed Jun 14 17:22:34 2017
+Thu Jun 15 13:45:40 2017
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:3 -g CclkPin:PullUp -g M0Pin:PullUp -g M1Pin:PullUp -g M2Pin:PullUp -g ProgPin:PullUp -g InitPin:Pullnone -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g Disable_JTAG:No -g UnusedPin:PullNone -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:Disable -g ConfigFallback:Disable -g BPI_page_size:1 -g BPI_sync_mode:Disable -g SPI_32bit_addr:No -g SPI_buswidth:1 -g SPI_Fall_Edge:No -g OverTempPowerDown:Enable -g USR_ACCESS:None -g JTAG_XADC:Enable -g DCIUpdateMode:AsRequired -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g Match_cycle:Auto -g Security:None -g ICAP_select:Auto -g DonePipe:Yes -g Encrypt:No DAC_Sweep_Test.ncd 
 
@@ -164,7 +164,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o is sourced by a
    combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-DRC detected 0 errors and 3 warnings.  Please see the previously displayed
+WARNING:PhysDesignRules:2240 - The MMCME2_ADV block
+   <AD9783_inst1/MMCME2_BASE_inst> has CLKOUT pins that do not drive the same
+   kind of BUFFER load. Routing from the different buffer types will not be
+   phase aligned. 
+DRC detected 0 errors and 4 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "dac_sweep_test.bit".

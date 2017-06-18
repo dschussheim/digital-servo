@@ -10,23 +10,23 @@ Target Device  : xc7k160t
 Target Package : fbg676
 Target Speed   : -1
 Mapper Version : kintex7 -- $Revision: 1.55 $
-Mapped Date    : Wed Jun 14 17:06:34 2017
+Mapped Date    : Thu Jun 15 13:44:13 2017
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    7
+Number of warnings:    8
 Slice Logic Utilization:
-  Number of Slice Registers:                   231 out of 202,800    1%
-    Number used as Flip Flops:                 228
+  Number of Slice Registers:                   219 out of 202,800    1%
+    Number used as Flip Flops:                 216
     Number used as Latches:                      3
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        276 out of 101,400    1%
-    Number used as logic:                      272 out of 101,400    1%
-      Number using O6 output only:             147
-      Number using O5 output only:              66
-      Number using O5 and O6:                   59
+  Number of Slice LUTs:                        226 out of 101,400    1%
+    Number used as logic:                      223 out of 101,400    1%
+      Number using O6 output only:             126
+      Number using O5 output only:              36
+      Number using O5 and O6:                   61
       Number used as ROM:                        0
     Number used as Memory:                       1 out of  35,000    1%
       Number used as Dual Port RAM:              0
@@ -35,20 +35,20 @@ Slice Logic Utilization:
         Number using O6 output only:             1
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:      3
-      Number with same-slice register load:      1
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
       Number with same-slice carry load:         2
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   120 out of  25,350    1%
-  Number of LUT Flip Flop pairs used:          332
-    Number with an unused Flip Flop:           107 out of     332   32%
-    Number with an unused LUT:                  56 out of     332   16%
-    Number of fully used LUT-FF pairs:         169 out of     332   50%
-    Number of unique control sets:              20
+  Number of occupied Slices:                   104 out of  25,350    1%
+  Number of LUT Flip Flop pairs used:          281
+    Number with an unused Flip Flop:            66 out of     281   23%
+    Number with an unused LUT:                  55 out of     281   19%
+    Number of fully used LUT-FF pairs:         160 out of     281   56%
+    Number of unique control sets:              22
     Number of slice register sites lost
-      to control set restrictions:              88 out of 202,800    1%
+      to control set restrictions:             100 out of 202,800    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -103,11 +103,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.76
+Average Fanout of Non-Clock Nets:                2.79
 
 Peak Memory Usage:  1044 MB
-Total REAL time to MAP completion:  42 secs 
-Total CPU time to MAP completion:   42 secs 
+Total REAL time to MAP completion:  33 secs 
+Total CPU time to MAP completion:   33 secs 
 
 Table of Contents
 -----------------
@@ -154,6 +154,10 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o is sourced by a
    combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:2240 - The MMCME2_ADV block
+   <AD9783_inst1/MMCME2_BASE_inst> has CLKOUT pins that do not drive the same
+   kind of BUFFER load. Routing from the different buffer types will not be
+   phase aligned. 
 
 Section 3 - Informational
 -------------------------

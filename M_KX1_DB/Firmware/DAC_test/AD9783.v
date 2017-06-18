@@ -37,13 +37,16 @@ module AD9783(
 	output 	wire							DCI_out_p,
 	output 	wire							DCI_out_n,
 	output 	wire				[15:0] 	D_out_p,
-	output 	wire		  		[15:0] 	D_out_n
+	output 	wire		  		[15:0] 	D_out_n,
+	
+	output	wire							clk_out
 );
 
 // Parameters
 parameter 	SMP_DLY	= 8'h0;
 parameter 	CLKDIV = 80;		//8 = 100MHz, 80 = 10MHz
 parameter	IODG_NAME = "OUTPUT_DG_0";		//Name for io delay group
+parameter	CLK1PHASE = 45;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Generate the AD9783 clock
@@ -69,7 +72,7 @@ MMCME2_BASE #(
 	.CLKOUT1_DUTY_CYCLE(0.5),
 	// Phase(-360.000-360.000).
 	.CLKOUT0_PHASE(0.0),
-	.CLKOUT1_PHASE(-90),
+	.CLKOUT1_PHASE(CLK1PHASE),
 	.CLKOUT4_CASCADE("FALSE"), 	// Cascade CLKOUT4 counter with CLKOUT6 (FALSE, TRUE)
 	.DIVCLK_DIVIDE(1), 				// Master division value (1-106)
 	.REF_JITTER1(0.01), 				// Reference input jitter in UI (0.000-0.999).
@@ -90,6 +93,8 @@ MMCME2_BASE_inst (
 	.PWRDWN(1'b0), 			// 1-bit input: Power-down
 	.RST(rst_in) 				// 1-bit input: Reset
 );
+
+assign	clk_out = clkDi;
 
 // BUFG: Global Clock Simple Buffer
 BUFG BUFG_clkD (

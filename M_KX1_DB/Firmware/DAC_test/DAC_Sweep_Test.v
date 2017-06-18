@@ -173,12 +173,24 @@ wire	signed	[15:0]	DAC10_in, DAC11_in, DAC00_in, DAC01_in;
 /*assign 			DAC10_in = 16'b0000_0000_0000_0000;
 assign			DAC11_in = 16'b1000_0000_0000_0000;*/
 //assign 			DAC00_in = 16'b0000_0000_0000_0000;
-assign			DAC01_in = 16'b1111_1111_1111_1111;
-
-
-
+//assign			DAC01_in = 16'b1111_1111_1111_1111;
+/*
+//For testing bits 1 by one, should make 500kHz square wave
+parameter bit = 11;
+always @(posedge DIVclk) begin
+	DAC00_in[bit] <= ~DAC00_in[bit];
+end
+*/
+parameter	CLKDIV = 80;	//50MHz clock
+parameter	SMP_DLY = 8'h0;
+parameter	CLK1PHASE = -90; //Phase of CLK_out relative to data
 // Instantiate DAC1 driver module
-AD9783 AD9783_inst1 (
+AD9783 #(
+	.CLKDIV(CLKDIV),
+	.SMP_DLY(SMP_DLY),
+	.CLK1PHASE(CLK1PHASE)
+)
+ AD9783_inst1 (
     .clk_in(clk_in), 
     .rst_in(rst_in), 
     .DAC0_in(DAC00_in), 
@@ -197,13 +209,19 @@ AD9783 AD9783_inst1 (
 	 .cmd_trig_in(1'b0),
 	 .cmd_addr_in(16'b0),
 	 .cmd_data_in(16'b0),
-	 .cmd_data_out()
+	 .cmd_data_out(),
+	 .clk_out(clk_out)
     );
 
 	 
 
 // Instantiate DAC0 driver module
-AD9783 AD9783_inst0 (
+AD9783 #(
+	.CLKDIV(CLKDIV),
+	.SMP_DLY(SMP_DLY),
+	.CLK1PHASE(CLK1PHASE)
+)
+AD9783_inst0 (
     .clk_in(clk_in), 
     .rst_in(rst_in), 
     .DAC0_in(DAC00_in), 
@@ -237,11 +255,12 @@ wire				[31:0]	stepsize_in;
 
 assign	minval_in = 16'sb1000_0000_0000_0000;
 assign	maxval_in = 16'sb0111_1111_1111_1111;
+//assign	maxval_in = 16'sb0000_0000_0000_0000;
 assign	stepsize_in = 32'b0000_0000_0000_0000_0000_0010_0000_0000; //Change value every 128 clock cycles ~781kHz ramp
 
 //Sweep instantiation
 Sweep Sweep_inst (
-    .clk_in(clk_in), 
+    .clk_in(clk_out), 
     .on_in(1'b1), 
     .minval_in(minval_in), 
     .maxval_in(maxval_in), 
