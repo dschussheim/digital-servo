@@ -44,15 +44,15 @@ module DAC_Sweep_Test(
 	output	wire				sck,
 	input		wire				sdo_in,
 	
-	output	wire				sdo_out,
+//	output	wire				sdo_out,
 	
 	output	reg				rst_led,
 	
 //	output	reg				reset,
-	output	wire				DCO1_in,
+//	output	wire				DCO1_in,
 	input		wire				DCO1_p,
 	input		wire				DCO1_n,
-	output	wire				DCO0_in,
+//	output	wire				DCO0_in,
 	input		wire				DCO0_p,
 	input		wire				DCO0_n
 	
@@ -92,7 +92,7 @@ IBUF #(
 .O(sdo), 	// Buffer output
 .I(sdo_in) 	// Buffer input (connect directly to top-level port)
 );
-
+/*
 // IOBUF: Single-ended Bi-directional Buffer
 IOBUF #(
 	.DRIVE(12), 				// Specify the output drive strength
@@ -105,10 +105,8 @@ IOBUF #(
 	.I(sdo), 		// Buffer input
 	.T(1'b0) 		// 3-state enable input, high=input, low=output
 );
-// End of IOBUF_inst instantiation
-
-
-wire clk_int, clk_in, DIVclk;
+*/
+wire clk_in, DIVclk;
 
 //Clock input from FPGA module.
 
@@ -181,7 +179,7 @@ always @(posedge DIVclk) begin
 	DAC00_in[bit] <= ~DAC00_in[bit];
 end
 */
-parameter	CLKDIV = 80;	//50MHz clock
+parameter	CLKDIV = 80;	//10MHz clock
 parameter	SMP_DLY = 8'h0;
 parameter	CLK1PHASE = -90; //Phase of CLK_out relative to data
 // Instantiate DAC1 driver module

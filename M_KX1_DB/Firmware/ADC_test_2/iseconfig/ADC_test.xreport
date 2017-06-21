@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-06-12T14:25:49</DateModified>
+  <DateModified>2017-06-20T13:38:12</DateModified>
   <ModuleName>ADC_test</ModuleName>
-  <SummaryTimeStamp>2017-06-09T16:17:16</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-06-20T13:37:53</SummaryTimeStamp>
   <SavedFilePath>C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/iseconfig/ADC_test.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2\</ImplementationReportsDirectory>
   <DateInitialized>2017-06-09T15:55:38</DateInitialized>

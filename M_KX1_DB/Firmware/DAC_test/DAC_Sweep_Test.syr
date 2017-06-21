@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: DAC_Sweep_Test.prj
@@ -119,15 +119,15 @@ Parsing module <DAC_Sweep_Test>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 219: Port clk_out is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 217: Port clk_out is not connected to this instance
 
 Elaborating module <DAC_Sweep_Test>.
 
 Elaborating module <IBUFDS(DIFF_TERM="TRUE",IBUF_LOW_PWR="TRUE",IOSTANDARD="LVDS_25")>.
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 69: Assignment to DCO1_in ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 81: Assignment to DCO0_in ignored, since the identifier is never used
 
 Elaborating module <IBUF(IBUF_LOW_PWR="TRUE",IOSTANDARD="LVCMOS25")>.
-
-Elaborating module <IOBUF(DRIVE=12,IBUF_LOW_PWR="TRUE",IOSTANDARD="LVCMOS25",SLEW="SLOW")>.
 
 Elaborating module <IBUFG(IBUF_LOW_PWR="TRUE",IOSTANDARD="HSTL_II")>.
 
@@ -148,7 +148,7 @@ Elaborating module <SPI(TRANSFER_SIZE=16,SPI_CLK_DIV=8'b0101)>.
 
 Elaborating module <Sweep>.
 WARNING:HDLCompiler:413 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\Sweep.v" Line 59: Result of 18-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:189 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 267: Size mismatch in connection of port <stepsize_in>. Formal port size is 33-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" Line 265: Size mismatch in connection of port <stepsize_in>. Formal port size is 33-bit while actual signal size is 32-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -160,19 +160,19 @@ Synthesizing Unit <DAC_Sweep_Test>.
         SMP_DLY = 8'b00000000
         CLK1PHASE = -90
         SIGNAL_OUT_SIZE = 16
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 193: Output port <cmd_data_out> of the instance <AD9783_inst1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 224: Output port <cmd_data_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 224: Output port <spi_sck_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 224: Output port <spi_sdo_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 224: Output port <CLK_out_p> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 224: Output port <CLK_out_n> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 224: Output port <clk_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 191: Output port <cmd_data_out> of the instance <AD9783_inst1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 222: Output port <cmd_data_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 222: Output port <spi_sck_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 222: Output port <spi_sdo_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 222: Output port <CLK_out_p> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 222: Output port <CLK_out_n> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\DAC_test\DAC_Sweep_Test.v" line 222: Output port <clk_out> of the instance <AD9783_inst0> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <rst_in>.
     Found 1-bit register for signal <rst_led>.
     Found 30-bit register for signal <counter>.
-    Found 30-bit adder for signal <counter[29]_GND_1_o_add_5_OUT> created at line 150.
-    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_2_o> created at line 144
-    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_5_o> created at line 149
+    Found 30-bit adder for signal <counter[29]_GND_1_o_add_5_OUT> created at line 148.
+    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_2_o> created at line 142
+    Found 30-bit comparator greater for signal <counter[29]_GND_1_o_LessThan_5_o> created at line 147
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -185,7 +185,7 @@ Synthesizing Unit <clk_div>.
         halfway = 27'b000000000000000000000110010
     Found 1-bit register for signal <div_clk>.
     Found 27-bit register for signal <counter>.
-    Found 27-bit adder for signal <counter[26]_GND_6_o_add_3_OUT> created at line 55.
+    Found 27-bit adder for signal <counter[26]_GND_5_o_add_3_OUT> created at line 55.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -219,7 +219,7 @@ WARNING:Xst:647 - Input <cmd_data_in<15:8>> is never used. This port will be pre
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <counter_f[7]_GND_7_o_sub_15_OUT> created at line 318.
+    Found 8-bit subtractor for signal <counter_f[7]_GND_6_o_sub_15_OUT> created at line 318.
     WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 1 in block <AD9783>.
     WARNING:Xst:2404 -  FFs/Latches <data_in<35:35>> (without init value) have a constant value of 0 in block <AD9783>.
     Summary:
@@ -260,8 +260,8 @@ Synthesizing Unit <SPI>.
     Found 1-bit register for signal <data_out<2>>.
     Found 1-bit register for signal <data_out<1>>.
     Found 1-bit register for signal <data_out<0>>.
-    Found 12-bit subtractor for signal <counter_f[11]_GND_12_o_sub_8_OUT> created at line 136.
-    Found 8-bit adder for signal <clk_counter[7]_GND_12_o_add_1_OUT> created at line 49.
+    Found 12-bit subtractor for signal <counter_f[11]_GND_11_o_sub_8_OUT> created at line 136.
+    Found 8-bit adder for signal <clk_counter[7]_GND_11_o_add_1_OUT> created at line 49.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  44 D-type flip-flop(s).
@@ -275,8 +275,8 @@ Synthesizing Unit <Sweep>.
     Found 1-bit register for signal <state_f>.
     Found 16-bit register for signal <signal_out>.
     Found 34-bit register for signal <next_val_f>.
-    Found 34-bit subtractor for signal <next_val_f[33]_GND_14_o_sub_4_OUT> created at line 44.
-    Found 34-bit adder for signal <next_val_f[33]_GND_14_o_add_2_OUT> created at line 42.
+    Found 34-bit subtractor for signal <next_val_f[33]_GND_13_o_sub_4_OUT> created at line 44.
+    Found 34-bit adder for signal <next_val_f[33]_GND_13_o_add_2_OUT> created at line 42.
     Found 34-bit comparator greater for signal <next_val_f[33]_maxval_in[15]_LessThan_6_o> created at line 46
     Found 34-bit comparator greater for signal <minval_in[15]_next_val_f[33]_LessThan_7_o> created at line 49
     Summary:
@@ -634,12 +634,11 @@ Primitive and Black Box Usage:
 #      SRLC16E                     : 1
 # Clock Buffers                    : 7
 #      BUFG                        : 7
-# IO Buffers                       : 50
+# IO Buffers                       : 47
 #      IBUF                        : 1
 #      IBUFDS                      : 2
 #      IBUFG                       : 1
-#      IOBUF                       : 1
-#      OBUF                        : 9
+#      OBUF                        : 7
 #      OBUFDS                      : 36
 # Others                           : 2
 #      MMCME2_ADV                  : 2
@@ -665,8 +664,8 @@ Slice Logic Distribution:
    Number of unique control sets:        22
 
 IO Utilization: 
- Number of IOs:                          86
- Number of bonded IOBs:                  86  out of    400    21%  
+ Number of IOs:                          83
+ Number of bonded IOBs:                  83  out of    400    20%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                7  out of     32    21%  
@@ -717,9 +716,9 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: 2.421ns (Maximum Frequency: 413.053MHz)
-   Minimum input arrival time before clock: 0.483ns
+   Minimum input arrival time before clock: 0.477ns
    Maximum output required time after clock: 1.006ns
-   Maximum combinational path delay: 0.405ns
+   Maximum combinational path delay: 0.000ns
 
 Timing Details:
 ---------------
@@ -771,8 +770,8 @@ Delay:               2.218ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q              2   0.282   0.641  rstLEDclk/counter_2 (rstLEDclk/counter_2)
-     LUT4:I0->O            2   0.053   0.419  rstLEDclk/counter[26]_GND_6_o_equal_1_o<26>11 (rstLEDclk/counter[26]_GND_6_o_equal_1_o<26>1)
-     LUT4:I3->O            8   0.053   0.445  rstLEDclk/counter[26]_GND_6_o_equal_1_o<26>1 (rstLEDclk/counter[26]_GND_6_o_equal_1_o)
+     LUT4:I0->O            2   0.053   0.419  rstLEDclk/counter[26]_GND_5_o_equal_1_o<26>11 (rstLEDclk/counter[26]_GND_5_o_equal_1_o<26>1)
+     LUT4:I3->O            8   0.053   0.445  rstLEDclk/counter[26]_GND_5_o_equal_1_o<26>1 (rstLEDclk/counter[26]_GND_5_o_equal_1_o)
      FDR:R                     0.325          rstLEDclk/counter_0
     ----------------------------------------
     Total                      2.218ns (0.713ns logic, 1.505ns route)
@@ -876,7 +875,7 @@ Delay:               2.421ns (Levels of Logic = 30)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'AD9783_inst1/AD_9783_SPI_inst/spi_clk'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              0.483ns (Levels of Logic = 2)
+Offset:              0.477ns (Levels of Logic = 2)
   Source:            sdo_in (PAD)
   Destination:       AD9783_inst1/AD_9783_SPI_inst/data_out_0 (FF)
   Destination Clock: AD9783_inst1/AD_9783_SPI_inst/spi_clk rising
@@ -885,12 +884,12 @@ Offset:              0.483ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   0.000   0.419  IBUF_inst (sdo)
+     IBUF:I->O             1   0.000   0.413  IBUF_inst (sdo)
      LUT5:I4->O            1   0.053   0.000  AD9783_inst1/AD_9783_SPI_inst/Mmux_state_f[2]_data_out[15]_wide_mux_11_OUT11 (AD9783_inst1/AD_9783_SPI_inst/state_f[2]_data_out[15]_wide_mux_11_OUT<0>)
      FDC:D                     0.011          AD9783_inst1/AD_9783_SPI_inst/data_out_0
     ----------------------------------------
-    Total                      0.483ns (0.064ns logic, 0.419ns route)
-                                       (13.3% logic, 86.7% route)
+    Total                      0.477ns (0.064ns logic, 0.413ns route)
+                                       (13.4% logic, 86.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_out'
@@ -1008,21 +1007,20 @@ Offset:              0.840ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 9 / 7
+  Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Delay:               0.405ns (Levels of Logic = 2)
-  Source:            sdo_in (PAD)
-  Destination:       sdo_out (PAD)
+Delay:               0.000ns (Levels of Logic = 0)
+  Source:            AD9783_inst0/MMCME2_BASE_inst:CLKFBOUT (PAD)
+  Destination:       AD9783_inst0/MMCME2_BASE_inst:CLKFBIN (PAD)
 
-  Data Path: sdo_in to sdo_out
+  Data Path: AD9783_inst0/MMCME2_BASE_inst:CLKFBOUT to AD9783_inst0/MMCME2_BASE_inst:CLKFBIN
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   0.000   0.405  IBUF_inst (sdo)
-     IOBUF:I->O                0.000          IOBUF_inst (sdo_out)
+    MMCME2_ADV:CLKFBOUT    0   0.000   0.000  AD9783_inst0/MMCME2_BASE_inst (AD9783_inst0/clkFB)
+    MMCME2_ADV:CLKFBIN         0.000          AD9783_inst0/MMCME2_BASE_inst
     ----------------------------------------
-    Total                      0.405ns (0.000ns logic, 0.405ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      0.000ns (0.000ns logic, 0.000ns route)
 
 =========================================================================
 
@@ -1106,13 +1104,13 @@ rstLEDclk/div_clk|    2.421|         |         |         |
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.51 secs
+Total CPU time to Xst completion: 9.54 secs
  
 --> 
 
-Total memory usage is 410564 kilobytes
+Total memory usage is 410540 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   94 (   0 filtered)
+Number of warnings :   96 (   0 filtered)
 Number of infos    :   57 (   0 filtered)
 

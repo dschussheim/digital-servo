@@ -126,8 +126,8 @@ module ADC_test_tb;
 			#5	FR_in_p = ~FR_in_p;
 		always
 			#5	FR_in_n = ~FR_in_n;	
-		always
-			#1.25
+		//always
+			//#1.25
 		
 		
 endmodule

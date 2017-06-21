@@ -14,7 +14,7 @@
 -g TdoPin:PullUp
 -g TmsPin:PullUp
 -g Disable_JTAG:No
--g UnusedPin:PullDown
+-g UnusedPin:PullNone
 -g UserID:0xFFFFFFFF
 -g ExtMasterCclk_en:Disable
 -g ConfigFallback:Disable

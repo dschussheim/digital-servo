@@ -32,23 +32,109 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                   | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)  | Phase  |
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+ADC1_out    |         7.643(R)|      SLOW  |         3.206(R)|      FAST  |clk_in             |   0.000|
+ADC2_out    |         7.635(R)|      SLOW  |         3.197(R)|      FAST  |clk_in             |   0.000|
+CLK_out_n   |        11.070(R)|      SLOW  |         4.522(R)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+            |        11.070(F)|      SLOW  |         4.522(F)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+CLK_out_p   |        11.070(R)|      SLOW  |         4.522(R)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+            |        11.070(F)|      SLOW  |         4.522(F)|      FAST  |AD9783_inst1/clkDLY|   0.000|
+D1_out_n<0> |        11.074(R)|      SLOW  |         4.527(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.074(F)|      SLOW  |         4.527(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<1> |        11.093(R)|      SLOW  |         4.545(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.093(F)|      SLOW  |         4.545(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<2> |        11.294(R)|      SLOW  |         4.642(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.294(F)|      SLOW  |         4.642(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<3> |        11.057(R)|      SLOW  |         4.509(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.057(F)|      SLOW  |         4.509(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<4> |        11.257(R)|      SLOW  |         4.607(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.257(F)|      SLOW  |         4.607(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<5> |        11.267(R)|      SLOW  |         4.617(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.267(F)|      SLOW  |         4.617(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<6> |        11.266(R)|      SLOW  |         4.616(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.266(F)|      SLOW  |         4.616(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<7> |        11.258(R)|      SLOW  |         4.608(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.258(F)|      SLOW  |         4.608(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<8> |        11.222(R)|      SLOW  |         4.573(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.222(F)|      SLOW  |         4.573(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<9> |        11.238(R)|      SLOW  |         4.589(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.238(F)|      SLOW  |         4.589(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<10>|        11.256(R)|      SLOW  |         4.609(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.256(F)|      SLOW  |         4.609(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<11>|        11.230(R)|      SLOW  |         4.583(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.230(F)|      SLOW  |         4.583(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<12>|        11.250(R)|      SLOW  |         4.599(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.250(F)|      SLOW  |         4.599(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<13>|        11.233(R)|      SLOW  |         4.586(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.233(F)|      SLOW  |         4.586(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<14>|        11.471(R)|      SLOW  |         4.645(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.471(F)|      SLOW  |         4.645(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_n<15>|        11.445(R)|      SLOW  |         4.620(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.445(F)|      SLOW  |         4.620(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<0> |        11.074(R)|      SLOW  |         4.527(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.074(F)|      SLOW  |         4.527(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<1> |        11.093(R)|      SLOW  |         4.545(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.093(F)|      SLOW  |         4.545(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<2> |        11.294(R)|      SLOW  |         4.642(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.294(F)|      SLOW  |         4.642(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<3> |        11.057(R)|      SLOW  |         4.509(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.057(F)|      SLOW  |         4.509(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<4> |        11.257(R)|      SLOW  |         4.607(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.257(F)|      SLOW  |         4.607(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<5> |        11.267(R)|      SLOW  |         4.617(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.267(F)|      SLOW  |         4.617(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<6> |        11.266(R)|      SLOW  |         4.616(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.266(F)|      SLOW  |         4.616(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<7> |        11.258(R)|      SLOW  |         4.608(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.258(F)|      SLOW  |         4.608(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<8> |        11.222(R)|      SLOW  |         4.573(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.222(F)|      SLOW  |         4.573(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<9> |        11.238(R)|      SLOW  |         4.589(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.238(F)|      SLOW  |         4.589(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<10>|        11.256(R)|      SLOW  |         4.609(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.256(F)|      SLOW  |         4.609(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<11>|        11.230(R)|      SLOW  |         4.583(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.230(F)|      SLOW  |         4.583(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<12>|        11.250(R)|      SLOW  |         4.599(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.250(F)|      SLOW  |         4.599(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<13>|        11.233(R)|      SLOW  |         4.586(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.233(F)|      SLOW  |         4.586(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<14>|        11.471(R)|      SLOW  |         4.645(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.471(F)|      SLOW  |         4.645(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+D1_out_p<15>|        11.445(R)|      SLOW  |         4.620(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.445(F)|      SLOW  |         4.620(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+DCI1_out_n  |        11.244(R)|      SLOW  |         4.594(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.244(F)|      SLOW  |         4.594(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+DCI1_out_p  |        11.244(R)|      SLOW  |         4.594(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
+            |        11.244(F)|      SLOW  |         4.594(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
+ENC_n       |         9.446(R)|      SLOW  |         3.671(R)|      FAST  |ADC1/clkPS         |   0.000|
+            |         9.446(F)|      SLOW  |         3.671(F)|      FAST  |ADC1/clkPS         |   0.000|
+ENC_p       |         9.446(R)|      SLOW  |         3.671(R)|      FAST  |ADC1/clkPS         |   0.000|
+            |         9.446(F)|      SLOW  |         3.671(F)|      FAST  |ADC1/clkPS         |   0.000|
+dac_rst1    |         9.315(R)|      SLOW  |         3.745(R)|      FAST  |clk_in             |   0.000|
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+
 Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.815|         |         |         |
+clk            |    4.797|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Fri Jun 09 17:27:44 2017 
+Analysis completed Tue Jun 20 17:33:42 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 766 MB
+Peak Memory Usage: 801 MB
 
 
 
