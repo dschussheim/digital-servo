@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Tue Jun 20 12:20:06 2017
+#Wed Jun 21 11:25:38 2017
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -451,7 +451,7 @@ L13,,,VCCINT,,,,,,,,1.0,,,,
 L14,,,GND,,,,,,,,,,,,
 L15,,,VCCINT,,,,,,,,1.0,,,,
 L16,,,GND,,,,,,,,,,,,
-L17,,IOB33M,IO_L24P_T3_RS1_15,UNUSED,,15,,,,,,,,,
+L17,sdo_out,IOB33,IO_L24P_T3_RS1_15,TRISTATE,LVCMOS25,15,12,SLOW,,,,LOCATED,NO,NONE,
 L18,,IOB33S,IO_L23N_T3_FWE_B_15,UNUSED,,15,,,,,,,,,
 L19,D0_out_p<2>,IOB33M,IO_L21P_T3_DQS_15,OUTPUT,LVDS_25,15,,,,,,LOCATED,YES,NONE,
 L20,D0_out_n<2>,IOB33S,IO_L21N_T3_DQS_A18_15,OUTPUT,LVDS_25,15,,,,,,LOCATED,NO,NONE,

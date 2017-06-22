@@ -5,7 +5,7 @@ C:\Xilinx\14.7\ISE_DS\ISE\.
    "ADC_test" is an NCD, version 3.2, device xc7k160t, package fbg676, speed -1
 Opened constraints file ADC_test.pcf.
 
-Tue Jun 20 17:33:54 2017
+Wed Jun 21 10:21:48 2017
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:3 -g CclkPin:PullUp -g M0Pin:PullUp -g M1Pin:PullUp -g M2Pin:PullUp -g ProgPin:PullUp -g InitPin:Pullup -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g Disable_JTAG:No -g UnusedPin:PullNone -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:Disable -g ConfigFallback:Disable -g BPI_page_size:1 -g BPI_sync_mode:Disable -g SPI_32bit_addr:No -g SPI_buswidth:1 -g SPI_Fall_Edge:No -g OverTempPowerDown:Disable -g USR_ACCESS:None -g JTAG_XADC:Enable -g DCIUpdateMode:AsRequired -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g Match_cycle:Auto -g Security:None -g ICAP_select:Auto -g DonePipe:Yes -g Encrypt:No ADC_test.ncd 
 
@@ -156,7 +156,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   ADC1/LTC2195_SPI_inst/trigger_in_data_in[5]_AND_27_o is sourced by a
+   ADC2/LTC2195_SPI_inst/trigger_in_data_in[5]_AND_27_o is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   ADC2/LTC2195_SPI_inst/trigger_in_data_in[7]_AND_23_o is sourced by a
    combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -164,43 +168,14 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   ADC1/LTC2195_SPI_inst/trigger_in_data_in[7]_AND_23_o is sourced by a
-   combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   ADC1/LTC2195_SPI_inst/trigger_in1 is sourced by a combinatorial pin. This is
-   not good design practice. Use the CE pin to control the loading of data into
-   the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
    AD9783_inst1/AD_9783_SPI_inst/trigger_in1 is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   ADC1/LTC2195_SPI_inst/trigger_in_data_in[9]_AND_19_o is sourced by a
+   ADC2/LTC2195_SPI_inst/trigger_in_data_in[9]_AND_19_o is sourced by a
    combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:2455 - Unsupported clocking topology used for ISERDESE2
-   <ADC1/pins[0].ISERDESE2_inst>. This can result in corrupted data. The CLK /
-   CLKDIV pins should be driven by the same source through the same buffer type
-   or by a BUFIO / BUFR combination in order to have a proper phase
-   relationship. Please refer to the Select I/O User Guide for supported
-   clocking topologies of the chosen INTERFACE_TYPE mode.
-WARNING:PhysDesignRules:2455 - Unsupported clocking topology used for ISERDESE2
-   <ADC2/pins[0].ISERDESE2_inst>. This can result in corrupted data. The CLK /
-   CLKDIV pins should be driven by the same source through the same buffer type
-   or by a BUFIO / BUFR combination in order to have a proper phase
-   relationship. Please refer to the Select I/O User Guide for supported
-   clocking topologies of the chosen INTERFACE_TYPE mode.
-WARNING:PhysDesignRules:2455 - Unsupported clocking topology used for ISERDESE2
-   <ADC2/pins[1].ISERDESE2_inst>. This can result in corrupted data. The CLK /
-   CLKDIV pins should be driven by the same source through the same buffer type
-   or by a BUFIO / BUFR combination in order to have a proper phase
-   relationship. Please refer to the Select I/O User Guide for supported
-   clocking topologies of the chosen INTERFACE_TYPE mode.
-WARNING:PhysDesignRules:2240 - The MMCME2_ADV block <ADC1/MMCME2_ADV_inst> has
-   CLKOUT pins that do not drive the same kind of BUFFER load. Routing from the
-   different buffer types will not be phase aligned. 
-DRC detected 0 errors and 11 warnings.  Please see the previously displayed
+DRC detected 0 errors and 6 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "adc_test.bit".

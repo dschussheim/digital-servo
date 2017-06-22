@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Jun 20 12:19:37 2017
+// Written by: Map P.20131013 on Wed Jun 21 11:25:11 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -66,6 +66,7 @@ COMP "D1_out_n<7>" LOCATE = SITE "A14" LEVEL 1;
 COMP "D1_out_n<8>" LOCATE = SITE "F12" LEVEL 1;
 COMP "D1_out_n<5>" LOCATE = SITE "A10" LEVEL 1;
 COMP "D1_out_n<6>" LOCATE = SITE "B11" LEVEL 1;
+COMP "sdo_out" LOCATE = SITE "L17" LEVEL 1;
 COMP "D0_out_p<15>" LOCATE = SITE "C17" LEVEL 1;
 COMP "D0_out_p<11>" LOCATE = SITE "E15" LEVEL 1;
 COMP "D0_out_p<12>" LOCATE = SITE "H16" LEVEL 1;

@@ -17,7 +17,7 @@
 <msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">AD9783_inst1/AD_9783_SPI_inst/trigger_in_data_in[8]_AND_18_o</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="2240" delta="new" >The MMCME2_ADV block &lt;<arg fmt="%s" index="1">AD9783_inst1/MMCME2_BASE_inst</arg>&gt; has CLKOUT pins that do not drive the same kind of BUFFER load. Routing from the different buffer types will not be phase aligned. 
+<msg type="warning" file="PhysDesignRules" num="2240" delta="old" >The MMCME2_ADV block &lt;<arg fmt="%s" index="1">AD9783_inst1/MMCME2_BASE_inst</arg>&gt; has CLKOUT pins that do not drive the same kind of BUFFER load. Routing from the different buffer types will not be phase aligned. 
 </msg>
 
 </messages>

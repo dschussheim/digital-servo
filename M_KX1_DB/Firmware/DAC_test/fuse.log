@@ -1,0 +1,31 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783_TB_isim_beh.exe -prj C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783_TB_beh.prj work.AD9783_TB work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/SPI.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783_TB.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783_TB.v" Line 51: Port clk_out is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783.v" Line 62: Port CLKFBOUTB is not connected to this instance
+Completed static elaboration
+Compiling module MMCME2_ADV(BANDWIDTH="OPTIMIZED"...
+Compiling module MMCME2_BASE(CLKFBOUT_MULT_F=8.0,...
+Compiling module BUFG
+Compiling module ODDR_copy1
+Compiling module OBUFDS_copy1
+WARNING:HDLCompiler:1007 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/SPI.v" Line 133: Element index 2 into spi_sdi_in is out of bounds
+WARNING:HDLCompiler:1007 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/SPI.v" Line 134: Element index 1 into spi_sdi_in is out of bounds
+Compiling module SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module AD9783
+Compiling module AD9783_TB
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\AD9783_TB_isim_beh.exe.sim\libPortability.dll".
+Compiled 11 Verilog Units
+Built simulation executable C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/AD9783_TB_isim_beh.exe
+Fuse Memory Usage: 45344 KB
+Fuse CPU Usage: 499 ms

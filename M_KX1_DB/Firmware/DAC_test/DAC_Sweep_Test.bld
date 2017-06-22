@@ -29,7 +29,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 255028 kilobytes
+Total memory usage is 259148 kilobytes
 
 Writing NGD file "DAC_Sweep_Test.ngd" ...
 Total REAL time to NGDBUILD completion:  6 sec

@@ -44,7 +44,7 @@ module DAC_Sweep_Test(
 	output	wire				sck,
 	input		wire				sdo_in,
 	
-//	output	wire				sdo_out,
+	output	wire				sdo_out,
 	
 	output	reg				rst_led,
 	
@@ -92,7 +92,7 @@ IBUF #(
 .O(sdo), 	// Buffer output
 .I(sdo_in) 	// Buffer input (connect directly to top-level port)
 );
-/*
+
 // IOBUF: Single-ended Bi-directional Buffer
 IOBUF #(
 	.DRIVE(12), 				// Specify the output drive strength
@@ -105,7 +105,7 @@ IOBUF #(
 	.I(sdo), 		// Buffer input
 	.T(1'b0) 		// 3-state enable input, high=input, low=output
 );
-*/
+
 wire clk_in, DIVclk;
 
 //Clock input from FPGA module.

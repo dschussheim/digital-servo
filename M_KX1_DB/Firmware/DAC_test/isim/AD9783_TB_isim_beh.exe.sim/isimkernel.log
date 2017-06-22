@@ -1,0 +1,29 @@
+Command line:
+   AD9783_TB_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50336
+
+Wed Jun 21 11:51:19 2017
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 850.588 Meg
+
+ Total Signals          : 521
+ Total Nets             : 671
+ Total Signal Drivers   : 489
+ Total Blocks           : 56
+ Total Primitive Blocks : 42
+ Total Processes        : 783
+ Total Traceable Variables  : 864
+ Total Scalar Nets and Variables : 18703
+Total Line Count : 3610
+
+ Total Simulation Time: 1.21875 sec
+
+ Current Memory Usage: 693.301 Meg
+
+Wed Jun 21 11:52:32 2017
+

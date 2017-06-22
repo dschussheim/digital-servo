@@ -177,8 +177,8 @@ DCI1_out_n  |         7.719(R)|      SLOW  |         3.230(R)|      FAST  |AD978
             |         7.719(F)|      SLOW  |         3.230(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
 DCI1_out_p  |         7.719(R)|      SLOW  |         3.230(R)|      FAST  |AD9783_inst1/clkD  |   0.000|
             |         7.719(F)|      SLOW  |         3.230(F)|      FAST  |AD9783_inst1/clkD  |   0.000|
-rst0        |         9.089(R)|      SLOW  |         3.656(R)|      FAST  |clk_in_BUFG        |   0.000|
-rst1        |         9.048(R)|      SLOW  |         3.633(R)|      FAST  |clk_in_BUFG        |   0.000|
+rst0        |         9.303(R)|      SLOW  |         3.756(R)|      FAST  |clk_in_BUFG        |   0.000|
+rst1        |         9.356(R)|      SLOW  |         3.791(R)|      FAST  |clk_in_BUFG        |   0.000|
 ------------+-----------------+------------+-----------------+------------+-------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -186,18 +186,25 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.096|         |         |         |
+clk            |    3.113|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+sdo_in         |sdo_out        |    7.696|
+---------------+---------------+---------+
 
-Analysis completed Tue Jun 20 12:20:23 2017 
+
+Analysis completed Wed Jun 21 11:25:55 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 798 MB
+Peak Memory Usage: 802 MB
 
 
 

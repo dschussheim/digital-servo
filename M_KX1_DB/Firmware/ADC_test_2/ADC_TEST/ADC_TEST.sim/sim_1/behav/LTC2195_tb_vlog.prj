@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../../ADC_test.v" --include "../../../../"
+verilog xil_defaultlib  "../../../../LTC2195.v" --include "../../../../"
+verilog xil_defaultlib  "../../../../SPI.v" --include "../../../../"
+verilog xil_defaultlib  "../../../../../DAC_test/clk_div.v" --include "../../../../"
+verilog xil_defaultlib  "../../../../AD9783.v" --include "../../../../"
+verilog xil_defaultlib  "../../../../deserializer.v" --include "../../../../"
+verilog xil_defaultlib  "../../../../deser.v" --include "../../../../"
+verilog xil_defaultlib  "../../../../LTC2195_tb.v" --include "../../../../"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

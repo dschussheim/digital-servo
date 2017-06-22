@@ -82,7 +82,8 @@ module AD9783_TB;
 		DAC1_in = 0;
       
 		
-		#500
+		#500	rst_in = 1;
+		#25	rst_in = 0;
 		
 		// Add stimulus here
 		#100	DAC0_in = 16'b1111111111111111;

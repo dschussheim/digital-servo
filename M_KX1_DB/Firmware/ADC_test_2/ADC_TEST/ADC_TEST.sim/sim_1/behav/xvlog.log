@@ -1,0 +1,26 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ADC_test
+INFO: [VRFC 10-2458] undeclared symbol clk_int, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.v:115]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2458] undeclared symbol clkFB, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/LTC2195.v:256]
+INFO: [VRFC 10-2458] undeclared symbol clkPS, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/LTC2195.v:275]
+INFO: [VRFC 10-2458] undeclared symbol clk_div, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/LTC2195.v:501]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/AD9783.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AD9783
+INFO: [VRFC 10-2458] undeclared symbol clkD, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/AD9783.v:101]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module deserializer
+WARNING: [VRFC 10-756] identifier DATA_WIDTH is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer.v:22]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deser.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module deser
+WARNING: [VRFC 10-159] /* in comment [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deser.v:41]
+ERROR: [VRFC 10-385] block comment was not closed [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deser.v:43]
+ERROR: [VRFC 10-1491] unexpected EOF [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deser.v:43]

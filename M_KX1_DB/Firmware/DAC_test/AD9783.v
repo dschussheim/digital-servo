@@ -204,7 +204,7 @@ wire			spi_ready;
 
 SPI #(
 	.TRANSFER_SIZE(16),
-	.SPI_CLK_DIV(8'h05) // run the SPI clock at 10 MHz
+	.SPI_CLK_DIV(8'h0A) // run the SPI clock at 10 MHz
 )
 AD_9783_SPI_inst(
 	.clk_in(clk_in),
@@ -260,7 +260,7 @@ function [3:0] next_state;
 				else
 					next_state = IDLE;
 			RST1:
-				if (counter == 12'b1)
+				if (counter == 8'b1)
 					next_state = RST2;
 				else
 					next_state = RST1;

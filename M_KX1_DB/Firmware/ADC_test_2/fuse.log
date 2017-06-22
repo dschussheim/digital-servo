@@ -1,26 +1,17 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/LTC2195_tb_isim_beh.exe -prj C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/LTC2195_tb_beh.prj work.LTC2195_tb work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer_tb_isim_beh.exe -prj C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer_tb_beh.prj work.deserializer_tb work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/SPI.v" into library work
-Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195.v" into library work
-Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195_tb.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer.v" into library work
+Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer_tb.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195.v" Line 247: Port CLKFBOUTB is not connected to this instance
-WARNING:HDLCompiler:1016 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195.v" Line 607: Port O is not connected to this instance
-WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195_tb.v" Line 70: Size mismatch in connection of port <D0_in_p>. Formal port size is 2-bit while actual signal size is 4-bit.
-WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195_tb.v" Line 71: Size mismatch in connection of port <D0_in_n>. Formal port size is 2-bit while actual signal size is 4-bit.
-WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195_tb.v" Line 72: Size mismatch in connection of port <D1_in_p>. Formal port size is 2-bit while actual signal size is 4-bit.
-WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/LTC2195_tb.v" Line 73: Size mismatch in connection of port <D1_in_n>. Formal port size is 2-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer_tb.v" Line 38: Size mismatch in connection of port <Q>. Formal port size is 9-bit while actual signal size is 8-bit.
 Completed static elaboration
-Compiling module MMCME2_ADV(CLKOUT0_USE_FINE_PS="...
-Compiling module ODDR(SRTYPE="ASYNC")
-Compiling module OBUFDS(IOSTANDARD="LVDS_25")
-Compiling module IBUFDS(IOSTANDARD="LVDS_25")
+Compiling module MMCME2_ADV(BANDWIDTH="OPTIMIZED"...
+Compiling module MMCME2_BASE(CLKFBOUT_MULT_F=8.0,...
 Compiling module BUFG
-Compiling module IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
 Compiling module xil_iserdese2_vl_mod15
 Compiling module xil_iserdese2_vl_mod21
 Compiling module xil_iserdese2_vl_mod5
@@ -57,19 +48,16 @@ Compiling module xil_iserdese2_vl_mod23
 Compiling module xil_iserdese2_vl_mod28
 Compiling module xil_iserdese2_vl_mod8
 Compiling module vioi_inlogic_shell
-Compiling module vioi_inlogic_ship(DATA_RATE="SDR...
-Compiling module B_ISERDESE2(DATA_RATE="SDR",DATA...
-Compiling module ISERDESE2(DATA_RATE="SDR",DATA_W...
-WARNING:HDLCompiler:1007 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/SPI.v" Line 133: Element index 2 into spi_sdi_in is out of bounds
-WARNING:HDLCompiler:1007 - "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/../ADC_test/SPI.v" Line 134: Element index 1 into spi_sdi_in is out of bounds
-Compiling module SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
-Compiling module LTC2195
-Compiling module LTC2195_tb
+Compiling module vioi_inlogic_ship(DATA_RATE="DDR...
+Compiling module B_ISERDESE2(DATA_RATE="DDR",DATA...
+Compiling module ISERDESE2(DATA_WIDTH=8,INIT_Q2=1...
+Compiling module deserializer
+Compiling module deserializer_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 31 sub-compilation(s) to finish...
-WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\LTC2195_tb_isim_beh.exe.sim\libPortability.dll".
-Compiled 49 Verilog Units
-Built simulation executable C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/LTC2195_tb_isim_beh.exe
-Fuse Memory Usage: 46940 KB
-Fuse CPU Usage: 1546 ms
+Waiting for 24 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\deserializer_tb_isim_beh.exe.sim\libPortability.dll".
+Compiled 45 Verilog Units
+Built simulation executable C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/deserializer_tb_isim_beh.exe
+Fuse Memory Usage: 46660 KB
+Fuse CPU Usage: 1406 ms

@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-N77OJE5::  Tue Jun 20 17:32:58 2017
+DESKTOP-N77OJE5::  Wed Jun 21 10:20:57 2017
 
 par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd
 ADC_test.pcf 
@@ -27,29 +27,29 @@ Device speed data version:  "PRODUCTION 1.10 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   207 out of 202,800    1%
-    Number used as Flip Flops:                 200
-    Number used as Latches:                      7
+  Number of Slice Registers:                   183 out of 202,800    1%
+    Number used as Flip Flops:                 177
+    Number used as Latches:                      6
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        228 out of 101,400    1%
-    Number used as logic:                      223 out of 101,400    1%
-      Number using O6 output only:             111
+  Number of Slice LUTs:                        197 out of 101,400    1%
+    Number used as logic:                      195 out of 101,400    1%
+      Number using O6 output only:              99
       Number using O5 output only:              36
-      Number using O5 and O6:                   76
+      Number using O5 and O6:                   60
       Number used as ROM:                        0
     Number used as Memory:                       0 out of  35,000    0%
-    Number used exclusively as route-thrus:      5
-      Number with same-slice register load:      3
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
       Number with same-slice carry load:         2
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   107 out of  25,350    1%
-  Number of LUT Flip Flop pairs used:          275
-    Number with an unused Flip Flop:            78 out of     275   28%
-    Number with an unused LUT:                  47 out of     275   17%
-    Number of fully used LUT-FF pairs:         150 out of     275   54%
+  Number of occupied Slices:                   102 out of  25,350    1%
+  Number of LUT Flip Flop pairs used:          247
+    Number with an unused Flip Flop:            69 out of     247   27%
+    Number with an unused LUT:                  50 out of     247   20%
+    Number of fully used LUT-FF pairs:         128 out of     247   51%
     Number of slice register sites lost
       to control set restrictions:               0 out of 202,800    0%
 
@@ -62,26 +62,26 @@ Slice Logic Distribution:
   over-mapped for a non-BRAM resource or if placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        58 out of     400   14%
-    Number of LOCed IOBs:                       58 out of      58  100%
-    IOB Flip Flops:                             21
+  Number of bonded IOBs:                        54 out of     400   13%
+    Number of LOCed IOBs:                       54 out of      54  100%
+    IOB Flip Flops:                             20
     IOB Master Pads:                            19
     IOB Slave Pads:                             19
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                  0 out of     325    0%
   Number of RAMB18E1/FIFO18E1s:                  0 out of     650    0%
-  Number of BUFG/BUFGCTRLs:                      7 out of      32   21%
-    Number used as BUFGs:                        7
+  Number of BUFG/BUFGCTRLs:                      8 out of      32   25%
+    Number used as BUFGs:                        8
     Number used as BUFGCTRLs:                    0
   Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     400    0%
-  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        3 out of     400    1%
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        2 out of     400    1%
     Number used as ILOGICE2s:                    0
   Number used as  ILOGICE3s:                     0
-    Number used as ISERDESE2s:                   3
+    Number used as ISERDESE2s:                   2
   Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0 out of     150    0%
-  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       21 out of     400    5%
-    Number used as OLOGICE2s:                   21
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       20 out of     400    5%
+    Number used as OLOGICE2s:                   20
     Number used as OLOGICE3s:                    0
     Number used as OSERDESE2s:                   0
   Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      32    0%
@@ -100,7 +100,7 @@ Specific Feature Utilization:
   Number of ICAPs:                               0 out of       2    0%
   Number of IDELAYCTRLs:                         0 out of       8    0%
   Number of IN_FIFOs:                            0 out of      32    0%
-  Number of MMCME2_ADVs:                         3 out of       8   37%
+  Number of MMCME2_ADVs:                         2 out of       8   25%
   Number of OUT_FIFOs:                           0 out of      32    0%
   Number of PCIE_2_1s:                           0 out of       1    0%
   Number of PHASER_REFs:                         0 out of       8    0%
@@ -113,33 +113,33 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 14 secs 
-Finished initial Timing Analysis.  REAL time: 14 secs 
+Starting initial Timing Analysis.  REAL time: 13 secs 
+Finished initial Timing Analysis.  REAL time: 13 secs 
 
 Starting Router
 
 
-Phase  1  : 1326 unrouted;      REAL time: 17 secs 
+Phase  1  : 1133 unrouted;      REAL time: 15 secs 
 
-Phase  2  : 962 unrouted;      REAL time: 17 secs 
+Phase  2  : 829 unrouted;      REAL time: 16 secs 
 
-Phase  3  : 171 unrouted;      REAL time: 18 secs 
+Phase  3  : 94 unrouted;      REAL time: 16 secs 
 
-Phase  4  : 171 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  4  : 94 unrouted; (Par is working to improve performance)     REAL time: 22 secs 
 
 Updating file: ADC_test.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
-Total REAL time to Router completion: 26 secs 
-Total CPU time to Router completion: 26 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+Total REAL time to Router completion: 23 secs 
+Total CPU time to Router completion: 23 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -159,17 +159,17 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     4.797ns|     N/A|           0
-  _in                                       | HOLD        |     0.118ns|            |       0|           0
+  Autotimespec constraint for clock net AD9 | SETUP       |         N/A|     2.073ns|     N/A|           0
+  783_inst1/AD_9783_SPI_inst/spi_clk_BUFG   | HOLD        |     0.182ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net AD9 | SETUP       |         N/A|     1.995ns|     N/A|           0
-  783_inst1/AD_9783_SPI_inst/spi_clk_BUFG   | HOLD        |     0.153ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     1.872ns|     N/A|           0
+  _in                                       | HOLD        |     0.191ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net AD9 | SETUP       |         N/A|     3.096ns|     N/A|           0
-  783_inst1/clkD                            | HOLD        |     0.545ns|            |       0|           0
+  Autotimespec constraint for clock net AD9 | SETUP       |         N/A|     2.921ns|     N/A|           0
+  783_inst1/clkD                            | HOLD        |     0.371ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net rst | SETUP       |         N/A|     2.572ns|     N/A|           0
-  LEDclk/div_clk_BUFG                       | HOLD        |     0.441ns|            |       0|           0
+  Autotimespec constraint for clock net rst | SETUP       |         N/A|     2.321ns|     N/A|           0
+  LEDclk/div_clk_BUFG                       | HOLD        |     0.419ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -183,15 +183,14 @@ Derived Constraints for clk_in
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|clk_in                         |     10.474ns|      4.797ns|      2.661ns|            0|            0|          349|            0|
-| ADC1/clkPSf                   |      5.038ns|      1.249ns|          N/A|            0|            0|            0|            0|
-| ADC1/clk8xInt                 |      6.298ns|      1.600ns|          N/A|            0|            0|            0|            0|
-| AD9783_inst1/clkDLYi          |     50.382ns|      1.600ns|          N/A|            0|            0|            0|            0|
-| AD9783_inst1/clkFB            |      5.038ns|      1.249ns|          N/A|            0|            0|            0|            0|
-| AD9783_inst1/clkDi            |     50.382ns|      1.600ns|          N/A|            0|            0|            0|            0|
-| ADC2/clk8xInt                 |      6.298ns|      1.600ns|          N/A|            0|            0|            0|            0|
-| ADC2/clkPSf                   |      5.038ns|      1.249ns|          N/A|            0|            0|            0|            0|
-| ADC1/clkPS                    |     50.382ns|      1.249ns|          N/A|            0|            0|            0|            0|
+|clk_in                         |      9.682ns|      1.872ns|     55.406ns|            0|            0|          291|            0|
+| AD9783_inst1/clkDLYi          |      2.237ns|      1.600ns|          N/A|            0|            0|            0|            0|
+| AD9783_inst1/clkFB            |      2.237ns|      1.249ns|          N/A|            0|            0|            0|            0|
+| AD9783_inst1/clkDi            |      2.237ns|      1.600ns|          N/A|            0|            0|            0|            0|
+| ADC2/clkDivInt                |      2.237ns|      1.600ns|          N/A|            0|            0|            0|            0|
+| ADC2/clk8xInt                 |      0.280ns|      1.600ns|          N/A|            0|            0|            0|            0|
+| ADC2/clkPSf                   |      2.237ns|      1.249ns|          N/A|            0|            0|            0|            0|
+| ADC2/clkPSInt                 |      2.237ns|      1.600ns|          N/A|            0|            0|            0|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -206,10 +205,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 27 secs 
-Total CPU time to PAR completion: 27 secs 
+Total REAL time to PAR completion: 24 secs 
+Total CPU time to PAR completion: 24 secs 
 
-Peak Memory Usage:  835 MB
+Peak Memory Usage:  832 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

@@ -85,3 +85,54 @@ map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
 trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ADC_test.twx ADC_test.ncd -o ADC_test.twr ADC_test.pcf -ucf ADC_test.ucf 
 bitgen -intstyle ise -f ADC_test.ut ADC_test.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ADC_test.twx ADC_test.ncd -o ADC_test.twr ADC_test.pcf -ucf ADC_test.ucf 
+bitgen -intstyle ise -f ADC_test.ut ADC_test.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ADC_test.twx ADC_test.ncd -o ADC_test.twr ADC_test.pcf -ucf ADC_test.ucf 
+bitgen -intstyle ise -f ADC_test.ut ADC_test.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ADC_test.twx ADC_test.ncd -o ADC_test.twr ADC_test.pcf -ucf ADC_test.ucf 
+bitgen -intstyle ise -f ADC_test.ut ADC_test.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ADC_test.twx ADC_test.ncd -o ADC_test.twr ADC_test.pcf -ucf ADC_test.ucf 
+bitgen -intstyle ise -f ADC_test.ut ADC_test.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ADC_test.twx ADC_test.ncd -o ADC_test.twr ADC_test.pcf -ucf ADC_test.ucf 
+bitgen -intstyle ise -f ADC_test.ut ADC_test.ncd 
+xst -intstyle ise -ifn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.xst" -ofn "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_test_2/ADC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_test.ucf -p xc7k160t-fbg676-1 ADC_test.ngc ADC_test.ngd  
+map -intstyle ise -p xc7k160t-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ADC_test_map.ncd ADC_test.ngd ADC_test.pcf 
+par -w -intstyle ise -ol high -mt off ADC_test_map.ncd ADC_test.ncd ADC_test.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ADC_test.twx ADC_test.ncd -o ADC_test.twr ADC_test.pcf -ucf ADC_test.ucf 
+bitgen -intstyle ise -f ADC_test.ut ADC_test.ncd 
