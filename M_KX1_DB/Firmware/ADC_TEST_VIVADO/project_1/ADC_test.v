@@ -21,52 +21,52 @@
 module ADC_test(
    
 	//100 MHz clock
-	input		wire				clk,
+	input	wire			clk,
 	//led to tell you when reset happens
 	output	reg				rst_led,
    
 	//\\\\\\\\\ADCs//////////\\
 	
 	//ADC SPI IOs
-   output 	wire				adc_sck,
-   output 	wire				adc_sdi,
-//	output	wire				adc_scs1,
-	output	wire				adc_scs2,
-   input 	wire				adc_sdo,
+   output 	wire			adc_sck,
+   output 	wire			adc_sdi,
+//	output	wire			adc_scs1,
+	output	wire			adc_scs2,
+   input 	wire			adc_sdo,
 	
 	//Clock input for ADCs
-	output 	wire				ENC_p,
-   output 	wire				ENC_n,
+	output 	wire			ENC_p,
+   output 	wire			ENC_n,
 	/*
 	//First ADC data to FPGA
 	//Data clock
-	input 	wire				adc_DCO1_p,
-   input 	wire				adc_DCO1_n,
+	input 	wire			adc_DCO1_p,
+   input 	wire			adc_DCO1_n,
 	//Frame "enclosing" different sets of data
-   input 	wire				FR1_p,
-   input 	wire				FR1_n,
+   input 	wire			FR1_p,
+   input 	wire			FR1_n,
 	//Data streams
 	input 	wire	[1:0] 	D10_p,
    input 	wire	[1:0] 	D10_n,
    input 	wire	[1:0] 	D11_p,
    input 	wire	[1:0] 	D11_n,
    //Output to send MSB's to leds
-	output 	wire	 			ADC1_out,
+	output 	wire	 		ADC1_out,
 	*/
 	//Second ADC data to FPGA
 	//Data clock
-	input 	wire				adc_DCO2_p,
-   input 	wire				adc_DCO2_n,
+	input 	wire			adc_DCO2_p,
+   input 	wire			adc_DCO2_n,
 	//Frame "enclosing" different sets of data
-   input 	wire				FR2_p,
-   input 	wire				FR2_n,
+   input 	wire			FR2_p,
+   input 	wire			FR2_n,
    //Data streams
 	input 	wire	[1:0] 	D20_p,
    input 	wire	[1:0] 	D20_n,
    input 	wire	[1:0] 	D21_p,
    input 	wire	[1:0] 	D21_n,
    //Output to send MSB's to leds
-	output 	wire			 	ADC2_out,
+	output 	wire			ADC2_out,
 
 	//\\\\\\\\\\DACs//////////\\
 
@@ -75,30 +75,30 @@ module ADC_test(
 //	output	wire	[15:0]	D0_out_p,
 //	output	wire	[15:0]	D0_out_n,
 
-	output	wire				CLK_out_p,
-	output	wire				CLK_out_n,
+	output	wire			CLK_out_p,
+	output	wire			CLK_out_n,
 
-	output	wire				DCI1_out_p,
-	output	wire				DCI1_out_n,
-//	output	wire				DCI0_out_p,
-//	output	wire				DCI0_out_n,
+	output	wire			DCI1_out_p,
+	output	wire			DCI1_out_n,
+//	output	wire			DCI0_out_p,
+//	output	wire			DCI0_out_n,
 
-	output 	wire				dac_csb1,
-//	output	wire				dac_csb0,
-	output 	wire				dac_rst1,
-//	output 	wire				dac_rst0,
-	output	wire				dac_sdi,
-	output	wire				dac_sck,
-	input		wire				dac_sdo,
+	output 	wire			dac_csb1,
+//	output	wire			dac_csb0,
+	output 	wire			dac_rst1,
+//	output 	wire			dac_rst0,
+	output	wire			dac_sdi,
+	output	wire			dac_sck,
+	input   wire			dac_sdo,
 	
-//	output	wire				sdo_out,
+//	output	wire			sdo_out,
 		
-//	output	wire				DCO1_in,
-	input		wire				DCO1_p,
-	input		wire				DCO1_n,
-//	output	wire				DCO0_in,
-	input		wire				DCO0_p,
-	input		wire				DCO0_n
+//	output	wire			DCO1_in,
+	input		wire		DCO1_p,
+	input		wire		DCO1_n
+//	output	wire			DCO0_in,
+//	input		wire		DCO0_p,
+//	input		wire		DCO0_n
 	 	 
 		 );
 

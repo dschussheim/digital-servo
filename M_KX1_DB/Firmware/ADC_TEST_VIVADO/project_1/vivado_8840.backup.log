@@ -1,0 +1,1695 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Jun 23 09:47:07 2017
+# Process ID: 8840
+# Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8452 C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_TEST_VIVADO\project_1\project_1.xpr
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/vivado.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1'
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+update_compile_order -fileset sources_1
+set_property top LTC2195_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2458] undeclared symbol clkFB, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:256]
+INFO: [VRFC 10-2458] undeclared symbol clkPS, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:275]
+INFO: [VRFC 10-2458] undeclared symbol clk_div, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:501]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_WIDTH=8,INTERFACE...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 09:48:39 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 09:48:39 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 820.914 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+DRC  Warning : The combination of INTERFACE_TYPE, DATA_RATE and DATA_WIDTH values on instance LTC2195_tb.uut.pins[0].ISERDESE2_inst.OVERSAMPLE_DDR_SDR_msg is not recommended.
+
+The current settings are : INTERFACE_TYPE = OVERSAMPLE, DATA_RATE = DDR and DATA_WIDTH =           8
+
+The recommended combinations of values are :
+
+OVERSAMPLE SDR 4
+
+OVERSAMPLE DDR 4
+
+DRC  Warning : The combination of INTERFACE_TYPE, DATA_RATE and DATA_WIDTH values on instance LTC2195_tb.uut.pins[1].ISERDESE2_inst.OVERSAMPLE_DDR_SDR_msg is not recommended.
+
+The current settings are : INTERFACE_TYPE = OVERSAMPLE, DATA_RATE = DDR and DATA_WIDTH =           8
+
+The recommended combinations of values are :
+
+OVERSAMPLE SDR 4
+
+OVERSAMPLE DDR 4
+
+DRC  Warning : The combination of INTERFACE_TYPE, DATA_RATE and DATA_WIDTH values on instance LTC2195_tb.uut.pins[2].ISERDESE2_inst.OVERSAMPLE_DDR_SDR_msg is not recommended.
+
+The current settings are : INTERFACE_TYPE = OVERSAMPLE, DATA_RATE = DDR and DATA_WIDTH =           8
+
+The recommended combinations of values are :
+
+OVERSAMPLE SDR 4
+
+OVERSAMPLE DDR 4
+
+DRC  Warning : The combination of INTERFACE_TYPE, DATA_RATE and DATA_WIDTH values on instance LTC2195_tb.uut.pins[3].ISERDESE2_inst.OVERSAMPLE_DDR_SDR_msg is not recommended.
+
+The current settings are : INTERFACE_TYPE = OVERSAMPLE, DATA_RATE = DDR and DATA_WIDTH =           8
+
+The recommended combinations of values are :
+
+OVERSAMPLE SDR 4
+
+OVERSAMPLE DDR 4
+
+DRC  Warning : The combination of INTERFACE_TYPE, DATA_RATE and DATA_WIDTH values on instance LTC2195_tb.uut.pins[4].ISERDESE2_inst.OVERSAMPLE_DDR_SDR_msg is not recommended.
+
+The current settings are : INTERFACE_TYPE = OVERSAMPLE, DATA_RATE = DDR and DATA_WIDTH =           8
+
+The recommended combinations of values are :
+
+OVERSAMPLE SDR 4
+
+OVERSAMPLE DDR 4
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 851.449 ; gain = 30.535
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+WARNING: [VRFC 10-2369] data object clk_div is already declared [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:351]
+ERROR: [VRFC 10-1350] second declaration of clk_div ignored [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:351]
+ERROR: [VRFC 10-1040] module LTC2195 ignored due to previous errors [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:17]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:14:03 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:14:03 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:15:31 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:15:31 2017...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+add_wave {{/LTC2195_tb/uut/clk}} {{/LTC2195_tb/uut/clk_div}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:25:42 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:25:42 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:31:51 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:31:51 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:34:20 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:34:20 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 966.867 ; gain = 0.000
+add_wave {{/LTC2195_tb/uut/clk}} {{/LTC2195_tb/uut/clk_div}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:43:23 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:43:23 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:51:44 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:51:44 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:54:24 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:54:24 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 10:59:16 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 10:59:16 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 11:01:19 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 11:01:19 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 11:06:31 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 11:06:31 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2458] undeclared symbol bit_slip, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:489]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 13:57:27 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 13:57:27 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 14:02:14 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 14:02:14 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 14:04:28 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 14:04:28 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+add_wave {{/LTC2195_tb/uut/BS_state}} 
+add_wave {{/LTC2195_tb/uut/bit_slip}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 14:14:29 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 14:14:29 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 14:19:46 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 14:19:46 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+add_wave {{/LTC2195_tb/uut/check_bit}} 
+add_wave {{/LTC2195_tb/uut/bit_slip}} 
+add_wave {{/LTC2195_tb/uut/BS_state}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 14:23:42 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 14:23:42 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+ERROR: [VRFC 10-91] FR_out is not declared [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:347]
+ERROR: [VRFC 10-1040] module LTC2195 ignored due to previous errors [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:17]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LTC2195_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj LTC2195_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0d12dca64e2a48bcad2e447b14bbd6d9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195_tb_behav xil_defaultlib.LTC2195_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IOSTANDA...
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
+Compiling module xil_defaultlib.LTC2195_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195_tb_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav/xsim.dir/LTC2195_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Jun 23 14:27:15 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 23 14:27:15 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 966.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch {LTC2195_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source LTC2195_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LTC2195_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 966.867 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 23 14:28:30 2017...

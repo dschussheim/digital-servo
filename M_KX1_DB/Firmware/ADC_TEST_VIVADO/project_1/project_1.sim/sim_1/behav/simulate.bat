@@ -1,6 +1,6 @@
 @echo off
-set xv_path=D:\\xilinx\\Vivado\\2017.2\\bin
-call %xv_path%/xsim deserializer_tb_behav -key {Behavioral:sim_1:Functional:deserializer_tb} -tclbatch deserializer_tb.tcl -log simulate.log
+set xv_path=C:\\Xilinx\\Vivado\\2017.2\\bin
+call %xv_path%/xsim LTC2195_tb_behav -key {Behavioral:sim_1:Functional:LTC2195_tb} -tclbatch LTC2195_tb.tcl -log simulate.log
 if "%errorlevel%"=="0" goto SUCCESS
 if "%errorlevel%"=="1" goto END
 :END

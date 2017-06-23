@@ -1,24 +1,7 @@
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   13:38:51 06/08/2017
-// Design Name:   LTC2195
-// Module Name:   C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/LTC2195_tb.v
-// Project Name:  SuperLaserLand
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: LTC2195
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Testbench for modified LTC2195 driver. BITSLIP works fine.
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -39,7 +22,7 @@ module LTC2195_tb;
 	reg [1:0] D0_in_n;
 	reg [1:0] D1_in_p;
 	reg [1:0] D1_in_n;
-
+    
 	// Outputs
 	wire spi_scs_out;
 	wire spi_sck_out;
@@ -77,7 +60,7 @@ module LTC2195_tb;
 		.ADC0_out(ADC0_out), 
 		.ADC1_out(ADC1_out), 
 		.FR_out(FR_out)
-	);
+			);
 
 	//"Bitstream" I want to deserialize and send to FPGA.
 	parameter value = 16'b1011001011101001;
@@ -94,9 +77,9 @@ module LTC2195_tb;
 		cmd_addr_in = 0;
 		cmd_data_in = 0;
 		spi_sdi_in = 0;
-		DCO_in_p = 0;
+		DCO_in_p =1;
 		DCO_in_n = ~DCO_in_p;
-		FR_in_p = 0;
+		FR_in_p = 1;
 		FR_in_n = ~FR_in_p;
 		D0_in_p = 2'b00;
 		D0_in_n = ~D0_in_p;
@@ -104,10 +87,11 @@ module LTC2195_tb;
 		D1_in_n = ~D1_in_p;
         
 		// Add stimulus here
-//		#500	rst_in = 1;
-//		#100	rst_in = 0; //DCM SP says reset must be high for at least 3 valid clock cycles
+		#500	rst_in = 1;
+		#100	rst_in = 0; //DCM SP says reset must be high for at least 3 valid clock cycles
 
 		#500 //wait for everything to start working (MMCM/ISERDESE2)
+		//80 ns at 16'hb2e9
 		D0_in_p[0] = A[7];
 		D0_in_p[1] = B[7];
 		D0_in_n = ~D0_in_p;
@@ -163,7 +147,398 @@ module LTC2195_tb;
 		D1_in_p[0] = B[0];
 		D1_in_p[1] = A[0];
 		D1_in_n = ~D1_in_p;
-
+        #1.25
+		D0_in_p[0] = A[7];
+        D0_in_p[1] = B[7];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[7];
+        D1_in_p[1] = A[7];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[6];
+        D0_in_p[1] = B[6];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[6];
+        D1_in_p[1] = A[6];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[5];
+        D0_in_p[1] = B[5];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[5];
+        D1_in_p[1] = A[5];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[4];
+        D0_in_p[1] = B[4];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[4];
+        D1_in_p[1] = A[4];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[3];
+        D0_in_p[1] = B[3];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[3];
+        D1_in_p[1] = A[3];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[2];
+        D0_in_p[1] = B[2];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[2];
+        D1_in_p[1] = A[2];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[1];
+        D0_in_p[1] = B[1];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[1];
+        D1_in_p[1] = A[1];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[0];
+        D0_in_p[1] = B[0];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[0];
+        D1_in_p[1] = A[0];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[7];
+        D0_in_p[1] = B[7];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[7];
+        D1_in_p[1] = A[7];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[6];
+        D0_in_p[1] = B[6];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[6];
+        D1_in_p[1] = A[6];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[5];
+        D0_in_p[1] = B[5];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[5];
+        D1_in_p[1] = A[5];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[4];
+        D0_in_p[1] = B[4];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[4];
+        D1_in_p[1] = A[4];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[3];
+        D0_in_p[1] = B[3];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[3];
+        D1_in_p[1] = A[3];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[2];
+        D0_in_p[1] = B[2];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[2];
+        D1_in_p[1] = A[2];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[1];
+        D0_in_p[1] = B[1];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[1];
+        D1_in_p[1] = A[1];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[0];
+        D0_in_p[1] = B[0];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[0];
+        D1_in_p[1] = A[0];
+        D1_in_n = ~D1_in_p;        
+        #1.25
+        D0_in_p[0] = A[7];
+        D0_in_p[1] = B[7];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[7];
+        D1_in_p[1] = A[7];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[6];
+        D0_in_p[1] = B[6];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[6];
+        D1_in_p[1] = A[6];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[5];
+        D0_in_p[1] = B[5];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[5];
+        D1_in_p[1] = A[5];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[4];
+        D0_in_p[1] = B[4];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[4];
+        D1_in_p[1] = A[4];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[3];
+        D0_in_p[1] = B[3];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[3];
+        D1_in_p[1] = A[3];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[2];
+        D0_in_p[1] = B[2];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[2];
+        D1_in_p[1] = A[2];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[1];
+        D0_in_p[1] = B[1];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[1];
+        D1_in_p[1] = A[1];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[0];
+        D0_in_p[1] = B[0];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[0];
+        D1_in_p[1] = A[0];
+        D1_in_n = ~D1_in_p;        
+        #1.25
+        D0_in_p[0] = A[7];
+        D0_in_p[1] = B[7];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[7];
+        D1_in_p[1] = A[7];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[6];
+        D0_in_p[1] = B[6];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[6];
+        D1_in_p[1] = A[6];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[5];
+        D0_in_p[1] = B[5];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[5];
+        D1_in_p[1] = A[5];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[4];
+        D0_in_p[1] = B[4];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[4];
+        D1_in_p[1] = A[4];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[3];
+        D0_in_p[1] = B[3];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[3];
+        D1_in_p[1] = A[3];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[2];
+        D0_in_p[1] = B[2];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[2];
+        D1_in_p[1] = A[2];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[1];
+        D0_in_p[1] = B[1];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[1];
+        D1_in_p[1] = A[1];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[0];
+        D0_in_p[1] = B[0];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[0];
+        D1_in_p[1] = A[0];
+        D1_in_n = ~D1_in_p;        
+        #1.25
+        D0_in_p[0] = A[7];
+        D0_in_p[1] = B[7];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[7];
+        D1_in_p[1] = A[7];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[6];
+        D0_in_p[1] = B[6];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[6];
+        D1_in_p[1] = A[6];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[5];
+        D0_in_p[1] = B[5];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[5];
+        D1_in_p[1] = A[5];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[4];
+        D0_in_p[1] = B[4];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[4];
+        D1_in_p[1] = A[4];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[3];
+        D0_in_p[1] = B[3];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[3];
+        D1_in_p[1] = A[3];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[2];
+        D0_in_p[1] = B[2];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[2];
+        D1_in_p[1] = A[2];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[1];
+        D0_in_p[1] = B[1];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[1];
+        D1_in_p[1] = A[1];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[0];
+        D0_in_p[1] = B[0];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[0];
+        D1_in_p[1] = A[0];
+        D1_in_n = ~D1_in_p;        
+        #1.25
+        D0_in_p[0] = A[7];
+        D0_in_p[1] = B[7];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[7];
+        D1_in_p[1] = A[7];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[6];
+        D0_in_p[1] = B[6];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[6];
+        D1_in_p[1] = A[6];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[5];
+        D0_in_p[1] = B[5];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[5];
+        D1_in_p[1] = A[5];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[4];
+        D0_in_p[1] = B[4];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[4];
+        D1_in_p[1] = A[4];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[3];
+        D0_in_p[1] = B[3];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[3];
+        D1_in_p[1] = A[3];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[2];
+        D0_in_p[1] = B[2];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[2];
+        D1_in_p[1] = A[2];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[1];
+        D0_in_p[1] = B[1];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[1];
+        D1_in_p[1] = A[1];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[0];
+        D0_in_p[1] = B[0];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[0];
+        D1_in_p[1] = A[0];
+        D1_in_n = ~D1_in_p;        
+        #1.25
+        D0_in_p[0] = A[7];
+        D0_in_p[1] = B[7];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[7];
+        D1_in_p[1] = A[7];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[6];
+        D0_in_p[1] = B[6];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[6];
+        D1_in_p[1] = A[6];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[5];
+        D0_in_p[1] = B[5];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[5];
+        D1_in_p[1] = A[5];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[4];
+        D0_in_p[1] = B[4];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[4];
+        D1_in_p[1] = A[4];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[3];
+        D0_in_p[1] = B[3];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[3];
+        D1_in_p[1] = A[3];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[2];
+        D0_in_p[1] = B[2];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[2];
+        D1_in_p[1] = A[2];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[1];
+        D0_in_p[1] = B[1];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[1];
+        D1_in_p[1] = A[1];
+        D1_in_n = ~D1_in_p;
+        #1.25
+        D0_in_p[0] = A[0];
+        D0_in_p[1] = B[0];
+        D0_in_n = ~D0_in_p;
+        D1_in_p[0] = B[0];
+        D1_in_p[1] = A[0];
+        D1_in_n = ~D1_in_p;                                      
 	end
       
 	//Clock

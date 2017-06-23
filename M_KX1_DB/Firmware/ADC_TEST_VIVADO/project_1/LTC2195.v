@@ -15,32 +15,34 @@
 `timescale 1ps/1ps // this was in the SelectIO design
 
 module LTC2195(
-    input   wire							clk_in,
-	input   wire						   rst_in,
+    input  wire					   clk_in,
+    input  wire                    rst_in,
 
-	input   wire 			  			cmd_trig_in,
-	input   wire 			  [15:0] cmd_addr_in,
-    input   wire 			  [15:0] cmd_data_in,
+	input  wire                    cmd_trig_in,
+	input  wire 	      [15:0]   cmd_addr_in,
+    input  wire           [15:0]   cmd_data_in,
 	
-	output  wire						 	spi_scs_out,
-	output  wire						 	spi_sck_out,
-	output  wire						 	spi_sdo_out,
-	input   wire						 	spi_sdi_in,
+	output wire                    spi_scs_out,
+	output wire                    spi_sck_out,
+	output wire                    spi_sdo_out,
+	input  wire                    spi_sdi_in,
 	
-	output  wire		 					ENC_out_p,
-	output  wire							ENC_out_n,
-	input   wire		 					DCO_in_p,
-	input   wire							DCO_in_n,
-	input   wire		 					FR_in_p,
-	input   wire							FR_in_n,
-	input   wire		 			[1:0]	D0_in_p,
-	input   wire		 			[1:0]	D0_in_n,
-	input   wire		 			[1:0]	D1_in_p,
-	input   wire		 			[1:0]	D1_in_n,
-	
-	output reg	signed	  [15:0] ADC0_out,
-	output reg	signed	  [15:0] ADC1_out,
-	output reg					[7:0] FR_out
+	output wire                    ENC_out_p,
+	output wire                    ENC_out_n,
+	input  wire                    DCO_in_p,
+	input  wire                    DCO_in_n,
+	input  wire                    FR_in_p,
+	input  wire					   FR_in_n,
+	input  wire            [1:0]   D0_in_p,
+	input  wire            [1:0]   D0_in_n,
+	input  wire            [1:0]   D1_in_p,
+	input  wire            [1:0]   D1_in_n,
+		
+	//input  wire                    bit_slip,
+		
+	output reg     signed  [15:0]  ADC0_out,
+	output reg     signed  [15:0]  ADC1_out,
+	output reg             [7:0]   FR_out
 );
 
 // Parameters
@@ -56,19 +58,19 @@ wire PS_done, PS_locked;
 wire [7:0] PS_status;
 
 // State machine definitions
-localparam PS_IDLE 	= 4'h0;
-localparam PS_TRIG  	= 4'h1;
-localparam PS_DECIDE	= 4'h2;
+localparam PS_IDLE 	    = 4'h0;
+localparam PS_TRIG      = 4'h1;
+localparam PS_DECIDE    = 4'h2;
 localparam PS_UP1A  	= 4'h3;
 localparam PS_UP1B  	= 4'h4;
 localparam PS_UP1C  	= 4'h5;
-localparam PS_UP2  	= 4'h6;
-localparam PS_UP3  	= 4'h7;
-localparam PS_DOWN1A = 4'h8;
-localparam PS_DOWN1B = 4'h9;
-localparam PS_DOWN1C = 4'hA;
-localparam PS_DOWN2  = 4'hB;
-localparam PS_DOWN3  = 4'hC;
+localparam PS_UP2  	    = 4'h6;
+localparam PS_UP3  	    = 4'h7;
+localparam PS_DOWN1A    = 4'h8;
+localparam PS_DOWN1B    = 4'h9;
+localparam PS_DOWN1C    = 4'hA;
+localparam PS_DOWN2     = 4'hB;
+localparam PS_DOWN3     = 4'hC;
 
 // State
 // The next line makes synthesis happy
@@ -78,14 +80,14 @@ reg  [8:0] PS_value_f, PS_target_f;
 
 // State machine - combinatorial part
 function [3:0] PS_next_state;
-	input    [3:0] state;
-	input    [8:0] value;
-	input    [8:0] target;
-	input				trigger;
-	input	  [15:0]	address;
-	input				done;
-//	input				status;
-	input				locked;
+	input    [3:0]  state;
+	input    [8:0]  value;
+	input    [8:0]  target;
+	input		    trigger;
+	input	 [15:0] address;
+	input			done;
+//	input			status;
+	input			locked;
 	
 	begin
 		case (state)
@@ -143,7 +145,7 @@ endfunction
 always @(posedge clk_in or posedge rst_in) begin
 	if (rst_in) begin
 		PS_state_f <= PS_DECIDE;
-		PS_value_f <= 9'h100; // 256
+		PS_value_f <= 9'h100;  // 256
 		PS_target_f <= 9'h17C; // = decimal 380 = 256 + 124
 		PS_clk <= 1'b0;
 		PS_en <= 1'b0;
@@ -206,7 +208,7 @@ end
 
 ///////////////////////////////////////////////////////////////////////////////
 // LVDS ENC output
-wire	clkPS_int, clk_int, OCLK_int, clk200_int;		//clock for phase shifting of ENC, and clock for deserialization (LVDS inputs block below)
+wire	clkPS_int, clkPS, clk_int, clk_div_int, clk200_int, clkFB;		//clock for phase shifting of ENC, and clock for deserialization (LVDS inputs block below)
 
 //There are no DCMs in 7 series devices. Their functionality is encompassed by PLLs and MMCMs.
 //I instantiate an MMCM below.
@@ -219,9 +221,9 @@ MMCME2_ADV #(
 	.CLKIN1_PERIOD(10.0),
 	// CLKOUT0_DIVIDE - CLKOUT6_DIVIDE: Divide amount for CLKOUT (1-128)
 	.CLKOUT0_DIVIDE_F(CLKDIV), 	//f_CLK0 = 800MHz/CLKDIV
-	.CLKOUT1_DIVIDE(CLKDIV/2),		//First deserialization clock
-	.CLKOUT2_DIVIDE(CLKDIV/2),		//90 degree shifted deserialization clock
-	.CLKOUT3_DIVIDE(4),				//This clock for IDELAYCTRL must be 200MHz
+	.CLKOUT1_DIVIDE(CLKDIV/8),	//Fast deserialization clock (8x speed)
+	.CLKOUT2_DIVIDE(CLKDIV),	//Slow parallel clock
+	.CLKOUT3_DIVIDE(4),			//This clock for IDELAYCTRL must be 200MHz
 	// CLKOUT0_DUTY_CYCLE - CLKOUT6_DUTY_CYCLE: Duty cycle for CLKOUT outputs (0.01-0.99).
 	.CLKOUT0_DUTY_CYCLE(0.5),
 	.CLKOUT1_DUTY_CYCLE(0.5),
@@ -230,13 +232,13 @@ MMCME2_ADV #(
 	// CLKOUT0_PHASE - CLKOUT6_PHASE: Phase offset for CLKOUT outputs (-360.000-360.000).
 	.CLKOUT0_PHASE(0.0),
 	.CLKOUT1_PHASE(0.0),
-	.CLKOUT2_PHASE(90.0),
+	.CLKOUT2_PHASE(0.0),
 	.CLKOUT3_PHASE(0.0),
-	.COMPENSATION("ZHOLD"), // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
-	.DIVCLK_DIVIDE(1), // Master division value (1-106)
+	.COMPENSATION("ZHOLD"),    // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
+	.DIVCLK_DIVIDE(1),         // Master division value (1-106)
 	// REF_JITTER: Reference input jitter in UI (0.000-0.999).
 	.REF_JITTER1(0.01),
-	.STARTUP_WAIT("FALSE"), 		// Delays DONE until MMCM is locked (FALSE, TRUE)
+	.STARTUP_WAIT("FALSE"),    // Delays DONE until MMCM is locked (FALSE, TRUE)
 	// USE_FINE_PS: Fine phase shift enable (TRUE/FALSE)
 	.CLKFBOUT_USE_FINE_PS("FALSE"),
 	.CLKOUT0_USE_FINE_PS("TRUE"),
@@ -248,27 +250,27 @@ MMCME2_ADV_inst (
 	// Clock Outputs: 1-bit (each) output: User configurable clock outputs
 	.CLKOUT0(clkPS_int), 			// Phase shifted clock for ENC
 	.CLKOUT1(clk_int), 				// Deserialization clock for LVDS inputs
-	.CLKOUT2(OCLK_int),				//	Clock for IDELAY control, 200MHz
+	.CLKOUT2(clk_div_int),		    //	Clock for IDELAY control, 200MHz
 	.CLKOUT3(clk200_int),			//	This clock for IDELAYCTRL must be 200MHz
 	// Dynamic Phase Shift Ports: 1-bit (each) output: Ports used for dynamic phase shifting of the outputs
 	.PSDONE(PS_done), 				// 1-bit output: Phase shift done
 	// Feedback Clocks: 1-bit (each) output: Clock feedback ports
 	.CLKFBOUT(clkFB), 				// 1-bit output: Feedback clock
-	.LOCKED(PS_locked), 				// 1-bit output: LOCK
+	.LOCKED(PS_locked), 			// 1-bit output: LOCK
 	// Clock Inputs: 1-bit (each) input: Clock inputs
-	.CLKIN1(clk_in), 					// 1-bit input: Primary clock
+	.CLKIN1(clk_in), 				// 1-bit input: Primary clock
 	// Control Ports: 1-bit (each) input: MMCM control ports
-	.CLKINSEL(1'b1), 					// 1-bit input: Clock select, High=CLKIN1 Low=CLKIN2
+	.CLKINSEL(1'b1), 				// 1-bit input: Clock select, High=CLKIN1 Low=CLKIN2
 	.PWRDWN(1'b0), 					// 1-bit input: Power-down
-	.RST(rst_in), 						// 1-bit input: Reset
+	.RST(rst_in), 					// 1-bit input: Reset
 	// DRP Ports: 7-bit (each) input: Dynamic reconfiguration ports
-	.DWE(1'b0), 						// 1-bit input: DRP write enable
+	.DWE(1'b0), 					// 1-bit input: DRP write enable
 	// Dynamic Phase Shift Ports: 1-bit (each) input: Ports used for dynamic phase shifting of the outputs
-	.PSCLK(PS_clk), 					// 1-bit input: Phase shift clock
-	.PSEN(PS_en), 						// 1-bit input: Phase shift enable
+	.PSCLK(PS_clk), 				// 1-bit input: Phase shift clock
+	.PSEN(PS_en), 					// 1-bit input: Phase shift enable
 	.PSINCDEC(PS_inc), 				// 1-bit input: Phase shift increment/decrement
 	// Feedback Clocks: 1-bit (each) input: Clock feedback ports
-	.CLKFBIN(clkFB) 					// 1-bit input: Feedback clock
+	.CLKFBIN(clkFB) 				// 1-bit input: Feedback clock
 );
 
 BUFG BUFG_clkPS (
@@ -290,7 +292,7 @@ ODDR #(
 	.D1(1'b0), 		// 1-bit data input (positive edge)
 	.D2(1'b1), 		// 1-bit data input (negative edge)
 	.R(rst_in), 	// 1-bit reset
-	.S() 				// 1-bit set
+	.S() 			// 1-bit set
 );
 
 // Output buffer for ENC
@@ -311,7 +313,7 @@ wire DCO_in;
 
 // IBUFDS: Differential Input Buffer
 IBUFDS #(
-	.DIFF_TERM("TRUE"), 		// Differential Termination
+	.DIFF_TERM("TRUE"), 	// Differential Termination
 	.IBUF_LOW_PWR("TRUE"), 	// Low power="TRUE", Highest performance="FALSE"
 	.IOSTANDARD("LVDS_25") 	// Specify the input I/O standard
 ) IBUFDS_inst (
@@ -324,7 +326,7 @@ IBUFDS #(
 // LVDS inputs
 
 localparam N_LVDS = 5;		//Number of LVDS channels
-localparam N_SERIAL = 8;	//Number of bits in serial channel
+localparam N_SERIAL = 8;	//Number of bits in one serial transfer
 
 wire   [N_LVDS-1:0] data_in_p, data_in_n;
 assign data_in_p = {FR_in_p, D1_in_p, D0_in_p};
@@ -348,7 +350,7 @@ end
 // Deserializer clocks. Sample taken on pos and neg edge of clk and OCLK. Since
 //	OCLK is 90 degrees shifted from clk, we take 4 samples every cycle of clk.
 //	Set frequency to double that of ENC to get 8x data deserialization.
-wire clk, OCLK;
+wire clk, clk_div;
 
 // Buffers for deserialization clocks.
 BUFG BUFG_clk (
@@ -356,17 +358,17 @@ BUFG BUFG_clk (
 	.I(clk_int) 	// 1-bit input: Clock input
 );
 
-BUFG BUFG_OCLK (
-	.O(OCLK), 		// 1-bit output: Clock output
-	.I(OCLK_int) 	// 1-bit input: Clock input
+BUFG BUFG_clk_div (
+	.O(clk_div), 		// 1-bit output: Clock output
+	.I(clk_div_int) 	// 1-bit input: Clock input
 );
 
 // We have multiple bits - step over every bit, instantiating the required elements
 
-wire [N_LVDS-1:0] data_in_from_pins; 			// between the input buffer and the delay
+wire [N_LVDS-1:0] data_in_from_pins; 		// between the input buffer and the delay
 wire [N_LVDS-1:0] data_in_from_pins_delay; 	// between the delay and the deserializer
 
-//Delay stuff unused right now
+//Delay unused right now
 /*
 // I added 50 to all the values here because I couldn't reach the middle of the eye with the encode phase shifter (it had hit the end of its range)
 //Removed the 50 to route design.
@@ -393,7 +395,7 @@ endfunction
 /*
 // Buffer for IDELAYCTRL clock.
 BUFG BUFG_200 (
-	.O(clk200), 		// 1-bit output: Clock output
+	.O(clk200), 	// 1-bit output: Clock output
 	.I(clk200_int) 	// 1-bit input: Clock input
 );
 
@@ -401,23 +403,82 @@ BUFG BUFG_200 (
 // Needed for IDELAYE2
 (* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
 IDELAYCTRL IDELAYCTRL_inst (
-	.RDY(), 				// 1-bit output: Ready output
+	.RDY(), 			// 1-bit output: Ready output
 	.REFCLK(clk200), 	// 1-bit input: Reference clock input
 	.RST(rst_in) 		// 1-bit input: Active high reset input
 );
 */
+
+// Bit slip state machine to align data with frame (may still need delay line at high speeds).
+localparam TP = 8'h0f; //training pattern. Frame deserialized 1:8 give 00001111.
+//Two states, CHECK if we are matched up, or TOGGLE BITSLIP
+localparam CHECK = 1'b0;
+localparam TOGGLE = 1'b1;
+//Combinatorial part
+function  bit_slip_next_state;
+    input [7:0] training_pattern;
+    input [7:0] comp_val;
+    input       state;
+    input [1:0] counter; //Two bit counter needed because of 2 cycle latency on BITSLIP submodule
+    
+    begin
+        case(state)
+            CHECK:
+                if (comp_val == training_pattern)
+                    //If we are at correct value, do not perform a bit_slip
+                    bit_slip_next_state = CHECK; 
+                else if (counter ==2'b11)
+                    //If we are not at the correct value toggle bit_slip
+                    bit_slip_next_state = TOGGLE;
+                else
+                    //If we are not at correct value and counter isn't max, don't do anything
+                    bit_slip_next_state = CHECK;
+            TOGGLE:
+                //Bit slip must be reasserted to perform another shift, so turn off once we have shifted once.
+                bit_slip_next_state = CHECK;
+        endcase
+    end
+endfunction
+//Sequential part, toggling bit_slip
+reg  BS_state;
+reg bit_slip;
+reg [1:0] counter;
+//BITSLIP is synchronous to CLKDIV
+always @(posedge clk_div) begin
+    if (rst_in) begin
+        BS_state <= CHECK;
+        counter <= 2'b0;
+    end
+    else begin
+        //Assign next state
+        BS_state <= bit_slip_next_state(TP, FR_out, BS_state, counter);
+        case(BS_state)
+            //Do not perform bitslip
+            CHECK: begin
+                bit_slip <= 1'b0;
+                counter <= counter + 2'b1;
+            end
+            //Perform bitslip
+            TOGGLE: begin
+                bit_slip <= 1'b1;
+                counter <= 2'b0;
+            end
+        endcase
+    end
+end
+
 genvar pin_count;
 generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begin: pins
 	
 	// IBUFDS: Differential Input Buffer
 	IBUFDS #(
-		.DIFF_TERM("TRUE"), 			// Differential Termination
+		.DIFF_TERM("TRUE"), 		// Differential Termination
 		.IBUF_LOW_PWR("FALSE"), 	// Low power="TRUE", Highest performance="FALSE"
 		.IOSTANDARD("LVDS_25") 		// Specify the input I/O standard
 	) IBUFDS_inst (
 		.O(data_in_from_pins[pin_count]), 	// Buffer output
-		.I(data_in_p[pin_count]), 				// Diff_p buffer input (connect directly to top-level port)
-		.IB(data_in_n[pin_count]) 				// Diff_n buffer input (connect directly to top-level port)
+		.I(data_in_p[pin_count]), 			// Diff_p buffer input (connect directly to top-level port)
+		.IB(data_in_n[pin_count]) 			// Diff_n buffer input (connect directly to top-level port)
 	);
 	
 	/*
@@ -428,32 +489,32 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.DELAY_SRC("IDATAIN"), 						// Delay input (IDATAIN, DATAIN)
 		.HIGH_PERFORMANCE_MODE("TRUE"), 			// Reduced jitter ("TRUE"), Reduced power ("FALSE")
 		.IDELAY_TYPE("FIXED"), 						// FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
-		.IDELAY_VALUE(delay_value(pin_count)),	// Input delay tap setting (0-31)
-		.PIPE_SEL("FALSE"), 							// Select pipelined mode, FALSE, TRUE
+		.IDELAY_VALUE(delay_value(pin_count)),	    // Input delay tap setting (0-31)
+		.PIPE_SEL("FALSE"), 						// Select pipelined mode, FALSE, TRUE
 		.REFCLK_FREQUENCY(200.0), 					// IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
 		.SIGNAL_PATTERN("DATA") 					// DATA, CLOCK input signal
 	)
 	IDELAYE2_inst (
-		.IDATAIN(data_in_from_pins[pin_count]), 			// 1-bit input: Data input from the I/O
+		.IDATAIN(data_in_from_pins[pin_count]), 		// 1-bit input: Data input from the I/O
 		.DATAOUT(data_in_from_pins_delay[pin_count]), 	// 1-bit output: Delayed data output
-		.C(1'b0), 													// 1-bit input: Clock input
-		.CE(1'b0), 												// 1-bit input: Active high enable increment/decrement input
-		.CINVCTRL(), 												// 1-bit input: Dynamic clock inversion input
-		.CNTVALUEIN(), 											// 5-bit input: Counter value input
-		.DATAIN(), 													// 1-bit input: Internal delay data input
-		.INC(),	 													// 1-bit input: Increment / Decrement tap delay input
-		.LD(), 														// 1-bit input: Load IDELAY_VALUE input
-		.LDPIPEEN(1'b0),		 									// 1-bit input: Enable PIPELINE register to load data input
-		.REGRST(1'b0),	 											// 1-bit input: Active-high reset tap-delay input
-		.CNTVALUEOUT()												// 5-bit output: Counter value output
+		.C(1'b0), 										// 1-bit input: Clock input
+		.CE(1'b0), 										// 1-bit input: Active high enable increment/decrement input
+		.CINVCTRL(), 									// 1-bit input: Dynamic clock inversion input
+		.CNTVALUEIN(), 									// 5-bit input: Counter value input
+		.DATAIN(), 										// 1-bit input: Internal delay data input
+		.INC(),	 										// 1-bit input: Increment / Decrement tap delay input
+		.LD(), 											// 1-bit input: Load IDELAY_VALUE input
+		.LDPIPEEN(1'b0),		 						// 1-bit input: Enable PIPELINE register to load data input
+		.REGRST(1'b0),	 								// 1-bit input: Active-high reset tap-delay input
+		.CNTVALUEOUT()									// 5-bit output: Counter value output
 	);	
 	*/
 	
 	
 	// ISERDESE2: Input SERial/DESerializer with Bitslip
 	ISERDESE2 #(
-		.DATA_RATE("DDR"), 				// DDR, SDR
-		.DATA_WIDTH(8), 					// Parallel data width (2-8,10,14)
+		.DATA_RATE("SDR"), 				// DDR, SDR
+		.DATA_WIDTH(8), 				// Parallel data width (2-8,10,14)
 		.DYN_CLKDIV_INV_EN("FALSE"), 	// Enable DYNCLKDIVINVSEL inversion (FALSE, TRUE)
 		.DYN_CLK_INV_EN("FALSE"), 		// Enable DYNCLKINVSEL inversion (FALSE, TRUE)
 		// INIT_Q1 - INIT_Q4: Initial value on the Q outputs (0/1)
@@ -461,11 +522,11 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.INIT_Q2(1'b0),
 		.INIT_Q3(1'b0),
 		.INIT_Q4(1'b0),
-		.INTERFACE_TYPE("OVERSAMPLE"),	// MEMORY, MEMORY_DDR3, MEMORY_QDR, NETWORKING, OVERSAMPLE
-		.IOBDELAY("NONE"), 					// NONE, BOTH, IBUF, IFD
-		.NUM_CE(2), 							// Number of clock enables (1,2)
-		.OFB_USED("FALSE"), // Select OFB path (FALSE, TRUE)
-		.SERDES_MODE("MASTER"), // MASTER, SLAVE
+		.INTERFACE_TYPE("NETWORKING"),    // MEMORY, MEMORY_DDR3, MEMORY_QDR, NETWORKING, OVERSAMPLE
+		.IOBDELAY("NONE"),                // NONE, BOTH, IBUF, IFD
+		.NUM_CE(2),                       // Number of clock enables (1,2)
+		.OFB_USED("FALSE"),               // Select OFB path (FALSE, TRUE)
+		.SERDES_MODE("MASTER"),           // MASTER, SLAVE
 		// SRVAL_Q1 - SRVAL_Q4: Q output values when SR is used (0/1)
 		.SRVAL_Q1(1'b0),
 		.SRVAL_Q2(1'b0),
@@ -486,7 +547,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		// SHIFTOUT1, SHIFTOUT2: 1-bit (each) output: Data width expansion output ports
 		.SHIFTOUT1(),
 		.SHIFTOUT2(),
-		.BITSLIP(), 		// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
+		.BITSLIP(bit_slip), 		// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
 		// CLKDIV when asserted (active High). Subsequently, the data seen on the Q1
 		// to Q8 output ports will shift, as in a barrel-shifter operation, one
 		// position every time Bitslip is invoked (DDR operation is different from
@@ -494,32 +555,25 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		// CE1, CE2: 1-bit (each) input: Data register clock enable inputs
 		.CE1(1'b1),
 		.CE2(1'b1),
-		.CLKDIVP(1'b0),	// 1-bit input: TBD
+		.CLKDIVP(1'b0),	    // 1-bit input: TBD
 		// Clocks: 1-bit (each) input: ISERDESE2 clock input ports
 		.CLK(clk), 			// 1-bit input: High-speed clock
 		.CLKB(!clk), 		// 1-bit input: High-speed secondary clock
 		.CLKDIV(clk_div), 	// 1-bit input: Divided clock
-		.OCLK(OCLK), 		// 1-bit input: High speed output clock used when INTERFACE_TYPE="MEMORY"
+		.OCLK(), 		// 1-bit input: High speed output clock used when INTERFACE_TYPE="MEMORY"
 		// Dynamic Clock Inversions: 1-bit (each) input: Dynamic clock inversion pins to switch clock polarity
 		.DYNCLKDIVSEL(), 	// 1-bit input: Dynamic CLKDIV inversion
 		.DYNCLKSEL(), 		// 1-bit input: Dynamic CLK/CLKB inversion
 		// Input Data: 1-bit (each) input: ISERDESE2 data input ports
 		.D(data_in_from_pins[pin_count]), // 1-bit input: Data input
 		.DDLY(), 			// 1-bit input: Serial data from IDELAYE2
-		.OFB(), 				// 1-bit input: Data feedback from OSERDESE2
-		.OCLKB(!OCLK), 			// 1-bit input: High speed negative edge output clock
+		.OFB(), 			// 1-bit input: Data feedback from OSERDESE2
+		.OCLKB(), 			// 1-bit input: High speed negative edge output clock
 		.RST(rst_in), 		// 1-bit input: Active high asynchronous reset
 		// SHIFTIN1, SHIFTIN2: 1-bit (each) input: Data width expansion input ports
 		.SHIFTIN1(1'b0),
 		.SHIFTIN2(1'b0)
 	);		
-	
-	
-	
-	
-	
-	
-	
 end
 endgenerate
 
@@ -528,7 +582,7 @@ endgenerate
 
 reg			spi_trigger;
 reg  [15:0]	spi_data;
-wire			spi_ready;
+wire		spi_ready;
 
 SPI #(
 	.TRANSFER_SIZE(16),
@@ -551,7 +605,7 @@ LTC2195_SPI_inst(
 // State machine which controls initialization and communicates with the PC
 
 // State machine definitions
-localparam IDLE 	= 4'h0;
+localparam IDLE   = 4'h0;
 localparam RST1   = 4'h1;
 localparam RST2A  = 4'h2;
 localparam RST2B  = 4'h3;
@@ -565,9 +619,9 @@ localparam RST4C  = 4'hA;
 // localparam GET1A	= 4'h6;
 // localparam GET1B	= 4'h7;
 // localparam GET1C	= 4'h8;
-localparam SET1A	= 4'hB;
-localparam SET1B	= 4'hC;
-localparam SET1C	= 4'hD;
+localparam SET1A  = 4'hB;
+localparam SET1B  = 4'hC;
+localparam SET1C  = 4'hD;
 
 // State
 // The next line makes synthesis happy
@@ -577,11 +631,11 @@ reg  [7:0] counter_f;
 
 // State machine - combinatorial part
 function [3:0] next_state;
-	input    [3:0] state;
-	input    [7:0] counter;
-	input				trigger;
-	input	  [15:0]	address;
-	input				ready;
+	input    [3:0]  state;
+	input    [7:0]  counter;
+	input			trigger;
+	input	 [15:0]	address;
+	input			ready;
 	
 	begin
 		case (state)
