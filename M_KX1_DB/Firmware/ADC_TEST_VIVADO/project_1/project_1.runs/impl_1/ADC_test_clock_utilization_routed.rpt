@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Fri Jun 23 17:28:07 2017
+| Date         : Sat Jun 24 17:40:21 2017
 | Host         : DESKTOP-N77OJE5 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file ADC_test_clock_utilization_routed.rpt
 | Design       : ADC_test

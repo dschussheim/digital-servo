@@ -2,260 +2,34 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Fri Jun 23 14:28:46 2017
-# Process ID: 2008
+# Start of session at: Sat Jun 24 17:11:51 2017
+# Process ID: 6824
 # Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent580 C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_TEST_VIVADO\project_1\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4336 C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_TEST_VIVADO\project_1\project_1.xpr
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/vivado.log
 # Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.xpr
-update_compile_order -fileset sources_1
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-launch_simulation
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-add_wave {{/LTC2195_tb/uut/BS_state}} {{/LTC2195_tb/uut/bit_slip}} {{/LTC2195_tb/uut/check_bit}} 
-restart
-run 10 us
-add_wave {{/LTC2195_tb/uut/clk}} {{/LTC2195_tb/uut/clk_div}} 
-restart
-run 10 us
-close_sim
-launch_simulation
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-add_wave {{/LTC2195_tb/uut/counter}} 
-restart
-run 10 us
-add_wave {{/LTC2195_tb/uut/BS_state}} {{/LTC2195_tb/uut/bit_slip}} 
-restart
-run 10 us
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-add_wave {{/LTC2195_tb/uut/BS_state}} 
-restart
-run 10 us
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-add_wave {{/LTC2195_tb/uut/BS_state}} 
-restart
-run all
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-add_wave {{/LTC2195_tb/uut/BS_state}} {{/LTC2195_tb/uut/bit_slip}} 
-restart
-run 10 us
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-launch_simulation
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-launch_simulation
-source LTC2195_tb.tcl
-close_sim
-add_files -norecurse C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v
-update_compile_order -fileset sources_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top ADC_test [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sources_1
-add_files -norecurse C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/clk_div.v
-update_compile_order -fileset sources_1
-file mkdir C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1
-file mkdir C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new
-close [ open C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc w ]
-add_files -fileset constrs_1 C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc
-remove_files  -fileset constrs_1 C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc
-add_files -fileset constrs_1 -norecurse C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-open_run synth_1 -name synth_1
-set_property target_constrs_file C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc [current_fileset -constrset]
-close_design
-open_run impl_1
-place_ports {D1_out_p[15]} B17
-set_property package_pin "" [get_ports [list  {D1_out_p[1]}]]
-set_property package_pin "" [get_ports [list  {D1_out_p[0]}]]
-place_ports {D1_out_p[2]} AA5
-set_property package_pin "" [get_ports [list  {D1_out_p[15]}]]
-set_property package_pin "" [get_ports [list  {D1_out_p[14]}]]
-set_property package_pin "" [get_ports [list  {D1_out_p[13]}]]
-set_property package_pin "" [get_ports [list  {D1_out_p[12]}]]
-set_property package_pin "" [get_ports [list  {D1_out_p[11]}]]
-set_property package_pin "" [get_ports [list  {D1_out_p[10]}]]
-set_property package_pin "" [get_ports [list  {D1_out_p[9]}]]
-place_ports {D1_out_p[0]} B17
-place_ports {D1_out_p[1]} A18
-place_ports {D1_out_p[2]} A13
-place_ports {D1_out_p[3]} C16
-place_ports {D1_out_p[4]} B15
-place_ports {D1_out_p[5]} B10
-place_ports {D1_out_p[6]} B12
-place_ports {D1_out_p[7]} B14
-place_ports {D1_out_p[8]} G12
-place_ports {D1_out_p[9]} D14
-place_ports {D1_out_p[10]} C12
-place_ports {D1_out_p[11]} E11
-place_ports {D1_out_p[12]} F9
-place_ports {D1_out_p[13]} F14
-place_ports {D1_out_p[14]} AF24
-place_ports {D1_out_p[15]} AD23
-place_ports {D20_p[1]} AB2
-set_property package_pin "" [get_ports [list  {D20_p[0]}]]
-place_ports {D20_p[1]} AB22
-place_ports {D20_p[0]} AD26
-set_property package_pin "" [get_ports [list  {D20_p[1]}]]
-place_ports {D20_p[0]} AB22
-place_ports {D20_p[1]} AD26
-set_property package_pin "" [get_ports [list  {D21_p[1]}]]
-set_property package_pin "" [get_ports [list  {D21_p[0]}]]
-place_ports {D21_p[0]} U24
-set_property package_pin "" [get_ports [list  DCI1_out_p]]
-set_property package_pin "" [get_ports [list  dac_sdo]]
-set_property package_pin "" [get_ports [list  dac_sdi]]
-set_property package_pin "" [get_ports [list  dac_sck]]
-place_ports dac_rst1 A23
-set_property package_pin "" [get_ports [list  dac_rst1]]
-set_property package_pin "" [get_ports [list  dac_csb1]]
-set_property package_pin "" [get_ports [list  adc_sck]]
-set_property package_pin "" [get_ports [list  ADC2_out]]
-set_property package_pin "" [get_ports [list  adc_scs2]]
-set_property package_pin "" [get_ports [list  adc_sdi]]
-set_property package_pin "" [get_ports [list  adc_sdo]]
-set_property package_pin "" [get_ports [list  clk]]
-set_property package_pin "" [get_ports [list  CLK_out_p]]
-set_property package_pin "" [get_ports [list  ENC_p]]
-set_property package_pin "" [get_ports [list  FR2_p]]
-set_property package_pin "" [get_ports [list  rst_led]]
-place_ports {D21_p[1]} AC23
-place_ports ADC2_out L17
-place_ports adc_DCO2_p AD25
-set_property IOSTANDARD LVCMOS25 [get_ports [list ADC2_out]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list ADC2_out]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list adc_sck]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list adc_scs2]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list adc_sdi]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list adc_sdo]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list DCO1_n]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list DCO1_p]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list rst_led]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list DCO0_p]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list DCO0_n]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list dac_csb1]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list dac_rst1]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list dac_sck]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list dac_sdi]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list dac_sdo]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list ADC2_out]]
-place_ports adc_sck Y21
-place_ports adc_scs2 W25
-place_ports adc_sdi W20
-place_ports adc_sdo AC26
-place_ports clk AA3
-place_ports CLK_out_p C19
-place_ports dac_csb1 K25
-place_ports dac_rst1 K26
-place_ports dac_sck P26
-place_ports dac_sdi N23
-place_ports dac_sdo P23
-set_property IOSTANDARD LVCMOS25 [get_ports [list DCO0_p]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list DCO0_n]]
-set_property IOSTANDARD {} [get_ports [list DCO1_n]]
-set_property IOSTANDARD LVCMOS25 [get_ports [list DCO0_p]]
-set_property IOSTANDARD lvds_25 [get_ports [list DCO1_n]]
-save_constraints -force
-update_compile_order -fileset sources_1
-set_property source_mgmt_mode DisplayOnly [current_project]
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-close_design
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
-open_run impl_1
 open_hw
 connect_hw_server
 open_hw_target
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-close_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-open_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-disconnect_hw_server
-connect_hw_server
-open_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-refresh_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-close_hw_target {localhost:3121/xilinx_tcf/JTAG-HS3/Digilent JTAG-HS3}
-disconnect_hw_server localhost:3121
-connect_hw_server
-open_hw_target
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+current_hw_device [get_hw_devices xc7k160t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k160t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
