@@ -23,7 +23,7 @@ module ADC_test(
 	//100 MHz clock
 	input	wire			clk,
 	//led to tell you when reset happens
-	output	reg				rst_led,
+//	output	reg				rst_led,
    
 	//\\\\\\\\\ADCs//////////\\
 	
@@ -50,23 +50,22 @@ module ADC_test(
    input 	wire	[1:0] 	D10_n,
    input 	wire	[1:0] 	D11_p,
    input 	wire	[1:0] 	D11_n,
-   //Output to send MSB's to leds
-	output 	wire	 		ADC1_out,
 	*/
 	//Second ADC data to FPGA
 	//Data clock
 	input 	wire			adc_DCO2_p,
-   input 	wire			adc_DCO2_n,
+    input 	wire			adc_DCO2_n,
 	//Frame "enclosing" different sets of data
-   input 	wire			FR2_p,
-   input 	wire			FR2_n,
-   //Data streams
+    input 	wire			FR2_p,
+    input 	wire			FR2_n,
+    //Data streams
 	input 	wire	[1:0] 	D20_p,
-   input 	wire	[1:0] 	D20_n,
-   input 	wire	[1:0] 	D21_p,
-   input 	wire	[1:0] 	D21_n,
-   //Output to send MSB's to leds
-	output 	wire			ADC2_out,
+    input 	wire	[1:0] 	D20_n,
+    input 	wire	[1:0] 	D21_p,
+    input 	wire	[1:0] 	D21_n,
+    
+    //Output to send MSB's to leds
+	output 	wire	[3:0]	ADC_out,
 
 	//\\\\\\\\\\DACs//////////\\
 
@@ -102,7 +101,7 @@ module ADC_test(
 	 	 
 		 );
 
-wire clk_in, DIVclk;
+wire clk_int, clk_in, DIVclk;
 
 //Clock input from FPGA module.
 
@@ -135,32 +134,43 @@ rstLEDclk(
 //Reset about every minute.
 localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
 localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
-reg	rst_in;
+
+//localparam	max = 30'h989680; 		//10*1,000,000 (number of cycles of clk_in/minute)
+//localparam	rst_on = 30'h895440; 	// turn reset on after 9,000,000 cycles, and keep on for .5 second
+
+reg	rst_in = 1'b0;
 reg	[29:0]	counter = 30'b0;
 
-//initial counter = 30'b0;
+
+//reg bitslip;
+
+reg rst_led;
 
 always @(posedge DIVclk) begin
 	if (counter < rst_on)	begin
 		counter <= counter + 30'b1;
-		rst_in <= 1'b0;
+		//rst_in <= 1'b0;
 		rst_led <= ~rst_in;
+		//bitslip <= 1'b0;
 	end
 	else if ( (counter >= rst_on) && (counter < max-30'b1) ) begin
 		counter <= counter + 30'b1;
-		rst_in <= 1'b1;
+		//rst_in <= 1'b1;
 		rst_led <= ~rst_in;
+		//bitslip <= 1'b1;
 	end
 	else	begin
 		counter <= 1'b0;
-		rst_in <= 1'b0;
+		//rst_in <= 1'b0;
 		rst_led <= ~rst_in;
+	    //bitslip <= 1'b0;
+
 	end
 end
 
 wire	[15:0]	ADC10_out, ADC11_out;
 
-parameter	CLKDIV = 8;	//10MHz clock
+parameter	CLKDIV = 80;	//10MHz clock
 
 /*
 LTC2195 #(
@@ -223,7 +233,7 @@ ADC2 (
    .FR_out()
     );
 
-assign ADC2_out = ADC21_out[15];
+assign ADC_out[3:0] = ADC20_out[15:12];
 
 
 parameter	SMP_DLY = 8'h0;
@@ -235,16 +245,16 @@ AD9783 #(
 	.CLK1PHASE(CLK1PHASE)
 )
  AD9783_inst1 (
-    .clk_in(clk_in), 
-    .rst_in(rst_in), 
-    .DAC0_in(ADC21_out), 
-    .DAC1_in(ADC21_out), 
-    .CLK_out_p(CLK_out_p), 
-    .CLK_out_n(CLK_out_n), 
-    .DCI_out_p(DCI1_out_p), 
-    .DCI_out_n(DCI1_out_n), 
-    .D_out_p(D1_out_p), 
-    .D_out_n(D1_out_n),
+     .clk_in(clk_in), 
+     .rst_in(rst_in), 
+     .DAC0_in(ADC20_out), 
+     .DAC1_in(ADC20_out), 
+     .CLK_out_p(CLK_out_p), 
+     .CLK_out_n(CLK_out_n), 
+     .DCI_out_p(DCI1_out_p), 
+     .DCI_out_n(DCI1_out_n), 
+     .D_out_p(D1_out_p), 
+     .D_out_n(D1_out_n),
 	 .rst_out(dac_rst1),
 	 .spi_scs_out(dac_csb1),
 	 .spi_sck_out(dac_sck),

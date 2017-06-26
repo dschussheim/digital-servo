@@ -43,6 +43,8 @@ module LTC2195(
 	output reg     signed  [15:0]  ADC0_out,
 	output reg     signed  [15:0]  ADC1_out,
 	output reg             [7:0]   FR_out
+	
+	//input  wire                    bitslip
 );
 
 // Parameters
@@ -342,7 +344,7 @@ always @(posedge clk_in) begin
 	};
 	ADC1_out <= {
 		data_out[16 + 0], data_out[16 + 8], 	data_out[16 + 1], data_out[16 + 9], 	data_out[16 + 2], data_out[16 + 10], data_out[16 + 3], data_out[16 + 11],
-		data_out[16 + 4], data_out[16 + 12],	data_out[16 + 5], data_out[16 + 13],	data_out[16 + 6], data_out[16 + 14], data_out[16 + 7], data_out[16 +15]
+		data_out[16 + 4], data_out[16 + 12],	data_out[16 + 5], data_out[16 + 13],	data_out[16 + 6], data_out[16 + 14], data_out[16 + 7], data_out[16 +14]
 	};	
 	FR_out <= data_out[39:32];	//filling up remaining channels (to make loop "work")?
 end
@@ -410,7 +412,7 @@ IDELAYCTRL IDELAYCTRL_inst (
 */
 
 // Bit slip state machine to align data with frame (may still need delay line at high speeds).
-localparam TP = 8'h0f; //training pattern. Frame deserialized 1:8 give 00001111.
+localparam TP = 8'b00001111; //training pattern. Frame deserialized 1:8 give 00001111.
 //Two states, CHECK if we are matched up, or TOGGLE BITSLIP
 localparam CHECK = 1'b0;
 localparam TOGGLE = 1'b1;
@@ -548,6 +550,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.SHIFTOUT1(),
 		.SHIFTOUT2(),
 		.BITSLIP(bit_slip), 		// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
+//        .BITSLIP(bitslip),
 		// CLKDIV when asserted (active High). Subsequently, the data seen on the Q1
 		// to Q8 output ports will shift, as in a barrel-shifter operation, one
 		// position every time Bitslip is invoked (DDR operation is different from

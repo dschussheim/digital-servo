@@ -14,14 +14,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7776 
+INFO: Helper process launched with PID 3144 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 307.406 ; gain = 77.117
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 306.949 ; gain = 76.625
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'ADC_test' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:21]
 	Parameter max bound to: 30'b000011100100111000011100000000 
 	Parameter rst_on bound to: 30'b000011100010111110010111100000 
-	Parameter CLKDIV bound to: 8 - type: integer 
+	Parameter CLKDIV bound to: 80 - type: integer 
 	Parameter SMP_DLY bound to: 8'b00000000 
 	Parameter CLK1PHASE bound to: -90 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'IBUFG' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
@@ -38,7 +38,7 @@ INFO: [Synth 8-638] synthesizing module 'clk_div' [C:/Users/dschussheim/Document
 INFO: [Synth 8-256] done synthesizing module 'clk_div' (3#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/clk_div.v:21]
 INFO: [Synth 8-638] synthesizing module 'LTC2195' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:17]
 	Parameter SMP_DLY bound to: 8'b00000000 
-	Parameter CLKDIV bound to: 8 - type: integer 
+	Parameter CLKDIV bound to: 80 - type: integer 
 	Parameter PS_IDLE bound to: 4'b0000 
 	Parameter PS_TRIG bound to: 4'b0001 
 	Parameter PS_DECIDE bound to: 4'b0010 
@@ -106,7 +106,7 @@ INFO: [Synth 8-638] synthesizing module 'ISERDESE2' [C:/Xilinx/Vivado/2017.2/scr
 	Parameter SRVAL_Q3 bound to: 1'b0 
 	Parameter SRVAL_Q4 bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'ISERDESE2' (5#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20009]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:157]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:159]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20759]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: float 
@@ -114,15 +114,15 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2017.2/sc
 	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
 	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
-	Parameter CLKOUT0_DIVIDE_F bound to: 8.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 80.000000 - type: float 
 	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT0_USE_FINE_PS bound to: TRUE - type: string 
-	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DIVIDE bound to: 10 - type: integer 
 	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT2_DIVIDE bound to: 8 - type: integer 
+	Parameter CLKOUT2_DIVIDE bound to: 80 - type: integer 
 	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
@@ -157,7 +157,7 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2017.2/sc
 	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
 INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (6#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20759]
-WARNING: [Synth 8-350] instance 'MMCME2_ADV_inst' of module 'MMCME2_ADV' requires 33 connections, but only 16 given [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:249]
+WARNING: [Synth 8-350] instance 'MMCME2_ADV_inst' of module 'MMCME2_ADV' requires 33 connections, but only 16 given [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:251]
 INFO: [Synth 8-638] synthesizing module 'ODDR' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:25650]
 	Parameter DDR_CLK_EDGE bound to: OPPOSITE_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
@@ -195,12 +195,12 @@ WARNING: [Synth 8-5788] Register spi_scs_out_reg in module SPI is has both Set a
 WARNING: [Synth 8-5788] Register spi_sck_out_reg in module SPI is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:116]
 WARNING: [Synth 8-5788] Register spi_sdo_out_reg in module SPI is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:117]
 INFO: [Synth 8-256] done synthesizing module 'SPI' (9#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:13]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:716]
-WARNING: [Synth 8-5788] Register spi_data_reg in module LTC2195 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:595]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:719]
+WARNING: [Synth 8-5788] Register spi_data_reg in module LTC2195 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:598]
 INFO: [Synth 8-256] done synthesizing module 'LTC2195' (10#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:17]
 INFO: [Synth 8-638] synthesizing module 'AD9783' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:17]
 	Parameter SMP_DLY bound to: 8'b00000000 
-	Parameter CLKDIV bound to: 8 - type: integer 
+	Parameter CLKDIV bound to: 80 - type: integer 
 	Parameter IODG_NAME bound to: OUTPUT_DG_0 - type: string 
 	Parameter CLK1PHASE bound to: -90 - type: integer 
 	Parameter N_LVDS bound to: 18 - type: integer 
@@ -234,10 +234,10 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_BASE' [C:/Xilinx/Vivado/2017.2/s
 	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: float 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
-	Parameter CLKOUT0_DIVIDE_F bound to: 8.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 80.000000 - type: float 
 	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT1_DIVIDE bound to: 8 - type: integer 
+	Parameter CLKOUT1_DIVIDE bound to: 80 - type: integer 
 	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT1_PHASE bound to: -90.000000 - type: float 
 	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
@@ -265,6 +265,8 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dsch
 WARNING: [Synth 8-5788] Register rst_out_reg in module AD9783 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:317]
 WARNING: [Synth 8-5788] Register spi_data_reg in module AD9783 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:213]
 INFO: [Synth 8-256] done synthesizing module 'AD9783' (12#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:17]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:150]
+WARNING: [Synth 8-6014] Unused sequential element rst_led_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:153]
 INFO: [Synth 8-256] done synthesizing module 'ADC_test' (13#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:21]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[7]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[6]
@@ -288,7 +290,7 @@ WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[9]
 WARNING: [Synth 8-3331] design ADC_test has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design ADC_test has unconnected port DCO1_n
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 346.480 ; gain = 116.191
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 346.277 ; gain = 115.953
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -297,33 +299,33 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_trig_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[15] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[14] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[13] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[12] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[11] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[10] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[9] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[7] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
-WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:201]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_trig_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[15] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[14] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[13] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[12] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[11] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[10] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[9] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_addr_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[7] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
+WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:211]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 346.480 ; gain = 116.191
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 346.277 ; gain = 115.953
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 52 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -333,10 +335,12 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc]
+WARNING: [Vivado 12-584] No ports matched 'rst_led'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.srcs/constrs_1/new/ADC_test_const.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ADC_test_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/ADC_test_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -344,33 +348,33 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFG => IBUF: 1 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 674.117 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 665.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "spi_clk" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "state1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:157]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:159]
 INFO: [Synth 8-802] inferred FSM for state register 'PS_state_f_reg' in module 'LTC2195'
 INFO: [Synth 8-802] inferred FSM for state register 'state_f_reg' in module 'LTC2195'
-WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:147]
-WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:710]
+WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:149]
+WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:713]
 INFO: [Synth 8-5544] ROM "bit_slip_next_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "PS_inc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "PS_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -389,8 +393,8 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element PS_value_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:148]
-WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:711]
+WARNING: [Synth 8-6014] Unused sequential element PS_value_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:150]
+WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:714]
 INFO: [Synth 8-802] inferred FSM for state register 'state_f_reg' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:305]
 INFO: [Synth 8-5544] ROM "spi_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -403,9 +407,8 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:306]
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:144]
-WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:710]
-WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:710]
+WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:713]
+WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:713]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -425,9 +428,9 @@ WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/
                    SET1C |                   10000000000000 |                             1101
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_f_reg' using encoding 'one-hot' in module 'LTC2195'
-WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:710]
-WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:147]
-WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:147]
+WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:713]
+WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:149]
+WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:149]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -446,7 +449,7 @@ WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [
                  PS_TRIG |                             1100 |                             0001
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'PS_state_f_reg' using encoding 'sequential' in module 'LTC2195'
-WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:147]
+WARNING: [Synth 8-6014] Unused sequential element PS_state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:149]
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:305]
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:305]
 ---------------------------------------------------------------------------------------------------
@@ -468,7 +471,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/
 INFO: [Synth 8-3354] encoded FSM with state register 'state_f_reg' using encoding 'one-hot' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:305]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -495,7 +498,7 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 5     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 21    
+	                1 Bit    Registers := 19    
 +---Muxes : 
 	   3 Input     27 Bit        Muxes := 1     
 	   2 Input     27 Bit        Muxes := 1     
@@ -524,10 +527,6 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module ADC_test 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 2     
 Module clk_div 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -608,48 +607,48 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element ADC2/ADC0_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:339]
+WARNING: [Synth 8-6014] Unused sequential element rstLEDclk/div_clk_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/clk_div.v:43]
+WARNING: [Synth 8-6014] Unused sequential element ADC2/ADC1_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:345]
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "rstLEDclk/div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "ADC2/LTC2195_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "AD9783_inst1/AD_9783_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element ADC2/counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:711]
-WARNING: [Synth 8-6014] Unused sequential element ADC2/PS_value_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:148]
+WARNING: [Synth 8-6014] Unused sequential element ADC2/counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:714]
+WARNING: [Synth 8-6014] Unused sequential element ADC2/PS_value_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:150]
 WARNING: [Synth 8-6014] Unused sequential element AD9783_inst1/counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:306]
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:144]
 WARNING: [Synth 8-3331] design ADC_test has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design ADC_test has unconnected port DCO1_n
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[0]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[0]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[1]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[1]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[2]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[2]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[3]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[3]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[4]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[4]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[5]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[0]' (FDE) to 'AD9783_inst1/spi_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[0]' (FDE) to 'ADC2/spi_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[1]' (FDE) to 'AD9783_inst1/spi_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[1]' (FDE) to 'ADC2/spi_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[2]' (FDE) to 'AD9783_inst1/spi_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[2]' (FDE) to 'ADC2/spi_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[3]' (FDE) to 'AD9783_inst1/spi_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[3]' (FDE) to 'ADC2/spi_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[4]' (FDE) to 'AD9783_inst1/spi_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[4]' (FDE) to 'ADC2/spi_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[5]' (FDE) to 'AD9783_inst1/spi_data_reg[6]'
 INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[5]' (FDE) to 'ADC2/spi_data_reg[8]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[6]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[6]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[7]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[6]' (FDE) to 'AD9783_inst1/spi_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[6]' (FDE) to 'ADC2/spi_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[7]' (FDE) to 'AD9783_inst1/spi_data_reg[9]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[8]' (FDE) to 'AD9783_inst1/spi_data_reg[10]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[9]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[0]' (FDCE) to 'ADC2/PS_target_f_reg[1]'
-INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[1]' (FDCE) to 'ADC2/PS_target_f_reg[7]'
-INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[2]' (FDPE) to 'ADC2/PS_target_f_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[3]' (FDPE) to 'ADC2/PS_target_f_reg[4]'
-INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[4]' (FDPE) to 'ADC2/PS_target_f_reg[5]'
-INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[5]' (FDPE) to 'ADC2/PS_target_f_reg[6]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[9]' (FDE) to 'AD9783_inst1/spi_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[0]' (FDE) to 'ADC2/PS_target_f_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[1]' (FDE) to 'ADC2/PS_target_f_reg[2]'
+INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[2]' (FDE) to 'ADC2/PS_target_f_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[3]' (FDE) to 'ADC2/PS_target_f_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[4]' (FDE) to 'ADC2/PS_target_f_reg[5]'
+INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[5]' (FDE) to 'ADC2/PS_target_f_reg[6]'
+INFO: [Synth 8-3886] merging instance 'ADC2/PS_target_f_reg[6]' (FDE) to 'ADC2/PS_target_f_reg[7]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ADC2/PS_target_f_reg[7] )
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[10]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[11]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[11]' (FDE) to 'ADC2/spi_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[12]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[12]' (FDE) to 'ADC2/spi_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[10]' (FDE) to 'ADC2/spi_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[11]' (FDE) to 'AD9783_inst1/spi_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[11]' (FDE) to 'ADC2/spi_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[12]' (FDE) to 'AD9783_inst1/spi_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[12]' (FDE) to 'ADC2/spi_data_reg[13]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[13]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[13]' (FDE) to 'ADC2/spi_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[13]' (FDE) to 'ADC2/spi_data_reg[14]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AD9783_inst1/spi_data_reg[14] )
 INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[14]' (FDE) to 'ADC2/spi_data_reg[15]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[34]' (FD) to 'AD9783_inst1/data_in_reg[17]'
@@ -673,13 +672,40 @@ INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[31]' (FD) to 'AD
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[32]' (FD) to 'AD9783_inst1/data_in_reg[14]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[33]' (FD) to 'AD9783_inst1/data_in_reg[15]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ADC2/spi_data_reg[15] )
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[26]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[25]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[24]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[23]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[22]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[21]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[20]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[19]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[18]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[17]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[16]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[15]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[14]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[13]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[12]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[11]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[10]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[9]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[8]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[7]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[6]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[5]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[4]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[3]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[2]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[1]) is unused and will be removed from module ADC_test.
+WARNING: [Synth 8-3332] Sequential element (rstLEDclk/counter_reg[0]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (ADC2/spi_data_reg[15]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (ADC2/PS_target_f_reg[7]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/spi_data_reg[14]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/data_in_reg[35]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/data_in_reg[17]) is unused and will be removed from module ADC_test.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -691,13 +717,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -708,8 +734,9 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (ADC2/PS_target_f_reg[8]) is unused and will be removed from module ADC_test.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -733,7 +760,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -746,7 +773,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -758,25 +785,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -809,28 +836,28 @@ Report Cell Usage:
 +------+------------+------+
 |      |Cell        |Count |
 +------+------------+------+
-|1     |BUFG        |     9|
-|2     |CARRY4      |    27|
+|1     |BUFG        |     8|
+|2     |CARRY4      |    11|
 |3     |ISERDESE2   |     5|
-|4     |LUT1        |    86|
-|5     |LUT2        |    57|
-|6     |LUT3        |    61|
-|7     |LUT4        |    36|
-|8     |LUT5        |    38|
-|9     |LUT6        |    66|
+|4     |LUT1        |    31|
+|5     |LUT2        |    41|
+|6     |LUT3        |    30|
+|7     |LUT4        |    43|
+|8     |LUT5        |    33|
+|9     |LUT6        |    34|
 |10    |MMCME2_ADV  |     1|
 |11    |MMCME2_BASE |     1|
 |12    |ODDR        |     1|
 |13    |ODDR_1      |    18|
 |14    |SRL16E      |     4|
-|15    |FDCE        |   116|
-|16    |FDPE        |    30|
-|17    |FDRE        |   120|
-|18    |LDC         |     7|
+|15    |FDCE        |    31|
+|16    |FDPE        |     9|
+|17    |FDRE        |   162|
+|18    |LDC         |     5|
 |19    |IBUF        |     2|
 |20    |IBUFDS      |     6|
 |21    |IBUFG       |     1|
-|22    |OBUF        |     9|
+|22    |OBUF        |    11|
 |23    |OBUFDS      |    19|
 +------+------------+------+
 
@@ -838,33 +865,32 @@ Report Instance Areas:
 +------+---------------------+--------+------+
 |      |Instance             |Module  |Cells |
 +------+---------------------+--------+------+
-|1     |top                  |        |   720|
-|2     |  AD9783_inst1       |AD9783  |   227|
-|3     |    AD_9783_SPI_inst |SPI_0   |   123|
-|4     |  ADC2               |LTC2195 |   310|
-|5     |    LTC2195_SPI_inst |SPI     |   132|
-|6     |  rstLEDclk          |clk_div |    74|
+|1     |top                  |        |   507|
+|2     |  AD9783_inst1       |AD9783  |   213|
+|3     |    AD_9783_SPI_inst |SPI_0   |   109|
+|4     |  ADC2               |LTC2195 |   276|
+|5     |    LTC2195_SPI_inst |SPI     |   118|
 +------+---------------------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 674.117 ; gain = 116.191
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 674.117 ; gain = 443.828
+Synthesis finished with 0 errors, 0 critical warnings and 55 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 665.648 ; gain = 115.953
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 665.648 ; gain = 435.324
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 88 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 70 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 5 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 9 instances were transformed.
+  A total of 7 instances were transformed.
   IBUFG => IBUF: 1 instances
-  LDC => LDCE: 7 instances
+  LDC => LDCE: 5 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-146 Infos, 82 Warnings, 0 Critical Warnings and 0 Errors encountered.
+145 Infos, 112 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 674.117 ; gain = 452.094
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 665.648 ; gain = 443.094
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/synth_1/ADC_test.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 674.117 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Jun 24 17:37:27 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 665.648 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 26 19:14:14 2017...

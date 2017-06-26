@@ -1,7 +1,14 @@
 # compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../AD9783.v"
 verilog xil_defaultlib  "../../../LTC2195.v"
+verilog xil_defaultlib  "../../../timescale.v"
 verilog xil_defaultlib  "../../../SPI.v"
+verilog xil_defaultlib  "../../../clk_div.v"
+verilog xil_defaultlib  "../../../deserializer.v"
+verilog xil_defaultlib  "../../../ADC_test.v"
 verilog xil_defaultlib  "../../../LTC2195_tb.v"
+verilog xil_defaultlib  "../../../deserializer_tb.v"
+verilog xil_defaultlib  "../../../ADC_test_tb.v"
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
