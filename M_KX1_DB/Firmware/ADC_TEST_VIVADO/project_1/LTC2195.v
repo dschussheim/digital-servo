@@ -243,7 +243,7 @@ MMCME2_ADV #(
 	.STARTUP_WAIT("FALSE"),    // Delays DONE until MMCM is locked (FALSE, TRUE)
 	// USE_FINE_PS: Fine phase shift enable (TRUE/FALSE)
 	.CLKFBOUT_USE_FINE_PS("FALSE"),
-	.CLKOUT0_USE_FINE_PS("TRUE"),
+	.CLKOUT0_USE_FINE_PS("FALSE"),
 	.CLKOUT1_USE_FINE_PS("FALSE"),
 	.CLKOUT2_USE_FINE_PS("FALSE"),
 	.CLKOUT3_USE_FINE_PS("FALSE")
@@ -316,7 +316,7 @@ wire DCO_in;
 // IBUFDS: Differential Input Buffer
 IBUFDS #(
 	.DIFF_TERM("TRUE"), 	// Differential Termination
-	.IBUF_LOW_PWR("TRUE"), 	// Low power="TRUE", Highest performance="FALSE"
+	.IBUF_LOW_PWR("FALSE"), 	// Low power="TRUE", Highest performance="FALSE"
 	.IOSTANDARD("LVDS_25") 	// Specify the input I/O standard
 ) IBUFDS_inst (
 	.O(DCO_in), 	// Buffer output
@@ -346,7 +346,7 @@ always @(posedge clk_in) begin
 		data_out[16 + 0], data_out[16 + 8], 	data_out[16 + 1], data_out[16 + 9], 	data_out[16 + 2], data_out[16 + 10], data_out[16 + 3], data_out[16 + 11],
 		data_out[16 + 4], data_out[16 + 12],	data_out[16 + 5], data_out[16 + 13],	data_out[16 + 6], data_out[16 + 14], data_out[16 + 7], data_out[16 +14]
 	};	
-	FR_out <= data_out[39:32];	//filling up remaining channels (to make loop "work")?
+	FR_out <= data_out[39:32];	//Training pattern for bitslip state machine
 end
 
 // Deserializer clocks. Sample taken on pos and neg edge of clk and OCLK. Since
@@ -371,30 +371,24 @@ wire [N_LVDS-1:0] data_in_from_pins; 		// between the input buffer and the delay
 wire [N_LVDS-1:0] data_in_from_pins_delay; 	// between the delay and the deserializer
 
 //Delay unused right now
-/*
-// I added 50 to all the values here because I couldn't reach the middle of the eye with the encode phase shifter (it had hit the end of its range)
-//Removed the 50 to route design.
+
 //If I want to implement delay I have to figure out IDELAYCTRL issue, and map delay values from IODELAY2 to IDELAYE2.
 function integer delay_value;
 	input i;
 	begin
 		case (i)
 			0:	delay_value = 0;
-			1:	delay_value = 2;
-			2:	delay_value = 5;
-			3:	delay_value = 8;
-			4:	delay_value = 9;
-			5:	delay_value = 9;
-			6:	delay_value = 9;
-			7:	delay_value = 8;
-			8:	delay_value = 0;
+			1:	delay_value = 0;
+			2:  delay_value = 0;
+			3:  delay_value = 0;
+			4:  delay_value = 0;
 			default:
 				delay_value = 0;
 		endcase
 	end
 endfunction
-*/
-/*
+
+wire clk200;
 // Buffer for IDELAYCTRL clock.
 BUFG BUFG_200 (
 	.O(clk200), 	// 1-bit output: Clock output
@@ -409,10 +403,10 @@ IDELAYCTRL IDELAYCTRL_inst (
 	.REFCLK(clk200), 	// 1-bit input: Reference clock input
 	.RST(rst_in) 		// 1-bit input: Active high reset input
 );
-*/
+
 
 // Bit slip state machine to align data with frame (may still need delay line at high speeds).
-localparam TP = 8'b00001111; //training pattern. Frame deserialized 1:8 give 00001111.
+localparam TP = 8'b10000111; //training pattern. Frame deserialized 1:8 give 10000111 for channel 2.
 //Two states, CHECK if we are matched up, or TOGGLE BITSLIP
 localparam CHECK = 1'b0;
 localparam TOGGLE = 1'b1;
@@ -444,7 +438,7 @@ endfunction
 //Sequential part, toggling bit_slip
 reg  BS_state;
 reg bit_slip;
-reg [1:0] counter;
+reg [1:0] counter;//Must be high for 1 cycle, low for one cycle
 //BITSLIP is synchronous to CLKDIV
 always @(posedge clk_div) begin
     if (rst_in) begin

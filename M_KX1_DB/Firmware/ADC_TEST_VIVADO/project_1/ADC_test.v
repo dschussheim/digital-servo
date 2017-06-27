@@ -28,29 +28,29 @@ module ADC_test(
 	//\\\\\\\\\ADCs//////////\\
 	
 	//ADC SPI IOs
-   output 	wire			adc_sck,
-   output 	wire			adc_sdi,
-//	output	wire			adc_scs1,
-	output	wire			adc_scs2,
-   input 	wire			adc_sdo,
+    output 	wire			adc_sck,
+    output 	wire			adc_sdi,
+    output	wire			adc_scs1,
+    output	wire			adc_scs2,
+    input 	wire			adc_sdo,
 	
 	//Clock input for ADCs
 	output 	wire			ENC_p,
-   output 	wire			ENC_n,
-	/*
+    output 	wire			ENC_n,
+	
 	//First ADC data to FPGA
 	//Data clock
 	input 	wire			adc_DCO1_p,
-   input 	wire			adc_DCO1_n,
+    input 	wire			adc_DCO1_n,
 	//Frame "enclosing" different sets of data
-   input 	wire			FR1_p,
-   input 	wire			FR1_n,
+    input 	wire			FR1_p,
+    input 	wire			FR1_n,
 	//Data streams
 	input 	wire	[1:0] 	D10_p,
-   input 	wire	[1:0] 	D10_n,
-   input 	wire	[1:0] 	D11_p,
-   input 	wire	[1:0] 	D11_n,
-	*/
+    input 	wire	[1:0] 	D10_n,
+    input 	wire	[1:0] 	D11_p,
+    input 	wire	[1:0] 	D11_n,
+	
 	//Second ADC data to FPGA
 	//Data clock
 	input 	wire			adc_DCO2_p,
@@ -107,7 +107,7 @@ wire clk_int, clk_in, DIVclk;
 
 // IBUFG: Single-ended global clock input buffer
 IBUFG #(
-	.IBUF_LOW_PWR("TRUE"), 	// Low power="TRUE", Highest performance="FALSE"
+	.IBUF_LOW_PWR("FALSE"), 	// Low power="TRUE", Highest performance="FALSE"
 	.IOSTANDARD("HSTL_II") 	// Specify the input I/O standard
 ) 
 IBUFG_inst (
@@ -171,8 +171,6 @@ end
 wire	[15:0]	ADC10_out, ADC11_out;
 
 parameter	CLKDIV = 80;	//10MHz clock
-
-/*
 LTC2195 #(
 	.CLKDIV(CLKDIV)
 )
@@ -200,9 +198,7 @@ LTC2195 #(
    .ADC1_out(ADC11_out), 
    .FR_out()
     );
-//For now, sending one bit to an LED for testing. Choose the but you want.
-assign ADC1_out = ADC10_out[15];
-*/
+
 wire	[15:0]	ADC20_out, ADC21_out;
 
 LTC2195 #(
@@ -233,7 +229,7 @@ ADC2 (
    .FR_out()
     );
 
-assign ADC_out[3:0] = ADC20_out[15:12];
+assign ADC_out[3:0] = ~ADC21_out[15:12];
 
 
 parameter	SMP_DLY = 8'h0;
@@ -247,8 +243,8 @@ AD9783 #(
  AD9783_inst1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(ADC20_out), 
-     .DAC1_in(ADC20_out), 
+     .DAC0_in(ADC21_out), 
+     .DAC1_in(ADC21_out), 
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI1_out_p), 
