@@ -1,20 +1,20 @@
-#create_clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk]
-#set_input_jitter clk 0.000
-#create_generated_clock -name {AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0} -source [get_ports clk] -divide_by 1 [get_pins AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg/Q]
-#create_generated_clock -name {AD9783_inst1/spi_data_reg_n_0_[10]} -source [get_ports clk] -divide_by 1 [get_pins {AD9783_inst1/spi_data_reg[10]/Q}]
-#create_generated_clock -name {AD9783_inst1/spi_data_reg_n_0_[15]} -source [get_ports clk] -divide_by 1 [get_pins {AD9783_inst1/spi_data_reg[15]/Q}]
-#create_generated_clock -name AD9783_inst1/spi_trigger_reg_n_0 -source [get_ports clk] -divide_by 1 [get_pins AD9783_inst1/spi_trigger_reg/Q]
-#create_generated_clock -name ADC2/LTC2195_SPI_inst/spi_clk -source [get_ports clk] -divide_by 1 [get_pins ADC2/LTC2195_SPI_inst/spi_clk_reg/Q]
-#create_generated_clock -name ADC2/PS_clk -source [get_ports clk] -divide_by 1 [get_pins ADC2/PS_clk_reg/Q]
-#create_generated_clock -name {ADC2/spi_data[7]} -source [get_ports clk] -divide_by 1 [get_pins {ADC2/spi_data_reg[7]/Q}]
-#create_generated_clock -name {ADC2/spi_data[8]} -source [get_ports clk] -divide_by 1 [get_pins {ADC2/spi_data_reg[8]/Q}]
-#create_generated_clock -name {ADC2/spi_data[9]} -source [get_ports clk] -divide_by 1 [get_pins {ADC2/spi_data_reg[9]/Q}]
-#create_generated_clock -name ADC2/spi_trigger_reg_n_0 -source [get_ports clk] -divide_by 1 [get_pins ADC2/spi_trigger_reg/Q]
-#create_generated_clock -name rstLEDclk/clk__0 -source [get_ports clk] -divide_by 1 [get_pins rstLEDclk/div_clk_reg/Q]
-#create_generated_clock -name rst_in -source [get_pins rstLEDclk/div_clk_reg/Q] -divide_by 1 [get_pins rst_in_reg/Q]
-#create_generated_clock -name CLK_out_p -source [get_pins AD9783_inst1/ODDR_CLK/C] -divide_by 1 -invert [get_ports CLK_out_p]
-#create_generated_clock -name DCI1_out_p -source [get_pins {AD9783_inst1/pins[16].ODDR_inst/C}] -divide_by 1 [get_ports DCI1_out_p]
-#create_generated_clock -name ENC_p -source [get_pins ADC2/ODDR_inst/C] -divide_by 1 -invert [get_ports ENC_p]
+create_clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk]
+set_input_jitter clk 0.000
+create_generated_clock -name {AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0} -source [get_ports clk] -divide_by 1 [get_pins AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg/Q]
+create_generated_clock -name {AD9783_inst1/spi_data_reg_n_0_[10]} -source [get_ports clk] -divide_by 1 [get_pins {AD9783_inst1/spi_data_reg[10]/Q}]
+create_generated_clock -name {AD9783_inst1/spi_data_reg_n_0_[15]} -source [get_ports clk] -divide_by 1 [get_pins {AD9783_inst1/spi_data_reg[15]/Q}]
+create_generated_clock -name AD9783_inst1/spi_trigger_reg_n_0 -source [get_ports clk] -divide_by 1 [get_pins AD9783_inst1/spi_trigger_reg/Q]
+create_generated_clock -name ADC2/LTC2195_SPI_inst/spi_clk -source [get_ports clk] -divide_by 1 [get_pins ADC2/LTC2195_SPI_inst/spi_clk_reg/Q]
+create_generated_clock -name ADC2/PS_clk -source [get_ports clk] -divide_by 1 [get_pins ADC2/PS_clk_reg/Q]
+create_generated_clock -name {ADC2/spi_data[7]} -source [get_ports clk] -divide_by 1 [get_pins {ADC2/spi_data_reg[7]/Q}]
+create_generated_clock -name {ADC2/spi_data[8]} -source [get_ports clk] -divide_by 1 [get_pins {ADC2/spi_data_reg[8]/Q}]
+create_generated_clock -name {ADC2/spi_data[9]} -source [get_ports clk] -divide_by 1 [get_pins {ADC2/spi_data_reg[9]/Q}]
+create_generated_clock -name ADC2/spi_trigger_reg_n_0 -source [get_ports clk] -divide_by 1 [get_pins ADC2/spi_trigger_reg/Q]
+create_generated_clock -name rstLEDclk/clk__0 -source [get_ports clk] -divide_by 1 [get_pins rstLEDclk/div_clk_reg/Q]
+create_generated_clock -name rst_in -source [get_pins rstLEDclk/div_clk_reg/Q] -divide_by 1 [get_pins rst_in_reg/Q]
+create_generated_clock -name CLK_out_p -source [get_pins AD9783_inst1/ODDR_CLK/C] -divide_by 1 -invert [get_ports CLK_out_p]
+create_generated_clock -name DCI1_out_p -source [get_pins {AD9783_inst1/pins[16].ODDR_inst/C}] -divide_by 1 [get_ports DCI1_out_p]
+create_generated_clock -name ENC_p -source [get_pins ADC2/ODDR_inst/C] -divide_by 1 -invert [get_ports ENC_p]
 
 #Clock input
 set_property PACKAGE_PIN AA3 [get_ports clk]
@@ -78,14 +78,14 @@ set_property IOSTANDARD LVCMOS25 [get_ports dac_sdi]
 set_property IOSTANDARD LVCMOS25 [get_ports dac_sdo]
 
 #ADC1 input pins
-set_property PACKAGE_PIN AD21 [get_ports {D10_p[0]}]
-set_property PACKAGE_PIN AE21 [get_ports {D10_n[0]}]
-set_property PACKAGE_PIN AE23 [get_ports {D10_p[1]}]
-set_property PACKAGE_PIN AF23 [get_ports {D10_n[1]}]
-set_property PACKAGE_PIN M24  [get_ports {D11_p[0]}]
-set_property PACKAGE_PIN L24  [get_ports {D11_n[0]}]
-set_property PACKAGE_PIN T24  [get_ports {D11_p[1]}]
-set_property PACKAGE_PIN T25  [get_ports {D11_n[1]}]
+#set_property PACKAGE_PIN AD21 [get_ports {D10_p[0]}]
+#set_property PACKAGE_PIN AE21 [get_ports {D10_n[0]}]
+#set_property PACKAGE_PIN AE23 [get_ports {D10_p[1]}]
+#set_property PACKAGE_PIN AF23 [get_ports {D10_n[1]}]
+#set_property PACKAGE_PIN M24  [get_ports {D11_p[0]}]
+#set_property PACKAGE_PIN L24  [get_ports {D11_n[0]}]
+#set_property PACKAGE_PIN T24  [get_ports {D11_p[1]}]
+#set_property PACKAGE_PIN T25  [get_ports {D11_n[1]}]
 
 #ADC2 input pins
 set_property PACKAGE_PIN AB22 [get_ports {D20_p[0]}]
@@ -102,22 +102,22 @@ set_property PACKAGE_PIN AA25 [get_ports ENC_p]
 set_property PACKAGE_PIN AB25 [get_ports ENC_n]
 
 #FR input
-set_property PACKAGE_PIN R25 [get_ports FR1_p]
-set_property PACKAGE_PIN P25 [get_ports FR1_n]
+#set_property PACKAGE_PIN R25 [get_ports FR1_p]
+#set_property PACKAGE_PIN P25 [get_ports FR1_n]
 
 set_property PACKAGE_PIN W23 [get_ports FR2_p]
 set_property PACKAGE_PIN W24 [get_ports FR2_n]
 
 #adc DCO
-set_property PACKAGE_PIN N26 [get_ports adc_DCO1_p]
-set_property PACKAGE_PIN M26 [get_ports adc_DCO1_n]
+#set_property PACKAGE_PIN N26 [get_ports adc_DCO1_p]
+#set_property PACKAGE_PIN M26 [get_ports adc_DCO1_n]
 
 set_property PACKAGE_PIN AD25 [get_ports adc_DCO2_p]
 set_property PACKAGE_PIN AE25 [get_ports adc_DCO2_n]
 
 #SPI IOs for ADC
 set_property PACKAGE_PIN Y21  [get_ports adc_sck]
-set_property PACKAGE_PIN W26  [get_ports adc_scs1]
+#set_property PACKAGE_PIN W26  [get_ports adc_scs1]
 set_property PACKAGE_PIN W25  [get_ports adc_scs2]
 set_property PACKAGE_PIN W20  [get_ports adc_sdi]
 set_property PACKAGE_PIN AC26 [get_ports adc_sdo]

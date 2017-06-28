@@ -2,10 +2,10 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Tue Jun 27 08:35:18 2017
-# Process ID: 5492
+# Start of session at: Wed Jun 28 10:22:12 2017
+# Process ID: 8020
 # Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1616 C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_TEST_VIVADO\project_1\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4904 C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\ADC_TEST_VIVADO\project_1\project_1.xpr
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/vivado.log
 # Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1\vivado.jou
 #-----------------------------------------------------------
@@ -22,12 +22,7 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
+reset_run impl_1 -prev_step 
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
 open_run impl_1
@@ -41,53 +36,6 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
 reset_run synth_1
 launch_runs synth_1 -jobs 2
 wait_on_run synth_1
@@ -104,118 +52,6 @@ refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
@@ -251,11 +87,15 @@ wait_on_run impl_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
+refresh_design
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
@@ -274,21 +114,6 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
@@ -297,6 +122,9 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
@@ -334,9 +162,6 @@ refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
@@ -345,18 +170,12 @@ refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
 reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-reset_run impl_1 -prev_step 
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
@@ -388,32 +207,7 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run impl_1 -prev_step 
+reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
@@ -424,6 +218,46 @@ refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+disconnect_hw_server localhost:3121
+connect_hw_server
+disconnect_hw_server localhost:3121
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+current_hw_device [get_hw_devices xc7k160t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k160t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
@@ -466,6 +300,33 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+undo
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
@@ -493,12 +354,7 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
-set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
-program_hw_devices [get_hw_devices xc7k160t_0]
-refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
-reset_run impl_1 -prev_step 
+reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
@@ -506,8 +362,36 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
 set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
 program_hw_devices [get_hw_devices xc7k160t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/impl_1/ADC_test.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_simulation
+remove_files  C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/deserializer.v

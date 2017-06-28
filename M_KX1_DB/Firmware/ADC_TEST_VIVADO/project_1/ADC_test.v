@@ -30,7 +30,7 @@ module ADC_test(
 	//ADC SPI IOs
     output 	wire			adc_sck,
     output 	wire			adc_sdi,
-    output	wire			adc_scs1,
+    //output	wire			adc_scs1,
     output	wire			adc_scs2,
     input 	wire			adc_sdo,
 	
@@ -40,14 +40,14 @@ module ADC_test(
 	
 	//First ADC data to FPGA
 	//Data clock
-	input 	wire			adc_DCO1_p,
-    input 	wire			adc_DCO1_n,
+	//input 	wire			adc_DCO1_p,
+    //input 	wire			adc_DCO1_n,
 	//Frame "enclosing" different sets of data
     input 	wire			FR1_p,
     input 	wire			FR1_n,
 	//Data streams
-	input 	wire	[1:0] 	D10_p,
-    input 	wire	[1:0] 	D10_n,
+	//input 	wire	[1:0] 	D10_p,
+    //input 	wire	[1:0] 	D10_n,
     input 	wire	[1:0] 	D11_p,
     input 	wire	[1:0] 	D11_n,
 	
@@ -171,6 +171,7 @@ end
 wire	[15:0]	ADC10_out, ADC11_out;
 
 parameter	CLKDIV = 80;	//10MHz clock
+/*
 LTC2195 #(
 	.CLKDIV(CLKDIV)
 )
@@ -198,8 +199,8 @@ LTC2195 #(
    .ADC1_out(ADC11_out), 
    .FR_out()
     );
-
-wire	[15:0]	ADC20_out, ADC21_out;
+*/
+wire	[15:0]	ADC20_out, ADC21_out, FR_out;
 
 LTC2195 #(
 	.CLKDIV(CLKDIV)
@@ -226,10 +227,10 @@ ADC2 (
    .D1_in_n(D21_n), 
    .ADC0_out(ADC20_out), 
    .ADC1_out(ADC21_out), 
-   .FR_out()
+   .FR_out(FR_out)
     );
 
-assign ADC_out[3:0] = ~ADC21_out[15:12];
+assign ADC_out[3:0] = ~FR_out[7:4];
 
 
 parameter	SMP_DLY = 8'h0;

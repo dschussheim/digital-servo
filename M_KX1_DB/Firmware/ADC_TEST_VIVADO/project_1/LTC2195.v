@@ -54,7 +54,7 @@ parameter	CLKDIV = 8'd120; //800MHz/100 = 8Mhz, slowest ADC can go is 5MHz. CLKD
 
 ///////////////////////////////////////////////////////////////////////////////
 // FSM to control ENC phase shifter
-
+/*
 reg PS_clk, PS_en, PS_inc;
 wire PS_done, PS_locked;
 wire [7:0] PS_status;
@@ -207,7 +207,7 @@ always @(posedge clk_in or posedge rst_in) begin
 		endcase
 	end
 end
-
+*/
 ///////////////////////////////////////////////////////////////////////////////
 // LVDS ENC output
 wire	clkPS_int, clkPS, clk_int, clk_div_int, clk200_int, clkFB;		//clock for phase shifting of ENC, and clock for deserialization (LVDS inputs block below)
@@ -234,7 +234,7 @@ MMCME2_ADV #(
 	// CLKOUT0_PHASE - CLKOUT6_PHASE: Phase offset for CLKOUT outputs (-360.000-360.000).
 	.CLKOUT0_PHASE(0.0),
 	.CLKOUT1_PHASE(0.0),
-	.CLKOUT2_PHASE(0.0),
+	.CLKOUT2_PHASE(45.0),
 	.CLKOUT3_PHASE(0.0),
 	.COMPENSATION("ZHOLD"),    // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
 	.DIVCLK_DIVIDE(1),         // Master division value (1-106)
@@ -255,10 +255,10 @@ MMCME2_ADV_inst (
 	.CLKOUT2(clk_div_int),		    //	Clock for IDELAY control, 200MHz
 	.CLKOUT3(clk200_int),			//	This clock for IDELAYCTRL must be 200MHz
 	// Dynamic Phase Shift Ports: 1-bit (each) output: Ports used for dynamic phase shifting of the outputs
-	.PSDONE(PS_done), 				// 1-bit output: Phase shift done
+	.PSDONE(), 				        // 1-bit output: Phase shift done
 	// Feedback Clocks: 1-bit (each) output: Clock feedback ports
 	.CLKFBOUT(clkFB), 				// 1-bit output: Feedback clock
-	.LOCKED(PS_locked), 			// 1-bit output: LOCK
+	.LOCKED(), 			            // 1-bit output: LOCK
 	// Clock Inputs: 1-bit (each) input: Clock inputs
 	.CLKIN1(clk_in), 				// 1-bit input: Primary clock
 	// Control Ports: 1-bit (each) input: MMCM control ports
@@ -268,9 +268,9 @@ MMCME2_ADV_inst (
 	// DRP Ports: 7-bit (each) input: Dynamic reconfiguration ports
 	.DWE(1'b0), 					// 1-bit input: DRP write enable
 	// Dynamic Phase Shift Ports: 1-bit (each) input: Ports used for dynamic phase shifting of the outputs
-	.PSCLK(PS_clk), 				// 1-bit input: Phase shift clock
-	.PSEN(PS_en), 					// 1-bit input: Phase shift enable
-	.PSINCDEC(PS_inc), 				// 1-bit input: Phase shift increment/decrement
+	.PSCLK(1'b0), 				// 1-bit input: Phase shift clock
+	.PSEN(1'b0), 					// 1-bit input: Phase shift enable
+	.PSINCDEC(1'b0), 				// 1-bit input: Phase shift increment/decrement
 	// Feedback Clocks: 1-bit (each) input: Clock feedback ports
 	.CLKFBIN(clkFB) 				// 1-bit input: Feedback clock
 );
@@ -407,6 +407,7 @@ IDELAYCTRL IDELAYCTRL_inst (
 
 // Bit slip state machine to align data with frame (may still need delay line at high speeds).
 localparam TP = 8'b10000111; //training pattern. Frame deserialized 1:8 give 10000111 for channel 2.
+//localparam TP = 8'b00001111; //for simulation
 //Two states, CHECK if we are matched up, or TOGGLE BITSLIP
 localparam CHECK = 1'b0;
 localparam TOGGLE = 1'b1;
@@ -477,7 +478,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.IB(data_in_n[pin_count]) 			// Diff_n buffer input (connect directly to top-level port)
 	);
 	
-	/*
+	
 	// IDELAYE2: Input Fixed or Variable Delay Element
 	(* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
 	IDELAYE2 #(
@@ -504,7 +505,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.REGRST(1'b0),	 								// 1-bit input: Active-high reset tap-delay input
 		.CNTVALUEOUT()									// 5-bit output: Counter value output
 	);	
-	*/
+	
 	
 	
 	// ISERDESE2: Input SERial/DESerializer with Bitslip
@@ -559,11 +560,11 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.CLKDIV(clk_div), 	// 1-bit input: Divided clock
 		.OCLK(), 		// 1-bit input: High speed output clock used when INTERFACE_TYPE="MEMORY"
 		// Dynamic Clock Inversions: 1-bit (each) input: Dynamic clock inversion pins to switch clock polarity
-		.DYNCLKDIVSEL(), 	// 1-bit input: Dynamic CLKDIV inversion
-		.DYNCLKSEL(), 		// 1-bit input: Dynamic CLK/CLKB inversion
+		.DYNCLKDIVSEL(1'b0), 	// 1-bit input: Dynamic CLKDIV inversion
+		.DYNCLKSEL(1'b0), 		// 1-bit input: Dynamic CLK/CLKB inversion
 		// Input Data: 1-bit (each) input: ISERDESE2 data input ports
 		.D(data_in_from_pins[pin_count]), // 1-bit input: Data input
-		.DDLY(), 			// 1-bit input: Serial data from IDELAYE2
+		.DDLY(data_in_from_pins_delay[pin_count]), 			// 1-bit input: Serial data from IDELAYE2
 		.OFB(), 			// 1-bit input: Data feedback from OSERDESE2
 		.OCLKB(), 			// 1-bit input: High speed negative edge output clock
 		.RST(rst_in), 		// 1-bit input: Active high asynchronous reset

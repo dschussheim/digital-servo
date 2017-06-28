@@ -27,14 +27,14 @@ module ADC_test_tb;
 	// Inputs
 	reg clk;
 	reg sdi;
-	reg DCO1_p;
-	reg DCO1_n;
-	reg FR1_p;
-	reg FR1_n;
-	reg [1:0] D10_p;
-	reg [1:0] D10_n;
-	reg [1:0] D11_p;
-	reg [1:0] D11_n;
+	//reg DCO1_p;
+	//reg DCO1_n;
+	//reg FR1_p;
+	//reg FR1_n;
+	//reg [1:0] D10_p;
+	//reg [1:0] D10_n;
+	//reg [1:0] D11_p;
+	//reg [1:0] D11_n;
 	reg DCO2_p;
 	reg DCO2_n;
 	reg FR2_p;
@@ -49,12 +49,12 @@ module ADC_test_tb;
 	wire sdo;
 	wire ENC_p;
 	wire ENC_n;
-	wire ADC1_out;
-	wire scs1;
+	//wire ADC1_out;
+	//wire scs1;
 	wire ADC2_out;
 	wire scs2;
-	wire clk_led;
-	wire rst_led;
+	//wire clk_led;
+	//wire rst_led;
 
 	// Instantiate the Unit Under Test (UUT)
 	ADC_test uut (
@@ -64,16 +64,16 @@ module ADC_test_tb;
 		.sdi(sdi), 
 		.ENC_p(ENC_p), 
 		.ENC_n(ENC_n), 
-		.DCO1_p(DCO1_p), 
-		.DCO1_n(DCO1_n), 
-		.FR1_p(FR1_p), 
-		.FR1_n(FR1_n), 
-		.D10_p(D10_p), 
-		.D10_n(D10_n), 
-		.D11_p(D11_p), 
-		.D11_n(D11_n), 
-		.ADC1_out(ADC1_out), 
-		.scs1(scs1), 
+		//.DCO1_p(DCO1_p), 
+		//.DCO1_n(DCO1_n), 
+		//.FR1_p(FR1_p), 
+		//.FR1_n(FR1_n), 
+		//.D10_p(D10_p), 
+		//.D10_n(D10_n), 
+		//.D11_p(D11_p), 
+		//.D11_n(D11_n), 
+		//.ADC1_out(ADC1_out), 
+		//.scs1(scs1), 
 		.DCO2_p(DCO2_p), 
 		.DCO2_n(DCO2_n), 
 		.FR2_p(FR2_p), 
@@ -83,23 +83,21 @@ module ADC_test_tb;
 		.D21_p(D21_p), 
 		.D21_n(D21_n), 
 		.ADC2_out(ADC2_out), 
-		.scs2(scs2), 
-		.clk_led(clk_led), 
-		.rst_led(rst_led)
+		.scs2(scs2)
 	);
 
 	initial begin
 		// Initialize Inputs
 		clk = 0;
 		sdi = 0;
-		DCO1_p = 0;
-		DCO1_n = 0;
-		FR1_p = 0;
-		FR1_n = 0;
-		D10_p = 2'b00;
-		D10_n = ~D10_p;
-		D11_p = 2'b01;
-		D11_n = ~D11_p;
+		//DCO1_p = 0;
+		//DCO1_n = 0;
+		//FR1_p = 0;
+		//FR1_n = 0;
+		//D10_p = 2'b00;
+		//D10_n = ~D10_p;
+		//D11_p = 2'b01;
+		//D11_n = ~D11_p;
 		DCO2_p = 0;
 		DCO2_n = 0;
 		FR2_p = 0;
@@ -119,13 +117,13 @@ module ADC_test_tb;
 		always
 			#5 clk = ~clk;
 		always
-			#1.25	DCO_in_p = ~DCO_in_p;
+			#1.25	DCO2_p = ~DCO2_p;
 		always
-			#1.25	DCO_in_n = ~DCO_in_n;
+			#1.25	DCO2_n = ~DCO2_n;
 		always
-			#5	FR_in_p = ~FR_in_p;
+			#5	FR2_p = ~FR2_p;
 		always
-			#5	FR_in_n = ~FR_in_n;	
+			#5	FR2_n = ~FR2_n;	
 		//always
 			//#1.25
 		
