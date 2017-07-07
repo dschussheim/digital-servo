@@ -30,7 +30,7 @@ module ADC_test(
 	//ADC SPI IOs
     output 	wire			adc_sck,
     output 	wire			adc_sdi,
-    //output	wire			adc_scs1,
+    output	wire			adc_scs1,
     output	wire			adc_scs2,
     input 	wire			adc_sdo,
 	
@@ -40,14 +40,14 @@ module ADC_test(
 	
 	//First ADC data to FPGA
 	//Data clock
-	//input 	wire			adc_DCO1_p,
-    //input 	wire			adc_DCO1_n,
+	input 	wire			adc_DCO1_p,
+    input 	wire			adc_DCO1_n,
 	//Frame "enclosing" different sets of data
     input 	wire			FR1_p,
     input 	wire			FR1_n,
 	//Data streams
-	//input 	wire	[1:0] 	D10_p,
-    //input 	wire	[1:0] 	D10_n,
+	input 	wire	[1:0] 	D10_p,
+    input 	wire	[1:0] 	D10_n,
     input 	wire	[1:0] 	D11_p,
     input 	wire	[1:0] 	D11_n,
 	
@@ -132,11 +132,11 @@ rstLEDclk(
 	);
 
 //Reset about every minute.
-localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
-localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
+//localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
+//localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
 
-//localparam	max = 30'h989680; 		//10*1,000,000 (number of cycles of clk_in/minute)
-//localparam	rst_on = 30'h895440; 	// turn reset on after 9,000,000 cycles, and keep on for .5 second
+localparam	max = 30'h989680; 		//10*1,000,000 (number of cycles of clk_in/minute)
+localparam	rst_on = 30'h895440; 	// turn reset on after 9,000,000 cycles, and keep on for .5 second
 
 reg	rst_in = 1'b0;
 reg	[29:0]	counter = 30'b0;
@@ -149,13 +149,13 @@ reg rst_led;
 always @(posedge DIVclk) begin
 	if (counter < rst_on)	begin
 		counter <= counter + 30'b1;
-		//rst_in <= 1'b0;
+		rst_in <= 1'b0;
 		rst_led <= ~rst_in;
 		//bitslip <= 1'b0;
 	end
 	else if ( (counter >= rst_on) && (counter < max-30'b1) ) begin
 		counter <= counter + 30'b1;
-		//rst_in <= 1'b1;
+		rst_in <= 1'b1;
 		rst_led <= ~rst_in;
 		//bitslip <= 1'b1;
 	end
@@ -170,8 +170,8 @@ end
 
 wire	[15:0]	ADC10_out, ADC11_out;
 
-parameter	CLKDIV = 80;	//10MHz clock
-/*
+parameter	CLKDIV = 8;	//10MHz clock
+
 LTC2195 #(
 	.CLKDIV(CLKDIV)
 )
@@ -199,7 +199,7 @@ LTC2195 #(
    .ADC1_out(ADC11_out), 
    .FR_out()
     );
-*/
+
 wire	[15:0]	ADC20_out, ADC21_out, FR_out;
 
 LTC2195 #(
@@ -230,11 +230,32 @@ ADC2 (
    .FR_out(FR_out)
     );
 
-assign ADC_out[3:0] = ~FR_out[7:4];
+// Generate Sweep
 
+parameter	SIGNAL_OUT_SIZE = 16;
 
-parameter	SMP_DLY = 8'h0;
-parameter	CLK1PHASE = -90; //Phase of CLK_out relative to data
+wire	signed	[15:0]	minval_in;
+wire	signed	[15:0]	maxval_in;
+wire				[31:0]	stepsize_in;
+wire    signed  [15:0]  DAC00_in;
+
+assign	minval_in = 16'sb1000_0000_0000_0000;
+assign	maxval_in = 16'sb0111_1111_1111_1111;
+//assign	maxval_in = 16'sb0000_0000_0000_0000;
+assign	stepsize_in = 32'b0000_0000_0000_0000_0000_0000_0000_1000; //Change value every 128 clock cycles ~781kHz ramp
+
+//Sweep instantiation
+Sweep Sweep_inst (
+    .clk_in(clk_in), 
+    .on_in(1'b1), 
+    .minval_in(minval_in), 
+    .maxval_in(maxval_in), 
+    .stepsize_in(stepsize_in), 
+    .signal_out(DAC00_in)
+    );
+
+parameter	SMP_DLY = 8'h02;
+parameter	CLK1PHASE = 0; //Phase of CLK_out relative to data
 // Instantiate DAC1 driver module
 AD9783 #(
 	.CLKDIV(CLKDIV),
@@ -244,8 +265,8 @@ AD9783 #(
  AD9783_inst1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(ADC21_out), 
-     .DAC1_in(ADC21_out), 
+     .DAC0_in(DAC00_in), 
+     .DAC1_in(DAC00_in), 
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI1_out_p), 
@@ -263,6 +284,6 @@ AD9783 #(
 	 .cmd_data_out(),
 	 .clk_out()
     );
-
+assign ADC_out[3:0] = ~DAC00_in[15:12];
 
 endmodule

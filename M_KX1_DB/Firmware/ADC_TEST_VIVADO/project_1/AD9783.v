@@ -15,31 +15,31 @@
 `timescale 1ps/1ps // this was in the SelectIO design
 
 module AD9783(
-	input		wire							clk_in,
-	input		wire						   rst_in,
+	input	wire						clk_in,
+	input	wire						rst_in,
 	
-	input 	wire 			  				cmd_trig_in,
+	input 	wire 			  			cmd_trig_in,
 	input 	wire 			  	[15:0] 	cmd_addr_in,
-	input		wire 			  	[15:0] 	cmd_data_in,
+	input	wire 			  	[15:0] 	cmd_data_in,
 	output	wire				[15:0] 	cmd_data_out,
 	
 	output 	reg						 	rst_out,
-	output 	wire						 	spi_scs_out,
-	output 	wire						 	spi_sck_out,
-	output 	wire						 	spi_sdo_out,
-	input  	wire						 	spi_sdi_in,
+	output 	wire						spi_scs_out,
+	output 	wire						spi_sck_out,
+	output 	wire						spi_sdo_out,
+	input  	wire						spi_sdi_in,
 	
-	input  	wire	signed	[15:0] 	DAC0_in,
-	input  	wire	signed	[15:0] 	DAC1_in,
+	input  	wire	signed	    [15:0] 	DAC0_in,
+	input  	wire	signed	    [15:0] 	DAC1_in,
 	
-	output 	wire							CLK_out_p,
-	output 	wire							CLK_out_n,
-	output 	wire							DCI_out_p,
-	output 	wire							DCI_out_n,
+	output 	wire						CLK_out_p,
+	output 	wire						CLK_out_n,
+	output 	wire						DCI_out_p,
+	output 	wire						DCI_out_n,
 	output 	wire				[15:0] 	D_out_p,
 	output 	wire		  		[15:0] 	D_out_n,
 	
-	output	wire							clk_out
+	output	wire						clk_out
 );
 
 // Parameters

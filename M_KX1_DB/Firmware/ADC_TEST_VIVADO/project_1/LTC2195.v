@@ -394,7 +394,7 @@ BUFG BUFG_200 (
 	.O(clk200), 	// 1-bit output: Clock output
 	.I(clk200_int) 	// 1-bit input: Clock input
 );
-
+/*
 // IDELAYCTRL: IDELAYE2/ODELAYE2 Tap Delay Value Control
 // Needed for IDELAYE2
 (* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
@@ -403,7 +403,7 @@ IDELAYCTRL IDELAYCTRL_inst (
 	.REFCLK(clk200), 	// 1-bit input: Reference clock input
 	.RST(rst_in) 		// 1-bit input: Active high reset input
 );
-
+*/
 
 // Bit slip state machine to align data with frame (may still need delay line at high speeds).
 localparam TP = 8'b10000111; //training pattern. Frame deserialized 1:8 give 10000111 for channel 2.
@@ -478,7 +478,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.IB(data_in_n[pin_count]) 			// Diff_n buffer input (connect directly to top-level port)
 	);
 	
-	
+	/*
 	// IDELAYE2: Input Fixed or Variable Delay Element
 	(* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
 	IDELAYE2 #(
@@ -506,7 +506,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.CNTVALUEOUT()									// 5-bit output: Counter value output
 	);	
 	
-	
+	*/
 	
 	// ISERDESE2: Input SERial/DESerializer with Bitslip
 	ISERDESE2 #(

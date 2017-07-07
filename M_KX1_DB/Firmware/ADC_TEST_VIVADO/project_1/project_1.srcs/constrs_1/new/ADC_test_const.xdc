@@ -78,14 +78,14 @@ set_property IOSTANDARD LVCMOS25 [get_ports dac_sdi]
 set_property IOSTANDARD LVCMOS25 [get_ports dac_sdo]
 
 #ADC1 input pins
-#set_property PACKAGE_PIN AD21 [get_ports {D10_p[0]}]
-#set_property PACKAGE_PIN AE21 [get_ports {D10_n[0]}]
-#set_property PACKAGE_PIN AE23 [get_ports {D10_p[1]}]
-#set_property PACKAGE_PIN AF23 [get_ports {D10_n[1]}]
-#set_property PACKAGE_PIN M24  [get_ports {D11_p[0]}]
-#set_property PACKAGE_PIN L24  [get_ports {D11_n[0]}]
-#set_property PACKAGE_PIN T24  [get_ports {D11_p[1]}]
-#set_property PACKAGE_PIN T25  [get_ports {D11_n[1]}]
+set_property PACKAGE_PIN AD21 [get_ports {D10_p[0]}]
+set_property PACKAGE_PIN AE21 [get_ports {D10_n[0]}]
+set_property PACKAGE_PIN AE23 [get_ports {D10_p[1]}]
+set_property PACKAGE_PIN AF23 [get_ports {D10_n[1]}]
+set_property PACKAGE_PIN M24  [get_ports {D11_p[0]}]
+set_property PACKAGE_PIN L24  [get_ports {D11_n[0]}]
+set_property PACKAGE_PIN T24  [get_ports {D11_p[1]}]
+set_property PACKAGE_PIN T25  [get_ports {D11_n[1]}]
 
 #ADC2 input pins
 set_property PACKAGE_PIN AB22 [get_ports {D20_p[0]}]
@@ -102,22 +102,22 @@ set_property PACKAGE_PIN AA25 [get_ports ENC_p]
 set_property PACKAGE_PIN AB25 [get_ports ENC_n]
 
 #FR input
-#set_property PACKAGE_PIN R25 [get_ports FR1_p]
-#set_property PACKAGE_PIN P25 [get_ports FR1_n]
+set_property PACKAGE_PIN R25 [get_ports FR1_p]
+set_property PACKAGE_PIN P25 [get_ports FR1_n]
 
 set_property PACKAGE_PIN W23 [get_ports FR2_p]
 set_property PACKAGE_PIN W24 [get_ports FR2_n]
 
 #adc DCO
-#set_property PACKAGE_PIN N26 [get_ports adc_DCO1_p]
-#set_property PACKAGE_PIN M26 [get_ports adc_DCO1_n]
+set_property PACKAGE_PIN N26 [get_ports adc_DCO1_p]
+set_property PACKAGE_PIN M26 [get_ports adc_DCO1_n]
 
 set_property PACKAGE_PIN AD25 [get_ports adc_DCO2_p]
 set_property PACKAGE_PIN AE25 [get_ports adc_DCO2_n]
 
 #SPI IOs for ADC
 set_property PACKAGE_PIN Y21  [get_ports adc_sck]
-#set_property PACKAGE_PIN W26  [get_ports adc_scs1]
+set_property PACKAGE_PIN W26  [get_ports adc_scs1]
 set_property PACKAGE_PIN W25  [get_ports adc_scs2]
 set_property PACKAGE_PIN W20  [get_ports adc_sdi]
 set_property PACKAGE_PIN AC26 [get_ports adc_sdo]
