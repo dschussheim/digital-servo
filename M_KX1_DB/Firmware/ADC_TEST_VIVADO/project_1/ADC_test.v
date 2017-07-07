@@ -258,15 +258,13 @@ parameter	SMP_DLY = 8'h02;
 parameter	CLK1PHASE = 0; //Phase of CLK_out relative to data
 // Instantiate DAC1 driver module
 AD9783 #(
-	.CLKDIV(CLKDIV),
-	.SMP_DLY(SMP_DLY),
-	.CLK1PHASE(CLK1PHASE)
+	.CLKDIV(4) //200MHz clock
 )
  AD9783_inst1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(DAC00_in), 
-     .DAC1_in(DAC00_in), 
+     .DAC0_in(ADC20_out), 
+     .DAC1_in(~ADC20_out), 
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI1_out_p), 

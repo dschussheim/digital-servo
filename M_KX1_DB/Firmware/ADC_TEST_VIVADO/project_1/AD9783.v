@@ -43,7 +43,9 @@ module AD9783(
 );
 
 // Parameters
-parameter 	SMP_DLY	= 8'h0;
+parameter 	SMP_DLY	= 8'h13; //Default timing values taken from data sheet for 200MHz clocking
+parameter   SET = 4'hD;
+parameter   HLD = 4'hF;
 parameter 	CLKDIV = 80;		//8 = 100MHz, 80 = 10MHz
 parameter	IODG_NAME = "OUTPUT_DG_0";		//Name for io delay group
 parameter	CLK1PHASE = 45;
@@ -200,7 +202,7 @@ OBUFDS #(
 
 reg			spi_trigger;
 reg  [15:0]	spi_data;
-wire			spi_ready;
+wire		spi_ready;
 
 SPI #(
 	.TRANSFER_SIZE(16),
@@ -223,18 +225,21 @@ AD_9783_SPI_inst(
 // State machine which controls initialization and communicates with the PC
 
 // State machine definitions
-localparam IDLE 	= 4'h0;
-localparam RST1   = 4'h1;
-localparam RST2   = 4'h2;
-localparam RST3A  = 4'h3;
-localparam RST3B  = 4'h4;
-localparam RST3C  = 4'h5;
-localparam GET1A	= 4'h6;
-localparam GET1B	= 4'h7;
-localparam GET1C	= 4'h8;
-localparam SET1A	= 4'h9;
-localparam SET1B	= 4'hA;
-localparam SET1C	= 4'hB;
+localparam IDLE  = 4'h0;
+localparam RST1  = 4'h1;
+localparam RST2  = 4'h2;
+localparam RST3A = 4'h3;
+localparam RST3B = 4'h4;
+localparam RST3C = 4'h5;
+localparam RST4A = 4'h6;
+localparam RST4B = 4'h7;
+localparam RST4C = 4'h8;
+localparam GET1A = 4'h9;
+localparam GET1B = 4'hA;
+localparam GET1C = 4'hB;
+localparam SET1A = 4'hC;
+localparam SET1B = 4'hD;
+localparam SET1C = 4'hE;
 
 // State
 // The next line makes synthesis happy
@@ -274,7 +279,13 @@ function [3:0] next_state;
 			RST3B:
 					next_state = RST3C;
 			RST3C:
-					next_state = IDLE;
+					next_state = RST4A;
+		    RST4A:
+		            next_state = RST4B;
+		    RST4B:
+		            next_state = RST4C;
+		    RST4C:
+		            next_state = IDLE;
 			GET1A:
 				if (ready)
 					next_state = GET1B;
@@ -329,6 +340,15 @@ always @(posedge clk_in or posedge rst_in) begin
 			end
 			RST3C: begin
 				spi_trigger <= 1'b0;
+			end
+			RST4A: begin
+			    spi_data <= {1'b0, 2'b0 , 5'h4, SET, HLD};
+			end
+			RST4B: begin
+			    spi_trigger <= 1'b1;
+			end
+			RST4C: begin
+			    spi_trigger <= 1'b0;
 			end
 			// Get the value of a SPI register
 			GET1A: begin

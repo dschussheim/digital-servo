@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Thu Jul  6 17:54:44 2017
+| Date         : Fri Jul  7 17:14:44 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_drc -file ADC_test_drc_routed.rpt -pb ADC_test_drc_routed.pb -rpx ADC_test_drc_routed.rpx
 | Design       : ADC_test
@@ -24,11 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 8
+             Violations found: 10
 +----------+----------+-------------------+------------+
 | Rule     | Severity | Description       | Violations |
 +----------+----------+-------------------+------------+
-| PDRC-153 | Warning  | Gated clock check | 8          |
+| PDRC-153 | Warning  | Gated clock check | 10         |
 +----------+----------+-------------------+------------+
 
 2. REPORT DETAILS
@@ -45,30 +45,40 @@ Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 is a gated clock net sourced by a combinational pin AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0/O, cell AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net AD9783_inst1/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 is a gated clock net sourced by a combinational pin AD9783_inst1/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0/O, cell AD9783_inst1/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1/O, cell ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1/O, cell ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1/O, cell ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1/O, cell ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
+Gated clock check  
+Net ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1/O, cell ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1/O, cell ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
 Gated clock check  
 Net ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
