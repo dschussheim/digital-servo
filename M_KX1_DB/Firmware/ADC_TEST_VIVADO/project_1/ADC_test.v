@@ -229,7 +229,7 @@ ADC2 (
    .ADC1_out(ADC21_out), 
    .FR_out(FR_out)
     );
-
+/*
 // Generate Sweep
 
 parameter	SIGNAL_OUT_SIZE = 16;
@@ -253,7 +253,7 @@ Sweep Sweep_inst (
     .stepsize_in(stepsize_in), 
     .signal_out(DAC00_in)
     );
-
+*/
 parameter	SMP_DLY = 8'h02;
 parameter	CLK1PHASE = 0; //Phase of CLK_out relative to data
 // Instantiate DAC1 driver module
@@ -282,6 +282,6 @@ AD9783 #(
 	 .cmd_data_out(),
 	 .clk_out()
     );
-assign ADC_out[3:0] = ~DAC00_in[15:12];
+assign ADC_out[3:0] = ~ADC20_out[15:12];
 
 endmodule

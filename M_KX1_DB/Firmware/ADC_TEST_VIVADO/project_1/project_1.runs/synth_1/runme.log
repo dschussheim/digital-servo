@@ -14,15 +14,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4640 
+INFO: Helper process launched with PID 8368 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 307.328 ; gain = 77.801
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 307.125 ; gain = 77.070
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'ADC_test' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:21]
 	Parameter max bound to: 30'b000000100110001001011010000000 
 	Parameter rst_on bound to: 30'b000000100010010101010001000000 
 	Parameter CLKDIV bound to: 8 - type: integer 
-	Parameter SIGNAL_OUT_SIZE bound to: 16 - type: integer 
 	Parameter SMP_DLY bound to: 8'b00000010 
 	Parameter CLK1PHASE bound to: 0 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'IBUFG' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
@@ -178,12 +177,6 @@ WARNING: [Synth 8-5788] Register spi_data_reg in module LTC2195 is has both Set 
 WARNING: [Synth 8-3848] Net data_in_from_pins_delay in module/entity LTC2195 does not have driver. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:371]
 INFO: [Synth 8-256] done synthesizing module 'LTC2195' (10#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:17]
 WARNING: [Synth 8-689] width (16) of port connection 'FR_out' does not match port width (8) of module 'LTC2195' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:230]
-INFO: [Synth 8-638] synthesizing module 'Sweep' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/Sweep.v:18]
-	Parameter SIGNAL_OUT_SIZE bound to: 16 - type: integer 
-	Parameter GOINGUP bound to: 1'b0 
-	Parameter GOINGDOWN bound to: 1'b1 
-INFO: [Synth 8-256] done synthesizing module 'Sweep' (11#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/Sweep.v:18]
-WARNING: [Synth 8-689] width (32) of port connection 'stepsize_in' does not match port width (33) of module 'Sweep' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:253]
 INFO: [Synth 8-638] synthesizing module 'AD9783' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:17]
 	Parameter SMP_DLY bound to: 8'b00010011 
 	Parameter SET bound to: 4'b1101 
@@ -214,12 +207,12 @@ INFO: [Synth 8-638] synthesizing module 'ODDR__parameterized0' [C:/Xilinx/Vivado
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-256] done synthesizing module 'ODDR__parameterized0' (11#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:25650]
+INFO: [Synth 8-256] done synthesizing module 'ODDR__parameterized0' (10#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:25650]
 INFO: [Synth 8-638] synthesizing module 'OBUFDS__parameterized0' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:22286]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-256] done synthesizing module 'OBUFDS__parameterized0' (11#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:22286]
+INFO: [Synth 8-256] done synthesizing module 'OBUFDS__parameterized0' (10#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:22286]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_BASE' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20879]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: float 
@@ -250,14 +243,14 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_BASE' [C:/Xilinx/Vivado/2017.2/s
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-256] done synthesizing module 'MMCME2_BASE' (12#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20879]
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_BASE' (11#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20879]
 WARNING: [Synth 8-350] instance 'MMCME2_BASE_inst' of module 'MMCME2_BASE' requires 18 connections, but only 8 given [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:83]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:322]
 WARNING: [Synth 8-5788] Register rst_out_reg in module AD9783 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:328]
 WARNING: [Synth 8-5788] Register spi_data_reg in module AD9783 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:215]
-INFO: [Synth 8-256] done synthesizing module 'AD9783' (13#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:17]
+INFO: [Synth 8-256] done synthesizing module 'AD9783' (12#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:17]
 WARNING: [Synth 8-6014] Unused sequential element rst_led_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:153]
-INFO: [Synth 8-256] done synthesizing module 'ADC_test' (14#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:21]
+INFO: [Synth 8-256] done synthesizing module 'ADC_test' (13#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:21]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[7]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[6]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[5]
@@ -281,7 +274,7 @@ WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[8]
 WARNING: [Synth 8-3331] design ADC_test has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design ADC_test has unconnected port DCO1_n
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 346.402 ; gain = 116.875
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 346.453 ; gain = 116.398
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -339,7 +332,7 @@ WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[2] to constant 0 [C:
 WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:208]
 WARNING: [Synth 8-3295] tying undriven pin ADC2:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/ADC_test.v:208]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 346.402 ; gain = 116.875
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 346.453 ; gain = 116.398
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 66 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -363,22 +356,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFG => IBUF: 1 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 674.043 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 673.840 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "spi_clk" won't be mapped to RAM because it is too sparse
@@ -398,7 +391,6 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:709]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/DAC_test/Sweep.v:41]
 INFO: [Synth 8-802] inferred FSM for state register 'state_f_reg' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:316]
 INFO: [Synth 8-5544] ROM "spi_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -458,7 +450,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/
 INFO: [Synth 8-3354] encoded FSM with state register 'state_f_reg' using encoding 'one-hot' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/AD9783.v:316]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -471,23 +463,20 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     34 Bit       Adders := 1     
 	   2 Input     27 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 6     
 	   2 Input      2 Bit       Adders := 2     
 +---Registers : 
 	               36 Bit    Registers := 1     
-	               34 Bit    Registers := 2     
 	               27 Bit    Registers := 1     
-	               16 Bit    Registers := 11    
+	               16 Bit    Registers := 10    
 	               12 Bit    Registers := 3     
 	                8 Bit    Registers := 8     
 	                3 Bit    Registers := 3     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 26    
+	                1 Bit    Registers := 25    
 +---Muxes : 
-	   2 Input     34 Bit        Muxes := 4     
 	   3 Input     27 Bit        Muxes := 1     
 	   2 Input     27 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 12    
@@ -501,7 +490,7 @@ Detailed RTL Component Info :
 	   8 Input      3 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 17    
+	   2 Input      1 Bit        Muxes := 16    
 	   7 Input      1 Bit        Muxes := 27    
 	  14 Input      1 Bit        Muxes := 6     
 	  15 Input      1 Bit        Muxes := 4     
@@ -563,17 +552,6 @@ Detailed RTL Component Info :
 	  21 Input     14 Bit        Muxes := 1     
 	  14 Input      1 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 4     
-Module Sweep 
-Detailed RTL Component Info : 
-+---Adders : 
-	   3 Input     34 Bit       Adders := 1     
-+---Registers : 
-	               34 Bit    Registers := 2     
-	               16 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     34 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 1     
 Module AD9783 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -606,7 +584,7 @@ WARNING: [Synth 8-6014] Unused sequential element ADC1/LTC2195_SPI_inst/spi_sck_
 WARNING: [Synth 8-6014] Unused sequential element ADC1/LTC2195_SPI_inst/spi_sdo_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/SPI.v:117]
 WARNING: [Synth 8-6014] Unused sequential element ADC1/ADC0_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:341]
 WARNING: [Synth 8-6014] Unused sequential element ADC1/ADC1_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:345]
-WARNING: [Synth 8-6014] Unused sequential element ADC2/ADC1_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:345]
+WARNING: [Synth 8-6014] Unused sequential element ADC2/ADC0_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/LTC2195.v:341]
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "rstLEDclk/div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "ADC1/LTC2195_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
@@ -640,12 +618,15 @@ INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[12]' (FDE) to 'ADC2/spi
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[13]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
 INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[13]' (FDE) to 'ADC2/spi_data_reg[15]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AD9783_inst1/spi_data_reg[14] )
+INFO: [Synth 8-3886] merging instance 'ADC2/ADC1_out_reg[0]' (FD) to 'ADC2/ADC1_out_reg[2]'
 INFO: [Synth 8-3886] merging instance 'ADC2/spi_data_reg[14]' (FDE) to 'ADC2/spi_data_reg[15]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[34]' (FD) to 'AD9783_inst1/data_in_reg[17]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[16]' (FD) to 'AD9783_inst1/data_in_reg[35]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\AD9783_inst1/data_in_reg[35] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AD9783_inst1/data_in_reg[17] )
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[0]' (FD) to 'AD9783_inst1/data_in_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ADC2/spi_data_reg[15] )
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[18]' (FD) to 'AD9783_inst1/data_in_reg[20]'
 WARNING: [Synth 8-3332] Sequential element (ADC1/obufds_inst) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (ADC1/spi_data_reg[15]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (ADC1/spi_data_reg[14]) is unused and will be removed from module ADC_test.
@@ -683,51 +664,9 @@ WARNING: [Synth 8-3332] Sequential element (ADC2/spi_data_reg[15]) is unused and
 WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/spi_data_reg[14]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/data_in_reg[35]) is unused and will be removed from module ADC_test.
 WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/data_in_reg[17]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[33]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[32]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[27]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[26]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[25]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[24]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[23]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[22]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[21]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[20]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[19]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[18]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[17]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[16]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[15]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[14]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[13]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[12]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[11]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[10]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[9]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[8]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[7]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[6]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[5]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[4]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[3]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[2]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[1]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/current_val_f_reg[0]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[11]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[10]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[9]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[8]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[7]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[6]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[5]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[4]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[3]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[2]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[1]) is unused and will be removed from module ADC_test.
-WARNING: [Synth 8-3332] Sequential element (Sweep_inst/signal_out_reg[0]) is unused and will be removed from module ADC_test.
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[4]' (FDE) to 'AD9783_inst1/spi_data_reg[10]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -739,13 +678,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -757,7 +696,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -781,7 +720,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -794,7 +733,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -806,25 +745,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -857,11 +796,11 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |BUFG        |    13|
-|2     |CARRY4      |    39|
+|2     |CARRY4      |    24|
 |3     |ISERDESE2   |    10|
-|4     |LUT1        |   121|
-|5     |LUT2        |   120|
-|6     |LUT3        |    78|
+|4     |LUT1        |   113|
+|5     |LUT2        |    58|
+|6     |LUT3        |    72|
 |7     |LUT4        |    51|
 |8     |LUT5        |    46|
 |9     |LUT6        |    81|
@@ -872,7 +811,7 @@ Report Cell Usage:
 |14    |SRL16E      |     3|
 |15    |FDCE        |   146|
 |16    |FDPE        |    44|
-|17    |FDRE        |   192|
+|17    |FDRE        |   146|
 |18    |LDC         |    11|
 |19    |IBUF        |     2|
 |20    |IBUFDS      |    12|
@@ -885,24 +824,23 @@ Report Instance Areas:
 +------+---------------------+----------+------+
 |      |Instance             |Module    |Cells |
 +------+---------------------+----------+------+
-|1     |top                  |          |  1024|
-|2     |  AD9783_inst1       |AD9783    |   277|
+|1     |top                  |          |   887|
+|2     |  AD9783_inst1       |AD9783    |   275|
 |3     |    AD_9783_SPI_inst |SPI_2     |   146|
 |4     |  ADC1               |LTC2195   |   172|
 |5     |    LTC2195_SPI_inst |SPI_1     |    87|
-|6     |  ADC2               |LTC2195_0 |   256|
+|6     |  ADC2               |LTC2195_0 |   254|
 |7     |    LTC2195_SPI_inst |SPI       |   132|
-|8     |  Sweep_inst         |Sweep     |   133|
-|9     |  rstLEDclk          |clk_div   |    74|
+|8     |  rstLEDclk          |clk_div   |    74|
 +------+---------------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 101 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 674.043 ; gain = 116.875
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 674.043 ; gain = 444.516
+Synthesis finished with 0 errors, 0 critical warnings and 59 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 673.840 ; gain = 116.398
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 673.840 ; gain = 443.785
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 117 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 102 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 10 load pin(s).
@@ -912,9 +850,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 11 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-111 Infos, 184 Warnings, 1 Critical Warnings and 0 Errors encountered.
+111 Infos, 141 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 674.043 ; gain = 452.285
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 673.840 ; gain = 451.551
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/ADC_TEST_VIVADO/project_1/project_1.runs/synth_1/ADC_test.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 674.043 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Jul  7 17:10:30 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 673.840 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 10 15:27:40 2017...
