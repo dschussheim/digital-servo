@@ -17,15 +17,15 @@
 `include "timescale.v"
 
 module IIRfilter1stOrderAntiWindup(
-   input  wire											clk_in,
-	input  wire											on_in,
+    input  wire									clk_in,
+	input  wire									on_in,
 	input  wire signed	[34:0]					a1_in,
 	input  wire signed	[34:0]					b0_in,
 	input  wire signed	[34:0]					b1_in,
-	input  wire				[1:0]						railed_in,
-	input  wire											hold_in,
+	input  wire			[1:0]					railed_in,
+	input  wire									hold_in,
 	input  wire signed  [SIGNAL_IN_SIZE+1:0]	signal_in,
-   output reg  signed  [SIGNAL_OUT_SIZE+1:0]	signal_out
+    output reg  signed  [SIGNAL_OUT_SIZE+1:0]	signal_out
 );
 
 // Parameters
@@ -37,7 +37,7 @@ reg  signed [34:0] y;
 reg  signed [69:0] b1x0, b0x1;
 
 wire signed [34:0] yNew;
-assign yNew = (a1_in*y + b0x1) >>> A0_SHIFT;
+assign yNew = (a1_in*y + b0x1) >>> A0_SHIFT; //Bit shift same as dividing by 2^A0_SHIFT
 
 always @(posedge clk_in) begin
 	if (on_in) begin
