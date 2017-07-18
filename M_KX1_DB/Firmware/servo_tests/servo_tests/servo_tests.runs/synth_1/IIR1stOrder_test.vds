@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Jul 17 19:15:01 2017
-# Process ID: 8340
+# Start of session at: Tue Jul 18 18:48:08 2017
+# Process ID: 6892
 # Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.runs/synth_1
 # Command line: vivado.exe -log IIR1stOrder_test.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IIR1stOrder_test.tcl
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.runs/synth_1/IIR1stOrder_test.vds
@@ -15,17 +15,20 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9296 
+INFO: Helper process launched with PID 8732 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 307.426 ; gain = 77.598
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 306.922 ; gain = 76.434
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'IIR1stOrder_test' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:6]
 	Parameter max bound to: 30'b000000100110001001011010000000 
 	Parameter rst_on bound to: 30'b000000100010010101010001000000 
 	Parameter CLKDIV bound to: 8 - type: integer 
-	Parameter a1 bound to: 34'sb0000000100000000000000000000000000 
-	Parameter b0 bound to: 34'sb0000000000000000000000100000111100 
-	Parameter b1 bound to: 34'sb0000000000000000000000100000111100 
+	Parameter a1_0 bound to: 34'sb0000000011111111111111010110110101 
+	Parameter b0_0 bound to: 34'sb0000000100000000000100110100110101 
+	Parameter b1_0 bound to: 34'sb1111111100000000000101011110000000 
+	Parameter a1_1 bound to: 34'sb0000000011100111011111101110110000 
+	Parameter b0_1 bound to: 34'sb0000001100001110011100011001010100 
+	Parameter b1_1 bound to: 34'sb1111110011110110011101010000100010 
 INFO: [Synth 8-638] synthesizing module 'IBUFG' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -178,11 +181,18 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dsch
 WARNING: [Synth 8-5788] Register spi_data_reg in module LTC2195 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:593]
 WARNING: [Synth 8-3848] Net data_in_from_pins_delay in module/entity LTC2195 does not have driver. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:371]
 INFO: [Synth 8-256] done synthesizing module 'LTC2195' (10#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:17]
+INFO: [Synth 8-638] synthesizing module 'Relock' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/Relock.v:15]
+	Parameter SIGNAL_OUT_SIZE bound to: 16 - type: integer 
+	Parameter ZERO bound to: 2'b00 
+	Parameter GOINGUP bound to: 2'b01 
+	Parameter GOINGDOWN bound to: 2'b10 
+INFO: [Synth 8-256] done synthesizing module 'Relock' (11#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/Relock.v:15]
+WARNING: [Synth 8-689] width (16) of port connection 'signal_out' does not match port width (18) of module 'Relock' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:259]
 INFO: [Synth 8-638] synthesizing module 'IIRfilter1stOrder' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:19]
 	Parameter SIGNAL_IN_SIZE bound to: 16 - type: integer 
 	Parameter SIGNAL_OUT_SIZE bound to: 16 - type: integer 
 	Parameter A0_SHIFT bound to: 26 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'IIRfilter1stOrder' (11#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:19]
+INFO: [Synth 8-256] done synthesizing module 'IIRfilter1stOrder' (12#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:19]
 INFO: [Synth 8-638] synthesizing module 'AD9783' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:17]
 	Parameter SMP_DLY bound to: 8'b00010011 
 	Parameter SET bound to: 4'b1101 
@@ -213,12 +223,12 @@ INFO: [Synth 8-638] synthesizing module 'ODDR__parameterized0' [C:/Xilinx/Vivado
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-256] done synthesizing module 'ODDR__parameterized0' (11#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:25650]
+INFO: [Synth 8-256] done synthesizing module 'ODDR__parameterized0' (12#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:25650]
 INFO: [Synth 8-638] synthesizing module 'OBUFDS__parameterized0' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:22286]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-256] done synthesizing module 'OBUFDS__parameterized0' (11#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:22286]
+INFO: [Synth 8-256] done synthesizing module 'OBUFDS__parameterized0' (12#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:22286]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_BASE' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20879]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: float 
@@ -249,13 +259,13 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_BASE' [C:/Xilinx/Vivado/2017.2/s
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-256] done synthesizing module 'MMCME2_BASE' (12#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20879]
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_BASE' (13#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20879]
 WARNING: [Synth 8-350] instance 'MMCME2_BASE_inst' of module 'MMCME2_BASE' requires 18 connections, but only 8 given [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:83]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:322]
 WARNING: [Synth 8-5788] Register rst_out_reg in module AD9783 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:328]
 WARNING: [Synth 8-5788] Register spi_data_reg in module AD9783 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:215]
-INFO: [Synth 8-256] done synthesizing module 'AD9783' (13#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:17]
-INFO: [Synth 8-256] done synthesizing module 'IIR1stOrder_test' (14#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:6]
+INFO: [Synth 8-256] done synthesizing module 'AD9783' (14#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:17]
+INFO: [Synth 8-256] done synthesizing module 'IIR1stOrder_test' (15#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:6]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[7]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[6]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[5]
@@ -279,7 +289,7 @@ WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[8]
 WARNING: [Synth 8-3331] design IIR1stOrder_test has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design IIR1stOrder_test has unconnected port DCO1_n
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 346.500 ; gain = 116.672
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 347.000 ; gain = 116.512
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -288,32 +298,32 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_trig_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[15] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[14] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[13] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[12] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[11] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[10] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[9] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[7] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
-WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:186]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_trig_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[15] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[14] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[13] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[12] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[11] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[10] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[9] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_addr_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[7] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
+WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:147]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 346.500 ; gain = 116.672
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 347.000 ; gain = 116.512
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 52 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -355,22 +365,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFG => IBUF: 1 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.002 . Memory (MB): peak = 674.141 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 675.641 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "spi_clk" won't be mapped to RAM because it is too sparse
@@ -390,6 +400,8 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:709]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/Relock.v:62]
+INFO: [Synth 8-5544] ROM "sweep_amplitude_f" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_f_reg' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:316]
 INFO: [Synth 8-5544] ROM "spi_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -402,7 +414,7 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:317]
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:155]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:120]
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:708]
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:708]
 ---------------------------------------------------------------------------------------------------
@@ -449,7 +461,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/
 INFO: [Synth 8-3354] encoded FSM with state register 'state_f_reg' using encoding 'one-hot' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:316]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -462,30 +474,33 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     70 Bit       Adders := 2     
+	   2 Input     70 Bit       Adders := 4     
+	   3 Input     42 Bit       Adders := 1     
 	   2 Input     27 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 4     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               70 Bit    Registers := 1     
-	               68 Bit    Registers := 1     
+	               70 Bit    Registers := 2     
+	               68 Bit    Registers := 2     
+	               42 Bit    Registers := 2     
 	               36 Bit    Registers := 1     
-	               35 Bit    Registers := 1     
+	               35 Bit    Registers := 2     
 	               27 Bit    Registers := 1     
-	               16 Bit    Registers := 7     
+	               16 Bit    Registers := 8     
 	               12 Bit    Registers := 2     
 	                8 Bit    Registers := 5     
 	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 18    
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 20    
 +---Multipliers : 
-	                35x35  Multipliers := 1     
-	                33x35  Multipliers := 2     
+	                35x35  Multipliers := 2     
+	                33x35  Multipliers := 4     
 +---Muxes : 
+	   2 Input     42 Bit        Muxes := 3     
 	   3 Input     27 Bit        Muxes := 1     
 	   2 Input     27 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 9     
+	   2 Input     16 Bit        Muxes := 10    
 	  14 Input     16 Bit        Muxes := 1     
 	  15 Input     16 Bit        Muxes := 1     
 	  22 Input     15 Bit        Muxes := 1     
@@ -495,8 +510,10 @@ Detailed RTL Component Info :
 	   3 Input      3 Bit        Muxes := 4     
 	   8 Input      3 Bit        Muxes := 2     
 	   3 Input      2 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 10    
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 19    
 	   7 Input      1 Bit        Muxes := 18    
 	  14 Input      1 Bit        Muxes := 3     
 	  15 Input      1 Bit        Muxes := 4     
@@ -511,6 +528,8 @@ Module IIR1stOrder_test
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module clk_div 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -558,6 +577,20 @@ Detailed RTL Component Info :
 	  21 Input     14 Bit        Muxes := 1     
 	  14 Input      1 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 4     
+Module Relock 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     42 Bit       Adders := 1     
++---Registers : 
+	               42 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     42 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   3 Input      1 Bit        Muxes := 1     
 Module IIRfilter1stOrder 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -600,14 +633,125 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element ADC1/ADC0_out_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:341]
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "rstLEDclk/div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "ADC1/LTC2195_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "AD9783_inst1/AD_9783_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element ADC1/counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:709]
-WARNING: [Synth 8-6014] Unused sequential element AD9783_inst1/counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:317]
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:155]
+INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "LTC2195_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/LTC2195.v:709]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:39]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:40]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:41]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:41]
+WARNING: [Synth 8-6014] Unused sequential element  was removed. 
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:41]
+WARNING: [Synth 8-6014] Unused sequential element  was removed. 
+DSP Report: Generating DSP b1x00, operation Mode is: A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b1x00, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b1x00, operation Mode is: A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b1x00, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b0x11, operation Mode is: A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: Generating DSP b0x11, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: Generating DSP b0x11, operation Mode is: A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: Generating DSP b0x11, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: Generating DSP y2, operation Mode is: A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: Generating DSP y2, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: Generating DSP y2, operation Mode is: A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: Generating DSP y2, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+WARNING: [Synth 8-6014] Unused sequential element B was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:41]
+WARNING: [Synth 8-6014] Unused sequential element B was removed. 
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:40]
+WARNING: [Synth 8-6014] Unused sequential element B was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/IIRfilter1stOrder.v:41]
+WARNING: [Synth 8-6014] Unused sequential element B was removed. 
+DSP Report: Generating DSP y2, operation Mode is: A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: Generating DSP y2, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: Generating DSP y2, operation Mode is: A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: Generating DSP y2, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register B is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: operator y2 is absorbed into DSP y2.
+DSP Report: Generating DSP b1x00, operation Mode is: A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b1x00, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b1x00, operation Mode is: A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b1x00, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: operator b1x00 is absorbed into DSP b1x00.
+DSP Report: Generating DSP b0x11, operation Mode is: A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: Generating DSP b0x11, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: Generating DSP b0x11, operation Mode is: A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: Generating DSP b0x11, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+DSP Report: operator b0x11 is absorbed into DSP b0x11.
+INFO: [Synth 8-5546] ROM "AD_9783_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/AD9783.v:317]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:120]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[7]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[6]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[5]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[15]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[14]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[13]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[12]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[11]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[10]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[9]
+WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_data_in[8]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_addr_in[7]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[15]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[14]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[13]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[12]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[11]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[10]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[9]
+WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[8]
 WARNING: [Synth 8-3331] design IIR1stOrder_test has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design IIR1stOrder_test has unconnected port DCO1_n
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[0]' (FDE) to 'AD9783_inst1/spi_data_reg[4]'
@@ -626,97 +770,163 @@ INFO: [Synth 8-3886] merging instance 'ADC1/spi_data_reg[6]' (FDE) to 'ADC1/spi_
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[9]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
 INFO: [Synth 8-3886] merging instance 'ADC1/spi_data_reg[10]' (FDE) to 'ADC1/spi_data_reg[15]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[11]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[2]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[3]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[4]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[5]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[6]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[7]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[8]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[9]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[10]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[11]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[12]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[13]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[14]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[15]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b1x0_reg[16]' (FDR) to 'IIR0/b1x0_reg[17]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IIR0/b1x0_reg[17] )
-INFO: [Synth 8-3886] merging instance 'ADC1/ADC1_out_reg[0]' (FD) to 'ADC1/ADC1_out_reg[2]'
 INFO: [Synth 8-3886] merging instance 'ADC1/spi_data_reg[11]' (FDE) to 'ADC1/spi_data_reg[15]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[12]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[45]' (FDR) to 'IIR0/b0x1_reg[46]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[46]' (FDR) to 'IIR0/b0x1_reg[47]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[47]' (FDR) to 'IIR0/b0x1_reg[48]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[48]' (FDR) to 'IIR0/b0x1_reg[49]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[49]' (FDR) to 'IIR0/b0x1_reg[50]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[50]' (FDR) to 'IIR0/b0x1_reg[51]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[51]' (FDR) to 'IIR0/b0x1_reg[52]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[52]' (FDR) to 'IIR0/b0x1_reg[53]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[53]' (FDR) to 'IIR0/b0x1_reg[54]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[54]' (FDR) to 'IIR0/b0x1_reg[55]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[55]' (FDR) to 'IIR0/b0x1_reg[56]'
-INFO: [Synth 8-3886] merging instance 'IIR0/b0x1_reg[56]' (FDR) to 'IIR0/b0x1_reg[57]'
 INFO: [Synth 8-3886] merging instance 'ADC1/spi_data_reg[12]' (FDE) to 'ADC1/spi_data_reg[15]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[13]' (FDE) to 'AD9783_inst1/spi_data_reg[14]'
 INFO: [Synth 8-3886] merging instance 'ADC1/spi_data_reg[13]' (FDE) to 'ADC1/spi_data_reg[15]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AD9783_inst1/spi_data_reg[14] )
+INFO: [Synth 8-3886] merging instance 'ADC1/ADC1_out_reg[0]' (FD) to 'ADC1/ADC1_out_reg[2]'
 INFO: [Synth 8-3886] merging instance 'ADC1/spi_data_reg[14]' (FDE) to 'ADC1/spi_data_reg[15]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[34]' (FD) to 'AD9783_inst1/data_in_reg[17]'
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[16]' (FD) to 'AD9783_inst1/data_in_reg[35]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\AD9783_inst1/data_in_reg[35] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AD9783_inst1/data_in_reg[17] )
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[18]' (FD) to 'AD9783_inst1/data_in_reg[20]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ADC1/spi_data_reg[15] )
+INFO: [Synth 8-3886] merging instance 'AD9783_inst1/data_in_reg[0]' (FD) to 'AD9783_inst1/data_in_reg[2]'
 WARNING: [Synth 8-3332] Sequential element (ADC1/spi_data_reg[15]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/spi_data_reg[14]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b1x0_reg[17]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b1x0_reg[1]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b1x0_reg[0]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[69]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[68]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[67]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[66]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[65]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[64]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[63]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[62]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[61]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[60]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[59]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[58]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[24]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[23]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[22]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[21]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[20]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[19]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[18]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[17]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[16]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[15]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[14]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[13]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[12]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[11]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[10]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[9]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[8]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[7]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[6]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[5]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[4]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[3]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[2]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[1]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/b0x1_reg[0]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/y_reg[34]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/y_reg[33]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (IIR0/y_reg[32]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/data_in_reg[35]) is unused and will be removed from module IIR1stOrder_test.
-WARNING: [Synth 8-3332] Sequential element (AD9783_inst1/data_in_reg[17]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[12]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[11]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[10]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[9]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[8]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[7]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[6]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[5]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[4]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[3]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[2]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[1]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (ADC1/ADC0_out_reg[0]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/state_f_reg[1]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/state_f_reg[0]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/locked_f_reg) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/clear_out_reg) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[41]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[40]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[39]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[38]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[37]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[36]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[35]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[34]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[33]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[32]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[31]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[30]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[29]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[28]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[27]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[26]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[25]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[24]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[23]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[22]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[21]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[20]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[19]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[18]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[17]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[16]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[15]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[14]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[13]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[12]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[11]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[10]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[9]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[8]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[7]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[6]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[5]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[4]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[3]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[2]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[1]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/current_val_f_reg[0]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[41]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[40]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[39]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[38]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[37]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[36]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[35]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[34]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[33]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[32]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[31]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[30]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[29]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[28]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[27]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[26]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[25]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[24]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[23]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[22]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[21]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[20]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[19]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[18]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[17]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[16]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[15]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[14]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[13]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[12]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[11]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[10]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[9]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[8]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[7]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[6]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[5]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[4]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[3]) is unused and will be removed from module IIR1stOrder_test.
+WARNING: [Synth 8-3332] Sequential element (relock_inst/sweep_amplitude_f_reg[2]) is unused and will be removed from module IIR1stOrder_test.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[4]' (FDE) to 'AD9783_inst1/spi_data_reg[10]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 675.641 ; gain = 445.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name       | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B2            | 18     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B2 | 18     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B2            | 18     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B2 | 18     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B2            | 18     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B2 | 18     | 18     | -      | -      | 27     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B2            | 18     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B2 | 18     | 18     | -      | -      | 44     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 33     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 33     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|IIRfilter1stOrder | (PCIN>>17)+A*B  | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -728,13 +938,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -746,7 +956,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -770,7 +980,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -783,7 +993,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -795,25 +1005,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -846,14 +1056,14 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |BUFG        |    10|
-|2     |CARRY4      |    55|
+|2     |CARRY4      |    21|
 |3     |ISERDESE2   |     5|
-|4     |LUT1        |   122|
-|5     |LUT2        |   120|
-|6     |LUT3        |    79|
-|7     |LUT4        |    59|
-|8     |LUT5        |    38|
-|9     |LUT6        |    59|
+|4     |LUT1        |   103|
+|5     |LUT2        |    43|
+|6     |LUT3        |    56|
+|7     |LUT4        |    32|
+|8     |LUT5        |    59|
+|9     |LUT6        |    64|
 |10    |MMCME2_ADV  |     1|
 |11    |MMCME2_BASE |     1|
 |12    |ODDR        |     1|
@@ -861,35 +1071,34 @@ Report Cell Usage:
 |14    |SRL16E      |     3|
 |15    |FDCE        |   107|
 |16    |FDPE        |    34|
-|17    |FDRE        |   232|
+|17    |FDRE        |   137|
 |18    |LDC         |    10|
 |19    |IBUF        |     2|
 |20    |IBUFDS      |     6|
 |21    |IBUFG       |     1|
-|22    |OBUF        |     8|
+|22    |OBUF        |    11|
 |23    |OBUFDS      |    19|
 +------+------------+------+
 
 Report Instance Areas: 
-+------+---------------------+------------------+------+
-|      |Instance             |Module            |Cells |
-+------+---------------------+------------------+------+
-|1     |top                  |                  |   990|
-|2     |  AD9783_inst1       |AD9783            |   277|
-|3     |    AD_9783_SPI_inst |SPI_0             |   146|
-|4     |  ADC1               |LTC2195           |   292|
-|5     |    LTC2195_SPI_inst |SPI               |   132|
-|6     |  IIR0               |IIRfilter1stOrder |   237|
-|7     |  rstLEDclk          |clk_div           |    74|
-+------+---------------------+------------------+------+
++------+---------------------+--------+------+
+|      |Instance             |Module  |Cells |
++------+---------------------+--------+------+
+|1     |top                  |        |   744|
+|2     |  AD9783_inst1       |AD9783  |   275|
+|3     |    AD_9783_SPI_inst |SPI_0   |   146|
+|4     |  ADC1               |LTC2195 |   260|
+|5     |    LTC2195_SPI_inst |SPI     |   132|
+|6     |  rstLEDclk          |clk_div |    96|
++------+---------------------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 64 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 674.141 ; gain = 116.672
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 674.141 ; gain = 444.313
+Synthesis finished with 0 errors, 0 critical warnings and 525 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 675.641 ; gain = 116.512
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 675.641 ; gain = 445.152
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 119 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 85 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 5 load pin(s).
@@ -899,9 +1108,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 10 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-138 Infos, 126 Warnings, 7 Critical Warnings and 0 Errors encountered.
+121 Infos, 207 Warnings, 7 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 674.141 ; gain = 452.078
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 675.641 ; gain = 453.922
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.runs/synth_1/IIR1stOrder_test.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 674.141 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 17 19:15:30 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 675.641 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 18 18:48:37 2017...

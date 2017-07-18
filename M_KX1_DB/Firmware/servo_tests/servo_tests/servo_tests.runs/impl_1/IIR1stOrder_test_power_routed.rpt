@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Mon Jul 17 19:16:57 2017
+| Date             : Tue Jul 18 18:49:57 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file IIR1stOrder_test_power_routed.rpt -pb IIR1stOrder_test_power_summary_routed.pb -rpx IIR1stOrder_test_power_routed.rpx
 | Design           : IIR1stOrder_test
@@ -30,13 +30,13 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.173 |
-| Dynamic (W)              | 1.057 |
+| Total On-Chip Power (W)  | 1.126 |
+| Dynamic (W)              | 1.010 |
 | Device Static (W)        | 0.116 |
 | Total Off-Chip Power (W) | 0.023 |
 | Effective TJA (C/W)      | 1.9   |
-| Max Ambient (C)          | 82.8  |
-| Junction Temperature (C) | 27.2  |
+| Max Ambient (C)          | 82.9  |
+| Junction Temperature (C) | 27.1  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,19 +50,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.028 |       18 |       --- |             --- |
-| Slice Logic             |     0.004 |      873 |       --- |             --- |
-|   LUT as Logic          |     0.003 |      346 |    101400 |            0.34 |
-|   Register              |    <0.001 |      383 |    202800 |            0.19 |
-|   CARRY4                |    <0.001 |       55 |     25350 |            0.22 |
+| Clocks                  |     0.036 |       18 |       --- |             --- |
+| Slice Logic             |     0.003 |      631 |       --- |             --- |
+|   LUT as Logic          |     0.003 |      260 |    101400 |            0.26 |
+|   Register              |    <0.001 |      288 |    202800 |            0.14 |
+|   CARRY4                |    <0.001 |       21 |     25350 |            0.08 |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
-|   Others                |     0.000 |       19 |       --- |             --- |
-| Signals                 |     0.005 |      676 |       --- |             --- |
+|   Others                |     0.000 |       17 |       --- |             --- |
+| Signals                 |     0.003 |      508 |       --- |             --- |
 | MMCM                    |     0.195 |        2 |         8 |           25.00 |
-| I/O                     |     0.825 |       55 |       400 |           13.75 |
+| I/O                     |     0.773 |       62 |       400 |           15.50 |
 | Static Power            |     0.116 |          |           |                 |
-| Total                   |     1.173 |          |           |                 |
+| Total                   |     1.126 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,10 +72,10 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.094 |       0.050 |      0.044 |
-| Vccaux    |       1.800 |     0.143 |       0.125 |      0.018 |
+| Vccint    |       1.000 |     0.099 |       0.056 |      0.044 |
+| Vccaux    |       1.800 |     0.139 |       0.121 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     0.323 |       0.322 |      0.001 |
+| Vcco25    |       2.500 |     0.305 |       0.304 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
@@ -130,8 +130,8 @@ Table of Contents
 | Clock                                           | Domain                                           | Constraint (ns) |
 +-------------------------------------------------+--------------------------------------------------+-----------------+
 | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0 | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[14]_0 |            10.0 |
-| AD9783_inst1/spi_data_reg_n_0_[10]              | AD9783_inst1/spi_data_reg_n_0_[10]               |            10.0 |
-| AD9783_inst1/spi_data_reg_n_0_[15]              | AD9783_inst1/spi_data_reg_n_0_[15]               |            10.0 |
+| AD9783_inst1/spi_data_reg_n_0_[10]              | AD9783_inst1/spi_data[10]                        |            10.0 |
+| AD9783_inst1/spi_data_reg_n_0_[15]              | AD9783_inst1/spi_data[15]                        |            10.0 |
 | AD9783_inst1/spi_trigger_reg_n_0                | AD9783_inst1/spi_trigger_reg_n_0                 |            10.0 |
 | MMCME2_BASE_inst_n_2                            | AD9783_inst1/MMCME2_BASE_inst_n_2                |             5.0 |
 | clk                                             | clk                                              |            10.0 |
@@ -141,7 +141,7 @@ Table of Contents
 | clkPS_int                                       | ADC1/clkPS_int                                   |            10.0 |
 | clk_div_int                                     | ADC1/clk_div_int                                 |            10.0 |
 | clk_int                                         | ADC1/clk_int                                     |             1.3 |
-| rstLEDclk/clk__0                                | rstLEDclk/clk__0                                 |            10.0 |
+| rstLEDclk/clk__0                                | rstLEDclk/DIVclk                                 |            10.0 |
 | rst_in                                          | rst_in                                           |            10.0 |
 +-------------------------------------------------+--------------------------------------------------+-----------------+
 
@@ -155,13 +155,12 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| IIR1stOrder_test     |     1.057 |
-|   AD9783_inst1       |     0.838 |
-|     AD_9783_SPI_inst |     0.008 |
-|   ADC1               |     0.177 |
+| IIR1stOrder_test     |     1.010 |
+|   AD9783_inst1       |     0.778 |
+|     AD_9783_SPI_inst |     0.012 |
+|   ADC1               |     0.194 |
 |     LTC2195_SPI_inst |     0.006 |
-|   IIR0               |     0.004 |
-|   rstLEDclk          |    <0.001 |
+|   rstLEDclk          |     0.001 |
 +----------------------+-----------+
 
 

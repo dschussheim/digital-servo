@@ -13,17 +13,17 @@
 `include "timescale.v"
 
 module Relock(
-   input  wire												clk_in,
-	input	 wire						   					on_in,
+    input  wire										clk_in,
+    input  wire						   		        on_in,
 	input  wire signed	[15:0]						minval_in,
 	input  wire signed	[15:0]						maxval_in,
-	input  wire				[31:0]						stepsize_in,
+	input  wire		    [31:0]						stepsize_in,
 	input  wire signed	[15:0]						signal_in,
-   input  wire				[1:0]							railed_in,
-	input  wire						   					hold_in,
-   output wire						   					hold_out,
-	output reg												clear_out,
-   output wire signed	[SIGNAL_OUT_SIZE+1:0]	signal_out
+    input  wire		    [1:0]						railed_in,
+	input  wire						   				hold_in,
+    output wire						   				hold_out,
+	output reg										clear_out,
+    output wire signed	[SIGNAL_OUT_SIZE+1:0]	    signal_out
 );
 
 // Parameters
@@ -47,8 +47,8 @@ end
 assign hold_out = (on_in && (!locked_f));
 
 // State machine definitions
-localparam  ZERO			= 2'b00;
-localparam  GOINGUP 		= 2'b01;
+localparam  ZERO		= 2'b00;
+localparam  GOINGUP 	= 2'b01;
 localparam  GOINGDOWN	= 2'b10;
 
 // State

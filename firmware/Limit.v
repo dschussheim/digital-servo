@@ -14,13 +14,13 @@
 `include "timescale.v"
 
 module Limit(
-   input  wire												clk_in,
-	input  wire signed	[15:0]						minval_in,
-	input  wire signed	[15:0]						maxval_in,
-	input  wire												center_when_railed_in,
-	input  wire signed	[SIGNAL_IN_SIZE+3:0]		signal_in,
-   output reg				[1:0]							railed_out,
-	output reg												clear_out,
+    input  wire									clk_in,
+	input  wire signed	[15:0]					minval_in,
+	input  wire signed	[15:0]					maxval_in,
+	input  wire									center_when_railed_in,
+	input  wire signed	[SIGNAL_IN_SIZE+3:0]	signal_in,
+    output reg			[1:0]					railed_out,
+	output reg									clear_out,
 	output reg  signed	[SIGNAL_OUT_SIZE-1:0]	signal_out
 );
 

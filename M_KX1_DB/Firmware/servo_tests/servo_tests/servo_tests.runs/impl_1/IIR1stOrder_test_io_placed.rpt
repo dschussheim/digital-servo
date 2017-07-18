@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date                      : Mon Jul 17 19:16:02 2017
+| Date                      : Tue Jul 18 18:49:08 2017
 | Host                      : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command                   : report_io -file IIR1stOrder_test_io_placed.rpt
 | Design                    : IIR1stOrder_test
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            63 |
+|            66 |
 +---------------+
 
 
@@ -442,7 +442,7 @@ Table of Contents
 | K15        |              | High Range       | IO_0_15                      | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
 | K16        |              | High Range       | IO_L22P_T3_A17_15            | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
 | K17        |              | High Range       | IO_L22N_T3_A16_15            | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
-| K18        |              | High Range       | IO_L24N_T3_RS0_15            | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
+| K18        | ADC_out[0]   | High Range       | IO_L24N_T3_RS0_15            | OUTPUT        | LVCMOS25    |      15 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |          | NONE             |
 | K19        |              |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |          |                  |
 | K20        |              | High Range       | IO_L19P_T3_A22_15            | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
 | K21        |              | High Range       | IO_0_14                      | User IO       |             |      14 |            |      |                      |                      |           |            |           |          |          |                  |
@@ -467,8 +467,8 @@ Table of Contents
 | L14        |              |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |          |                  |
 | L15        |              |                  | VCCINT                       | VCCINT        |             |         |            |      |                      |                      |           |            |           |          |          |                  |
 | L16        |              |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |          |                  |
-| L17        |              | High Range       | IO_L24P_T3_RS1_15            | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
-| L18        |              | High Range       | IO_L23N_T3_FWE_B_15          | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
+| L17        | ADC_out[1]   | High Range       | IO_L24P_T3_RS1_15            | OUTPUT        | LVCMOS25    |      15 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |          | NONE             |
+| L18        | ADC_out[2]   | High Range       | IO_L23N_T3_FWE_B_15          | OUTPUT        | LVCMOS25    |      15 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |          | NONE             |
 | L19        |              | High Range       | IO_L21P_T3_DQS_15            | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
 | L20        |              | High Range       | IO_L21N_T3_DQS_A18_15        | User IO       |             |      15 |            |      |                      |                      |           |            |           |          |          |                  |
 | L21        |              | High Range       | VCCO_14                      | VCCO          |             |      14 |            |      |                      |                      |     any** |            |           |          |          |                  |
