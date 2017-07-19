@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7k160tfbg676-1" LaunchTime="1500418088">
+<GenRun Id="impl_1" LaunchPart="xc7k160tfbg676-1" LaunchTime="1500497874">
   <File Type="PWROPT-DRC" Name="IIR1stOrder_test_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="IIR1stOrder_test_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="IIR1stOrder_test_timing_summary_init.rpt"/>
@@ -90,6 +90,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/PIDservo.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/Relock.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -113,6 +120,14 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/IIR1stOrder_test.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/formula_test.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

@@ -261,7 +261,32 @@ Relock relock_inst(
 
 //////////End of relock/////////////
 
+////////PID///////////
 
+//PID parameters
+parameter signed P = 2;          //[-40, 0] dB
+parameter signed I  = 1e-1;       //[-30, 100] dB
+parameter signed D  = 1e-1;       //[-100, 0] dB
+parameter signed fc = 1e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+
+wire [15:0] e_out;
+//Servo module
+PIDservo #(
+    .P(P),
+    .I(I),
+    .D(D),
+    .fc(fc)
+)
+PID (
+    .clk_in(clk_in),
+    .e_in(e_in),
+    .e_out(e_out)
+);
+
+/////End of PID///////
+
+
+/*
 /////////IIRs//////////
 
 //Inputs
@@ -311,7 +336,7 @@ IIRfilter1stOrder PD0 (
     .signal_out(e_out)
 );
 ////////End of IIRs////////
-
+*/
 ////////Output to DAC//////
 
 // Instantiate DAC1 driver module
@@ -321,8 +346,8 @@ AD9783 #(
  AD9783_inst1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(~e_in), 
-     .DAC1_in(e_in), 
+     .DAC0_in(~e_out), 
+     .DAC1_in(e_out), 
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI1_out_p), 
