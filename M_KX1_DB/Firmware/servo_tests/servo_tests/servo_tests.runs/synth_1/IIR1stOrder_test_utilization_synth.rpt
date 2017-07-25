@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Jul 19 16:58:21 2017
+| Date         : Tue Jul 25 19:14:57 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_utilization -file IIR1stOrder_test_utilization_synth.rpt -pb IIR1stOrder_test_utilization_synth.pb
 | Design       : IIR1stOrder_test
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  303 |     0 |    101400 |  0.30 |
-|   LUT as Logic             |  300 |     0 |    101400 |  0.30 |
+| Slice LUTs*                |  667 |     0 |    101400 |  0.66 |
+|   LUT as Logic             |  664 |     0 |    101400 |  0.65 |
 |   LUT as Memory            |    3 |     0 |     35000 | <0.01 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    3 |     0 |           |       |
-| Slice Registers            |  243 |     0 |    202800 |  0.12 |
-|   Register as Flip Flop    |  233 |     0 |    202800 |  0.11 |
+| Slice Registers            |  552 |     0 |    202800 |  0.27 |
+|   Register as Flip Flop    |  542 |     0 |    202800 |  0.27 |
 |   Register as Latch        |   10 |     0 |    202800 | <0.01 |
 | F7 Muxes                   |    0 |     0 |     50700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     25350 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 34    |          Yes |           - |          Set |
 | 117   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 92    |          Yes |       Reset |            - |
+| 401   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -79,11 +79,12 @@ Table of Contents
 3. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |       600 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |   14 |     0 |       600 |  2.33 |
+|   DSP48E1 only |   14 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -155,18 +156,19 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
+| FDRE       |  401 |        Flop & Latch |
+| LUT2       |  348 |                 LUT |
+| LUT1       |  136 |                 LUT |
+| CARRY4     |  110 |          CarryLogic |
 | FDCE       |  107 |        Flop & Latch |
-| FDRE       |   92 |        Flop & Latch |
-| LUT1       |   87 |                 LUT |
-| LUT6       |   64 |                 LUT |
-| LUT5       |   59 |                 LUT |
-| LUT3       |   56 |                 LUT |
-| LUT2       |   43 |                 LUT |
+| LUT5       |   67 |                 LUT |
+| LUT6       |   62 |                 LUT |
+| LUT3       |   58 |                 LUT |
+| LUT4       |   37 |                 LUT |
 | FDPE       |   34 |        Flop & Latch |
-| LUT4       |   32 |                 LUT |
-| CARRY4     |   21 |          CarryLogic |
 | ODDR       |   19 |                  IO |
 | OBUFDS     |   19 |                  IO |
+| DSP48E1    |   14 |    Block Arithmetic |
 | OBUF       |   11 |                  IO |
 | LDCE       |   10 |        Flop & Latch |
 | BUFG       |   10 |               Clock |

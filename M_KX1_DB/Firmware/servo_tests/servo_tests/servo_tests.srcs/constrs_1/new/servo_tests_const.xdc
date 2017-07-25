@@ -23,9 +23,6 @@ set_property PACKAGE_PIN AA3 [get_ports clk]
 set_property PACKAGE_PIN M17 [get_ports rst_led]
 set_property IOSTANDARD LVCMOS25 [get_ports rst_led]
 
-#set_property PACKAGE_PIN L18 [get_ports count]
-#set_property IOSTANDARD LVCMOS25 [get_ports count]
-
 #DAC2 output pins
 set_property PACKAGE_PIN B17  [get_ports {D1_out_p[0]}]
 set_property PACKAGE_PIN A17  [get_ports {D1_out_n[0]}]
@@ -131,15 +128,13 @@ set_property IOSTANDARD LVCMOS25 [get_ports adc_scs1]
 set_property IOSTANDARD LVCMOS25 [get_ports adc_sdi]
 set_property IOSTANDARD LVCMOS25 [get_ports adc_sdo]
 
-#LED for sanity
-#set_property PACKAGE_PIN M17     [get_ports ADC_out[3]]
-#set_property IOSTANDARD LVCMOS25 [get_ports ADC_out[3]]
-set_property PACKAGE_PIN L18     [get_ports ADC_out[2]]
-set_property IOSTANDARD LVCMOS25 [get_ports ADC_out[2]]
-set_property PACKAGE_PIN L17     [get_ports ADC_out[1]]
-set_property IOSTANDARD LVCMOS25 [get_ports ADC_out[1]]
-set_property PACKAGE_PIN K18     [get_ports ADC_out[0]]
-set_property IOSTANDARD LVCMOS25 [get_ports ADC_out[0]]
+#Locked/unlocked LEDs
+set_property PACKAGE_PIN L18     [get_ports locked_out]
+set_property IOSTANDARD LVCMOS25 [get_ports locked_out]
+set_property PACKAGE_PIN L17     [get_ports notlocked_out]
+set_property IOSTANDARD LVCMOS25 [get_ports notlocked_out]
+set_property PACKAGE_PIN K18     [get_ports notlocked1s_out]
+set_property IOSTANDARD LVCMOS25 [get_ports notlocked1s_out]
 
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 2.5 [current_design]

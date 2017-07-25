@@ -9,7 +9,11 @@ module IIR1stOrder_test(
 	input	wire			clk,
 	//led to tell you when reset happens
 	output	reg				rst_led,
-   
+	//LEDs for locked/unlocked
+	output  reg             locked_out,
+	output  reg             notlocked_out,
+	output  reg             notlocked1s_out,
+      
 	//\\\\\\\\\ADCs//////////\\
 	
 	//ADC SPI IOs
@@ -71,10 +75,7 @@ module IIR1stOrder_test(
 		
 //	output	wire			DCO1_in,
 	input		wire		DCO1_p,
-	input		wire		DCO1_n,
-
-    output wire [2:0] ADC_out
-
+	input		wire		DCO1_n
     );
     
 wire clk_int, clk_in, DIVclk;
@@ -110,12 +111,11 @@ rstLEDclk(
 //Reset about every minute.
 //localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
 //localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
-localparam	max = 30'h989680; 		//10*1,000,000 (number of cycles of clk_in/minute)
-localparam	rst_on = 30'h895440; 	// turn reset on after 9,999,990 cycles, and keep on for 100 ns
+localparam	max = 30'h989680; 		//10,000,000 (10 seconds)
+localparam	rst_on = 30'h895440; 	// turn reset on after 9,000,000 cycles (9 seconds, and keep on for 100 ns
 
 reg [29:0] counter = 30'b0;
 reg        rst_in = 1'b0;
-
 always @(posedge DIVclk) begin
 	if (counter < rst_on)	begin
 		counter <= counter + 30'b1;
@@ -130,6 +130,7 @@ always @(posedge DIVclk) begin
 	else	begin
 		rst_in <= 1'b0;
 		rst_led <= ~rst_in;
+		//counter <= 30'b0; //Uncomment to reset every max/1,000,000 seconds
 	end
 end
 
@@ -169,7 +170,6 @@ ADC1 (
     .FR_out()
 );
 
-assign ADC_out[2:0] = ~trans_in[15:13];
 /*  
 wire    [15:0]    ADC20_out, ADC21_out, FR2_out;
     
@@ -244,7 +244,6 @@ wire [15:0] relock_out;
 reg [31:0] stepsize = 32'b0000_0000_0000_0000_0001_0000_0000_0000; //Change LSB every 128 clock cycles
 wire clear_out, hold;
 
-
 Relock relock_inst(
     .clk_in(clk_in),
     .on_in(1'b1),
@@ -259,20 +258,69 @@ Relock relock_inst(
     .signal_out(relock_out)
 );
 
+//State machine for relock LEDs
+localparam LOCKED       = 3'b100;
+localparam UNLOCKED     = 3'b010;
+localparam UNLOCKED1S   = 3'b101;
+//Combinatorial part
+function [2:0] relock_next_state;
+    input [15:0] signal_in;
+    input [2:0]  state;
+    input [27:0] counter;
+    begin 
+        case(state)
+            LOCKED:
+                if (signal_in < minval)
+                    relock_next_state = UNLOCKED; //If we were locked and we fall below minimum, set to unlocked
+                else
+                    relock_next_state = LOCKED; //Otherwise we are still locked
+             UNLOCKED:
+                if (signal_in < minval)
+                    relock_next_state = UNLOCKED; //If we are still unlocked stay unlocked
+                else
+                    relock_next_state = UNLOCKED1S; //Otherwise we are locked and can start 1s counter
+            UNLOCKED1S:
+                if (signal_in < minval)
+                    relock_next_state = UNLOCKED; //If we fall out nof lock again, set state to unlocked
+                else if ( (signal_in >= minval) && (counter < 28'h5F5E100) ) 
+                    relock_next_state = UNLOCKED1S; //If we are locked, but still counting, stay in counter state
+                else if ((signal_in >= minval) && (counter == 28'h5F5E100) )
+                    relock_next_state = LOCKED; //If we are done counting and still locked, set to locked
+                else
+                    relock_next_state = UNLOCKED; //Otherwise we are unlocked
+            default:
+                relock_next_state = LOCKED;
+        endcase
+    end
+endfunction
+//Sequential part
+reg [27:0] relock_counter = 28'b0; //Counter for led that stays on 1s after relock acquired
+reg [2:0] relock_state;
+always @(posedge clk_in) begin
+    relock_state <= relock_next_state(trans_in, relock_state, relock_counter);
+    locked_out <= ~relock_state[2];
+    notlocked_out <= ~relock_state[1];
+    notlocked1s_out <= ~relock_state[0];
+    if (relock_state == UNLOCKED1S)
+        relock_counter <= relock_counter + 28'b1;
+end
+
 //////////End of relock/////////////
 
 ////////PID///////////
 
 //PID parameters
-parameter signed P = 2;          //[-40, 0] dB
-parameter signed I  = 1e-1;       //[-30, 100] dB
-parameter signed D  = 1e-1;       //[-100, 0] dB
-parameter signed fc = 1e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+parameter real Pd = 1.0;          //[-40, 0] dB
+parameter real Pi = 1.0;
+parameter real I  = 0;       //[-30, 100] dB
+parameter real D  = 1e-5;       //[-100, 0] dB
+parameter real fc = 1e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 
 wire [15:0] e_out;
 //Servo module
 PIDservo #(
-    .P(P),
+    .Pd(Pd),
+    .Pi(Pi),
     .I(I),
     .D(D),
     .fc(fc)

@@ -3,10 +3,7 @@ Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto f83de647c25a47089b648e86a58b19da --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot IIR1stOrder_test_behav xil_defaultlib.IIR1stOrder_test xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 16 differs from formal bit length 18 for port signal_out [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:259]
-WARNING: [VRFC 10-278] actual bit length 34 differs from formal bit length 35 for port a1_in [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/PIDservo.v:55]
-WARNING: [VRFC 10-278] actual bit length 34 differs from formal bit length 35 for port b0_in [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/PIDservo.v:56]
-WARNING: [VRFC 10-278] actual bit length 34 differs from formal bit length 35 for port b1_in [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/PIDservo.v:57]
+WARNING: [VRFC 10-278] actual bit length 16 differs from formal bit length 18 for port signal_out [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v:261]
 WARNING: [VRFC 10-278] actual bit length 34 differs from formal bit length 35 for port a1_in [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/PIDservo.v:74]
 WARNING: [VRFC 10-278] actual bit length 34 differs from formal bit length 35 for port b0_in [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/PIDservo.v:75]
 WARNING: [VRFC 10-278] actual bit length 34 differs from formal bit length 35 for port b1_in [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/PIDservo.v:76]
@@ -32,7 +29,7 @@ Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
 Compiling module xil_defaultlib.LTC2195(CLKDIV=8)
 Compiling module xil_defaultlib.Relock
 Compiling module xil_defaultlib.IIRfilter1stOrder
-Compiling module xil_defaultlib.PIDservo(P=2,I=0.1,D=0.1,fc=1000...
+Compiling module xil_defaultlib.PIDservo(Pd=1.0,Pi=1.0,I=10000.0...
 Compiling module unisims_ver.MMCME2_ADV(BANDWIDTH="OPTIMIZED"...
 Compiling module unisims_ver.MMCME2_BASE(CLKFBOUT_MULT_F=8.0,...
 Compiling module unisims_ver.ODDR(DDR_CLK_EDGE="SAME_EDGE")

@@ -47,6 +47,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7k160tfbg676-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -55,6 +56,12 @@ set rc [catch {
   set_property ip_output_repo C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.runs/synth_1/IIR1stOrder_test.dcp
+  read_ip -quiet C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/ipcore_dir/dds_LUT_pw24_ow16.xco
+  set_property is_locked true [get_files C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/ipcore_dir/dds_LUT_pw24_ow16.xco]
+  read_ip -quiet C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/ipcore_dir/dds_LUT_pw24_ow24.xco
+  set_property is_locked true [get_files C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/ipcore_dir/dds_LUT_pw24_ow24.xco]
+  read_ip -quiet C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/ipcore_dir/dds_PG_pw24.xco
+  set_property is_locked true [get_files C:/Users/dschussheim/Documents/GitHub/digital-servo/firmware/ipcore_dir/dds_PG_pw24.xco]
   read_xdc C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/constrs_1/new/servo_tests_const.xdc
   link_design -top IIR1stOrder_test -part xc7k160tfbg676-1
   close_msg_db -file init_design.pb
