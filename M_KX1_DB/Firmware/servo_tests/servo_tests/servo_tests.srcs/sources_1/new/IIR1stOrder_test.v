@@ -97,7 +97,7 @@ BUFG BUFG_inst (
     .O(clk_in), // 1-bit output: Clock output
     .I(clk_int) // 1-bit input: Clock input
 );
-    
+   /* 
 //1Hz clock to run reset logic
 clk_div    #(
     .div_f(27'b1100100)    //Divide by 100 for 1 MHz clock to strobe an LED.
@@ -106,17 +106,17 @@ rstLEDclk(
     .clk(clk_in),
     .rst_in(1'b0),
     .div_clk(DIVclk)
-    );
+    );*/
     
 //Reset about every minute.
 //localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
 //localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
-localparam	max = 30'h989680; 		//10,000,000 (10 seconds)
-localparam	rst_on = 30'h895440; 	// turn reset on after 9,000,000 cycles (9 seconds, and keep on for 100 ns
+localparam	max = 30'h5dc; 		//1500n (10 seconds)
+localparam	rst_on = 30'h3e8; 	// turn reset on after 9,000,000 cycles (9 seconds, and keep on for 100 ns
 
 reg [29:0] counter = 30'b0;
 reg        rst_in = 1'b0;
-always @(posedge DIVclk) begin
+always @(posedge clk_in) begin
 	if (counter < rst_on)	begin
 		counter <= counter + 30'b1;
 		rst_in <= 1'b0;
@@ -130,7 +130,6 @@ always @(posedge DIVclk) begin
 	else	begin
 		rst_in <= 1'b0;
 		rst_led <= ~rst_in;
-		//counter <= 30'b0; //Uncomment to reset every max/1,000,000 seconds
 	end
 end
 
@@ -204,57 +203,33 @@ ADC2 (
 
 ///////////////End of inputs///////////////
 
-/*
-///////////////////Limit///////////////////
+///////////////Relock sweep////////////////
 
-localparam minval_in = 16'b1000_0000_0000_0000;
-localparam maxval_in = 16'b0111_1111_1111_1111;
+localparam real Vmin = 0.5;
+localparam signed [15:0] minval = Vmin*16'b0111_1111_1111_1111; 
 
-Limit lim_trans (
-    .clk_in(clk_in),
-    .minval_in(minval_in),
-    .maxval_in(maxval_in),
-    .center_when_railed_in(cwri),
-    .signal_in(trans_in),
-    .railed_out(limit_railed),
-    .clear_out(lim_clr_trans),
-    .signal_out(trans_out)
-);
+reg sweep_hold;
 
-Limit lim_hc (
-    .clk_in(clk_in),
-    .minval_in(minval_in),
-    .maxval_in(maxval_in),
-    .center_when_railed_in(cwri),
-    .signal_in(ADC11_out),
-    .railed_out(limit_railed),
-    .clear_out(lim_clr_hc),
-    .signal_out(e_in)
-);
+always @(posedge clk_in) begin
+    if ($signed(trans_in) < $signed(minval)) begin
+        sweep_hold = 1'b0;
+    end
+    else begin
+        sweep_hold = 1'b1;
+    end
+end
 
-///////////////End of limit////////////////
-*/
-
-///////////////Relock///////////////
-
-reg signed [15:0] maxval = 16'b0100_0000_0000_0000; //0.5V
-reg signed [15:0] minval = 16'b1100_0000_0000_0000; //-0.5V
 wire [15:0] relock_out;
-
-reg [31:0] stepsize = 32'b0000_0000_0000_0000_0001_0000_0000_0000; //Change LSB every 128 clock cycles
-wire clear_out, hold;
-
-Relock relock_inst(
+localparam signed [15:0] sweep_max = (0.65625)*(16'b0111_1111_1111_1111);
+localparam signed [15:0] sweep_min = (0.1875)*(16'b0111_1111_1111_1111); 
+localparam        [31:0] sweep_stepsize = 32'b0000_0000_0000_0000_0001_0000_0000_0000; //Change LSB every 128 clock cycles
+Sweep relockSweep(
     .clk_in(clk_in),
     .on_in(1'b1),
-    .minval_in(minval),
-    .maxval_in(maxval),
-    .stepsize_in(stepsize),
-    .signal_in(trans_in),
-    .railed_in(2'b00),
-    .hold_in(1'b0),
-    .hold_out(hold),
-    .clear_out(clear_out),
+    .hold_in(sweep_hold),
+    .minval_in(sweep_min),
+    .maxval_in(sweep_max),
+    .stepsize_in(sweep_stepsize),
     .signal_out(relock_out)
 );
 
@@ -270,21 +245,21 @@ function [2:0] relock_next_state;
     begin 
         case(state)
             LOCKED:
-                if (signal_in < minval)
+                if ($signed(signal_in) < $signed(minval))
                     relock_next_state = UNLOCKED; //If we were locked and we fall below minimum, set to unlocked
                 else
                     relock_next_state = LOCKED; //Otherwise we are still locked
              UNLOCKED:
-                if (signal_in < minval)
+                if ($signed(signal_in) < $signed(minval))
                     relock_next_state = UNLOCKED; //If we are still unlocked stay unlocked
                 else
                     relock_next_state = UNLOCKED1S; //Otherwise we are locked and can start 1s counter
             UNLOCKED1S:
-                if (signal_in < minval)
+                if ($signed(signal_in) < $signed(minval))
                     relock_next_state = UNLOCKED; //If we fall out nof lock again, set state to unlocked
-                else if ( (signal_in >= minval) && (counter < 28'h5F5E100) ) 
+                else if ( ($signed(signal_in) >= $signed(minval) ) && (counter < 28'h5F5E100) ) 
                     relock_next_state = UNLOCKED1S; //If we are locked, but still counting, stay in counter state
-                else if ((signal_in >= minval) && (counter == 28'h5F5E100) )
+                else if (($signed(signal_in) >= $signed(minval) ) && (counter == 28'h5F5E100) )
                     relock_next_state = LOCKED; //If we are done counting and still locked, set to locked
                 else
                     relock_next_state = UNLOCKED; //Otherwise we are unlocked
@@ -311,10 +286,13 @@ end
 
 //PID parameters
 parameter real Pd = 1.0;          //[-40, 0] dB
-parameter real Pi = 1.0;
-parameter real I  = 0;       //[-30, 100] dB
-parameter real D  = 1e-5;       //[-100, 0] dB
+parameter real Pi = 1.707e-3;
+parameter real I  = 51.2;       //[-30, 100] dB
+parameter real D  = 0;       //[-100, 0] dB
 parameter real fc = 1e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+
+wire PID_on;
+assign PID_on = ($signed(trans_in) < $signed(minval)) ? 1'b0 : 1'b1;
 
 wire [15:0] e_out;
 //Servo module
@@ -327,65 +305,16 @@ PIDservo #(
 )
 PID (
     .clk_in(clk_in),
+    .on_in(PID_on),
     .e_in(e_in),
     .e_out(e_out)
 );
 
 /////End of PID///////
 
-
-/*
-/////////IIRs//////////
-
-//Inputs
-//wire [1:0] railed_in;
-//wire hold_in = 1'b0;
-wire [15:0] e_int, e_out;
-//IIR filter values
-//PD with K = 0.2, g = 16, and f0 = 100kHz
-//localparam signed [33:0] a1 = 34'h39dfbb0;
-//localparam signed [33:0] b0 = 34'hc39c654;
-//localparam signed [33:0] b1 = -34'hc262bde;
-//I K = 1000, f0 = 1 Hz drifted negative over a few seconds.
-//localparam signed [33:0] a1 = 34'h4000000;
-//localparam signed [33:0] b0 = 34'h83c;
-//localparam signed [33:0] b1 = 34'h83c;
-//PI K = 1, g = 16, f0 = 10kHz
-localparam signed [33:0] a1_0 = 34'h3fff5b5;
-localparam signed [33:0] b0_0 = 34'h4004d35;
-localparam signed [33:0] b1_0 = -34'h3ffa880;
-
-IIRfilter1stOrder PI0 (
-    .clk_in(clk_in),
-    .on_in(1'b1),
-    .a1_in(a1_0),
-    .b0_in(b0_0),
-    .b1_in(b1_0),
-    //.railed_in(2'b00),
-    //.hold_in(1'b0),
-    .signal_in(e_in),
-    .signal_out(e_int)
-);
-
-//PD with K = 0.2, g = 16, and f0 = 100kHz
-localparam signed [33:0] a1_1 = 34'h39dfbb0;
-localparam signed [33:0] b0_1 = 34'hc39c654;
-localparam signed [33:0] b1_1 = -34'hc262bde;
-
-IIRfilter1stOrder PD0 (
-    .clk_in(clk_in),
-    .on_in(1'b1),
-    .a1_in(a1_1),
-    .b0_in(b0_1),
-    .b1_in(b1_1),
-    //.railed_in(2'b00),
-    //.hold_in(1'b0),
-    .signal_in(e_int),
-    .signal_out(e_out)
-);
-////////End of IIRs////////
-*/
 ////////Output to DAC//////
+
+wire signed [15:0] signal_out = relock_out + e_out;
 
 // Instantiate DAC1 driver module
 AD9783 #(
@@ -394,8 +323,8 @@ AD9783 #(
  AD9783_inst1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(~e_out), 
-     .DAC1_in(e_out), 
+     .DAC0_in(~signal_out), 
+     .DAC1_in(signal_out), 
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI1_out_p), 

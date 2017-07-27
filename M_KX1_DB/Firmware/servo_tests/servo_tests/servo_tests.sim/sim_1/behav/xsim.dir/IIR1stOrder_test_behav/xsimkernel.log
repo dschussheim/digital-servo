@@ -1,7 +1,7 @@
-Running: xsim.dir/IIR1stOrder_test_behav/xsimk.exe -simmode gui -wdb IIR1stOrder_test_behav.wdb -simrunnum 0 -socket 50500
+Running: xsim.dir/IIR1stOrder_test_behav/xsimk.exe -simmode gui -wdb IIR1stOrder_test_behav.wdb -simrunnum 0 -socket 52788
 Design successfully loaded
-Design Loading Memory Usage: 9220 KB (Peak: 9220 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 9236 KB (Peak: 9236 KB)
+Design Loading CPU Usage: 31 ms
 Simulation completed
-Simulation Memory Usage: 11168 KB (Peak: 11168 KB)
+Simulation Memory Usage: 11176 KB (Peak: 11176 KB)
 Simulation CPU Usage: 31 ms

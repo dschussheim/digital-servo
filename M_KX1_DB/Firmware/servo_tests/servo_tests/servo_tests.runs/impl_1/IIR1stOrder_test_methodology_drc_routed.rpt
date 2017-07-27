@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Tue Jul 25 19:17:10 2017
+| Date         : Wed Jul 26 22:28:06 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_methodology -file IIR1stOrder_test_methodology_drc_routed.rpt -rpx IIR1stOrder_test_methodology_drc_routed.rpx
 | Design       : IIR1stOrder_test
@@ -23,87 +23,49 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 176
+             Violations found: 110
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| SYNTH-10  | Warning  | Wide multiplier               | 14         |
-| TIMING-14 | Warning  | LUT on the clock tree         | 9          |
-| TIMING-16 | Warning  | Large setup violation         | 60         |
+| SYNTH-10  | Warning  | Wide multiplier               | 4          |
+| SYNTH-11  | Warning  | DSP output not registered     | 2          |
+| TIMING-14 | Warning  | LUT on the clock tree         | 5          |
+| TIMING-16 | Warning  | Large setup violation         | 2          |
 | TIMING-17 | Warning  | Non-clocked sequential cell   | 40         |
 | TIMING-18 | Warning  | Missing input or output delay | 53         |
+| TIMING-20 | Warning  | Non-clocked latch             | 4          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 SYNTH-10#1 Warning
 Wide multiplier  
-Detected multiplier at PID/PD/b0x11 of size 14x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at PID/PD/yNew1 of size 10x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#2 Warning
 Wide multiplier  
-Detected multiplier at PID/PD/b0x11__0 of size 14x15, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at PID/PD/yNew1__0 of size 10x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#3 Warning
 Wide multiplier  
-Detected multiplier at PID/PD/b0x11__1 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at PID/PD/yNew1__1 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#4 Warning
 Wide multiplier  
-Detected multiplier at PID/PD/b0x11__2 of size 18x15, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at PID/PD/yNew1__2 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
-SYNTH-10#5 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/b1x00 of size 14x18, it is decomposed from a wide multipler into 4 DSP blocks.
+SYNTH-11#1 Warning
+DSP output not registered  
+DSP instance PID/PD/b1x00 is not fully pipelined on the output side. MREG/PREG are not used.
 Related violations: <none>
 
-SYNTH-10#6 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/b1x00__0 of size 14x15, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#7 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/b1x00__1 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#8 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/b1x00__2 of size 18x15, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#9 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/y2 of size 10x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#10 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/y2__0 of size 10x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#11 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/y2__1 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#12 Warning
-Wide multiplier  
-Detected multiplier at PID/PD/y2__2 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#13 Warning
-Wide multiplier  
-Detected multiplier at PID/PI/b1x00 of size 10x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#14 Warning
-Wide multiplier  
-Detected multiplier at PID/PI/b1x00__0 of size 10x15, it is decomposed from a wide multipler into 4 DSP blocks.
+SYNTH-11#2 Warning
+DSP output not registered  
+DSP instance PID/PD/b1x00__0 is not fully pipelined on the output side. MREG/PREG are not used.
 Related violations: <none>
 
 TIMING-14#1 Warning
@@ -131,324 +93,14 @@ LUT on the clock tree
 The LUT AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
 Related violations: <none>
 
-TIMING-14#6 Warning
-LUT on the clock tree  
-The LUT ADC1/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
-Related violations: <none>
-
-TIMING-14#7 Warning
-LUT on the clock tree  
-The LUT ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
-Related violations: <none>
-
-TIMING-14#8 Warning
-LUT on the clock tree  
-The LUT ADC1/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
-Related violations: <none>
-
-TIMING-14#9 Warning
-LUT on the clock tree  
-The LUT ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
-Related violations: <none>
-
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.220 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[0]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.061 ns between PID/PI/signal_out_reg[0]/C (clocked by clk) and AD9783_inst1/data_in_reg[14]/D (clocked by MMCME2_BASE_inst_n_2). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.220 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[10]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.220 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[11]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -1.220 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[7]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -1.226 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[2]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -1.226 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[3]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -1.226 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[8]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -1.226 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[9]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#9 Warning
-Large setup violation  
-There is a large setup violation of -1.242 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[1]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#10 Warning
-Large setup violation  
-There is a large setup violation of -1.242 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[4]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#11 Warning
-Large setup violation  
-There is a large setup violation of -1.242 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[5]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -1.242 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/counter_f_reg[6]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#13 Warning
-Large setup violation  
-There is a large setup violation of -3.896 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[14]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#14 Warning
-Large setup violation  
-There is a large setup violation of -3.896 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[9]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#15 Warning
-Large setup violation  
-There is a large setup violation of -3.896 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg_c/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#16 Warning
-Large setup violation  
-There is a large setup violation of -3.896 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg_c_4/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#17 Warning
-Large setup violation  
-There is a large setup violation of -3.896 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg_c_5/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#18 Warning
-Large setup violation  
-There is a large setup violation of -3.910 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[2]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#19 Warning
-Large setup violation  
-There is a large setup violation of -3.910 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[3]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#20 Warning
-Large setup violation  
-There is a large setup violation of -3.910 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[6]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#21 Warning
-Large setup violation  
-There is a large setup violation of -3.910 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#22 Warning
-Large setup violation  
-There is a large setup violation of -3.920 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#23 Warning
-Large setup violation  
-There is a large setup violation of -4.005 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[15]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#24 Warning
-Large setup violation  
-There is a large setup violation of -4.014 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[13]_AD9783_inst1_AD_9783_SPI_inst_data_out_reg_c_5/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#25 Warning
-Large setup violation  
-There is a large setup violation of -4.021 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[2]_C/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#26 Warning
-Large setup violation  
-There is a large setup violation of -4.021 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[3]_C/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#27 Warning
-Large setup violation  
-There is a large setup violation of -4.021 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[6]_C/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#28 Warning
-Large setup violation  
-There is a large setup violation of -4.021 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_C/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#29 Warning
-Large setup violation  
-There is a large setup violation of -4.081 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[15]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#30 Warning
-Large setup violation  
-There is a large setup violation of -4.092 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#31 Warning
-Large setup violation  
-There is a large setup violation of -4.106 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[0]_C/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#32 Warning
-Large setup violation  
-There is a large setup violation of -4.122 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[1]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#33 Warning
-Large setup violation  
-There is a large setup violation of -4.130 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[12]_srl2_AD9783_inst1_AD_9783_SPI_inst_data_out_reg_c_4/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#34 Warning
-Large setup violation  
-There is a large setup violation of -4.169 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[15]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/spi_sdo_out_reg/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#35 Warning
-Large setup violation  
-There is a large setup violation of -4.215 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[8]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#36 Warning
-Large setup violation  
-There is a large setup violation of -4.250 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[0]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#37 Warning
-Large setup violation  
-There is a large setup violation of -4.250 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_P/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#38 Warning
-Large setup violation  
-There is a large setup violation of -4.275 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[5]/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#39 Warning
-Large setup violation  
-There is a large setup violation of -4.353 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_P/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#40 Warning
-Large setup violation  
-There is a large setup violation of -4.554 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[3]_P/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#41 Warning
-Large setup violation  
-There is a large setup violation of -4.568 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#42 Warning
-Large setup violation  
-There is a large setup violation of -4.580 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[8]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#43 Warning
-Large setup violation  
-There is a large setup violation of -4.626 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/ready_out_reg/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#44 Warning
-Large setup violation  
-There is a large setup violation of -4.635 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/state_f_reg[1]/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#45 Warning
-Large setup violation  
-There is a large setup violation of -4.658 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[3]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#46 Warning
-Large setup violation  
-There is a large setup violation of -4.694 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/state_f_reg[2]/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#47 Warning
-Large setup violation  
-There is a large setup violation of -4.902 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#48 Warning
-Large setup violation  
-There is a large setup violation of -4.944 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_P/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#49 Warning
-Large setup violation  
-There is a large setup violation of -4.945 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#50 Warning
-Large setup violation  
-There is a large setup violation of -4.957 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_P/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#51 Warning
-Large setup violation  
-There is a large setup violation of -5.262 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[8]_P/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#52 Warning
-Large setup violation  
-There is a large setup violation of -5.390 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[12]_srl2_AD9783_inst1_AD_9783_SPI_inst_data_out_reg_c_4/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#53 Warning
-Large setup violation  
-There is a large setup violation of -5.446 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[1]_P/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#54 Warning
-Large setup violation  
-There is a large setup violation of -5.501 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[1]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#55 Warning
-Large setup violation  
-There is a large setup violation of -5.520 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[2]_C/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#56 Warning
-Large setup violation  
-There is a large setup violation of -5.836 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[5]/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#57 Warning
-Large setup violation  
-There is a large setup violation of -6.099 ns between AD9783_inst1/AD_9783_SPI_inst/data_out_reg[4]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/data_out_reg[2]_P/D (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#58 Warning
-Large setup violation  
-There is a large setup violation of -8.170 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/spi_sdo_out_reg/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#59 Warning
-Large setup violation  
-There is a large setup violation of -8.241 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/spi_scs_out_reg/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#60 Warning
-Large setup violation  
-There is a large setup violation of -8.693 ns between AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC/G (clocked by rst_in) and AD9783_inst1/AD_9783_SPI_inst/spi_sck_out_reg/CE (clocked by AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.165 ns between PID/PI/signal_out_reg[0]/C (clocked by clk) and AD9783_inst1/data_in_reg[15]/D (clocked by MMCME2_BASE_inst_n_2). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -914,6 +566,26 @@ Related violations: <none>
 TIMING-18#53 Warning
 Missing input or output delay  
 An output delay is missing on rst_led relative to clock(s) clk 
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch ADC1/LTC2195_SPI_inst/data_out_reg[7]_LDC cannot be properly analyzed as its control pin ADC1/LTC2195_SPI_inst/data_out_reg[7]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC cannot be properly analyzed as its control pin ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch ADC1/LTC2195_SPI_inst/data_out_reg[9]_LDC cannot be properly analyzed as its control pin ADC1/LTC2195_SPI_inst/data_out_reg[9]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC cannot be properly analyzed as its control pin ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
 

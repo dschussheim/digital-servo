@@ -24,8 +24,8 @@ module IIRfilter1stOrderAntiWindup(
 	input  wire signed	[34:0]					b1_in,
 	input  wire			[1:0]					railed_in,
 	input  wire									hold_in,
-	input  wire signed  [SIGNAL_IN_SIZE+1:0]	signal_in,
-    output reg  signed  [SIGNAL_OUT_SIZE+1:0]	signal_out
+	input  wire signed  [SIGNAL_IN_SIZE-1:0]	signal_in,
+    output reg  signed  [SIGNAL_OUT_SIZE-1:0]	signal_out
 );
 
 // Parameters

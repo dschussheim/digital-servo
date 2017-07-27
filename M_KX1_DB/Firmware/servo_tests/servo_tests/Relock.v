@@ -23,7 +23,7 @@ module Relock(
 	input  wire						   				hold_in,
     output wire						   				hold_out,
 	output reg										clear_out,
-    output wire signed	[SIGNAL_OUT_SIZE+1:0]	    signal_out
+    output wire signed	[SIGNAL_OUT_SIZE-1:0]	    signal_out
 );
 
 // Parameters
@@ -81,11 +81,13 @@ always @(posedge clk_in) begin
 					state_f <= GOINGDOWN;
 					if (state_f == GOINGUP) begin // increase the sweep amplitude every time we transition from GOINGUP to GOINGDOWN
 						if (sweep_amplitude_f == 42'b0)
-							sweep_amplitude_f <= sweep_amplitude_f + $signed(stepsize_in << 8);
-						else if (sweep_amplitude_f < 42'h10000000000)
-							sweep_amplitude_f <= (sweep_amplitude_f <<< 1);
+							//sweep_amplitude_f <= sweep_amplitude_f + $signed(stepsize_in << 8);
+							sweep_amplitude_f <= 42'h1f000000000;
+						else if (sweep_amplitude_f < 42'h1f000000000)
+							//sweep_amplitude_f <= (sweep_amplitude_f <<< 1);
+							sweep_amplitude_f <= 42'h1f000000000;
 						else
-							sweep_amplitude_f <= 42'h10000000000;
+							sweep_amplitude_f <= 42'h1f000000000;
 					end
 				end else if ((current_val_f < -sweep_amplitude_f) || railed_in[0]) begin
 					state_f <= GOINGUP;
@@ -99,6 +101,6 @@ always @(posedge clk_in) begin
 	end
 end
 
-assign signal_out = current_val_f[41:40-SIGNAL_OUT_SIZE];
+assign signal_out = current_val_f[41:42-SIGNAL_OUT_SIZE];
 
 endmodule

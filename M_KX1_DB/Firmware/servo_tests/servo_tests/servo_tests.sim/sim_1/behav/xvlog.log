@@ -42,5 +42,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitH
 INFO: [VRFC 10-311] analyzing module formula_test
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.srcs/sources_1/new/IIR1stOrder_test.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IIR1stOrder_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/Sweep.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sweep
+WARNING: [VRFC 10-756] identifier SIGNAL_OUT_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/Sweep.v:21]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
