@@ -303,8 +303,8 @@ end
 
 //PID parameters
 parameter real Pd = 1.0;          //[-40, 0] dB
-parameter real Pi = 1.707e-3;
-parameter real I  = 51.2;       //[-30, 100] dB
+parameter real Pi = 0.0137;
+parameter real I  = 409.6;       //[-30, 100] dB
 parameter real D  = 0;       //[-100, 0] dB
 parameter real fc = 1e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 
@@ -313,15 +313,15 @@ assign PID_on = ($signed(trans_in) < $signed(minval)) ? 1'b0 : 1'b1;
 
 wire [15:0] e_out;
 //Servo module
-PIDservo PID (
+PIDservo #(
+.Pd(Pd),
+    .Pi(PI),
+    .I(I),
+    .D(D)   
+)
+PID (
     .clk_in(clk_in),
-    .on_in(PID_on),
-    .a1_PI(a1_PI),
-    .b0_PI(b0_PI),
-    .b1_PI(b1_PI),
-    .a1_PD(a1_PD),
-    .b0_PD(b0_PD),
-    .b1_PD(b1_PD),    
+    .on_in(PID_on), 
     .e_in(e_in),
     .e_out(e_out)
 );

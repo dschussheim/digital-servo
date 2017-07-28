@@ -1,0 +1,319 @@
+
+*** Running vivado
+    with args -log set_param.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source set_param.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source set_param.tcl -notrace
+Command: synth_design -top set_param -part xc7k160tfbg676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5412 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 346.617 ; gain = 77.965
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'set_param' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/time_test_param_module/set_param.v:7]
+	Parameter Pd bound to: 1.000000 - type: float 
+	Parameter Pi bound to: 0.001707 - type: float 
+	Parameter I bound to: 51.200000 - type: float 
+	Parameter D bound to: 0.100000 - type: float 
+	Parameter fc bound to: 1000000.000000 - type: float 
+	Parameter Ts bound to: 0.000000 - type: float 
+	Parameter pi bound to: 3.141593 - type: float 
+INFO: [Synth 8-256] done synthesizing module 'set_param' (1#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/time_test_param_module/set_param.v:7]
+WARNING: [Synth 8-3330] design set_param has an empty top module
+WARNING: [Synth 8-3917] design set_param has port a1_PI[34] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[33] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[32] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[31] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[30] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[29] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[28] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[27] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[26] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port a1_PI[25] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[24] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[23] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[22] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[21] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[20] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[19] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[18] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[17] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[16] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[15] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[14] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[13] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[12] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[11] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[10] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[9] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[8] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[7] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[6] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[5] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[4] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[3] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[2] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[1] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port a1_PI[0] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[34] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[33] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[32] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[31] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[30] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[29] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[28] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[27] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[26] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[25] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[24] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[23] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[22] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[21] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[20] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[19] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[18] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[17] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[16] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[15] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[14] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[13] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[12] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[11] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[10] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[9] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[8] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[7] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[6] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[5] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[4] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[3] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b0_PI[2] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[1] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b0_PI[0] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[34] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[33] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[32] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[31] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[30] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[29] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[28] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[27] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[26] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[25] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[24] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[23] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[22] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[21] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[20] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[19] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[18] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[17] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[16] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[15] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[14] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[13] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[12] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[11] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[10] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[9] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[8] driven by constant 0
+WARNING: [Synth 8-3917] design set_param has port b1_PI[7] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[6] driven by constant 1
+WARNING: [Synth 8-3917] design set_param has port b1_PI[5] driven by constant 1
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.945 ; gain = 118.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.945 ; gain = 118.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k160tfbg676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.945 ; gain = 118.293
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k160tfbg676-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.945 ; gain = 118.293
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3330] design set_param has an empty top module
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 508.469 ; gain = 239.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 508.469 ; gain = 239.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |   274|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   274|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 550 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 511.883 ; gain = 243.230
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+9 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 596.039 ; gain = 335.145
+INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/time_test_param_module/time_test_param_module.runs/synth_1/set_param.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 596.039 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 28 11:30:42 2017...

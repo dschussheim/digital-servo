@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Jul 28 11:30:28 2017
+# Process ID: 4352
+# Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/time_test_param_module/time_test_param_module.runs/synth_1
+# Command line: vivado.exe -log set_param.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source set_param.tcl
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/time_test_param_module/time_test_param_module.runs/synth_1/set_param.vds
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/time_test_param_module/time_test_param_module.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source set_param.tcl -notrace

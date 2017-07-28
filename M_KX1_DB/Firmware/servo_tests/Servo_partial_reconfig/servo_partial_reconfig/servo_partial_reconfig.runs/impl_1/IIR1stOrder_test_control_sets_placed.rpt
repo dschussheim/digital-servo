@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Thu Jul 27 18:57:45 2017
+| Date         : Fri Jul 28 11:22:31 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file IIR1stOrder_test_control_sets_placed.rpt
 | Design       : IIR1stOrder_test
@@ -33,11 +33,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             105 |           50 |
-| No           | No                    | Yes                    |              68 |           35 |
-| No           | Yes                   | No                     |             286 |           88 |
-| Yes          | No                    | No                     |             122 |           38 |
-| Yes          | No                    | Yes                    |              73 |           22 |
+| No           | No                    | No                     |             105 |           45 |
+| No           | No                    | Yes                    |              68 |           28 |
+| No           | Yes                   | No                     |             286 |           86 |
+| Yes          | No                    | No                     |             122 |           39 |
+| Yes          | No                    | Yes                    |              73 |           25 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -77,31 +77,31 @@ Table of Contents
 |  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/spi_sdo_out2_out    |                                                              |                1 |              1 |
 |  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/spi_scs_out4_out    |                                                              |                1 |              1 |
 |  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/data_out[9]_i_1_n_0 |                                                              |                2 |              2 |
-|  spi_clk_BUFG                                                 |                                                   | ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0            |                2 |              2 |
+|  spi_clk_BUFG                                                 |                                                   | ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0            |                1 |              2 |
 |  spi_clk_BUFG                                                 | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0         | ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0            |                1 |              2 |
-|  AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                                                   | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              2 |
+|  AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                                                   | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                2 |              2 |
 |  counter_f_reg[11]_i_3_n_0                                    |                                                   | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              3 |
-|  counter_f_reg[11]_i_3_n_0                                    |                                                   | AD9783_inst1/AD_9783_SPI_inst/state_f[2]_i_2_n_0             |                2 |              3 |
-|  spi_clk_BUFG                                                 |                                                   | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                2 |              3 |
+|  counter_f_reg[11]_i_3_n_0                                    |                                                   | AD9783_inst1/AD_9783_SPI_inst/state_f[2]_i_2_n_0             |                1 |              3 |
+|  spi_clk_BUFG                                                 |                                                   | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                1 |              3 |
 |  clk_in                                                       | AD9783_inst1/spi_data[15]_i_1_n_0                 |                                                              |                1 |              4 |
-|  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                1 |              4 |
+|  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                2 |              4 |
 |  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                1 |              4 |
 |  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst1/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0 |                1 |              4 |
 |  spi_clk_BUFG                                                 | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0         |                                                              |                2 |              4 |
-|  ADC1/clk_div                                                 |                                                   |                                                              |                2 |              4 |
+|  ADC1/clk_div                                                 |                                                   |                                                              |                1 |              4 |
 |  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst1/AD_9783_SPI_inst/state_f[2]_i_2_n_0             |                2 |              6 |
 |  clk_in                                                       | AD9783_inst1/counter_f                            | rst_in                                                       |                2 |              8 |
 |  clk_in                                                       | ADC1/counter_f                                    | rst_in                                                       |                2 |              8 |
-|  spi_clk_BUFG                                                 | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0         | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                2 |              8 |
-|  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/counter_f           | rst_in                                                       |                2 |             12 |
+|  spi_clk_BUFG                                                 | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0         | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                3 |              8 |
+|  counter_f_reg[11]_i_3_n_0                                    | AD9783_inst1/AD_9783_SPI_inst/counter_f           | rst_in                                                       |                3 |             12 |
 |  spi_clk_BUFG                                                 | ADC1/LTC2195_SPI_inst/counter_f                   | rst_in                                                       |                3 |             12 |
 |  clk_in                                                       | relock_counter[0]_i_1_n_0                         |                                                              |                7 |             28 |
 |  clk_in                                                       | counter[0]_i_1_n_0                                |                                                              |                8 |             30 |
-|  AD9783_inst1/clkD                                            |                                                   |                                                              |               18 |             32 |
-|  clk_in                                                       |                                                   | rst_in                                                       |               20 |             49 |
-|  clk_in                                                       | relockSweep/next_val_f[33]_i_1_n_0                |                                                              |               13 |             50 |
-|  clk_in                                                       |                                                   |                                                              |               30 |             69 |
-|  clk_in                                                       |                                                   | ADC1/yNew1__2                                                |               79 |            276 |
+|  AD9783_inst1/clkD                                            |                                                   |                                                              |               17 |             32 |
+|  clk_in                                                       |                                                   | rst_in                                                       |               16 |             49 |
+|  clk_in                                                       | relockSweep/next_val_f[33]_i_1_n_0                |                                                              |               14 |             50 |
+|  clk_in                                                       |                                                   |                                                              |               27 |             69 |
+|  clk_in                                                       |                                                   | ADC1/yNew1__2                                                |               76 |            276 |
 +---------------------------------------------------------------+---------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
 
 

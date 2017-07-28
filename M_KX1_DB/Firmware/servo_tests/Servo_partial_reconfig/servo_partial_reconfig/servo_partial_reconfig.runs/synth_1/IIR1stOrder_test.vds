@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Thu Jul 27 18:55:57 2017
-# Process ID: 3428
+# Start of session at: Fri Jul 28 11:21:14 2017
+# Process ID: 5512
 # Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1
 # Command line: vivado.exe -log IIR1stOrder_test.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IIR1stOrder_test.tcl
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/IIR1stOrder_test.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8188 
+INFO: Helper process launched with PID 1736 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 347.969 ; gain = 75.059
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 347.367 ; gain = 74.496
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'IIR1stOrder_test' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/IIR1stOrder_test.v:6]
 	Parameter max bound to: 30'b000000000000000000010111011100 
@@ -181,8 +181,8 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dsch
 WARNING: [Synth 8-5788] Register spi_data_reg in module LTC2195 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/LTC2195.v:593]
 WARNING: [Synth 8-3848] Net data_in_from_pins_delay in module/entity LTC2195 does not have driver. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/LTC2195.v:371]
 INFO: [Synth 8-256] done synthesizing module 'LTC2195' (9#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/LTC2195.v:17]
-INFO: [Synth 8-638] synthesizing module 'set_param' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-3428-DESKTOP-VK82MLB/realtime/set_param_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'set_param' (10#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-3428-DESKTOP-VK82MLB/realtime/set_param_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'set_param' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-5512-DESKTOP-VK82MLB/realtime/set_param_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'set_param' (10#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-5512-DESKTOP-VK82MLB/realtime/set_param_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'Sweep' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/Sweep.v:15]
 	Parameter SIGNAL_OUT_SIZE bound to: 16 - type: integer 
 	Parameter GOINGUP bound to: 1'b0 
@@ -291,7 +291,7 @@ WARNING: [Synth 8-3331] design LTC2195 has unconnected port cmd_data_in[8]
 WARNING: [Synth 8-3331] design IIR1stOrder_test has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design IIR1stOrder_test has unconnected port DCO1_n
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 387.043 ; gain = 114.133
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.695 ; gain = 113.824
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -325,7 +325,7 @@ WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[2] to constant 0 [C:
 WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/IIR1stOrder_test.v:147]
 WARNING: [Synth 8-3295] tying undriven pin ADC1:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/IIR1stOrder_test.v:147]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 387.043 ; gain = 114.133
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.695 ; gain = 113.824
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 52 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -334,8 +334,8 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-3428-DESKTOP-VK82MLB/dcp7/set_param_in_context.xdc] for cell 'sp'
-Finished Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-3428-DESKTOP-VK82MLB/dcp7/set_param_in_context.xdc] for cell 'sp'
+Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-5512-DESKTOP-VK82MLB/dcp7/set_param_in_context.xdc] for cell 'sp'
+Finished Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/.Xil/Vivado-5512-DESKTOP-VK82MLB/dcp7/set_param_in_context.xdc] for cell 'sp'
 Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/hd_reconfig.xdc]
 Finished Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/hd_reconfig.xdc]
 Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_tests_const.xdc]
@@ -360,16 +360,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFG => IBUF: 1 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 715.680 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 715.082 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 715.680 ; gain = 442.770
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 715.082 ; gain = 442.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 715.680 ; gain = 442.770
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 715.082 ; gain = 442.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -377,7 +377,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for sp. (constraint file  C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_tests_const.xdc, line 150).
 Applied set_property HD.RECONFIGURABLE = true for sp. (constraint file  C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_tests_const.xdc, line 150).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 715.680 ; gain = 442.770
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 715.082 ; gain = 442.211
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "spi_clk" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "state1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -458,7 +458,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/
 INFO: [Synth 8-3354] encoded FSM with state register 'state_f_reg' using encoding 'one-hot' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/AD9783.v:316]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 715.680 ; gain = 442.770
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 715.082 ; gain = 442.211
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -918,7 +918,7 @@ WARNING: [Synth 8-3332] Sequential element (relockSweep/current_val_f_reg[5]) is
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'AD9783_inst1/spi_data_reg[4]' (FDE) to 'AD9783_inst1/spi_data_reg[10]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 715.680 ; gain = 442.770
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 715.082 ; gain = 442.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -968,13 +968,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 715.680 ; gain = 442.770
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 715.082 ; gain = 442.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 732.098 ; gain = 459.188
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 732.504 ; gain = 459.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -986,7 +986,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1010,7 +1010,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1023,7 +1023,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1035,25 +1035,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1128,11 +1128,11 @@ Report Instance Areas:
 |9     |  relockSweep        |Sweep                         |   225|
 +------+---------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 156 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 747.246 ; gain = 145.699
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 747.246 ; gain = 474.336
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 747.406 ; gain = 146.148
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 747.406 ; gain = 474.535
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 268 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1146,7 +1146,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 
 152 Infos, 214 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 747.246 ; gain = 477.938
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 747.406 ; gain = 478.133
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/IIR1stOrder_test.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.203 . Memory (MB): peak = 747.246 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Jul 27 18:56:33 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.200 . Memory (MB): peak = 747.406 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 28 11:21:48 2017...

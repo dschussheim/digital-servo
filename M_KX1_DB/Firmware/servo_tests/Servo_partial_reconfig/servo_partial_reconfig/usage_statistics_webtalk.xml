@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Fri Jul 28 10:22:44 2017'>
+<section name="__ROOT__" level="0" order="1" description="">
+ <section name="software_version_and_target_device" level="1" order="1" description="">
+  <keyValuePair key="beta" value="FALSE" description="" />
+  <keyValuePair key="build_version" value="1909853" description="" />
+  <keyValuePair key="date_generated" value="Fri Jul 28 10:22:44 2017" description="" />
+  <keyValuePair key="os_platform" value="WIN64" description="" />
+  <keyValuePair key="product_version" value="Vivado v2017.2 (64-bit)" description="" />
+  <keyValuePair key="project_id" value="ba2d71a492bd4bdfaee5a7c6142c6ca6" description="" />
+  <keyValuePair key="project_iteration" value="1" description="" />
+  <keyValuePair key="random_id" value="bb5bf7a8158c5f8a80fb77f5893c2cff" description="" />
+  <keyValuePair key="registration_id" value="211350505_0_0_900" description="" />
+  <keyValuePair key="route_design" value="TRUE" description="" />
+  <keyValuePair key="target_device" value="xc7k160t" description="" />
+  <keyValuePair key="target_family" value="kintex7" description="" />
+  <keyValuePair key="target_package" value="fbg676" description="" />
+  <keyValuePair key="target_speed" value="-1" description="" />
+  <keyValuePair key="tool_flow" value="Vivado" description="" />
+ </section>
+ <section name="user_environment" level="1" order="2" description="">
+  <keyValuePair key="cpu_name" value="Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz" description="" />
+  <keyValuePair key="cpu_speed" value="2496 MHz" description="" />
+  <keyValuePair key="os_name" value="Microsoft Windows 8 or later , 64-bit" description="" />
+  <keyValuePair key="os_release" value="major release  (build 9200)" description="" />
+  <keyValuePair key="system_ram" value="8.000 GB" description="" />
+  <keyValuePair key="total_processors" value="1" description="" />
+ </section>
+ <section name="hd" level="1" order="3" description="">
+  <section name="flow" level="2" order="1" description="">
+   <keyValuePair key="hd_ooc" value="0" description="" />
+   <keyValuePair key="idf" value="0" description="" />
+   <keyValuePair key="pr" value="1" description="" />
+   <keyValuePair key="tandem" value="0" description="" />
+   <keyValuePair key="tandem_fu" value="0" description="" />
+   <keyValuePair key="tandem_pr" value="0" description="" />
+  </section>
+  <section name="usage_rm1" level="2" order="2" description="">
+   <keyValuePair key="avg_pploc_per_int_tile" value="2.795" description="" />
+   <keyValuePair key="bufg" value="0%(0_of_0)" description="" />
+   <keyValuePair key="bufr" value="0%(0_of_0)" description="" />
+   <keyValuePair key="carry" value="0%(0_of_100)" description="" />
+   <keyValuePair key="cell" value="274" description="" />
+   <keyValuePair key="dsp" value="0%(0_of_20)" description="" />
+   <keyValuePair key="ff" value="0%(0_of_800)" description="" />
+   <keyValuePair key="gnd_net" value="1" description="" />
+   <keyValuePair key="gt" value="0%(0_of_0)" description="" />
+   <keyValuePair key="idelayctrl" value="0%(0_of_0)" description="" />
+   <keyValuePair key="inserted_common_lut" value="0" description="" />
+   <keyValuePair key="inserted_gnd_lut" value="171" description="" />
+   <keyValuePair key="inserted_lut" value="274" description="" />
+   <keyValuePair key="inserted_s_in_lut" value="0" description="" />
+   <keyValuePair key="inserted_s_out_lut" value="0" description="" />
+   <keyValuePair key="inserted_vcc_lut" value="103" description="" />
+   <keyValuePair key="int_tile_in_pblock" value="100" description="" />
+   <keyValuePair key="int_tile_with_pploc" value="98" description="" />
+   <keyValuePair key="iobuf" value="0%(0_of_230)" description="" />
+   <keyValuePair key="iodelay" value="0%(0_of_0)" description="" />
+   <keyValuePair key="iologic" value="0%(0_of_0)" description="" />
+   <keyValuePair key="lut" value="62.75%(251_of_400)" description="" />
+   <keyValuePair key="max_pploc_per_int_tile" value="5" description="" />
+   <keyValuePair key="mmcm" value="0%(0_of_0)" description="" />
+   <keyValuePair key="net" value="548" description="" />
+   <keyValuePair key="pll" value="0%(0_of_0)" description="" />
+   <keyValuePair key="pploc" value="274" description="" />
+   <keyValuePair key="pploc_in_clk_tile" value="0" description="" />
+   <keyValuePair key="pploc_in_int_tile" value="274" description="" />
+   <keyValuePair key="ramb18" value="0%(0_of_0)" description="" />
+   <keyValuePair key="ramb36" value="0%(0_of_0)" description="" />
+   <keyValuePair key="slice" value="78.00%(78_of_100)" description="" />
+   <keyValuePair key="vcc_net" value="1" description="" />
+  </section>
+  <section name="usage_static" level="2" order="3" description="">
+   <keyValuePair key="bufg" value="25.00%(8_of_32)" description="" />
+   <keyValuePair key="bufr" value="0%(0_of_32)" description="" />
+   <keyValuePair key="carry" value="0.712%(180_of_25250)" description="" />
+   <keyValuePair key="cell" value="1850" description="" />
+   <keyValuePair key="dsp" value="4.137%(24_of_580)" description="" />
+   <keyValuePair key="ff" value="0.323%(654_of_202000)" description="" />
+   <keyValuePair key="gnd_net" value="12" description="" />
+   <keyValuePair key="gt" value="0%(0_of_10)" description="" />
+   <keyValuePair key="idelayctrl" value="0%(0_of_8)" description="" />
+   <keyValuePair key="inserted_common_lut" value="0" description="" />
+   <keyValuePair key="inserted_gnd_lut" value="0" description="" />
+   <keyValuePair key="inserted_lut" value="0" description="" />
+   <keyValuePair key="inserted_s_in_lut" value="0" description="" />
+   <keyValuePair key="inserted_s_out_lut" value="0" description="" />
+   <keyValuePair key="inserted_vcc_lut" value="0" description="" />
+   <keyValuePair key="iobuf" value="0.030%(14_of_46451)" description="" />
+   <keyValuePair key="iodelay" value="0%(0_of_550)" description="" />
+   <keyValuePair key="iologic" value="1.666%(5_of_300)" description="" />
+   <keyValuePair key="lut" value="0.837%(846_of_101000)" description="" />
+   <keyValuePair key="mmcm" value="25.00%(2_of_8)" description="" />
+   <keyValuePair key="net" value="3859" description="" />
+   <keyValuePair key="pll" value="0%(0_of_8)" description="" />
+   <keyValuePair key="ramb18" value="0%(0_of_650)" description="" />
+   <keyValuePair key="ramb36" value="0%(0_of_325)" description="" />
+   <keyValuePair key="rm" value="1" description="" />
+   <keyValuePair key="slice" value="1.283%(324_of_25250)" description="" />
+   <keyValuePair key="vcc_net" value="13" description="" />
+  </section>
+ </section>
+ <section name="unisim_transformation" level="1" order="4" description="">
+  <section name="post_unisim_transformation" level="2" order="1" description="">
+   <keyValuePair key="bufg" value="8" description="" />
+   <keyValuePair key="carry4" value="180" description="" />
+   <keyValuePair key="dsp48e1" value="24" description="" />
+   <keyValuePair key="fdce" value="107" description="" />
+   <keyValuePair key="fdpe" value="34" description="" />
+   <keyValuePair key="fdre" value="503" description="" />
+   <keyValuePair key="gnd" value="13" description="" />
+   <keyValuePair key="ibuf" value="3" description="" />
+   <keyValuePair key="ibufds" value="5" description="" />
+   <keyValuePair key="iserdese2" value="5" description="" />
+   <keyValuePair key="ldce" value="10" description="" />
+   <keyValuePair key="lut1" value="325" description="" />
+   <keyValuePair key="lut2" value="602" description="" />
+   <keyValuePair key="lut3" value="93" description="" />
+   <keyValuePair key="lut4" value="59" description="" />
+   <keyValuePair key="lut5" value="55" description="" />
+   <keyValuePair key="lut6" value="57" description="" />
+   <keyValuePair key="mmcme2_adv" value="2" description="" />
+   <keyValuePair key="obuf" value="11" description="" />
+   <keyValuePair key="obufds" value="19" description="" />
+   <keyValuePair key="oddr" value="19" description="" />
+   <keyValuePair key="srl16e" value="3" description="" />
+   <keyValuePair key="vcc" value="14" description="" />
+  </section>
+  <section name="pre_unisim_transformation" level="2" order="2" description="">
+   <keyValuePair key="bufg" value="8" description="" />
+   <keyValuePair key="carry4" value="180" description="" />
+   <keyValuePair key="dsp48e1" value="24" description="" />
+   <keyValuePair key="fdce" value="107" description="" />
+   <keyValuePair key="fdpe" value="34" description="" />
+   <keyValuePair key="fdre" value="503" description="" />
+   <keyValuePair key="gnd" value="13" description="" />
+   <keyValuePair key="ibuf" value="3" description="" />
+   <keyValuePair key="ibufds" value="5" description="" />
+   <keyValuePair key="iserdese2" value="5" description="" />
+   <keyValuePair key="ldce" value="10" description="" />
+   <keyValuePair key="lut1" value="325" description="" />
+   <keyValuePair key="lut2" value="602" description="" />
+   <keyValuePair key="lut3" value="93" description="" />
+   <keyValuePair key="lut4" value="59" description="" />
+   <keyValuePair key="lut5" value="55" description="" />
+   <keyValuePair key="lut6" value="57" description="" />
+   <keyValuePair key="mmcme2_adv" value="2" description="" />
+   <keyValuePair key="obuf" value="11" description="" />
+   <keyValuePair key="obufds" value="19" description="" />
+   <keyValuePair key="oddr" value="19" description="" />
+   <keyValuePair key="srl16e" value="3" description="" />
+   <keyValuePair key="vcc" value="14" description="" />
+  </section>
+ </section>
+ <section name="vivado_usage" level="1" order="5" description="">
+  <section name="java_command_handlers" level="2" order="1" description="">
+   <keyValuePair key="openproject" value="1" description="" />
+   <keyValuePair key="zoomout" value="9" description="" />
+  </section>
+  <section name="project_data" level="2" order="2" description="">
+   <keyValuePair key="constraintsetcount" value="0" description="" />
+   <keyValuePair key="core_container" value="false" description="" />
+   <keyValuePair key="currentimplrun" value="impl_1" description="" />
+   <keyValuePair key="currentsynthesisrun" value="[unknown]" description="" />
+   <keyValuePair key="default_library" value="xil_defaultlib" description="" />
+   <keyValuePair key="designmode" value="GateLvl" description="" />
+   <keyValuePair key="export_simulation_activehdl" value="0" description="" />
+   <keyValuePair key="export_simulation_ies" value="0" description="" />
+   <keyValuePair key="export_simulation_modelsim" value="0" description="" />
+   <keyValuePair key="export_simulation_questa" value="0" description="" />
+   <keyValuePair key="export_simulation_riviera" value="0" description="" />
+   <keyValuePair key="export_simulation_vcs" value="0" description="" />
+   <keyValuePair key="export_simulation_xsim" value="0" description="" />
+   <keyValuePair key="implstrategy" value="Vivado Implementation Defaults" description="" />
+   <keyValuePair key="launch_simulation_activehdl" value="0" description="" />
+   <keyValuePair key="launch_simulation_ies" value="0" description="" />
+   <keyValuePair key="launch_simulation_modelsim" value="0" description="" />
+   <keyValuePair key="launch_simulation_questa" value="0" description="" />
+   <keyValuePair key="launch_simulation_riviera" value="0" description="" />
+   <keyValuePair key="launch_simulation_vcs" value="0" description="" />
+   <keyValuePair key="launch_simulation_xsim" value="0" description="" />
+   <keyValuePair key="simulator_language" value="Mixed" description="" />
+   <keyValuePair key="srcsetcount" value="0" description="" />
+   <keyValuePair key="synthesisstrategy" value="[unknown]" description="" />
+   <keyValuePair key="target_language" value="Verilog" description="" />
+   <keyValuePair key="target_simulator" value="XSim" description="" />
+   <keyValuePair key="totalimplruns" value="1" description="" />
+   <keyValuePair key="totalsynthesisruns" value="0" description="" />
+  </section>
+ </section>
+</section>
+</webTalkData>
