@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7k160tfbg676-1" LaunchTime="1501121805">
-  <File Type="RDS-PROPCONSTRS" Name="IIR1stOrder_test_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="IIR1stOrder_test.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="IIR1stOrder_test_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="IIR1stOrder_test.vds"/>
   <File Type="RDS-UTIL" Name="IIR1stOrder_test_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="IIR1stOrder_test_utilization_synth.pb"/>

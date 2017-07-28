@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Thu Jul 27 21:33:39 2017">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="639f8b2ae682456082c448784ae9de4e" type="ProjectID"/>
+<property name="ProjectIteration" value="17" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddDesignTools" value="1" type="JavaHandler"/>
+<property name="AddOrModifyRM" value="1" type="JavaHandler"/>
+<property name="AddSources" value="6" type="JavaHandler"/>
+<property name="CreateBlockDesign" value="1" type="JavaHandler"/>
+<property name="CreatePartitionDefinition" value="3" type="JavaHandler"/>
+<property name="EditConstraintSets" value="3" type="JavaHandler"/>
+<property name="EditDelete" value="3" type="JavaHandler"/>
+<property name="EditProperties" value="13" type="JavaHandler"/>
+<property name="EnablePartialReconfigFlow" value="4" type="JavaHandler"/>
+<property name="HelpAbout" value="1" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="1" type="JavaHandler"/>
+<property name="Partial Reconfiguration Wizard" value="10" type="JavaHandler"/>
+<property name="RunBitgen" value="15" type="JavaHandler"/>
+<property name="RunImplementation" value="7" type="JavaHandler"/>
+<property name="RunSchematic" value="1" type="JavaHandler"/>
+<property name="RunSynthesis" value="15" type="JavaHandler"/>
+<property name="SaveDesign" value="3" type="JavaHandler"/>
+<property name="SaveFileProxyHandler" value="1" type="JavaHandler"/>
+<property name="ShowView" value="11" type="JavaHandler"/>
+<property name="TimingConstraintsWizard" value="1" type="JavaHandler"/>
+<property name="ToggleCreatePblockMode" value="3" type="JavaHandler"/>
+<property name="ToolsSettings" value="2" type="JavaHandler"/>
+<property name="ViewTaskImplementation" value="2" type="JavaHandler"/>
+<property name="ViewTaskProjectManager" value="12" type="JavaHandler"/>
+<property name="ViewTaskRTLAnalysis" value="3" type="JavaHandler"/>
+<property name="ViewTaskSynthesis" value="7" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="AbstractCombinedPanel_ADD_ELEMENT" value="5" type="GuiResourceData"/>
+<property name="AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS" value="2" type="GuiResourceData"/>
+<property name="AbstractSearchablePanel_SHOW_SEARCH" value="1" type="GuiResourceData"/>
+<property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="1" type="GuiResourceData"/>
+<property name="BaseDialog_CANCEL" value="12" type="GuiResourceData"/>
+<property name="BaseDialog_NO" value="2" type="GuiResourceData"/>
+<property name="BaseDialog_OK" value="74" type="GuiResourceData"/>
+<property name="BaseDialog_YES" value="14" type="GuiResourceData"/>
+<property name="ClosePlanner_YES" value="1" type="GuiResourceData"/>
+<property name="CmdMsgDialog_OK" value="4" type="GuiResourceData"/>
+<property name="CommandsInput_TYPE_TCL_COMMAND_HERE" value="3" type="GuiResourceData"/>
+<property name="ConstraintsChooserPanel_ADD_FILES" value="1" type="GuiResourceData"/>
+<property name="ConstraintsChooserPanel_FILE_TABLE" value="4" type="GuiResourceData"/>
+<property name="CreatePartitionDefinition_PARTITION_DEFINITION_NAME" value="1" type="GuiResourceData"/>
+<property name="CreateSrcFileDialog_FILE_NAME" value="1" type="GuiResourceData"/>
+<property name="DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS" value="3" type="GuiResourceData"/>
+<property name="ExpReportTreePanel_EXP_REPORT_TREE_TABLE" value="26" type="GuiResourceData"/>
+<property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="7" type="GuiResourceData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="99" type="GuiResourceData"/>
+<property name="FileSetPanel_USED_IN" value="3" type="GuiResourceData"/>
+<property name="FileSetView_COLLAPSE_ALL" value="4" type="GuiResourceData"/>
+<property name="FileSetView_EXPAND_ALL" value="2" type="GuiResourceData"/>
+<property name="FloorplanEditor_METRIC" value="5" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="95" type="GuiResourceData"/>
+<property name="GraphicalView_SELECT" value="6" type="GuiResourceData"/>
+<property name="HPopupTitle_CLOSE" value="3" type="GuiResourceData"/>
+<property name="HToolBar_EXPAND_ALL" value="1" type="GuiResourceData"/>
+<property name="HTree_COLLAPSE_ALL" value="1" type="GuiResourceData"/>
+<property name="InstanceMenu_FLOORPLANNING" value="16" type="GuiResourceData"/>
+<property name="InstanceTablePanel_INSTANCE_TABLE" value="8" type="GuiResourceData"/>
+<property name="MainMenuMgr_DESIGN_HUBS" value="4" type="GuiResourceData"/>
+<property name="MainMenuMgr_EDIT" value="2" type="GuiResourceData"/>
+<property name="MainMenuMgr_FILE" value="6" type="GuiResourceData"/>
+<property name="MainMenuMgr_FLOW" value="1" type="GuiResourceData"/>
+<property name="MainMenuMgr_HELP" value="6" type="GuiResourceData"/>
+<property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="6" type="GuiResourceData"/>
+<property name="MainMenuMgr_REPORT" value="2" type="GuiResourceData"/>
+<property name="MainMenuMgr_TOOLS" value="8" type="GuiResourceData"/>
+<property name="MainMenuMgr_VIEW" value="3" type="GuiResourceData"/>
+<property name="MainMenuMgr_WINDOW" value="2" type="GuiResourceData"/>
+<property name="MainWinMenuMgr_LAYOUT" value="4" type="GuiResourceData"/>
+<property name="MsgTreePanel_MESSAGE_VIEW_TREE" value="25" type="GuiResourceData"/>
+<property name="MsgView_CRITICAL_WARNINGS" value="2" type="GuiResourceData"/>
+<property name="MsgView_INFORMATION_MESSAGES" value="1" type="GuiResourceData"/>
+<property name="MsgView_WARNING_MESSAGES" value="4" type="GuiResourceData"/>
+<property name="NetlistTreeView_NETLIST_TREE" value="202" type="GuiResourceData"/>
+<property name="PACommandNames_ABOUT" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_ADD_DESIGN_TOOLS" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_ADD_SOURCES" value="6" type="GuiResourceData"/>
+<property name="PACommandNames_AUTO_UPDATE_HIER" value="3" type="GuiResourceData"/>
+<property name="PACommandNames_BEL_CONST_MODE" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_CREATE_PARTITION_DEFINITION" value="3" type="GuiResourceData"/>
+<property name="PACommandNames_DRAW_PBLOCK_MODE" value="3" type="GuiResourceData"/>
+<property name="PACommandNames_EDIT_CONSTRAINT_SETS" value="3" type="GuiResourceData"/>
+<property name="PACommandNames_EDIT_RECONFIGURABLE_MODULE" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_ENABLE_PARTIAL_RECONFIGURATION" value="2" type="GuiResourceData"/>
+<property name="PACommandNames_GOTO_NETLIST_DESIGN" value="2" type="GuiResourceData"/>
+<property name="PACommandNames_IMPL_SETTINGS" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_NEW_PROJECT" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_REPORTS_WINDOW" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_RUN_BITGEN" value="4" type="GuiResourceData"/>
+<property name="PACommandNames_RUN_IMPLEMENTATION" value="1" type="GuiResourceData"/>
+<property name="PACommandNames_SELECT_AREA" value="1" type="GuiResourceData"/>
+<property name="PAGraphicalView_VIEW" value="6" type="GuiResourceData"/>
+<property name="PAViews_CODE" value="5" type="GuiResourceData"/>
+<property name="PAViews_DEVICE" value="125" type="GuiResourceData"/>
+<property name="PAViews_PAR_REPORT" value="1" type="GuiResourceData"/>
+<property name="PAViews_TCL_OBJECT_VIEW" value="1" type="GuiResourceData"/>
+<property name="PRConfigRunsTreeTablePanel_AUTOMATICALLY_CREATE_CONFIGURATION_RUN" value="1" type="GuiResourceData"/>
+<property name="PRConfigRunsTreeTablePanel_CONFIGURATION_RUNS" value="12" type="GuiResourceData"/>
+<property name="PRConfigRunsTreeTablePanel_PARENT" value="1" type="GuiResourceData"/>
+<property name="PRConfigurationsTablePanel_CONFIGURATIONS" value="9" type="GuiResourceData"/>
+<property name="PartitionConfigurationPanel_PARTIAL_RECONFIGURATION_WIZARD" value="1" type="GuiResourceData"/>
+<property name="PblockMenu_CLEAR_RECTANGLE" value="1" type="GuiResourceData"/>
+<property name="PrimitivesMenu_ASSIGN_TO_PBLOCK" value="2" type="GuiResourceData"/>
+<property name="PrimitivesMenu_DEFAULT" value="1" type="GuiResourceData"/>
+<property name="PrimitivesMenu_FIX_CELLS" value="3" type="GuiResourceData"/>
+<property name="PrimitivesMenu_HIGHLIGHT_LEAF_CELLS" value="10" type="GuiResourceData"/>
+<property name="PrimitivesMenu_UNFIX_CELLS" value="1" type="GuiResourceData"/>
+<property name="ProjectTab_RELOAD" value="1" type="GuiResourceData"/>
+<property name="PropertiesView_NEXT_OBJECT" value="12" type="GuiResourceData"/>
+<property name="PropertiesView_PREVIOUS_OBJECT" value="18" type="GuiResourceData"/>
+<property name="RDICommands_DELETE" value="3" type="GuiResourceData"/>
+<property name="RDICommands_PROPERTIES" value="13" type="GuiResourceData"/>
+<property name="RunGadget_INCREMENTAL_COMPILE" value="1" type="GuiResourceData"/>
+<property name="RunGadget_SELECT_RUN_AND_DISPLAY_PROPERTIES" value="1" type="GuiResourceData"/>
+<property name="RunGadget_SHOW_ERROR" value="1" type="GuiResourceData"/>
+<property name="RunGadget_SHOW_ERROR_AND_CRITICAL_WARNING_MESSAGES" value="1" type="GuiResourceData"/>
+<property name="RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES" value="1" type="GuiResourceData"/>
+<property name="SaveProjectUtils_RELOAD" value="1" type="GuiResourceData"/>
+<property name="SaveProjectUtils_SAVE" value="9" type="GuiResourceData"/>
+<property name="SearchCommandComponent_QUICK_ACCESS" value="3" type="GuiResourceData"/>
+<property name="SelectMenu_HIGHLIGHT" value="16" type="GuiResourceData"/>
+<property name="SelectMenu_MARK" value="15" type="GuiResourceData"/>
+<property name="SelectPblockDialog_SELECT_PBLOCK_DIALOG_TREE" value="2" type="GuiResourceData"/>
+<property name="SettingsDialog_PROJECT_TREE" value="2" type="GuiResourceData"/>
+<property name="SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT" value="2" type="GuiResourceData"/>
+<property name="SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE" value="1" type="GuiResourceData"/>
+<property name="SrcChooserPanel_CREATE_FILE" value="1" type="GuiResourceData"/>
+<property name="SrcMenu_IP_HIERARCHY" value="3" type="GuiResourceData"/>
+<property name="StaleMoreAction_OUT_OF_DATE_DETAILS" value="14" type="GuiResourceData"/>
+<property name="StateMonitor_RESET_RUN" value="1" type="GuiResourceData"/>
+<property name="SyntheticaStateMonitor_CANCEL" value="1" type="GuiResourceData"/>
+<property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="3" type="GuiResourceData"/>
+<property name="TclObjectTreeTable_TREETABLE" value="31" type="GuiResourceData"/>
+<property name="TclObjectView_REMOVE_PROPERTIES_FROM_MAIN_DISPLAY" value="1" type="GuiResourceData"/>
+<property name="TclObjectView_SORT_PROPERTIES" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="40" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="33" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

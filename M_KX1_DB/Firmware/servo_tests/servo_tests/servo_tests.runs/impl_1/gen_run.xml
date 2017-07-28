@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7k160tfbg676-1" LaunchTime="1501121806">
-  <File Type="PWROPT-DRC" Name="IIR1stOrder_test_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="IIR1stOrder_test_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="IIR1stOrder_test_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="IIR1stOrder_test_power_routed.rpx"/>
   <File Type="PA-TCL" Name="IIR1stOrder_test.tcl"/>
-  <File Type="OPT-HWDEF" Name="IIR1stOrder_test.hwdef"/>
+  <File Type="INIT-TIMING" Name="IIR1stOrder_test_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="IIR1stOrder_test_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="IIR1stOrder_test_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="IIR1stOrder_test.vdi"/>
   <File Type="OPT-DCP" Name="IIR1stOrder_test_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="IIR1stOrder_test.hwdef"/>
   <File Type="OPT-DRC" Name="IIR1stOrder_test_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="IIR1stOrder_test_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="IIR1stOrder_test_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="IIR1stOrder_test_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="IIR1stOrder_test_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="IIR1stOrder_test_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="IIR1stOrder_test.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="IIR1stOrder_test_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="IIR1stOrder_test.drc"/>
+  <File Type="BG-BIN" Name="IIR1stOrder_test.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="IIR1stOrder_test_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="IIR1stOrder_test.msk"/>
+  <File Type="BG-DRC" Name="IIR1stOrder_test.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="IIR1stOrder_test_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="IIR1stOrder_test.bgn"/>
+  <File Type="BITSTR-MSK" Name="IIR1stOrder_test.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="IIR1stOrder_test_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="IIR1stOrder_test.bgn"/>
   <File Type="ROUTE-PWR" Name="IIR1stOrder_test_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="IIR1stOrder_test_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="IIR1stOrder_test_route_status.rpt"/>

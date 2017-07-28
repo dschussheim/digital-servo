@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Thu Jul 27 18:55:57 2017
+# Process ID: 3428
+# Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1
+# Command line: vivado.exe -log IIR1stOrder_test.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IIR1stOrder_test.tcl
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1/IIR1stOrder_test.vds
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/servo_partial_reconfig.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source IIR1stOrder_test.tcl -notrace

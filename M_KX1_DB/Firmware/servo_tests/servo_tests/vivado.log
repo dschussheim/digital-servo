@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Thu Jul 27 14:01:15 2017
+# Process ID: 9160
+# Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6092 C:\Users\dschussheim\Documents\GitHub\digital-servo\M_KX1_DB\Firmware\servo_tests\servo_tests\servo_tests.xpr
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/vivado.log
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests/servo_tests.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests'
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/users/dschussheim/documents/github/digital-servo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'dds_LUT_pw24_ow16' is locked:
+* IP 'dds_LUT_pw24_ow16' shares a common output directory with other IP. It is recommended that each IP be placed in its own directory.
+* IP definition 'DDS Compiler (4.0)' for IP 'dds_LUT_pw24_ow16' has a newer major version in the IP Catalog.
+* Current project part 'xc7k160tfbg676-1' and the part 'xc6slx150fgg484-2' used to customize the IP 'dds_LUT_pw24_ow16' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'dds_LUT_pw24_ow24' is locked:
+* IP 'dds_LUT_pw24_ow24' shares a common output directory with other IP. It is recommended that each IP be placed in its own directory.
+* IP definition 'DDS Compiler (4.0)' for IP 'dds_LUT_pw24_ow24' has a newer major version in the IP Catalog.
+* Current project part 'xc7k160tfbg676-1' and the part 'xc6slx150fgg484-2' used to customize the IP 'dds_LUT_pw24_ow24' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'dds_PG_pw24' is locked:
+* IP 'dds_PG_pw24' shares a common output directory with other IP. It is recommended that each IP be placed in its own directory.
+* IP definition 'DDS Compiler (4.0)' for IP 'dds_PG_pw24' has a newer major version in the IP Catalog.
+* Current project part 'xc7k160tfbg676-1' and the part 'xc6slx150fgg484-2' used to customize the IP 'dds_PG_pw24' do not match.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+add_files -norecurse {C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/PIDservo.v C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/Servo_partial_reconfig/servo_partial_reconfig/IIR1stOrder_test.v}
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 27 14:05:27 2017...
