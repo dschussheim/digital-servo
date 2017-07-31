@@ -263,8 +263,8 @@ AD9783 #(
  AD9783_inst1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(ADC11_out), 
-     .DAC1_in(~ADC11_out), 
+     .DAC0_in(ADC21_out), 
+     .DAC1_in(~ADC21_out), 
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI1_out_p), 

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Fri Jul 14 15:00:55 2017
+| Date             : Mon Jul 31 18:51:47 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file ADC_test_power_routed.rpt -pb ADC_test_power_summary_routed.pb -rpx ADC_test_power_routed.rpx
 | Design           : ADC_test
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.207 |
-| Dynamic (W)              | 1.091 |
+| Total On-Chip Power (W)  | 1.228 |
+| Dynamic (W)              | 1.112 |
 | Device Static (W)        | 0.116 |
 | Total Off-Chip Power (W) | 0.023 |
 | Effective TJA (C/W)      | 1.9   |
@@ -50,18 +50,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.047 |       25 |       --- |             --- |
-| Slice Logic             |     0.003 |      743 |       --- |             --- |
-|   LUT as Logic          |     0.003 |      298 |    101400 |            0.29 |
-|   Register              |    <0.001 |      335 |    202800 |            0.17 |
+| Clocks                  |     0.050 |       27 |       --- |             --- |
+| Slice Logic             |     0.003 |      769 |       --- |             --- |
+|   LUT as Logic          |     0.003 |      306 |    101400 |            0.30 |
+|   Register              |    <0.001 |      351 |    202800 |            0.17 |
 |   CARRY4                |    <0.001 |       24 |     25350 |            0.09 |
 |   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
 |   Others                |     0.000 |       23 |       --- |             --- |
-| Signals                 |     0.003 |      560 |       --- |             --- |
-| MMCM                    |     0.290 |        3 |         8 |           37.50 |
-| I/O                     |     0.749 |       59 |       400 |           14.75 |
+| Signals                 |     0.002 |      590 |       --- |             --- |
+| MMCM                    |     0.293 |        3 |         8 |           37.50 |
+| I/O                     |     0.764 |       65 |       400 |           16.25 |
 | Static Power            |     0.116 |          |           |                 |
-| Total                   |     1.207 |          |           |                 |
+| Total                   |     1.228 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,10 +71,10 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.108 |       0.064 |      0.044 |
-| Vccaux    |       1.800 |     0.188 |       0.169 |      0.018 |
+| Vccint    |       1.000 |     0.116 |       0.072 |      0.044 |
+| Vccaux    |       1.800 |     0.193 |       0.175 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     0.299 |       0.298 |      0.001 |
+| Vcco25    |       2.500 |     0.301 |       0.300 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
@@ -145,7 +145,9 @@ Table of Contents
 | clkFB_2                                         | ADC2/clkFB                                       |            10.0 |
 | clkPS_int_1                                     | ADC2/clkPS_int                                   |            10.0 |
 | clk_div_int                                     | ADC1/clk_div_int                                 |            10.0 |
+| clk_div_int_1                                   | ADC2/clk_div_int                                 |            10.0 |
 | clk_int                                         | ADC1/clk_int                                     |             1.3 |
+| clk_int_1                                       | ADC2/clk_int                                     |             1.3 |
 | rstLEDclk/clk__0                                | rstLEDclk/clk__0                                 |            10.0 |
 | rst_in                                          | rst_in                                           |            10.0 |
 +-------------------------------------------------+--------------------------------------------------+-----------------+
@@ -160,13 +162,13 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| ADC_test             |     1.091 |
-|   AD9783_inst1       |     0.784 |
-|     AD_9783_SPI_inst |     0.014 |
+| ADC_test             |     1.112 |
+|   AD9783_inst1       |     0.776 |
+|     AD_9783_SPI_inst |     0.011 |
 |   ADC1               |     0.131 |
 |     LTC2195_SPI_inst |     0.003 |
-|   ADC2               |     0.154 |
-|     LTC2195_SPI_inst |     0.014 |
+|   ADC2               |     0.183 |
+|     LTC2195_SPI_inst |     0.010 |
 |   rstLEDclk          |    <0.001 |
 +----------------------+-----------+
 

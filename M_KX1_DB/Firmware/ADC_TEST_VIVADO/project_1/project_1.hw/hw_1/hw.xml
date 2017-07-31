@@ -9,7 +9,7 @@
     <Object name="xc7k160t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/ADC_test.bit"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="bit/ADC_test_ADC11.bit"/>
     </Object>
   </ObjectList>
   <probeset name="hw project" active="false"/>
