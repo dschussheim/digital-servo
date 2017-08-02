@@ -71,21 +71,21 @@ module ADC_test(
 
 	output	wire	[15:0]	D1_out_p,
 	output	wire	[15:0]	D1_out_n,
-//	output	wire	[15:0]	D0_out_p,
-//	output	wire	[15:0]	D0_out_n,
+	output	wire	[15:0]	D0_out_p,
+	output	wire	[15:0]	D0_out_n,
 
 	output	wire			CLK_out_p,
 	output	wire			CLK_out_n,
 
 	output	wire			DCI1_out_p,
 	output	wire			DCI1_out_n,
-//	output	wire			DCI0_out_p,
-//	output	wire			DCI0_out_n,
+	output	wire			DCI0_out_p,
+	output	wire			DCI0_out_n,
 
 	output 	wire			dac_csb1,
-//	output	wire			dac_csb0,
+	output	wire			dac_csb0,
 	output 	wire			dac_rst1,
-//	output 	wire			dac_rst0,
+	output 	wire			dac_rst0,
 	output	wire			dac_sdi,
 	output	wire			dac_sck,
 	input   wire			dac_sdo,
@@ -94,10 +94,10 @@ module ADC_test(
 		
 //	output	wire			DCO1_in,
 	input		wire		DCO1_p,
-	input		wire		DCO1_n
+	input		wire		DCO1_n,
 //	output	wire			DCO0_in,
-//	input		wire		DCO0_p,
-//	input		wire		DCO0_n
+	input		wire		DCO0_p,
+	input		wire		DCO0_n
 	 	 
 		 );
 
@@ -260,19 +260,19 @@ parameter	CLK1PHASE = 0; //Phase of CLK_out relative to data
 AD9783 #(
 	.CLKDIV(4) //200MHz clock
 )
- AD9783_inst1 (
+ AD9783_inst0 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(ADC21_out), 
-     .DAC1_in(~ADC21_out), 
+     .DAC0_in(ADC10_out), 
+     .DAC1_in(ADC11_out), 
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
-     .DCI_out_p(DCI1_out_p), 
-     .DCI_out_n(DCI1_out_n), 
-     .D_out_p(D1_out_p), 
-     .D_out_n(D1_out_n),
-	 .rst_out(dac_rst1),
-	 .spi_scs_out(dac_csb1),
+     .DCI_out_p(DCI0_out_p), 
+     .DCI_out_n(DCI0_out_n), 
+     .D_out_p(D0_out_p), 
+     .D_out_n(D0_out_n),
+	 .rst_out(dac_rst0),
+	 .spi_scs_out(dac_csb0),
 	 .spi_sck_out(dac_sck),
 	 .spi_sdo_out(dac_sdi),
 	 .spi_sdi_in(dac_sdo),
@@ -282,6 +282,33 @@ AD9783 #(
 	 .cmd_data_out(),
 	 .clk_out()
     );
-assign ADC_out[3:0] = ~ADC11_out[15:12];
+
+// Instantiate DAC1 driver module
+AD9783 #(
+	.CLKDIV(4) //200MHz clock
+)
+ AD9783_inst1 (
+     .clk_in(clk_in), 
+     .rst_in(rst_in), 
+     .DAC0_in(ADC20_out), 
+     .DAC1_in(ADC21_out), 
+     .CLK_out_p(), 
+     .CLK_out_n(), 
+     .DCI_out_p(DCI1_out_p), 
+     .DCI_out_n(DCI1_out_n), 
+     .D_out_p(D1_out_p), 
+     .D_out_n(D1_out_n),
+	 .rst_out(dac_rst1),
+	 .spi_scs_out(dac_csb1),
+	 .spi_sck_out(),
+	 .spi_sdo_out(),
+	 .spi_sdi_in(),
+	 .cmd_trig_in(1'b0),
+	 .cmd_addr_in(16'b0),
+	 .cmd_data_in(16'b0),
+	 .cmd_data_out(),
+	 .clk_out()
+    );
+assign ADC_out[3:0] = {~ADC10_out[15],~ADC11_out[15],~ADC20_out[15],~ADC21_out[15]};
 
 endmodule

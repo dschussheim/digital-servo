@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7k160tfbg676-1" LaunchTime="1501715575">
+  <File Type="PWROPT-DRC" Name="deserializer_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="deserializer_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="deserializer_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="deserializer_power_routed.rpx"/>
+  <File Type="PA-TCL" Name="deserializer.tcl"/>
+  <File Type="OPT-HWDEF" Name="deserializer.hwdef"/>
+  <File Type="RDI-RDI" Name="deserializer.vdi"/>
+  <File Type="OPT-DCP" Name="deserializer_opt.dcp"/>
+  <File Type="OPT-DRC" Name="deserializer_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="deserializer_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="deserializer_pwropt.dcp"/>
+  <File Type="PWROPT-TIMING" Name="deserializer_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="deserializer_placed.dcp"/>
+  <File Type="PLACE-IO" Name="deserializer_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="deserializer_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="deserializer_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="deserializer_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="deserializer_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="deserializer_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="deserializer_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="deserializer_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="deserializer_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="deserializer_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="deserializer_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="deserializer_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="deserializer_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="deserializer_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="deserializer_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="deserializer_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="deserializer_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="deserializer_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="deserializer.bin"/>
+  <File Type="ROUTE-DRC-RPX" Name="deserializer_drc_routed.rpx"/>
+  <File Type="BG-DRC" Name="deserializer.drc"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="deserializer_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="deserializer.msk"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="deserializer_methodology_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="deserializer.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="deserializer_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="deserializer_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="deserializer_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="deserializer_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="deserializer_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="deserializer_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="deserializer_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="deserializer_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="deserializer_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="deserializer_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="deserializer_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="deserializer_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="deserializer_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="deserializer_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="deserializer_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="deserializer.bit"/>
+  <File Type="BITSTR-RBT" Name="deserializer.rbt"/>
+  <File Type="BITSTR-NKY" Name="deserializer.nky"/>
+  <File Type="BITSTR-BMM" Name="deserializer_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="deserializer.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="deserializer.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/clk_div.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/reset.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/deserializer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="deserializer"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/const0.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

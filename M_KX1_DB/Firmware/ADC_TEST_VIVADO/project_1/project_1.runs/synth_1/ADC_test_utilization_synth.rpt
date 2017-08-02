@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Mon Jul 31 18:45:50 2017
+| Date         : Wed Aug  2 12:55:29 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_utilization -file ADC_test_utilization_synth.rpt -pb ADC_test_utilization_synth.pb
 | Design       : ADC_test
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  365 |     0 |    101400 |  0.36 |
-|   LUT as Logic             |  362 |     0 |    101400 |  0.36 |
+| Slice LUTs*                |  416 |     0 |    101400 |  0.41 |
+|   LUT as Logic             |  413 |     0 |    101400 |  0.41 |
 |   LUT as Memory            |    3 |     0 |     35000 | <0.01 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    3 |     0 |           |       |
-| Slice Registers            |  351 |     0 |    202800 |  0.17 |
-|   Register as Flip Flop    |  340 |     0 |    202800 |  0.17 |
-|   Register as Latch        |   11 |     0 |    202800 | <0.01 |
+| Slice Registers            |  479 |     0 |    202800 |  0.24 |
+|   Register as Flip Flop    |  467 |     0 |    202800 |  0.23 |
+|   Register as Latch        |   12 |     0 |    202800 | <0.01 |
 | F7 Muxes                   |    0 |     0 |     50700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     25350 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
@@ -56,10 +56,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 44    |          Yes |           - |          Set |
-| 157   |          Yes |           - |        Reset |
+| 54    |          Yes |           - |          Set |
+| 198   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 150   |          Yes |       Reset |            - |
+| 227   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -92,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   77 |     0 |       400 | 19.25 |
+| Bonded IOB                  |  113 |     0 |       400 | 28.25 |
 | Bonded IPADs                |    0 |     0 |        26 |  0.00 |
 | Bonded OPADs                |    0 |     0 |        16 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         8 |  0.00 |
@@ -110,8 +110,8 @@ Table of Contents
 | IBUFDS_GTE2                 |    0 |     0 |         4 |  0.00 |
 | ILOGIC                      |   10 |     0 |       400 |  2.50 |
 |   ISERDES                   |   10 |       |           |       |
-| OLOGIC                      |   20 |     0 |       400 |  5.00 |
-|   ODDR                      |   20 |       |           |       |
+| OLOGIC                      |   38 |     0 |       400 |  9.50 |
+|   ODDR                      |   38 |       |           |       |
 +-----------------------------+------+-------+-----------+-------+
 
 
@@ -123,7 +123,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 | BUFGCTRL   |   13 |     0 |        32 | 40.63 |
 | BUFIO      |    0 |     0 |        32 |  0.00 |
-| MMCME2_ADV |    3 |     0 |         8 | 37.50 |
+| MMCME2_ADV |    4 |     0 |         8 | 50.00 |
 | PLLE2_ADV  |    0 |     0 |         8 |  0.00 |
 | BUFMRCE    |    0 |     0 |        16 |  0.00 |
 | BUFHCE     |    0 |     0 |       120 |  0.00 |
@@ -155,25 +155,25 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |  150 |        Flop & Latch |
-| FDCE       |  146 |        Flop & Latch |
-| LUT1       |  115 |                 LUT |
-| LUT6       |   81 |                 LUT |
-| LUT3       |   72 |                 LUT |
-| LUT2       |   58 |                 LUT |
-| LUT4       |   51 |                 LUT |
-| LUT5       |   46 |                 LUT |
-| FDPE       |   44 |        Flop & Latch |
-| CARRY4     |   24 |          CarryLogic |
-| ODDR       |   20 |                  IO |
-| OBUFDS     |   19 |                  IO |
+| FDRE       |  227 |        Flop & Latch |
+| FDCE       |  186 |        Flop & Latch |
+| LUT1       |  113 |                 LUT |
+| LUT6       |   97 |                 LUT |
+| LUT3       |   85 |                 LUT |
+| LUT2       |   74 |                 LUT |
+| LUT5       |   62 |                 LUT |
+| LUT4       |   58 |                 LUT |
+| FDPE       |   54 |        Flop & Latch |
+| ODDR       |   38 |                  IO |
+| OBUFDS     |   36 |                  IO |
+| CARRY4     |   27 |          CarryLogic |
+| OBUF       |   14 |                  IO |
 | BUFG       |   13 |               Clock |
-| OBUF       |   12 |                  IO |
+| LDCE       |   12 |        Flop & Latch |
 | IBUFDS     |   12 |                  IO |
-| LDCE       |   11 |        Flop & Latch |
 | ISERDESE2  |   10 |                  IO |
+| MMCME2_ADV |    4 |               Clock |
 | SRL16E     |    3 |  Distributed Memory |
-| MMCME2_ADV |    3 |               Clock |
 | IBUF       |    3 |                  IO |
 +------------+------+---------------------+
 
