@@ -97,46 +97,19 @@ BUFG BUFG_inst (
     .O(clk_in), // 1-bit output: Clock output
     .I(clk_int) // 1-bit input: Clock input
 );
-   /* 
-//1Hz clock to run reset logic
-clk_div    #(
-    .div_f(27'b1100100)    //Divide by 100 for 1 MHz clock to strobe an LED.
-    )
-rstLEDclk(
-    .clk(clk_in),
-    .rst_in(1'b0),
-    .div_clk(DIVclk)
-    );*/
-    
-//Reset about every minute.
-//localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
-//localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
-localparam	max = 30'h5dc; 		//1500n (10 seconds)
-localparam	rst_on = 30'h3e8; 	// turn reset on after 9,000,000 cycles (9 seconds, and keep on for 100 ns
 
-reg [29:0] counter = 30'b0;
-reg        rst_in = 1'b0;
-always @(posedge clk_in) begin
-	if (counter < rst_on)	begin
-		counter <= counter + 30'b1;
-		rst_in <= 1'b0;
-		rst_led <= ~rst_in;
-	end
-	else if ( (counter >= rst_on) && (counter < max-30'b1) ) begin
-		counter <= counter + 30'b1;
-		rst_in <= 1'b1;
-		rst_led <= ~rst_in;
-	end
-	else	begin
-		rst_in <= 1'b0;
-		rst_led <= ~rst_in;
-	end
-end
+///////////////////reset////////////////////
 
-////////////End of reset stuff//////////////
+wire rst_in;
+reset startup_reset (
+    .clk_in(clk_in),
+    .rst(rst_in)
+);
+
+///////////////End of reset/////////////////
     
 ///////////////////Inputs///////////////////
-parameter    CLKDIV = 8;    //10MHz clock
+parameter    CLKDIV = 8;    //100MHz clock
    
 wire [15:0] trans_in;
 wire [15:0] e_in;

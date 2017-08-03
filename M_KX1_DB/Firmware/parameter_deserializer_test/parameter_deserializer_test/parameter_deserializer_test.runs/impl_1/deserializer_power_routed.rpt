@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Wed Aug  2 19:14:17 2017
+| Date             : Thu Aug  3 16:53:04 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file deserializer_power_routed.rpt -pb deserializer_power_summary_routed.pb -rpx deserializer_power_routed.rpx
 | Design           : deserializer
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.429 |
-| Dynamic (W)              | 0.318 |
+| Total On-Chip Power (W)  | 0.466 |
+| Dynamic (W)              | 0.354 |
 | Device Static (W)        | 0.111 |
 | Effective TJA (C/W)      | 1.9   |
-| Max Ambient (C)          | 84.2  |
-| Junction Temperature (C) | 25.8  |
+| Max Ambient (C)          | 84.1  |
+| Junction Temperature (C) | 25.9  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,17 +49,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.137 |      141 |       --- |             --- |
-|   LUT as Logic |     0.091 |       37 |    101400 |            0.04 |
-|   CARRY4       |     0.028 |       18 |     25350 |            0.07 |
-|   Register     |     0.012 |       74 |    202800 |            0.04 |
-|   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   BUFR         |     0.000 |        2 |       152 |            1.32 |
+| Slice Logic    |     0.168 |      221 |       --- |             --- |
+|   LUT as Logic |     0.122 |       45 |    101400 |            0.04 |
+|   CARRY4       |     0.028 |       20 |     25350 |            0.08 |
+|   Register     |     0.012 |      145 |    202800 |            0.07 |
+|   BUFG         |     0.006 |        3 |        32 |            9.38 |
 |   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     0.118 |      132 |       --- |             --- |
-| I/O            |     0.063 |        8 |       400 |            2.00 |
+| Signals        |     0.169 |      208 |       --- |             --- |
+| I/O            |     0.017 |        8 |       400 |            2.00 |
 | Static Power   |     0.111 |          |           |                 |
-| Total          |     0.429 |          |           |                 |
+| Total          |     0.466 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,7 +68,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.351 |       0.310 |      0.041 |
+| Vccint    |       1.000 |     0.387 |       0.346 |      0.041 |
 | Vccaux    |       1.800 |     0.023 |       0.005 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -137,8 +136,8 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| deserializer       |     0.318 |
-|   deser_clk_origin |     0.225 |
+| deserializer       |     0.354 |
+|   deser_clk_origin |     0.301 |
 |   startup_reset    |     0.015 |
 +--------------------+-----------+
 

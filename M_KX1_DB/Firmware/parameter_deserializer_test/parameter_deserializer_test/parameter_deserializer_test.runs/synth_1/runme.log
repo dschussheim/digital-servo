@@ -14,68 +14,48 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8956 
+INFO: Helper process launched with PID 7308 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 347.039 ; gain = 77.727
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 347.426 ; gain = 78.055
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'deserializer' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:7]
-	Parameter clk_div_ser bound to: 27'b000000000000000001111101000 
-	Parameter IDLE bound to: 2'b00 
-	Parameter FETCH bound to: 2'b01 
+	Parameter clk_div_ser bound to: 27'b000000000000000001111100111 
+	Parameter IDLE bound to: 1'b0 
+	Parameter FETCH bound to: 1'b1 
+	Parameter N_ff bound to: 20'b00000000000000111000 
+	Parameter max bound to: 20'b00000000001111100111 
+	Parameter handshake_key bound to: 24'b011100110110010101110100 
+INFO: [Synth 8-638] synthesizing module 'FDRE' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:3964]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'FDRE' (1#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:3964]
 INFO: [Synth 8-638] synthesizing module 'IBUFG' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
 	Parameter IBUF_LOW_PWR bound to: FALSE - type: string 
 	Parameter IOSTANDARD bound to: HSTL_II - type: string 
-INFO: [Synth 8-256] done synthesizing module 'IBUFG' (1#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
+INFO: [Synth 8-256] done synthesizing module 'IBUFG' (2#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'BUFG' (2#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-638] synthesizing module 'reset' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/reset.v:9]
 	Parameter max bound to: 30'b000000000000000000010111011100 
 	Parameter rst_on bound to: 30'b000000000000000000001111101000 
-INFO: [Synth 8-256] done synthesizing module 'reset' (3#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/reset.v:9]
+INFO: [Synth 8-256] done synthesizing module 'reset' (4#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/reset.v:9]
 INFO: [Synth 8-638] synthesizing module 'clk_div' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/clk_div.v:21]
-	Parameter div_f bound to: 27'b000000000000000001111101000 
-	Parameter halfway bound to: 27'b000000000000000000111110100 
-INFO: [Synth 8-256] done synthesizing module 'clk_div' (4#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/clk_div.v:21]
-INFO: [Synth 8-638] synthesizing module 'BUFR' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:884]
-	Parameter BUFR_DIVIDE bound to: 1 - type: string 
-	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
-INFO: [Synth 8-256] done synthesizing module 'BUFR' (5#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:884]
-INFO: [Synth 8-638] synthesizing module 'BUFR__parameterized0' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:884]
-	Parameter BUFR_DIVIDE bound to: 4 - type: string 
-	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
-INFO: [Synth 8-256] done synthesizing module 'BUFR__parameterized0' (5#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:884]
-INFO: [Synth 8-226] default block is never used [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:94]
-INFO: [Synth 8-638] synthesizing module 'ISERDESE2' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20009]
-	Parameter DATA_RATE bound to: SDR - type: string 
-	Parameter DATA_WIDTH bound to: 4 - type: integer 
-	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
-	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
-	Parameter INIT_Q1 bound to: 1'b0 
-	Parameter INIT_Q2 bound to: 1'b0 
-	Parameter INIT_Q3 bound to: 1'b0 
-	Parameter INIT_Q4 bound to: 1'b0 
-	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
-	Parameter IOBDELAY bound to: NONE - type: string 
-	Parameter IS_CLKB_INVERTED bound to: 1'b0 
-	Parameter IS_CLKDIVP_INVERTED bound to: 1'b0 
-	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
-	Parameter IS_CLK_INVERTED bound to: 1'b0 
-	Parameter IS_D_INVERTED bound to: 1'b0 
-	Parameter IS_OCLKB_INVERTED bound to: 1'b0 
-	Parameter IS_OCLK_INVERTED bound to: 1'b0 
-	Parameter NUM_CE bound to: 1 - type: integer 
-	Parameter OFB_USED bound to: FALSE - type: string 
-	Parameter SERDES_MODE bound to: MASTER - type: string 
-	Parameter SRVAL_Q1 bound to: 1'b0 
-	Parameter SRVAL_Q2 bound to: 1'b0 
-	Parameter SRVAL_Q3 bound to: 1'b0 
-	Parameter SRVAL_Q4 bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'ISERDESE2' (6#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20009]
-INFO: [Synth 8-256] done synthesizing module 'deserializer' (7#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:7]
+	Parameter div_f bound to: 27'b000000000000000001111100111 
+	Parameter halfway bound to: 27'b000000000000000000111110011 
+INFO: [Synth 8-256] done synthesizing module 'clk_div' (5#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/clk_div.v:21]
+INFO: [Synth 8-226] default block is never used [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:71]
+WARNING: [Synth 8-6014] Unused sequential element handshake_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:135]
+WARNING: [Synth 8-6014] Unused sequential element num1_temp_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:137]
+WARNING: [Synth 8-6014] Unused sequential element num1_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:140]
+WARNING: [Synth 8-3848] Net clkDout in module/entity deserializer does not have driver. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:10]
+INFO: [Synth 8-256] done synthesizing module 'deserializer' (6#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:7]
+WARNING: [Synth 8-3331] design deserializer has unconnected port clkDout
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 387.117 ; gain = 117.805
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 386.750 ; gain = 117.379
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -85,9 +65,9 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 387.117 ; gain = 117.805
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 386.750 ; gain = 117.379
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7k160tfbg676-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -104,28 +84,29 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUFG => IBUF: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 695.344 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 701.105 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/reset.v:21]
 INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:115]
+INFO: [Synth 8-5546] ROM "num0" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:93]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -146,7 +127,7 @@ Detailed RTL Component Info :
 	   3 Input     27 Bit        Muxes := 1     
 	   2 Input     27 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -159,7 +140,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module reset 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -195,10 +176,36 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "deser_clk_origin/div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "num0" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element startup_reset/counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/reset.v:21]
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:115]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.srcs/sources_1/new/deserializer.v:93]
+WARNING: [Synth 8-3331] design deserializer has unconnected port clkDout
+WARNING: [Synth 8-3332] Sequential element (num0_reg[11]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[10]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[9]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[8]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[7]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[6]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[5]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[4]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[3]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[2]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[1]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_reg[0]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[11]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[10]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[9]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[8]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[7]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[6]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[5]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[4]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[3]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[2]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[1]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num0_temp_reg[0]) is unused and will be removed from module deserializer.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -210,13 +217,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -228,7 +235,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -252,7 +259,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -265,7 +272,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -277,25 +284,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -308,52 +315,50 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+----------+------+
-|      |Cell      |Count |
-+------+----------+------+
-|1     |BUFG      |     1|
-|2     |BUFR      |     1|
-|3     |BUFR_1    |     1|
-|4     |CARRY4    |    18|
-|5     |ISERDESE2 |     1|
-|6     |LUT1      |    74|
-|7     |LUT3      |     2|
-|8     |LUT4      |    16|
-|9     |LUT5      |    11|
-|10    |LUT6      |     4|
-|11    |FDRE      |    67|
-|12    |FDSE      |     6|
-|13    |IBUF      |     1|
-|14    |IBUFG     |     1|
-|15    |OBUF      |     6|
-+------+----------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     3|
+|2     |CARRY4 |    20|
+|3     |LUT1   |    80|
+|4     |LUT3   |     3|
+|5     |LUT4   |    14|
+|6     |LUT5   |     9|
+|7     |LUT6   |    15|
+|8     |FDRE   |   139|
+|9     |FDSE   |     6|
+|10    |IBUF   |     1|
+|11    |IBUFG  |     1|
+|12    |OBUF   |     5|
+|13    |OBUFT  |     1|
++------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------+--------+------+
 |      |Instance           |Module  |Cells |
 +------+-------------------+--------+------+
-|1     |top                |        |   210|
+|1     |top                |        |   297|
 |2     |  deser_clk_origin |clk_div |    78|
 |3     |  startup_reset    |reset   |    81|
 +------+-------------------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 695.344 ; gain = 117.805
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 695.344 ; gain = 426.031
+Synthesis finished with 0 errors, 0 critical warnings and 29 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 701.105 ; gain = 117.379
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 701.105 ; gain = 431.734
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUFG => IBUF: 1 instances
 
-33 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+31 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 695.344 ; gain = 433.793
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 701.105 ; gain = 440.496
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/parameter_deserializer_test/parameter_deserializer_test/parameter_deserializer_test.runs/synth_1/deserializer.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 695.344 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Aug  2 19:13:24 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 701.105 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  3 16:51:56 2017...
