@@ -56,17 +56,25 @@ module IIR1stOrder_test(
 
 	//\\\\\\\\\\DACs//////////\\
 
-	output	wire	[15:0]	D1_out_p,
-	output	wire	[15:0]	D1_out_n,
+	output	wire	[15:0]	D0_out_p,
+	output	wire	[15:0]	D0_out_n,
+
+    //output	wire	[15:0]	D1_out_p,
+	//output	wire	[15:0]	D1_out_n,
 
 	output	wire			CLK_out_p,
 	output	wire			CLK_out_n,
 
-	output	wire			DCI1_out_p,
-	output	wire			DCI1_out_n,
+	output	wire			DCI0_out_p,
+	output	wire			DCI0_out_n,
 
-	output 	wire			dac_csb1,
-	output 	wire			dac_rst1,
+	//output	wire			DCI1_out_p,
+	//output	wire			DCI1_out_n,
+
+    output 	wire			dac_csb0,
+	output 	wire			dac_rst0,
+	//output 	wire			dac_csb1,
+	//output 	wire			dac_rst1,
 	output	wire			dac_sdi,
 	output	wire			dac_sck,
 	input   wire			dac_sdo,
@@ -74,8 +82,14 @@ module IIR1stOrder_test(
 //	output	wire			sdo_out,
 		
 //	output	wire			DCO1_in,
-	input		wire		DCO1_p,
-	input		wire		DCO1_n
+    input   wire		    DCO0_p,
+	input   wire		    DCO0_n,
+	//input   wire		    DCO1_p,
+	//input   wire		    DCO1_n,
+	
+	input   wire            serial_in,
+	output  wire            serial_clk_out,
+	output  wire            serial_trig_out
     );
     
 wire clk_int, clk_in, DIVclk;
@@ -176,10 +190,34 @@ ADC2 (
 
 ///////////////End of inputs///////////////
 
+//////////////Deserializer for inputting new parameters////////////
+wire signed [34:0] a1_PD_new, b0_PD_new, b1_PD_new, a1_PI_new, b0_PI_new, b1_PI_new, minval_new, sweep_max_new, sweep_min_new, sweep_stepsize_new;
+deserializer new_param_deser(
+    .clk_in(clk_in),
+    .rst_in(rst_in),
+    .in(serial_in),
+    .clkDout(serial_clk_out),
+    .trig_out(serial_trig_out),
+    .num0(a1_PD_new),
+    .num1(b0_PD_new),
+    .num2(b1_PD_new),
+    .num3(a1_PI_new),
+    .num4(b0_PI_new),
+    .num5(b1_PI_new),
+    .num6(minval_new),
+    .num7(sweep_max_new),
+    .num8(sweep_min_new),
+    .num9(sweep_stepsize_new),
+    .num10(),
+    .num11()
+);
+
+///////////////////////End of deserializer/////////////////////////
+
 ///////////////Relock sweep////////////////
 
 localparam real Vmin = 0.25;
-localparam signed [15:0] minval = Vmin*16'b0111_1111_1111_1111; 
+reg signed [15:0] minval = Vmin*16'b0111_1111_1111_1111; 
 
 reg sweep_hold;
 
@@ -193,9 +231,9 @@ always @(posedge clk_in) begin
 end
 
 wire [15:0] relock_out;
-localparam signed [15:0] sweep_max = (0.65625)*(16'b0111_1111_1111_1111);
-localparam signed [15:0] sweep_min = (0.1875)*(16'b0111_1111_1111_1111); 
-localparam        [31:0] sweep_stepsize = 32'b0000_0000_0000_0000_0000_0100_0000_0000; //Change LSB every 128 clock cycles
+reg signed [15:0] sweep_max = (0.65625)*(16'b0111_1111_1111_1111);
+reg signed [15:0] sweep_min = (0.1875)*(16'b0111_1111_1111_1111); 
+reg        [31:0] sweep_stepsize = 32'b0000_0000_0000_0000_0000_0100_0000_0000; //Change LSB every 128 clock cycles
 Sweep relockSweep(
     .clk_in(clk_in),
     .on_in(1'b1),
@@ -205,7 +243,17 @@ Sweep relockSweep(
     .stepsize_in(sweep_stepsize),
     .signal_out(relock_out)
 );
-
+/*
+always @(posedge serial_clk_out) begin
+    if (serial_trig_out) begin
+        //lsb's padded with zeros
+        minval <= minval_new[34:19];
+        sweep_max <= sweep_max_new[34:19];
+        sweep_min <= sweep_min_new[34:19];
+        sweep_stepsize <= sweep_stepsize_new[34:3];
+    end
+end
+*/
 //State machine for relock LEDs
 localparam LOCKED       = 3'b100;
 localparam UNLOCKED     = 3'b010;
@@ -257,31 +305,68 @@ end
 
 ////////PID///////////
 
-//PID parameters
-parameter real Pd = 1.0;          
-parameter real Pi = 0.00341333333;
-parameter real I  = 102.4;       
-parameter real D  = 4e-4;       
-parameter real fc = 10e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+//default PID parameters
+localparam real Pd = 1.0;          
+localparam real Pi = 0.00341333333;
+localparam real I  = 102.4;       
+localparam real D  = 0;       
+localparam real fc = 10e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+localparam real Ts = 1e-8;  //10ns (sample period)
+localparam real pi = 3.14159265358979;
 
+//Have servo on if we see enough transmission
 wire PID_on;
 assign PID_on = ($signed(trans_in) < $signed(minval)) ? 1'b0 : 1'b1;
 
+//IIR filter parameter defaults
+
+//PD\\
+
+//Ts = 10^-8 for 100MHz sample clock frequency
+//Definitions of filter coefficients. Added scale factors to make gains resonable
+reg signed [35:0] a1_PD = (1-2*pi*Ts*fc)*(2**26); // (1-2*pi*Ts*fc)*2^26
+// D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
+reg signed [35:0] b0_PD = ((D/Pi)*(fc/(1+pi*Ts*fc))+ Pd*((pi*Ts*fc)/(1+pi*Ts*fc)))*(2**26);
+//-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
+reg signed [35:0] b1_PD = (Pd*((pi*Ts*fc)/(1+pi*Ts*fc))-1*D/Pi*(fc/(1+pi*Ts*fc)))*(2**26);
+
+//PI\\
+
+//Definitions of filter coefficients. Added scale factors to make gains resonable
+//All coefficients scaled by 2^26
+reg signed [35:0] a1_PI = 1*(2**26);
+// Pi + I/Pd*pi*Ts
+reg signed [35:0] b0_PI = (Pi+(I*pi*Ts)/Pd)*(2**26);
+//-Pi + I/Pd*pi*Ts 
+reg signed [35:0] b1_PI = (I/Pd*pi*Ts-Pi)*(2**26);
+
+//Error signal out
 wire [15:0] e_out;
 //Servo module
-PIDservo #(
-    .Pd(Pd),
-    .Pi(Pi),
-    .I(I),
-    .D(D),
-    .fc(fc)
-)
-PID (
+PIDservo_changeParam PID (
     .clk_in(clk_in),
     .on_in(PID_on),
+    .a1_PD(a1_PD),
+    .b0_PD(b0_PD),
+    .b1_PD(b1_PD),
+    .a1_PI(a1_PI),
+    .b0_PI(b0_PI),
+    .b1_PI(b1_PI),    
     .e_in(e_in),
     .e_out(e_out)
 );
+
+always @(posedge serial_clk_out) begin
+    if (serial_trig_out) begin
+        a1_PD <= a1_PD_new;
+        b0_PD <= b0_PD_new;
+        b1_PD <= b1_PD_new;
+        a1_PI <= a1_PI_new;
+        b0_PI <= b0_PI_new;
+        b1_PI <= b1_PI_new;
+    end
+end
+
 
 /////End of PID///////
 
@@ -289,6 +374,34 @@ PID (
 
 wire signed [15:0] signal_out = relock_out + e_out;
 
+// Instantiate DAC1 driver module
+AD9783 #(
+	.CLKDIV(4) //200MHz clock
+)
+ DAC0 (
+     .clk_in(clk_in), 
+     .rst_in(rst_in), 
+     .DAC0_in(signal_out), 
+     .DAC1_in(serial_trig_out*16'b0111_1111_1111_1111), 
+     .CLK_out_p(CLK_out_p), 
+     .CLK_out_n(CLK_out_n), 
+     .DCI_out_p(DCI0_out_p), 
+     .DCI_out_n(DCI0_out_n), 
+     .D_out_p(D0_out_p), 
+     .D_out_n(D0_out_n),
+	 .rst_out(dac_rst0),
+	 .spi_scs_out(dac_csb0),
+	 .spi_sck_out(dac_sck),
+	 .spi_sdo_out(dac_sdi),
+	 .spi_sdi_in(dac_sdo),
+	 .cmd_trig_in(1'b0),
+	 .cmd_addr_in(16'b0),
+	 .cmd_data_in(16'b0),
+	 .cmd_data_out(),
+	 .clk_out()
+    );
+    
+/*
 // Instantiate DAC1 driver module
 AD9783 #(
 	.CLKDIV(4) //200MHz clock
@@ -315,7 +428,7 @@ AD9783 #(
 	 .cmd_data_out(),
 	 .clk_out()
     );
-    
+    */
 ////////End of output to DAC///////
     
 endmodule
