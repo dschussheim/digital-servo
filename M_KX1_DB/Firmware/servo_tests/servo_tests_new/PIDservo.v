@@ -14,9 +14,9 @@ module PIDservo(
 
 parameter   real Pd = 1;     //[-40, 0] dB P for PD
 parameter   real Pi = 1;     //[-40, 0] dB P for PI
-parameter   real I =  1;     //[-30, 100] dB
-parameter   real D =  1;     //[-100, 0] dB
-parameter   real fc = 1e6;   //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+parameter   real I =  0;     //[-30, 100] dB
+parameter   real D =  0;     //[-100, 0] dB
+parameter   real fc = 1e7;   //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 localparam  real Ts = 1e-8;  //10ns (sample period)
 localparam  real pi = 3.14159265358979;
 //Inputs

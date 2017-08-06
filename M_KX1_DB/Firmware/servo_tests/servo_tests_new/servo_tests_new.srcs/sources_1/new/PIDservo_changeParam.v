@@ -6,16 +6,16 @@
 
 
 module PIDservo_changeParam(
-    input   wire            clk_in,
-    input   wire            on_in,
-    input   wire    [34:0]  a1_PD,
-    input   wire    [34:0]  b0_PD,
-    input   wire    [34:0]  b1_PD,
-    input   wire    [34:0]  a1_PI,
-    input   wire    [34:0]  b0_PI,
-    input   wire    [34:0]  b1_PI,    
-    input   wire    [15:0]  e_in,
-    output  wire    [15:0]  e_out
+    input   wire                clk_in,
+    input   wire                on_in,
+    input   wire signed [34:0]  a1_PD,
+    input   wire signed [34:0]  b0_PD,
+    input   wire signed [34:0]  b1_PD,
+    input   wire signed [34:0]  a1_PI,
+    input   wire signed [34:0]  b0_PI,
+    input   wire signed [34:0]  b1_PI,    
+    input   wire signed [15:0]  e_in,
+    output  wire signed [15:0]  e_out
     );
 
 wire [15:0] e_int;

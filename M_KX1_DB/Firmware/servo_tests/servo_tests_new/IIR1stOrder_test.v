@@ -8,11 +8,13 @@ module IIR1stOrder_test(
 	//100 MHz clock
 	input	wire			clk,
 	//led to tell you when reset happens
-	output	reg				rst_led,
+	//output	wire			rst_led,
 	//LEDs for locked/unlocked
-	output  reg             locked_out,
-	output  reg             notlocked_out,
-	output  reg             notlocked1s_out,
+	//output  reg             locked_out,
+	//output  reg             notlocked_out,
+	//output  reg             notlocked1s_out,
+    
+    output wire [3:0] led_out,
       
 	//\\\\\\\\\ADCs//////////\\
 	
@@ -119,7 +121,7 @@ reset startup_reset (
     .clk_in(clk_in),
     .rst(rst_in)
 );
-
+//assign rst_led = ~rst_in;
 ///////////////End of reset/////////////////
     
 ///////////////////Inputs///////////////////
@@ -192,12 +194,14 @@ ADC2 (
 
 //////////////Deserializer for inputting new parameters////////////
 wire signed [34:0] a1_PD_new, b0_PD_new, b1_PD_new, a1_PI_new, b0_PI_new, b1_PI_new, minval_new, sweep_max_new, sweep_min_new, sweep_stepsize_new;
+wire TPmatchOut;
 deserializer new_param_deser(
     .clk_in(clk_in),
     .rst_in(rst_in),
     .in(serial_in),
     .clkDout(serial_clk_out),
     .trig_out(serial_trig_out),
+    .TPmatchOut(TPmatchOut),
     .num0(a1_PD_new),
     .num1(b0_PD_new),
     .num2(b1_PD_new),
@@ -211,7 +215,7 @@ deserializer new_param_deser(
     .num10(),
     .num11()
 );
-
+assign rst_led = ~TPmatchOut;
 ///////////////////////End of deserializer/////////////////////////
 
 ///////////////Relock sweep////////////////
@@ -243,9 +247,9 @@ Sweep relockSweep(
     .stepsize_in(sweep_stepsize),
     .signal_out(relock_out)
 );
-/*
+
 always @(posedge serial_clk_out) begin
-    if (serial_trig_out) begin
+    if (TPmatchOut) begin
         //lsb's padded with zeros
         minval <= minval_new[34:19];
         sweep_max <= sweep_max_new[34:19];
@@ -253,7 +257,7 @@ always @(posedge serial_clk_out) begin
         sweep_stepsize <= sweep_stepsize_new[34:3];
     end
 end
-*/
+
 //State machine for relock LEDs
 localparam LOCKED       = 3'b100;
 localparam UNLOCKED     = 3'b010;
@@ -292,6 +296,7 @@ endfunction
 //Sequential part
 reg [27:0] relock_counter = 28'b0; //Counter for led that stays on 1s after relock acquired
 reg [2:0] relock_state;
+reg locked_out, notlocked_out, notlocked1s_out;
 always @(posedge clk_in) begin
     relock_state <= relock_next_state(trans_in, relock_state, relock_counter);
     locked_out <= ~relock_state[2];
@@ -310,7 +315,7 @@ localparam real Pd = 1.0;
 localparam real Pi = 0.00341333333;
 localparam real I  = 102.4;       
 localparam real D  = 0;       
-localparam real fc = 10e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+localparam real fc = 1e7;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 localparam real Ts = 1e-8;  //10ns (sample period)
 localparam real pi = 3.14159265358979;
 
@@ -324,21 +329,24 @@ assign PID_on = ($signed(trans_in) < $signed(minval)) ? 1'b0 : 1'b1;
 
 //Ts = 10^-8 for 100MHz sample clock frequency
 //Definitions of filter coefficients. Added scale factors to make gains resonable
-reg signed [35:0] a1_PD = (1-2*pi*Ts*fc)*(2**26); // (1-2*pi*Ts*fc)*2^26
+
+reg signed [34:0] a1_PD = (1-2*pi*Ts*fc)*(2**26); // (1-2*pi*Ts*fc)*2^26
 // D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
-reg signed [35:0] b0_PD = ((D/Pi)*(fc/(1+pi*Ts*fc))+ Pd*((pi*Ts*fc)/(1+pi*Ts*fc)))*(2**26);
+reg signed [34:0] b0_PD = ((D/Pi)*(fc/(1+pi*Ts*fc))+ Pd*((pi*Ts*fc)/(1+pi*Ts*fc)))*(2**26);
 //-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
-reg signed [35:0] b1_PD = (Pd*((pi*Ts*fc)/(1+pi*Ts*fc))-1*D/Pi*(fc/(1+pi*Ts*fc)))*(2**26);
+reg signed [34:0] b1_PD = (Pd*((pi*Ts*fc)/(1+pi*Ts*fc))-1*D/Pi*(fc/(1+pi*Ts*fc)))*(2**26);
 
 //PI\\
 
 //Definitions of filter coefficients. Added scale factors to make gains resonable
 //All coefficients scaled by 2^26
-reg signed [35:0] a1_PI = 1*(2**26);
+reg signed [34:0] a1_PI = 1*(2**26);
 // Pi + I/Pd*pi*Ts
-reg signed [35:0] b0_PI = (Pi+(I*pi*Ts)/Pd)*(2**26);
+reg signed [34:0] b0_PI = (Pi+(I*pi*Ts)/Pd)*(2**26);
 //-Pi + I/Pd*pi*Ts 
-reg signed [35:0] b1_PI = (I/Pd*pi*Ts-Pi)*(2**26);
+reg signed [34:0] b1_PI = (I/Pd*pi*Ts-Pi)*(2**26);
+
+real b1pi = (I*pi*Ts/Pd-Pi)*(2**26);
 
 //Error signal out
 wire [15:0] e_out;
@@ -356,8 +364,11 @@ PIDservo_changeParam PID (
     .e_out(e_out)
 );
 
-always @(posedge serial_clk_out) begin
-    if (serial_trig_out) begin
+
+
+
+always @(posedge clk_in) begin
+    if (TPmatchOut) begin
         a1_PD <= a1_PD_new;
         b0_PD <= b0_PD_new;
         b1_PD <= b1_PD_new;
@@ -367,6 +378,7 @@ always @(posedge serial_clk_out) begin
     end
 end
 
+assign led_out = {~a1_PD[34],~b0_PD[34],~b1_PD[34],~a1_PI[34]};
 
 /////End of PID///////
 

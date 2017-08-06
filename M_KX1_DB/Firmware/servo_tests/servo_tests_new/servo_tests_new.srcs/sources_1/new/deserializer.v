@@ -10,6 +10,7 @@ module deserializer(
     input   wire            in,
     output  wire            clkDout,
     output  wire            trig_out,
+    output  wire            TPmatchOut,
     output  reg     [34:0]  num0,
     output  reg     [34:0]  num1,
     output  reg     [34:0]  num2,
@@ -117,6 +118,7 @@ reg [34:0] num0_temp, num1_temp, num2_temp, num3_temp, num4_temp, num5_temp, num
 
 reg [15:0] handshake;
 localparam handshake_key = 16'h6364; //"cd" converted to hex
+assign TPmatchOut = (handshake == handshake_key);
 always @(negedge on_in) begin
         //handshake must match handshake_key, this means the synthesizer is actually sending data
         handshake = Q[N_ff:N_ff-15];
@@ -134,7 +136,7 @@ always @(negedge on_in) begin
         num10_temp  <= Q[N_ff-366:N_ff-400];
         num11_temp <= Q[N_ff-401:N_ff-435];
         //record them to the outputs if we are communicating with the synthesizer     
-        if (handshake == handshake_key) begin
+        if (TPmatchOut) begin
             num0  <= num0_temp;
             num1  <= num1_temp;
             num2  <= num2_temp;
