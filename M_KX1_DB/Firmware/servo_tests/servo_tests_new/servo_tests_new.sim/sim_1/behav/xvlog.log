@@ -25,6 +25,5 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitH
 INFO: [VRFC 10-311] analyzing module reset
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/IIR1stOrder_test.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IIR1stOrder_test
-INFO: [VRFC 10-2458] undeclared symbol rst_led, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/IIR1stOrder_test.v:218]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

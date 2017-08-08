@@ -8,13 +8,13 @@ module IIR1stOrder_test(
 	//100 MHz clock
 	input	wire			clk,
 	//led to tell you when reset happens
-	//output	wire			rst_led,
+	output	wire			rst_led,
 	//LEDs for locked/unlocked
-	//output  reg             locked_out,
-	//output  reg             notlocked_out,
-	//output  reg             notlocked1s_out,
+	output  reg             locked_out,
+	output  reg             notlocked_out,
+	output  reg             notlocked1s_out,
     
-    output wire [3:0] led_out,
+    //output wire [3:0] led_out,
       
 	//\\\\\\\\\ADCs//////////\\
 	
@@ -121,7 +121,7 @@ reset startup_reset (
     .clk_in(clk_in),
     .rst(rst_in)
 );
-//assign rst_led = ~rst_in;
+assign rst_led = ~rst_in;
 ///////////////End of reset/////////////////
     
 ///////////////////Inputs///////////////////
@@ -215,7 +215,7 @@ deserializer new_param_deser(
     .num10(),
     .num11()
 );
-assign rst_led = ~TPmatchOut;
+//assign rst_led = ~TPmatchOut;
 ///////////////////////End of deserializer/////////////////////////
 
 ///////////////Relock sweep////////////////
@@ -237,7 +237,7 @@ end
 wire [15:0] relock_out;
 reg signed [15:0] sweep_max = (0.65625)*(16'b0111_1111_1111_1111);
 reg signed [15:0] sweep_min = (0.1875)*(16'b0111_1111_1111_1111); 
-reg        [31:0] sweep_stepsize = 32'b0000_0000_0000_0000_0000_0100_0000_0000; //Change LSB every 128 clock cycles
+reg        [31:0] sweep_stepsize = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
 Sweep relockSweep(
     .clk_in(clk_in),
     .on_in(1'b1),
@@ -248,12 +248,12 @@ Sweep relockSweep(
     .signal_out(relock_out)
 );
 
-always @(posedge serial_clk_out) begin
+always @(posedge clk_in) begin
     if (TPmatchOut) begin
         //lsb's padded with zeros
         minval <= minval_new[34:19];
-        sweep_max <= sweep_max_new[34:19];
-        sweep_min <= sweep_min_new[34:19];
+        //sweep_max <= sweep_max_new[34:19];
+        //sweep_min <= sweep_min_new[34:19];
         sweep_stepsize <= sweep_stepsize_new[34:3];
     end
 end
@@ -296,7 +296,6 @@ endfunction
 //Sequential part
 reg [27:0] relock_counter = 28'b0; //Counter for led that stays on 1s after relock acquired
 reg [2:0] relock_state;
-reg locked_out, notlocked_out, notlocked1s_out;
 always @(posedge clk_in) begin
     relock_state <= relock_next_state(trans_in, relock_state, relock_counter);
     locked_out <= ~relock_state[2];
@@ -311,10 +310,10 @@ end
 ////////PID///////////
 
 //default PID parameters
-localparam real Pd = 1.0;          
-localparam real Pi = 0.00341333333;
-localparam real I  = 102.4;       
-localparam real D  = 0;       
+localparam real Pd = 0.06;          
+localparam real Pi = 1;
+localparam real I  = 400;       
+localparam real D  = 0.7e-6;       
 localparam real fc = 1e7;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 localparam real Ts = 1e-8;  //10ns (sample period)
 localparam real pi = 3.14159265358979;
@@ -335,7 +334,9 @@ reg signed [34:0] a1_PD = (1-2*pi*Ts*fc)*(2**26); // (1-2*pi*Ts*fc)*2^26
 reg signed [34:0] b0_PD = ((D/Pi)*(fc/(1+pi*Ts*fc))+ Pd*((pi*Ts*fc)/(1+pi*Ts*fc)))*(2**26);
 //-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
 reg signed [34:0] b1_PD = (Pd*((pi*Ts*fc)/(1+pi*Ts*fc))-1*D/Pi*(fc/(1+pi*Ts*fc)))*(2**26);
-
+real a1PD = (1-2*pi*Ts*fc)*(2**26);
+real b0PD = ((D/Pi)*(fc/(1+pi*Ts*fc))+ Pd*((pi*Ts*fc)/(1+pi*Ts*fc)))*(2**26);
+real b1PD = (Pd*((pi*Ts*fc)/(1+pi*Ts*fc))-1*D/Pi*(fc/(1+pi*Ts*fc)))*(2**26);
 //PI\\
 
 //Definitions of filter coefficients. Added scale factors to make gains resonable
@@ -346,6 +347,8 @@ reg signed [34:0] b0_PI = (Pi+(I*pi*Ts)/Pd)*(2**26);
 //-Pi + I/Pd*pi*Ts 
 reg signed [34:0] b1_PI = (I/Pd*pi*Ts-Pi)*(2**26);
 
+real a1pi = 1*(2**26);
+real b0pi = (Pi+(I*pi*Ts)/Pd)*(2**26);
 real b1pi = (I*pi*Ts/Pd-Pi)*(2**26);
 
 //Error signal out
@@ -377,8 +380,6 @@ always @(posedge clk_in) begin
         b1_PI <= b1_PI_new;
     end
 end
-
-assign led_out = {~a1_PD[34],~b0_PD[34],~b1_PD[34],~a1_PI[34]};
 
 /////End of PID///////
 
