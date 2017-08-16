@@ -1,0 +1,59 @@
+Removed Pin From Net: NetName=NetJP1_0 Pin=JP1-0
+Removed Pin From Net: NetName=NetJP1_0 Pin=JP1-0
+Removed Pin From Net: NetName=NetJP1_0 Pin=JP1-0
+Removed Pin From Net: NetName=NetJP1_0 Pin=JP1-0
+Removed Pin From Net: NetName=NetJP1_1 Pin=JP1-1
+Removed Pin From Net: NetName=I2C_SCL Pin=P?-1
+Removed Pin From Net: NetName=AGND Pin=P?-2
+Removed Pin From Net: NetName=I2C_SDA Pin=P?-3
+Removed Pin From Net: NetName=AGND Pin=P?-4
+Removed Pin From Net: NetName=I2C_INT# Pin=P?-5
+Removed Pin From Net: NetName=AGND Pin=P?-6
+Removed Pin From Net: NetName=JTAG_TDI Pin=P?-7
+Removed Pin From Net: NetName=AGND Pin=P?-8
+Removed Pin From Net: NetName=JTAG_TMS Pin=P?-9
+Removed Pin From Net: NetName=AGND Pin=P?-10
+Removed Pin From Net: NetName=JTAG_TDO Pin=P?-11
+Removed Pin From Net: NetName=AGND Pin=P?-12
+Removed Pin From Net: NetName=JTAG_TCK Pin=P?-13
+Removed Pin From Net: NetName=AGND Pin=P?-14
+Removed Member From Class: ClassName=KX1_DB_EX_CONN Member=ETH0
+Removed Member From Class: ClassName=KX1_DB_EX_CONN Member=ETH1
+Removed Member From Class: ClassName=KX1_DB_EX_CONN Member=P?
+Change Component DesignItemId : Designator=JP1 Old DesignItemId=SMA_EDGE New DesignItemId=SIP8
+Change Component Footprint: Designator=JP1 Old Footprint=sma_pcb_200 New Footprint=SMD_ETHERNET
+Change Component Comment : Designator=JP1 Old Comment=SMA New Comment=RJ-45
+Added Component: Designator=JP0(SMD_ETHERNET)
+Added Component: Designator=JP1(sma_pcb_200)
+Added Component: Designator=P0(HDR2X7)
+Added Pin To Net: NetName=ETH0_A_N Pin=JP0-1
+Added Pin To Net: NetName=ETH0_A_P Pin=JP0-2
+Added Pin To Net: NetName=ETH0_B_N Pin=JP0-3
+Added Pin To Net: NetName=ETH0_B_P Pin=JP0-4
+Added Pin To Net: NetName=ETH0_C_N Pin=JP0-5
+Added Pin To Net: NetName=ETH0_C_P Pin=JP0-6
+Added Pin To Net: NetName=ETH0_D_N Pin=JP0-7
+Added Pin To Net: NetName=ETH0_D_P Pin=JP0-8
+Added Pin To Net: NetName=NetJP1_0 Pin=JP1-0
+Added Pin To Net: NetName=NetJP1_0 Pin=JP1-0
+Added Pin To Net: NetName=NetJP1_0 Pin=JP1-0
+Added Pin To Net: NetName=NetJP1_0 Pin=JP1-0
+Added Pin To Net: NetName=ETH1_A_N Pin=JP1-1
+Added Pin To Net: NetName=NetJP1_1 Pin=JP1-1
+Added Pin To Net: NetName=I2C_SCL Pin=P0-1
+Added Pin To Net: NetName=AGND Pin=P0-2
+Added Pin To Net: NetName=I2C_SDA Pin=P0-3
+Added Pin To Net: NetName=AGND Pin=P0-4
+Added Pin To Net: NetName=I2C_INT# Pin=P0-5
+Added Pin To Net: NetName=AGND Pin=P0-6
+Added Pin To Net: NetName=JTAG_TDI Pin=P0-7
+Added Pin To Net: NetName=AGND Pin=P0-8
+Added Pin To Net: NetName=JTAG_TMS Pin=P0-9
+Added Pin To Net: NetName=AGND Pin=P0-10
+Added Pin To Net: NetName=JTAG_TDO Pin=P0-11
+Added Pin To Net: NetName=AGND Pin=P0-12
+Added Pin To Net: NetName=JTAG_TCK Pin=P0-13
+Added Pin To Net: NetName=AGND Pin=P0-14
+Added Member To Class: ClassName=KX1_DB_EX_CONN Member=Component JP0 RJ-45
+Added Member To Class: ClassName=KX1_DB_EX_CONN Member=Component JP1 RJ-45
+Added Member To Class: ClassName=KX1_DB_EX_CONN Member=Component P0 Header 7X2

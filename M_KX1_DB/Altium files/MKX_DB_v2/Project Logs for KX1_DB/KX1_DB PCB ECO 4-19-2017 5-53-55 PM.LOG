@@ -1,0 +1,239 @@
+Removed Pin From Net: NetName=ADC2_ENC_P Pin=C24-2
+Removed Pin From Net: NetName=ADC2_ENC_N Pin=C27-2
+Removed Pin From Net: NetName=DAC1_CLK_P Pin=C37-1
+Removed Pin From Net: NetName=DAC1_CLK_N Pin=C38-1
+Removed Pin From Net: NetName=ADC2_CS Pin=J700-42
+Removed Pin From Net: NetName=ADC2_SDO Pin=U7-46
+Added Component: Designator=P?(HDR2X7)
+Added Pin To Net: NetName=DAC2_D14_N Pin=J700-24
+Added Pin To Net: NetName=DAC2_CSB Pin=J700-28
+Added Pin To Net: NetName=DAC2_RESET Pin=J700-30
+Added Pin To Net: NetName=DAC1_CSB Pin=J700-98
+Added Pin To Net: NetName=DAC1_RESET Pin=J700-100
+Added Pin To Net: NetName=AGND Pin=P?-2
+Added Pin To Net: NetName=AGND Pin=P?-4
+Added Pin To Net: NetName=AGND Pin=P?-6
+Added Pin To Net: NetName=AGND Pin=P?-8
+Added Pin To Net: NetName=AGND Pin=P?-10
+Added Pin To Net: NetName=AGND Pin=P?-12
+Added Pin To Net: NetName=AGND Pin=P?-14
+Added Pin To Net: NetName=ADC_ENC_N Pin=C7-2
+Added Pin To Net: NetName=ADC_ENC_N Pin=C27-2
+Added Net: Name=ADC_ENC_N
+Added Pin To Net: NetName=ADC_ENC_P Pin=C5-2
+Added Pin To Net: NetName=ADC_ENC_P Pin=C24-2
+Added Net: Name=ADC_ENC_P
+Added Pin To Net: NetName=DAC_CLK_N Pin=C38-1
+Added Pin To Net: NetName=DAC_CLK_N Pin=C133-1
+Added Net: Name=DAC_CLK_N
+Added Pin To Net: NetName=DAC_CLK_P Pin=C37-1
+Added Pin To Net: NetName=DAC_CLK_P Pin=C132-1
+Added Net: Name=DAC_CLK_P
+Added Pin To Net: NetName=ETH0_A_N Pin=J700-163
+Added Net: Name=ETH0_A_N
+Added Pin To Net: NetName=ETH0_A_P Pin=J700-165
+Added Net: Name=ETH0_A_P
+Added Pin To Net: NetName=ETH0_B_N Pin=J700-157
+Added Net: Name=ETH0_B_N
+Added Pin To Net: NetName=ETH0_B_P Pin=J700-159
+Added Net: Name=ETH0_B_P
+Added Pin To Net: NetName=ETH0_C_N Pin=J700-151
+Added Net: Name=ETH0_C_N
+Added Pin To Net: NetName=ETH0_C_P Pin=J700-153
+Added Net: Name=ETH0_C_P
+Added Pin To Net: NetName=ETH0_CTREF Pin=J700-155
+Added Net: Name=ETH0_CTREF
+Added Pin To Net: NetName=ETH0_D_N Pin=J700-145
+Added Net: Name=ETH0_D_N
+Added Pin To Net: NetName=ETH0_D_P Pin=J700-147
+Added Net: Name=ETH0_D_P
+Added Pin To Net: NetName=ETH0_LED1# Pin=J700-149
+Added Net: Name=ETH0_LED1#
+Added Pin To Net: NetName=ETH0_LED2# Pin=J700-161
+Added Net: Name=ETH0_LED2#
+Added Pin To Net: NetName=ETH1_A_N Pin=J700-162
+Added Net: Name=ETH1_A_N
+Added Pin To Net: NetName=ETH1_A_P Pin=J700-164
+Added Net: Name=ETH1_A_P
+Added Pin To Net: NetName=ETH1_B_N Pin=J700-156
+Added Net: Name=ETH1_B_N
+Added Pin To Net: NetName=ETH1_B_P Pin=J700-158
+Added Net: Name=ETH1_B_P
+Added Pin To Net: NetName=ETH1_C_N Pin=J700-150
+Added Net: Name=ETH1_C_N
+Added Pin To Net: NetName=ETH1_C_P Pin=J700-152
+Added Net: Name=ETH1_C_P
+Added Pin To Net: NetName=ETH1_CTREF Pin=J700-154
+Added Net: Name=ETH1_CTREF
+Added Pin To Net: NetName=ETH1_D_N Pin=J700-144
+Added Net: Name=ETH1_D_N
+Added Pin To Net: NetName=ETH1_D_P Pin=J700-146
+Added Net: Name=ETH1_D_P
+Added Pin To Net: NetName=ETH1_LED1# Pin=J700-148
+Added Net: Name=ETH1_LED1#
+Added Pin To Net: NetName=ETH1_LED2# Pin=J700-160
+Added Net: Name=ETH1_LED2#
+Added Pin To Net: NetName=I2C_INT# Pin=J700-115
+Added Pin To Net: NetName=I2C_INT# Pin=P?-5
+Added Net: Name=I2C_INT#
+Added Pin To Net: NetName=I2C_SCL Pin=J700-111
+Added Pin To Net: NetName=I2C_SCL Pin=P?-1
+Added Net: Name=I2C_SCL
+Added Pin To Net: NetName=I2C_SDA Pin=J700-113
+Added Pin To Net: NetName=I2C_SDA Pin=P?-3
+Added Net: Name=I2C_SDA
+Added Pin To Net: NetName=ID_HDM Pin=J700-133
+Added Net: Name=ID_HDM
+Added Pin To Net: NetName=IO/MGT_RCLK1_N Pin=J701-9
+Added Net: Name=IO/MGT_RCLK1_N
+Added Pin To Net: NetName=IO/MGT_RCLK1_P Pin=J701-7
+Added Net: Name=IO/MGT_RCLK1_P
+Added Pin To Net: NetName=IO/RX4_N Pin=J701-50
+Added Net: Name=IO/RX4_N
+Added Pin To Net: NetName=IO/RX4_P Pin=J701-48
+Added Net: Name=IO/RX4_P
+Added Pin To Net: NetName=IO/RX5_N Pin=J701-56
+Added Net: Name=IO/RX5_N
+Added Pin To Net: NetName=IO/RX5_P Pin=J701-54
+Added Net: Name=IO/RX5_P
+Added Pin To Net: NetName=IO/RX6_N Pin=J701-62
+Added Net: Name=IO/RX6_N
+Added Pin To Net: NetName=IO/RX6_P Pin=J701-60
+Added Net: Name=IO/RX6_P
+Added Pin To Net: NetName=IO/RX7_N Pin=J701-68
+Added Net: Name=IO/RX7_N
+Added Pin To Net: NetName=IO/RX7_P Pin=J701-66
+Added Net: Name=IO/RX7_P
+Added Pin To Net: NetName=IO/TX4_N Pin=J701-47
+Added Net: Name=IO/TX4_N
+Added Pin To Net: NetName=IO/TX4_P Pin=J701-45
+Added Net: Name=IO/TX4_P
+Added Pin To Net: NetName=IO/TX5_N Pin=J701-53
+Added Net: Name=IO/TX5_N
+Added Pin To Net: NetName=IO/TX5_P Pin=J701-51
+Added Net: Name=IO/TX5_P
+Added Pin To Net: NetName=IO/TX6_N Pin=J701-59
+Added Pin To Net: NetName=IO/TX6_N Pin=J701-65
+Added Net: Name=IO/TX6_N
+Added Pin To Net: NetName=IO/TX6_P Pin=J701-57
+Added Pin To Net: NetName=IO/TX6_P Pin=J701-63
+Added Net: Name=IO/TX6_P
+Added Pin To Net: NetName=IO/TX7_N Pin=J701-71
+Added Net: Name=IO/TX7_N
+Added Pin To Net: NetName=IO/TX7_P Pin=J701-69
+Added Net: Name=IO/TX7_P
+Added Pin To Net: NetName=JTAG_TCK Pin=J700-123
+Added Pin To Net: NetName=JTAG_TCK Pin=P?-13
+Added Net: Name=JTAG_TCK
+Added Pin To Net: NetName=JTAG_TDI Pin=J700-117
+Added Pin To Net: NetName=JTAG_TDI Pin=P?-7
+Added Net: Name=JTAG_TDI
+Added Pin To Net: NetName=JTAG_TDO Pin=J700-121
+Added Pin To Net: NetName=JTAG_TDO Pin=P?-11
+Added Net: Name=JTAG_TDO
+Added Pin To Net: NetName=JTAG_TMS Pin=J700-119
+Added Pin To Net: NetName=JTAG_TMS Pin=P?-9
+Added Net: Name=JTAG_TMS
+Added Pin To Net: NetName=MGT_CLK_1_N Pin=J701-6
+Added Net: Name=MGT_CLK_1_N
+Added Pin To Net: NetName=MGT_CLK_1_P Pin=J701-4
+Added Net: Name=MGT_CLK_1_P
+Added Pin To Net: NetName=MGT_CLK_2_N Pin=J701-12
+Added Net: Name=MGT_CLK_2_N
+Added Pin To Net: NetName=MGT_CLK_2_P Pin=J701-10
+Added Net: Name=MGT_CLK_2_P
+Added Pin To Net: NetName=MGT_RX0_N Pin=J701-20
+Added Net: Name=MGT_RX0_N
+Added Pin To Net: NetName=MGT_RX0_P Pin=J701-16
+Added Net: Name=MGT_RX0_P
+Added Pin To Net: NetName=MGT_RX1_N Pin=J701-28
+Added Net: Name=MGT_RX1_N
+Added Pin To Net: NetName=MGT_RX1_P Pin=J701-24
+Added Net: Name=MGT_RX1_P
+Added Pin To Net: NetName=MGT_RX2_N Pin=J701-36
+Added Net: Name=MGT_RX2_N
+Added Pin To Net: NetName=MGT_RX2_P Pin=J701-32
+Added Net: Name=MGT_RX2_P
+Added Pin To Net: NetName=MGT_RX3_N Pin=J701-44
+Added Net: Name=MGT_RX3_N
+Added Pin To Net: NetName=MGT_RX3_P Pin=J701-40
+Added Net: Name=MGT_RX3_P
+Added Pin To Net: NetName=MGT_TX0_N Pin=J701-17
+Added Net: Name=MGT_TX0_N
+Added Pin To Net: NetName=MGT_TX0_P Pin=J701-13
+Added Net: Name=MGT_TX0_P
+Added Pin To Net: NetName=MGT_TX1_N Pin=J701-25
+Added Net: Name=MGT_TX1_N
+Added Pin To Net: NetName=MGT_TX1_P Pin=J701-21
+Added Net: Name=MGT_TX1_P
+Added Pin To Net: NetName=MGT_TX2_N Pin=J701-33
+Added Net: Name=MGT_TX2_N
+Added Pin To Net: NetName=MGT_TX2_P Pin=J701-29
+Added Net: Name=MGT_TX2_P
+Added Pin To Net: NetName=MGT_TX3_N Pin=J701-41
+Added Net: Name=MGT_TX3_N
+Added Pin To Net: NetName=MGT_TX3_P Pin=J701-37
+Added Net: Name=MGT_TX3_P
+Added Pin To Net: NetName=SCK Pin=J700-92
+Added Pin To Net: NetName=SCK Pin=U1-20
+Added Pin To Net: NetName=SCK Pin=U7-20
+Added Net: Name=SCK
+Added Pin To Net: NetName=SCLK/MGT_RCLK_N Pin=J701-5
+Added Net: Name=SCLK/MGT_RCLK_N
+Added Pin To Net: NetName=SCLK/MGT_RCLK_P Pin=J701-3
+Added Net: Name=SCLK/MGT_RCLK_P
+Added Pin To Net: NetName=SCLK Pin=U12-51
+Added Pin To Net: NetName=SCLK Pin=U21-51
+Added Net: Name=SCLK
+Added Pin To Net: NetName=SDIO Pin=J700-90
+Added Pin To Net: NetName=SDIO Pin=U1-21
+Added Pin To Net: NetName=SDIO Pin=U7-21
+Added Pin To Net: NetName=SDIO Pin=U12-50
+Added Pin To Net: NetName=SDIO Pin=U21-50
+Added Net: Name=SDIO
+Added Pin To Net: NetName=SDO Pin=J700-69
+Added Pin To Net: NetName=SDO Pin=U1-46
+Added Pin To Net: NetName=SDO Pin=U7-46
+Added Pin To Net: NetName=SDO Pin=U12-49
+Added Pin To Net: NetName=SDO Pin=U21-49
+Added Net: Name=SDO
+Added Pin To Net: NetName=USB_DM Pin=J700-129
+Added Net: Name=USB_DM
+Added Pin To Net: NetName=USB_DP Pin=J700-127
+Added Net: Name=USB_DP
+Added Pin To Net: NetName=USB_SSRX_N Pin=J700-141
+Added Net: Name=USB_SSRX_N
+Added Pin To Net: NetName=USB_SSRX_P Pin=J700-137
+Added Net: Name=USB_SSRX_P
+Added Pin To Net: NetName=VBUS_HDP Pin=J700-131
+Added Net: Name=VBUS_HDP
+Added Differential Pair: Name=ADC_ENC
+Added Differential Pair: Name=DAC_CLK
+Added Differential Pair: Name=ETH0_A
+Added Differential Pair: Name=ETH0_B
+Added Differential Pair: Name=ETH0_C
+Added Differential Pair: Name=ETH0_D
+Added Differential Pair: Name=ETH1_A
+Added Differential Pair: Name=ETH1_B
+Added Differential Pair: Name=ETH1_C
+Added Differential Pair: Name=ETH1_D
+Added Differential Pair: Name=IO/MGT_RCLK1
+Added Differential Pair: Name=IO/RX4
+Added Differential Pair: Name=IO/RX5
+Added Differential Pair: Name=IO/RX6
+Added Differential Pair: Name=IO/RX7
+Added Differential Pair: Name=IO/TX4
+Added Differential Pair: Name=IO/TX5
+Added Differential Pair: Name=IO/TX6
+Added Differential Pair: Name=IO/TX7
+Added Differential Pair: Name=MGT_CLK_1
+Added Differential Pair: Name=MGT_CLK_2
+Added Differential Pair: Name=MGT_RX0
+Added Differential Pair: Name=MGT_RX1
+Added Differential Pair: Name=MGT_RX2
+Added Differential Pair: Name=MGT_RX3
+Added Differential Pair: Name=MGT_TX0
+Added Differential Pair: Name=MGT_TX1
+Added Differential Pair: Name=MGT_TX3
+Added Differential Pair: Name=SCLK/MGT_RCLK
+Added Differential Pair: Name=USB_SSRX

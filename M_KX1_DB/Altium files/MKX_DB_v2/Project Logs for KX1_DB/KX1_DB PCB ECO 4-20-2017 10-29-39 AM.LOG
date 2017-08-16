@@ -1,0 +1,48 @@
+Removed Pin From Net: NetName=NetJP2_0 Pin=JP2-0
+Removed Pin From Net: NetName=NetJP2_0 Pin=JP2-0
+Removed Pin From Net: NetName=NetJP2_0 Pin=JP2-0
+Removed Pin From Net: NetName=NetJP2_0 Pin=JP2-0
+Removed Pin From Net: NetName=NetJP4_0 Pin=JP4-0
+Removed Pin From Net: NetName=NetJP4_0 Pin=JP4-0
+Removed Pin From Net: NetName=NetJP4_0 Pin=JP4-0
+Removed Pin From Net: NetName=NetJP4_0 Pin=JP4-0
+Removed Pin From Net: NetName=NetJP5_0 Pin=JP5-0
+Removed Pin From Net: NetName=NetJP5_0 Pin=JP5-0
+Removed Pin From Net: NetName=NetJP5_0 Pin=JP5-0
+Removed Pin From Net: NetName=NetJP5_0 Pin=JP5-0
+Change Net Name : Old Net Name=NetJP2_0 New Net Name=ADC1_2IN_N
+Change Net Name : Old Net Name=NetJP4_0 New Net Name=ADC2_1IN_N
+Change Net Name : Old Net Name=NetJP5_0 New Net Name=ADC2_2IN_N
+Added Pin To Net: NetName=ADC1_2IN_P Pin=R15-2
+Added Pin To Net: NetName=ADC1_2IN_P Pin=U4-10
+Added Net: Name=ADC1_2IN_P
+Added Pin To Net: NetName=ADC2_1IN_P Pin=R87-2
+Added Pin To Net: NetName=ADC2_1IN_P Pin=U8-10
+Added Net: Name=ADC2_1IN_P
+Added Pin To Net: NetName=ADC2_2IN_P Pin=R99-2
+Added Pin To Net: NetName=ADC2_2IN_P Pin=U10-10
+Added Net: Name=ADC2_2IN_P
+Added Pin To Net: NetName=DAC1_1OUT_N Pin=R35-2
+Added Pin To Net: NetName=DAC1_1OUT_N Pin=U13-9
+Added Net: Name=DAC1_1OUT_N
+Added Pin To Net: NetName=DAC1_1OUT_P Pin=C40-1
+Added Pin To Net: NetName=DAC1_1OUT_P Pin=R33-2
+Added Net: Name=DAC1_1OUT_P
+Added Pin To Net: NetName=DAC1_2OUT_N Pin=R39-2
+Added Pin To Net: NetName=DAC1_2OUT_N Pin=U14-9
+Added Net: Name=DAC1_2OUT_N
+Added Pin To Net: NetName=DAC1_2OUT_P Pin=C43-1
+Added Pin To Net: NetName=DAC1_2OUT_P Pin=R37-2
+Added Net: Name=DAC1_2OUT_P
+Added Pin To Net: NetName=DAC2_1OUT_N Pin=R82-2
+Added Pin To Net: NetName=DAC2_1OUT_N Pin=U22-9
+Added Net: Name=DAC2_1OUT_N
+Added Pin To Net: NetName=DAC2_1OUT_P Pin=C136-1
+Added Pin To Net: NetName=DAC2_1OUT_P Pin=R80-2
+Added Net: Name=DAC2_1OUT_P
+Added Pin To Net: NetName=DAC2_2OUT_N Pin=R86-2
+Added Pin To Net: NetName=DAC2_2OUT_N Pin=U23-9
+Added Net: Name=DAC2_2OUT_N
+Added Pin To Net: NetName=DAC2_2OUT_P Pin=C140-1
+Added Pin To Net: NetName=DAC2_2OUT_P Pin=R84-2
+Added Net: Name=DAC2_2OUT_P

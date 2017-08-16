@@ -1,0 +1,10 @@
+Added Pin To Net: NetName=ADC2_CS Pin=J700-36
+Added Pin To Net: NetName=ADC2_SCK Pin=J700-40
+Change Net Name : Old Net Name=ADC1_SCI New Net Name=ADC1_SDI
+Change Net Name : Old Net Name=ADC1_SCO New Net Name=ADC1_SDO
+Added Pin To Net: NetName=ADC2_SDI Pin=J700-42
+Added Pin To Net: NetName=ADC2_SDI Pin=U7-21
+Added Net: Name=ADC2_SDI
+Added Pin To Net: NetName=ADC2_SDO Pin=J700-27
+Added Pin To Net: NetName=ADC2_SDO Pin=U7-46
+Added Net: Name=ADC2_SDO

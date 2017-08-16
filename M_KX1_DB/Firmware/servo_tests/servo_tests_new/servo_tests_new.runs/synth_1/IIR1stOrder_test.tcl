@@ -3,7 +3,6 @@
 # 
 
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7k160tfbg676-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,9 +37,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_const.xdc
 set_property used_in_implementation false [get_files C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_const.xdc]
-
-read_xdc C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.srcs/constrs_1/new/timing_wiz_const.xdc
-set_property used_in_implementation false [get_files C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.srcs/constrs_1/new/timing_wiz_const.xdc]
 
 
 synth_design -top IIR1stOrder_test -part xc7k160tfbg676-1

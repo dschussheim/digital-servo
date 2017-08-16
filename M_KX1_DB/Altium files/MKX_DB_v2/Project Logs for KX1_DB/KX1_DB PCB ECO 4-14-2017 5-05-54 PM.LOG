@@ -1,0 +1,23 @@
+Removed Pin From Net: NetName=ADC2_ENC_P Pin=J700-15
+Removed Pin From Net: NetName=ADC2_ENC_N Pin=J700-17
+Removed Pin From Net: NetName=ADC2_OUT2B_N Pin=J700-19
+Removed Pin From Net: NetName=ADC2_OUT2B_P Pin=J700-21
+Removed Pin From Net: NetName=AGND Pin=J700-23
+Removed Pin From Net: NetName=ADC2_OUT2A_N Pin=J700-25
+Removed Pin From Net: NetName=ADC2_OUT2A_P Pin=J700-27
+Removed Pin From Net: NetName=ADC2_FR_N Pin=J700-31
+Removed Pin From Net: NetName=ADC2_FR_P Pin=J700-33
+Added Pin To Net: NetName=ADC2_OUT2A_P Pin=J700-31
+Added Pin To Net: NetName=ADC2_OUT2A_N Pin=J700-33
+Added Pin To Net: NetName=ADC2_OUT2B_P Pin=J700-37
+Added Pin To Net: NetName=ADC2_OUT2B_N Pin=J700-39
+Added Pin To Net: NetName=ADC2_DCO_P Pin=J700-43
+Added Pin To Net: NetName=ADC2_DCO_N Pin=J700-45
+Added Pin To Net: NetName=ADC2_FR_P Pin=J700-55
+Added Pin To Net: NetName=ADC2_FR_N Pin=J700-57
+Added Pin To Net: NetName=ADC2_OUT2A_P Pin=J700-61
+Added Pin To Net: NetName=ADC2_OUT2A_N Pin=J700-63
+Added Pin To Net: NetName=AGND Pin=J700-65
+Added Pin To Net: NetName=ADC2_OUT2B_P Pin=J700-67
+Added Pin To Net: NetName=ADC2_OUT2B_N Pin=J700-69
+Added Differential Pair: Name=ADC2_DCO

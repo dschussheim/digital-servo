@@ -1,0 +1,25 @@
+Change Component DesignItemId : Designator=ETH0 Old DesignItemId= New DesignItemId=SMD_ETH
+Change Component DesignItemId : Designator=ETH1 Old DesignItemId= New DesignItemId=SMD_ETH
+Change Component Comment : Designator=ETH0 Old Comment=Comment New Comment=SMD_ETH
+Change Component Comment : Designator=ETH1 Old Comment=Comment New Comment=SMD_ETH
+Change Component Description : Designator=ETH0 Old Description= New Description=SMD_ETH
+Change Component Description : Designator=ETH1 Old Description= New Description=SMD_ETH
+Change Component Library : Designator=ETH0 Old Library= New Library=My_Connectors.SchLib
+Change Component Library : Designator=ETH1 Old Library= New Library=My_Connectors.SchLib
+Added Component: Designator=P?(HDR2X7)
+Added Pin To Net: NetName=I2C_SCL Pin=P?-1
+Added Pin To Net: NetName=AGND Pin=P?-2
+Added Pin To Net: NetName=I2C_SDA Pin=P?-3
+Added Pin To Net: NetName=AGND Pin=P?-4
+Added Pin To Net: NetName=I2C_INT# Pin=P?-5
+Added Pin To Net: NetName=AGND Pin=P?-6
+Added Pin To Net: NetName=JTAG_TDI Pin=P?-7
+Added Pin To Net: NetName=AGND Pin=P?-8
+Added Pin To Net: NetName=JTAG_TMS Pin=P?-9
+Added Pin To Net: NetName=AGND Pin=P?-10
+Added Pin To Net: NetName=JTAG_TDO Pin=P?-11
+Added Pin To Net: NetName=AGND Pin=P?-12
+Added Pin To Net: NetName=JTAG_TCK Pin=P?-13
+Added Pin To Net: NetName=AGND Pin=P?-14
+Added Class: Name=KX1_DB_EX_CONN
+Added Room: Name=KX1_DB_EX_CONN

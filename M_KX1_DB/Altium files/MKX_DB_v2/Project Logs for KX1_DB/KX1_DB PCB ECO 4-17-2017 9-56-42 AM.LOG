@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=NetC38_2 Pin=C37-2
+Added Pin To Net: NetName=NetC38_2 Pin=R29-1
+Added Pin To Net: NetName=NetC38_2 Pin=U12-3
+Change Net Name : Old Net Name=NetC38_2 New Net Name=DAC1_CLK_IN_P

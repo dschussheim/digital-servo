@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=IO/TX6_P Pin=J701-63
+Removed Pin From Net: NetName=IO/TX6_N Pin=J701-65
+Removed Pin From Net: NetName=IO/TX7_P Pin=J701-69
+Removed Pin From Net: NetName=IO/TX7_N Pin=J701-71
+Added Pin To Net: NetName=IO/TX7_P Pin=J701-63
+Added Pin To Net: NetName=IO/TX7_N Pin=J701-65
+Added Pin To Net: NetName=IO/TX8_N Pin=J701-71
+Added Net: Name=IO/TX8_N
+Added Pin To Net: NetName=IO/TX8_P Pin=J701-69
+Added Net: Name=IO/TX8_P
+Added Differential Pair: Name=IO/TX8

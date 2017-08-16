@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=ETH1_A_N Pin=ETH1-1
+Removed Pin From Net: NetName=ETH1_A_P Pin=ETH1-2
+Removed Pin From Net: NetName=ETH1_B_N Pin=ETH1-3
+Removed Pin From Net: NetName=ETH1_B_P Pin=ETH1-4
+Removed Pin From Net: NetName=ETH1_C_N Pin=ETH1-5
+Removed Pin From Net: NetName=ETH1_C_P Pin=ETH1-6
+Removed Pin From Net: NetName=ETH1_D_N Pin=ETH1-7
+Removed Pin From Net: NetName=ETH1_D_P Pin=ETH1-8
+Added Pin To Net: NetName=ETH1_D_N Pin=ETH1-1
+Added Pin To Net: NetName=ETH1_D_P Pin=ETH1-2
+Added Pin To Net: NetName=ETH1_C_N Pin=ETH1-3
+Added Pin To Net: NetName=ETH1_C_P Pin=ETH1-4
+Added Pin To Net: NetName=ETH1_B_N Pin=ETH1-5
+Added Pin To Net: NetName=ETH1_B_P Pin=ETH1-6
+Added Pin To Net: NetName=ETH1_A_N Pin=ETH1-7
+Added Pin To Net: NetName=ETH1_A_P Pin=ETH1-8

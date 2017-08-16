@@ -1,0 +1,2 @@
+Added Pin To Net: NetName=DVDD33 Pin=J700-10
+Change Net Name : Old Net Name=DVDD33 New Net Name=PWR_EN

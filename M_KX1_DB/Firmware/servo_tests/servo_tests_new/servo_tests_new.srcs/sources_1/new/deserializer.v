@@ -37,7 +37,7 @@ deser_clk_origin (
     .rst_in(1'b0),
     .div_clk(clk100k)
 );
-
+assign clkDout = clk100k;
 ////////////end of clock//////////////////
 
 ////////////fetch logic////////////////

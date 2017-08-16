@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=DVDD18 Pin=J701-64
+Added Pin To Net: NetName=DVDD18 Pin=J701-67
+Added Pin To Net: NetName=DVDD18 Pin=J701-88
+Added Pin To Net: NetName=DVDD18 Pin=J701-95
+Added Pin To Net: NetName=DVDD18 Pin=J701-140
+Added Pin To Net: NetName=IO11_N Pin=J700-57
+Added Net: Name=IO11_N
+Added Differential Pair: Name=IO11

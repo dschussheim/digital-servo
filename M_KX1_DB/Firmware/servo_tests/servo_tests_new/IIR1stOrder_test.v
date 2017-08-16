@@ -22,7 +22,7 @@ module IIR1stOrder_test(
     output 	wire			adc_sck,
     output 	wire			adc_sdi,
     output	wire			adc_scs1,
-   // output	wire			adc_scs2,
+    output	wire			adc_scs2,
     input 	wire			adc_sdo,
 	
 	//Clock input for ADCs
@@ -41,7 +41,7 @@ module IIR1stOrder_test(
     input 	wire	[1:0] 	D10_n,
     input 	wire	[1:0] 	D11_p,
     input 	wire	[1:0] 	D11_n,
-	/*
+	
 	//Second ADC data to FPGA
 	//Data clock
 	input 	wire			adc_DCO2_p,
@@ -54,7 +54,7 @@ module IIR1stOrder_test(
     input 	wire	[1:0] 	D20_n,
     input 	wire	[1:0] 	D21_p,
     input 	wire	[1:0] 	D21_n,
-    */
+    
 
 	//\\\\\\\\\\DACs//////////\\
 
@@ -127,8 +127,7 @@ assign rst_led = ~rst_in;
 ///////////////////Inputs///////////////////
 parameter    CLKDIV = 8;    //100MHz clock
    
-wire [15:0] trans_in;
-wire [15:0] e_in;
+wire [15:0] trans_in, e_in, ADC20_out, ADC21_out;
     
 LTC2195 #(
     .CLKDIV(CLKDIV)
@@ -154,12 +153,9 @@ ADC1 (
     .D1_in_p(D11_p), 
     .D1_in_n(D11_n), 
     .ADC0_out(trans_in), 
-    .ADC1_out(e_in), 
+    .ADC1_out(e_in),  
     .FR_out()
 );
-
-/*  
-wire    [15:0]    ADC20_out, ADC21_out, FR2_out;
     
 LTC2195 #(
      .CLKDIV(CLKDIV)
@@ -171,11 +167,11 @@ ADC2 (
      .cmd_addr_in(), 
      .cmd_data_in(), 
      .spi_scs_out(adc_scs2),   
-     .spi_sck_out(adc_sck), 
-     .spi_sdo_out(adc_sdi), 
+     .spi_sck_out(), 
+     .spi_sdo_out(), 
      .spi_sdi_in(adc_sdo), 
-     .ENC_out_p(ENC_p), 
-     .ENC_out_n(ENC_n), 
+     .ENC_out_p(), 
+     .ENC_out_n(), 
      .DCO_in_p(adc_DCO2_p), 
      .DCO_in_n(adc_DCO2_n), 
      .FR_in_p(FR2_p), 
@@ -184,11 +180,11 @@ ADC2 (
      .D0_in_n(D20_n), 
      .D1_in_p(D21_p), 
      .D1_in_n(D21_n), 
-     .ADC0_out(ADC20_out), 
-     .ADC1_out(ADC21_out), 
-     .FR_out(FR2_out)
+     //.ADC0_out(trans_in), 
+     //.ADC1_out(e_in), 
+     .FR_out()
 );    
-*/
+
 
 ///////////////End of inputs///////////////
 
@@ -223,25 +219,20 @@ deserializer new_param_deser(
 localparam real Vmin = 0.25;
 reg signed [15:0] minval = Vmin*16'b0111_1111_1111_1111; 
 
-reg sweep_hold;
-
-always @(posedge clk_in) begin
-    if ($signed(trans_in) < $signed(minval)) begin
-        sweep_hold = 1'b0;
-    end
-    else begin
-        sweep_hold = 1'b1;
-    end
-end
+reg relock_on;
+always @(posedge clk_in)
+    relock_on <= ($signed(trans_in) < $signed(minval));
+//assign serial_clk_out = relock_on;
+//assign rst_led = ~relock_on;
 
 wire [15:0] relock_out;
 reg signed [15:0] sweep_max = (0.65625)*(16'b0111_1111_1111_1111);
 reg signed [15:0] sweep_min = (0.1875)*(16'b0111_1111_1111_1111); 
-reg        [31:0] sweep_stepsize = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
+reg        [31:0] sweep_stepsize = 32'b0000_0000_0000_0000_0000_0000_1000_0000; //Change LSB every 128 clock cycles
 Sweep relockSweep(
     .clk_in(clk_in),
     .on_in(1'b1),
-    .hold_in(sweep_hold),
+    .hold_in(~relock_on),
     .minval_in(sweep_min),
     .maxval_in(sweep_max),
     .stepsize_in(sweep_stepsize),
@@ -270,24 +261,23 @@ function [2:0] relock_next_state;
     begin 
         case(state)
             LOCKED:
-                if ($signed(signal_in) < $signed(minval))
+                if (relock_on)
                     relock_next_state = UNLOCKED; //If we were locked and we fall below minimum, set to unlocked
                 else
                     relock_next_state = LOCKED; //Otherwise we are still locked
              UNLOCKED:
-                if ($signed(signal_in) < $signed(minval))
+                if (relock_on)
                     relock_next_state = UNLOCKED; //If we are still unlocked stay unlocked
                 else
                     relock_next_state = UNLOCKED1S; //Otherwise we are locked and can start 1s counter
             UNLOCKED1S:
-                if ($signed(signal_in) < $signed(minval))
+                if (relock_on)
                     relock_next_state = UNLOCKED; //If we fall out nof lock again, set state to unlocked
-                else if ( ($signed(signal_in) >= $signed(minval) ) && (counter < 28'h5F5E100) ) 
+                else if ( (~relock_on) && (counter < 28'h5F5E100) ) 
                     relock_next_state = UNLOCKED1S; //If we are locked, but still counting, stay in counter state
-                else if (($signed(signal_in) >= $signed(minval) ) && (counter == 28'h5F5E100) )
-                    relock_next_state = LOCKED; //If we are done counting and still locked, set to locked
                 else
-                    relock_next_state = UNLOCKED; //Otherwise we are unlocked
+                    relock_next_state = LOCKED; //If we are done counting and still locked, set to locked
+
             default:
                 relock_next_state = LOCKED;
         endcase
@@ -303,6 +293,8 @@ always @(posedge clk_in) begin
     notlocked1s_out <= ~relock_state[0];
     if (relock_state == UNLOCKED1S)
         relock_counter <= relock_counter + 28'b1;
+    if (relock_state == LOCKED)
+        relock_counter <= 1'b0;
 end
 
 //////////End of relock/////////////
@@ -320,7 +312,7 @@ localparam real pi = 3.14159265358979;
 
 //Have servo on if we see enough transmission
 wire PID_on;
-assign PID_on = ($signed(trans_in) < $signed(minval)) ? 1'b0 : 1'b1;
+assign PID_on = ~relock_on;
 
 //IIR filter parameter defaults
 
@@ -395,7 +387,7 @@ AD9783 #(
      .clk_in(clk_in), 
      .rst_in(rst_in), 
      .DAC0_in(signal_out), 
-     .DAC1_in(serial_trig_out*16'b0111_1111_1111_1111), 
+     .DAC1_in(~signal_out),  
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI0_out_p), 

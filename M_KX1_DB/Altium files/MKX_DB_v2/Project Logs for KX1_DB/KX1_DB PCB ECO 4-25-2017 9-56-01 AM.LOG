@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=ADC2_CS Pin=J700-88
+Removed Pin From Net: NetName=SDIO Pin=J700-90
+Removed Pin From Net: NetName=SCLK Pin=J700-92
+Removed Pin From Net: NetName=ADC1_CS Pin=J700-94
+Removed Pin From Net: NetName=SDO Pin=U12-49
+Removed Pin From Net: NetName=SDIO Pin=U12-50
+Removed Pin From Net: NetName=SCLK Pin=U12-51
+Removed Pin From Net: NetName=SDO Pin=U21-49
+Removed Pin From Net: NetName=SDIO Pin=U21-50
+Removed Pin From Net: NetName=SCLK Pin=U21-51
+Added Pin To Net: NetName=ADC2_CS Pin=J700-82
+Added Pin To Net: NetName=SDIO Pin=J700-84
+Added Pin To Net: NetName=SCLK Pin=J700-86
+Added Pin To Net: NetName=ADC1_CS Pin=J700-90
+Added Pin To Net: NetName=D_SCK Pin=J700-94
+Added Net: Name=D_SCK
+Added Pin To Net: NetName=D_SCLK Pin=U12-51
+Added Pin To Net: NetName=D_SCLK Pin=U21-51
+Added Net: Name=D_SCLK
+Added Pin To Net: NetName=D_SDIO Pin=J700-104
+Added Pin To Net: NetName=D_SDIO Pin=U12-50
+Added Pin To Net: NetName=D_SDIO Pin=U21-50
+Added Net: Name=D_SDIO
+Added Pin To Net: NetName=D_SDO Pin=J700-106
+Added Pin To Net: NetName=D_SDO Pin=U12-49
+Added Pin To Net: NetName=D_SDO Pin=U21-49
+Added Net: Name=D_SDO

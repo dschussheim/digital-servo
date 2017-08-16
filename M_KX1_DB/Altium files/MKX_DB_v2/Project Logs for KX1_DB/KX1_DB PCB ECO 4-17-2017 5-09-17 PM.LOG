@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=+ Pin=C6-6
+Removed Pin From Net: NetName=- Pin=C6-7
+Removed Pin From Net: NetName=- Pin=U1-7
+Removed Pin From Net: NetName=+ Pin=U1-8
+Added Pin To Net: NetName=REFH Pin=C6-6
+Added Pin To Net: NetName=REFH Pin=C6-8
+Added Pin To Net: NetName=REFH Pin=U1-6
+Added Pin To Net: NetName=REFH Pin=U1-8
+Added Net: Name=REFH
+Added Pin To Net: NetName=REFL Pin=C6-5
+Added Pin To Net: NetName=REFL Pin=C6-7
+Added Pin To Net: NetName=REFL Pin=U1-7
+Added Pin To Net: NetName=REFL Pin=U1-9
+Added Net: Name=REFL

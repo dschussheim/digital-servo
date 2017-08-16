@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=ADC2_CS Pin=J700-22
+Removed Pin From Net: NetName=ADC1_CS Pin=J700-24
+Removed Pin From Net: NetName=OVDD18 Pin=J700-38
+Removed Pin From Net: NetName=SDIO Pin=J700-84
+Removed Pin From Net: NetName=SCLK Pin=J700-86
+Added Pin To Net: NetName=SDIO Pin=J700-15
+Added Pin To Net: NetName=SCLK Pin=J700-17
+Added Pin To Net: NetName=DVDD25 Pin=J700-38
+Added Pin To Net: NetName=ADC2_CS Pin=J700-55
+Added Pin To Net: NetName=ADC1_CS Pin=J700-57

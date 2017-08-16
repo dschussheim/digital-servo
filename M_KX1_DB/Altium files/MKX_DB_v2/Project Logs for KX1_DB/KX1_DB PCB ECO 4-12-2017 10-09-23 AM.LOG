@@ -1,0 +1,33 @@
+Removed Pin From Net: NetName=AGND Pin=JP2_B-1
+Removed Pin From Net: NetName=AGND Pin=JP2_B-13
+Removed Pin From Net: NetName=AGND Pin=JP2_B-14
+Removed Pin From Net: NetName=A1_IN Pin=JP2_B-15
+Removed Pin From Net: NetName=A0_IN Pin=JP2_B-17
+Removed Pin From Net: NetName=WR1_IN Pin=JP2_B-19
+Removed Pin From Net: NetName=WR2_IN Pin=JP2_B-21
+Removed Pin From Net: NetName=SDO2 Pin=JP2_B-23
+Removed Pin From Net: NetName=SDIO Pin=JP2_B-25
+Removed Pin From Net: NetName=SCLK2 Pin=JP2_B-27
+Removed Pin From Net: NetName=CSB Pin=JP2_B-29
+Removed Pin From Net: NetName=RESET Pin=JP2_B-31
+Removed Pin From Net: NetName=WR2_OUT Pin=JP2_B-33
+Removed Pin From Net: NetName=AGND Pin=JP2_B-36
+Removed Pin From Net: NetName=A1_OUT Pin=JP2_B-37
+Removed Pin From Net: NetName=A0_OUT Pin=JP2_B-47
+Removed Pin From Net: NetName=WR1_OUT Pin=JP2_B-49
+Removed Pin From Net: NetName=AGND Pin=JP2_B-56
+Removed Pin From Net: NetName=AGND Pin=JP2_B-78
+Removed Pin From Net: NetName=AGND Pin=JP2_B-80
+Removed Pin From Net: NetName=AGND Pin=JP3_B-2
+Removed Pin From Net: NetName=AGND Pin=JP3_B-14
+Removed Pin From Net: NetName=L2_0_P Pin=JP3_B-23
+Removed Pin From Net: NetName=L2_0_N Pin=JP3_B-25
+Removed Pin From Net: NetName=AGND Pin=JP3_B-35
+Removed Pin From Net: NetName=DVDD25 Pin=JP3_B-36
+Removed Pin From Net: NetName=AGND Pin=JP3_B-55
+Removed Pin From Net: NetName=DVDD25 Pin=JP3_B-56
+Removed Pin From Net: NetName=AGND Pin=JP3_B-78
+Removed Pin From Net: NetName=AGND Pin=JP3_B-80
+Added Component: Designator=J700(Mercury_Baseboard_Connector)
+Added Component: Designator=J701(Mercury_Baseboard_Connector)
+Added Component: Designator=J800(Mercury_Baseboard_Connector)

@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=ADC1_DCO_N Pin=J700-91
+Removed Pin From Net: NetName=ADC1_DCO_P Pin=J700-93
+Removed Pin From Net: NetName=ADC1_FR_N Pin=J700-95
+Removed Pin From Net: NetName=ADC1_FR_P Pin=J700-97
+Added Pin To Net: NetName=ADC1_DCO_P Pin=J700-91
+Added Pin To Net: NetName=ADC1_DCO_N Pin=J700-93
+Added Pin To Net: NetName=ADC1_FR_P Pin=J700-95
+Added Pin To Net: NetName=ADC1_FR_N Pin=J700-97

@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=ADC1_ENC_P Pin=J700-61
+Removed Pin From Net: NetName=ADC1_ENC_N Pin=J700-63
+Removed Pin From Net: NetName=ADC1_OUT1B_P Pin=J700-98
+Removed Pin From Net: NetName=ADC1_OUT1B_N Pin=J700-100
+Added Pin To Net: NetName=ADC1_OUT1B_P Pin=J700-79
+Added Pin To Net: NetName=ADC1_OUT1B_N Pin=J700-81
+Added Pin To Net: NetName=ADC1_ENC_P Pin=J700-98
+Added Pin To Net: NetName=ADC1_ENC_N Pin=J700-100
+Change Net Name : Old Net Name=NetC37_2 New Net Name=DAC1_CLK_IN_P
+Change Net Name : Old Net Name=NetC38_2 New Net Name=DAC1_CLK_IN_N
+Change Net Name : Old Net Name=NetC132_2 New Net Name=DAC2_CLK_IN_P
+Change Net Name : Old Net Name=NetC133_2 New Net Name=DAC2_CLK_IN_N
+Added Differential Pair: Name=DAC1_CLK_IN
+Added Differential Pair: Name=DAC2_CLK_IN

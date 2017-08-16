@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=DAC1_D4_P Pin=J701-136
+Added Pin To Net: NetName=DAC1_D4_N Pin=J701-138
+Added Pin To Net: NetName=DAC1_D3_P Pin=J701-142
+Added Pin To Net: NetName=DAC1_D3_N Pin=J701-144
+Added Pin To Net: NetName=DAC1_D2_P Pin=J701-148
+Added Pin To Net: NetName=DAC1_D2_N Pin=J701-150

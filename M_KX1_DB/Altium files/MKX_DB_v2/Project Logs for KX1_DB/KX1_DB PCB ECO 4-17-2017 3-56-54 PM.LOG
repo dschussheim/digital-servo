@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=ADC2_ENC_P Pin=J700-55
+Added Pin To Net: NetName=ADC2_ENC_N Pin=J700-57
+Added Pin To Net: NetName=ADC1_ENC_P Pin=J700-61
+Added Pin To Net: NetName=ADC1_ENC_N Pin=J700-63

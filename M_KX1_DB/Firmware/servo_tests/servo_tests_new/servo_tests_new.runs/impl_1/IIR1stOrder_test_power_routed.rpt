@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Mon Aug  7 21:20:21 2017
+| Date             : Wed Aug 16 16:43:02 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file IIR1stOrder_test_power_routed.rpt -pb IIR1stOrder_test_power_summary_routed.pb -rpx IIR1stOrder_test_power_routed.rpx
 | Design           : IIR1stOrder_test
@@ -30,13 +30,13 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.130 |
-| Dynamic (W)              | 1.014 |
+| Total On-Chip Power (W)  | 1.206 |
+| Dynamic (W)              | 1.090 |
 | Device Static (W)        | 0.116 |
 | Total Off-Chip Power (W) | 0.023 |
 | Effective TJA (C/W)      | 1.9   |
-| Max Ambient (C)          | 82.9  |
-| Junction Temperature (C) | 27.1  |
+| Max Ambient (C)          | 82.7  |
+| Junction Temperature (C) | 27.3  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,20 +50,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.023 |       19 |       --- |             --- |
-| Slice Logic             |     0.005 |     3050 |       --- |             --- |
-|   LUT as Logic          |     0.004 |      846 |    101400 |            0.83 |
-|   CARRY4                |     0.001 |      192 |     25350 |            0.76 |
-|   Register              |    <0.001 |     1897 |    202800 |            0.94 |
+| Clocks                  |     0.022 |       12 |       --- |             --- |
+| Slice Logic             |     0.008 |     3198 |       --- |             --- |
+|   LUT as Logic          |     0.006 |      915 |    101400 |            0.90 |
+|   CARRY4                |     0.001 |      193 |     25350 |            0.76 |
+|   Register              |    <0.001 |     1963 |    202800 |            0.97 |
 |   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
-|   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
-|   Others                |     0.000 |       31 |       --- |             --- |
-| Signals                 |     0.011 |     3916 |       --- |             --- |
+|   Others                |     0.000 |       35 |       --- |             --- |
+|   BUFG                  |     0.000 |        2 |        32 |            6.25 |
+| Signals                 |     0.013 |     4028 |       --- |             --- |
 | MMCM                    |     0.195 |        2 |         8 |           25.00 |
-| DSPs                    |     0.019 |       24 |       600 |            4.00 |
-| I/O                     |     0.762 |       65 |       400 |           16.25 |
+| DSPs                    |     0.015 |       24 |       600 |            4.00 |
+| I/O                     |     0.837 |       66 |       400 |           16.50 |
 | Static Power            |     0.116 |          |           |                 |
-| Total                   |     1.130 |          |           |                 |
+| Total                   |     1.206 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,10 +73,10 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.115 |       0.072 |      0.044 |
-| Vccaux    |       1.800 |     0.142 |       0.123 |      0.018 |
+| Vccint    |       1.000 |     0.117 |       0.074 |      0.044 |
+| Vccaux    |       1.800 |     0.147 |       0.129 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     0.298 |       0.297 |      0.001 |
+| Vcco25    |       2.500 |     0.324 |       0.323 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
@@ -127,21 +127,20 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------------------------------------------+------------------------------------------------+-----------------+
-| Clock                                          | Domain                                         | Constraint (ns) |
-+------------------------------------------------+------------------------------------------------+-----------------+
-| ADC1/LTC2195_SPI_inst/data_out_reg[4]_0        | ADC1/LTC2195_SPI_inst/data_out_reg[4]_0        |           100.0 |
-| DAC0/AD_9783_SPI_inst/data_out_reg[14]_0       | DAC0/AD_9783_SPI_inst/data_out_reg[14]_0       |           100.0 |
-| MMCME2_BASE_inst_n_2                           | DAC0/MMCME2_BASE_inst_n_2                      |             5.0 |
-| clk                                            | clk                                            |            10.0 |
-| clkDLYi                                        | DAC0/clkDLYi                                   |             5.0 |
-| clkFB                                          | ADC1/clkFB                                     |            10.0 |
-| clkFB_1                                        | DAC0/clkFB                                     |            10.0 |
-| clkPS_int                                      | ADC1/clkPS_int                                 |            10.0 |
-| clk_div_int                                    | ADC1/clk_div_int                               |            10.0 |
-| clk_int                                        | ADC1/clk_int                                   |             1.3 |
-| new_param_deser/deser_clk_origin/div_clk_reg_0 | new_param_deser/deser_clk_origin/div_clk_reg_0 |         10000.0 |
-+------------------------------------------------+------------------------------------------------+-----------------+
++-------------------------------+-------------------------------+-----------------+
+| Clock                         | Domain                        | Constraint (ns) |
++-------------------------------+-------------------------------+-----------------+
+| ADC2/LTC2195_SPI_inst/spi_clk | ADC2/LTC2195_SPI_inst/spi_clk |            10.0 |
+| ADC2/spi_trigger_reg_n_0      | ADC2/spi_trigger_reg_n_0      |            10.0 |
+| MMCME2_BASE_inst_n_2          | DAC0/MMCME2_BASE_inst_n_2     |             5.0 |
+| clk                           | clk                           |            10.0 |
+| clkDLYi                       | DAC0/clkDLYi                  |             5.0 |
+| clkFB                         | ADC1/clkFB                    |            10.0 |
+| clkFB_2                       | DAC0/clkFB                    |            10.0 |
+| clkPS_int                     | ADC1/clkPS_int                |            10.0 |
+| clk_div_int                   | ADC1/clk_div_int              |            10.0 |
+| clk_int                       | ADC1/clk_int                  |             1.3 |
++-------------------------------+-------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -153,17 +152,19 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| IIR1stOrder_test     |     1.014 |
-|   ADC1               |     0.188 |
-|     LTC2195_SPI_inst |    <0.001 |
-|   DAC0               |     0.778 |
-|     AD_9783_SPI_inst |    <0.001 |
-|   PID                |     0.033 |
-|     PD               |     0.016 |
-|     PI               |     0.018 |
+| IIR1stOrder_test     |     1.090 |
+|   ADC1               |     0.190 |
+|     LTC2195_SPI_inst |     0.003 |
+|   ADC2               |     0.001 |
+|     LTC2195_SPI_inst |     0.001 |
+|   DAC0               |     0.811 |
+|     AD_9783_SPI_inst |     0.003 |
+|   PID                |     0.028 |
+|     PD               |     0.015 |
+|     PI               |     0.013 |
 |   new_param_deser    |    <0.001 |
 |     deser_clk_origin |    <0.001 |
-|   relockSweep        |     0.002 |
+|   relockSweep        |     0.003 |
 |   startup_reset      |    <0.001 |
 +----------------------+-----------+
 

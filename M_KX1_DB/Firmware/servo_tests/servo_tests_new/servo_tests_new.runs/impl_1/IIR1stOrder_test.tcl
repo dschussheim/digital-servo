@@ -42,7 +42,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -58,7 +57,6 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.runs/synth_1/IIR1stOrder_test.dcp
   read_xdc C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_const.xdc
-  read_xdc C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.srcs/constrs_1/new/timing_wiz_const.xdc
   link_design -top IIR1stOrder_test -part xc7k160tfbg676-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -127,6 +125,24 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  catch { write_mem_info -force IIR1stOrder_test.mmi }
+  write_bitstream -force IIR1stOrder_test.bit 
+  catch {write_debug_probes -no_partial_ltxfile -quiet -force debug_nets}
+  catch {file copy -force debug_nets.ltx IIR1stOrder_test.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 
