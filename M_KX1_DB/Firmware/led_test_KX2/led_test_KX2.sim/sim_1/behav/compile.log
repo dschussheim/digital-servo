@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/light_leds.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module light_leds
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

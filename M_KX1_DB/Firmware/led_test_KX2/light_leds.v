@@ -10,8 +10,9 @@ module light_leds(
     output wire [3:0] gnd
     );
     
-    assign leds = ~4'b1011;
-    assign leds = 4'b1011;
+    localparam code = 4'b1011;
+    assign leds = ~code;
+    assign bnc = code;
     assign gnd = 4'b0000;
     
 endmodule

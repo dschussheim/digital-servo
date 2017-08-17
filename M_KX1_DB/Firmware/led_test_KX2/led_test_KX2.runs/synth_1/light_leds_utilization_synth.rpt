@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Tue Aug  8 15:54:32 2017
+| Date         : Thu Aug 17 16:39:05 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_utilization -file light_leds_utilization_synth.rpt -pb light_leds_utilization_synth.pb
 | Design       : light_leds
@@ -170,8 +170,7 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |    8 |                  IO |
-| OBUFT    |    4 |                  IO |
+| OBUF     |   12 |                  IO |
 +----------+------+---------------------+
 
 
