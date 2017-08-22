@@ -8,13 +8,13 @@ module IIR1stOrder_test(
 	//100 MHz clock
 	input	wire			clk,
 	//led to tell you when reset happens
-	output	wire			rst_led,
+	//output	wire			rst_led,
 	//LEDs for locked/unlocked
-	output  reg             locked_out,
-	output  reg             notlocked_out,
-	output  reg             notlocked1s_out,
+	//output  reg             locked_out,
+	//output  reg             notlocked_out,
+	//output  reg             notlocked1s_out,
     
-    //output wire [3:0] led_out,
+    output wire [3:0] led_out,
       
 	//\\\\\\\\\ADCs//////////\\
 	
@@ -121,15 +121,15 @@ reset startup_reset (
     .clk_in(clk_in),
     .rst(rst_in)
 );
-assign rst_led = ~rst_in;
+//assign led_out[0] = ~rst_in;
 ///////////////End of reset/////////////////
-    
+/* 
 ///////////////////Inputs///////////////////
 parameter    CLKDIV = 8;    //100MHz clock
    
 wire [15:0] trans1_in, e1_in, trans2_in, e2_in;
-localparam TP10 = 8'b00001111;
-localparam TP11 = 8'b00001111;
+parameter TP10 = 8'b10000111;
+parameter TP11 = 8'b10000111;
 LTC2195 #(
     .CLKDIV(CLKDIV),
     .TP0(TP10),
@@ -190,6 +190,66 @@ ADC2 (
      .ADC0_out(trans2_in), 
      .ADC1_out(e2_in)
 );    
+*/
+
+wire [15:0] trans1_in, e1_in, trans2_in, e2_in;
+
+wire [7:0] FR0_out, FR1_out;
+
+parameter CLKDIV = 8;    //100MHz clock
+parameter TP10 = 8'b10000111;
+parameter TP11 = 8'b10000111;
+parameter TP20 = 8'b10000111;
+parameter TP21 = 8'b10000111;
+
+LTC2195x2 #(
+    .CLKDIV(CLKDIV),
+    .TP00(TP10),
+    .TP01(TP11),
+    .TP10(TP20),
+    .TP11(TP21)
+)
+ADC (
+    .clk_in(clk_in), 
+    .rst_in(rst_in), 
+    .cmd_trig_in(), 
+    .cmd_addr_in(), 
+    .cmd_data_in(), 
+    .spi_scs0_out(adc_scs1),
+    .spi_scs1_out(adc_scs2), 
+    .spi_sck_out(adc_sck), 
+    .spi_sdo_out(adc_sdi), 
+    .spi_sdi_in(adc_sdo), 
+    .ENC_out_p(ENC_p), 
+    .ENC_out_n(ENC_n), 
+    .DCO0_in_p(adc_DCO1_p), 
+    .DCO0_in_n(adc_DCO1_n), 
+    .DCO1_in_p(adc_DCO2_p), 
+    .DCO1_in_n(adc_DCO2_n), 
+    .FR0_in_p(FR1_p), 
+    .FR0_in_n(FR1_n), 
+    .FR1_in_p(FR2_p), 
+    .FR1_in_n(FR2_n), 
+    .D00_in_p(D10_p), 
+    .D00_in_n(D10_n), 
+    .D01_in_p(D11_p), 
+    .D01_in_n(D11_n), 
+    .D10_in_p(D20_p), 
+    .D10_in_n(D20_n), 
+    .D11_in_p(D21_p), 
+    .D11_in_n(D21_n),
+    .ADC00_out(trans1_in), 
+    .ADC01_out(e1_in),
+    .ADC10_out(trans2_in), 
+    .ADC11_out(e2_in),
+    .FR0_out(FR0_out),
+    .FR1_out(FR1_out)
+);
+
+assign led_out = ~FR0_out[7:4];
+//assign led_out = ~FR0_out[3:0];
+//assign led_out = ~FR1_out[7:4];
+//assign led_out = ~FR1_out[3:0];
 
 
 ///////////////End of inputs///////////////
@@ -342,9 +402,9 @@ reg [27:0] relock2_counter = 28'b0; //Counter for led that stays on 1s after rel
 reg [2:0] relock1_state;
 always @(posedge clk_in) begin
     relock1_state <= relock_next_state(relock1_on, trans1_in, relock1_state, relock1_counter);
-    locked_out <= ~relock1_state[2];
-    notlocked_out <= ~relock1_state[1];
-    notlocked1s_out <= ~relock1_state[0];
+//    led_out[1] <= ~relock1_state[2]; locked
+//    led_out[2] <= ~relock1_state[1]; //not locked
+//    led_out[3] <= ~relock1_state[0]; //not locked 1s ago
     if (relock1_state == UNLOCKED1S)
         relock1_counter <= relock1_counter + 28'b1;
     if (relock1_state == LOCKED)

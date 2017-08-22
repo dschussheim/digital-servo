@@ -44,8 +44,7 @@ module LTC2195(
 		
 	output reg     signed  [15:0]  ADC0_out,
 	output reg     signed  [15:0]  ADC1_out,
-	output reg             [7:0]   FR_out0,
-	output reg             [7:0]   FR_out1
+	output reg             [7:0]   FR_out
 	
 	//input  wire                    bitslip
 );
@@ -84,6 +83,7 @@ MMCME2_ADV #(
 	.CLKOUT0_PHASE(0.0),
 	.CLKOUT1_PHASE(0.0),
 	.CLKOUT2_PHASE(45.0),
+	//.CLKOUT2_PHASE(0.0),
 	.CLKOUT3_PHASE(0.0),
 	.COMPENSATION("ZHOLD"),    // ZHOLD, BUF_IN, EXTERNAL, INTERNAL
 	.DIVCLK_DIVIDE(1),         // Master division value (1-106)
@@ -195,7 +195,7 @@ always @(posedge clk_in) begin
 		data_out[16 + 0], data_out[16 + 8], 	data_out[16 + 1], data_out[16 + 9], 	data_out[16 + 2], data_out[16 + 10], data_out[16 + 3], data_out[16 + 11],
 		data_out[16 + 4], data_out[16 + 12],	data_out[16 + 5], data_out[16 + 13],	data_out[16 + 6], data_out[16 + 14], data_out[16 + 7], data_out[16 +14]
 	};	
-	FR_out0 <= data_out[39:32];	//Training pattern for bitslip state machine
+	FR_out <= data_out[39:32];	//Training pattern for bitslip state machine
 end
 
 // Deserializer clocks. Sample taken on pos and neg edge of clk and OCLK. Since
@@ -273,11 +273,48 @@ function [1:0] bit_slip_next_state;
         endcase
     end
 endfunction
+/*
+parameter TP = 8'b10000111;
+//Sequential part, toggling bit_slip
+reg [1:0] BS_state;
+reg bit_slip0;
+wire [N_LVDS-1:0] bit_slip;
+reg [1:0] counter;//Must be high for 1 cycle, low for one cycle
+//BITSLIP is synchronous to CLKDIV
+always @(posedge clk_div) begin
+    if (rst_in) begin
+        BS_state <= CHECK;
+        counter <= 2'b0;
+    end
+    else begin
+        //Assign next state
+        BS_state <= bit_slip_next_state(TP, FR_out, BS_state, counter);
+            case(BS_state)
+                //Do not perform bitslip
+                CHECK: begin
+                    bit_slip0 <= 1'b0;
+                    counter <= counter + 2'b01;
+                end
+                //Perform bitslip
+                TOGGLE: begin
+                    bit_slip0 <= 1'b1;
+                    counter <= 2'b00;
+                end
+                END: begin
+                    bit_slip0 <= 1'b0;
+                    counter <= 2'b00;
+                end
+            endcase
+    end
+end
+assign bit_slip = {(bit_slip0 | bit_slip0), bit_slip0, bit_slip0, bit_slip0, bit_slip0};
+*/
+
 //Sequential part, toggling bit_slip
 reg [1:0] BS_state0, BS_state1;
 reg bit_slip0, bit_slip1;
 reg [1:0] counter0, counter1;//Must be high for 1 cycle, low for one cycle
-reg [N_LVDS-1:0] bit_slip;
+wire [N_LVDS-1:0] bit_slip;
 //BITSLIP is synchronous to CLKDIV
 always @(posedge clk_div) begin
     if (rst_in) begin
@@ -288,46 +325,54 @@ always @(posedge clk_div) begin
     end
     else begin
         //Assign next state
-        BS_state0 <= bit_slip_next_state(TP0, FR_out0, BS_state0, counter0);
-        case(BS_state0)
-            //Do not perform bitslip
-            CHECK: begin
-                bit_slip0 <= 1'b0;
-                counter0 <= counter0 + 2'b01;
-                bit_slip1 <= 1'b0;
-                counter1 <= 2'b00;
-            end
-            //Perform bitslip
-            TOGGLE: begin
-                bit_slip0 <= 1'b1;
-                counter0 <= 2'b00;
-                bit_slip1 <= 1'b1;
-                counter1 <= 2'b00;
-            end
-        endcase
         
-        if (BS_state0 == END) begin
-            BS_state1 <= bit_slip_next_state(TP1, FR_out1, BS_state1, counter1);
-            case(BS_state1)
+        if (BS_state0 != END) begin
+            BS_state0 <= bit_slip_next_state(TP0, FR_out, BS_state0, counter0);
+            case(BS_state0)
                 //Do not perform bitslip
                 CHECK: begin
                     bit_slip0 <= 1'b0;
-                    counter0 <= 2'b00;
+                    counter0 <= counter0 + 2'b01;
                     bit_slip1 <= 1'b0;
-                    counter1 <= counter0 + 2'b1;
+                    counter1 <= 2'b00;
                 end
                 //Perform bitslip
                 TOGGLE: begin
+                    bit_slip0 <= 1'b1;
+                    counter0 <= 2'b00;
+                    bit_slip1 <= 1'b0;
+                    counter1 <= 2'b00;
+                end
+                END: begin
                     bit_slip0 <= 1'b0;
                     counter0 <= 2'b00;
+                end
+            endcase
+        end
+        else begin
+            BS_state1 <= bit_slip_next_state(TP1, FR_out, BS_state1, counter1);
+            case(BS_state1)
+                //Do not perform bitslip
+                CHECK: begin
+                    bit_slip1 <= 1'b0;
+                    counter1 <= counter1 + 2'b1;
+                end
+                //Perform bitslip
+                TOGGLE: begin
                     bit_slip1 <= 1'b1;
+                    counter1 <= 2'b00;
+                end
+                END: begin
+                    bit_slip1 <= 1'b0;
                     counter1 <= 2'b00;
                 end
             endcase
          end   
     end
-    bit_slip <= {(bit_slip0 | bit_slip1), bit_slip1, bit_slip1, bit_slip0, bit_slip0};
+    //bit_slip <= {(bit_slip0 | bit_slip1), bit_slip1, bit_slip1, bit_slip0, bit_slip0};
 end
+
+assign bit_slip = {(bit_slip0 | bit_slip1), bit_slip1, bit_slip1, bit_slip0, bit_slip0};
 
 genvar pin_count;
 generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begin: pins

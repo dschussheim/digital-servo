@@ -2,15 +2,8 @@
 2017.2
 Jun 15 2017
 18:52:51
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/AD9783.v,1499454373,verilog,,,,AD9783,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/IIR1stOrder_test.v,1503352917,verilog,,,,IIR1stOrder_test,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/IIRfilter1stOrderAntiWindup.v,1501079190,verilog,,,C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/timescale.v,IIRfilter1stOrderAntiWindup,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/LTC2195.v,1503355266,verilog,,,,LTC2195,,,,,,,,
 C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/SPI.v,1499258823,verilog,,,C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/timescale.v,SPI,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/Sweep.v,1501102411,verilog,,,C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/timescale.v,Sweep,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/clk_div.v,1499258823,verilog,,,,clk_div,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/reset.v,1503329874,verilog,,,,reset,,,,,,,,
 C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.sim/sim_1/behav/glbl.v,1497407496,verilog,,,,glbl,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.srcs/sources_1/new/PIDservo_changeParam.v,1501943931,verilog,,,,PIDservo_changeParam,,,,,,,,
-C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v,1503340675,verilog,,,,deserializer,,,,,,,,
+C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.srcs/sources_1/new/LTC2195x2.v,1503435266,verilog,,,,LTC2195x2,,,,,,,,
+C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.srcs/sources_1/new/LTC2195x2_tb.v,1503439932,verilog,,,,LTC2195x2_tb,,,,,,,,
 C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/timescale.v,1499258824,verilog,,,,,,,,,,,,

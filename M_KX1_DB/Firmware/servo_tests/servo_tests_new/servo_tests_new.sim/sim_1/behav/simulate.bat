@@ -1,6 +1,6 @@
 @echo off
 set xv_path=C:\\Xilinx\\Vivado\\2017.2\\bin
-call %xv_path%/xsim IIR1stOrder_test_behav -key {Behavioral:sim_1:Functional:IIR1stOrder_test} -tclbatch IIR1stOrder_test.tcl -log simulate.log
+call %xv_path%/xsim LTC2195x2_tb_behav -key {Behavioral:sim_1:Functional:LTC2195x2_tb} -tclbatch LTC2195x2_tb.tcl -log simulate.log
 if "%errorlevel%"=="0" goto SUCCESS
 if "%errorlevel%"=="1" goto END
 :END
