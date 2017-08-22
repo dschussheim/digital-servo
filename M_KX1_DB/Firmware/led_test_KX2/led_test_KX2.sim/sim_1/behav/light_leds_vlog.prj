@@ -1,4 +1,5 @@
 # compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../clk_div.v"
 verilog xil_defaultlib  "../../../light_leds.v"
 
 # compile glbl module

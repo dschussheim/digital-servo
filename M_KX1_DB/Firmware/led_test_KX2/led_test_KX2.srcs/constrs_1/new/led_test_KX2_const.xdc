@@ -1,11 +1,13 @@
+#set_property PACKAGE_PIN AA4       [get_ports clk]
+
 #set_property PACKAGE_PIN U9       [get_ports leds[3]]
-#set_property IOSTANDARD  LVCMOS15 [get_ports leds[3]]
+#set_property IOSTANDARD  SSTL135 [get_ports leds[3]]
 #set_property PACKAGE_PIN V12      [get_ports leds[2]]
-#set_property IOSTANDARD  LVCMOS15 [get_ports leds[2]]
+#set_property IOSTANDARD  SSTL135 [get_ports leds[2]]
 #set_property PACKAGE_PIN V13      [get_ports leds[1]]
-#set_property IOSTANDARD  LVCMOS15 [get_ports leds[1]]
+#set_property IOSTANDARD  SSTL135 [get_ports leds[1]]
 #set_property PACKAGE_PIN W13      [get_ports leds[0]]
-#set_property IOSTANDARD  LVCMOS15 [get_ports leds[0]]
+#set_property IOSTANDARD  SSTL135 [get_ports leds[0]]
 
 #set_property PACKAGE_PIN AE23       [get_ports bnc[3]]
 #set_property IOSTANDARD  LVCMOS25   [get_ports bnc[3]]
@@ -25,6 +27,8 @@
 #set_property PACKAGE_PIN AE25       [get_ports gnd[0]]
 #set_property IOSTANDARD  LVCMOS25   [get_ports gnd[0]]
 
+set_property PACKAGE_PIN AA3       [get_ports clk]
+
 set_property PACKAGE_PIN M17       [get_ports leds[3]]
 set_property IOSTANDARD  LVCMOS25 [get_ports leds[3]]
 set_property PACKAGE_PIN L18      [get_ports leds[2]]
@@ -33,7 +37,6 @@ set_property PACKAGE_PIN L17      [get_ports leds[1]]
 set_property IOSTANDARD  LVCMOS25 [get_ports leds[1]]
 set_property PACKAGE_PIN K18      [get_ports leds[0]]
 set_property IOSTANDARD  LVCMOS25 [get_ports leds[0]]
-
 set_property PACKAGE_PIN V21       [get_ports bnc[3]]
 set_property IOSTANDARD  LVCMOS25  [get_ports bnc[3]]
 set_property PACKAGE_PIN AA23      [get_ports bnc[2]]

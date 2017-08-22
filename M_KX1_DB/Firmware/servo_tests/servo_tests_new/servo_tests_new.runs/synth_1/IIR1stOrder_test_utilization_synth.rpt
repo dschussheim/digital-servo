@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Aug 16 16:37:00 2017
+| Date         : Mon Aug 21 18:58:16 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_utilization -file IIR1stOrder_test_utilization_synth.rpt -pb IIR1stOrder_test_utilization_synth.pb
 | Design       : IIR1stOrder_test
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 1031 |     0 |    101400 |  1.02 |
-|   LUT as Logic             | 1028 |     0 |    101400 |  1.01 |
+| Slice LUTs*                | 1749 |     0 |    101400 |  1.72 |
+|   LUT as Logic             | 1746 |     0 |    101400 |  1.72 |
 |   LUT as Memory            |    3 |     0 |     35000 | <0.01 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    3 |     0 |           |       |
-| Slice Registers            | 1975 |     0 |    202800 |  0.97 |
-|   Register as Flip Flop    | 1964 |     0 |    202800 |  0.97 |
-|   Register as Latch        |   11 |     0 |    202800 | <0.01 |
+| Slice Registers            | 3560 |     0 |    202800 |  1.76 |
+|   Register as Flip Flop    | 3548 |     0 |    202800 |  1.75 |
+|   Register as Latch        |   12 |     0 |    202800 | <0.01 |
 | F7 Muxes                   |    0 |     0 |     50700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     25350 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
@@ -56,10 +56,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 44    |          Yes |           - |          Set |
-| 157   |          Yes |           - |        Reset |
-| 6     |          Yes |         Set |            - |
-| 1768  |          Yes |       Reset |            - |
+| 54    |          Yes |           - |          Set |
+| 198   |          Yes |           - |        Reset |
+| 12    |          Yes |         Set |            - |
+| 3296  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -82,8 +82,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |   24 |     0 |       600 |  4.00 |
-|   DSP48E1 only |   24 |       |           |       |
+| DSPs           |   48 |     0 |       600 |  8.00 |
+|   DSP48E1 only |   48 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -93,7 +93,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   80 |     0 |       400 | 20.00 |
+| Bonded IOB                  |  116 |     0 |       400 | 29.00 |
 | Bonded IPADs                |    0 |     0 |        26 |  0.00 |
 | Bonded OPADs                |    0 |     0 |        16 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         8 |  0.00 |
@@ -111,8 +111,8 @@ Table of Contents
 | IBUFDS_GTE2                 |    0 |     0 |         4 |  0.00 |
 | ILOGIC                      |   10 |     0 |       400 |  2.50 |
 |   ISERDES                   |   10 |       |           |       |
-| OLOGIC                      |   20 |     0 |       400 |  5.00 |
-|   ODDR                      |   20 |       |           |       |
+| OLOGIC                      |   38 |     0 |       400 |  9.50 |
+|   ODDR                      |   38 |       |           |       |
 +-----------------------------+------+-------+-----------+-------+
 
 
@@ -122,9 +122,9 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |   13 |     0 |        32 | 40.63 |
+| BUFGCTRL   |   11 |     0 |        32 | 34.38 |
 | BUFIO      |    0 |     0 |        32 |  0.00 |
-| MMCME2_ADV |    3 |     0 |         8 | 37.50 |
+| MMCME2_ADV |    4 |     0 |         8 | 50.00 |
 | PLLE2_ADV  |    0 |     0 |         8 |  0.00 |
 | BUFMRCE    |    0 |     0 |        16 |  0.00 |
 | BUFHCE     |    0 |     0 |       120 |  0.00 |
@@ -156,28 +156,29 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 1768 |        Flop & Latch |
-| LUT2       |  620 |                 LUT |
-| CARRY4     |  193 |          CarryLogic |
-| LUT1       |  172 |                 LUT |
-| FDCE       |  146 |        Flop & Latch |
-| LUT3       |  108 |                 LUT |
-| LUT6       |   82 |                 LUT |
-| LUT4       |   74 |                 LUT |
-| LUT5       |   60 |                 LUT |
-| FDPE       |   44 |        Flop & Latch |
-| DSP48E1    |   24 |    Block Arithmetic |
-| ODDR       |   20 |                  IO |
-| OBUFDS     |   19 |                  IO |
-| OBUF       |   14 |                  IO |
-| BUFG       |   13 |               Clock |
+| FDRE       | 3296 |        Flop & Latch |
+| LUT2       | 1220 |                 LUT |
+| CARRY4     |  361 |          CarryLogic |
+| LUT1       |  224 |                 LUT |
+| FDCE       |  186 |        Flop & Latch |
+| LUT3       |  135 |                 LUT |
+| LUT6       |  106 |                 LUT |
+| LUT4       |   96 |                 LUT |
+| LUT5       |   94 |                 LUT |
+| FDPE       |   54 |        Flop & Latch |
+| DSP48E1    |   48 |    Block Arithmetic |
+| ODDR       |   38 |                  IO |
+| OBUFDS     |   36 |                  IO |
+| OBUF       |   15 |                  IO |
+| LDCE       |   12 |        Flop & Latch |
 | IBUFDS     |   12 |                  IO |
-| LDCE       |   11 |        Flop & Latch |
+| FDSE       |   12 |        Flop & Latch |
+| BUFG       |   11 |               Clock |
 | ISERDESE2  |   10 |                  IO |
-| FDSE       |    6 |        Flop & Latch |
+| MMCME2_ADV |    4 |               Clock |
 | IBUF       |    4 |                  IO |
 | SRL16E     |    3 |  Distributed Memory |
-| MMCME2_ADV |    3 |               Clock |
+| OBUFT      |    1 |                  IO |
 +------------+------+---------------------+
 
 

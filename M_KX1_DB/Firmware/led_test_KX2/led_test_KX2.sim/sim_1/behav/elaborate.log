@@ -7,6 +7,9 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF(CAPACITANCE="DONT_CARE",IBU...
+Compiling module unisims_ver.IBUFG(IBUF_LOW_PWR="FALSE",IOSTA...
+Compiling module xil_defaultlib.clk_div(div_f=27'b01111101011110...
 Compiling module xil_defaultlib.light_leds
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot light_leds_behav

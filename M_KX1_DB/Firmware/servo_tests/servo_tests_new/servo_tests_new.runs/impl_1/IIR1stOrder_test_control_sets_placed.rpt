@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Aug 16 16:37:56 2017
+| Date         : Mon Aug 21 18:59:03 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file IIR1stOrder_test_control_sets_placed.rpt
 | Design       : IIR1stOrder_test
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    69 |
-| Unused register locations in slices containing registers |   373 |
+| Number of unique control sets                            |    83 |
+| Unused register locations in slices containing registers |   426 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,104 +33,118 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             382 |          147 |
-| No           | No                    | Yes                    |              97 |           43 |
-| No           | Yes                   | No                     |             333 |           92 |
-| Yes          | No                    | No                     |             594 |          197 |
-| Yes          | No                    | Yes                    |              93 |           27 |
-| Yes          | Yes                   | No                     |             464 |          171 |
+| No           | No                    | No                     |             485 |          182 |
+| No           | No                    | Yes                    |             127 |           54 |
+| No           | Yes                   | No                     |             610 |          175 |
+| Yes          | No                    | No                     |             639 |          188 |
+| Yes          | No                    | Yes                    |             113 |           38 |
+| Yes          | Yes                   | No                     |             472 |          122 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------------------------+-------------------------------------------+------------------------------------------------------+------------------+----------------+
-|                      Clock Signal                     |               Enable Signal               |                   Set/Reset Signal                   | Slice Load Count | Bel Load Count |
-+-------------------------------------------------------+-------------------------------------------+------------------------------------------------------+------------------+----------------+
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/spi_scs_out4_out    |                                                      |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | startup_reset/rst_in                                 |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0   |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0 |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | startup_reset/rst_in                                 |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/spi_sdo_out2_out    |                                                      |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                           | startup_reset/rst_in                                 |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/spi_sdo_out2_out    |                                                      |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0   |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/spi_scs_out4_out    |                                                      |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/spi_sck_out3_out    |                                                      |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/spi_sck_out3_out    |                                                      |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC1/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0    |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0   |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0   |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0 |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0 |                1 |              1 |
-|  DAC0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                           | startup_reset/rst_in                                 |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0    |                                           | ADC1/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0    |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0    |                                           | ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0    |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0    |                                           | ADC1/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0    |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | ADC1/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0    |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | ADC1/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0    |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC1/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0    |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | startup_reset/rst_in                                 |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/spi_scs_out4_out    |                                                      |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                           | startup_reset/rst_in                                 |                1 |              1 |
-|  clk_in                                               | DAC0/rst_out1_out                         |                                                      |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0    |                1 |              2 |
-|  DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              2 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC1/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0    |                1 |              2 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 |                                                      |                2 |              2 |
-|  serial_clk_out_OBUF_BUFG                             |                                           |                                                      |                1 |              2 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0             |                2 |              3 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/state_f[2]_i_2_n_0             |                2 |              3 |
-|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | ADC2/LTC2195_SPI_inst/state_f[2]_i_2__0_n_0          |                2 |              3 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              3 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                1 |              4 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0 |                                                      |                2 |              4 |
-|  ADC1/clk_div                                         |                                           |                                                      |                1 |              4 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0 |                1 |              4 |
-|  clk_in                                               | DAC0/spi_data[15]_i_1_n_0                 |                                                      |                2 |              4 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                1 |              4 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/state_f[2]_i_2_n_0             |                2 |              6 |
-|  clk_in                                               |                                           | new_param_deser/deser_clk_origin/counter[8]_i_1_n_0  |                2 |              6 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0             |                2 |              8 |
-|  clk_in                                               | DAC0/counter_f                            | startup_reset/rst_in                                 |                1 |              8 |
-|  clk_in                                               | ADC1/counter_f                            | startup_reset/rst_in                                 |                3 |              8 |
-|  clk_in                                               | ADC2/counter_f                            | startup_reset/rst_in                                 |                2 |              8 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/counter_f           | startup_reset/rst_in                                 |                3 |             12 |
-|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/counter_f           | startup_reset/rst_in                                 |                3 |             12 |
-|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/counter_f           | startup_reset/rst_in                                 |                2 |             12 |
-|  clk_in                                               |                                           | new_param_deser/deser_clk_origin/counter[26]_i_1_n_0 |                6 |             20 |
-|  serial_clk_out_OBUF_BUFG                             |                                           | new_param_deser/counter                              |                5 |             20 |
-|  clk_in                                               | relock_counter[0]_i_2_n_0                 | relock_counter[0]_i_1_n_0                            |                7 |             28 |
-|  clk_in                                               | startup_reset/counter[0]_i_1__3_n_0       |                                                      |                8 |             30 |
-|  DAC0/clkD                                            |                                           |                                                      |               13 |             32 |
-|  clk_in                                               | relock_on                                 |                                                      |               14 |             50 |
-|  clk_in                                               |                                           |                                                      |               25 |             70 |
-|  clk_in                                               |                                           | startup_reset/rst_in                                 |               25 |             73 |
-|  clk_in                                               | new_param_deser/E[0]                      |                                                      |               74 |            241 |
-| ~serial_trig_out_OBUF_BUFG                            | new_param_deser/E[0]                      |                                                      |               89 |            258 |
-| ~serial_trig_out_OBUF_BUFG                            |                                           |                                                      |              107 |            274 |
-|  clk_in                                               |                                           | relock_on                                            |               69 |            276 |
-|  serial_clk_out_OBUF_BUFG                             | serial_trig_out_OBUF_BUFG                 | startup_reset/rst_in                                 |              164 |            436 |
-+-------------------------------------------------------+-------------------------------------------+------------------------------------------------------+------------------+----------------+
++-------------------------------------------------------+-------------------------------------------+-------------------------------------------------------+------------------+----------------+
+|                      Clock Signal                     |               Enable Signal               |                    Set/Reset Signal                   | Slice Load Count | Bel Load Count |
++-------------------------------------------------------+-------------------------------------------+-------------------------------------------------------+------------------+----------------+
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0    |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0    |                                           | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0     |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0    |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0  |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0      |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0     |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0  |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0     |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/spi_sck_out3_out    |                                                       |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0  |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0    |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/spi_scs_out4_out    |                                                       |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/spi_sdo_out2_out    |                                                       |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/spi_sck_out3_out    |                                                       |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/spi_scs_out4_out    |                                                       |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/spi_sdo_out2_out    |                                                       |                1 |              1 |
+|  clk_in                                               | DAC1/rst_out1_out                         |                                                       |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0   |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0    |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0    |                                           | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0     |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0  |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0    |                                           | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0     |                1 |              1 |
+|  DAC1/AD_9783_SPI_inst/spi_clk                        |                                           | DAC1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1__0_n_0   |                1 |              1 |
+|  DAC1/AD_9783_SPI_inst/spi_clk                        |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  clk_in                                               | DAC0/rst_out1_out                         |                                                       |                1 |              1 |
+|  DAC1/AD_9783_SPI_inst/spi_clk                        | DAC1/AD_9783_SPI_inst/spi_scs_out4_out    |                                                       |                1 |              1 |
+|  DAC1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1__0_n_0  |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0     |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0     |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0      |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0      |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/spi_scs_out4_out    |                                                       |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                           | startup_reset/rst_in                                  |                1 |              1 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 |                                                       |                2 |              2 |
+|  DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0    |                1 |              2 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0     |                2 |              2 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0     |                2 |              2 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0    |                2 |              3 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        |                                           | DAC0/AD_9783_SPI_inst/state_f[2]_i_2_n_0              |                2 |              3 |
+|  DAC1/AD_9783_SPI_inst/spi_clk                        |                                           | DAC1/AD_9783_SPI_inst/state_f[2]_i_2__0_n_0           |                2 |              3 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        |                                           | ADC2/LTC2195_SPI_inst/state_f[2]_i_2__0_n_0           |                1 |              3 |
+|  new_param_deser1/deser_clk_origin/on_in_reg          |                                           |                                                       |                3 |              3 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                        |                                           | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0              |                2 |              3 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0 |                                                       |                2 |              4 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0    |                3 |              4 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0  |                1 |              4 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0  |                1 |              4 |
+|  ADC1/clk_div                                         | ADC1/counter1                             | startup_reset/rst_in                                  |                1 |              4 |
+|  clk_in                                               | DAC0/spi_data[15]_i_1_n_0                 |                                                       |                1 |              4 |
+|  ADC2/clk_div                                         | ADC2/counter1                             | startup_reset/rst_in                                  |                1 |              4 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | DAC0/AD_9783_SPI_inst/state_f[2]_i_2_n_0              |                2 |              6 |
+|  clk_in                                               |                                           | new_param_deser1/deser_clk_origin/counter[8]_i_1_n_0  |                3 |              6 |
+|  ADC2/clk_div                                         |                                           |                                                       |                5 |              8 |
+|  clk_in                                               | DAC0/counter_f                            | startup_reset/rst_in                                  |                2 |              8 |
+|  ADC1/clk_div                                         |                                           |                                                       |                3 |              8 |
+|  clk_in                                               | DAC1/counter_f                            | startup_reset/rst_in                                  |                2 |              8 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0 | ADC2/LTC2195_SPI_inst/state_f[2]_i_2__0_n_0           |                3 |              8 |
+|  clk_in                                               | ADC1/counter_f                            | startup_reset/rst_in                                  |                3 |              8 |
+|  clk_in                                               | ADC2/counter_f                            | startup_reset/rst_in                                  |                3 |              8 |
+|  DAC1/AD_9783_SPI_inst/spi_clk                        | DAC1/AD_9783_SPI_inst/counter_f           | startup_reset/rst_in                                  |                3 |             12 |
+|  ADC2/LTC2195_SPI_inst/spi_clk                        | ADC2/LTC2195_SPI_inst/counter_f           | startup_reset/rst_in                                  |                3 |             12 |
+|  DAC0/AD_9783_SPI_inst/spi_clk                        | DAC0/AD_9783_SPI_inst/counter_f           | startup_reset/rst_in                                  |                2 |             12 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                        | ADC1/LTC2195_SPI_inst/counter_f           | startup_reset/rst_in                                  |                3 |             12 |
+|  clk_in                                               |                                           | new_param_deser1/deser_clk_origin/counter[26]_i_1_n_0 |                6 |             20 |
+|  new_param_deser1/deser_clk_origin/on_in_reg          |                                           | new_param_deser1/counter                              |                5 |             20 |
+|  clk_in                                               | relock1_counter[0]_i_2_n_0                | relock1_counter[0]_i_1_n_0                            |                7 |             28 |
+|  clk_in                                               | startup_reset/counter[0]_i_1__3_n_0       |                                                       |                8 |             30 |
+|  DAC0/clkD                                            |                                           |                                                       |               10 |             32 |
+|  DAC1/clkD                                            |                                           |                                                       |               18 |             32 |
+|  clk_in                                               | relock2_on                                |                                                       |               10 |             43 |
+|  clk_in                                               | relock1_on                                |                                                       |               12 |             50 |
+|  clk_in                                               |                                           | startup_reset/rst_in                                  |               31 |             98 |
+|  clk_in                                               |                                           |                                                       |               54 |            128 |
+|  clk_in                                               | new_param_deser1/E[0]                     |                                                       |               67 |            241 |
+| ~new_param_deser1/CLK_BUFG                            | new_param_deser1/E[0]                     |                                                       |               78 |            258 |
+| ~new_param_deser1/CLK_BUFG                            |                                           |                                                       |               89 |            274 |
+|  clk_in                                               |                                           | relock1_on                                            |               74 |            276 |
+|  clk_in                                               |                                           | relock2_on                                            |               76 |            276 |
+|  new_param_deser1/deser_clk_origin/on_in_reg          | new_param_deser1/CLK_BUFG                 | startup_reset/rst_in                                  |              113 |            436 |
++-------------------------------------------------------+-------------------------------------------+-------------------------------------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
-| 1      |                    32 |
-| 2      |                     5 |
-| 3      |                     4 |
-| 4      |                     6 |
+| 1      |                    37 |
+| 2      |                     4 |
+| 3      |                     6 |
+| 4      |                     7 |
 | 6      |                     2 |
-| 8      |                     4 |
-| 12     |                     3 |
-| 16+    |                    13 |
+| 8      |                     7 |
+| 12     |                     4 |
+| 16+    |                    16 |
 +--------+-----------------------+
 
 

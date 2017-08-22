@@ -40,9 +40,12 @@ module LTC2195(
 		
 	//input  wire                    bit_slip,
 		
+	//input  wire            [7:0]   TP,
+		
 	output reg     signed  [15:0]  ADC0_out,
 	output reg     signed  [15:0]  ADC1_out,
-	output reg             [7:0]   FR_out
+	output reg             [7:0]   FR_out0,
+	output reg             [7:0]   FR_out1
 	
 	//input  wire                    bitslip
 );
@@ -53,161 +56,7 @@ parameter	CLKDIV = 8'd120; //800MHz/100 = 8Mhz, slowest ADC can go is 5MHz. CLKD
 
 
 ///////////////////////////////////////////////////////////////////////////////
-// FSM to control ENC phase shifter
-/*
-reg PS_clk, PS_en, PS_inc;
-wire PS_done, PS_locked;
-wire [7:0] PS_status;
 
-// State machine definitions
-localparam PS_IDLE 	    = 4'h0;
-localparam PS_TRIG      = 4'h1;
-localparam PS_DECIDE    = 4'h2;
-localparam PS_UP1A  	= 4'h3;
-localparam PS_UP1B  	= 4'h4;
-localparam PS_UP1C  	= 4'h5;
-localparam PS_UP2  	    = 4'h6;
-localparam PS_UP3  	    = 4'h7;
-localparam PS_DOWN1A    = 4'h8;
-localparam PS_DOWN1B    = 4'h9;
-localparam PS_DOWN1C    = 4'hA;
-localparam PS_DOWN2     = 4'hB;
-localparam PS_DOWN3     = 4'hC;
-
-// State
-// The next line makes synthesis happy
-// synthesis attribute INIT of PS_state_f is "R"
-reg  [3:0] PS_state_f;
-reg  [8:0] PS_value_f, PS_target_f;
-
-// State machine - combinatorial part
-function [3:0] PS_next_state;
-	input    [3:0]  state;
-	input    [8:0]  value;
-	input    [8:0]  target;
-	input		    trigger;
-	input	 [15:0] address;
-	input			done;
-//	input			status;
-	input			locked;
-	
-	begin
-		case (state)
-			PS_IDLE: 
-				if (trigger && (address[15:8] == 8'h32))
-					PS_next_state = PS_TRIG;
-				else
-					PS_next_state = PS_IDLE;
-			PS_TRIG:
-					PS_next_state = PS_DECIDE;
-			PS_DECIDE:
-				if (locked == 1'b0)
-					PS_next_state = PS_DECIDE;
-//				else if ((target > value) && (!status || (value < 9'h100)))	//No status output available on MMCM
-				else if ((target > value) && (value < 9'h100))
-					PS_next_state = PS_UP1A;
-//				else if ((target < value) && (!status || (value > 9'h100)))
-				else if ((target < value) && (value > 9'h100))
-					PS_next_state = PS_DOWN1A;
-				else
-					PS_next_state = PS_IDLE;
-			PS_UP1A:
-					PS_next_state = PS_UP1B;
-			PS_UP1B:
-					PS_next_state = PS_UP1C;
-			PS_UP1C:
-					PS_next_state = PS_UP2;
-			PS_UP2:
-				if (done == 1'b1)
-					PS_next_state = PS_UP3;
-				else
-					PS_next_state = PS_UP2;
-			PS_UP3:
-					PS_next_state = PS_DECIDE;
-			PS_DOWN1A:
-					PS_next_state = PS_DOWN1B;
-			PS_DOWN1B:
-					PS_next_state = PS_DOWN1C;
-			PS_DOWN1C:
-					PS_next_state = PS_DOWN2;
-			PS_DOWN2:
-				if (done == 1'b1)
-					PS_next_state = PS_DOWN3;
-				else
-					PS_next_state = PS_DOWN2;
-			PS_DOWN3:
-					PS_next_state = PS_DECIDE;
-			default:
-					PS_next_state = PS_IDLE;
-		endcase
-	end
-endfunction
-
-// State machine - sequential part
-always @(posedge clk_in or posedge rst_in) begin
-	if (rst_in) begin
-		PS_state_f <= PS_DECIDE;
-		PS_value_f <= 9'h100;  // 256
-		PS_target_f <= 9'h17C; // = decimal 380 = 256 + 124
-		PS_clk <= 1'b0;
-		PS_en <= 1'b0;
-		PS_inc <= 1'b0;
-	end
-	else begin
-//		PS_state_f <= PS_next_state(PS_state_f, PS_value_f, PS_target_f, cmd_trig_in, cmd_addr_in, PS_done, PS_status[0], PS_locked);
-		PS_state_f <= PS_next_state(PS_state_f, PS_value_f, PS_target_f, cmd_trig_in, cmd_addr_in, PS_done, PS_locked);
-		case (PS_state_f)
-			PS_IDLE: begin
-				PS_clk <= 1'b0;
-				PS_en <= 1'b0;
-				PS_inc <= 1'b0;
-			end
-			PS_TRIG: begin
-				PS_target_f <= cmd_data_in[8:0];
-			end
-			PS_DECIDE: begin
-				
-			end
-			PS_UP1A: begin
-				PS_en <= 1'b1;
-				PS_inc <= 1'b1;
-			end
-			PS_UP1B: begin
-				PS_clk <= 1'b1;
-			end
-			PS_UP1C: begin
-				PS_en <= 1'b0;
-				PS_clk <= 1'b0;
-			end
-			PS_UP2: begin
-				PS_clk <= ~PS_clk;
-			end
-			PS_UP3: begin
-				PS_clk <= 1'b0;
-				PS_value_f <= PS_value_f + 9'h1;
-			end
-			PS_DOWN1A: begin
-				PS_en <= 1'b1;
-				PS_inc <= 1'b0;
-			end
-			PS_DOWN1B: begin
-				PS_clk <= 1'b1;
-			end
-			PS_DOWN1C: begin
-				PS_en <= 1'b0;
-				PS_clk <= 1'b0;
-			end
-			PS_DOWN2: begin
-				PS_clk <= ~PS_clk;
-			end
-			PS_DOWN3: begin
-				PS_clk <= 1'b0;
-				PS_value_f <= PS_value_f - 9'h1;
-			end
-		endcase
-	end
-end
-*/
 ///////////////////////////////////////////////////////////////////////////////
 // LVDS ENC output
 wire	clkPS_int, clkPS, clk_int, clk_div_int, clk200_int, clkFB;		//clock for phase shifting of ENC, and clock for deserialization (LVDS inputs block below)
@@ -346,7 +195,7 @@ always @(posedge clk_in) begin
 		data_out[16 + 0], data_out[16 + 8], 	data_out[16 + 1], data_out[16 + 9], 	data_out[16 + 2], data_out[16 + 10], data_out[16 + 3], data_out[16 + 11],
 		data_out[16 + 4], data_out[16 + 12],	data_out[16 + 5], data_out[16 + 13],	data_out[16 + 6], data_out[16 + 14], data_out[16 + 7], data_out[16 +14]
 	};	
-	FR_out <= data_out[39:32];	//Training pattern for bitslip state machine
+	FR_out0 <= data_out[39:32];	//Training pattern for bitslip state machine
 end
 
 // Deserializer clocks. Sample taken on pos and neg edge of clk and OCLK. Since
@@ -388,34 +237,20 @@ function integer delay_value;
 	end
 endfunction
 
-wire clk200;
-// Buffer for IDELAYCTRL clock.
-BUFG BUFG_200 (
-	.O(clk200), 	// 1-bit output: Clock output
-	.I(clk200_int) 	// 1-bit input: Clock input
-);
-/*
-// IDELAYCTRL: IDELAYE2/ODELAYE2 Tap Delay Value Control
-// Needed for IDELAYE2
-(* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
-IDELAYCTRL IDELAYCTRL_inst (
-	.RDY(), 			// 1-bit output: Ready output
-	.REFCLK(clk200), 	// 1-bit input: Reference clock input
-	.RST(rst_in) 		// 1-bit input: Active high reset input
-);
-*/
 
 // Bit slip state machine to align data with frame (may still need delay line at high speeds).
-localparam TP = 8'b10000111; //training pattern. Frame deserialized 1:8 give 10000111 for channel 2.
-//localparam TP = 8'b00001111; //for simulation
+//parameter TP = 8'b10000111; //training pattern. Frame deserialized 1:8 give 10000111 for channel 2.
+parameter TP0 = 8'b00001111;
+parameter TP1 = 8'b10000111;
 //Two states, CHECK if we are matched up, or TOGGLE BITSLIP
-localparam CHECK = 1'b0;
-localparam TOGGLE = 1'b1;
+localparam CHECK = 2'b00;
+localparam TOGGLE = 2'b01;
+localparam END = 2'b10;
 //Combinatorial part
-function  bit_slip_next_state;
+function [1:0] bit_slip_next_state;
     input [7:0] training_pattern;
     input [7:0] comp_val;
-    input       state;
+    input [1:0] state;
     input [1:0] counter; //Two bit counter needed because of 2 cycle latency on BITSLIP submodule
     
     begin
@@ -423,8 +258,8 @@ function  bit_slip_next_state;
             CHECK:
                 if (comp_val == training_pattern)
                     //If we are at correct value, do not perform a bit_slip
-                    bit_slip_next_state = CHECK; 
-                else if (counter ==2'b11)
+                    bit_slip_next_state = END; 
+                else if (counter == 2'b11)
                     //If we are not at the correct value toggle bit_slip
                     bit_slip_next_state = TOGGLE;
                 else
@@ -433,35 +268,65 @@ function  bit_slip_next_state;
             TOGGLE:
                 //Bit slip must be reasserted to perform another shift, so turn off once we have shifted once.
                 bit_slip_next_state = CHECK;
+            END:
+                bit_slip_next_state = END;
         endcase
     end
 endfunction
 //Sequential part, toggling bit_slip
-reg  BS_state;
-reg bit_slip;
-reg [1:0] counter;//Must be high for 1 cycle, low for one cycle
+reg [1:0] BS_state0, BS_state1;
+reg bit_slip0, bit_slip1;
+reg [1:0] counter0, counter1;//Must be high for 1 cycle, low for one cycle
+reg [N_LVDS-1:0] bit_slip;
 //BITSLIP is synchronous to CLKDIV
 always @(posedge clk_div) begin
     if (rst_in) begin
-        BS_state <= CHECK;
-        counter <= 2'b0;
+        BS_state0 <= CHECK;
+        counter0 <= 2'b0;
+        BS_state1 <= CHECK;
+        counter1 <= 2'b0;        
     end
     else begin
         //Assign next state
-        BS_state <= bit_slip_next_state(TP, FR_out, BS_state, counter);
-        case(BS_state)
+        BS_state0 <= bit_slip_next_state(TP0, FR_out0, BS_state0, counter0);
+        case(BS_state0)
             //Do not perform bitslip
             CHECK: begin
-                bit_slip <= 1'b0;
-                counter <= counter + 2'b1;
+                bit_slip0 <= 1'b0;
+                counter0 <= counter0 + 2'b01;
+                bit_slip1 <= 1'b0;
+                counter1 <= 2'b00;
             end
             //Perform bitslip
             TOGGLE: begin
-                bit_slip <= 1'b1;
-                counter <= 2'b0;
+                bit_slip0 <= 1'b1;
+                counter0 <= 2'b00;
+                bit_slip1 <= 1'b1;
+                counter1 <= 2'b00;
             end
         endcase
+        
+        if (BS_state0 == END) begin
+            BS_state1 <= bit_slip_next_state(TP1, FR_out1, BS_state1, counter1);
+            case(BS_state1)
+                //Do not perform bitslip
+                CHECK: begin
+                    bit_slip0 <= 1'b0;
+                    counter0 <= 2'b00;
+                    bit_slip1 <= 1'b0;
+                    counter1 <= counter0 + 2'b1;
+                end
+                //Perform bitslip
+                TOGGLE: begin
+                    bit_slip0 <= 1'b0;
+                    counter0 <= 2'b00;
+                    bit_slip1 <= 1'b1;
+                    counter1 <= 2'b00;
+                end
+            endcase
+         end   
     end
+    bit_slip <= {(bit_slip0 | bit_slip1), bit_slip1, bit_slip1, bit_slip0, bit_slip0};
 end
 
 genvar pin_count;
@@ -477,36 +342,6 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.I(data_in_p[pin_count]), 			// Diff_p buffer input (connect directly to top-level port)
 		.IB(data_in_n[pin_count]) 			// Diff_n buffer input (connect directly to top-level port)
 	);
-	
-	/*
-	// IDELAYE2: Input Fixed or Variable Delay Element
-	(* IODELAY_GROUP = "Input_Delay" *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
-	IDELAYE2 #(
-		.CINVCTRL_SEL("FALSE"), 					// Enable dynamic clock inversion (FALSE, TRUE)
-		.DELAY_SRC("IDATAIN"), 						// Delay input (IDATAIN, DATAIN)
-		.HIGH_PERFORMANCE_MODE("TRUE"), 			// Reduced jitter ("TRUE"), Reduced power ("FALSE")
-		.IDELAY_TYPE("FIXED"), 						// FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
-		.IDELAY_VALUE(delay_value(pin_count)),	    // Input delay tap setting (0-31)
-		.PIPE_SEL("FALSE"), 						// Select pipelined mode, FALSE, TRUE
-		.REFCLK_FREQUENCY(200.0), 					// IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
-		.SIGNAL_PATTERN("DATA") 					// DATA, CLOCK input signal
-	)
-	IDELAYE2_inst (
-		.IDATAIN(data_in_from_pins[pin_count]), 		// 1-bit input: Data input from the I/O
-		.DATAOUT(data_in_from_pins_delay[pin_count]), 	// 1-bit output: Delayed data output
-		.C(1'b0), 										// 1-bit input: Clock input
-		.CE(1'b0), 										// 1-bit input: Active high enable increment/decrement input
-		.CINVCTRL(), 									// 1-bit input: Dynamic clock inversion input
-		.CNTVALUEIN(), 									// 5-bit input: Counter value input
-		.DATAIN(), 										// 1-bit input: Internal delay data input
-		.INC(),	 										// 1-bit input: Increment / Decrement tap delay input
-		.LD(), 											// 1-bit input: Load IDELAY_VALUE input
-		.LDPIPEEN(1'b0),		 						// 1-bit input: Enable PIPELINE register to load data input
-		.REGRST(1'b0),	 								// 1-bit input: Active-high reset tap-delay input
-		.CNTVALUEOUT()									// 5-bit output: Counter value output
-	);	
-	
-	*/
 	
 	// ISERDESE2: Input SERial/DESerializer with Bitslip
 	ISERDESE2 #(
@@ -544,7 +379,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		// SHIFTOUT1, SHIFTOUT2: 1-bit (each) output: Data width expansion output ports
 		.SHIFTOUT1(),
 		.SHIFTOUT2(),
-		.BITSLIP(bit_slip), 		// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
+		.BITSLIP(bit_slip[pin_count]), 		// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
 //        .BITSLIP(bitslip),
 		// CLKDIV when asserted (active High). Subsequently, the data seen on the Q1
 		// to Q8 output ports will shift, as in a barrel-shifter operation, one
