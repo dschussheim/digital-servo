@@ -65,7 +65,7 @@ module ADC_test(
     input 	wire	[1:0] 	D21_n,
     
     //Output to send MSB's to leds
-	output 	wire	[3:0]	ADC_out,
+	output 	reg    	[3:0]	led_out,
 
 	//\\\\\\\\\\DACs//////////\\
 
@@ -135,8 +135,11 @@ rstLEDclk(
 //localparam	max = 30'h3938700; 		//60*1,000,000 (number of cycles of clk_in/minute)
 //localparam	rst_on = 30'h38BE5E0; 	// turn reset on after 59,500,000 cycles, and keep on for .5 second
 
-localparam	max = 30'h989680; 		//10*1,000,000 (number of cycles of clk_in/minute)
-localparam	rst_on = 30'h895440; 	// turn reset on after 9,000,000 cycles, and keep on for .5 second
+//localparam	max = 30'h989680; 		//10*1,000,000 (number of cycles of clk_in/minute)
+//localparam	rst_on = 30'h895440; 	// turn reset on after 9,000,000 cycles, and keep on for .5 second
+
+parameter	max = 30'h4e20; 		//1500 cycles (15 us)
+parameter   rst_on = 30'h2710;   // turn reset on after 1000 cycles (10 us)
 
 reg	rst_in = 1'b0;
 reg	[29:0]	counter = 30'b0;
@@ -160,15 +163,15 @@ always @(posedge DIVclk) begin
 		//bitslip <= 1'b1;
 	end
 	else	begin
-		counter <= 1'b0;
-		//rst_in <= 1'b0;
+		//counter <= 1'b0;
+		rst_in <= 1'b0;
 		rst_led <= ~rst_in;
 	    //bitslip <= 1'b0;
 
 	end
 end
 
-wire	[15:0]	ADC10_out, ADC11_out;
+wire	[15:0]	ADC10_out, ADC11_out, FR1_out;
 
 parameter	CLKDIV = 8;	//10MHz clock
 
@@ -197,10 +200,10 @@ LTC2195 #(
    .D1_in_n(D11_n), 
    .ADC0_out(ADC10_out), 
    .ADC1_out(ADC11_out), 
-   .FR_out()
+   .FR_out(FR1_out)
     );
 
-wire	[15:0]	ADC20_out, ADC21_out, FR_out;
+wire	[15:0]	ADC20_out, ADC21_out, FR2_out;
 
 LTC2195 #(
 	.CLKDIV(CLKDIV)
@@ -227,8 +230,46 @@ ADC2 (
    .D1_in_n(D21_n), 
    .ADC0_out(ADC20_out), 
    .ADC1_out(ADC21_out), 
-   .FR_out(FR_out)
+   .FR_out(FR2_out)
     );
+    
+    parameter div_f = 27'd100_000_000;
+    wire led_clk;
+    clk_div #(
+        .div_f(div_f)
+    )
+    ledClk(
+        .clk(clk_in),
+        .rst_in(1'b0),
+        .div_clk(led_clk)
+    );
+    
+    reg [1:0] led_counter = 2'b00;
+    reg [2:0] led_state = 3'b000;
+    always @(posedge led_clk) begin
+        led_counter <= led_counter + 2'b01;
+        if (led_counter == 2'b11) begin
+            led_state <= led_state + 3'b001;
+        end
+        if (led_state == 3'b000) begin
+            led_out <= ~FR1_out[7:4];
+        end
+        else if (led_state == 3'b001) begin
+            led_out <= ~FR1_out[3:0];
+        end
+        if (led_state == 3'b010) begin
+            led_out <= ~FR2_out[7:4];
+        end
+        else if (led_state == 3'b011) begin
+            led_out <= ~FR2_out[3:0];
+        end
+        else begin
+            led_out = ~4'b1010;
+        end
+    end
+    
+    
+    
 /*
 // Generate Sweep
 
@@ -309,6 +350,5 @@ AD9783 #(
 	 .cmd_data_out(),
 	 .clk_out()
     );
-assign ADC_out[3:0] = {~ADC10_out[15],~ADC11_out[15],~ADC20_out[15],~ADC21_out[15]};
 
 endmodule

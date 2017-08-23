@@ -1,6 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-//
+//////////\\\\\\\\\\\
+//////////\\\\\\\\\\\
+//////////\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -230,7 +232,7 @@ BUFG BUFG_clk_div (
 // We have multiple bits - step over every bit, instantiating the required elements
 
 wire [N_LVDS-1:0] data_in_from_pins; 		// between the input buffer and the delay
-
+/*
 // Bit slip state machine to align data with frame.
 parameter TP00 = 8'b10000111;
 parameter TP01 = 8'b10000111;
@@ -409,13 +411,14 @@ always @(posedge clk_div) begin
 end
 
 assign bit_slip = {(bit_slip11 | bit_slip10), bit_slip11, bit_slip11, bit_slip10, bit_slip10, (bit_slip01 | bit_slip00), bit_slip01, bit_slip01, bit_slip00, bit_slip00};
-
+*/
 /*
+parameter TP = 8'b10000111;
 
 //Two states, CHECK if we are matched up, or TOGGLE BITSLIP
 localparam CHECK = 2'b00;
 localparam TOGGLE = 2'b01;
-localparam END = 2'b10;
+//localparam END = 2'b10;
 //Combinatorial part
 function [1:0] bit_slip_next_state;
     input [7:0] training_pattern;
@@ -428,7 +431,8 @@ function [1:0] bit_slip_next_state;
             CHECK:
                 if (comp_val == training_pattern)
                     //If we are at correct value, do not perform a bit_slip
-                    bit_slip_next_state = END; 
+                    //bit_slip_next_state = END; 
+                    bit_slip_next_state = CHECK; 
                 else if (counter == 2'b11)
                     //If we are not at the correct value toggle bit_slip
                     bit_slip_next_state = TOGGLE;
@@ -438,116 +442,396 @@ function [1:0] bit_slip_next_state;
             TOGGLE:
                 //Bit slip must be reasserted to perform another shift, so turn off once we have shifted once.
                 bit_slip_next_state = CHECK;
-            END:
-                bit_slip_next_state = END;
+            //END:
+                //bit_slip_next_state = END;
         endcase
     end
 endfunction
 
 //Sequential part, toggling bit_slip
-reg [1:0] BS_state00, BS_state01, BS_state10, BS_state11;
-reg bit_slip00, bit_slip01, bit_slip10, bit_slip11;
+reg [1:0] BS_state;
+reg bit_slip;
 reg [1:0] counter; //Must be high for 1 cycle, low for one cycle
-wire [N_LVDS-1:0] bit_slip;
 //BITSLIP is synchronous to CLKDIV
 always @(posedge clk_div) begin
     if (rst_in) begin
-        BS_state00 <= CHECK;
-        BS_state01 <= CHECK;
-        BS_state10 <= CHECK;        
-        BS_state11 <= CHECK; 
+        BS_state <= CHECK;
         counter <= 2'b00;
-        bit_slip00 <= 1'b0;
-        bit_slip01 <= 1'b0;        
-        bit_slip10 <= 1'b0;        
-        bit_slip11 <= 1'b0;                
+        bit_slip <= 1'b0;                
     end
     else begin
         //Assign next state
-        if (BS_state00 != END) begin
-            BS_state00 <= bit_slip_next_state(TP00, FR0_out, BS_state00, counter);
-            case(BS_state00)
-                CHECK: begin
-                    bit_slip00 <= 1'b0;
-                    counter <= counter + 2'b01;
+        BS_state <= bit_slip_next_state(TP, FR0_out, BS_state, counter);
+        case(BS_state)
+            CHECK: begin
+                bit_slip <= 1'b0;
+                counter <= counter + 2'b01;
+            end
+            //Perform bitslip
+            TOGGLE: begin
+                bit_slip <= 1'b1;
+                counter <= 2'b00;
+            end
+           // END: begin
+             //   bit_slip <= 1'b0;
+             //   counter <= 2'b00;
+            //end
+        endcase
+    end
+end
+*/
+
+////////////Initial bitslips because each channel has different offset from FR\\\\\\\\\\\\\\
+/*
+//Two states, CHECK if we are matched up, or TOGGLE BITSLIP
+localparam WAIT = 1'b0;
+localparam TOG = 1'b1;
+//localparam END = 2'b10;
+//Combinatorial part
+function bit_slip_init;
+    input state;
+    input [1:0] counter; //Two bit counter needed because of 2 cycle latency on BITSLIP submodule
+    
+    begin
+        case(state)
+            WAIT:
+                if (counter == 2'b11)
+                    bit_slip_init = TOG;
+                else 
+                    bit_slip_init = WAIT;
+            TOG:
+                bit_slip_init = WAIT;
+        endcase
+    end
+endfunction
+
+
+
+reg [2:0] countdown = 3'b111;
+//Goes high when reset turns off, low after all the bitslips are applied.
+reg rst_off = 1'b0;
+always @(posedge rst_in)
+    rst_off <= 1'b0;
+always @(negedge rst_in)
+    rst_off <= 1'b1;
+//always @(posedge clk_div) begin
+//    if (rst_in)
+//        rst_off <= 1'b0;
+//    else if (!rst_in && !rst_off)
+//        rst_off <= 1'b1;
+//end
+
+//Bitshift's for channel 00 and 01.
+reg BSi00, BSi01, BSstate00, BSstate01;
+parameter N00 = 3'b001;
+parameter N01 = 3'b001;
+reg [2:0] n00 = N00;
+reg [2:0] n01 = N01;
+reg [1:0] c00 = 2'b00, c01 = 2'b00; //counter
+always @(posedge clk_in) begin
+    if (rst_in) begin
+        BSstate00 <= WAIT;
+        BSstate01 <= WAIT;
+        BSi00 <= 1'b0;
+        BSi01 <= 1'b0;
+        c00 <= 2'b00;
+        c01 <= 2'b00;                      
+    end
+    if (rst_off && (countdown > 3'b000 ) ) begin
+         countdown <= countdown - 3'b001; //Need a max of 7 shifts
+         BSstate00 <= bit_slip_init(BSstate00, c00);
+         if (n00 > 3'b000) begin
+            case (BSi00)
+                WAIT: begin
+                    BSi00 <= 1'b0;
+                    c00 = c00 + 2'b01;
                 end
-                //Perform bitslip
-                TOGGLE: begin
-                    bit_slip00 <= 1'b1;
-                    counter <= 2'b00;
-                end
-                END: begin
-                    bit_slip00 <= 1'b0;
-                    counter <= 2'b00;
+                TOG: begin
+                    BSi00 <= 1'b1;
+                    c00 = 2'b00;
+                    n00 <= n00 - 3'b001;
                 end
             endcase
-        end
-        else if (BS_state01 != END) begin
-            BS_state01 <= bit_slip_next_state(TP01, FR0_out, BS_state01, counter);
-            case(BS_state01)
-                //Do not perform bitslip
-                CHECK: begin
-                    bit_slip01 <= 1'b0;
-                    counter <= counter + 2'b01;
+         end  
+         if (n01 > 3'b000) begin
+            case (BSi01)
+                WAIT: begin
+                    BSi01 <= 1'b0;
+                    c01 = c01 + 2'b01;
                 end
-                //Perform bitslip
-                TOGGLE: begin
-                    bit_slip01 <= 1'b1;
-                    counter <= 2'b00;
-                end
-                END: begin
-                    bit_slip01 <= 1'b0;
-                    counter <= 2'b00;
+                TOG: begin
+                    BSi01 <= 1'b1;
+                    c01 = 2'b00;
+                    n01 <= n01 - 3'b001;
                 end
             endcase
-         end
-        else if (BS_state10 != END) begin
-             BS_state10 <= bit_slip_next_state(TP10, FR1_out, BS_state10, counter);
-             case(BS_state10)
-                 //Do not perform bitslip
-                 CHECK: begin
-                     bit_slip10 <= 1'b0;
-                     counter <= counter + 2'b01;
-                 end
-                 //Perform bitslip
-                 TOGGLE: begin
-                     bit_slip10 <= 1'b1;
-                     counter <= 2'b00;
-                 end
-                 END: begin
-                     bit_slip10 <= 1'b0;
-                     counter <= 2'b00;
-                 end
-             endcase
-        end
-        else if (BS_state11 != END) begin
-             BS_state11 <= bit_slip_next_state(TP11, FR1_out, BS_state11, counter);
-             case(BS_state11)
-                 //Do not perform bitslip
-                 CHECK: begin
-                     bit_slip11 <= 1'b0;
-                     counter <= counter + 2'b01;
-                 end
-                 //Perform bitslip
-                 TOGGLE: begin
-                     bit_slip11 <= 1'b1;
-                     counter <= 2'b00;
-                 end
-                 END: begin
-                     bit_slip11 <= 1'b0;
-                     counter <= 2'b00;
-                 end
-             endcase
-        end    
+         end  
+    end
+end
+*/
+////////////Overall bitslip to align FR inputs properly\\\\\\\\\\\\\ 
+
+//Give some time between end of reset and start of bitslips
+reg rst_countdown = 13'd5000;
+always @(posedge clk_div)
+    rst_countdown <= rst_countdown - 13'b0_0000_0000_0001;
+
+//WAIT/TOG states for initial shifts to ADC inputs, 
+//CHECK/TOGGLE for shifting inputs and FR so FR matches input pattern
+localparam WAIT0  = 3'b000;
+localparam TOG0   = 3'b001;
+localparam WAIT1  = 3'b010;
+localparam TOG1   = 3'b011;
+localparam CHECK  = 3'b100;
+localparam TOGGLE = 3'b101;
+//localparam END = 2'b10;
+//Combinatorial part
+function [2:0] bit_slip_next_state;
+    input [7:0] training_pattern;
+    input [2:0] countdown0;
+    input [2:0] countdown1;
+    input [7:0] comp_val;
+    input [2:0] state;
+    input [1:0] counter; //Two bit counter needed because of 2 cycle latency on BITSLIP submodule
+    
+    begin
+        case(state)
+            //WAIT/TOG states are to toggle certain bitslips (the ones for channel 0/1) 
+            //a select number of times (starting value of countdown)
+            WAIT0:
+                if (counter == 2'b11)
+                    bit_slip_next_state = TOG0;
+                else 
+                    bit_slip_next_state = WAIT0;
+
+            TOG0:
+                if (countdown0 == 3'b000)
+                    bit_slip_next_state = WAIT1;
+                else
+                    bit_slip_next_state = WAIT0;
+            WAIT1:
+                if (counter == 2'b11)
+                    bit_slip_next_state = TOG1;
+                else 
+                    bit_slip_next_state = WAIT1;
+            TOG1:
+                if (countdown1 == 3'b000)
+                    bit_slip_next_state = CHECK;
+                else
+                    bit_slip_next_state = WAIT1;
+            CHECK:
+                if (comp_val == training_pattern)
+                    //If we are at correct value, do not perform a bit_slip
+                    bit_slip_next_state = CHECK; 
+                else if (counter == 2'b11)
+                    //If we are not at the correct value toggle bit_slip
+                    bit_slip_next_state = TOGGLE;
+                else
+                    //If we are not at correct value and counter isn't max, don't do anything
+                    bit_slip_next_state = CHECK;
+            TOGGLE:
+                //Bit slip must be reasserted to perform another shift, so turn off once we have shifted once.
+                bit_slip_next_state = CHECK;
+        endcase
+    end
+endfunction
+
+//Sequential part, toggling bit_slip
+localparam TP = 8'b10000111; //the way I ordered deserializer outputs means first bits in are LSBs
+reg [2:0] BS_state0;
+reg bit_slip0; //overal; bitslip for adc chip 0
+reg BSi00, BSi01; //initial bitslips
+reg [1:0] counter0; //Bitslip must be high for 1 cycle, low for at least one cycle
+reg [2:0] countdown00, countdown01;
+parameter N00 = 3'b000, N01 = 3'b000; // Number of bitslips applied to ADC00, and ADC01
+always @(posedge clk_div) begin
+    if (rst_in) begin
+        BS_state0 <= WAIT0;
+        bit_slip0 <= 1'b0;
+        BSi00 <= 1'b0;
+        BSi01 <= 1'b0;
+        counter0 <= 2'b00;
+        countdown00 <= N00;
+        countdown01 <= N01;                       
+    end
+    else if (rst_countdown == 0) begin
+        //Assign next state
+        BS_state0 <= bit_slip_next_state(TP, countdown00, countdown01, FR0_out, BS_state0, counter0);
+        case(BS_state0)
+            WAIT0: begin
+                //BSi00 <= 1'b0;
+                counter0 <= counter0 + 2'b01;
+            end
+            TOG0: begin
+                if (countdown00 > 3'b000) begin
+                    //BSi00 <= 1'b1;
+                    counter0 <= 2'b00;
+                    countdown00 <= countdown00 - 3'b001;
+                end
+            end
+            WAIT1: begin
+                //BSi00 <= 1'b0;
+                //BSi01 <= 1'b0;
+                counter0 <= counter0 + 2'b01;  
+            end
+            TOG1: begin
+                if (countdown01 > 3'b000) begin
+                    //BSi01 <= 1'b1;
+                    counter0 <= 2'b00;
+                    countdown01 <= countdown01 - 3'b001;
+                end
+            end
+            CHECK: begin
+                //BSi01 <= 1'b0;
+                bit_slip0 <= 1'b0;
+                counter0 <= counter0 + 2'b01;
+            end
+            //Perform bitslip
+            TOGGLE: begin
+                bit_slip0 <= 1'b1;
+                counter0 <= 2'b00;
+            end
+        endcase
     end
 end
 
-assign bit_slip = {(bit_slip10 | bit_slip11), bit_slip11, bit_slip11, bit_slip10, bit_slip10, (bit_slip00 | bit_slip01), bit_slip01, bit_slip01, bit_slip00, bit_slip00};
+parameter div_f = 27'd100_000_000;
+wire hz_clk;
+clk_div #(
+    .div_f(div_f)
+)
+ledClk(
+    .clk(clk_in),
+    .rst_in(1'b0),
+    .div_clk(hz_clk)
+);
+
+always @(posedge clk_div) begin
+    
+end
+
+/*
+//Sequential part, toggling bit_slip
+reg [1:0] BS_state1;
+reg bit_slip1;
+reg [1:0] counter1; //Must be high for 1 cycle, low for one cycle
+always @(posedge clk_div) begin
+    if (rst_in) begin
+        BS_state1 <= CHECK;
+        bit_slip1 <= 1'b0;
+        counter1 <= 2'b00;                       
+    end
+    else begin
+        //Assign next state
+        BS_state1 <= bit_slip_next_state(TP, FR1_out, BS_state1, counter1);
+        case(BS_state1)
+            CHECK: begin
+                bit_slip1 <= 1'b0;
+                counter1 <= counter1 + 2'b01;
+            end
+            //Perform bitslip
+            TOGGLE: begin
+                bit_slip1 <= 1'b1;
+                counter1 <= 2'b00;
+            end
+        endcase
+    end
+end
 */
+wire [N_LVDS-1:0] BS;
+assign BS = {bit_slip0, bit_slip0, bit_slip0, bit_slip0, bit_slip0, bit_slip0, (bit_slip0 || BSi01), (bit_slip0 || BSi01), (bit_slip0 || BSi00), (bit_slip0 || BSi00)};
 
 
+/*
+localparam TP = 8'b00001111; //the way I ordered deserializer outputs means first bits in are LSBs
 
+//Two states, CHECK if we are matched up, or TOGGLE BITSLIP
+localparam CHECK = 2'b00;
+localparam TOGGLE = 2'b01;
+//localparam END = 2'b10;
+//Combinatorial part
+function [1:0] bit_slip_next_state;
+    input [7:0] training_pattern;
+    input [7:0] comp_val;
+    input [1:0] state;
+    input [1:0] counter; //Two bit counter needed because of 2 cycle latency on BITSLIP submodule
+    
+    begin
+        case(state)
+            CHECK:
+                if (comp_val == training_pattern)
+                    //If we are at correct value, do not perform a bit_slip
+                    bit_slip_next_state = CHECK; 
+                else if (counter == 2'b11)
+                    //If we are not at the correct value toggle bit_slip
+                    bit_slip_next_state = TOGGLE;
+                else
+                    //If we are not at correct value and counter isn't max, don't do anything
+                    bit_slip_next_state = CHECK;
+            TOGGLE:
+                //Bit slip must be reasserted to perform another shift, so turn off once we have shifted once.
+                bit_slip_next_state = CHECK;
+        endcase
+    end
+endfunction
 
+//Sequential part, toggling bit_slip
+reg [1:0] BS_state0;
+reg bit_slip0;
+reg [1:0] counter0; //Must be high for 1 cycle, low for one cycle
+always @(posedge clk_div) begin
+    if (rst_in) begin
+        BS_state0 <= CHECK;
+        bit_slip0 <= 1'b0;
+        counter0 <= 2'b00;                       
+    end
+    else if (countdown == 3'b000) begin
+        //Assign next state
+        BS_state0 <= bit_slip_next_state(TP, FR0_out, BS_state0, counter0);
+        case(BS_state0)
+            CHECK: begin
+                bit_slip0 <= 1'b0;
+                counter0 <= counter0 + 2'b01;
+            end
+            //Perform bitslip
+            TOGGLE: begin
+                bit_slip0 <= 1'b1;
+                counter0 <= 2'b00;
+            end
+        endcase
+    end
+end
+
+//Sequential part, toggling bit_slip
+reg [1:0] BS_state1;
+reg bit_slip1;
+reg [1:0] counter1; //Must be high for 1 cycle, low for one cycle
+always @(posedge clk_div) begin
+    if (rst_in) begin
+        BS_state1 <= CHECK;
+        bit_slip1 <= 1'b0;
+        counter1 <= 2'b00;                       
+    end
+    else begin
+        //Assign next state
+        BS_state1 <= bit_slip_next_state(TP, FR1_out, BS_state1, counter1);
+        case(BS_state1)
+            CHECK: begin
+                bit_slip1 <= 1'b0;
+                counter1 <= counter1 + 2'b01;
+            end
+            //Perform bitslip
+            TOGGLE: begin
+                bit_slip1 <= 1'b1;
+                counter1 <= 2'b00;
+            end
+        endcase
+    end
+end
+
+wire [N_LVDS-1:0] BS;
+assign BS = {bit_slip1, bit_slip1, bit_slip1, bit_slip1, bit_slip1, bit_slip0, (bit_slip0 || BSi01), (bit_slip0 || BSi01), (bit_slip0 || BSi00), (bit_slip0 || BSi00)};
+*/
 genvar pin_count;
 generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begin: pins
 	
@@ -598,8 +882,9 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		// SHIFTOUT1, SHIFTOUT2: 1-bit (each) output: Data width expansion output ports
 		.SHIFTOUT1(),
 		.SHIFTOUT2(),
-		.BITSLIP(bit_slip[pin_count]), 		// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
-//        .BITSLIP(bitslip),
+//		.BITSLIP(bit_slip[pin_count]), 		// 1-bit input: The BITSLIP pin performs a Bitslip operation synchronous to
+        //.BITSLIP(bit_slip),
+        .BITSLIP(BS[pin_count]),
 		// CLKDIV when asserted (active High). Subsequently, the data seen on the Q1
 		// to Q8 output ports will shift, as in a barrel-shifter operation, one
 		// position every time Bitslip is invoked (DDR operation is different from
@@ -621,7 +906,8 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.DDLY(), 			// 1-bit input: Serial data from IDELAYE2
 		.OFB(), 			// 1-bit input: Data feedback from OSERDESE2
 		.OCLKB(), 			// 1-bit input: High speed negative edge output clock
-		.RST(rst_in), 		// 1-bit input: Active high asynchronous reset
+		//.RST(rst_in), 		// 1-bit input: Active high asynchronous reset
+		.RST(rst_in),
 		// SHIFTIN1, SHIFTIN2: 1-bit (each) input: Data width expansion input ports
 		.SHIFTIN1(1'b0),
 		.SHIFTIN2(1'b0)

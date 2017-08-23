@@ -1,7 +1,4 @@
-Running: xsim.dir/LTC2195x2_tb_behav/xsimk.exe -simmode gui -wdb LTC2195x2_tb_behav.wdb -simrunnum 0 -socket 52202
+Running: xsim.dir/LTC2195x2_tb_behav/xsimk.exe -simmode gui -wdb LTC2195x2_tb_behav.wdb -simrunnum 0 -socket 52536
 Design successfully loaded
-Design Loading Memory Usage: 11368 KB (Peak: 11368 KB)
-Design Loading CPU Usage: 31 ms
-Simulation completed
-Simulation Memory Usage: 13160 KB (Peak: 13160 KB)
-Simulation CPU Usage: 78 ms
+Design Loading Memory Usage: 11324 KB (Peak: 11324 KB)
+Design Loading CPU Usage: 15 ms

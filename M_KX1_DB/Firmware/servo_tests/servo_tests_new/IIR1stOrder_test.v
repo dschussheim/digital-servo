@@ -14,7 +14,7 @@ module IIR1stOrder_test(
 	//output  reg             notlocked_out,
 	//output  reg             notlocked1s_out,
     
-    output wire [3:0] led_out,
+    output reg [3:0] led_out,
       
 	//\\\\\\\\\ADCs//////////\\
 	
@@ -196,18 +196,23 @@ wire [15:0] trans1_in, e1_in, trans2_in, e2_in;
 
 wire [7:0] FR0_out, FR1_out;
 
-parameter CLKDIV = 8;    //100MHz clock
+parameter CLKDIV = 8;    // 800MHz/8 = 100MHz clock
 parameter TP10 = 8'b10000111;
 parameter TP11 = 8'b10000111;
 parameter TP20 = 8'b10000111;
 parameter TP21 = 8'b10000111;
 
+parameter N00 = 3'b001, N01 = 3'b010;
+
 LTC2195x2 #(
     .CLKDIV(CLKDIV),
-    .TP00(TP10),
-    .TP01(TP11),
-    .TP10(TP20),
-    .TP11(TP21)
+    .N00(N00),
+    .N01(N00)
+//    .TP(TP10)
+//    .TP00(TP10),
+//    .TP01(TP11),
+//    .TP10(TP20),
+//    .TP11(TP21)
 )
 ADC (
     .clk_in(clk_in), 
@@ -246,10 +251,41 @@ ADC (
     .FR1_out(FR1_out)
 );
 
-assign led_out = ~FR0_out[7:4];
-//assign led_out = ~FR0_out[3:0];
-//assign led_out = ~FR1_out[7:4];
-//assign led_out = ~FR1_out[3:0];
+parameter div_f = 27'd100_000_000;
+wire led_clk;
+clk_div #(
+    .div_f(div_f)
+)
+ledClk(
+    .clk(clk_in),
+    .rst_in(1'b0),
+    .div_clk(led_clk)
+);
+
+//reg [1:0] counter = 2'b00;
+reg counter = 1'b0;
+reg [2:0] led_state = 3'b000;
+always @(posedge led_clk) begin
+    counter <= counter + 1'b1;
+    if (counter == 1'b1) begin
+        led_state <= led_state + 3'b001;
+    end
+    if (led_state == 3'b000) begin
+        led_out <= ~FR0_out[7:4];
+    end
+    else if (led_state == 3'b001) begin
+        led_out <= ~FR0_out[3:0];
+    end
+    if (led_state == 3'b010) begin
+        led_out <= ~FR1_out[7:4];
+    end
+    else if (led_state == 3'b011) begin
+        led_out <= ~FR1_out[3:0];
+    end
+    else begin
+        led_out = ~4'b1010;
+    end
+end
 
 
 ///////////////End of inputs///////////////

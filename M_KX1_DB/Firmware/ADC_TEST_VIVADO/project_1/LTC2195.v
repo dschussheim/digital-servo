@@ -568,6 +568,7 @@ generate for (pin_count = 0; pin_count < N_LVDS; pin_count = pin_count + 1) begi
 		.OFB(), 			// 1-bit input: Data feedback from OSERDESE2
 		.OCLKB(), 			// 1-bit input: High speed negative edge output clock
 		.RST(rst_in), 		// 1-bit input: Active high asynchronous reset
+		//.RST(1'b0),
 		// SHIFTIN1, SHIFTIN2: 1-bit (each) input: Data width expansion input ports
 		.SHIFTIN1(1'b0),
 		.SHIFTIN2(1'b0)

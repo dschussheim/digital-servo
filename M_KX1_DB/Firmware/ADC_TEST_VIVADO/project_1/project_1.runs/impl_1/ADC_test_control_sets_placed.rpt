@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Aug  2 12:56:26 2017
+| Date         : Wed Aug 23 11:25:38 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file ADC_test_control_sets_placed.rpt
 | Design       : ADC_test
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    70 |
-| Unused register locations in slices containing registers |   377 |
+| Number of unique control sets                            |    74 |
+| Unused register locations in slices containing registers |   386 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,92 +33,96 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             157 |           80 |
+| No           | No                    | No                     |             166 |           95 |
 | No           | No                    | Yes                    |             127 |           54 |
-| No           | Yes                   | No                     |              65 |           27 |
-| Yes          | No                    | No                     |              17 |           13 |
-| Yes          | No                    | Yes                    |             113 |           34 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| No           | Yes                   | No                     |              61 |           29 |
+| Yes          | No                    | No                     |              47 |           21 |
+| Yes          | No                    | Yes                    |             113 |           39 |
+| Yes          | Yes                   | No                     |               4 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------------------------------------+------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
-|                          Clock Signal                         |                     Enable Signal                    |                       Set/Reset Signal                       | Slice Load Count | Bel Load Count |
-+---------------------------------------------------------------+------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
-|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                                                      | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0 |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                                |                                                      | ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                                |                                                      | rst_in                                                       |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | rst_in                                                       |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                                | ADC1/LTC2195_SPI_inst/spi_scs_out4_out               |                                                              |                1 |              1 |
-|  ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                                                      | rst_in                                                       |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0   |                1 |              1 |
-|  rstLEDclk/clk_BUFG                                           |                                                      |                                                              |                1 |              1 |
-|  clk_in                                                       | AD9783_inst0/rst_out1_out                            |                                                              |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0 |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                      | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0            |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | AD9783_inst0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                      | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0            |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                      | ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                      | rst_in                                                       |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0            | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0            |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0   |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0            | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0            |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/spi_scs_out4_out       |                                                              |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/spi_sck_out_i_1_n_0            |                                                              |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/spi_scs_out4_out               |                                                              |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/spi_sdo_out_i_1_n_0            |                                                              |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0            |                                                      | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0            |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0            |                                                      | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0            |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0            |                                                      | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0            |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                                                      | rst_in                                                       |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/spi_sdo_out_i_1__0_n_0 |                                                              |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/spi_sck_out_i_1__0_n_0 |                                                              |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0   |                                                      | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0   |                1 |              1 |
-|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | rst_in                                                       |                1 |              1 |
-|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1__0_n_0  |                1 |              1 |
-|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst1/AD_9783_SPI_inst/spi_scs_out4_out       |                                                              |                1 |              1 |
-|  AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1__0_n_0  |                                                      | rst_in                                                       |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                                      | rst_in                                                       |                1 |              1 |
-|  clk_in                                                       | AD9783_inst1/rst_out1_out                            |                                                              |                1 |              1 |
-|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 |                                                      | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0 |                1 |              1 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                      | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0            |                1 |              2 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0            | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0            |                1 |              2 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    |                                                              |                2 |              2 |
-|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                                                      | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                2 |              2 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                                |                                                      | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                1 |              3 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                      | ADC2/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                2 |              3 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | AD9783_inst0/AD_9783_SPI_inst/state_f[2]_i_2__0_n_0          |                2 |              3 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              3 |
-|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                      | AD9783_inst1/AD_9783_SPI_inst/state_f[2]_i_2_n_0             |                2 |              3 |
-|  ADC1/clk_div                                                 |                                                      |                                                              |                2 |              4 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0            |                                                              |                2 |              4 |
-|  ADC2/clk_div                                                 |                                                      |                                                              |                1 |              4 |
-|  clk_in                                                       | AD9783_inst0/spi_data[15]_i_1_n_0                    |                                                              |                1 |              4 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                1 |              4 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0 |                1 |              4 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                1 |              4 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0    | AD9783_inst0/AD_9783_SPI_inst/state_f[2]_i_2__0_n_0          |                2 |              6 |
-|  clk_in                                                       | ADC1/counter_f                                       | rst_in                                                       |                3 |              8 |
-|  clk_in                                                       | ADC2/counter_f                                       | rst_in                                                       |                2 |              8 |
-|  clk_in                                                       | AD9783_inst0/counter_f                               | rst_in                                                       |                2 |              8 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0            | ADC2/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                2 |              8 |
-|  clk_in                                                       | AD9783_inst1/counter_f                               | rst_in                                                       |                4 |              8 |
-|  ADC1/LTC2195_SPI_inst/spi_clk                                | ADC1/LTC2195_SPI_inst/counter_f                      | rst_in                                                       |                3 |             12 |
-|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/counter_f                      | rst_in                                                       |                2 |             12 |
-|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/counter_f              | rst_in                                                       |                2 |             12 |
-|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst1/AD_9783_SPI_inst/counter_f              | rst_in                                                       |                3 |             12 |
-|  clk_in                                                       |                                                      | rstLEDclk/counter[26]_i_1_n_0                                |                7 |             23 |
-|  rstLEDclk/clk_BUFG                                           |                                                      | counter                                                      |                8 |             30 |
-|  AD9783_inst0/clkD                                            |                                                      |                                                              |               18 |             31 |
-|  AD9783_inst1/clkD                                            |                                                      |                                                              |               18 |             31 |
-|  clk_in                                                       |                                                      |                                                              |               40 |             86 |
-|  clk_in                                                       |                                                      | rst_in                                                       |               33 |             98 |
-+---------------------------------------------------------------+------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
++---------------------------------------------------------------+---------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
+|                          Clock Signal                         |                   Enable Signal                   |                       Set/Reset Signal                       | Slice Load Count | Bel Load Count |
++---------------------------------------------------------------+---------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
+|  clk_in                                                       | AD9783_inst1/rst_out_i_1__0_n_0                   |                                                              |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0            |                                                   | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0            |                1 |              1 |
+|  rstLEDclk/clk_BUFG                                           |                                                   |                                                              |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0            |                                                   | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0            |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0            |                                                   | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0            |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                                                   | rst_in                                                       |                1 |              1 |
+|  clk_in                                                       | AD9783_inst0/rst_out_i_1_n_0                      |                                                              |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                                                   | rst_in                                                       |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                                | ADC1/LTC2195_SPI_inst/spi_scs_out4_out            |                                                              |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0   |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                                |                                                   | ADC1/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0         | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0            |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/spi_scs_out4_out            |                                                              |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0   |                                                   | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_2_n_0   |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 |                                                   | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0 |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                                                   | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0 |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | rst_in                                                       |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/spi_sdo_out2_out            |                                                              |                1 |              1 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                                |                                                   | rst_in                                                       |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_2__0_n_0 |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                                                   | rst_in                                                       |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | AD9783_inst0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0     |                1 |              1 |
+|  AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1__0_n_0  |                                                   | rst_in                                                       |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0         | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0            |                1 |              1 |
+|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | AD9783_inst1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1__0_n_0  |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0   |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 |                1 |              1 |
+|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | rst_in                                                       |                1 |              1 |
+|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst1/AD_9783_SPI_inst/spi_scs_out4_out    |                                                              |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/spi_sck_out3_out    |                                                              |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/spi_scs_out4_out    |                                                              |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/spi_sdo_out2_out    |                                                              |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                   | rst_in                                                       |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                   | ADC2/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_2_n_0            |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                   | ADC2/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_2_n_0            |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                   | ADC2/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0             |                1 |              1 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/spi_sck_out3_out            |                                                              |                1 |              1 |
+|  AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                                                   | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              2 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0         | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0            |                1 |              2 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                   | ADC2/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_2_n_0            |                2 |              2 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 |                                                              |                2 |              2 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                                |                                                   | ADC1/LTC2195_SPI_inst/state_f[2]_i_2_n_0                     |                1 |              3 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_2_n_0   |                1 |              3 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | AD9783_inst0/AD_9783_SPI_inst/state_f[2]_i_2__1_n_0          |                2 |              3 |
+|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                |                                                   | AD9783_inst1/AD_9783_SPI_inst/state_f[2]_i_2__2_n_0          |                2 |              3 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        |                                                   | ADC2/LTC2195_SPI_inst/state_f[2]_i_2__0_n_0                  |                1 |              3 |
+|  clk_in                                                       | AD9783_inst0/spi_data[15]_i_1_n_0                 |                                                              |                1 |              4 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0   |                2 |              4 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_2__0_n_0 |                1 |              4 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0         |                                                              |                2 |              4 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 |                1 |              4 |
+|  ledClk/CLK                                                   | led_out[3]_i_1_n_0                                | p_0_in                                                       |                2 |              4 |
+|  ADC1/clk_div                                                 |                                                   |                                                              |                3 |              5 |
+|  ledClk/CLK                                                   |                                                   |                                                              |                1 |              5 |
+|  ADC2/clk_div                                                 |                                                   |                                                              |                1 |              5 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/data_out[9]_i_1_n_0 | AD9783_inst0/AD_9783_SPI_inst/state_f[2]_i_2__1_n_0          |                2 |              6 |
+|  clk_in                                                       | ADC2/counter_f                                    | rst_in                                                       |                3 |              8 |
+|  clk_in                                                       | ADC1/counter_f                                    | rst_in                                                       |                2 |              8 |
+|  clk_in                                                       | AD9783_inst1/counter_f                            | rst_in                                                       |                3 |              8 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/data_out[6]_i_1_n_0         | ADC2/LTC2195_SPI_inst/state_f[2]_i_2__0_n_0                  |                2 |              8 |
+|  clk_in                                                       | AD9783_inst0/counter_f                            | rst_in                                                       |                3 |              8 |
+|  clk_in                                                       |                                                   | ledClk/counter[25]_i_1_n_0                                   |                4 |             12 |
+|  AD9783_inst1/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst1/AD_9783_SPI_inst/counter_f           | rst_in                                                       |                4 |             12 |
+|  AD9783_inst0/AD_9783_SPI_inst/spi_clk_reg_n_0                | AD9783_inst0/AD_9783_SPI_inst/counter_f           | rst_in                                                       |                3 |             12 |
+|  ADC2/LTC2195_SPI_inst/spi_clk_reg_n_0                        | ADC2/LTC2195_SPI_inst/counter_f                   | rst_in                                                       |                4 |             12 |
+|  ADC1/LTC2195_SPI_inst/spi_clk                                | ADC1/LTC2195_SPI_inst/counter_f                   | rst_in                                                       |                3 |             12 |
+|  clk_in                                                       |                                                   | ledClk/div_clk0                                              |                7 |             14 |
+|  clk_in                                                       |                                                   | rstLEDclk/counter[26]_i_1__0_n_0                             |                7 |             23 |
+|  rstLEDclk/clk_BUFG                                           | sel                                               |                                                              |                8 |             30 |
+|  AD9783_inst0/clkD                                            |                                                   |                                                              |               21 |             31 |
+|  AD9783_inst1/clkD                                            |                                                   |                                                              |               19 |             31 |
+|  clk_in                                                       |                                                   |                                                              |               49 |             88 |
+|  clk_in                                                       |                                                   | rst_in                                                       |               33 |             98 |
++---------------------------------------------------------------+---------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
@@ -127,10 +131,12 @@ Table of Contents
 | 1      |                    38 |
 | 2      |                     4 |
 | 3      |                     5 |
-| 4      |                     7 |
+| 4      |                     6 |
+| 5      |                     3 |
 | 6      |                     1 |
 | 8      |                     5 |
-| 12     |                     4 |
+| 12     |                     5 |
+| 14     |                     1 |
 | 16+    |                     6 |
 +--------+-----------------------+
 

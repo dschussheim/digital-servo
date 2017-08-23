@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Tue Aug 22 18:05:11 2017
+| Date             : Wed Aug 23 19:06:45 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file IIR1stOrder_test_power_routed.rpt -pb IIR1stOrder_test_power_summary_routed.pb -rpx IIR1stOrder_test_power_routed.rpx
 | Design           : IIR1stOrder_test
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+-------+
 | Total On-Chip Power (W)  | 2.002 |
-| Dynamic (W)              | 1.882 |
+| Dynamic (W)              | 1.883 |
 | Device Static (W)        | 0.119 |
 | Total Off-Chip Power (W) | 0.044 |
 | Effective TJA (C/W)      | 1.9   |
@@ -51,17 +51,17 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.031 |       12 |       --- |             --- |
-| Slice Logic             |     0.013 |     4473 |       --- |             --- |
-|   LUT as Logic          |     0.010 |     1480 |    101400 |            1.46 |
-|   CARRY4                |     0.002 |      339 |     25350 |            1.34 |
-|   Register              |    <0.001 |     2347 |    202800 |            1.16 |
+| Slice Logic             |     0.013 |     4562 |       --- |             --- |
+|   LUT as Logic          |     0.011 |     1506 |    101400 |            1.49 |
+|   CARRY4                |     0.002 |      346 |     25350 |            1.36 |
+|   Register              |    <0.001 |     2386 |    202800 |            1.18 |
 |   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
-|   Others                |     0.000 |      196 |       --- |             --- |
+|   Others                |     0.000 |      202 |       --- |             --- |
 |   BUFG                  |     0.000 |        2 |        32 |            6.25 |
-| Signals                 |     0.023 |     6219 |       --- |             --- |
+| Signals                 |     0.023 |     6290 |       --- |             --- |
 | MMCM                    |     0.291 |        3 |         8 |           37.50 |
 | DSPs                    |     0.029 |       48 |       600 |            8.00 |
-| I/O                     |     1.496 |      112 |       400 |           28.00 |
+| I/O                     |     1.495 |      112 |       400 |           28.00 |
 | Static Power            |     0.119 |          |           |                 |
 | Total                   |     2.002 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.168 |       0.121 |      0.047 |
+| Vccint    |       1.000 |     0.168 |       0.122 |      0.047 |
 | Vccaux    |       1.800 |     0.210 |       0.191 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.585 |       0.584 |      0.001 |
@@ -152,7 +152,7 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| IIR1stOrder_test     |     1.882 |
+| IIR1stOrder_test     |     1.883 |
 |   ADC                |     0.224 |
 |     LTC2195_SPI_inst |     0.003 |
 |   DAC0               |     0.779 |
@@ -165,6 +165,7 @@ Table of Contents
 |   PID2               |     0.028 |
 |     PD               |     0.015 |
 |     PI               |     0.013 |
+|   ledClk             |    <0.001 |
 |   new_param_deser1   |    <0.001 |
 |     deser_clk_origin |    <0.001 |
 |   new_param_deser2   |     0.000 |

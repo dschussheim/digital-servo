@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Wed Aug  2 12:57:13 2017
+| Date             : Wed Aug 23 11:26:20 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file ADC_test_power_routed.rpt -pb ADC_test_power_summary_routed.pb -rpx ADC_test_power_routed.rpx
 | Design           : ADC_test
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.959 |
-| Dynamic (W)              | 1.840 |
+| Total On-Chip Power (W)  | 1.961 |
+| Dynamic (W)              | 1.842 |
 | Device Static (W)        | 0.119 |
 | Total Off-Chip Power (W) | 0.044 |
 | Effective TJA (C/W)      | 1.9   |
@@ -50,18 +50,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.043 |       26 |       --- |             --- |
-| Slice Logic             |     0.005 |      973 |       --- |             --- |
-|   LUT as Logic          |     0.004 |      360 |    101400 |            0.36 |
-|   Register              |    <0.001 |      479 |    202800 |            0.24 |
-|   CARRY4                |    <0.001 |       27 |     25350 |            0.11 |
+| Clocks                  |     0.044 |       26 |       --- |             --- |
+| Slice Logic             |     0.006 |     1049 |       --- |             --- |
+|   LUT as Logic          |     0.005 |      375 |    101400 |            0.37 |
+|   Register              |    <0.001 |      518 |    202800 |            0.26 |
+|   CARRY4                |    <0.001 |       34 |     25350 |            0.13 |
 |   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
-|   Others                |     0.000 |       30 |       --- |             --- |
-| Signals                 |     0.004 |      837 |       --- |             --- |
+|   Others                |     0.000 |       32 |       --- |             --- |
+| Signals                 |     0.005 |      893 |       --- |             --- |
 | MMCM                    |     0.389 |        4 |         8 |           50.00 |
 | I/O                     |     1.399 |      109 |       400 |           27.25 |
 | Static Power            |     0.119 |          |           |                 |
-| Total                   |     1.959 |          |           |                 |
+| Total                   |     1.961 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.123 |       0.077 |      0.047 |
+| Vccint    |       1.000 |     0.126 |       0.079 |      0.047 |
 | Vccaux    |       1.800 |     0.254 |       0.235 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.554 |       0.553 |      0.001 |
@@ -162,15 +162,16 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| ADC_test             |     1.840 |
+| ADC_test             |     1.842 |
 |   AD9783_inst0       |     0.751 |
 |     AD_9783_SPI_inst |     0.006 |
 |   AD9783_inst1       |     0.715 |
-|     AD_9783_SPI_inst |     0.001 |
+|     AD_9783_SPI_inst |     0.002 |
 |   ADC1               |     0.149 |
 |     LTC2195_SPI_inst |     0.002 |
-|   ADC2               |     0.188 |
-|     LTC2195_SPI_inst |     0.004 |
+|   ADC2               |     0.190 |
+|     LTC2195_SPI_inst |     0.005 |
+|   ledClk             |    <0.001 |
 |   rstLEDclk          |    <0.001 |
 +----------------------+-----------+
 

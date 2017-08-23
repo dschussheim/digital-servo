@@ -50,11 +50,11 @@ module LTC2195x2_tb;
 
 	// Instantiate the Unit Under Test (UUT)
 	LTC2195x2 #(
-		.CLKDIV(8),
-		.TP00(TP00),
-		.TP01(TP01),
-		.TP10(TP10),
-		.TP11(TP11)
+		.CLKDIV(8)
+		//.TP00(TP00),
+		//.TP01(TP01),
+		//.TP10(TP10),
+		//.TP11(TP11)
 		//.TP(TP1)
 	)
 	uut (
