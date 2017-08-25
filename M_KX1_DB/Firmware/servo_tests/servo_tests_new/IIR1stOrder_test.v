@@ -90,7 +90,7 @@ module IIR1stOrder_test(
 	input   wire		    DCO1_n,
 	
 	input   wire            serial1_in,
-	output  wire            serial2_in,
+	input   wire            serial2_in,
 	output  wire            serial_trig_out
     );
     
@@ -121,7 +121,10 @@ reset startup_reset (
     .clk_in(clk_in),
     .rst(rst_in)
 );
-//assign led_out[0] = ~rst_in;
+
+//always @(posedge clk_in)
+//    led_out[0] <= ~rst_in;
+
 ///////////////End of reset/////////////////
 /* 
 ///////////////////Inputs///////////////////
@@ -202,12 +205,16 @@ parameter TP11 = 8'b10000111;
 parameter TP20 = 8'b10000111;
 parameter TP21 = 8'b10000111;
 
-parameter N00 = 3'b001, N01 = 3'b010;
+parameter N00 = 3'b001, N01 = 3'b001, N10 = 3'b000, N11 = 3'b000;
+
+wire [3:0] bitslip_out;
 
 LTC2195x2 #(
     .CLKDIV(CLKDIV),
     .N00(N00),
-    .N01(N00)
+    .N01(N01),
+    .N10(N10),
+    .N11(N11)
 //    .TP(TP10)
 //    .TP00(TP10),
 //    .TP01(TP11),
@@ -248,9 +255,12 @@ ADC (
     .ADC10_out(trans2_in), 
     .ADC11_out(e2_in),
     .FR0_out(FR0_out),
-    .FR1_out(FR1_out)
+    .FR1_out(FR1_out),
+    .bitslip_out(bitslip_out)
 );
 
+//assign led_out = ~bitslip_out;
+/*
 parameter div_f = 27'd100_000_000;
 wire led_clk;
 clk_div #(
@@ -286,12 +296,12 @@ always @(posedge led_clk) begin
         led_out = ~4'b1010;
     end
 end
-
+*/
 
 ///////////////End of inputs///////////////
 
 //////////////Deserializer for inputting new parameters////////////
-wire signed [34:0] a1_1_PD_new, b0_1_PD_new, b1_1_PD_new, a1_1_PI_new, b0_1_PI_new, b1_1_PI_new, minval_1_new, sweep_max_1_new, sweep_min_1_new, sweep_stepsize_1_new;
+wire signed [34:0] a1_1_PD_new, b0_1_PD_new, b1_1_PD_new, a1_1_PI_new, b0_1_PI_new, b1_1_PI_new, minval_1_new, sweep_max_1_new, sweep_min_1_new, sweep_stepsize_1_new, offset1_new;
 wire TPmatchOut1;
 deserializer new_param_deser1(
     .clk_in(clk_in),
@@ -310,11 +320,11 @@ deserializer new_param_deser1(
     .num7(sweep_max_1_new),
     .num8(sweep_min_1_new),
     .num9(sweep_stepsize_1_new),
-    .num10(),
+    .num10(offset1_new),
     .num11()
 );
 
-wire signed [34:0] a1_2_PD_new, b0_2_PD_new, b1_2_PD_new, a1_2_PI_new, b0_2_PI_new, b1_2_PI_new, minval_2_new, sweep_max_2_new, sweep_min_2_new, sweep_stepsize_2_new;
+wire signed [34:0] a1_2_PD_new, b0_2_PD_new, b1_2_PD_new, a1_2_PI_new, b0_2_PI_new, b1_2_PI_new, minval_2_new, sweep_max_2_new, sweep_min_2_new, sweep_stepsize_2_new, offset2_new;
 wire TPmatchOut2;
 
 deserializer new_param_deser2(
@@ -334,7 +344,7 @@ deserializer new_param_deser2(
     .num7(sweep_max_2_new),
     .num8(sweep_min_2_new),
     .num9(sweep_stepsize_2_new),
-    .num10(),
+    .num10(offset2_new),
     .num11()
 );
 
@@ -351,11 +361,21 @@ reg signed [15:0] minval_2 = Vmin2*16'b0111_1111_1111_1111;
 
 reg relock1_on, relock2_on;
 always @(posedge clk_in) begin
-    relock1_on <= ($signed(trans1_in) < $signed(minval_1));
-    relock2_on <= ($signed(trans2_in) < $signed(minval_2));
+    
+    if ($signed(trans1_in) < $signed(minval_1))
+        relock1_on <= 1'b1;
+    else
+        relock1_on <= 1'b0;
+    if ($signed(trans2_in) < $signed(minval_2))
+        relock2_on <= 1'b1;
+    else
+        relock2_on <= 1'b0;
+        
+    led_out[0] <= ~relock1_on;
+    led_out[1] <= ~relock2_on;
+    
 end
-//assign serial_clk_out = relock_on;
-//assign rst_led = ~relock_on;
+
 
 wire [15:0] relock1_out, relock2_out;
 
@@ -363,9 +383,9 @@ reg signed [15:0] sweep_max_1 = (0.65625)*(16'b0111_1111_1111_1111);
 reg signed [15:0] sweep_min_1 = (0.1875)*(16'b0111_1111_1111_1111); 
 reg        [31:0] sweep_stepsize_1 = 32'b0000_0000_0000_0000_0000_0000_1000_0000; //Change LSB every 128 clock cycles
 
-reg signed [15:0] sweep_max_2 = (0.65625)*(16'b0111_1111_1111_1111);
-reg signed [15:0] sweep_min_2 = (0.1875)*(16'b0111_1111_1111_1111); 
-reg        [31:0] sweep_stepsize_2 = 32'b0000_0000_0000_0000_0000_0000_1000_0000; //Change LSB every 128 clock cycles
+reg signed [15:0] sweep_max_2 = (1)*(16'b0111_1111_1111_1111);
+reg signed [15:0] sweep_min_2 = (-1)*(16'b0111_1111_1111_1111); 
+reg        [31:0] sweep_stepsize_2 = 32'b0000_0000_0000_0000_0000_0000_0001_0000; //Change LSB every 128 clock cycles
 
 Sweep relockSweep1(
     .clk_in(clk_in),
@@ -387,6 +407,8 @@ Sweep relockSweep2(
     .signal_out(relock2_out)
 );
 
+//Assign new parameters that come over serial line. Max/min assignments don't work, error in Kurt's VB code I think
+
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         //lsb's padded with zeros
@@ -394,6 +416,16 @@ always @(posedge clk_in) begin
         //sweep_1_max <= sweep_max_1_new[34:19];
         //sweep__1min <= sweep_min_1_new[34:19];
         sweep_stepsize_1 <= sweep_stepsize_1_new[34:3];
+    end
+end
+
+always @(posedge clk_in) begin
+    if (TPmatchOut2) begin
+        //lsb's padded with zeros
+        minval_2 <= minval_2_new[34:19];
+        //sweep_1_max <= sweep_max_1_new[34:19];
+        //sweep__1min <= sweep_min_1_new[34:19];
+        sweep_stepsize_2 <= sweep_stepsize_2_new[34:3];
     end
 end
 
@@ -435,16 +467,22 @@ endfunction
 //Sequential part
 reg [27:0] relock1_counter = 28'b0; //Counter for led that stays on 1s after relock acquired
 reg [27:0] relock2_counter = 28'b0; //Counter for led that stays on 1s after relock acquired
-reg [2:0] relock1_state;
+reg [2:0] relock1_state, relock2_state;
 always @(posedge clk_in) begin
     relock1_state <= relock_next_state(relock1_on, trans1_in, relock1_state, relock1_counter);
-//    led_out[1] <= ~relock1_state[2]; locked
-//    led_out[2] <= ~relock1_state[1]; //not locked
-//    led_out[3] <= ~relock1_state[0]; //not locked 1s ago
+    relock2_state <= relock_next_state(relock2_on, trans2_in, relock2_state, relock2_counter);
+    //led_out[0] <= ~relock1_state[1]; //not locked
+    //led_out[1] <= ~relock1_state[0]; //not locked 1s ago
+    led_out[2] <= ~relock2_state[1]; //not locked
+    led_out[3] <= ~relock2_state[0]; //not locked 1s ago
     if (relock1_state == UNLOCKED1S)
         relock1_counter <= relock1_counter + 28'b1;
     if (relock1_state == LOCKED)
         relock1_counter <= 1'b0;
+    if (relock2_state == UNLOCKED1S)
+        relock2_counter <= relock2_counter + 28'b1;
+    if (relock2_state == LOCKED)
+        relock2_counter <= 1'b0;
 end
 
 //////////End of relock/////////////
@@ -498,7 +536,7 @@ real b1pi = (I*pi*Ts/Pd-Pi)*(2**26);
 //Error signal out
 wire [15:0] e1_out, e2_out;
 //Servo 1 module
-PIDservo_changeParam PID1 (
+PIDservo_changeParam LBO (
     .clk_in(clk_in),
     .on_in(PID1_on),
     .a1_PD(a1_1_PD),
@@ -526,8 +564,15 @@ reg signed [34:0] b0_2_PI = (Pi+(I*pi*Ts)/Pd)*(2**26);
 //-Pi + I/Pd*pi*Ts 
 reg signed [34:0] b1_2_PI = (I/Pd*pi*Ts-Pi)*(2**26);
 
+//-2mV offset
+localparam real Voff = -0.002;
+reg signed [15:0] offset = Voff*16'b0111_1111_1111_1111;
+
+wire [15:0] ref_e;
+assign ref_e = e2_in - offset;
+
 //Servo 2 module
-PIDservo_changeParam PID2 (
+PIDservo_changeParam refPZT (
     .clk_in(clk_in),
     .on_in(PID2_on),
     .a1_PD(a1_2_PD),
@@ -536,11 +581,40 @@ PIDservo_changeParam PID2 (
     .a1_PI(a1_2_PI),
     .b0_PI(b0_2_PI),
     .b1_PI(b1_2_PI),    
-    .e_in(e2_in),
+    .e_in(ref_e),
     .e_out(e2_out)
 );
 
+reg signed [34:0] a1_3_PD = (1-2*pi*Ts*fc)*(2**26); // (1-2*pi*Ts*fc)*2^26
+// D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
+reg signed [34:0] b0_3_PD = ((D/Pi)*(fc/(1+pi*Ts*fc))+ Pd*((pi*Ts*fc)/(1+pi*Ts*fc)))*(2**26);
+//-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
+reg signed [34:0] b1_3_PD = (Pd*((pi*Ts*fc)/(1+pi*Ts*fc))-1*D/Pi*(fc/(1+pi*Ts*fc)))*(2**26);
+//PI\\
 
+//Definitions of filter coefficients. Added scale factors to make gains resonable
+//All coefficients scaled by 2^26
+reg signed [34:0] a1_3_PI = 1*(2**26);
+// Pi + I/Pd*pi*Ts
+reg signed [34:0] b0_3_PI = (Pi+(I*pi*Ts)/Pd)*(2**26);
+//-Pi + I/Pd*pi*Ts 
+reg signed [34:0] b1_3_PI = (I/Pd*pi*Ts-Pi)*(2**26);
+
+wire [15:0] e3_out;
+
+//Servo 3 module
+PIDservo_changeParam refI (
+    .clk_in(clk_in),
+    .on_in(1'b1),
+    .a1_PD(a1_3_PD),
+    .b0_PD(b0_3_PD),
+    .b1_PD(b1_3_PD),
+    .a1_PI(a1_3_PI),
+    .b0_PI(b0_3_PI),
+    .b1_PI(b1_3_PI),    
+    .e_in(ref_e),
+    .e_out(e3_out)
+);
 
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
@@ -550,6 +624,7 @@ always @(posedge clk_in) begin
         a1_1_PI <= a1_1_PI_new;
         b0_1_PI <= b0_1_PI_new;
         b1_1_PI <= b1_1_PI_new;
+        //offset <= offset1_new[34:19];
     end
 end
 
@@ -561,6 +636,7 @@ always @(posedge clk_in) begin
         a1_2_PI <= a1_2_PI_new;
         b0_2_PI <= b0_2_PI_new;
         b1_2_PI <= b1_2_PI_new;
+        //offset <= offset2_new[34:19];
     end
 end
 
@@ -568,8 +644,12 @@ end
 
 ////////Output to DAC//////
 
-wire signed [15:0] signal1_out = relock1_out + e1_out;
-wire signed [15:0] signal2_out = relock2_out + e2_out;
+wire signed [15:0] signal1_out;
+assign signal1_out = relock1_out + e1_out;
+wire signed [15:0] signal2_out;
+assign signal2_out = relock2_out + e2_out;
+wire signed [15:0] signal3_out;
+assign signal3_out = e3_out;
 
 
 // Instantiate DAC1 driver module

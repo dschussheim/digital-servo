@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date                      : Wed Aug 23 19:06:12 2017
+| Date                      : Thu Aug 24 19:02:11 2017
 | Host                      : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command                   : report_io -file IIR1stOrder_test_io_placed.rpt
 | Design                    : IIR1stOrder_test
@@ -83,7 +83,7 @@ Table of Contents
 | AA20       |                 | High Performance | IO_L16N_T2_32                | User IO       |             |      32 |            |      |                      |                      |           |            |           |          |          |                  |
 | AA21       |                 | High Range       | VCCO_12                      | VCCO          |             |      12 |            |      |                      |                      |      2.50 |            |           |          |          |                  |
 | AA22       |                 | High Range       | IO_L13N_T2_MRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |          |                  |
-| AA23       | serial2_in      | High Range       | IO_L11P_T1_SRCC_12           | TRISTATE      | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |          | NONE             |
+| AA23       | serial2_in      | High Range       | IO_L11P_T1_SRCC_12           | INPUT         | LVCMOS25    |      12 |            |      |                      |                 NONE |           | FIXED      |           |          |          | NONE             |
 | AA24       |                 | High Range       | IO_L12N_T1_MRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |          |                  |
 | AA25       | ENC_p           | High Range       | IO_L7P_T1_12                 | OUTPUT        | LVDS_25     |      12 |            |      |                      |               FD_100 |           | FIXED      |           |          |          | NONE             |
 | AA26       |                 |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |          |                  |
