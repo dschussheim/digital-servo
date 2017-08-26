@@ -20,12 +20,12 @@
 `include "timescale.v"
 
 module LPfilter(
-   input  wire												clk_in,
-	input  wire												on_in,
-	input  wire signed	[34:0]						a1_in,
-	input  wire signed	[34:0]						b0_in,
-	input  wire signed	[SIGNAL_IN_SIZE-1:0]		signal_in,
-   output reg  signed	[SIGNAL_OUT_SIZE-1:0]	signal_out
+    input  wire									clk_in,
+    input  wire									on_in,
+    input  wire signed	[34:0]					a1_in,
+	input  wire signed	[34:0]					b0_in,
+	input  wire signed	[SIGNAL_IN_SIZE-1:0]	signal_in,
+    output reg  signed	[SIGNAL_OUT_SIZE-1:0]	signal_out
 );
 
 // Parameters
