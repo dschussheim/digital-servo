@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log IIR1stOrder_test.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IIR1stOrder_test.tcl
+EAStep vivado -log LBOx2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LBOx2.tcl
