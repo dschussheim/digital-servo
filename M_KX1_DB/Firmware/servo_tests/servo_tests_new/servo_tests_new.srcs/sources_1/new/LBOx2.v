@@ -239,7 +239,7 @@ wire TPmatchOut1;
 deserializer new_param_deser1(
     .clk_in(clk_in),
     .rst_in(rst_in),
-    .in(serial2_in),
+    .in(serial1_in),
     .clkDout(),
     .trig_out(serial_trig_out),
     .TPmatchOut(TPmatchOut1),
@@ -263,7 +263,7 @@ wire TPmatchOut2;
 deserializer new_param_deser2(
     .clk_in(clk_in),
     .rst_in(rst_in),
-    .in(serial1_in),
+    .in(serial2_in),
     .clkDout(),
     .trig_out(),
     .TPmatchOut(TPmatchOut2),
@@ -320,7 +320,7 @@ end
 
 //assign rst_led = ~TPmatchOut;
 ///////////////////////End of deserializer/////////////////////////
-
+/*
 /////////////Filter transmission in\\\\\\\\\\\\\\\
 
 localparam real Ts = 1e-8;  //10ns (sample period)
@@ -345,9 +345,14 @@ IIRfilter1stOrderAntiWindup LP1 (
     .signal_in(trans1_in),
     .signal_out(trans1_LP)
 );
+*/
+
+
+localparam real Ts = 1e-8;  //10ns (sample period)
+localparam real pi = 3.14159265358979;
 
 localparam real K_2 = 1;
-localparam real f0_2 = 1e3;
+localparam real f0_2 = 200e3;
 
 reg signed [34:0] a1_LP2 = (1-pi*f0_2*Ts)/(1+pi*f0_2*Ts)*(2**26);
 reg signed [34:0] b0_LP2 = (K_2*pi*f0_2*Ts)/(1+pi*f0_2*Ts)*(2**26);
@@ -369,7 +374,7 @@ IIRfilter1stOrderAntiWindup LP2 (
 ///////////////Relock sweep////////////////
 
 localparam real Vmin1 = 0.25;
-localparam real Vmin2 = 0.25;
+localparam real Vmin2 = 0.01;
 
 reg signed [15:0] minval1 = Vmin1*16'b0111_1111_1111_1111; 
 reg signed [15:0] minval2 = Vmin2*16'b0111_1111_1111_1111; 
@@ -377,7 +382,7 @@ reg signed [15:0] minval2 = Vmin2*16'b0111_1111_1111_1111;
 reg relock1_on, relock2_on; //filtered input
 //reg relock1_nf, relock2_nf; //no filter
 always @(posedge clk_in) begin
-    
+    /*
     if ($signed(trans1_LP) < $signed(minval1))
         relock1_on <= 1'b1;
     else
@@ -386,16 +391,17 @@ always @(posedge clk_in) begin
         relock2_on <= 1'b1;
     else
         relock2_on <= 1'b0;
-    /*    
+   */
+        
     if ($signed(trans1_in) < $signed(minval1))
-        relock1_nf <= 1'b1;
+        relock1_on <= 1'b1;
     else
-        relock1_nf <= 1'b0;
-    if ($signed(trans2_in) < $signed(minval2))
-        relock2_nf <= 1'b1;
+        relock1_on <= 1'b0;
+    if ($signed(trans2_LP) < $signed(minval2))
+        relock2_on <= 1'b1;
     else
-        relock2_nf <= 1'b0; 
-              
+        relock2_on <= 1'b0; 
+     /*         
     led_out[0] <= ~relock1_on;
     led_out[1] <= ~relock1_nf;
     led_out[2] <= ~relock2_on;
@@ -450,7 +456,7 @@ Sweep relockSweep2(
 );
 
 //Assign new parameters that come over serial line. Max/min assignments don't work, error in Kurt's VB code I think
-
+/*
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         //msb's padded with zeros
@@ -460,14 +466,34 @@ always @(posedge clk_in) begin
         sweep_stepsize_1 <= sweep_stepsize_1_new[34:3];
     end
 end
+*/
+//Offset
+//-2mV offset
+localparam real Voff2 = 0;
+reg signed [15:0] offset2 = Voff2*16'b0111_1111_1111_1111;
 
+wire [15:0] ref_e2;
+assign ref_e2 = e2_in - offset2;
+/*
 always @(posedge clk_in) begin
     if (TPmatchOut2) begin
         //msb's padded with zeros
         minval2 <= minval_2_new[15:0];
         sweep_max_2 <= sweep_max_2_new[15:0];
-        sweep_min_2 <= sweep_min_2_new[15:0];
+        //sweep_min_2 <= sweep_min_2_new[15:0];
+        offset2 <= sweep_min_2_new[15:0];
         sweep_stepsize_2 <= sweep_stepsize_2_new[34:3];
+    end
+end
+*/
+always @(posedge clk_in) begin
+    if (TPmatchOut1) begin
+        //msb's padded with zeros
+        minval2 <= {minval_1_new[34],minval_1_new[14:0]};
+        sweep_max_2 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
+        sweep_min_2 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
+        sweep_stepsize_2 <= sweep_stepsize_1_new[34:3];
+        offset2 <= {offset1_new[34],offset1_new[14:0]};
     end
 end
 
@@ -531,6 +557,9 @@ end
 
 ////////PID///////////
 
+//localparam real Ts = 1e-8;  //10ns (sample period)
+//localparam real pi = 3.14159265358979;
+
 //default PID parameters
 localparam G1 = 0.5;
 localparam real Pd1 = G1*0.06;          
@@ -583,12 +612,12 @@ PIDservo_changeParam LBO1 (
 );
 
 //default PID parameters
-localparam G2 = 1;
-localparam real Pd2 = G2*0.06;          
+localparam G2 = 0.24;
+localparam real Pd2 = G2*0.045;          
 localparam real Pi2 = G2*1;
-localparam real I2  = G2*400;       
+localparam real I2  = G2*1500;       
 localparam real D2  = G2*0.7e-6;       
-localparam real fc2 = 1e5;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+localparam real fc2 = 500e3;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 
 //IIR filter parameter defaults
 
@@ -613,16 +642,6 @@ reg signed [34:0] b0_2_PI = (Pi2+(I2*pi*Ts)/Pd2)*(2**26);
 //-Pi + I/Pd*pi*Ts 
 reg signed [34:0] b1_2_PI = (I2/Pd2*pi*Ts-Pi2)*(2**26);
 
-/*
-//Offset
-//-2mV offset
-localparam real Voff = -0.002;
-reg signed [15:0] offset = Voff*16'b0111_1111_1111_1111;
-
-wire [15:0] ref_e;
-assign ref_e = e2_in - offset;
-*/
-
 //Servo 2 module
 PIDservo_changeParam LBO2 (
     .clk_in(clk_in),
@@ -632,11 +651,12 @@ PIDservo_changeParam LBO2 (
     .b1_PD(b1_2_PD),
     .a1_PI(a1_2_PI),
     .b0_PI(b0_2_PI),
-    .b1_PI(b1_2_PI),    
-    .e_in(e2_in),
+    .b1_PI(b1_2_PI), 
+    .e_in(ref_e2),   
+    //.e_in(e2_in),
     .e_out(e2_out)
 );
-
+/*
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         a1_1_PD <= a1_1_PD_new;
@@ -660,6 +680,18 @@ always @(posedge clk_in) begin
         //offset <= offset2_new[15:0];
     end
 end
+*/
+
+always @(posedge clk_in) begin
+    if (TPmatchOut1) begin
+        a1_2_PD <= a1_1_PD_new;
+        b0_2_PD <= b0_1_PD_new;
+        b1_2_PD <= b1_1_PD_new;
+        a1_2_PI <= a1_1_PI_new;
+        b0_2_PI <= b0_1_PI_new;
+        b1_2_PI <= b1_1_PI_new;
+    end
+end
 
 /////End of PID///////
 
@@ -678,8 +710,8 @@ AD9783 #(
  DAC0 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(signal1_out), 
-     .DAC1_in(trans1_LP),  
+     .DAC0_in(trans1_in), 
+     .DAC1_in(e1_in),  
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI0_out_p), 
@@ -706,8 +738,8 @@ AD9783 #(
  DAC1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(signal2_out), 
-     .DAC1_in(trans2_LP), 
+     .DAC0_in(trans2_in), 
+     .DAC1_in(ref_e2), 
      .CLK_out_p(), 
      .CLK_out_n(), 
      .DCI_out_p(DCI1_out_p), 

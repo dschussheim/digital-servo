@@ -198,3 +198,5 @@ set_property IOSTANDARD LVCMOS25 [get_ports serial_trig_out]
 
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 2.5 [current_design]
+
+#set_property BITSTREAM.Config.SPI_BUSWIDTH 4 [current_design]

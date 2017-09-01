@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Mon Aug 28 18:03:25 2017
+| Date             : Thu Aug 31 20:46:11 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file LBOx2_power_routed.rpt -pb LBOx2_power_summary_routed.pb -rpx LBOx2_power_routed.rpx
 | Design           : LBOx2
@@ -30,13 +30,13 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 2.086 |
-| Dynamic (W)              | 1.966 |
-| Device Static (W)        | 0.120 |
+| Total On-Chip Power (W)  | 1.878 |
+| Dynamic (W)              | 1.759 |
+| Device Static (W)        | 0.119 |
 | Total Off-Chip Power (W) | 0.044 |
 | Effective TJA (C/W)      | 1.9   |
-| Max Ambient (C)          | 81.1  |
-| Junction Temperature (C) | 28.9  |
+| Max Ambient (C)          | 81.5  |
+| Junction Temperature (C) | 28.5  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,20 +50,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.033 |       12 |       --- |             --- |
-| Slice Logic             |     0.019 |     7007 |       --- |             --- |
-|   LUT as Logic          |     0.015 |     2100 |    101400 |            2.07 |
-|   CARRY4                |     0.003 |      516 |     25350 |            2.04 |
-|   Register              |     0.001 |     4182 |    202800 |            2.06 |
+| Clocks                  |     0.028 |       12 |       --- |             --- |
+| Slice Logic             |     0.007 |     2130 |       --- |             --- |
+|   LUT as Logic          |     0.006 |      630 |    101400 |            0.62 |
+|   CARRY4                |    <0.001 |      125 |     25350 |            0.49 |
+|   Register              |    <0.001 |     1259 |    202800 |            0.62 |
+|   BUFG                  |    <0.001 |        3 |        32 |            9.38 |
 |   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
-|   Others                |     0.000 |       64 |       --- |             --- |
-|   BUFG                  |     0.000 |        3 |        32 |            9.38 |
-| Signals                 |     0.038 |    10076 |       --- |             --- |
+|   Others                |     0.000 |       34 |       --- |             --- |
+| Signals                 |     0.009 |     2643 |       --- |             --- |
 | MMCM                    |     0.291 |        3 |         8 |           37.50 |
-| DSPs                    |     0.052 |       72 |       600 |           12.00 |
-| I/O                     |     1.534 |      110 |       400 |           27.50 |
-| Static Power            |     0.120 |          |           |                 |
-| Total                   |     2.086 |          |           |                 |
+| DSPs                    |     0.011 |       12 |       600 |            2.00 |
+| I/O                     |     1.414 |      109 |       400 |           27.25 |
+| Static Power            |     0.119 |          |           |                 |
+| Total                   |     1.878 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,10 +73,10 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.215 |       0.168 |      0.047 |
-| Vccaux    |       1.800 |     0.215 |       0.197 |      0.018 |
+| Vccint    |       1.000 |     0.123 |       0.077 |      0.046 |
+| Vccaux    |       1.800 |     0.200 |       0.182 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     0.596 |       0.595 |      0.001 |
+| Vcco25    |       2.500 |     0.561 |       0.560 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
@@ -152,28 +152,17 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| LBOx2                |     1.966 |
-|   ADC                |     0.218 |
+| LBOx2                |     1.759 |
+|   ADC                |     0.219 |
 |     LTC2195_SPI_inst |     0.003 |
 |     hzClk            |    <0.001 |
-|   DAC0               |     0.810 |
+|   DAC0               |     0.748 |
+|     AD_9783_SPI_inst |     0.003 |
+|   DAC1               |     0.718 |
 |     AD_9783_SPI_inst |     0.002 |
-|   DAC1               |     0.778 |
-|     AD_9783_SPI_inst |     0.002 |
-|   LBO1               |     0.028 |
-|     PD               |     0.015 |
-|     PI               |     0.013 |
-|   LBO2               |     0.029 |
-|     PD               |     0.015 |
-|     PI               |     0.014 |
-|   LP1                |     0.020 |
-|   LP2                |     0.020 |
+|   LP2                |     0.019 |
 |   new_param_deser1   |    <0.001 |
 |     deser_clk_origin |    <0.001 |
-|   new_param_deser2   |    <0.001 |
-|     deser_clk_origin |    <0.001 |
-|   relockSweep1       |     0.002 |
-|   relockSweep2       |     0.002 |
 |   startup_reset      |    <0.001 |
 +----------------------+-----------+
 
