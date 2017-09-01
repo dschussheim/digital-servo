@@ -236,6 +236,7 @@ end
 
 wire signed [34:0] a1_1_PD_new, b0_1_PD_new, b1_1_PD_new, a1_1_PI_new, b0_1_PI_new, b1_1_PI_new, minval_1_new, sweep_max_1_new, sweep_min_1_new, sweep_stepsize_1_new, offset1_new;
 wire TPmatchOut1;
+
 deserializer new_param_deser1(
     .clk_in(clk_in),
     .rst_in(rst_in),
@@ -347,7 +348,6 @@ IIRfilter1stOrderAntiWindup LP1 (
 );
 */
 
-
 localparam real Ts = 1e-8;  //10ns (sample period)
 localparam real pi = 3.14159265358979;
 
@@ -429,11 +429,11 @@ wire [15:0] relock1_out, relock2_out;
 
 reg signed [15:0] sweep_max_1 = (0.65625)*(16'b0111_1111_1111_1111);
 reg signed [15:0] sweep_min_1 = (0.1875)*(16'b0111_1111_1111_1111); 
-reg        [31:0] sweep_stepsize_1 = 32'b0000_0000_0000_0000_0000_0000_1000_0000; //Change LSB every 128 clock cycles
+reg        [31:0] sweep_stepsize_1 = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
 
 reg signed [15:0] sweep_max_2 = (0.65625)*(16'b0111_1111_1111_1111);
 reg signed [15:0] sweep_min_2 = (0.1875)*(16'b0111_1111_1111_1111); 
-reg        [31:0] sweep_stepsize_2 = 32'b0000_0000_0000_0000_0000_0000_1000_0000; //Change LSB every 128 clock cycles
+reg        [31:0] sweep_stepsize_2 = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
 
 Sweep relockSweep1(
     .clk_in(clk_in),
@@ -455,37 +455,43 @@ Sweep relockSweep2(
     .signal_out(relock2_out)
 );
 
-//Assign new parameters that come over serial line. Max/min assignments don't work, error in Kurt's VB code I think
+//Offset
+localparam real Voff1 = 0;
+reg signed [15:0] offset1 = Voff1*16'b0111_1111_1111_1111;
+wire [15:0] ref_e1;
+assign ref_e1 = e1_in - offset1;
+
+localparam real Voff2 = 0;
+reg signed [15:0] offset2 = Voff2*16'b0111_1111_1111_1111;
+wire [15:0] ref_e2;
+assign ref_e2 = e2_in - offset2;
+
+//Assign new parameters that come over serial line.
 /*
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         //msb's padded with zeros
-        minval1 <= minval_1_new[15:0];
-        sweep_max_1 <= sweep_max_1_new[15:0];
-        sweep_min_1 <= sweep_min_1_new[15:0];
+        minval1 <= {minval_1_new[34],minval_1_new[14:0]};
+        sweep_max_1 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
+        sweep_min_1 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
         sweep_stepsize_1 <= sweep_stepsize_1_new[34:3];
+        offset1 <= {offset1_new[34],offset1_new[14:0]};
     end
 end
-*/
-//Offset
-//-2mV offset
-localparam real Voff2 = 0;
-reg signed [15:0] offset2 = Voff2*16'b0111_1111_1111_1111;
 
-wire [15:0] ref_e2;
-assign ref_e2 = e2_in - offset2;
-/*
+
 always @(posedge clk_in) begin
     if (TPmatchOut2) begin
         //msb's padded with zeros
-        minval2 <= minval_2_new[15:0];
-        sweep_max_2 <= sweep_max_2_new[15:0];
-        //sweep_min_2 <= sweep_min_2_new[15:0];
-        offset2 <= sweep_min_2_new[15:0];
+        minval2 <= {minval_2_new[34],minval_2_new[14:0]};
+        sweep_max_2 <= {sweep_max_2_new[34],sweep_max_2_new[14:0]};
+        sweep_min_2 <= {sweep_min_2_new[34],sweep_min_2_new[14:0]};
         sweep_stepsize_2 <= sweep_stepsize_2_new[34:3];
+        offset2 <= {offset2_new[34],offset2_new[14:0]};
     end
 end
 */
+
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         //msb's padded with zeros
@@ -607,7 +613,8 @@ PIDservo_changeParam LBO1 (
     .a1_PI(a1_1_PI),
     .b0_PI(b0_1_PI),
     .b1_PI(b1_1_PI),    
-    .e_in(e1_in),
+    .e_in(ref_e1),
+    //.e_in(e1_in),
     .e_out(e1_out)
 );
 
@@ -665,9 +672,9 @@ always @(posedge clk_in) begin
         a1_1_PI <= a1_1_PI_new;
         b0_1_PI <= b0_1_PI_new;
         b1_1_PI <= b1_1_PI_new;
-        //offset <= offset1_new[15:0];
     end
 end
+
 
 always @(posedge clk_in) begin
     if (TPmatchOut2) begin
@@ -677,7 +684,6 @@ always @(posedge clk_in) begin
         a1_2_PI <= a1_2_PI_new;
         b0_2_PI <= b0_2_PI_new;
         b1_2_PI <= b1_2_PI_new;
-        //offset <= offset2_new[15:0];
     end
 end
 */
@@ -710,8 +716,8 @@ AD9783 #(
  DAC0 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(trans1_in), 
-     .DAC1_in(e1_in),  
+     .DAC0_in(signal1_out), 
+     .DAC1_in(ref_e1),  
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI0_out_p), 
@@ -738,7 +744,7 @@ AD9783 #(
  DAC1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(trans2_in), 
+     .DAC0_in(signal2_out), 
      .DAC1_in(ref_e2), 
      .CLK_out_p(), 
      .CLK_out_n(), 
