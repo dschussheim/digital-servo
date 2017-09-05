@@ -1,0 +1,357 @@
+
+*** Running vivado
+    with args -log light_leds.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source light_leds.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source light_leds.tcl -notrace
+Command: synth_design -top light_leds -part xc7k160tffg676-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-ffg676'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-ffg676'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6128 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 347.438 ; gain = 78.988
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'light_leds' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/light_leds.v:7]
+	Parameter div_f bound to: 27'b011111010111100001000000000 
+INFO: [Synth 8-638] synthesizing module 'IBUFG' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: FALSE - type: string 
+	Parameter IOSTANDARD bound to: SSTL15 - type: string 
+INFO: [Synth 8-256] done synthesizing module 'IBUFG' (1#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
+INFO: [Synth 8-638] synthesizing module 'clk_div' [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/clk_div.v:21]
+	Parameter div_f bound to: 27'b011111010111100001000000000 
+	Parameter halfway bound to: 27'b001111101011110000100000000 
+INFO: [Synth 8-256] done synthesizing module 'clk_div' (2#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/clk_div.v:21]
+INFO: [Synth 8-256] done synthesizing module 'light_leds' (3#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/light_leds.v:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.766 ; gain = 118.316
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 386.766 ; gain = 118.316
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7k160tffg676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc]
+WARNING: [Vivado 12-584] No ports matched 'bnc[3]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'bnc[3]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'bnc[2]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'bnc[2]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'bnc[1]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'bnc[1]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'bnc[0]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'bnc[0]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[3]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[3]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[2]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[2]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[1]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[1]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[0]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gnd[0]'. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-163] Missing value for option 'objects', please type 'set_property -help' for usage info. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:59]
+CRITICAL WARNING: [Common 17-163] Missing value for option 'objects', please type 'set_property -help' for usage info. [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc:60]
+Finished Parsing XDC File [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.srcs/constrs_1/new/led_test_KX2_const.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/light_leds_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/light_leds_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUFG => IBUF: 1 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 688.348 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k160tffg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (28) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element code_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/light_leds.v:48]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     28 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               28 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     28 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module light_leds 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+Module clk_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     28 Bit       Adders := 1     
++---Registers : 
+	               28 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     28 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "HzClk/div_clk" won't be mapped to RAM because address size (28) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element code_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/light_leds.v:48]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     7|
+|2     |LUT1   |    32|
+|3     |LUT2   |     1|
+|4     |LUT3   |     1|
+|5     |LUT4   |    17|
+|6     |LUT5   |     4|
+|7     |LUT6   |     2|
+|8     |FDRE   |    22|
+|9     |FDSE   |    11|
+|10    |IBUFG  |     1|
+|11    |OBUF   |     4|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+--------+------+
+|      |Instance |Module  |Cells |
++------+---------+--------+------+
+|1     |top      |        |   102|
+|2     |  HzClk  |clk_div |    86|
++------+---------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 688.348 ; gain = 118.316
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 688.348 ; gain = 419.898
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUFG => IBUF: 1 instances
+
+22 Infos, 18 Warnings, 18 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 691.273 ; gain = 430.586
+INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.runs/synth_1/light_leds.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 691.273 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  5 12:01:25 2017...

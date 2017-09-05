@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Sep  5 12:00:59 2017
+# Process ID: 9500
+# Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.runs/synth_1
+# Command line: vivado.exe -log light_leds.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source light_leds.tcl
+# Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.runs/synth_1/light_leds.vds
+# Journal file: C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/led_test_KX2/led_test_KX2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source light_leds.tcl -notrace
