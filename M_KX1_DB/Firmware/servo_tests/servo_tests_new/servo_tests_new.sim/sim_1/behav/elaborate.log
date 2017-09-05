@@ -1,6 +1,6 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto c1aeb433a83e43faaeff4f74b55883e5 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot IIR1stOrder_test_behav xil_defaultlib.IIR1stOrder_test xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto c1aeb433a83e43faaeff4f74b55883e5 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot LBOx2_behav xil_defaultlib.LBOx2 xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/SPI.v:133]
@@ -35,6 +35,6 @@ Compiling module unisims_ver.MMCME2_ADV(BANDWIDTH="OPTIMIZED"...
 Compiling module unisims_ver.MMCME2_BASE(CLKFBOUT_MULT_F=8.0,...
 Compiling module unisims_ver.ODDR(DDR_CLK_EDGE="SAME_EDGE")
 Compiling module xil_defaultlib.AD9783(CLKDIV=4)
-Compiling module xil_defaultlib.IIR1stOrder_test
+Compiling module xil_defaultlib.LBOx2
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot IIR1stOrder_test_behav
+Built simulation snapshot LBOx2_behav

@@ -321,12 +321,13 @@ end
 
 //assign rst_led = ~TPmatchOut;
 ///////////////////////End of deserializer/////////////////////////
-/*
-/////////////Filter transmission in\\\\\\\\\\\\\\\
+
+/////////////Filter inputs\\\\\\\\\\\\\\\
 
 localparam real Ts = 1e-8;  //10ns (sample period)
 localparam real pi = 3.14159265358979;
-
+/*
+//Transmission 1
 localparam real K_1 = 1;
 localparam real f0_1 = 1e3;
 
@@ -347,10 +348,7 @@ IIRfilter1stOrderAntiWindup LP1 (
     .signal_out(trans1_LP)
 );
 */
-
-localparam real Ts = 1e-8;  //10ns (sample period)
-localparam real pi = 3.14159265358979;
-
+//Transmission 2
 localparam real K_2 = 1;
 localparam real f0_2 = 200e3;
 
@@ -371,10 +369,82 @@ IIRfilter1stOrderAntiWindup LP2 (
     .signal_out(trans2_LP)
 );
 
+//Error signal 2
+
+wire signed [15:0] e2int1;
+wire signed [15:0] e2int2;
+wire signed [15:0] e2f;
+
+//500 kHz low-pass
+localparam real f0lp = 500e3;
+reg signed [34:0] a1lp_e2 = (1-pi*f0lp*Ts)/(1+pi*f0lp*Ts)*(2**26);
+reg signed [34:0] b0lp_e2 = (pi*f0lp*Ts)/(1+pi*f0lp*Ts)*(2**26);
+
+IIRfilter1stOrderAntiWindup LP1e2 (
+    .clk_in(clk_in),
+    .on_in(1'b1),
+    .a1_in(a1lp_e2),
+    .b0_in(b0lp_e2),
+    .b1_in(b0lp_e2),
+    .railed_in(2'b00),
+    .hold_in(1'b0),
+    .signal_in(e2_in),
+    .signal_out(e2f)
+    //.signal_out(e2int1)
+);
+/*
+//1.208 MHz Notch
+localparam real f0n1 = 1.208e6;
+localparam real Q1 = 10;
+
+reg signed [34:0] a1n1_e2 = 2*(1 - (pi*Ts*f0n1)**2)/(1 + pi*Ts*f0n1/Q1 + (pi*Ts*f0n1)**2)*(2**26);
+reg signed [34:0] a2n1_e2 = (-1)*(1 - pi*Ts*f0n1/Q1 + (pi*Ts*f0n1)**2)/(1 + pi*Ts*f0n1/Q1 + (pi*Ts*f0n1)**2)*(2**26);
+reg signed [34:0] b0n1_e2 = (1 + (pi*Ts*f0n1)**2)/(1 + pi*Ts*f0n1/Q1 + (pi*Ts*f0n1)**2)*(2**26);
+reg signed [34:0] b1n1_e2 = (-2)*(1 - (pi*Ts*f0n1)**2)/(1 + pi*Ts*f0n1/Q1 + (pi*Ts*f0n1)**2)*(2**26);
+reg signed [34:0] b2n1_e2 = (1 + (pi*Ts*f0n1)**2)/(1 + pi*Ts*f0n1/Q1 + (pi*Ts*f0n1)**2)*(2**26);
+
+IIRfilter2ndOrderSlowAntiWindup Notch1p208 (
+    .clk_in(clk_in),
+    .on_in(1'b1),
+    .a1_in(a1n1_e2),
+    .a2_in(a2n1_e2),
+    .b0_in(b0n1_e2),
+    .b1_in(b1n1_e2),
+    .b2_in(b2n1_e2),
+    .railed_in(2'b00),
+    .hold_in(1'b0),
+    .signal_in(e2int1),
+    .signal_out(e2int2)
+);
+
+//2.416 MHz Notch
+localparam real f0n2 = 2.416e6;
+localparam real Q2 = 10;
+
+reg signed [34:0] a1n2_e2 = 2*(1 - (pi*Ts*f0n2)**2)/(1 + pi*Ts*f0n2/Q2 + (pi*Ts*f0n2)**2)*(2**26);
+reg signed [34:0] a2n2_e2 = (-1)*(1 - pi*Ts*f0n2/Q2 + (pi*Ts*f0n2)**2)/(1 + pi*Ts*f0n2/Q2 + (pi*Ts*f0n2)**2)*(2**26);
+reg signed [34:0] b0n2_e2 = (1 + (pi*Ts*f0n2)**2)/(1 + pi*Ts*f0n2/Q2 + (pi*Ts*f0n2)**2)*(2**26);
+reg signed [34:0] b1n2_e2 = (-2)*(1 - (pi*Ts*f0n2)**2)/(1 + pi*Ts*f0n2/Q2 + (pi*Ts*f0n2)**2)*(2**26);
+reg signed [34:0] b2n2_e2 = (1 + (pi*Ts*f0n2)**2)/(1 + pi*Ts*f0n2/Q2 + (pi*Ts*f0n2)**2)*(2**26);
+
+IIRfilter2ndOrderSlowAntiWindup Notch2p416 (
+    .clk_in(clk_in),
+    .on_in(1'b1),
+    .a1_in(a1n2_e2),
+    .a2_in(a2n2_e2),
+    .b0_in(b0n2_e2),
+    .b1_in(b1n2_e2),
+    .b2_in(b2n2_e2),
+    .railed_in(2'b00),
+    .hold_in(1'b0),
+    .signal_in(e2int2),
+    .signal_out(e2f)
+);
+*/
 ///////////////Relock sweep////////////////
 
 localparam real Vmin1 = 0.25;
-localparam real Vmin2 = 0.01;
+localparam real Vmin2 = 0.03;
 
 reg signed [15:0] minval1 = Vmin1*16'b0111_1111_1111_1111; 
 reg signed [15:0] minval2 = Vmin2*16'b0111_1111_1111_1111; 
@@ -456,15 +526,18 @@ Sweep relockSweep2(
 );
 
 //Offset
-localparam real Voff1 = 0;
+//LBO
+localparam real Voff1 = 0.0126; //12.6mV
 reg signed [15:0] offset1 = Voff1*16'b0111_1111_1111_1111;
 wire [15:0] ref_e1;
 assign ref_e1 = e1_in - offset1;
-
-localparam real Voff2 = 0;
+//assign ref_e1 = e1f - offset1;
+//BBO
+localparam real Voff2 = -0.008;
 reg signed [15:0] offset2 = Voff2*16'b0111_1111_1111_1111;
 wire [15:0] ref_e2;
-assign ref_e2 = e2_in - offset2;
+//assign ref_e2 = e2_in - offset2;
+assign ref_e2 = e2f - offset2;
 
 //Assign new parameters that come over serial line.
 /*
@@ -496,10 +569,13 @@ always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         //msb's padded with zeros
         minval2 <= {minval_1_new[34],minval_1_new[14:0]};
-        sweep_max_2 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
-        sweep_min_2 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
-        sweep_stepsize_2 <= sweep_stepsize_1_new[34:3];
-        offset2 <= {offset1_new[34],offset1_new[14:0]};
+        //sweep_max_2 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
+        //sweep_min_2 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
+        //sweep_stepsize_2 <= sweep_stepsize_1_new[34:3];
+        //offset2 <= {offset1_new[34],offset1_new[14:0]};
+        offset2 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]}; //sweep min
+//        a1e <= {sweep_max_1_new[34],sweep_max_1_new[14:0]}; //sweep max
+//        b0e <= {sweep_stepsize_1_new[34],sweep_stepsize_1_new[14:0]}; //sweep step
     end
 end
 
@@ -567,12 +643,12 @@ end
 //localparam real pi = 3.14159265358979;
 
 //default PID parameters
-localparam G1 = 0.5;
-localparam real Pd1 = G1*0.06;          
-localparam real Pi1 = G1*1;
-localparam real I1  = G1*400;       
-localparam real D1  = G1*0.7e-6;       
-localparam real fc1 = 1e7;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+localparam G1 = 0.7;
+localparam real Pd1 = G1*0.2;          
+localparam real Pi1 = G1*0.15;
+localparam real I1  = G1*600;       
+localparam real D1  = G1*0.5e-6;       
+localparam real fc1 = 0.5e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 
 //Have servo on if we see enough transmission
 wire PID1_on, PID2_on;
@@ -586,7 +662,8 @@ assign PID2_on = ~relock2_on;
 //Ts = 10^-8 for 100MHz sample clock frequency
 //Definitions of filter coefficients. Added scale factors to make gains resonable
 
-reg signed [34:0] a1_1_PD = (1-2*pi*Ts*fc1)*(2**26); // (1-2*pi*Ts*fc)*2^26
+//reg signed [34:0] a1_1_PD = (1-2*pi*Ts*fc1)*(2**26); // correct for gains set before 4 Sept 2017
+reg signed [34:0] a1_1_PD = (1-pi*Ts*fc1)/(1+pi*Ts*fc1)*(2**26); // correct for gains set after 4 Setp 2017
 // D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
 reg signed [34:0] b0_1_PD = ((D1/Pi1)*(fc1/(1+pi*Ts*fc1))+ Pd1*((pi*Ts*fc1)/(1+pi*Ts*fc1)))*(2**26);
 //-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
@@ -619,12 +696,12 @@ PIDservo_changeParam LBO1 (
 );
 
 //default PID parameters
-localparam G2 = 0.24;
-localparam real Pd2 = G2*0.045;          
-localparam real Pi2 = G2*1;
-localparam real I2  = G2*1500;       
-localparam real D2  = G2*0.7e-6;       
-localparam real fc2 = 500e3;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+localparam G2 = 1;
+localparam real Pd2 = G2*0.02;          
+localparam real Pi2 = G2*0.035;
+localparam real I2  = G2*25;       
+localparam real D2  = G2*0.012e-6;       
+localparam real fc2 = 0.5e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
 
 //IIR filter parameter defaults
 
@@ -633,7 +710,8 @@ localparam real fc2 = 500e3;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz]
 //Ts = 10^-8 for 100MHz sample clock frequency
 //Definitions of filter coefficients. Added scale factors to make gains resonable
 
-reg signed [34:0] a1_2_PD = (1-2*pi*Ts*fc2)*(2**26); // (1-2*pi*Ts*fc)*2^26
+//reg signed [34:0] a1_2_PD = (1-2*pi*Ts*fc2)*(2**26); //correct for gains set before 4 Sept 2017
+reg signed [34:0] a1_2_PD = (1-pi*Ts*fc2)/(1+pi*Ts*fc2)*(2**26); //correct for gains set after 4 Sept 2017
 // D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
 reg signed [34:0] b0_2_PD = ((D2/Pi2)*(fc2/(1+pi*Ts*fc2))+ Pd2*((pi*Ts*fc2)/(1+pi*Ts*fc2)))*(2**26);
 //-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
@@ -674,8 +752,8 @@ always @(posedge clk_in) begin
         b1_1_PI <= b1_1_PI_new;
     end
 end
-
-
+*/
+/*
 always @(posedge clk_in) begin
     if (TPmatchOut2) begin
         a1_2_PD <= a1_2_PD_new;
@@ -698,6 +776,7 @@ always @(posedge clk_in) begin
         b1_2_PI <= b1_1_PI_new;
     end
 end
+
 
 /////End of PID///////
 

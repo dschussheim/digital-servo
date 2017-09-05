@@ -12,9 +12,9 @@
       <Properties Property="PROGRAM.CFG_PROGRAM" value="1"/>
       <Properties Property="PROGRAM.CHECKSUM" value="0"/>
       <Properties Property="PROGRAM.ERASE" value="1"/>
-      <Properties Property="PROGRAM.FILES" value="bitFiles/LBOx2/LBOx2_9_1_2017_LBOstatic_BBOreprogram_SPIx4.mcs"/>
-      <Properties Property="PROGRAM.PRM_FILE" value="bitFiles/LBOx2/LBOx2_9_1_2017_LBOstatic_BBOreprogram_SPIx4.prm"/>
-      <Properties Property="PROGRAM.PRM_FILES" value="bitFiles/LBOx2/LBOx2_9_1_2017_LBOstatic_BBOreprogram_SPIx4.prm"/>
+      <Properties Property="PROGRAM.FILES" value="bitFiles/LBOx2/4Sept2017/LBOx2_9_4_2017_BBO_ein_lp.mcs"/>
+      <Properties Property="PROGRAM.PRM_FILE" value="bitFiles/LBOx2/4Sept2017/LBOx2_9_4_2017_BBO_ein_lp.prm"/>
+      <Properties Property="PROGRAM.PRM_FILES" value="bitFiles/LBOx2/4Sept2017/LBOx2_9_4_2017_BBO_ein_lp.prm"/>
       <Properties Property="PROGRAM.UNUSED_PIN_TERMINATION" value="pull-none"/>
       <Properties Property="PROGRAM.VERIFY" value="1"/>
     </Object>
