@@ -79,13 +79,12 @@ module ADC_DAC_test_KX2(
     input   wire            DCO0_p,
     input   wire            DCO0_n,
     input   wire            DCO1_p,
-    input   wire            DCO1_n,
+    input   wire            DCO1_n
     
-    output  wire    [1:0]   HighZout
+    //output  wire    [1:0]   HighZout
     
 );
-
-assign HighZout = 2'bzz;
+//assign HighZout = 2'bzz;
 
 wire clk_int, clk_in, DIVclk;
     
@@ -127,7 +126,7 @@ wire [15:0] ADC00, ADC01, ADC10, ADC11;
 wire [7:0] FR0_out, FR1_out;
 
 parameter CLKDIV = 8;    // 800MHz/8 = 100MHz clock
-parameter N00 = 3'b001, N01 = 3'b010, N10 = 3'b000, N11 = 3'b000;
+parameter N00 = 3'b001, N01 = 3'b001, N10 = 3'b000, N11 = 3'b000;
 //For testing bitslips
 wire [3:0] bitslip_out;
 

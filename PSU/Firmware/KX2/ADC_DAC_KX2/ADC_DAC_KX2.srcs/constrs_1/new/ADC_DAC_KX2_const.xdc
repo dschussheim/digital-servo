@@ -123,10 +123,10 @@ set_property IOSTANDARD LVCMOS25 [get_ports dac_sdi]
 set_property IOSTANDARD LVCMOS25 [get_ports dac_sdo]
 
 #HighZout
-set_property PACKAGE_PIN U21 [get_ports {HighZout[0]}]
-set_property PACKAGE_PIN Y20 [get_ports {HighZout[1]}]
-set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[0]}]
-set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[1]}]
+#set_property PACKAGE_PIN U21 [get_ports {HighZout[0]}]
+#set_property PACKAGE_PIN Y20 [get_ports {HighZout[1]}]
+#set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[0]}]
+#set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[1]}]
 
 
 #ADC1 input pins

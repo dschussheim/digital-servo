@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date                      : Tue Sep  5 18:02:12 2017
+| Date                      : Fri Sep  8 17:34:00 2017
 | Host                      : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command                   : report_io -file ADC_DAC_test_KX2_io_placed.rpt
 | Design                    : ADC_DAC_test_KX2
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           119 |
+|           117 |
 +---------------+
 
 
@@ -627,7 +627,7 @@ Table of Contents
 | U18        |              |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |          |                  |
 | U19        |              | High Range       | IO_L18P_T2_13                | User IO       |             |      13 |            |      |                      |                      |           |            |           |          |          |                  |
 | U20        |              | High Range       | IO_L18N_T2_13                | User IO       |             |      13 |            |      |                      |                      |           |            |           |          |          |                  |
-| U21        | HighZout[0]  | High Range       | IO_0_12                      | TRISTATE      | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |          | NONE             |
+| U21        |              | High Range       | IO_0_12                      | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |          |                  |
 | U22        |              | High Range       | IO_L1P_T0_12                 | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |          |                  |
 | U23        |              | High Range       | VCCO_12                      | VCCO          |             |      12 |            |      |                      |                      |      2.50 |            |           |          |          |                  |
 | U24        | D21_p[0]     | High Range       | IO_L2P_T0_12                 | INPUT         | LVDS_25     |      12 |            |      | 100 Ohm Differential |                 NONE |           | FIXED      |           |          |          | NONE             |
@@ -704,7 +704,7 @@ Table of Contents
 | Y17        |              | High Performance | IO_L19P_T3_32                | User IO       |             |      32 |            |      |                      |                      |           |            |           |          |          |                  |
 | Y18        |              | High Performance | IO_L19N_T3_VREF_32           | User IO       |             |      32 |            |      |                      |                      |           |            |           |          |          |                  |
 | Y19        |              |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |          |                  |
-| Y20        | HighZout[1]  | High Range       | IO_25_12                     | TRISTATE      | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |          | NONE             |
+| Y20        |              | High Range       | IO_25_12                     | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |          |                  |
 | Y21        | adc_sck      | High Range       | IO_L15N_T2_DQS_12            | OUTPUT        | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |          | NONE             |
 | Y22        |              | High Range       | IO_L13P_T2_MRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |          |                  |
 | Y23        |              | High Range       | IO_L12P_T1_MRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |          |                  |

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Tue Sep  5 18:02:33 2017
+| Date             : Fri Sep  8 17:34:20 2017
 | Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command          : report_power -file ADC_DAC_test_KX2_power_routed.rpt -pb ADC_DAC_test_KX2_power_summary_routed.pb -rpx ADC_DAC_test_KX2_power_routed.rpx
 | Design           : ADC_DAC_test_KX2
@@ -51,16 +51,16 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.024 |       12 |       --- |             --- |
-| Slice Logic             |     0.004 |      766 |       --- |             --- |
+| Slice Logic             |     0.004 |      764 |       --- |             --- |
 |   LUT as Logic          |     0.004 |      293 |    101400 |            0.29 |
 |   CARRY4                |    <0.001 |       24 |     25350 |            0.09 |
 |   Register              |    <0.001 |      353 |    202800 |            0.17 |
 |   BUFG                  |    <0.001 |        2 |        32 |            6.25 |
 |   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
-|   Others                |     0.000 |       28 |       --- |             --- |
+|   Others                |     0.000 |       26 |       --- |             --- |
 | Signals                 |     0.005 |      654 |       --- |             --- |
 | MMCM                    |     0.291 |        3 |         8 |           37.50 |
-| I/O                     |     1.391 |       97 |       400 |           24.25 |
+| I/O                     |     1.391 |       95 |       400 |           23.75 |
 | Static Power            |     0.120 |          |           |                 |
 | Total                   |     1.835 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
