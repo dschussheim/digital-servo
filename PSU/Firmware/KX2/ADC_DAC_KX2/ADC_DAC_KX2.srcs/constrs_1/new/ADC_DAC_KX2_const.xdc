@@ -123,10 +123,10 @@ set_property IOSTANDARD LVCMOS25 [get_ports dac_sdi]
 set_property IOSTANDARD LVCMOS25 [get_ports dac_sdo]
 
 #HighZout
-#set_property PACKAGE_PIN U21 [get_ports {HighZout[0]}]
-#set_property PACKAGE_PIN Y20 [get_ports {HighZout[1]}]
-#set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[0]}]
-#set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[1]}]
+set_property PACKAGE_PIN U21 [get_ports {HighZout[0]}]
+set_property PACKAGE_PIN Y20 [get_ports {HighZout[1]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[0]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {HighZout[1]}]
 
 
 #ADC1 input pins
@@ -137,6 +137,7 @@ set_property PACKAGE_PIN AB25 [get_ports {D10_n[0]}]
 #set_property PACKAGE_PIN Y20  [get_ports {D10_n[1]}] #Not LVDS pair on KX2, but this is connection on my baseboard
 set_property PACKAGE_PIN Y25  [get_ports {D10_p[1]}] 
 set_property PACKAGE_PIN Y26 [get_ports {D10_n[1]}]  
+
 
 set_property PACKAGE_PIN A23  [get_ports {D11_p[0]}]
 set_property PACKAGE_PIN A24  [get_ports {D11_n[0]}]

@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               64M
+Start Address      0x00000000
+End Address        0x03FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x00661EDB    Sep  5 14:26:20 2017    C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/BITSTREAMS/ADC_DAC_test_KX2_ADC11.bit

@@ -16,12 +16,14 @@ set_property ip_output_repo c:/Users/dschussheim/Documents/GitHub/digital-servo/
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/AD9783.v
-  C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/LTC2195x2.v
+  C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/ADC_DAC_KX2.srcs/sources_1/new/LTC2195x2delay.v
   C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/timescale.v
   C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/SPI.v
   C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/clk_div.v
   C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/reset.v
   C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/ADC_DAC_KX2.srcs/sources_1/new/ADC_DAC_test_KX2.v
+  C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/LTC2195x2.v
+  C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/Sweep.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

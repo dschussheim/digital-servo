@@ -1,0 +1,27 @@
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto e7f21c354008467dbd41dc8eb97ae715 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LTC2195x2delay_behav xil_defaultlib.LTC2195x2delay xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-597] element index 32 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/SPI.v:133]
+WARNING: [VRFC 10-1783] select index 2 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/SPI.v:133]
+WARNING: [VRFC 10-597] element index 16 into data_out is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/SPI.v:134]
+WARNING: [VRFC 10-1783] select index 1 into spi_sdi_in is out of bounds [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/ADC_DAC_KX2/SPI.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.ODDR(SRTYPE="ASYNC")
+Compiling module unisims_ver.OBUFDS(IOSTANDARD="LVDS_25")
+Compiling module unisims_ver.IBUFDS(DIFF_TERM="TRUE",IBUF_LOW...
+Compiling module xil_defaultlib.clk_div(div_f=27'b01100001101010...
+Compiling module unisims_ver.IDELAYCTRL_default
+Compiling module unisims_ver.IDELAYE2(HIGH_PERFORMANCE_MODE="...
+Compiling secureip modules ...
+Compiling module unisims_ver.ISERDESE2(DATA_RATE="SDR",DATA_W...
+Compiling module xil_defaultlib.SPI(TRANSFER_SIZE=16,SPI_CLK_DIV...
+Compiling module xil_defaultlib.LTC2195x2delay
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot LTC2195x2delay_behav

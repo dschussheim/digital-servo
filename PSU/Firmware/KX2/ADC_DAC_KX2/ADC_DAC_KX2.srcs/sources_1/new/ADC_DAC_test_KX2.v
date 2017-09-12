@@ -79,9 +79,9 @@ module ADC_DAC_test_KX2(
     input   wire            DCO0_p,
     input   wire            DCO0_n,
     input   wire            DCO1_p,
-    input   wire            DCO1_n
+    input   wire            DCO1_n,
     
-    //output  wire    [1:0]   HighZout
+    output  wire    [1:0]   HighZout
     
 );
 //assign HighZout = 2'bzz;
@@ -125,14 +125,15 @@ wire [15:0] ADC00, ADC01, ADC10, ADC11;
 
 wire [7:0] FR0_out, FR1_out;
 
-parameter CLKDIV = 8;    // 800MHz/8 = 100MHz clock
-parameter N00 = 3'b001, N01 = 3'b001, N10 = 3'b000, N11 = 3'b000;
+parameter CLKDIV = 8'h8;    // 800MHz/8 = 100MHz clock
+parameter N00a = 3'b000, N00b = 3'b000, N01 = 3'b001, N10 = 3'b000, N11 = 3'b000;
 //For testing bitslips
 wire [3:0] bitslip_out;
 
-LTC2195x2 #(
+LTC2195x2delay #(
     .CLKDIV(CLKDIV),
-    .N00(N00),
+    .N00a(N00a),
+    .N00b(N00b),
     .N01(N01),
     .N10(N10),
     .N11(N11)
@@ -200,7 +201,7 @@ AD9783 #(
      .clk_in(clk_in), 
      .rst_in(rst_in), 
      .DAC0_in(ADC00), 
-     .DAC1_in(ADC00),  
+     .DAC1_in(ADC01),  
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI0_out_p), 
@@ -227,8 +228,8 @@ AD9783 #(
  DAC1 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(ADC00), 
-     .DAC1_in(ADC00), 
+     .DAC0_in(ADC10), 
+     .DAC1_in(ADC11), 
      .CLK_out_p(), 
      .CLK_out_n(), 
      .DCI_out_p(DCI1_out_p), 

@@ -189,16 +189,23 @@ localparam N_LVDS = 10;		//Number of LVDS channels
 localparam N_SERIAL = 8;	//Number of bits in one serial transfer
 
 wire   [N_LVDS-1:0] data_in_p, data_in_n;
+//assign data_in_p = {FR1_in_p, D11_in_p, D10_in_p, FR0_in_p, D01_in_p, D00_in_p};
+//assign data_in_n = {FR1_in_n, D11_in_n, D10_in_n, FR0_in_n, D01_in_n, D00_in_n};
 assign data_in_p = {FR1_in_p, D11_in_p, D10_in_p, FR0_in_p, D01_in_p, D00_in_p};
 assign data_in_n = {FR1_in_n, D11_in_n, D10_in_n, FR0_in_n, D01_in_n, D00_in_n};
+
 
 wire [N_LVDS*N_SERIAL-1:0] data_out;
 
 always @(posedge clk_in) begin
 	//Order to get bits in right place
+//    ADC00_out <= {
+//        data_out[0], data_out[8],  data_out[1], data_out[9],  data_out[2], data_out[10], data_out[3], data_out[11],
+//        data_out[4], data_out[12], data_out[5], data_out[13], data_out[6], data_out[14], data_out[7], data_out[15]
+//    };
 	ADC00_out <= {
-		data_out[0], data_out[8],  data_out[1], data_out[9],  data_out[2], data_out[10], data_out[3], data_out[11],
-		data_out[4], data_out[12], data_out[5], data_out[13], data_out[6], data_out[14], data_out[7], data_out[15]
+		data_out[0], ~data_out[8],  data_out[1], ~data_out[9],  data_out[2], ~data_out[10], data_out[3], ~data_out[11],
+		data_out[4], ~data_out[12], data_out[5], ~data_out[13], data_out[6], ~data_out[14], data_out[7], ~data_out[15]
 	};
 	ADC01_out <= {
 		data_out[16 + 0], data_out[16 + 8],  data_out[16 + 1], data_out[16 + 9],  data_out[16 + 2], data_out[16 + 10], data_out[16 + 3], data_out[16 + 11],
@@ -333,7 +340,7 @@ end
 
 ////////////Additional bitslips to other channels\\\\\\\\\\\\\ 
 
-parameter N00 = 3'b001, N01 = 3'b001, N10 = 3'b001, N11 = 3'b001;
+parameter N00a = 3'b001, N00b = 3'b001, N01 = 3'b001, N10 = 3'b001, N11 = 3'b001;
 //Slow clock to apply shifts for setparate channels (did not work at fast speeds, 
 //or in variation of state machine above with initial bitslips)
 parameter div_f = 27'd000_100_000;
@@ -346,11 +353,41 @@ hzClk(
     .rst_in(1'b0),
     .div_clk(hz_clk)
 );
-reg [3:0] BScounter00 = 3'b000, BScounter01 = 3'b000, BScounter10 = 3'b000, BScounter11 = 3'b000;
-reg [2:0] hz_counter00 = 3'b000, hz_counter01 = 3'b000, hz_counter10 = 3'b000, hz_counter11 = 3'b000;
-reg BSi00, BSi01, BSi10, BSi11;
+reg [3:0] BScounter00a = 3'b000, BScounter00b = 3'b000, BScounter01 = 3'b000, BScounter10 = 3'b000, BScounter11 = 3'b000;
+reg [2:0] hz_counter00a = 3'b000, hz_counter00b = 3'b000, hz_counter01 = 3'b000, hz_counter10 = 3'b000, hz_counter11 = 3'b000;
+reg BSi00a, BSi00b, BSi01, BSi10, BSi11;
 
 always @(posedge hz_clk) begin
+    if (BScounter00a < N00a)
+        hz_counter00a <= hz_counter00a + 3'b001;
+    if (hz_counter00a == 3'b111 && BScounter00a < 3'b111) begin
+        BScounter00a <= BScounter00a + 3'b001;
+        BSi00a <= 1'b1;
+    end
+    else if (hz_counter00a == 3'b111 && BScounter00a == 3'b111) begin
+        BScounter00a <= 3'b000;
+        BSi00a <= 1'b1;
+    end
+    else 
+        BSi00a <= 1'b0;
+end
+
+always @(posedge hz_clk) begin
+    if (BScounter00b < N00b)
+        hz_counter00b <= hz_counter00b + 3'b001;
+    if (hz_counter00b == 3'b111 && BScounter00b < 3'b111) begin
+        BScounter00b <= BScounter00b + 3'b001;
+        BSi00b <= 1'b1;
+    end
+    else if (hz_counter00b == 3'b111 && BScounter00b == 3'b111) begin
+        BScounter00b <= 3'b000;
+        BSi00b <= 1'b1;
+    end
+    else 
+        BSi00b <= 1'b0;
+end
+
+/*always @(posedge hz_clk) begin
     if (BScounter00 < N00)
         hz_counter00 <= hz_counter00 + 3'b001;
     if (hz_counter00 == 3'b111 && BScounter00 < 3'b111) begin
@@ -363,7 +400,7 @@ always @(posedge hz_clk) begin
     end
     else 
         BSi00 <= 1'b0;
-end
+end*/
 
 always @(posedge hz_clk) begin
     if (BScounter01 < N01)
@@ -410,7 +447,7 @@ always @(posedge hz_clk) begin
         BSi11 <= 1'b0;
 end
 
-assign bitslip_out = {BSi00, BScounter00};
+assign bitslip_out = {BSi01, BScounter01};
 /*
 localparam N_ADC = 3'd4;
 parameter [3*N_ADC-1:0] N = {N11, N10, N01, N00};
@@ -440,7 +477,7 @@ endgenerate
 
 
 wire [N_LVDS-1:0] BS;
-assign BS = {bit_slip0, (bit_slip0 || BSi11), (bit_slip0 || BSi11), (bit_slip0 || BSi10), (bit_slip0 || BSi10), bit_slip0, (bit_slip0 || BSi01), (bit_slip0 || BSi01), (bit_slip0 || BSi00), (bit_slip0 || BSi00)};
+assign BS = {bit_slip0, (bit_slip0 || BSi11), (bit_slip0 || BSi11), (bit_slip0 || BSi10), (bit_slip0 || BSi10), bit_slip0, (bit_slip0 || BSi01), (bit_slip0 || BSi01), (bit_slip0 || BSi00b), (bit_slip0 || BSi00a)};
 
 ///////////ADC input serializers\\\\\\\\\\\\\\\
 genvar pin_count;
