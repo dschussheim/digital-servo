@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               64M
+Start Address      0x00000000
+End Address        0x03FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x00661EDB    Sep 13 14:36:41 2017    C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/BITSTREAMS/LBOx2_9_13_2017_LBO_BBOgreen_default.bit
