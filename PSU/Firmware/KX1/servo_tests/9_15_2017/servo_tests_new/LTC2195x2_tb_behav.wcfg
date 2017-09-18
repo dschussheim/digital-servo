@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="LTC2195x2_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="LTC2195x2_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="6550000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="143"></NameColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="57" />
+   <wvobject fp_name="/LTC2195x2_tb/clk_in" type="logic">
+      <obj_property name="ElementShortName">clk_in</obj_property>
+      <obj_property name="ObjectShortName">clk_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/rst_in" type="logic">
+      <obj_property name="ElementShortName">rst_in</obj_property>
+      <obj_property name="ObjectShortName">rst_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/cmd_trig_in" type="logic">
+      <obj_property name="ElementShortName">cmd_trig_in</obj_property>
+      <obj_property name="ObjectShortName">cmd_trig_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/cmd_addr_in" type="array">
+      <obj_property name="ElementShortName">cmd_addr_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_addr_in[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/cmd_data_in" type="array">
+      <obj_property name="ElementShortName">cmd_data_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_data_in[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/spi_sdi_in" type="logic">
+      <obj_property name="ElementShortName">spi_sdi_in</obj_property>
+      <obj_property name="ObjectShortName">spi_sdi_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/DCO0_in_p" type="logic">
+      <obj_property name="ElementShortName">DCO0_in_p</obj_property>
+      <obj_property name="ObjectShortName">DCO0_in_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/DCO0_in_n" type="logic">
+      <obj_property name="ElementShortName">DCO0_in_n</obj_property>
+      <obj_property name="ObjectShortName">DCO0_in_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/DCO1_in_p" type="logic">
+      <obj_property name="ElementShortName">DCO1_in_p</obj_property>
+      <obj_property name="ObjectShortName">DCO1_in_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/DCO1_in_n" type="logic">
+      <obj_property name="ElementShortName">DCO1_in_n</obj_property>
+      <obj_property name="ObjectShortName">DCO1_in_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/FR0_in_p" type="logic">
+      <obj_property name="ElementShortName">FR0_in_p</obj_property>
+      <obj_property name="ObjectShortName">FR0_in_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/FR0_in_n" type="logic">
+      <obj_property name="ElementShortName">FR0_in_n</obj_property>
+      <obj_property name="ObjectShortName">FR0_in_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/FR1_in_p" type="logic">
+      <obj_property name="ElementShortName">FR1_in_p</obj_property>
+      <obj_property name="ObjectShortName">FR1_in_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/FR1_in_n" type="logic">
+      <obj_property name="ElementShortName">FR1_in_n</obj_property>
+      <obj_property name="ObjectShortName">FR1_in_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D00_in_p" type="array">
+      <obj_property name="ElementShortName">D00_in_p[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D00_in_p[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D00_in_n" type="array">
+      <obj_property name="ElementShortName">D00_in_n[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D00_in_n[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D01_in_p" type="array">
+      <obj_property name="ElementShortName">D01_in_p[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D01_in_p[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D01_in_n" type="array">
+      <obj_property name="ElementShortName">D01_in_n[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D01_in_n[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D10_in_p" type="array">
+      <obj_property name="ElementShortName">D10_in_p[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D10_in_p[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D10_in_n" type="array">
+      <obj_property name="ElementShortName">D10_in_n[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D10_in_n[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D11_in_p" type="array">
+      <obj_property name="ElementShortName">D11_in_p[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D11_in_p[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/D11_in_n" type="array">
+      <obj_property name="ElementShortName">D11_in_n[1:0]</obj_property>
+      <obj_property name="ObjectShortName">D11_in_n[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/spi_scs0_out" type="logic">
+      <obj_property name="ElementShortName">spi_scs0_out</obj_property>
+      <obj_property name="ObjectShortName">spi_scs0_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/spi_scs1_out" type="logic">
+      <obj_property name="ElementShortName">spi_scs1_out</obj_property>
+      <obj_property name="ObjectShortName">spi_scs1_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/spi_sck_out" type="logic">
+      <obj_property name="ElementShortName">spi_sck_out</obj_property>
+      <obj_property name="ObjectShortName">spi_sck_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/spi_sdo_out" type="logic">
+      <obj_property name="ElementShortName">spi_sdo_out</obj_property>
+      <obj_property name="ObjectShortName">spi_sdo_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/ENC_out_p" type="logic">
+      <obj_property name="ElementShortName">ENC_out_p</obj_property>
+      <obj_property name="ObjectShortName">ENC_out_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/ENC_out_n" type="logic">
+      <obj_property name="ElementShortName">ENC_out_n</obj_property>
+      <obj_property name="ObjectShortName">ENC_out_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/ADC00_out" type="array">
+      <obj_property name="ElementShortName">ADC00_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC00_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/ADC01_out" type="array">
+      <obj_property name="ElementShortName">ADC01_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC01_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/ADC10_out" type="array">
+      <obj_property name="ElementShortName">ADC10_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC10_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/ADC11_out" type="array">
+      <obj_property name="ElementShortName">ADC11_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC11_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/FR0_out" type="array">
+      <obj_property name="ElementShortName">FR0_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">FR0_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/FR1_out" type="array">
+      <obj_property name="ElementShortName">FR1_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">FR1_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/TP00" type="array">
+      <obj_property name="ElementShortName">TP00[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TP00[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/TP01" type="array">
+      <obj_property name="ElementShortName">TP01[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TP01[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/TP10" type="array">
+      <obj_property name="ElementShortName">TP10[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TP10[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/TP11" type="array">
+      <obj_property name="ElementShortName">TP11[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TP11[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/value" type="array">
+      <obj_property name="ElementShortName">value[15:0]</obj_property>
+      <obj_property name="ObjectShortName">value[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/A" type="array">
+      <obj_property name="ElementShortName">A[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/B" type="array">
+      <obj_property name="ElementShortName">B[7:0]</obj_property>
+      <obj_property name="ObjectShortName">B[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/val00" type="array">
+      <obj_property name="ElementShortName">val00[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val00[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/val01" type="array">
+      <obj_property name="ElementShortName">val01[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val01[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/val10" type="array">
+      <obj_property name="ElementShortName">val10[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val10[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/val11" type="array">
+      <obj_property name="ElementShortName">val11[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val11[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/bit_slip0" type="logic">
+      <obj_property name="ElementShortName">bit_slip0</obj_property>
+      <obj_property name="ObjectShortName">bit_slip0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/bit_slip1" type="logic">
+      <obj_property name="ElementShortName">bit_slip1</obj_property>
+      <obj_property name="ObjectShortName">bit_slip1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BS_state0" type="array">
+      <obj_property name="ElementShortName">BS_state0[1:0]</obj_property>
+      <obj_property name="ObjectShortName">BS_state0[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BS_state1" type="array">
+      <obj_property name="ElementShortName">BS_state1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">BS_state1[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BS" type="array">
+      <obj_property name="ElementShortName">BS[9:0]</obj_property>
+      <obj_property name="ObjectShortName">BS[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BSi00" type="logic">
+      <obj_property name="ElementShortName">BSi00</obj_property>
+      <obj_property name="ObjectShortName">BSi00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BSi01" type="logic">
+      <obj_property name="ElementShortName">BSi01</obj_property>
+      <obj_property name="ObjectShortName">BSi01</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BSstate00" type="logic">
+      <obj_property name="ElementShortName">BSstate00</obj_property>
+      <obj_property name="ObjectShortName">BSstate00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BSstate01" type="logic">
+      <obj_property name="ElementShortName">BSstate01</obj_property>
+      <obj_property name="ObjectShortName">BSstate01</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/rst_off" type="logic">
+      <obj_property name="ElementShortName">rst_off</obj_property>
+      <obj_property name="ObjectShortName">rst_off</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BSstate00" type="logic">
+      <obj_property name="ElementShortName">BSstate00</obj_property>
+      <obj_property name="ObjectShortName">BSstate00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LTC2195x2_tb/uut/BSstate01" type="logic">
+      <obj_property name="ElementShortName">BSstate01</obj_property>
+      <obj_property name="ObjectShortName">BSstate01</obj_property>
+   </wvobject>
+</wave_config>

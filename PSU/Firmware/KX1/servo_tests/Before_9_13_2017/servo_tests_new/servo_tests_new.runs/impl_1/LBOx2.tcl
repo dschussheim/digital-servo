@@ -51,12 +51,12 @@ set rc [catch {
   create_project -in_memory -part xc7k160tfbg676-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.cache/wt [current_project]
-  set_property parent.project_path C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.xpr [current_project]
-  set_property ip_output_repo C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/Before_9_13_2017/servo_tests_new/servo_tests_new.cache/wt [current_project]
+  set_property parent.project_path C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/Before_9_13_2017/servo_tests_new/servo_tests_new.xpr [current_project]
+  set_property ip_output_repo C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/Before_9_13_2017/servo_tests_new/servo_tests_new.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.runs/synth_1/LBOx2.dcp
-  read_xdc C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_const.xdc
+  add_files -quiet C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/Before_9_13_2017/servo_tests_new/servo_tests_new.runs/synth_1/LBOx2.dcp
+  read_xdc C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/Before_9_13_2017/servo_tests_new/servo_tests_const.xdc
   link_design -top LBOx2 -part xc7k160tfbg676-1
   close_msg_db -file init_design.pb
 } RESULT]

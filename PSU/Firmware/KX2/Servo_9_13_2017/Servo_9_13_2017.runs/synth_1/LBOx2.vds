@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Wed Sep 13 14:33:25 2017
-# Process ID: 6880
+# Start of session at: Mon Sep 18 11:14:49 2017
+# Process ID: 3660
 # Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/Servo_9_13_2017.runs/synth_1
 # Command line: vivado.exe -log LBOx2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LBOx2.tcl
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/Servo_9_13_2017.runs/synth_1/LBOx2.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-ffg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-ffg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2260 
+INFO: Helper process launched with PID 4604 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 347.820 ; gain = 79.242
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 347.555 ; gain = 79.035
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'LBOx2' [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/LBOx2.v:10]
 	Parameter CLKDIV bound to: 8 - type: integer 
@@ -34,16 +34,16 @@ INFO: [Synth 8-638] synthesizing module 'LBOx2' [C:/Users/dschussheim/Documents/
 	Parameter f0lp bound to: 500000.000000 - type: float 
 	Parameter Vmin1 bound to: 0.250000 - type: float 
 	Parameter Vmin2 bound to: 0.030000 - type: float 
-	Parameter Voff1 bound to: 0.012600 - type: float 
-	Parameter Voff2 bound to: -0.008000 - type: float 
+	Parameter Voff1 bound to: -0.010000 - type: float 
+	Parameter Voff2 bound to: -0.008500 - type: float 
 	Parameter LOCKED bound to: 3'b100 
 	Parameter UNLOCKED bound to: 3'b010 
 	Parameter UNLOCKED1S bound to: 3'b101 
-	Parameter G1 bound to: 0.700000 - type: float 
-	Parameter Pd1 bound to: 0.140000 - type: float 
-	Parameter Pi1 bound to: 0.105000 - type: float 
-	Parameter I1 bound to: 420.000000 - type: float 
-	Parameter D1 bound to: 0.000000 - type: float 
+	Parameter G1 bound to: -0.700000 - type: float 
+	Parameter Pd1 bound to: -0.140000 - type: float 
+	Parameter Pi1 bound to: -0.105000 - type: float 
+	Parameter I1 bound to: -420.000000 - type: float 
+	Parameter D1 bound to: -0.000000 - type: float 
 	Parameter fc1 bound to: 500000.000000 - type: float 
 	Parameter G2 bound to: 1 - type: integer 
 	Parameter Pd2 bound to: 0.020000 - type: float 
@@ -104,7 +104,7 @@ INFO: [Synth 8-638] synthesizing module 'IDELAYE2' [C:/Xilinx/Vivado/2017.2/scri
 	Parameter DELAY_SRC bound to: IDATAIN - type: string 
 	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
 	Parameter IDELAY_TYPE bound to: FIXED - type: string 
-	Parameter IDELAY_VALUE bound to: 3 - type: integer 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
 	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
@@ -144,7 +144,7 @@ INFO: [Synth 8-638] synthesizing module 'IDELAYE2__parameterized0' [C:/Xilinx/Vi
 	Parameter DELAY_SRC bound to: IDATAIN - type: string 
 	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
 	Parameter IDELAY_TYPE bound to: FIXED - type: string 
-	Parameter IDELAY_VALUE bound to: 1 - type: integer 
+	Parameter IDELAY_VALUE bound to: 10 - type: integer 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
 	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
@@ -158,7 +158,7 @@ INFO: [Synth 8-638] synthesizing module 'IDELAYE2__parameterized1' [C:/Xilinx/Vi
 	Parameter DELAY_SRC bound to: IDATAIN - type: string 
 	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
 	Parameter IDELAY_TYPE bound to: FIXED - type: string 
-	Parameter IDELAY_VALUE bound to: 14 - type: integer 
+	Parameter IDELAY_VALUE bound to: 9 - type: integer 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
 	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
@@ -167,34 +167,6 @@ INFO: [Synth 8-638] synthesizing module 'IDELAYE2__parameterized1' [C:/Xilinx/Vi
 	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
 	Parameter SIM_DELAY_D bound to: 0 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'IDELAYE2__parameterized1' (6#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:16519]
-INFO: [Synth 8-638] synthesizing module 'IDELAYE2__parameterized2' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:16519]
-	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
-	Parameter DELAY_SRC bound to: IDATAIN - type: string 
-	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
-	Parameter IDELAY_TYPE bound to: FIXED - type: string 
-	Parameter IDELAY_VALUE bound to: 13 - type: integer 
-	Parameter IS_C_INVERTED bound to: 1'b0 
-	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
-	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
-	Parameter PIPE_SEL bound to: FALSE - type: string 
-	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: float 
-	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
-	Parameter SIM_DELAY_D bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'IDELAYE2__parameterized2' (6#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:16519]
-INFO: [Synth 8-638] synthesizing module 'IDELAYE2__parameterized3' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:16519]
-	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
-	Parameter DELAY_SRC bound to: IDATAIN - type: string 
-	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
-	Parameter IDELAY_TYPE bound to: FIXED - type: string 
-	Parameter IDELAY_VALUE bound to: 0 - type: integer 
-	Parameter IS_C_INVERTED bound to: 1'b0 
-	Parameter IS_DATAIN_INVERTED bound to: 1'b0 
-	Parameter IS_IDATAIN_INVERTED bound to: 1'b0 
-	Parameter PIPE_SEL bound to: FALSE - type: string 
-	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: float 
-	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
-	Parameter SIM_DELAY_D bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'IDELAYE2__parameterized3' (6#1) [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:16519]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20759]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: float 
@@ -425,7 +397,7 @@ WARNING: [Synth 8-3331] design LBOx2 has unconnected port DCO0_n
 WARNING: [Synth 8-3331] design LBOx2 has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design LBOx2 has unconnected port DCO1_n
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 390.902 ; gain = 122.324
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 390.641 ; gain = 122.121
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -460,7 +432,7 @@ WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[1] to constant 0 [C:/
 WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/LBOx2.v:140]
 WARNING: [Synth 8-3295] tying undriven pin DAC1:spi_sdi_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/LBOx2.v:697]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 390.902 ; gain = 122.324
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 390.641 ; gain = 122.121
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -527,22 +499,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFG => IBUF: 1 instances
   MMCME2_BASE => MMCME2_ADV: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 725.551 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 725.293 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 725.551 ; gain = 456.973
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 725.293 ; gain = 456.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tffg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 725.551 ; gain = 456.973
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 725.293 ; gain = 456.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 725.551 ; gain = 456.973
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 725.293 ; gain = 456.773
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/reset.v:24]
 INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
@@ -638,7 +610,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/
 INFO: [Synth 8-3354] encoded FSM with state register 'state_f_reg' using encoding 'one-hot' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/AD9783.v:316]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 725.551 ; gain = 456.973
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 725.293 ; gain = 456.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1267,23 +1239,11 @@ INFO: [Synth 8-3886] merging instance 'AD9783:/data_in_reg[34]' (FD) to 'AD9783:
 INFO: [Synth 8-3886] merging instance 'AD9783:/data_in_reg[16]' (FD) to 'AD9783:/data_in_reg[35]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (AD9783:/\data_in_reg[35] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (AD9783:/\data_in_reg[17] )
+INFO: [Synth 8-3886] merging instance 'ADC/ADC01_out_reg[0]' (FD) to 'ADC/ADC01_out_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (ADC/\spi_data_reg[15] )
 INFO: [Synth 8-3886] merging instance 'AD9783:/spi_data_reg[13]' (FDE) to 'AD9783:/spi_data_reg[14]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (AD9783:/\spi_data_reg[14] )
-INFO: [Synth 8-3886] merging instance 'ADC/ADC01_out_reg[0]' (FD) to 'ADC/ADC01_out_reg[2]'
 WARNING: [Synth 8-3332] Sequential element (spi_data_reg[15]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[11]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[10]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[9]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[8]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[7]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[6]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[5]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[4]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[3]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[2]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[1]) is unused and will be removed from module LTC2195x2delay.
-WARNING: [Synth 8-3332] Sequential element (ADC00_out_reg[0]) is unused and will be removed from module LTC2195x2delay.
 WARNING: [Synth 8-3332] Sequential element (FR1_out_reg[7]) is unused and will be removed from module LTC2195x2delay.
 WARNING: [Synth 8-3332] Sequential element (FR1_out_reg[6]) is unused and will be removed from module LTC2195x2delay.
 WARNING: [Synth 8-3332] Sequential element (FR1_out_reg[5]) is unused and will be removed from module LTC2195x2delay.
@@ -1371,6 +1331,18 @@ WARNING: [Synth 8-3332] Sequential element (num9_reg[33]) is unused and will be 
 WARNING: [Synth 8-3332] Sequential element (num9_reg[32]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num9_reg[31]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num9_reg[30]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[29]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[28]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[27]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[26]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[25]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[24]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[23]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[22]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[21]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[20]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[19]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[18]) is unused and will be removed from module deserializer.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[0]' (FDE) to 'DAC0/spi_data_reg[4]'
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[1]' (FDE) to 'DAC0/spi_data_reg[4]'
@@ -1385,7 +1357,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (relockSwe
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (relockSweep1/\next_val_f_reg[0] )
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[4]' (FDE) to 'DAC0/spi_data_reg[10]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 725.551 ; gain = 456.973
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 725.293 ; gain = 456.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1483,13 +1455,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 727.816 ; gain = 459.238
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 728.078 ; gain = 459.559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 733.828 ; gain = 465.250
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 733.086 ; gain = 464.566
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1501,7 +1473,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1525,7 +1497,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1538,7 +1510,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1550,25 +1522,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1601,47 +1573,45 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |BUFG        |    11|
-|2     |CARRY4      |   501|
+|2     |CARRY4      |   502|
 |3     |DSP48E1     |    46|
 |4     |DSP48E1_1   |    16|
-|5     |DSP48E1_2   |     2|
-|6     |DSP48E1_3   |     8|
+|5     |DSP48E1_2   |     8|
+|6     |DSP48E1_3   |     2|
 |7     |IDELAYCTRL  |     1|
-|8     |IDELAYE2    |     1|
-|9     |IDELAYE2_1  |     1|
-|10    |IDELAYE2_2  |     3|
-|11    |IDELAYE2_3  |     4|
-|12    |IDELAYE2_4  |     1|
-|13    |ISERDESE2   |    10|
-|14    |LUT1        |   243|
-|15    |LUT2        |  1739|
-|16    |LUT3        |    99|
-|17    |LUT4        |    72|
-|18    |LUT5        |    75|
-|19    |LUT6        |    94|
-|20    |MMCME2_ADV  |     1|
-|21    |MMCME2_BASE |     2|
-|22    |ODDR        |     1|
-|23    |ODDR_1      |    36|
-|24    |SRL16E      |     3|
-|25    |FDCE        |   147|
-|26    |FDPE        |    44|
-|27    |FDRE        |  2464|
-|28    |FDSE        |     6|
-|29    |LDC         |    16|
-|30    |IBUF        |     3|
-|31    |IBUFDS      |    12|
-|32    |IBUFG       |     1|
-|33    |OBUF        |    15|
-|34    |OBUFDS      |    36|
+|8     |IDELAYE2    |     3|
+|9     |IDELAYE2_1  |     3|
+|10    |IDELAYE2_2  |     4|
+|11    |ISERDESE2   |    10|
+|12    |LUT1        |   242|
+|13    |LUT2        |  1750|
+|14    |LUT3        |    99|
+|15    |LUT4        |    72|
+|16    |LUT5        |    75|
+|17    |LUT6        |    94|
+|18    |MMCME2_ADV  |     1|
+|19    |MMCME2_BASE |     2|
+|20    |ODDR        |     1|
+|21    |ODDR_1      |    36|
+|22    |SRL16E      |     3|
+|23    |FDCE        |   147|
+|24    |FDPE        |    44|
+|25    |FDRE        |  2476|
+|26    |FDSE        |     6|
+|27    |LDC         |    16|
+|28    |IBUF        |     3|
+|29    |IBUFDS      |    12|
+|30    |IBUFG       |     1|
+|31    |OBUF        |    15|
+|32    |OBUFDS      |    36|
 +------+------------+------+
 
 Report Instance Areas: 
 +------+---------------------+------------------------------+------+
 |      |Instance             |Module                        |Cells |
 +------+---------------------+------------------------------+------+
-|1     |top                  |                              |  5714|
-|2     |  ADC                |LTC2195x2delay                |   389|
+|1     |top                  |                              |  5737|
+|2     |  ADC                |LTC2195x2delay                |   415|
 |3     |    LTC2195_SPI_inst |SPI_9                         |   131|
 |4     |    hzClk            |clk_div                       |    80|
 |5     |  DAC0               |AD9783                        |   282|
@@ -1655,7 +1625,7 @@ Report Instance Areas:
 |13    |    PD               |IIRfilter1stOrderAntiWindup_4 |   459|
 |14    |    PI               |IIRfilter1stOrderAntiWindup_5 |   491|
 |15    |  LP1e2              |IIRfilter1stOrderAntiWindup   |   511|
-|16    |  LP2                |IIRfilter1stOrderAntiWindup_2 |   509|
+|16    |  LP2                |IIRfilter1stOrderAntiWindup_2 |   506|
 |17    |  new_param_deser1   |deserializer                  |  1071|
 |18    |    deser_clk_origin |clk_div__parameterized1       |    78|
 |19    |  relockSweep1       |Sweep                         |   160|
@@ -1663,14 +1633,14 @@ Report Instance Areas:
 |21    |  startup_reset      |reset                         |    84|
 +------+---------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 772.484 ; gain = 503.906
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 772.488 ; gain = 503.969
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1683 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 772.484 ; gain = 169.258
-Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 772.484 ; gain = 503.906
+Synthesis finished with 0 errors, 0 critical warnings and 1671 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 772.488 ; gain = 169.316
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 772.488 ; gain = 503.969
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 701 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-17] Analyzing 702 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 10 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -1679,9 +1649,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 16 instances
   MMCME2_BASE => MMCME2_ADV: 2 instances
 
-202 Infos, 280 Warnings, 15 Critical Warnings and 0 Errors encountered.
+198 Infos, 280 Warnings, 15 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 772.484 ; gain = 511.672
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 772.488 ; gain = 511.734
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Servo_9_13_2017/Servo_9_13_2017.runs/synth_1/LBOx2.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 772.484 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Sep 13 14:34:17 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 772.488 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 18 11:15:35 2017...

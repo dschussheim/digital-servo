@@ -1,0 +1,179 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date             : Mon Sep 18 14:30:39 2017
+| Host             : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
+| Command          : report_power -file LBOx2_power_routed.rpt -pb LBOx2_power_summary_routed.pb -rpx LBOx2_power_routed.rpx
+| Design           : LBOx2
+| Device           : xc7k160tfbg676-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------+
+| Total On-Chip Power (W)  | 2.135 |
+| Dynamic (W)              | 2.015 |
+| Device Static (W)        | 0.120 |
+| Total Off-Chip Power (W) | 0.044 |
+| Effective TJA (C/W)      | 1.9   |
+| Max Ambient (C)          | 81.0  |
+| Junction Temperature (C) | 29.0  |
+| Confidence Level         | Low   |
+| Setting File             | ---   |
+| Simulation Activity File | ---   |
+| Design Nets Matched      | NA    |
++--------------------------+-------+
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.034 |       13 |       --- |             --- |
+| Slice Logic             |     0.019 |     5408 |       --- |             --- |
+|   LUT as Logic          |     0.015 |     2039 |    101400 |            2.01 |
+|   CARRY4                |     0.003 |      502 |     25350 |            1.98 |
+|   Register              |    <0.001 |     2691 |    202800 |            1.33 |
+|   LUT as Shift Register |    <0.001 |        3 |     35000 |           <0.01 |
+|   Others                |     0.000 |       61 |       --- |             --- |
+|   BUFG                  |     0.000 |        2 |        32 |            6.25 |
+| Signals                 |     0.036 |     8791 |       --- |             --- |
+| MMCM                    |     0.291 |        3 |         8 |           37.50 |
+| DSPs                    |     0.061 |       72 |       600 |           12.00 |
+| I/O                     |     1.574 |      109 |       400 |           27.25 |
+| Static Power            |     0.120 |          |           |                 |
+| Total                   |     2.135 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.223 |       0.176 |      0.047 |
+| Vccaux    |       1.800 |     0.250 |       0.232 |      0.018 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.587 |       0.586 |      0.001 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 1.9                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 3.4                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++------------------------+---------------------------+-----------------+
+| Clock                  | Domain                    | Constraint (ns) |
++------------------------+---------------------------+-----------------+
+| MMCME2_BASE_inst_n_2   | DAC0/MMCME2_BASE_inst_n_2 |             5.0 |
+| MMCME2_BASE_inst_n_2_1 | DAC1/MMCME2_BASE_inst_n_2 |             5.0 |
+| clk                    | clk                       |            10.0 |
+| clk200_int             | ADC/clk200_int            |             5.0 |
+| clkDLYi                | DAC0/clkDLYi              |             5.0 |
+| clkENC_int             | ADC/clkENC_int            |            10.0 |
+| clkFB                  | ADC/clkFB                 |            10.0 |
+| clkFB_1                | DAC0/clkFB                |            10.0 |
+| clkFB_2                | DAC1/clkFB                |            10.0 |
+| clk_div_int            | ADC/clk_div_int           |            10.0 |
+| clk_int                | ADC/clk_int               |             1.3 |
++------------------------+---------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++----------------------+-----------+
+| Name                 | Power (W) |
++----------------------+-----------+
+| LBOx2                |     2.015 |
+|   ADC                |     0.290 |
+|     LTC2195_SPI_inst |     0.003 |
+|     hzClk            |    <0.001 |
+|   DAC0               |     0.780 |
+|     AD_9783_SPI_inst |     0.003 |
+|   DAC1               |     0.777 |
+|     AD_9783_SPI_inst |     0.002 |
+|   LBO1               |     0.029 |
+|     PD               |     0.015 |
+|     PI               |     0.013 |
+|   LBO2               |     0.039 |
+|     PD               |     0.018 |
+|     PI               |     0.020 |
+|   LP1e2              |     0.022 |
+|   LP2                |     0.018 |
+|   new_param_deser1   |    <0.001 |
+|     deser_clk_origin |    <0.001 |
+|   relockSweep1       |     0.002 |
+|   relockSweep2       |     0.002 |
+|   startup_reset      |    <0.001 |
++----------------------+-----------+
+
+

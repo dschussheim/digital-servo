@@ -12,9 +12,9 @@
       <Properties Property="PROGRAM.CFG_PROGRAM" value="1"/>
       <Properties Property="PROGRAM.CHECKSUM" value="0"/>
       <Properties Property="PROGRAM.ERASE" value="1"/>
-      <Properties Property="PROGRAM.FILES" value="BITSTREAMS/LBOx2_9_13_2017_LBO_BBOgreen_default.mcs"/>
-      <Properties Property="PROGRAM.PRM_FILE" value="BITSTREAMS/LBOx2_9_13_2017_LBO_BBOgreen_default.prm"/>
-      <Properties Property="PROGRAM.PRM_FILES" value="BITSTREAMS/LBOx2_9_13_2017_LBO_BBOgreen_default.prm"/>
+      <Properties Property="PROGRAM.FILES" value="BITSTREAMS/LBOx2_9_15_2017_LBOneg_BBOgreen_def_progLBO.mcs"/>
+      <Properties Property="PROGRAM.PRM_FILE" value="BITSTREAMS/LBOx2_9_15_2017_LBOneg_BBOgreen_def_progLBO.prm"/>
+      <Properties Property="PROGRAM.PRM_FILES" value="BITSTREAMS/LBOx2_9_15_2017_LBOneg_BBOgreen_def_progLBO.prm"/>
       <Properties Property="PROGRAM.UNUSED_PIN_TERMINATION" value="pull-down"/>
       <Properties Property="PROGRAM.VERIFY" value="1"/>
     </Object>
@@ -23,7 +23,7 @@
     <Object name="xc7k160t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value=""/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/LBOx2.bit"/>
       <Properties Property="PROGRAM.HW_CFGMEM_PART" value="s25fl512s-spi-x1_x2_x4"/>
       <Properties Property="SLR.COUNT" value="C:/Users/dschussheim/AppData/Roaming/Xilinx/Vivado/1"/>
     </Object>

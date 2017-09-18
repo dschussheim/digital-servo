@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Wed Sep 13 14:34:17 2017
+| Date         : Mon Sep 18 11:15:35 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LBOx2_utilization_synth.rpt -pb LBOx2_utilization_synth.pb
 | Design       : LBOx2
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 2219 |     0 |    101400 |  2.19 |
-|   LUT as Logic             | 2216 |     0 |    101400 |  2.19 |
+| Slice LUTs*                | 2225 |     0 |    101400 |  2.19 |
+|   LUT as Logic             | 2222 |     0 |    101400 |  2.19 |
 |   LUT as Memory            |    3 |     0 |     35000 | <0.01 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    3 |     0 |           |       |
-| Slice Registers            | 2677 |     0 |    202800 |  1.32 |
-|   Register as Flip Flop    | 2661 |     0 |    202800 |  1.31 |
+| Slice Registers            | 2689 |     0 |    202800 |  1.33 |
+|   Register as Flip Flop    | 2673 |     0 |    202800 |  1.32 |
 |   Register as Latch        |   16 |     0 |    202800 | <0.01 |
 | F7 Muxes                   |    0 |     0 |     50700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     25350 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 44    |          Yes |           - |          Set |
 | 163   |          Yes |           - |        Reset |
 | 6     |          Yes |         Set |            - |
-| 2464  |          Yes |       Reset |            - |
+| 2476  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -157,10 +157,10 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 2464 |        Flop & Latch |
-| LUT2       | 1739 |                 LUT |
-| CARRY4     |  501 |          CarryLogic |
-| LUT1       |  242 |                 LUT |
+| FDRE       | 2476 |        Flop & Latch |
+| LUT2       | 1750 |                 LUT |
+| CARRY4     |  502 |          CarryLogic |
+| LUT1       |  241 |                 LUT |
 | FDCE       |  147 |        Flop & Latch |
 | LUT3       |   99 |                 LUT |
 | LUT6       |   94 |                 LUT |

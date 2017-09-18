@@ -190,6 +190,9 @@ ADC (
     .bitslip_out(bitslip_out)
 );
 
+always @(posedge clk_in)
+    led_out <= trans1_in[15:12];
+
 //assign led_out = ~bitslip_out;
 
 parameter div_f = 27'd100_000_000;
@@ -621,10 +624,10 @@ reg [2:0] relock1_state, relock2_state;
 always @(posedge clk_in) begin
     relock1_state <= relock_next_state(relock1_on, trans1_in, relock1_state, relock1_counter);
     relock2_state <= relock_next_state(relock2_on, trans2_in, relock2_state, relock2_counter);
-    led_out[0] <= ~relock1_state[1]; //not locked
-    led_out[1] <= ~relock1_state[0]; //not locked 1s ago
-    led_out[2] <= ~relock2_state[1]; //not locked
-    led_out[3] <= ~relock2_state[0]; //not locked 1s ago
+//    led_out[0] <= ~relock1_state[1]; //not locked
+//    led_out[1] <= ~relock1_state[0]; //not locked 1s ago
+//    led_out[2] <= ~relock2_state[1]; //not locked
+//    led_out[3] <= ~relock2_state[0]; //not locked 1s ago
     if (relock1_state == UNLOCKED1S)
         relock1_counter <= relock1_counter + 28'b1;
     if (relock1_state == LOCKED)
@@ -643,7 +646,7 @@ end
 //localparam real pi = 3.14159265358979;
 
 //default PID parameters
-localparam G1 = 0.7;
+localparam G1 = -0.7;
 localparam real Pd1 = G1*0.2;          
 localparam real Pi1 = G1*0.15;
 localparam real I1  = G1*600;       
@@ -795,8 +798,10 @@ AD9783 #(
  DAC0 (
      .clk_in(clk_in), 
      .rst_in(rst_in), 
-     .DAC0_in(signal1_out), 
-     .DAC1_in(ref_e1),  
+//     .DAC0_in(signal1_out), 
+//     .DAC1_in(ref_e1),
+     .DAC0_in(trans1_in), 
+     .DAC1_in(trans1_in),
      .CLK_out_p(CLK_out_p), 
      .CLK_out_n(CLK_out_n), 
      .DCI_out_p(DCI0_out_p), 

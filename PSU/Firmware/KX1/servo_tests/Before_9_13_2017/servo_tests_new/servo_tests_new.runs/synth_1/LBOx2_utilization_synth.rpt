@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Mon Sep  4 18:06:25 2017
+| Date         : Fri Sep 15 17:47:07 2017
 | Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LBOx2_utilization_synth.rpt -pb LBOx2_utilization_synth.pb
 | Design       : LBOx2
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 2227 |     0 |    101400 |  2.20 |
-|   LUT as Logic             | 2224 |     0 |    101400 |  2.19 |
+| Slice LUTs*                | 1549 |     0 |    101400 |  1.53 |
+|   LUT as Logic             | 1546 |     0 |    101400 |  1.52 |
 |   LUT as Memory            |    3 |     0 |     35000 | <0.01 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    3 |     0 |           |       |
-| Slice Registers            | 2685 |     0 |    202800 |  1.32 |
-|   Register as Flip Flop    | 2669 |     0 |    202800 |  1.32 |
+| Slice Registers            | 2252 |     0 |    202800 |  1.11 |
+|   Register as Flip Flop    | 2236 |     0 |    202800 |  1.10 |
 |   Register as Latch        |   16 |     0 |    202800 | <0.01 |
 | F7 Muxes                   |    0 |     0 |     50700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     25350 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 44    |          Yes |           - |          Set |
 | 163   |          Yes |           - |        Reset |
 | 6     |          Yes |         Set |            - |
-| 2472  |          Yes |       Reset |            - |
+| 2039  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -82,8 +82,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |   72 |     0 |       600 | 12.00 |
-|   DSP48E1 only |   72 |       |           |       |
+| DSPs           |   48 |     0 |       600 |  8.00 |
+|   DSP48E1 only |   48 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -156,16 +156,16 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 2472 |        Flop & Latch |
-| LUT2       | 1742 |                 LUT |
-| CARRY4     |  501 |          CarryLogic |
-| LUT1       |  243 |                 LUT |
+| FDRE       | 2039 |        Flop & Latch |
+| LUT2       | 1166 |                 LUT |
+| CARRY4     |  330 |          CarryLogic |
+| LUT1       |  158 |                 LUT |
 | FDCE       |  147 |        Flop & Latch |
-| LUT3       |  101 |                 LUT |
-| LUT6       |   95 |                 LUT |
-| LUT5       |   78 |                 LUT |
-| LUT4       |   75 |                 LUT |
-| DSP48E1    |   72 |    Block Arithmetic |
+| LUT6       |   91 |                 LUT |
+| LUT3       |   79 |                 LUT |
+| LUT5       |   72 |                 LUT |
+| LUT4       |   70 |                 LUT |
+| DSP48E1    |   48 |    Block Arithmetic |
 | FDPE       |   44 |        Flop & Latch |
 | ODDR       |   37 |                  IO |
 | OBUFDS     |   36 |                  IO |

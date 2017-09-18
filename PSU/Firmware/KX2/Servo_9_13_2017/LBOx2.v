@@ -403,30 +403,30 @@ Sweep relockSweep2(
 
 //Offset
 //LBO
-localparam real Voff1 = 0.0126; //12.6mV
+localparam real Voff1 = -0.010; //-10mV
 reg signed [15:0] offset1 = Voff1*16'b0111_1111_1111_1111;
 wire [15:0] ref_e1;
 assign ref_e1 = e1_in - offset1;
 //BBO
-localparam real Voff2 = -0.008;
+localparam real Voff2 = -0.0085;
 reg signed [15:0] offset2 = Voff2*16'b0111_1111_1111_1111;
 wire [15:0] ref_e2;
 assign ref_e2 = e2f - offset2;
 
 //Assign new parameters that come over serial line.
-/*
+
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         //msb's padded with zeros
         minval1 <= {minval_1_new[34],minval_1_new[14:0]};
-        sweep_max_1 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
-        sweep_min_1 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
-        sweep_stepsize_1 <= sweep_stepsize_1_new[34:3];
-        offset1 <= {offset1_new[34],offset1_new[14:0]};
+//        sweep_max_1 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
+//        sweep_min_1 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
+//        sweep_stepsize_1 <= sweep_stepsize_1_new[34:3];
+        offset1 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
     end
 end
 
-
+/*
 always @(posedge clk_in) begin
     if (TPmatchOut2) begin
         //msb's padded with zeros
@@ -438,7 +438,7 @@ always @(posedge clk_in) begin
     end
 end
 */
-
+/*
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         //msb's padded with zeros
@@ -452,7 +452,7 @@ always @(posedge clk_in) begin
 //        b0e <= {sweep_stepsize_1_new[34],sweep_stepsize_1_new[14:0]}; //sweep step
     end
 end
-
+*/
 //State machine for relock LEDs
 localparam LOCKED       = 3'b100;
 localparam UNLOCKED     = 3'b010;
@@ -517,7 +517,7 @@ end
 //localparam real pi = 3.14159265358979;
 
 //default PID parameters
-localparam G1 = 0.7;
+localparam G1 = -0.7;
 localparam real Pd1 = G1*0.2;          
 localparam real Pi1 = G1*0.15;
 localparam real I1  = G1*600;       
@@ -615,7 +615,7 @@ PIDservo_changeParam LBO2 (
     //.e_in(e2_in),
     .e_out(e2_out)
 );
-/*
+
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         a1_1_PD <= a1_1_PD_new;
@@ -626,7 +626,7 @@ always @(posedge clk_in) begin
         b1_1_PI <= b1_1_PI_new;
     end
 end
-*/
+
 /*
 always @(posedge clk_in) begin
     if (TPmatchOut2) begin
@@ -639,7 +639,7 @@ always @(posedge clk_in) begin
     end
 end
 */
-
+/*
 always @(posedge clk_in) begin
     if (TPmatchOut1) begin
         a1_2_PD <= a1_1_PD_new;
@@ -650,7 +650,7 @@ always @(posedge clk_in) begin
         b1_2_PI <= b1_1_PI_new;
     end
 end
-
+*/
 
 /////End of PID///////
 

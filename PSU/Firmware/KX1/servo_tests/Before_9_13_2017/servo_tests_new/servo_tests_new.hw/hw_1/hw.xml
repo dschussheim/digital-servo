@@ -23,7 +23,7 @@
     <Object name="xc7k160t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value=""/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.runs/impl_1/LBOx2.bit"/>
       <Properties Property="PROGRAM.HW_CFGMEM_PART" value="s25fl512s-spi-x1_x2_x4"/>
       <Properties Property="SLR.COUNT" value="C:/Users/dschussheim/AppData/Roaming/Xilinx/Vivado/1"/>
     </Object>

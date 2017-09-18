@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_const.xdc rfile:../../../servo_tests_const.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/Before_9_13_2017/servo_tests_new/servo_tests_const.xdc rfile:../../../servo_tests_const.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk 0.000
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]

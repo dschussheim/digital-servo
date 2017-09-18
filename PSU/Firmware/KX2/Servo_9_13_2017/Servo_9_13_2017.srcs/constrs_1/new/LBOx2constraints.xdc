@@ -173,13 +173,13 @@ set_property IOSTANDARD LVCMOS25 [get_ports adc_sdo]
 
 #Serial line IOs
 #in (IO1P)
-set_property PACKAGE_PIN AA23     [get_ports serial1_in]
+set_property PACKAGE_PIN AE23     [get_ports serial1_in]
 set_property IOSTANDARD  LVCMOS25 [get_ports serial1_in]
 #clkDout (IO2P)
-set_property PACKAGE_PIN AB21     [get_ports serial2_in]
+set_property PACKAGE_PIN AF23     [get_ports serial2_in]
 set_property IOSTANDARD  LVCMOS25 [get_ports serial2_in]
 #trig_out
-set_property PACKAGE_PIN AB22     [get_ports serial_trig_out]
+set_property PACKAGE_PIN Y22     [get_ports serial_trig_out]
 set_property IOSTANDARD  LVCMOS25 [get_ports serial_trig_out]
 
 #Configuration settings

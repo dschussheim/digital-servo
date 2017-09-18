@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/dschussheim/Documents/GitHub/digital-servo/M_KX1_DB/Firmware/servo_tests/servo_tests_new/servo_tests_new.runs/impl_1'
+HD_PWD='C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/Before_9_13_2017/servo_tests_new/servo_tests_new.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

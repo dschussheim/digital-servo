@@ -470,15 +470,15 @@ function integer delay_value;
     begin
         case(num) 
         //16 should be a full clock cycle
-            0: delay_value  = 3;  // 7 transition
-            1: delay_value  = 1;  // 5 transition
-            2: delay_value  = 14; // 2 transition                      
-            3: delay_value  = 14; // 2 transition
-            4: delay_value  = 14; // 2 transition
-            5: delay_value  = 13; // 1 transition
-            6: delay_value  = 13; // 1 transition
-            7: delay_value  = 13; // 1 transition
-            8: delay_value  = 13; // 1 transition
+            0: delay_value  = 0;  // 6 transition was 7 for ADC/DAC only
+            1: delay_value  = 0;  // 4 transition was 5 for ADC/DAC only
+            2: delay_value  = 10; // 2 transition                      
+            3: delay_value  = 10; // 2 transition
+            4: delay_value  = 10; // 2 transition
+            5: delay_value  = 9; // 1 transition
+            6: delay_value  = 9; // 1 transition
+            7: delay_value  = 9; // 1 transition
+            8: delay_value  = 9; // 1 transition
             9: delay_value  = 0;  // not set because FR0 is used for this ADC as well
             default:
                 delay_value = 0;
