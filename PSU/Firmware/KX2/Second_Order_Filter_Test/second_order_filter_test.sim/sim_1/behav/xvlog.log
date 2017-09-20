@@ -1,0 +1,22 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/AD9783.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AD9783
+INFO: [VRFC 10-2458] undeclared symbol clkD, assumed default net type wire [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/AD9783.v:103]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/IIRfilter2ndOrderSlow.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IIRfilter2ndOrderSlow
+WARNING: [VRFC 10-756] identifier SIGNAL_IN_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/IIRfilter2ndOrderSlow.v:29]
+WARNING: [VRFC 10-756] identifier SIGNAL_OUT_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/IIRfilter2ndOrderSlow.v:30]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/LTC2195x2delay.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LTC2195x2delay
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/SPI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI
+WARNING: [VRFC 10-756] identifier TRANSFER_SIZE is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/SPI.v:18]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/SPI.v:19]
+WARNING: [VRFC 10-756] identifier N_SDI is used before its declaration [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/SPI.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/reset.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reset
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/second_order_filter_test.srcs/sources_1/new/SecondOrderTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SecondOrderTest
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX2/Second_Order_Filter_Test/second_order_filter_test.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

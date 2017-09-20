@@ -93,8 +93,7 @@ module LBOx2(
 	input   wire		    DCO1_p,
 	input   wire		    DCO1_n,
 	
-	input   wire            serial1_in,
-	input   wire            serial2_in,
+	input   wire            serial_in,
 	output  wire            serial_trig_out
     );
     
@@ -230,52 +229,33 @@ end
 //////////////Deserializer for inputting new parameters////////////
 
 
-wire signed [34:0] a1_1_PD_new, b0_1_PD_new, b1_1_PD_new, a1_1_PI_new, b0_1_PI_new, b1_1_PI_new, minval_1_new, sweep_max_1_new, sweep_min_1_new, sweep_stepsize_1_new, offset1_new;
-wire TPmatchOut1;
-
-deserializer new_param_deser1(
+wire signed [34:0] a1PDnew, b0PDnew, b1PDnew, a1PInew, b0PInew, b1PInew;
+wire signed [34:0] lock_trigger_new, offset_new, start_sweep_new, stop_sweep_new, sweep_rate_new;
+wire signed [34:0] a1LPnew, b0LPnew;
+wire [15:0] handshake;
+localparam [15:0] trig_div = 16'd10_000; // divide 100kHz/trig_div = trig rate. 10Hz
+deserializer #(
+    .trig_max(trig_div)
+)
+new_param_deser(
     .clk_in(clk_in),
     .rst_in(rst_in),
-    .in(serial1_in),
-    .clkDout(),
+    .in(serial_in),
     .trig_out(serial_trig_out),
-    .TPmatchOut(TPmatchOut1),
-    .num0(a1_1_PD_new),
-    .num1(b0_1_PD_new),
-    .num2(b1_1_PD_new),
-    .num3(a1_1_PI_new),
-    .num4(b0_1_PI_new),
-    .num5(b1_1_PI_new),
-    .num6(minval_1_new),
-    .num7(sweep_min_1_new),
-    .num8(sweep_max_1_new),
-    .num9(sweep_stepsize_1_new),
-    .num10(offset1_new),
-    .num11()
-);
-
-wire signed [34:0] a1_2_PD_new, b0_2_PD_new, b1_2_PD_new, a1_2_PI_new, b0_2_PI_new, b1_2_PI_new, minval_2_new, sweep_max_2_new, sweep_min_2_new, sweep_stepsize_2_new, offset2_new;
-wire TPmatchOut2;
-
-deserializer new_param_deser2(
-    .clk_in(clk_in),
-    .rst_in(rst_in),
-    .in(serial2_in),
-    .clkDout(),
-    .trig_out(),
-    .TPmatchOut(TPmatchOut2),
-    .num0(a1_2_PD_new),
-    .num1(b0_2_PD_new),
-    .num2(b1_2_PD_new),
-    .num3(a1_2_PI_new),
-    .num4(b0_2_PI_new),
-    .num5(b1_2_PI_new),
-    .num6(minval_2_new),
-    .num7(sweep_min_2_new),
-    .num8(sweep_max_2_new),
-    .num9(sweep_stepsize_2_new),
-    .num10(offset2_new),
-    .num11()
+    .handshake(handshake),
+    .num0(a1PDnew),
+    .num1(b0PDnew),
+    .num2(b1PDnew),
+    .num3(a1PInew),
+    .num4(b0PInew),
+    .num5(b1PInew),
+    .num6(lock_trigger_new),
+    .num7(offset_new),
+    .num8(start_sweep_new),
+    .num9(stop_sweep_new),
+    .num10(sweep_rate_new),
+    .num11(a1LPnew),
+    .num12(b0LPnew)
 );
 
 /*
@@ -439,11 +419,11 @@ IIRfilter2ndOrderSlowAntiWindup Notch2p416 (
 */
 ///////////////Relock sweep////////////////
 
-localparam real Vmin1 = 0.25;
-localparam real Vmin2 = 0.03;
+localparam real Vtrig1 = 0.25;
+localparam real Vtrig2 = 0.03;
 
-reg signed [15:0] minval1 = Vmin1*16'b0111_1111_1111_1111; 
-reg signed [15:0] minval2 = Vmin2*16'b0111_1111_1111_1111; 
+reg signed [15:0] locktrig1 = Vtrig1*16'b0111_1111_1111_1111; 
+reg signed [15:0] locktrig2 = Vtrig2*16'b0111_1111_1111_1111; 
 
 reg relock1_on, relock2_on; //filtered input
 //reg relock1_nf, relock2_nf; //no filter
@@ -459,55 +439,33 @@ always @(posedge clk_in) begin
         relock2_on <= 1'b0;
    */
         
-    if ($signed(trans1_in) < $signed(minval1))
+    if ($signed(trans1_in) < $signed(locktrig1))
         relock1_on <= 1'b1;
     else
         relock1_on <= 1'b0;
-    if ($signed(trans2_LP) < $signed(minval2))
+    if ($signed(trans2_LP) < $signed(locktrig2))
         relock2_on <= 1'b1;
     else
         relock2_on <= 1'b0; 
-     /*         
-    led_out[0] <= ~relock1_on;
-    led_out[1] <= ~relock1_nf;
-    led_out[2] <= ~relock2_on;
-    led_out[3] <= ~relock2_nf;
-    */
 end
-/*
-reg counter = 1'b0;
-localparam cmax = 1'b1;
-localparam inc = 1'b1;
-reg [2:0] led_state = 2'b00;
-localparam [2:0] led_inc = 2'b01;
-always @(posedge led_clk) begin
-    counter <= counter + inc;
-    if (counter == cmax) begin
-        led_state <= led_state + led_inc;
-    end
-    if (led_state == 2'b00) begin
-        led_out[0] <= ~relock1_on;
-        led_out[1] <= ~relock1_nf;
-    end
-end
-*/
+
 wire [15:0] relock1_out, relock2_out;
 
-reg signed [15:0] sweep_max_1 = (0.65625)*(16'b0111_1111_1111_1111);
-reg signed [15:0] sweep_min_1 = (0.1875)*(16'b0111_1111_1111_1111); 
-reg        [31:0] sweep_stepsize_1 = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
+reg signed [15:0] stop_sweep_1 = (0.65625)*(16'b0111_1111_1111_1111);
+reg signed [15:0] start_sweep_1 = (0.1875)*(16'b0111_1111_1111_1111); 
+reg        [31:0] sweep_rate_1 = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
 
-reg signed [15:0] sweep_max_2 = (0.65625)*(16'b0111_1111_1111_1111);
-reg signed [15:0] sweep_min_2 = (0.1875)*(16'b0111_1111_1111_1111); 
-reg        [31:0] sweep_stepsize_2 = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
+reg signed [15:0] stop_sweep_2 = (0.65625)*(16'b0111_1111_1111_1111);
+reg signed [15:0] start_sweep_2 = (0.1875)*(16'b0111_1111_1111_1111); 
+reg        [31:0] sweep_rate_2 = 32'b0000_0000_0000_0000_0000_0001_0000_0000; //Change LSB every 128 clock cycles
 
 Sweep relockSweep1(
     .clk_in(clk_in),
     .on_in(1'b1),
     .hold_in(~relock1_on),
-    .minval_in(sweep_min_1),
-    .maxval_in(sweep_max_1),
-    .stepsize_in(sweep_stepsize_1),
+    .minval_in(start_sweep_1),
+    .maxval_in(stop_sweep_1),
+    .stepsize_in(sweep_rate_1),
     .signal_out(relock1_out)
 );
 
@@ -515,66 +473,26 @@ Sweep relockSweep2(
     .clk_in(clk_in),
     .on_in(1'b1),
     .hold_in(~relock2_on),
-    .minval_in(sweep_min_2),
-    .maxval_in(sweep_max_2),
-    .stepsize_in(sweep_stepsize_2),
+    .minval_in(start_sweep_2),
+    .maxval_in(stop_sweep_2),
+    .stepsize_in(sweep_rate_2),
     .signal_out(relock2_out)
 );
 
 //Offset
 //LBO
-localparam real Voff1 = -0.010; // 10mV
+localparam real Voff1 = -0.012; // -135 mV give +8 mV offset(to match offset from intruments)
 reg signed [15:0] offset1 = Voff1*16'b0111_1111_1111_1111;
 wire [15:0] ref_e1;
 assign ref_e1 = e1_in - offset1;
 //assign ref_e1 = e1f - offset1;
 //BBO
-localparam real Voff2 = -0.0085; // 8.5 mV
+localparam real Voff2 = -0.0174; // -18 mV to give 0.5V instrumentation offset
 reg signed [15:0] offset2 = Voff2*16'b0111_1111_1111_1111;
 wire [15:0] ref_e2;
 //assign ref_e2 = e2_in - offset2;
 assign ref_e2 = e2f - offset2;
 
-//Assign new parameters that come over serial line.
-
-always @(posedge clk_in) begin
-    if (TPmatchOut1) begin
-        //msb's padded with zeros
-        minval1 <= {minval_1_new[34],minval_1_new[14:0]};
-//        sweep_max_1 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
-//        sweep_min_1 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
-//        sweep_stepsize_1 <= sweep_stepsize_1_new[34:3];
-        offset1 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
-    end
-end
-
-/*
-always @(posedge clk_in) begin
-    if (TPmatchOut2) begin
-        //msb's padded with zeros
-        minval2 <= {minval_2_new[34],minval_2_new[14:0]};
-        sweep_max_2 <= {sweep_max_2_new[34],sweep_max_2_new[14:0]};
-        sweep_min_2 <= {sweep_min_2_new[34],sweep_min_2_new[14:0]};
-        sweep_stepsize_2 <= sweep_stepsize_2_new[34:3];
-        offset2 <= {offset2_new[34],offset2_new[14:0]};
-    end
-end
-*/
-/*
-always @(posedge clk_in) begin
-    if (TPmatchOut1) begin
-        //msb's padded with zeros
-        minval2 <= {minval_1_new[34],minval_1_new[14:0]};
-        //sweep_max_2 <= {sweep_max_1_new[34],sweep_max_1_new[14:0]};
-        //sweep_min_2 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]};
-        //sweep_stepsize_2 <= sweep_stepsize_1_new[34:3];
-        //offset2 <= {offset1_new[34],offset1_new[14:0]};
-        offset2 <= {sweep_min_1_new[34],sweep_min_1_new[14:0]}; //sweep min
-//        a1e <= {sweep_max_1_new[34],sweep_max_1_new[14:0]}; //sweep max
-//        b0e <= {sweep_stepsize_1_new[34],sweep_stepsize_1_new[14:0]}; //sweep step
-    end
-end
-*/
 //State machine for relock LEDs
 localparam LOCKED       = 3'b100;
 localparam UNLOCKED     = 3'b010;
@@ -640,8 +558,8 @@ end
 
 //default PID parameters
 localparam G1 = -0.7;
-localparam real Pd1 = G1*0.2;          
-localparam real Pi1 = G1*0.15;
+localparam real P21 = G1*0.2;  // P_dif = P2 in excel sheet     
+localparam real P11 = -0.15; // P_int = P1 in excel sheet / if G1 is negative this must be too
 localparam real I1  = G1*600;       
 localparam real D1  = G1*0.5e-6;       
 localparam real fc1 = 0.5e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
@@ -661,18 +579,18 @@ assign PID2_on = ~relock2_on;
 //reg signed [34:0] a1_1_PD = (1-2*pi*Ts*fc1)*(2**26); // correct for gains set before 4 Sept 2017
 reg signed [34:0] a1_1_PD = (1-pi*Ts*fc1)/(1+pi*Ts*fc1)*(2**26); // correct for gains set after 4 Setp 2017
 // D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
-reg signed [34:0] b0_1_PD = ((D1/Pi1)*(fc1/(1+pi*Ts*fc1))+ Pd1*((pi*Ts*fc1)/(1+pi*Ts*fc1)))*(2**26);
+reg signed [34:0] b0_1_PD = ((D1/P11)*(fc1/(1+pi*Ts*fc1))+ P21*((pi*Ts*fc1)/(1+pi*Ts*fc1)))*(2**26);
 //-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
-reg signed [34:0] b1_1_PD = (Pd1*((pi*Ts*fc1)/(1+pi*Ts*fc1))-1*D1/Pi1*(fc1/(1+pi*Ts*fc1)))*(2**26);
+reg signed [34:0] b1_1_PD = (P21*((pi*Ts*fc1)/(1+pi*Ts*fc1))-1*D1/P11*(fc1/(1+pi*Ts*fc1)))*(2**26);
 //PI\\
 
 //Definitions of filter coefficients. Added scale factors to make gains resonable
 //All coefficients scaled by 2^26
 reg signed [34:0] a1_1_PI = 1*(2**26);
 // Pi + I/Pd*pi*Ts
-reg signed [34:0] b0_1_PI = (Pi1+(I1*pi*Ts)/Pd1)*(2**26);
+reg signed [34:0] b0_1_PI = (P11+(I1*pi*Ts)/P21)*(2**26);
 //-Pi + I/Pd*pi*Ts 
-reg signed [34:0] b1_1_PI = (I1/Pd1*pi*Ts-Pi1)*(2**26);
+reg signed [34:0] b1_1_PI = (I1/P21*pi*Ts-P11)*(2**26);
 
 //Error signal out
 wire [15:0] e1_out, e2_out;
@@ -687,17 +605,24 @@ PIDservo_changeParam LBO1 (
     .b0_PI(b0_1_PI),
     .b1_PI(b1_1_PI),    
     .e_in(ref_e1),
-    //.e_in(e1_in),
     .e_out(e1_out)
 );
 
 //default PID parameters
-localparam G2 = 1;
-localparam real Pd2 = G2*0.02;          
-localparam real Pi2 = G2*0.035;
-localparam real I2  = G2*25;       
-localparam real D2  = G2*0.012e-6;       
+//localparam G2 = -1;
+//localparam real P22 = G2*0.02;          
+//localparam real P12 = -0.035;
+//localparam real I2  = G2*25;       
+//localparam real D2  = G2*0.012e-6;       
+//localparam real fc2 = 0.5e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+
+localparam G2 = -0.7;
+localparam real P22 = G2*0.2;  // P_dif = P2 in excel sheet     
+localparam real P12 = -0.15; // P_int = P1 in excel sheet / if G1 is negative this must be too
+localparam real I2  = G2*600;       
+localparam real D2  = G2*0.5e-6;       
 localparam real fc2 = 0.5e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz] makes no sense to go above 100MHz though
+
 
 //IIR filter parameter defaults
 
@@ -709,9 +634,9 @@ localparam real fc2 = 0.5e6;        //Rolloff requency [15, 90] dB, [32Hz, 1GHz]
 //reg signed [34:0] a1_2_PD = (1-2*pi*Ts*fc2)*(2**26); //correct for gains set before 4 Sept 2017
 reg signed [34:0] a1_2_PD = (1-pi*Ts*fc2)/(1+pi*Ts*fc2)*(2**26); //correct for gains set after 4 Sept 2017
 // D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
-reg signed [34:0] b0_2_PD = ((D2/Pi2)*(fc2/(1+pi*Ts*fc2))+ Pd2*((pi*Ts*fc2)/(1+pi*Ts*fc2)))*(2**26);
+reg signed [34:0] b0_2_PD = ((D2/P12)*(fc2/(1+pi*Ts*fc2))+ P22*((pi*Ts*fc2)/(1+pi*Ts*fc2)))*(2**26);
 //-D/P1*(fc/(1+pi*Ts*fc)) + P2*((pi*Ts*fc)/(1+pi*Ts*fc))
-reg signed [34:0] b1_2_PD = (Pd2*((pi*Ts*fc2)/(1+pi*Ts*fc2))-1*D2/Pi2*(fc2/(1+pi*Ts*fc2)))*(2**26);
+reg signed [34:0] b1_2_PD = (P22*((pi*Ts*fc2)/(1+pi*Ts*fc2))-1*D2/P12*(fc2/(1+pi*Ts*fc2)))*(2**26);
 
 //PI\\
 
@@ -719,9 +644,9 @@ reg signed [34:0] b1_2_PD = (Pd2*((pi*Ts*fc2)/(1+pi*Ts*fc2))-1*D2/Pi2*(fc2/(1+pi
 //All coefficients scaled by 2^26
 reg signed [34:0] a1_2_PI = 1*(2**26);
 // Pi + I/Pd*pi*Ts
-reg signed [34:0] b0_2_PI = (Pi2+(I2*pi*Ts)/Pd2)*(2**26);
+reg signed [34:0] b0_2_PI = (P12+(I2*pi*Ts)/P22)*(2**26);
 //-Pi + I/Pd*pi*Ts 
-reg signed [34:0] b1_2_PI = (I2/Pd2*pi*Ts-Pi2)*(2**26);
+reg signed [34:0] b1_2_PI = (I2/P22*pi*Ts-P12)*(2**26);
 
 //Servo 2 module
 PIDservo_changeParam LBO2 (
@@ -734,47 +659,52 @@ PIDservo_changeParam LBO2 (
     .b0_PI(b0_2_PI),
     .b1_PI(b1_2_PI), 
     .e_in(ref_e2),   
-    //.e_in(e2_in),
     .e_out(e2_out)
 );
 
-always @(posedge clk_in) begin
-    if (TPmatchOut1) begin
-        a1_1_PD <= a1_1_PD_new;
-        b0_1_PD <= b0_1_PD_new;
-        b1_1_PD <= b1_1_PD_new;
-        a1_1_PI <= a1_1_PI_new;
-        b0_1_PI <= b0_1_PI_new;
-        b1_1_PI <= b1_1_PI_new;
-    end
-end
-
-/*
-always @(posedge clk_in) begin
-    if (TPmatchOut2) begin
-        a1_2_PD <= a1_2_PD_new;
-        b0_2_PD <= b0_2_PD_new;
-        b1_2_PD <= b1_2_PD_new;
-        a1_2_PI <= a1_2_PI_new;
-        b0_2_PI <= b0_2_PI_new;
-        b1_2_PI <= b1_2_PI_new;
-    end
-end
-*/
-/*
-always @(posedge clk_in) begin
-    if (TPmatchOut1) begin
-        a1_2_PD <= a1_1_PD_new;
-        b0_2_PD <= b0_1_PD_new;
-        b1_2_PD <= b1_1_PD_new;
-        a1_2_PI <= a1_1_PI_new;
-        b0_2_PI <= b0_1_PI_new;
-        b1_2_PI <= b1_1_PI_new;
-    end
-end
-*/
-
 /////End of PID///////
+
+///////////parameter reassignment//////////
+
+localparam [15:0] handshake_default = 16'h6364;
+
+always @(posedge clk_in) begin
+    if (handshake == handshake_default) begin
+        // Change sweep params
+        locktrig1     <= {lock_trigger_new[34], lock_trigger_new[14:0]};    // 16 bit
+        offset1       <= {offset_new[34], offset_new[14:0]};                // 16 bit
+        start_sweep_1 <= {start_sweep_new[34], start_sweep_new[14:0]};      // 16 bit
+        stop_sweep_1  <= {stop_sweep_new[34], stop_sweep_new[14:0]};        // 16 bit
+        sweep_rate_1  <= sweep_rate_new[34:3];                              // 32 bit (power of 2)
+        // Change servo params (35 bit, signed)
+        a1_1_PD       <= a1PDnew;
+        b0_1_PD       <= b0PDnew;
+        b1_1_PD       <= b1PDnew;
+        a1_1_PI       <= a1PInew;
+        b0_1_PI       <= b0PInew;
+        b1_1_PI       <= b1PInew;
+    end
+    if (handshake == handshake_default + 16'd1) begin
+        // Change sweep params
+        locktrig2     <= {lock_trigger_new[34], lock_trigger_new[14:0]};    // 16 bit signed
+        offset2       <= {offset_new[34],       offset_new[14:0]};          // 16 bit signed
+        start_sweep_2 <= {start_sweep_new[34],  start_sweep_new[14:0]};     // 16 bit signed
+        stop_sweep_2  <= {stop_sweep_new[34],   stop_sweep_new[14:0]};      // 16 bit signed
+        sweep_rate_2  <= sweep_rate_new[34:3];                              // 32 bit (power of 2)
+        // Change servo params (35 bit, signed)
+        a1_2_PD       <= a1PDnew;
+        b0_2_PD       <= b0PDnew;
+        b1_2_PD       <= b1PDnew;
+        a1_2_PI       <= a1PInew;
+        b0_2_PI       <= b0PInew;
+        b1_2_PI       <= b1PInew;
+        // Low-pass input
+        a1_LP2        <= a1LPnew;
+        b0_LP2        <= b0LPnew;
+    end
+end
+
+//////end of parameter reassignment////////
 
 ////////Output to DAC//////
 

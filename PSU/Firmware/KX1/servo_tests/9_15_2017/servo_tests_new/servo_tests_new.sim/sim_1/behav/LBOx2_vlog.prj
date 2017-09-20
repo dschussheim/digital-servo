@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  "../../../AD9783.v"
 verilog xil_defaultlib  "../../../IIRfilter1stOrderAntiWindup.v"
-verilog xil_defaultlib  "../../../servo_tests_new.srcs/sources_1/new/LTC2195x2.v"
+verilog xil_defaultlib  "../../../../../../ADC_DAC_test_9_16_2017/LTC2195x2delay.v"
 verilog xil_defaultlib  "../../../servo_tests_new.srcs/sources_1/new/PIDservo_changeParam.v"
 verilog xil_defaultlib  "../../../SPI.v"
 verilog xil_defaultlib  "../../../Sweep.v"

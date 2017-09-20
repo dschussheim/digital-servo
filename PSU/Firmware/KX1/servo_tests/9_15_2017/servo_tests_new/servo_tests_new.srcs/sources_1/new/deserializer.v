@@ -1,16 +1,16 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Deserializer for deserializing a slow bitstream (100kHz). 
-// Outputs 12, 35 bit numbers right now.
+// Deserializer for deserializing a slow bitstream (100kHz SCLK). 
+// Outputs 11, 35 bit numbers, and handshake key (when present tells which servo to record to).
+// Handshake should be 16'h6364 + some number (servo number)
 //////////////////////////////////////////////////////////////////////////////////
 
 module deserializer(
     input   wire            clk_in,
     input   wire            rst_in,
     input   wire            in,
-    output  wire            clkDout,
     output  wire            trig_out,
-    output  wire            TPmatchOut,
+    output  reg     [15:0]  handshake,
     output  reg     [34:0]  num0,
     output  reg     [34:0]  num1,
     output  reg     [34:0]  num2,
@@ -22,22 +22,22 @@ module deserializer(
     output  reg     [34:0]  num8,
     output  reg     [34:0]  num9,
     output  reg     [34:0]  num10,
-    output  reg     [34:0]  num11
-    );
+    output  reg     [34:0]  num11,
+    output  reg     [34:0]  num12
+);
 
 ////////////serial clock////////////
 
 parameter clk_div_ser = 27'h3e7;//divide by 1000 for 100 kHz deserialization clock
-wire clk100k;
+wire SCLK;
 clk_div #(
     .div_f(clk_div_ser)
 )
 deser_clk_origin (
     .clk(clk_in),
     .rst_in(1'b0),
-    .div_clk(clk100k)
+    .div_clk(SCLK)
 );
-assign clkDout = clk100k;
 ////////////end of clock//////////////////
 
 ////////////fetch logic////////////////
@@ -47,7 +47,7 @@ assign clkDout = clk100k;
 //Combinatorial part
 localparam IDLE = 1'b0;
 localparam FETCH = 1'b1;
-localparam N_ff = 20'h1B4; //16 bit handshake key + 12x35 bit numbers = 436 bits
+localparam N_ff = 20'd471; // 16 bit handshake key + 11x35 bit numbers =  bits
 function fetch_state;
     input       fetch_state_old;
     input [20:0] counter;
@@ -70,22 +70,22 @@ function fetch_state;
 endfunction
 //Sequential part
 reg on_in;
-reg [19:0] counter = 20'h00000;
+reg [15:0] counter = 16'h000_0000;
 reg state, FS;
-localparam max = 20'h3e7;
-always @(posedge clk100k) begin
+parameter [15:0] trig_max = 16'd25_000;
+always @(posedge SCLK) begin
     FS <= fetch_state(FS, counter);
-    if (FS == IDLE && counter < max) begin
+    if (FS == IDLE && counter < trig_max) begin
         on_in <= 1'b0;
-        counter <= counter + 20'h00001;
+        counter <= counter + 16'h1;
     end
     else if (FS == FETCH) begin
         on_in <= 1'b1;
-        counter <= counter + 20'h00001;
+        counter <= counter + 16'h1;
     end
     else begin
         on_in <=1'b0;
-        counter <= 20'h00000;
+        counter <= 16'h0;
     end
 end
 
@@ -104,7 +104,7 @@ generate for (i = 0; i < N_ff; i = i + 1) begin: deser
         .INIT(1'b0)     // Initial value of register (1'b0 or 1'b1)
     ) shift_reg_ff (
         .Q(Q[i+1]),     // 1-bit Data output
-        .C(clk100k),    // 1-bit Clock input
+        .C(SCLK),    // 1-bit Clock input
         .CE(on_in),     // 1-bit Clock enable input
         .R(rst_in),     // 1-bit Synchronous reset input
         .D(Q[i])        // 1-bit Data input
@@ -113,46 +113,25 @@ generate for (i = 0; i < N_ff; i = i + 1) begin: deser
 end
 endgenerate
 ///////////////end of deserialization/////////////////////////////////
-//12, 35 bit outputs
-reg [34:0] num0_temp, num1_temp, num2_temp, num3_temp, num4_temp, num5_temp, num6_temp, num7_temp, num8_temp, num9_temp, num10_temp, num11_temp;
 
-reg [15:0] handshake;
-localparam handshake_key = 16'h6364; //"cd" converted to hex
-assign TPmatchOut = (handshake == handshake_key);
-//always @(posedge clk100k)
-//    TPmatchOut = (handshake == handshake_key);
 
 always @(negedge on_in) begin
         //handshake must match handshake_key, this means the synthesizer is actually sending data
-        handshake = Q[N_ff:N_ff-15];
+        handshake <= Q[N_ff:N_ff-15];
         //deserialized 35 bit numbers
-        num0_temp  <= Q[N_ff-16:N_ff-50];
-        num1_temp  <= Q[N_ff-51:N_ff-85];
-        num2_temp  <= Q[N_ff-86:N_ff-120];
-        num3_temp  <= Q[N_ff-121:N_ff-155];
-        num4_temp  <= Q[N_ff-156:N_ff-190];
-        num5_temp  <= Q[N_ff-191:N_ff-225];
-        num6_temp  <= Q[N_ff-226:N_ff-260];
-        num7_temp  <= Q[N_ff-261:N_ff-295];
-        num8_temp  <= Q[N_ff-296:N_ff-330];
-        num9_temp  <= Q[N_ff-331:N_ff-365];
-        num10_temp  <= Q[N_ff-366:N_ff-400];
-        num11_temp <= Q[N_ff-401:N_ff-435];
-        //record them to the outputs if we are communicating with the synthesizer     
-        if (TPmatchOut) begin
-            num0  <= num0_temp;
-            num1  <= num1_temp;
-            num2  <= num2_temp;
-            num3  <= num3_temp;
-            num4  <= num4_temp;
-            num5  <= num5_temp;
-            num6  <= num6_temp;
-            num7  <= num7_temp;
-            num8  <= num8_temp;
-            num9  <= num9_temp;
-            num10 <= num10_temp;
-            num11 <= num11_temp;
-        end
+        num0  <= Q[N_ff-16:N_ff-50];
+        num1  <= Q[N_ff-51:N_ff-85];
+        num2  <= Q[N_ff-86:N_ff-120];
+        num3  <= Q[N_ff-121:N_ff-155];
+        num4  <= Q[N_ff-156:N_ff-190];
+        num5  <= Q[N_ff-191:N_ff-225];
+        num6  <= Q[N_ff-226:N_ff-260];
+        num7  <= Q[N_ff-261:N_ff-295];
+        num8  <= Q[N_ff-296:N_ff-330];
+        num9  <= Q[N_ff-331:N_ff-365];
+        num10 <= Q[N_ff-366:N_ff-400];
+        num11 <= Q[N_ff-401:N_ff-435];
+        num12 <= Q[N_ff-436:N_ff-470];
 end
 
 endmodule

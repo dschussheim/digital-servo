@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7k160tffg676-2" LaunchTime="1505947040">
+  <File Type="PWROPT-DRC" Name="SecondOrderTest_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="SecondOrderTest_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="SecondOrderTest_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="SecondOrderTest_power_routed.rpx"/>
+  <File Type="PA-TCL" Name="SecondOrderTest.tcl"/>
+  <File Type="OPT-HWDEF" Name="SecondOrderTest.hwdef"/>
+  <File Type="RDI-RDI" Name="SecondOrderTest.vdi"/>
+  <File Type="OPT-DCP" Name="SecondOrderTest_opt.dcp"/>
+  <File Type="OPT-DRC" Name="SecondOrderTest_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="SecondOrderTest_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="SecondOrderTest_pwropt.dcp"/>
+  <File Type="PWROPT-TIMING" Name="SecondOrderTest_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="SecondOrderTest_placed.dcp"/>
+  <File Type="PLACE-IO" Name="SecondOrderTest_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="SecondOrderTest_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="SecondOrderTest_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="SecondOrderTest_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="SecondOrderTest_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="SecondOrderTest_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="SecondOrderTest_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="SecondOrderTest_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="SecondOrderTest_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="SecondOrderTest_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="SecondOrderTest_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="SecondOrderTest_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="SecondOrderTest_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="SecondOrderTest_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="SecondOrderTest_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="SecondOrderTest_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="SecondOrderTest_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="SecondOrderTest_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="SecondOrderTest.bin"/>
+  <File Type="ROUTE-DRC-RPX" Name="SecondOrderTest_drc_routed.rpx"/>
+  <File Type="BG-DRC" Name="SecondOrderTest.drc"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="SecondOrderTest_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="SecondOrderTest.msk"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SecondOrderTest_methodology_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="SecondOrderTest.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SecondOrderTest_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="SecondOrderTest_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="SecondOrderTest_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="SecondOrderTest_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="SecondOrderTest_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="SecondOrderTest_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="SecondOrderTest_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="SecondOrderTest_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="SecondOrderTest_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="SecondOrderTest_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SecondOrderTest_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SecondOrderTest_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SecondOrderTest_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SecondOrderTest_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SecondOrderTest_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="SecondOrderTest.bit"/>
+  <File Type="BITSTR-RBT" Name="SecondOrderTest.rbt"/>
+  <File Type="BITSTR-NKY" Name="SecondOrderTest.nky"/>
+  <File Type="BITSTR-BMM" Name="SecondOrderTest_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="SecondOrderTest.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="SecondOrderTest.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/AD9783.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/IIR2ndOrderFast.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/LTC2195x2delay.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/timescale.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/SPI.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/clk_div.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/reset.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SecondOrderTest.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/IIRfilter2ndOrderSlow.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/IIRfilter1stOrderAntiWindup.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/IIRfilter2ndOrderSlowAntiWindup.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/multiplier35x35/multiplier35x35_stub.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="SecondOrderTest"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/KX2const.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

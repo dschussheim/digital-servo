@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Sep 18 14:27:42 2017
-# Process ID: 1364
+# Start of session at: Tue Sep 19 19:03:24 2017
+# Process ID: 11188
 # Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.runs/synth_1
 # Command line: vivado.exe -log LBOx2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LBOx2.tcl
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.runs/synth_1/LBOx2.vds

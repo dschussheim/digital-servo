@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Sep 18 14:27:42 2017
-# Process ID: 1364
+# Start of session at: Tue Sep 19 19:03:24 2017
+# Process ID: 11188
 # Current directory: C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.runs/synth_1
 # Command line: vivado.exe -log LBOx2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LBOx2.tcl
 # Log file: C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.runs/synth_1/LBOx2.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t-fbg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8760 
+INFO: Helper process launched with PID 8236 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 347.629 ; gain = 78.641
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 347.457 ; gain = 78.727
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'LBOx2' [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:10]
 	Parameter CLKDIV bound to: 8 - type: integer 
@@ -27,30 +27,32 @@ INFO: [Synth 8-638] synthesizing module 'LBOx2' [C:/Users/dschussheim/Documents/
 	Parameter N10 bound to: 3'b000 
 	Parameter N11 bound to: 3'b000 
 	Parameter div_f bound to: 27'b101111101011110000100000000 
+	Parameter trig_div bound to: 16'b0010011100010000 
 	Parameter Ts bound to: 0.000000 - type: float 
 	Parameter pi bound to: 3.141593 - type: float 
 	Parameter K_2 bound to: 1.000000 - type: float 
 	Parameter f0_2 bound to: 200000.000000 - type: float 
 	Parameter f0lp bound to: 500000.000000 - type: float 
-	Parameter Vmin1 bound to: 0.250000 - type: float 
-	Parameter Vmin2 bound to: 0.030000 - type: float 
-	Parameter Voff1 bound to: -0.010000 - type: float 
-	Parameter Voff2 bound to: -0.008500 - type: float 
+	Parameter Vtrig1 bound to: 0.250000 - type: float 
+	Parameter Vtrig2 bound to: 0.030000 - type: float 
+	Parameter Voff1 bound to: -0.012000 - type: float 
+	Parameter Voff2 bound to: -0.017400 - type: float 
 	Parameter LOCKED bound to: 3'b100 
 	Parameter UNLOCKED bound to: 3'b010 
 	Parameter UNLOCKED1S bound to: 3'b101 
 	Parameter G1 bound to: -0.700000 - type: float 
-	Parameter Pd1 bound to: -0.140000 - type: float 
-	Parameter Pi1 bound to: -0.105000 - type: float 
+	Parameter P21 bound to: -0.140000 - type: float 
+	Parameter P11 bound to: -0.150000 - type: float 
 	Parameter I1 bound to: -420.000000 - type: float 
 	Parameter D1 bound to: -0.000000 - type: float 
 	Parameter fc1 bound to: 500000.000000 - type: float 
-	Parameter G2 bound to: 1 - type: integer 
-	Parameter Pd2 bound to: 0.020000 - type: float 
-	Parameter Pi2 bound to: 0.035000 - type: float 
-	Parameter I2 bound to: 25.000000 - type: float 
-	Parameter D2 bound to: 0.000000 - type: float 
+	Parameter G2 bound to: -0.700000 - type: float 
+	Parameter P22 bound to: -0.140000 - type: float 
+	Parameter P12 bound to: -0.150000 - type: float 
+	Parameter I2 bound to: -420.000000 - type: float 
+	Parameter D2 bound to: -0.000000 - type: float 
 	Parameter fc2 bound to: 500000.000000 - type: float 
+	Parameter handshake_default bound to: 16'b0110001101100100 
 INFO: [Synth 8-638] synthesizing module 'IBUFG' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14894]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -324,13 +326,12 @@ INFO: [Synth 8-638] synthesizing module 'clk_div__parameterized0' [C:/Users/dsch
 	Parameter div_f bound to: 27'b101111101011110000100000000 
 	Parameter halfway bound to: 27'b010111110101111000010000000 
 INFO: [Synth 8-256] done synthesizing module 'clk_div__parameterized0' (13#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/clk_div.v:21]
-INFO: [Synth 8-638] synthesizing module 'deserializer' [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v:7]
+INFO: [Synth 8-638] synthesizing module 'deserializer' [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v:8]
 	Parameter clk_div_ser bound to: 27'b000000000000000001111100111 
 	Parameter IDLE bound to: 1'b0 
 	Parameter FETCH bound to: 1'b1 
-	Parameter N_ff bound to: 20'b00000000000110110100 
-	Parameter max bound to: 20'b00000000001111100111 
-	Parameter handshake_key bound to: 16'b0110001101100100 
+	Parameter N_ff bound to: 20'b00000000000111010111 
+	Parameter trig_max bound to: 16'b0010011100010000 
 INFO: [Synth 8-638] synthesizing module 'FDRE' [C:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:3964]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
@@ -342,7 +343,7 @@ INFO: [Synth 8-638] synthesizing module 'clk_div__parameterized1' [C:/Users/dsch
 	Parameter halfway bound to: 27'b000000000000000000111110011 
 INFO: [Synth 8-256] done synthesizing module 'clk_div__parameterized1' (14#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/clk_div.v:21]
 INFO: [Synth 8-226] default block is never used [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v:55]
-INFO: [Synth 8-256] done synthesizing module 'deserializer' (15#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v:7]
+INFO: [Synth 8-256] done synthesizing module 'deserializer' (15#1) [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v:8]
 INFO: [Synth 8-638] synthesizing module 'IIRfilter1stOrderAntiWindup' [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/IIRfilter1stOrderAntiWindup.v:19]
 	Parameter SIGNAL_IN_SIZE bound to: 16 - type: integer 
 	Parameter SIGNAL_OUT_SIZE bound to: 16 - type: integer 
@@ -453,7 +454,7 @@ WARNING: [Synth 8-3331] design LBOx2 has unconnected port DCO0_n
 WARNING: [Synth 8-3331] design LBOx2 has unconnected port DCO1_p
 WARNING: [Synth 8-3331] design LBOx2 has unconnected port DCO1_n
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 390.711 ; gain = 121.723
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 389.539 ; gain = 120.809
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -462,33 +463,33 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_trig_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[15] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[14] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[13] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[12] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[11] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[10] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[9] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[7] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:151]
-WARNING: [Synth 8-3295] tying undriven pin DAC1:spi_sdi_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:819]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_trig_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[15] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[14] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[13] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[12] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[11] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[10] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[9] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[8] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_addr_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[7] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[6] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[5] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[4] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[3] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[2] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[1] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin ADC:cmd_data_in[0] to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:150]
+WARNING: [Synth 8-3295] tying undriven pin DAC1:spi_sdi_in to constant 0 [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:749]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 390.711 ; gain = 121.723
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 389.539 ; gain = 120.809
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -555,22 +556,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUFG => IBUF: 1 instances
   MMCME2_BASE => MMCME2_ADV: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 725.359 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 724.191 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 725.359 ; gain = 456.371
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 724.191 ; gain = 455.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 725.359 ; gain = 456.371
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 724.191 ; gain = 455.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 725.359 ; gain = 456.371
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 724.191 ; gain = 455.461
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/reset.v:24]
 INFO: [Synth 8-5545] ROM "div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
@@ -618,8 +619,12 @@ INFO: [Synth 8-5544] ROM "relock1_counter" won't be mapped to Block RAM because 
 INFO: [Synth 8-5544] ROM "relock1_counter" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "relock2_counter" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "relock2_counter" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element relock1_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:618]
-WARNING: [Synth 8-6014] Unused sequential element relock2_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:619]
+INFO: [Synth 8-5546] ROM "locktrig1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sweep_rate_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "locktrig2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sweep_rate_2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element relock1_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:536]
+WARNING: [Synth 8-6014] Unused sequential element relock2_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:537]
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/ADC_DAC_test_9_16_2017/LTC2195x2delay.v:756]
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/ADC_DAC_test_9_16_2017/LTC2195x2delay.v:756]
 ---------------------------------------------------------------------------------------------------
@@ -666,7 +671,7 @@ WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/
 INFO: [Synth 8-3354] encoded FSM with state register 'state_f_reg' using encoding 'one-hot' in module 'AD9783'
 WARNING: [Synth 8-6014] Unused sequential element state_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/AD9783.v:316]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 725.359 ; gain = 456.371
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 724.191 ; gain = 455.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -681,9 +686,9 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     70 Bit       Adders := 12    
 	   3 Input     34 Bit       Adders := 2     
-	   2 Input     27 Bit       Adders := 4     
-	   2 Input     16 Bit       Adders := 3     
-	   3 Input     16 Bit       Adders := 1     
+	   2 Input     27 Bit       Adders := 3     
+	   2 Input     16 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 2     
 	   2 Input     12 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 6     
 	   2 Input      4 Bit       Adders := 1     
@@ -693,23 +698,24 @@ Detailed RTL Component Info :
 	               70 Bit    Registers := 6     
 	               68 Bit    Registers := 6     
 	               36 Bit    Registers := 2     
-	               35 Bit    Registers := 12    
+	               35 Bit    Registers := 20    
 	               34 Bit    Registers := 4     
-	               27 Bit    Registers := 4     
-	               16 Bit    Registers := 20    
+	               32 Bit    Registers := 2     
+	               27 Bit    Registers := 3     
+	               16 Bit    Registers := 26    
 	               12 Bit    Registers := 3     
 	                8 Bit    Registers := 8     
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 6     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 37    
+	                1 Bit    Registers := 34    
 +---Multipliers : 
 	                35x35  Multipliers := 6     
 	                33x35  Multipliers := 12    
 +---Muxes : 
 	   2 Input     34 Bit        Muxes := 8     
-	   3 Input     27 Bit        Muxes := 4     
-	   2 Input     27 Bit        Muxes := 3     
+	   3 Input     27 Bit        Muxes := 3     
+	   2 Input     27 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 12    
 	  14 Input     16 Bit        Muxes := 1     
 	  15 Input     16 Bit        Muxes := 2     
@@ -720,8 +726,8 @@ Detailed RTL Component Info :
 	   3 Input      3 Bit        Muxes := 8     
 	   8 Input      3 Bit        Muxes := 3     
 	   6 Input      3 Bit        Muxes := 2     
-	   3 Input      2 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 28    
+	   3 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 29    
 	   3 Input      1 Bit        Muxes := 2     
 	   7 Input      1 Bit        Muxes := 27    
 	  14 Input      1 Bit        Muxes := 3     
@@ -736,18 +742,19 @@ Hierarchical RTL Component report
 Module LBOx2 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     16 Bit       Adders := 3     
-	   3 Input     16 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 2     
 +---Registers : 
-	               35 Bit    Registers := 6     
-	               16 Bit    Registers := 2     
+	               35 Bit    Registers := 14    
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 8     
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   6 Input      3 Bit        Muxes := 2     
 	   3 Input      3 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 8     
 Module reset 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -892,9 +899,6 @@ INFO: [Synth 8-5545] ROM "hzClk/div_clk" won't be mapped to RAM because address 
 INFO: [Synth 8-5546] ROM "LTC2195_SPI_inst/spi_clk" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element BScounter01_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/ADC_DAC_test_9_16_2017/LTC2195x2delay.v:423]
 WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/ADC_DAC_test_9_16_2017/LTC2195x2delay.v:757]
-INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "deser_clk_origin/div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v:77]
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "deser_clk_origin/div_clk" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/deserializer.v:77]
@@ -1218,8 +1222,12 @@ INFO: [Synth 8-5546] ROM "AD_9783_SPI_inst/spi_clk" won't be mapped to RAM becau
 WARNING: [Synth 8-6014] Unused sequential element counter_f_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/AD9783.v:317]
 WARNING: [Synth 8-6014] Unused sequential element ledClk/counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/clk_div.v:42]
 WARNING: [Synth 8-6014] Unused sequential element ledClk/div_clk_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/clk_div.v:43]
-WARNING: [Synth 8-6014] Unused sequential element relock1_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:618]
-WARNING: [Synth 8-6014] Unused sequential element relock2_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:619]
+INFO: [Synth 8-5546] ROM "locktrig1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "locktrig2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sweep_rate_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sweep_rate_2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element relock1_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:536]
+WARNING: [Synth 8-6014] Unused sequential element relock2_counter_reg was removed.  [C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.srcs/sources_1/new/LBOx2.v:537]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[7]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[6]
 WARNING: [Synth 8-3331] design AD9783 has unconnected port cmd_addr_in[5]
@@ -1345,7 +1353,6 @@ WARNING: [Synth 8-3332] Sequential element (num7_reg[18]) is unused and will be 
 WARNING: [Synth 8-3332] Sequential element (num7_reg[17]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num7_reg[16]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num7_reg[15]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[34]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num8_reg[33]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num8_reg[32]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num8_reg[31]) is unused and will be removed from module deserializer.
@@ -1365,22 +1372,6 @@ WARNING: [Synth 8-3332] Sequential element (num8_reg[18]) is unused and will be 
 WARNING: [Synth 8-3332] Sequential element (num8_reg[17]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num8_reg[16]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num8_reg[15]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[14]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[13]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[12]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[11]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[10]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[9]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[8]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[7]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[6]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[5]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[4]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[3]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[2]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[1]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num8_reg[0]) is unused and will be removed from module deserializer.
-WARNING: [Synth 8-3332] Sequential element (num9_reg[34]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num9_reg[33]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num9_reg[32]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num9_reg[31]) is unused and will be removed from module deserializer.
@@ -1397,6 +1388,23 @@ WARNING: [Synth 8-3332] Sequential element (num9_reg[21]) is unused and will be 
 WARNING: [Synth 8-3332] Sequential element (num9_reg[20]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num9_reg[19]) is unused and will be removed from module deserializer.
 WARNING: [Synth 8-3332] Sequential element (num9_reg[18]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[17]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[16]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num9_reg[15]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num10_reg[2]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num10_reg[1]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (num10_reg[0]) is unused and will be removed from module deserializer.
+WARNING: [Synth 8-3332] Sequential element (b1x0_reg[66]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b1x0_reg[65]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b1x0_reg[64]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b1x0_reg[63]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b1x0_reg[62]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b1x0_reg[61]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b0x1_reg[69]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b0x1_reg[68]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b0x1_reg[67]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b0x1_reg[66]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
+WARNING: [Synth 8-3332] Sequential element (b0x1_reg[65]) is unused and will be removed from module IIRfilter1stOrderAntiWindup.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[0]' (FDE) to 'DAC0/spi_data_reg[4]'
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[1]' (FDE) to 'DAC0/spi_data_reg[4]'
@@ -1407,11 +1415,9 @@ INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[6]' (FDE) to 'DAC0/spi_
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[9]' (FDE) to 'DAC0/spi_data_reg[12]'
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[11]' (FDE) to 'DAC0/spi_data_reg[12]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC0/\spi_data_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (relockSweep2/\next_val_f_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (relockSweep1/\next_val_f_reg[0] )
 INFO: [Synth 8-3886] merging instance 'DAC0/spi_data_reg[4]' (FDE) to 'DAC0/spi_data_reg[10]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 725.359 ; gain = 456.371
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 724.191 ; gain = 455.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1509,13 +1515,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 727.953 ; gain = 458.965
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 729.902 ; gain = 461.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 741.102 ; gain = 472.113
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 742.301 ; gain = 473.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1527,7 +1533,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1551,7 +1557,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1564,7 +1570,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1576,25 +1582,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1627,11 +1633,11 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |BUFG        |    11|
-|2     |CARRY4      |   502|
-|3     |DSP48E1     |    46|
+|2     |CARRY4      |   511|
+|3     |DSP48E1     |    48|
 |4     |DSP48E1_1   |    16|
-|5     |DSP48E1_2   |     8|
-|6     |DSP48E1_3   |     2|
+|5     |DSP48E1_2   |     4|
+|6     |DSP48E1_3   |     4|
 |7     |IDELAYCTRL  |     1|
 |8     |IDELAYE2    |     1|
 |9     |IDELAYE2_1  |     2|
@@ -1641,12 +1647,12 @@ Report Cell Usage:
 |13    |IDELAYE2_5  |     1|
 |14    |IDELAYE2_6  |     1|
 |15    |ISERDESE2   |    10|
-|16    |LUT1        |   242|
-|17    |LUT2        |  1750|
-|18    |LUT3        |    99|
-|19    |LUT4        |    72|
-|20    |LUT5        |    75|
-|21    |LUT6        |    94|
+|16    |LUT1        |   222|
+|17    |LUT2        |  1689|
+|18    |LUT3        |   137|
+|19    |LUT4        |   152|
+|20    |LUT5        |   104|
+|21    |LUT6        |    99|
 |22    |MMCME2_ADV  |     1|
 |23    |MMCME2_BASE |     2|
 |24    |ODDR        |     1|
@@ -1654,7 +1660,7 @@ Report Cell Usage:
 |26    |SRL16E      |     3|
 |27    |FDCE        |   147|
 |28    |FDPE        |    44|
-|29    |FDRE        |  2477|
+|29    |FDRE        |  2839|
 |30    |FDSE        |     6|
 |31    |LDC         |    16|
 |32    |IBUF        |     3|
@@ -1668,7 +1674,7 @@ Report Instance Areas:
 +------+---------------------+------------------------------+------+
 |      |Instance             |Module                        |Cells |
 +------+---------------------+------------------------------+------+
-|1     |top                  |                              |  5738|
+|1     |top                  |                              |  6180|
 |2     |  ADC                |LTC2195x2delay                |   416|
 |3     |    LTC2195_SPI_inst |SPI_9                         |   131|
 |4     |    hzClk            |clk_div                       |    80|
@@ -1683,21 +1689,21 @@ Report Instance Areas:
 |13    |    PD               |IIRfilter1stOrderAntiWindup_4 |   459|
 |14    |    PI               |IIRfilter1stOrderAntiWindup_5 |   491|
 |15    |  LP1e2              |IIRfilter1stOrderAntiWindup   |   511|
-|16    |  LP2                |IIRfilter1stOrderAntiWindup_2 |   506|
-|17    |  new_param_deser1   |deserializer                  |  1071|
+|16    |  LP2                |IIRfilter1stOrderAntiWindup_2 |   509|
+|17    |  new_param_deser    |deserializer                  |   991|
 |18    |    deser_clk_origin |clk_div__parameterized1       |    78|
-|19    |  relockSweep1       |Sweep                         |   160|
-|20    |  relockSweep2       |Sweep_3                       |   160|
+|19    |  relockSweep1       |Sweep                         |   208|
+|20    |  relockSweep2       |Sweep_3                       |   208|
 |21    |  startup_reset      |reset                         |    84|
 +------+---------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 773.238 ; gain = 504.250
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 777.074 ; gain = 508.344
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1671 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 773.238 ; gain = 169.602
-Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 773.238 ; gain = 504.250
+Synthesis finished with 0 errors, 0 critical warnings and 391 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 777.074 ; gain = 173.691
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 777.074 ; gain = 508.344
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 702 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 711 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 10 load pin(s).
@@ -1707,9 +1713,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 16 instances
   MMCME2_BASE => MMCME2_ADV: 2 instances
 
-204 Infos, 280 Warnings, 15 Critical Warnings and 0 Errors encountered.
+208 Infos, 279 Warnings, 15 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 773.238 ; gain = 512.516
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 777.074 ; gain = 516.105
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dschussheim/Documents/GitHub/digital-servo/PSU/Firmware/KX1/servo_tests/9_15_2017/servo_tests_new/servo_tests_new.runs/synth_1/LBOx2.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 773.238 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Sep 18 14:28:39 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 777.074 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 19 19:04:16 2017...

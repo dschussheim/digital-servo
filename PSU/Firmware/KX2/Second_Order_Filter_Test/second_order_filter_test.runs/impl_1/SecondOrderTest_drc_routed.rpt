@@ -1,0 +1,158 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Wed Sep 20 18:38:46 2017
+| Host         : DESKTOP-VK82MLB running 64-bit major release  (build 9200)
+| Command      : report_drc -file SecondOrderTest_drc_routed.rpt -pb SecondOrderTest_drc_routed.pb -rpx SecondOrderTest_drc_routed.rpx
+| Design       : SecondOrderTest
+| Device       : xc7k160tffg676-2
+| Speed File   : -2
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 24
++----------+----------+--------------------------------------------------+------------+
+| Rule     | Severity | Description                                      | Violations |
++----------+----------+--------------------------------------------------+------------+
+| PDRC-153 | Warning  | Gated clock check                                | 10         |
+| REQP-86  | Warning  | IDELAY_TYPE_FIXED                                | 7          |
+| REQP-107 | Warning  | enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O | 7          |
++----------+----------+--------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net ADC/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1/O, cell ADC/LTC2195_SPI_inst/data_out_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net ADC/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1/O, cell ADC/LTC2195_SPI_inst/data_out_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net ADC/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1/O, cell ADC/LTC2195_SPI_inst/data_out_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net ADC/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin ADC/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell ADC/LTC2195_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1/O, cell DAC0/AD_9783_SPI_inst/data_out_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1/O, cell DAC0/AD_9783_SPI_inst/data_out_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0_n_0 is a gated clock net sourced by a combinational pin DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0/O, cell DAC0/AD_9783_SPI_inst/data_out_reg[7]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0_n_0 is a gated clock net sourced by a combinational pin DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0/O, cell DAC0/AD_9783_SPI_inst/data_out_reg[8]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net DAC0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin DAC0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell DAC0/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net DAC1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin DAC1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1/O, cell DAC1/AD_9783_SPI_inst/state_f_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+REQP-86#1 Warning
+IDELAY_TYPE_FIXED  
+ADC/pins[0].IDELAYE2_inst: With IDELAY_TYPE programming FIXED, active input pins INC, REGRST, and CE are not used and will be ignored.
+Related violations: <none>
+
+REQP-86#2 Warning
+IDELAY_TYPE_FIXED  
+ADC/pins[1].IDELAYE2_inst: With IDELAY_TYPE programming FIXED, active input pins INC, REGRST, and CE are not used and will be ignored.
+Related violations: <none>
+
+REQP-86#3 Warning
+IDELAY_TYPE_FIXED  
+ADC/pins[2].IDELAYE2_inst: With IDELAY_TYPE programming FIXED, active input pins INC, REGRST, and CE are not used and will be ignored.
+Related violations: <none>
+
+REQP-86#4 Warning
+IDELAY_TYPE_FIXED  
+ADC/pins[3].IDELAYE2_inst: With IDELAY_TYPE programming FIXED, active input pins INC, REGRST, and CE are not used and will be ignored.
+Related violations: <none>
+
+REQP-86#5 Warning
+IDELAY_TYPE_FIXED  
+ADC/pins[4].IDELAYE2_inst: With IDELAY_TYPE programming FIXED, active input pins INC, REGRST, and CE are not used and will be ignored.
+Related violations: <none>
+
+REQP-86#6 Warning
+IDELAY_TYPE_FIXED  
+ADC/pins[5].IDELAYE2_inst: With IDELAY_TYPE programming FIXED, active input pins INC, REGRST, and CE are not used and will be ignored.
+Related violations: <none>
+
+REQP-86#7 Warning
+IDELAY_TYPE_FIXED  
+ADC/pins[6].IDELAYE2_inst: With IDELAY_TYPE programming FIXED, active input pins INC, REGRST, and CE are not used and will be ignored.
+Related violations: <none>
+
+REQP-107#1 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+ADC/pins[0].ISERDESE2_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#2 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+ADC/pins[1].ISERDESE2_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#3 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+ADC/pins[2].ISERDESE2_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#4 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+ADC/pins[3].ISERDESE2_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#5 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+ADC/pins[4].ISERDESE2_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#6 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+ADC/pins[5].ISERDESE2_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#7 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+ADC/pins[6].ISERDESE2_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+

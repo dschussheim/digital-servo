@@ -19,10 +19,6 @@ create_generated_clock -name ENC_p -source [get_pins ADC2/ODDR_inst/C] -divide_b
 #Clock input
 set_property PACKAGE_PIN AA3 [get_ports clk]
 
-#Reset led
-#set_property PACKAGE_PIN M17 [get_ports rst_led]
-#set_property IOSTANDARD LVCMOS25 [get_ports rst_led]
-
 set_property PACKAGE_PIN M17     [get_ports led_out[3]]
 set_property IOSTANDARD LVCMOS25 [get_ports led_out[3]]
 set_property PACKAGE_PIN L18     [get_ports led_out[2]]
@@ -177,22 +173,10 @@ set_property IOSTANDARD LVCMOS25 [get_ports adc_scs2]
 set_property IOSTANDARD LVCMOS25 [get_ports adc_sdi]
 set_property IOSTANDARD LVCMOS25 [get_ports adc_sdo]
 
-#Locked/unlocked LEDs
-#set_property PACKAGE_PIN L18     [get_ports locked_out]
-#set_property IOSTANDARD LVCMOS25 [get_ports locked_out]
-#set_property PACKAGE_PIN L17     [get_ports notlocked_out]
-#set_property IOSTANDARD LVCMOS25 [get_ports notlocked_out]
-#set_property PACKAGE_PIN K18     [get_ports notlocked1s_out]
-#set_property IOSTANDARD LVCMOS25 [get_ports notlocked1s_out]
-
 #Serial line IOs
 #in (IO1P)
-set_property PACKAGE_PIN V21     [get_ports serial1_in]
-set_property IOSTANDARD LVCMOS25 [get_ports serial1_in]
-#clkDout (IO2P)
-set_property PACKAGE_PIN AA23    [get_ports serial2_in]
-set_property IOSTANDARD LVCMOS25 [get_ports serial2_in]
-#trig_out
+set_property PACKAGE_PIN V21     [get_ports serial_in]
+set_property IOSTANDARD LVCMOS25 [get_ports serial_in]
 set_property PACKAGE_PIN Y22     [get_ports serial_trig_out]
 set_property IOSTANDARD LVCMOS25 [get_ports serial_trig_out]
 
